@@ -37,12 +37,13 @@ const map = L.map("map", {
   crs: customCRS,
   minZoom: computeMinZoom(),
   maxZoom: MAX_ZOOM,
-  zoomControl: true,
+  zoomControl: false,
   attributionControl: false,
   zoomSnap: 0.25,
   preferCanvas: true,
   worldCopyJump: false,
 });
+L.control.zoom({ position: "bottomright" }).addTo(map);
 
 const visibleBounds = [[-NATIVE_H, 0], [0, NATIVE_W]];
 
