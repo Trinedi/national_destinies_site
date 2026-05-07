@@ -306,7 +306,7 @@ def main() -> int:
     for k, v in sorted(by_source.items()):
         print(f"  {k}: {v}")
 
-    out_path = Path(args.out) if args.out else repo_root / cfg["build"]["data_dir"] / "formables.json"
+    out_path = Path(args.out) if args.out else repo_root / cfg["build"]["web_data_dir"] / "formables.json"
     out_path.parent.mkdir(parents=True, exist_ok=True)
     with open(out_path, "w") as f:
         json.dump({"version": 1, "formables": merged}, f, indent=2)

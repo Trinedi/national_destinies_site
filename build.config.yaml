@@ -14,6 +14,7 @@ map:
   tile_size: 256
 
 build:
-  data_dir: data
+  data_dir: data           # intermediate artifacts (basemap.png, caches)
+  web_data_dir: dist/data  # frontend-consumed JSON outputs
   dist_dir: dist
   cache_dir: data/cache

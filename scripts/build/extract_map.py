@@ -163,7 +163,7 @@ def main() -> int:
 
     locations = extract_locations(png_path, named)
 
-    out_path = Path(args.out) if args.out else repo_root / cfg["build"]["data_dir"] / "locations_index.json"
+    out_path = Path(args.out) if args.out else repo_root / cfg["build"]["web_data_dir"] / "locations_index.json"
     out_path.parent.mkdir(parents=True, exist_ok=True)
     with open(out_path, "w") as f:
         json.dump({"version": 1, "locations": locations}, f)
