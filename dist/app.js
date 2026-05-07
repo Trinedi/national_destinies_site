@@ -416,6 +416,9 @@ function selectFormable(rec, opts = {}) {
 // Track the area whose claimants we are cycling through so repeated
 // clicks on the same area advance to the next visible claimant.
 let lastClickedArea = null;
+// Last mouse event over a polygon, kept so we can re-render the hover
+// card after a selection cycle without waiting for another mousemove.
+let lastHoverEvent = null;
 
 function cycleSelectionForArea(areaName) {
   const claimants = visibleClaimantsFor(areaName);
@@ -424,17 +427,21 @@ function cycleSelectionForArea(areaName) {
     lastClickedArea = null;
     return;
   }
+  let next;
   if (lastClickedArea !== areaName || !selected) {
-    // First click on this area (or after deselect): pick primary, fit map.
     lastClickedArea = areaName;
-    selectFormable(claimants[0]);
-    return;
+    next = claimants[0];
+    selectFormable(next);
+  } else {
+    const idx = claimants.findIndex((c) => c.block_key === selected.block_key);
+    next = claimants[(idx + 1) % claimants.length];
+    selectFormable(next, { skipFit: true });
   }
-  // Same area clicked again: advance to next claimant. Skip fit so the
-  // user does not get bounced around the world while iterating.
-  const idx = claimants.findIndex((c) => c.block_key === selected.block_key);
-  const next = claimants[(idx + 1) % claimants.length];
-  selectFormable(next, { skipFit: true });
+  // Re-render the hover card so the just-selected claimant becomes the
+  // main entry instead of the area's primary.
+  if (lastHoverEvent && !$hoverCard.hidden) {
+    showHoverCard(next, lastHoverEvent, areaName);
+  }
 }
 
 // ---- area polygon rendering --------------------------------------------
@@ -458,11 +465,25 @@ function createAreaCopy(worldIndex) {
         cycleSelectionForArea(areaName);
       });
       layer.on("mouseover", (e) => {
-        const primary = visiblePrimaryFor(areaName);
-        if (primary) showHoverCard(primary, e, areaName);
+        lastHoverEvent = e;
+        const claimants = visibleClaimantsFor(areaName);
+        if (claimants.length === 0) return;
+        // If the user has cycled to a specific claimant of this area,
+        // show that one as the main entry; otherwise the primary.
+        let main = claimants[0];
+        if (selected && claimants.some((c) => c.block_key === selected.block_key)) {
+          main = selected;
+        }
+        showHoverCard(main, e, areaName);
       });
-      layer.on("mousemove", (e) => positionHoverCard(e));
-      layer.on("mouseout", hideHoverCard);
+      layer.on("mousemove", (e) => {
+        lastHoverEvent = e;
+        positionHoverCard(e);
+      });
+      layer.on("mouseout", () => {
+        lastHoverEvent = null;
+        hideHoverCard();
+      });
     },
   }).addTo(map);
 }
