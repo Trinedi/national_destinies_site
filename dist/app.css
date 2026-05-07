@@ -278,6 +278,12 @@ html, body { height: 100%; margin: 0; padding: 0; background: var(--bg-0); color
   z-index: 500;
   backdrop-filter: blur(6px);
 }
+/* The HTML `hidden` attribute is supposed to set display:none, but the
+   #detail rule above re-asserts display:flex. Force display:none when
+   hidden so toggling the attribute actually closes the panel. */
+#detail[hidden] {
+  display: none;
+}
 #detail header {
   display: flex;
   align-items: center;

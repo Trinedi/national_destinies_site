@@ -758,7 +758,12 @@ function clearSelection() {
   $list.querySelectorAll(".formable-row.selected").forEach((r) => r.classList.remove("selected"));
 }
 
-$detailClose.addEventListener("click", clearSelectionAndRestyle);
+// X button just hides the detail panel; the selection (and its territory
+// tint on the map) persists. Re-open by clicking the formable in the
+// list or any of its claimed areas on the map.
+$detailClose.addEventListener("click", () => {
+  $detail.hidden = true;
+});
 $search.addEventListener("input", renderList);
 
 function currentAllowedLevels() {
