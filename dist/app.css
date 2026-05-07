@@ -163,6 +163,53 @@ html, body { height: 100%; margin: 0; padding: 0; background: var(--bg-0); color
   font-size: 11px;
   color: var(--fg-2);
 }
+#hover-card .hc-claimants-label {
+  margin-top: 6px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--fg-2);
+}
+#hover-card .hc-claimants {
+  margin: 3px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+#hover-card .hc-claimant {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  line-height: 1.3;
+  padding: 1px 0;
+}
+#hover-card .hc-claimant-current {
+  color: var(--accent);
+  font-weight: 600;
+}
+#hover-card .hc-claimant .hc-swatch {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  flex: none;
+}
+#hover-card .hc-claimant-name {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#hover-card .hc-claim-hint {
+  margin-top: 5px;
+  padding-top: 5px;
+  border-top: 1px solid var(--border);
+  font-size: 10px;
+  color: var(--fg-2);
+  font-style: italic;
+}
 
 #formables-list {
   flex: 1;

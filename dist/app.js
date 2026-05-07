@@ -814,8 +814,7 @@ const $hoverCard = document.getElementById("hover-card");
 const $mapPane = document.getElementById("map-pane");
 
 function showHoverCard(rec, ev, areaName) {
-  const claimants = areaName ? (areaToFormables[areaName] || []) : [];
-  const otherCount = Math.max(0, claimants.length - 1);
+  const claimants = areaName ? visibleClaimantsFor(areaName) : [];
   const fields = [];
   fields.push(
     `<div class="hc-title">` +
@@ -833,8 +832,25 @@ function showHoverCard(rec, ev, areaName) {
     const labels = rec.must_own.map((l) => lookupLoc(l) || prettifyName(l));
     fields.push(`<div class="hc-meta">Must own: ${escapeHtml(labels.join(", "))}</div>`);
   }
-  if (otherCount > 0) {
-    fields.push(`<div class="hc-claim">Area also claimed by ${otherCount} other formable${otherCount > 1 ? "s" : ""}</div>`);
+  // List every claimant with its color swatch when more than one applies
+  // to this hovered area, plus a cycle hint.
+  if (claimants.length > 1) {
+    const items = claimants.map((c, i) => {
+      const isCurrent = selected && c.block_key === selected.block_key;
+      const cls = isCurrent ? "hc-claimant hc-claimant-current" : "hc-claimant";
+      return (
+        `<li class="${cls}">` +
+        `<span class="hc-swatch" style="background:${c._color}"></span>` +
+        `<span class="hc-claimant-name">${escapeHtml(c._displayName)}</span>` +
+        `<span class="hc-tag">${escapeHtml(c.tag || "")}</span>` +
+        `</li>`
+      );
+    }).join("");
+    fields.push(
+      `<div class="hc-claimants-label">Claimed by ${claimants.length} formables</div>` +
+      `<ul class="hc-claimants">${items}</ul>` +
+      `<div class="hc-claim-hint">Click to select. Click again to cycle through claimants.</div>`
+    );
   }
   $hoverCard.innerHTML = fields.join("");
   $hoverCard.hidden = false;
