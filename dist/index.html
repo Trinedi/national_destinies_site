@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>National Destinies, Map</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<style>
+  html, body { height: 100%; margin: 0; padding: 0; background: #0d0d10; color: #ddd; font-family: system-ui, sans-serif; }
+  #map { position: absolute; inset: 0; background: #0d0d10; }
+  #info {
+    position: absolute; top: 12px; left: 12px; z-index: 500;
+    background: rgba(20,20,24,0.85); padding: 8px 12px;
+    border-radius: 6px; font-size: 13px; line-height: 1.4;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  }
+  #info b { color: #ffd28b; }
+</style>
+</head>
+<body>
+<div id="info">
+  <b>National Destinies</b> &mdash; map preview<br />
+  Drag to pan, scroll or pinch to zoom. <span id="coord"></span>
+</div>
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const NATIVE_W = 16384;
+const NATIVE_H = 8192;
+const PADDED = 16384;
+const MAX_ZOOM = 6;
+
+// CRS.Simple maps pixel coords directly. We use Y-flipped pixel coords as
+// LatLng so that (0,0) is top-left of the bitmap. world = padded square at
+// native zoom; visible map content is the top NATIVE_H rows.
+const map = L.map('map', {
+  crs: L.CRS.Simple,
+  minZoom: 0,
+  maxZoom: MAX_ZOOM,
+  zoomControl: true,
+  attributionControl: false,
+  zoomSnap: 0.25,
+});
+
+const bounds = [[-NATIVE_H, 0], [0, NATIVE_W]];
+
+L.tileLayer('tiles/{z}/{x}/{y}.png', {
+  tileSize: 256,
+  minZoom: 0,
+  maxZoom: MAX_ZOOM,
+  noWrap: true,
+  // Leaflet expects square world for default tile math; padded matches that.
+  bounds: [[-PADDED, 0], [0, PADDED]],
+}).addTo(map);
+
+map.fitBounds(bounds);
+
+const coord = document.getElementById('coord');
+map.on('mousemove', (e) => {
+  const x = Math.round(e.latlng.lng);
+  const y = Math.round(-e.latlng.lat);
+  coord.textContent = `(x=${x}, y=${y})`;
+});
+</script>
+</body>
+</html>
