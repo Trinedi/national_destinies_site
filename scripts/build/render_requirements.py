@@ -149,29 +149,31 @@ def loc_or_pretty(loc: dict[str, str], name: str, *extra_keys: str) -> str:
     return loc_lookup(loc, name, *extra_keys) or prettify(name)
 
 
+def with_suffix(base: str, suffix: str) -> str:
+    """Append suffix unless base already ends with it (case-insensitive)."""
+    low = base.lower().rstrip()
+    s = suffix.lower()
+    if low.endswith(" " + s) or low == s:
+        return base
+    return f"{base} {suffix}"
+
+
 # ----- atom renderers (per key) -----------------------------------------
 
 def r_culture_atom(op: str, value: str, loc) -> str:
-    base = strip_ref(value)
-    name = loc_or_pretty(loc, base)
-    return f"{name} culture"
+    return with_suffix(loc_or_pretty(loc, strip_ref(value)), "culture")
 
 
 def r_religion_atom(op: str, value: str, loc) -> str:
-    base = strip_ref(value)
-    name = loc_or_pretty(loc, base)
-    return f"{name} religion"
+    return with_suffix(loc_or_pretty(loc, strip_ref(value)), "religion")
 
 
 def r_language_atom(op: str, value: str, loc) -> str:
-    base = strip_ref(value)
-    return f"{loc_or_pretty(loc, base)} language"
+    return with_suffix(loc_or_pretty(loc, strip_ref(value)), "language")
 
 
 def r_group_atom(op: str, value: str, loc) -> str:
-    # Inside `culture = { group = X }` style; bare context handled by caller.
-    base = strip_ref(value)
-    return f"{loc_or_pretty(loc, base)} group"
+    return with_suffix(loc_or_pretty(loc, strip_ref(value)), "group")
 
 
 def r_owns_atom(op: str, value: str, loc) -> str:
@@ -299,6 +301,14 @@ def render_block(key: str, op: str, body: list, loc) -> dict | None:
         return {"kind": "not", "text": "Must not:", "children": render_clauses(body, loc)}
     if key == "AND":
         return {"kind": "and", "text": "All of:", "children": render_clauses(body, loc)}
+    if key in ("current_age_or_later", "current_age_or_earlier"):
+        # current_age_or_later = { age = age_4_reformation }
+        suffix = "or later" if key == "current_age_or_later" else "or earlier"
+        for c in body:
+            if c[0] == "atom" and c[1] == "age":
+                age_name = loc_or_pretty(loc, c[3])
+                return {"kind": "atom", "text": f"{age_name} {suffix}"}
+        return None
     if key == "trigger_if":
         # Paradox conditional. Body has `limit = { ... }` then effects;
         # for our purposes treat as conditional clause group.
@@ -345,16 +355,20 @@ def render_culture_block(body: list, loc) -> dict | None:
     #   culture = { has_culture_group = culture_group:X }
     #   culture = { OR = { has_culture_group = X has_culture_group = Y } }
     #   culture = { has_culture = culture:Y }
+    #   culture ?= { language = language:english_language }
     found = []
     for c in body:
         if c[0] == "atom":
             _, key, op, val = c
+            base = loc_or_pretty(loc, strip_ref(val))
             if key == "has_culture_group":
-                found.append(f"{loc_or_pretty(loc, strip_ref(val))} culture group")
+                found.append(with_suffix(base, "culture group"))
             elif key == "has_culture":
-                found.append(f"{loc_or_pretty(loc, strip_ref(val))} culture")
+                found.append(with_suffix(base, "culture"))
             elif key == "group":
-                found.append(f"{loc_or_pretty(loc, strip_ref(val))} group")
+                found.append(with_suffix(base, "group"))
+            elif key == "language":
+                found.append(with_suffix(base, "language"))
         elif c[0] == "block":
             _, key, op, sub = c
             if key == "OR":
@@ -373,10 +387,11 @@ def render_religion_block(body: list, loc) -> dict | None:
     for c in body:
         if c[0] == "atom":
             _, key, op, val = c
+            base = loc_or_pretty(loc, strip_ref(val))
             if key == "has_religion_group":
-                found.append(f"{loc_or_pretty(loc, strip_ref(val))} religion group")
+                found.append(with_suffix(base, "religion group"))
             elif key == "religion":
-                found.append(f"{loc_or_pretty(loc, strip_ref(val))} religion")
+                found.append(with_suffix(base, "religion"))
         elif c[0] == "block":
             _, key, op, sub = c
             if key == "OR":
@@ -408,10 +423,11 @@ def render_culture_options(body, loc, label_kind):
     for c in body:
         if c[0] == "atom":
             _, key, op, val = c
-            if key in ("has_culture_group", "religion_group"):
-                out.append({"kind": "atom", "text": f"{loc_or_pretty(loc, strip_ref(val))} group"})
+            base = loc_or_pretty(loc, strip_ref(val))
+            if key in ("has_culture_group", "has_religion_group"):
+                out.append({"kind": "atom", "text": with_suffix(base, "group")})
             elif key in ("has_culture", "religion"):
-                out.append({"kind": "atom", "text": f"{loc_or_pretty(loc, strip_ref(val))} {label_kind}"})
+                out.append({"kind": "atom", "text": with_suffix(base, label_kind)})
             else:
                 cl = render_atom(key, op, val, loc)
                 if cl:

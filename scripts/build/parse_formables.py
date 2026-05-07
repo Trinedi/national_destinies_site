@@ -225,6 +225,35 @@ def parse_dir(path: Path) -> list[dict]:
     return records
 
 
+def derive_variant_label(block_key: str, tag: str | None) -> str | None:
+    """For LAT_REDUCED_REQUIREMENTS_f or ROM_BYZ_f-style block keys, derive a
+    short suffix like 'Reduced Requirements' or 'BYZ' to disambiguate when
+    multiple blocks share the same canonical tag."""
+    body = block_key[:-2] if block_key.endswith("_f") else block_key
+    if tag and body.upper().startswith(tag.upper() + "_"):
+        body = body[len(tag) + 1 :]
+    elif tag and body.upper() == tag.upper():
+        return None
+    body = body.replace("_", " ").strip()
+    if not body:
+        return None
+    return body.title()
+
+
+def annotate_variants(records: list[dict]) -> None:
+    by_tag: dict[str, list[dict]] = {}
+    for r in records:
+        if r.get("tag"):
+            by_tag.setdefault(r["tag"], []).append(r)
+    for tag, group in by_tag.items():
+        if len(group) <= 1:
+            for r in group:
+                r["variant_label"] = None
+            continue
+        for r in group:
+            r["variant_label"] = derive_variant_label(r["block_key"], tag)
+
+
 def merge(vanilla: list[dict], mod: list[dict]) -> list[dict]:
     """Merge vanilla + mod definitions by block_key.
 
@@ -299,12 +328,15 @@ def main() -> int:
     print(f"  {len(mod)} mod entries (full + INJECT/REPLACE)")
 
     merged = merge(vanilla, mod)
+    annotate_variants(merged)
     by_source: dict[str, int] = {}
     for r in merged:
         by_source[r["source"]] = by_source.get(r["source"], 0) + 1
     print("merged:")
     for k, v in sorted(by_source.items()):
         print(f"  {k}: {v}")
+    n_variants = sum(1 for r in merged if r.get("variant_label"))
+    print(f"  {n_variants} variant labels assigned (alt-path formables)")
 
     out_path = Path(args.out) if args.out else repo_root / cfg["build"]["web_data_dir"] / "formables.json"
     out_path.parent.mkdir(parents=True, exist_ok=True)

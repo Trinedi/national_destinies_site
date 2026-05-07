@@ -29,6 +29,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_sca.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -65,6 +66,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -99,6 +101,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -135,6 +138,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_drd.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "any_culture",
@@ -160,7 +164,7 @@
       "english_allow": [
         {
           "kind": "atom",
-          "text": "Gaelic Language language"
+          "text": "Gaelic language"
         },
         {
           "kind": "or",
@@ -168,11 +172,11 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Scottish Group group"
+              "text": "Scottish Group"
             },
             {
               "kind": "atom",
-              "text": "Hibernian Group group"
+              "text": "Hibernian Group"
             }
           ]
         }
@@ -204,6 +208,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_gbr.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "any_culture",
@@ -258,6 +263,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "or",
@@ -269,7 +275,7 @@
             },
             {
               "kind": "atom",
-              "text": "English Language language"
+              "text": "English Language"
             }
           ]
         }
@@ -301,6 +307,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "or",
@@ -312,7 +319,7 @@
             },
             {
               "kind": "atom",
-              "text": "Brythonic Language language"
+              "text": "Brythonic language"
             }
           ]
         }
@@ -346,6 +353,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -380,7 +388,13 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
-      "english_potential": [],
+      "variant_label": null,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "English Language"
+        }
+      ],
       "english_allow": []
     },
     {
@@ -408,6 +422,7 @@
       "formation_event": "nd_ire.1",
       "source": "vanilla+mod_replace",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "or",
@@ -512,6 +527,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -545,6 +561,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -583,6 +600,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_ned.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -618,10 +636,11 @@
       "formation_event": "nd_swi.1",
       "source": "vanilla+mod_replace",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Swiss Group culture group"
+          "text": "Swiss culture group"
         }
       ],
       "english_allow": [
@@ -657,6 +676,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_spa.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -664,7 +684,7 @@
         },
         {
           "kind": "atom",
-          "text": "Christian group"
+          "text": "Christianity group"
         }
       ],
       "english_allow": [
@@ -700,6 +720,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_adu.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "or",
@@ -717,7 +738,7 @@
         },
         {
           "kind": "atom",
-          "text": "Muslim group"
+          "text": "Islam group"
         }
       ],
       "english_allow": [
@@ -753,10 +774,11 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_aia.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Arabian Group culture group"
+          "text": "Arabian culture group"
         }
       ],
       "english_allow": []
@@ -787,6 +809,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_egy.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "not",
@@ -831,10 +854,11 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_koa.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Catholic religion"
+          "text": "Catholicism religion"
         }
       ],
       "english_allow": [
@@ -876,6 +900,7 @@
       "formation_event": "nd_lat.1",
       "source": "vanilla+mod_replace",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "not",
@@ -899,7 +924,7 @@
         },
         {
           "kind": "atom",
-          "text": "Catholic religion"
+          "text": "Catholicism religion"
         },
         {
           "kind": "atom",
@@ -910,14 +935,8 @@
           "text": "Must not:",
           "children": [
             {
-              "kind": "block",
-              "text": "Current Age Or Later:",
-              "children": [
-                {
-                  "kind": "atom",
-                  "text": "Age: Age 4 Reformation"
-                }
-              ]
+              "kind": "atom",
+              "text": "Age 4 Reformation or later"
             }
           ]
         }
@@ -939,7 +958,7 @@
         },
         {
           "kind": "atom",
-          "text": "Catholic religion"
+          "text": "Catholicism religion"
         },
         {
           "kind": "or",
@@ -1011,6 +1030,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": "Reduced Requirements",
       "english_potential": [
         {
           "kind": "not",
@@ -1024,7 +1044,7 @@
         },
         {
           "kind": "atom",
-          "text": "Catholic religion"
+          "text": "Catholicism religion"
         },
         {
           "kind": "atom",
@@ -1039,14 +1059,8 @@
           "text": "Must not:",
           "children": [
             {
-              "kind": "block",
-              "text": "Current Age Or Later:",
-              "children": [
-                {
-                  "kind": "atom",
-                  "text": "Age: Age 4 Reformation"
-                }
-              ]
+              "kind": "atom",
+              "text": "Age 4 Reformation or later"
             }
           ]
         }
@@ -1068,7 +1082,7 @@
         },
         {
           "kind": "atom",
-          "text": "Catholic religion"
+          "text": "Catholicism religion"
         },
         {
           "kind": "or",
@@ -1133,6 +1147,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "not",
@@ -1183,14 +1198,8 @@
           "text": "Must not:",
           "children": [
             {
-              "kind": "block",
-              "text": "Current Age Or Later:",
-              "children": [
-                {
-                  "kind": "atom",
-                  "text": "Age: Age 3 Discovery"
-                }
-              ]
+              "kind": "atom",
+              "text": "Age 3 Discovery or later"
             }
           ]
         }
@@ -1212,7 +1221,7 @@
         },
         {
           "kind": "atom",
-          "text": "Catholic religion"
+          "text": "Catholicism religion"
         },
         {
           "kind": "or",
@@ -1273,6 +1282,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": "Reduced Requirements",
       "english_potential": [
         {
           "kind": "not",
@@ -1317,14 +1327,8 @@
           "text": "Must not:",
           "children": [
             {
-              "kind": "block",
-              "text": "Current Age Or Later:",
-              "children": [
-                {
-                  "kind": "atom",
-                  "text": "Age: Age 3 Discovery"
-                }
-              ]
+              "kind": "atom",
+              "text": "Age 3 Discovery or later"
             }
           ]
         }
@@ -1346,7 +1350,7 @@
         },
         {
           "kind": "atom",
-          "text": "Catholic religion"
+          "text": "Catholicism religion"
         },
         {
           "kind": "or",
@@ -1392,7 +1396,7 @@
       "flag": "SAR",
       "color": "map_sardinia",
       "level": 2,
-      "fraction": 0.85,
+      "fraction": 0.9,
       "rule": "historical",
       "content_priority": null,
       "regions": [],
@@ -1407,6 +1411,7 @@
       "formation_event": "nd_sar.1",
       "source": "vanilla+mod_replace",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -1442,6 +1447,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_msi.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -1480,10 +1486,11 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_bej.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Beja Culture culture"
+          "text": "Beja Culture"
         }
       ],
       "english_allow": []
@@ -1518,6 +1525,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_eth.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "or",
@@ -1525,7 +1533,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Agaw Culture culture"
+              "text": "Agaw Culture"
             },
             {
               "kind": "atom",
@@ -1599,6 +1607,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_bav.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -1656,6 +1665,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_hab.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "or",
@@ -1708,6 +1718,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_boh.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "or",
@@ -1758,6 +1769,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_sax.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "or",
@@ -1820,6 +1832,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "or",
@@ -1863,6 +1876,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -1897,6 +1911,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_pom.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "or",
@@ -1940,6 +1955,7 @@
       "formation_event": "nd_pru.1",
       "source": "vanilla+mod_replace",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -1997,6 +2013,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_liv.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "any_culture",
@@ -2046,6 +2063,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_lva.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "any_culture",
@@ -2091,6 +2109,7 @@
       "formation_event": "nd_ger.1",
       "source": "vanilla+mod_replace",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -2125,6 +2144,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -2132,7 +2152,7 @@
         },
         {
           "kind": "atom",
-          "text": "Is Member Of International Organization: Hre"
+          "text": "Is Member Of International Organization: Holy Roman Empire"
         }
       ],
       "english_allow": [
@@ -2168,6 +2188,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_mol.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -2204,6 +2225,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_maz.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -2243,6 +2265,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_sil.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "or",
@@ -2293,10 +2316,11 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_pol.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Polish Group culture group"
+          "text": "Polish culture group"
         }
       ],
       "english_allow": [
@@ -2350,6 +2374,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_plc.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "or",
@@ -2357,7 +2382,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Polish Group culture group"
+              "text": "Polish culture group"
             },
             {
               "kind": "atom",
@@ -2421,6 +2446,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_ukr.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "or",
@@ -2428,15 +2454,15 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Halychian Culture culture"
+              "text": "Halychian Culture"
             },
             {
               "kind": "atom",
-              "text": "Polatskian Culture culture"
+              "text": "Polatskian Culture"
             },
             {
               "kind": "atom",
-              "text": "Polesian Culture culture"
+              "text": "Polesian Culture"
             },
             {
               "kind": "atom",
@@ -2448,19 +2474,19 @@
             },
             {
               "kind": "atom",
-              "text": "Volhynian Culture culture"
+              "text": "Volhynian Culture"
             },
             {
               "kind": "atom",
-              "text": "Rusyn Culture culture"
+              "text": "Rusyn Culture"
             },
             {
               "kind": "atom",
-              "text": "Cossack Culture culture"
+              "text": "Cossack Culture"
             },
             {
               "kind": "atom",
-              "text": "Smolenskian Culture culture"
+              "text": "Smolenskian Culture"
             }
           ]
         }
@@ -2511,6 +2537,7 @@
       "formation_event": "nd_rom.1",
       "source": "vanilla+mod_replace",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "or",
@@ -2594,11 +2621,11 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Christian group"
+              "text": "Christianity group"
             },
             {
               "kind": "atom",
-              "text": "Hellenism Religion religion"
+              "text": "Hellenism Religion"
             }
           ]
         }
@@ -2632,6 +2659,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": "Byz",
       "english_potential": [
         {
           "kind": "or",
@@ -2713,6 +2741,7 @@
       "formation_event": "nd_cth.1",
       "source": "vanilla+mod_replace",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [],
       "english_allow": [
         {
@@ -2750,6 +2779,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_nse.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "or",
@@ -2841,6 +2871,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_cel.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "any_culture",
@@ -2848,7 +2879,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Has Culture Group: Celtic Group"
+              "text": "Has Culture Group: Celtic"
             }
           ]
         }
@@ -2856,7 +2887,7 @@
       "english_allow": [
         {
           "kind": "atom",
-          "text": "Celtic Group culture group"
+          "text": "Celtic culture group"
         },
         {
           "kind": "atom",
@@ -2868,11 +2899,11 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Court Language: Brythonic Language"
+              "text": "Court Language: Brythonic"
             },
             {
               "kind": "atom",
-              "text": "Court Language: Gaelic Language"
+              "text": "Court Language: Gaelic"
             }
           ]
         }
@@ -2901,6 +2932,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -2938,6 +2970,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_eur.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -2976,6 +3009,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "or",
@@ -2983,7 +3017,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Celtic Group culture group"
+              "text": "Celtic culture group"
             },
             {
               "kind": "atom",
@@ -3019,6 +3053,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "or",
@@ -3026,7 +3061,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Celtic Group culture group"
+              "text": "Celtic culture group"
             },
             {
               "kind": "atom",
@@ -3067,6 +3102,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_ita.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -3115,6 +3151,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -3159,6 +3196,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_lot.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "or",
@@ -3194,7 +3232,7 @@
                 },
                 {
                   "kind": "atom",
-                  "text": "Tag: Bur"
+                  "text": "Tag: Burgundy"
                 }
               ]
             }
@@ -3234,6 +3272,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_bgp.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "or",
@@ -3307,6 +3346,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_tws.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "block",
@@ -3400,6 +3440,7 @@
       "formation_event": "nd_rus.1",
       "source": "vanilla+mod_replace",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -3449,6 +3490,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_gre.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "not",
@@ -3510,6 +3552,7 @@
       "formation_event": "nd_byz.1",
       "source": "vanilla+mod_replace",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -3519,7 +3562,7 @@
       "english_allow": [
         {
           "kind": "atom",
-          "text": "Orthodox religion"
+          "text": "Orthodoxy religion"
         },
         {
           "kind": "atom",
@@ -3554,10 +3597,11 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_hen.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Brythonic Language language"
+          "text": "Brythonic language"
         }
       ],
       "english_allow": []
@@ -3588,6 +3632,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_usa.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -3622,6 +3667,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_can.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "or",
@@ -3629,11 +3675,11 @@
           "children": [
             {
               "kind": "atom",
-              "text": "British Group group"
+              "text": "British Group"
             },
             {
               "kind": "atom",
-              "text": "French Group group"
+              "text": "French Group"
             }
           ]
         }
@@ -3666,6 +3712,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_mex.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "or",
@@ -3683,7 +3730,7 @@
             },
             {
               "kind": "atom",
-              "text": "Christian group"
+              "text": "Christianity group"
             }
           ]
         }
@@ -3703,7 +3750,7 @@
               "children": [
                 {
                   "kind": "atom",
-                  "text": "Christian group"
+                  "text": "Christianity group"
                 }
               ]
             }
@@ -3737,6 +3784,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_bng.txt",
+      "variant_label": null,
       "english_potential": [],
       "english_allow": [
         {
@@ -3772,11 +3820,12 @@
       "formation_event": "nd_dlh.1",
       "source": "vanilla+mod_replace",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [],
       "english_allow": [
         {
           "kind": "atom",
-          "text": "Muslim group"
+          "text": "Islam group"
         },
         {
           "kind": "or",
@@ -3788,7 +3837,7 @@
             },
             {
               "kind": "atom",
-              "text": "Iranian Group culture group"
+              "text": "Iranian culture group"
             },
             {
               "kind": "atom",
@@ -3832,6 +3881,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_npl.txt",
+      "variant_label": null,
       "english_potential": [],
       "english_allow": [
         {
@@ -3869,11 +3919,12 @@
       "formation_event": "nd_mug.1",
       "source": "vanilla+mod_replace",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [],
       "english_allow": [
         {
           "kind": "atom",
-          "text": "Muslim group"
+          "text": "Islam group"
         },
         {
           "kind": "or",
@@ -3881,7 +3932,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Iranian Group culture group"
+              "text": "Iranian culture group"
             },
             {
               "kind": "atom",
@@ -3889,7 +3940,7 @@
             },
             {
               "kind": "atom",
-              "text": "Afghani Language language"
+              "text": "Afghani Language"
             }
           ]
         },
@@ -3933,6 +3984,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_dec.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "any_culture",
@@ -3944,15 +3996,15 @@
               "children": [
                 {
                   "kind": "atom",
-                  "text": "Marathi Language language"
+                  "text": "Marathi Language"
                 },
                 {
                   "kind": "atom",
-                  "text": "Kannada Language language"
+                  "text": "Kannada Language"
                 },
                 {
                   "kind": "atom",
-                  "text": "Telugu Language language"
+                  "text": "Telugu Language"
                 }
               ]
             }
@@ -3966,21 +4018,21 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Marathi Language language"
+              "text": "Marathi Language"
             },
             {
               "kind": "atom",
-              "text": "Kannada Language language"
+              "text": "Kannada Language"
             },
             {
               "kind": "atom",
-              "text": "Telugu Language language"
+              "text": "Telugu Language"
             }
           ]
         },
         {
           "kind": "atom",
-          "text": "Sunni religion"
+          "text": "Sunnism religion"
         }
       ]
     },
@@ -4010,6 +4062,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_mhr.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "any_culture",
@@ -4017,7 +4070,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Marathi Language language"
+              "text": "Marathi Language"
             }
           ]
         }
@@ -4025,7 +4078,7 @@
       "english_allow": [
         {
           "kind": "atom",
-          "text": "Marathi Language language"
+          "text": "Marathi Language"
         },
         {
           "kind": "not",
@@ -4033,7 +4086,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Sunni religion"
+              "text": "Sunnism religion"
             }
           ]
         }
@@ -4063,6 +4116,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_hin.txt",
+      "variant_label": null,
       "english_potential": [],
       "english_allow": []
     },
@@ -4092,6 +4146,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_pun.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -4126,10 +4181,11 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_rjp.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Rajasthani Language language"
+          "text": "Rajasthani Language"
         }
       ],
       "english_allow": []
@@ -4161,16 +4217,17 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_guj.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Gujarati Language language"
+          "text": "Gujarati language"
         }
       ],
       "english_allow": [
         {
           "kind": "atom",
-          "text": "Muslim group"
+          "text": "Islam group"
         }
       ]
     },
@@ -4200,6 +4257,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_sha.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -4234,14 +4292,15 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_msa.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Malay Culture culture"
+          "text": "Malay culture"
         },
         {
           "kind": "atom",
-          "text": "Muslim group"
+          "text": "Islam group"
         }
       ],
       "english_allow": []
@@ -4273,10 +4332,11 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_sia.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Thai Culture culture"
+          "text": "Thai culture"
         }
       ],
       "english_allow": []
@@ -4307,10 +4367,11 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_ban.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Sundanese Culture culture"
+          "text": "Sundanese culture"
         }
       ],
       "english_allow": [
@@ -4345,10 +4406,11 @@
       "formation_event": "nd_ira.1",
       "source": "vanilla+mod_replace",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Iranian Group culture group"
+          "text": "Iranian culture group"
         }
       ],
       "english_allow": []
@@ -4379,10 +4441,11 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_tib.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Tibetan Group culture group"
+          "text": "Tibetan culture group"
         }
       ],
       "english_allow": []
@@ -4416,6 +4479,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_sko.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "or",
@@ -4433,7 +4497,7 @@
         },
         {
           "kind": "atom",
-          "text": "Sunni religion"
+          "text": "Sunnism religion"
         }
       ],
       "english_allow": [
@@ -4470,6 +4534,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_hau.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -4505,10 +4570,11 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_kon.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Bantu Religion religion"
+          "text": "Bantu Religion"
         }
       ],
       "english_allow": []
@@ -4539,10 +4605,11 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_ntr.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Maori Culture culture"
+          "text": "M\u0101ori culture"
         }
       ],
       "english_allow": [
@@ -4611,6 +4678,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -4644,10 +4712,11 @@
       "formation_event": "nd_koj.1",
       "source": "vanilla+mod_replace",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Catholic religion"
+          "text": "Catholicism religion"
         },
         {
           "kind": "or",
@@ -4701,16 +4770,17 @@
       "formation_event": "nd_inc.1",
       "source": "vanilla+mod_replace",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Quechuan Language language"
+          "text": "Quechuan Language"
         }
       ],
       "english_allow": [
         {
           "kind": "atom",
-          "text": "Folk Peruvian Group group"
+          "text": "Folk Peruvian Group"
         }
       ]
     },
@@ -4739,10 +4809,11 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Uzbek Culture culture"
+          "text": "Uzbek Culture"
         }
       ],
       "english_allow": []
@@ -4772,6 +4843,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -4810,6 +4882,7 @@
       "formation_event": "flavor_mch.5",
       "source": "vanilla+mod_replace",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -4841,6 +4914,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -4875,6 +4949,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_shl.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -4908,6 +4983,7 @@
       "formation_event": "nd_rum.1",
       "source": "vanilla+mod_replace",
       "mod_overrides": true,
+      "variant_label": "Rum",
       "english_potential": [
         {
           "kind": "atom",
@@ -4915,7 +4991,7 @@
         },
         {
           "kind": "atom",
-          "text": "Muslim group"
+          "text": "Islam group"
         }
       ],
       "english_allow": [
@@ -4969,6 +5045,7 @@
       "formation_event": "rise_of_timur.9",
       "source": "vanilla+mod_replace",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "or",
@@ -5012,11 +5089,11 @@
                   "children": [
                     {
                       "kind": "atom",
-                      "text": "Mongolian Group group"
+                      "text": "Mongolian Group"
                     },
                     {
                       "kind": "atom",
-                      "text": "Turkic Group group"
+                      "text": "Turkic Group"
                     }
                   ]
                 },
@@ -5098,6 +5175,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_mgo.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -5145,6 +5223,7 @@
       "formation_event": "nd_ilk.1",
       "source": "vanilla+mod_replace",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -5152,7 +5231,7 @@
         },
         {
           "kind": "atom",
-          "text": "Is Member Of International Organization: Ilkhanate"
+          "text": "Is Member Of International Organization: \u012alkh\u0101n\u0101n"
         },
         {
           "kind": "not",
@@ -5172,7 +5251,7 @@
         },
         {
           "kind": "atom",
-          "text": "Is Leader Of International Organization: Ilkhanate"
+          "text": "Is Leader Of International Organization: \u012alkh\u0101n\u0101n"
         },
         {
           "kind": "block",
@@ -5217,10 +5296,11 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Georgian Culture culture"
+          "text": "Georgian Culture"
         }
       ],
       "english_allow": [
@@ -5255,10 +5335,11 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Armenian Culture culture"
+          "text": "Armenian culture"
         }
       ],
       "english_allow": []
@@ -5286,6 +5367,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -5317,6 +5399,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -5348,6 +5431,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -5379,6 +5463,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -5410,6 +5495,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -5449,6 +5535,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_may.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "or",
@@ -5456,7 +5543,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Maya Language language"
+              "text": "Maya Language"
             },
             {
               "kind": "atom",
@@ -5493,10 +5580,11 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_kry.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Gilak Culture culture"
+          "text": "Gilak culture"
         }
       ],
       "english_allow": []
@@ -5528,10 +5616,11 @@
       "formation_event": "nd_ryu.1",
       "source": "vanilla+mod_replace",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Ryukyu Culture culture"
+          "text": "Ry\u016bky\u016b culture"
         }
       ],
       "english_allow": []
@@ -5564,6 +5653,7 @@
       "formation_event": "nd_chi.1",
       "source": "vanilla+mod_replace",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -5616,16 +5706,17 @@
       "formation_event": "nd_iro.1",
       "source": "vanilla+mod_replace",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Haudenosaunee Group culture group"
+          "text": "Haudenosaunee culture group"
         }
       ],
       "english_allow": [
         {
           "kind": "atom",
-          "text": "Haudenosaunee Group culture group"
+          "text": "Haudenosaunee culture group"
         }
       ]
     },
@@ -5662,6 +5753,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_pue.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "or",
@@ -5669,27 +5761,27 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Keres Culture culture"
+              "text": "Keres Culture"
             },
             {
               "kind": "atom",
-              "text": "Zuni Culture culture"
+              "text": "Zuni Culture"
             },
             {
               "kind": "atom",
-              "text": "Hopi Culture culture"
+              "text": "Hopi Culture"
             },
             {
               "kind": "atom",
-              "text": "Hualapai Culture culture"
+              "text": "Hualapai Culture"
             },
             {
               "kind": "atom",
-              "text": "Tanoan Culture culture"
+              "text": "Tanoan Culture"
             },
             {
               "kind": "atom",
-              "text": "Hohokam Culture culture"
+              "text": "Hohokam Culture"
             }
           ]
         }
@@ -5701,27 +5793,27 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Keres Culture culture"
+              "text": "Keres Culture"
             },
             {
               "kind": "atom",
-              "text": "Zuni Culture culture"
+              "text": "Zuni Culture"
             },
             {
               "kind": "atom",
-              "text": "Hopi Culture culture"
+              "text": "Hopi Culture"
             },
             {
               "kind": "atom",
-              "text": "Hualapai Culture culture"
+              "text": "Hualapai Culture"
             },
             {
               "kind": "atom",
-              "text": "Tanoan Culture culture"
+              "text": "Tanoan Culture"
             },
             {
               "kind": "atom",
-              "text": "Hohokam Culture culture"
+              "text": "Hohokam Culture"
             }
           ]
         }
@@ -5756,6 +5848,7 @@
       "formation_event": "nd_rmn.1",
       "source": "vanilla+mod_replace",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -5795,6 +5888,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_swa.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -5829,6 +5923,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_wes.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -5861,14 +5956,8 @@
               ]
             },
             {
-              "kind": "block",
-              "text": "Current Age Or Later:",
-              "children": [
-                {
-                  "kind": "atom",
-                  "text": "Age: Age 6 Revolutions"
-                }
-              ]
+              "kind": "atom",
+              "text": "Age 6 Revolutions or later"
             }
           ]
         }
@@ -5902,6 +5991,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_bel.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "or",
@@ -5918,14 +6008,8 @@
           ]
         },
         {
-          "kind": "block",
-          "text": "Current Age Or Later:",
-          "children": [
-            {
-              "kind": "atom",
-              "text": "Age: Age 6 Revolutions"
-            }
-          ]
+          "kind": "atom",
+          "text": "Age 6 Revolutions or later"
         }
       ],
       "english_allow": []
@@ -5956,6 +6040,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_fkn.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -5992,6 +6077,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_han.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -6033,6 +6119,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_tus.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -6071,6 +6158,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -6107,6 +6195,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_dal.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "or",
@@ -6160,6 +6249,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -6203,10 +6293,11 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_krs.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Kurdish Culture culture"
+          "text": "Kurdish culture"
         }
       ],
       "english_allow": []
@@ -6237,10 +6328,11 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_soi.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Somali Culture culture"
+          "text": "Somali culture"
         }
       ],
       "english_allow": []
@@ -6273,6 +6365,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -6311,6 +6404,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "or",
@@ -6330,7 +6424,7 @@
             },
             {
               "kind": "atom",
-              "text": "Szekely Culture culture"
+              "text": "Szekely Culture"
             }
           ]
         }
@@ -6365,10 +6459,11 @@
       "formation_event": "nd_mal.1",
       "source": "vanilla+mod_replace",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Mande Language language"
+          "text": "Mande Language"
         }
       ],
       "english_allow": [
@@ -6405,6 +6500,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_nub.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -6439,6 +6535,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_fin.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -6472,6 +6569,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -6507,10 +6605,11 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_kaz.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Kipchak Language language"
+          "text": "Kipchak Language"
         }
       ],
       "english_allow": []
@@ -6541,6 +6640,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_mir.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -6576,6 +6676,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_mor.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -6613,6 +6714,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_nus.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "or",
@@ -6620,15 +6722,15 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Javanese Culture culture"
+              "text": "Javanese Culture"
             },
             {
               "kind": "atom",
-              "text": "Sundanese Culture culture"
+              "text": "Sundanese culture"
             },
             {
               "kind": "atom",
-              "text": "Madurese Culture culture"
+              "text": "Madurese Culture"
             }
           ]
         }
@@ -6670,6 +6772,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_slo.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -6705,6 +6808,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_bno.txt",
+      "variant_label": null,
       "english_potential": [],
       "english_allow": []
     },
@@ -6733,6 +6837,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [],
       "english_allow": []
     },
@@ -6763,6 +6868,7 @@
       "formation_event": "nd_azt.1",
       "source": "vanilla+mod_replace",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "or",
@@ -6774,7 +6880,7 @@
             },
             {
               "kind": "atom",
-              "text": "Nahua Culture culture"
+              "text": "Nahua Culture"
             }
           ]
         }
@@ -6814,6 +6920,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "or",
@@ -6821,7 +6928,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Pontic Greek Culture culture"
+              "text": "Pontic Greek Culture"
             },
             {
               "kind": "atom",
@@ -6837,7 +6944,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Pontic Greek Culture culture"
+              "text": "Pontic Greek Culture"
             },
             {
               "kind": "atom",
@@ -6870,6 +6977,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -6901,6 +7009,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -6933,6 +7042,7 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_jap.txt",
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -6964,6 +7074,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -6995,6 +7106,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -7026,6 +7138,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -7057,6 +7170,7 @@
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -7097,6 +7211,7 @@
       "formation_event": "nd_alm.1",
       "source": "mod_new",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -7104,7 +7219,7 @@
         },
         {
           "kind": "atom",
-          "text": "Sunni religion"
+          "text": "Sunnism religion"
         }
       ],
       "english_allow": [
@@ -7160,10 +7275,11 @@
       "formation_event": "nd_anv.1",
       "source": "mod_new",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Catholic religion"
+          "text": "Catholicism religion"
         },
         {
           "kind": "or",
@@ -7205,7 +7321,7 @@
       "flag": "ATE",
       "color": "map_ATE",
       "level": 2,
-      "fraction": 0.6,
+      "fraction": 0.9,
       "rule": "historical",
       "content_priority": null,
       "regions": [],
@@ -7223,6 +7339,7 @@
       "formation_event": "nd_ate.1",
       "source": "mod_new",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -7279,6 +7396,7 @@
       "formation_event": "nd_cso.1",
       "source": "mod_new",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -7358,14 +7476,15 @@
       "formation_event": "nd_drr.1",
       "source": "mod_new",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Afghan Culture culture"
+          "text": "Afghan Culture"
         },
         {
           "kind": "atom",
-          "text": "Sunni religion"
+          "text": "Sunnism religion"
         }
       ],
       "english_allow": [
@@ -7389,7 +7508,7 @@
       "flag": "EDO",
       "color": "map_EDO",
       "level": 2,
-      "fraction": 0.6,
+      "fraction": 0.9,
       "rule": "historical",
       "content_priority": null,
       "regions": [],
@@ -7407,6 +7526,7 @@
       "formation_event": "nd_edo.1",
       "source": "mod_new",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -7453,14 +7573,15 @@
       "formation_event": "nd_kbu.1",
       "source": "mod_new",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Kanembu Culture culture"
+          "text": "Kanembu Culture"
         },
         {
           "kind": "atom",
-          "text": "Sunni religion"
+          "text": "Sunnism religion"
         }
       ],
       "english_allow": [
@@ -7504,6 +7625,7 @@
       "formation_event": "nd_kws.1",
       "source": "mod_new",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "or",
@@ -7511,11 +7633,11 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Swahili Culture culture"
+              "text": "Swahili Culture"
             },
             {
               "kind": "atom",
-              "text": "Matuumbi Culture culture"
+              "text": "Matuumbi Culture"
             }
           ]
         }
@@ -7556,10 +7678,11 @@
       "formation_event": "nd_lbe.1",
       "source": "mod_new",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Luba Language language"
+          "text": "Luba Language"
         }
       ],
       "english_allow": [
@@ -7598,10 +7721,11 @@
       "formation_event": "nd_lxa.1",
       "source": "mod_new",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Lao Culture culture"
+          "text": "Lao Culture"
         }
       ],
       "english_allow": [
@@ -7644,10 +7768,11 @@
       "formation_event": "nd_mca.1",
       "source": "mod_new",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Muisca Culture culture"
+          "text": "Muisca Culture"
         }
       ],
       "english_allow": [
@@ -7688,6 +7813,7 @@
       "formation_event": "nd_mtp.1",
       "source": "mod_new",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "or",
@@ -7695,11 +7821,11 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Shona Culture culture"
+              "text": "Shona Culture"
             },
             {
               "kind": "atom",
-              "text": "Kalanga Culture culture"
+              "text": "Kalanga Culture"
             }
           ]
         }
@@ -7743,6 +7869,7 @@
       "formation_event": "nd_nzo.1",
       "source": "mod_new",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "or",
@@ -7750,11 +7877,11 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Bai Culture culture"
+              "text": "Bai Culture"
             },
             {
               "kind": "atom",
-              "text": "Yi Culture culture"
+              "text": "Yi Culture"
             }
           ]
         }
@@ -7776,7 +7903,7 @@
       "flag": "OYE",
       "color": "map_OYE",
       "level": 2,
-      "fraction": 0.6,
+      "fraction": 0.9,
       "rule": "historical",
       "content_priority": null,
       "regions": [],
@@ -7794,6 +7921,7 @@
       "formation_event": "nd_oye.1",
       "source": "mod_new",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -7840,6 +7968,7 @@
       "formation_event": "nd_soe.1",
       "source": "mod_new",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -7867,7 +7996,7 @@
       "flag": "TDR",
       "color": "map_TDR",
       "level": 2,
-      "fraction": 0.5,
+      "fraction": 0.9,
       "rule": "plausible",
       "content_priority": null,
       "regions": [],
@@ -7884,6 +8013,7 @@
       "formation_event": "nd_tdr.1",
       "source": "mod_new",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -7891,7 +8021,7 @@
         },
         {
           "kind": "atom",
-          "text": "Orthodox religion"
+          "text": "Orthodoxy religion"
         }
       ],
       "english_allow": [
@@ -7932,6 +8062,7 @@
       "formation_event": "nd_tgd.1",
       "source": "mod_new",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",
@@ -7992,6 +8123,7 @@
       "formation_event": "nd_yav.1",
       "source": "mod_new",
       "mod_overrides": true,
+      "variant_label": null,
       "english_potential": [
         {
           "kind": "atom",

@@ -226,19 +226,22 @@ function lookupLoc(key) {
 }
 
 function displayName(rec) {
-  // Prefer the formable's loc'd full name, falling back to tag-based variants.
-  // Order: tag (most reliably localized like "Sweden"), then derived keys.
   const candidates = [
     rec.tag,                              // SWE -> "Sweden"
     rec.name,                              // explicit name field
     rec.block_key,                         // sweden_f
     rec.tag && rec.tag + "_f",             // BOH_f redirects to $BOH$
   ].filter(Boolean);
+  let base = null;
   for (const k of candidates) {
     const v = lookupLoc(k);
-    if (v) return v;
+    if (v) { base = v; break; }
   }
-  return rec.block_key.replace(/_f$/, "").replace(/_/g, " ");
+  if (!base) base = rec.block_key.replace(/_f$/, "").replace(/_/g, " ");
+  if (rec.variant_label) {
+    return `${base} (${rec.variant_label})`;
+  }
+  return base;
 }
 
 function description(rec) {
