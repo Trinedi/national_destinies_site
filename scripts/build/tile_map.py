@@ -37,7 +37,19 @@ def expand_path(p: str) -> Path:
     return Path(os.path.expanduser(p)).resolve()
 
 
-def make_pyramid(img: Image.Image, max_zoom: int, out_root: Path) -> int:
+RESAMPLERS = {
+    "nearest": Image.NEAREST,
+    "bilinear": Image.BILINEAR,
+    "lanczos": Image.LANCZOS,
+}
+
+
+def make_pyramid(
+    img: Image.Image,
+    max_zoom: int,
+    out_root: Path,
+    resampler: int = Image.LANCZOS,
+) -> int:
     """Generate tiles from max_zoom down to 0. Returns total tile count."""
     out_root.mkdir(parents=True, exist_ok=True)
 
@@ -97,20 +109,33 @@ def make_pyramid(img: Image.Image, max_zoom: int, out_root: Path) -> int:
         # Downsample for next zoom level
         if z > 0:
             new_size = max(1, current.size[0] // 2)
-            current = current.resize((new_size, new_size), Image.NEAREST)
+            current = current.resize((new_size, new_size), resampler)
     return total
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default=None, help="Output dir (default: dist/tiles)")
+    ap.add_argument("--input", default=None,
+                    help="Input PNG (default: data/basemap.png if it exists, "
+                         "else EU5 locations.png)")
+    ap.add_argument("--filter", choices=["nearest", "lanczos", "bilinear"],
+                    default="lanczos",
+                    help="Downsample filter (default: lanczos for recolored basemap)")
     args = ap.parse_args()
 
     repo_root = Path(__file__).resolve().parent.parent.parent
     cfg = load_config(repo_root)
 
-    eu5 = expand_path(cfg["eu5_game_root"])
-    png_path = eu5 / cfg["paths"]["locations_png"]
+    if args.input:
+        png_path = Path(args.input)
+    else:
+        recolored = repo_root / cfg["build"]["data_dir"] / "basemap.png"
+        if recolored.exists():
+            png_path = recolored
+        else:
+            eu5 = expand_path(cfg["eu5_game_root"])
+            png_path = eu5 / cfg["paths"]["locations_png"]
     if not png_path.exists():
         print(f"error: {png_path} not found", file=sys.stderr)
         return 1
@@ -123,9 +148,9 @@ def main() -> int:
     img = Image.open(png_path).convert("RGB")
     print(f"  {img.size}")
 
-    print(f"generating pyramid 0..{max_zoom} into {out_root}")
+    print(f"generating pyramid 0..{max_zoom} into {out_root} (filter={args.filter})")
     t0 = time.time()
-    total = make_pyramid(img, max_zoom, out_root)
+    total = make_pyramid(img, max_zoom, out_root, RESAMPLERS[args.filter])
     print(f"done: {total} tiles in {time.time()-t0:.1f}s")
     return 0
 

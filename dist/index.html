@@ -8,18 +8,20 @@
   html, body { height: 100%; margin: 0; padding: 0; background: #0d0d10; color: #ddd; font-family: system-ui, sans-serif; }
   #map { position: absolute; inset: 0; background: #0d0d10; }
   #info {
-    position: absolute; top: 12px; left: 12px; z-index: 500;
+    position: absolute; top: 12px; right: 12px; z-index: 500;
     background: rgba(20,20,24,0.85); padding: 8px 12px;
     border-radius: 6px; font-size: 13px; line-height: 1.4;
     box-shadow: 0 2px 8px rgba(0,0,0,0.4);
   }
   #info b { color: #ffd28b; }
+  #coord { font-variant-numeric: tabular-nums; opacity: 0.8; }
 </style>
 </head>
 <body>
 <div id="info">
-  <b>National Destinies</b> &mdash; map preview<br />
-  Drag to pan, scroll or pinch to zoom. <span id="coord"></span>
+  <b>National Destinies</b>, map preview<br />
+  Drag to pan, scroll or pinch to zoom.<br />
+  <span id="coord">(hover over map)</span>
 </div>
 <div id="map"></div>
 
@@ -29,12 +31,19 @@ const NATIVE_W = 16384;
 const NATIVE_H = 8192;
 const PADDED = 16384;
 const MAX_ZOOM = 6;
+const TILE_SIZE = 256;
 
-// CRS.Simple maps pixel coords directly. We use Y-flipped pixel coords as
-// LatLng so that (0,0) is top-left of the bitmap. world = padded square at
-// native zoom; visible map content is the top NATIVE_H rows.
+// Custom CRS so tile coordinates align with our pyramid.
+// Default L.CRS.Simple scales latlng->pixel by 2^zoom, which means at zoom 0
+// our 16384-wide world would need 64 tiles (we only have 1). Rebase so
+// scale(MAX_ZOOM) = 1 (1 latlng unit = 1 native pixel) and scale(0) = 1/64.
+const customCRS = L.extend({}, L.CRS.Simple, {
+  scale: function(zoom) { return Math.pow(2, zoom - MAX_ZOOM); },
+  zoom: function(scale) { return Math.log(scale) / Math.LN2 + MAX_ZOOM; },
+});
+
 const map = L.map('map', {
-  crs: L.CRS.Simple,
+  crs: customCRS,
   minZoom: 0,
   maxZoom: MAX_ZOOM,
   zoomControl: true,
@@ -42,24 +51,27 @@ const map = L.map('map', {
   zoomSnap: 0.25,
 });
 
-const bounds = [[-NATIVE_H, 0], [0, NATIVE_W]];
+// CRS.Simple flips y so use negative lat for pixel-down. The padded square
+// world goes from (0,0) top-left to (-PADDED, PADDED) bottom-right. Visible
+// map content occupies the top NATIVE_H rows of that square.
+const worldBounds = [[-PADDED, 0], [0, PADDED]];
+const visibleBounds = [[-NATIVE_H, 0], [0, NATIVE_W]];
 
 L.tileLayer('tiles/{z}/{x}/{y}.png', {
-  tileSize: 256,
+  tileSize: TILE_SIZE,
   minZoom: 0,
   maxZoom: MAX_ZOOM,
   noWrap: true,
-  // Leaflet expects square world for default tile math; padded matches that.
-  bounds: [[-PADDED, 0], [0, PADDED]],
+  bounds: worldBounds,
 }).addTo(map);
 
-map.fitBounds(bounds);
+map.fitBounds(visibleBounds);
 
 const coord = document.getElementById('coord');
 map.on('mousemove', (e) => {
   const x = Math.round(e.latlng.lng);
   const y = Math.round(-e.latlng.lat);
-  coord.textContent = `(x=${x}, y=${y})`;
+  coord.textContent = `pixel (x=${x}, y=${y})`;
 });
 </script>
 </body>
