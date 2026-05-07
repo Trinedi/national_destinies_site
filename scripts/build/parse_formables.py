@@ -165,6 +165,9 @@ def parse_block(block_key: str, body: str, mode: str, source_file: str) -> dict:
     regions = extract_name_list(find_balanced_block(body, "regions"))
     areas = extract_name_list(find_balanced_block(body, "areas"))
     locations = extract_name_list(find_balanced_block(body, "locations"))
+    provinces = extract_name_list(find_balanced_block(body, "provinces"))
+    sub_continents = extract_name_list(find_balanced_block(body, "sub_continents"))
+    continents = extract_name_list(find_balanced_block(body, "continents"))
     allow_body = find_balanced_block(body, "allow")
     potential_body = find_balanced_block(body, "potential")
     form_effect_body = find_balanced_block(body, "form_effect")
@@ -185,6 +188,9 @@ def parse_block(block_key: str, body: str, mode: str, source_file: str) -> dict:
         "regions": regions,
         "areas": areas,
         "locations": locations,
+        "provinces": provinces,
+        "sub_continents": sub_continents,
+        "continents": continents,
         "must_own": extract_owns(allow_body),
         "allow_raw": allow_body.strip() if allow_body else None,
         "potential_raw": potential_body.strip() if potential_body else None,

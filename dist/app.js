@@ -12,19 +12,36 @@ const TILE_SIZE = 256;
 
 // ---- map ----------------------------------------------------------------
 
+// CRS with x-wrap so panning east past the antimeridian wraps around (EU5
+// has wrap_x = yes in default.map). wrapLng tells Leaflet "lng = a is the
+// same as lng = b" for the projection.
 const customCRS = L.extend({}, L.CRS.Simple, {
   scale: (z) => Math.pow(2, z - MAX_ZOOM),
   zoom: (s) => Math.log(s) / Math.LN2 + MAX_ZOOM,
+  wrapLng: [0, NATIVE_W],
 });
+
+// minZoom is computed dynamically: it is the smallest zoom at which the map
+// width is at least the viewport width, so the user can never zoom out into
+// black emptiness.
+function computeMinZoom() {
+  const mapEl = document.getElementById("map");
+  const vw = mapEl.clientWidth || window.innerWidth;
+  // At zoom z, world is NATIVE_W * 2^(z-MAX_ZOOM) pixels wide.
+  // We want world_px >= vw, so z >= log2(vw / NATIVE_W) + MAX_ZOOM
+  const minZ = Math.log2(vw / NATIVE_W) + MAX_ZOOM;
+  return Math.max(0, Math.min(MAX_ZOOM, minZ));
+}
 
 const map = L.map("map", {
   crs: customCRS,
-  minZoom: 0,
+  minZoom: computeMinZoom(),
   maxZoom: MAX_ZOOM,
   zoomControl: true,
   attributionControl: false,
   zoomSnap: 0.25,
   preferCanvas: true,
+  worldCopyJump: false,
 });
 
 const visibleBounds = [[-NATIVE_H, 0], [0, NATIVE_W]];
@@ -33,13 +50,22 @@ L.tileLayer("tiles/{z}/{x}/{y}.png", {
   tileSize: TILE_SIZE,
   minZoom: 0,
   maxZoom: MAX_ZOOM,
-  noWrap: true,
-  // Constrain to visible area so Leaflet does not request padding tiles
-  // that we never generate.
+  noWrap: false,        // allow tile layer to repeat horizontally
   bounds: visibleBounds,
 }).addTo(map);
-map.setMaxBounds(visibleBounds);
+// Constrain vertical pan to map bounds; horizontal wraps freely.
+map.setMaxBounds([
+  [-NATIVE_H * 1.5, -Infinity],
+  [NATIVE_H * 0.5, Infinity],
+]);
 map.fitBounds(visibleBounds);
+
+// Recompute minZoom on viewport resize so the world always fills the screen.
+window.addEventListener("resize", () => {
+  const z = computeMinZoom();
+  map.setMinZoom(z);
+  if (map.getZoom() < z) map.setZoom(z);
+});
 
 // Layer that holds pins for the currently-selected formable.
 const pinLayer = L.layerGroup().addTo(map);
@@ -121,11 +147,38 @@ async function loadAll() {
 
 function expandToAreas(rec) {
   const out = new Set();
+  // continent -> all areas under it
+  for (const c of rec.continents || []) {
+    const cont = geography.continents[c];
+    if (!cont) continue;
+    for (const sub of cont.subregions) {
+      const subInfo = geography.subregions[sub];
+      if (!subInfo) continue;
+      for (const reg of subInfo.regions) {
+        const r = geography.regions[reg];
+        if (r) r.areas.forEach((a) => out.add(a));
+      }
+    }
+  }
+  // sub_continents in formable files == subregions in our geography tree
+  for (const sub of rec.sub_continents || []) {
+    const subInfo = geography.subregions[sub];
+    if (!subInfo) continue;
+    for (const reg of subInfo.regions) {
+      const r = geography.regions[reg];
+      if (r) r.areas.forEach((a) => out.add(a));
+    }
+  }
   for (const r of rec.regions || []) {
     const region = geography.regions[r];
     if (region) region.areas.forEach((a) => out.add(a));
   }
   for (const a of rec.areas || []) out.add(a);
+  // Province entries: bubble up to parent area for tinting.
+  for (const p of rec.provinces || []) {
+    const pInfo = geography.provinces[p];
+    if (pInfo && pInfo.area) out.add(pInfo.area);
+  }
   // Direct location entries: include their parent area too so they get tinted.
   for (const l of [...(rec.locations || []), ...(rec.must_own || [])]) {
     const info = geography.locations[l];
@@ -471,7 +524,7 @@ function showDetail(rec) {
   if (rec.tag) body.push(`<dt>Tag</dt><dd><code>${escapeHtml(rec.tag)}</code></dd>`);
   if (rec._adjective) body.push(`<dt>Adjective</dt><dd>${escapeHtml(rec._adjective)}</dd>`);
   body.push(`<dt>Source</dt><dd>${formatSource(rec)}</dd>`);
-  if (rec.formation_event) body.push(`<dt>Formation event</dt><dd><code>${escapeHtml(rec.formation_event)}</code></dd>`);
+  if (rec.formation_event) body.push(`<dt>Formation event</dt><dd>Triggered on formation</dd>`);
   body.push("</div>");
 
   if (rec.must_own && rec.must_own.length > 0) {

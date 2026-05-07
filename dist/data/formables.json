@@ -21,6 +21,9 @@
         "iceland_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = { has_culture_group = culture_group:scandinavian_group }",
@@ -59,6 +62,9 @@
         "finland_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = culture:swedish",
@@ -94,6 +100,9 @@
         "skaneland_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = culture:danish",
@@ -130,6 +139,9 @@
         "scottish_highlands_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "culture.language = language:gaelic_language\n\t\tculture = {\n\t\t\tOR = {\n\t\t\t\thas_culture_group = culture_group:scottish_group\n\t\t\t\thas_culture_group = culture_group:hibernian_group\n\t\t\t}\n\t\t}",
       "potential_raw": "any_primary_or_accepted_or_tolerated_culture = {\n\t\t\tOR = {\n\t\t\t\thas_culture_group = culture_group:scottish_group\n\t\t\t\thas_culture_group = culture_group:hibernian_group\n\t\t\t}\n\t\t}",
@@ -200,6 +212,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "culture = { has_culture_group = culture_group:british_group }\n\t\tsituation:hundred_years_war = {\n\t\t\tsituation_has_ended = yes\n\t\t}\n\t\ttrigger_if = {\n\t\t\tlimit = { \n\t\t\t\tcountry_exists = c:ENG\n\t\t\t\tthis != c:ENG\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = GBR_f_trigger_eng\n\t\t\t\tOR = {\n\t\t\t\t\ttag = ENG\n\t\t\t\t\tNOT = { country_exists = c:ENG }\n\t\t\t\t\tc:ENG = { is_subject_or_below_of = root }\n\t\t\t\t}\t\t\t\n\t\t\t}\n\t\t}\n\t\ttrigger_if = {\n\t\t\tlimit = { \n\t\t\t\tcountry_exists = c:SCO\n\t\t\t\tthis != c:SCO\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = GBR_f_trigger_sco\n\t\t\t\tOR = {\n\t\t\t\t\ttag = SCO\n\t\t\t\t\tNOT = { country_exists = c:SCO }\n\t\t\t\t\tc:SCO = { is_subject_or_below_of = root }\n\t\t\t\t}\t\t\t\n\t\t\t}\n\t\t}\n\t\ttrigger_if = {\n\t\t\tlimit = { \n\t\t\t\tcountry_exists = c:WLS\n\t\t\t\tthis != c:WLS\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = GBR_f_trigger_wls\n\t\t\t\tOR = {\n\t\t\t\t\ttag = WLS\n\t\t\t\t\tNOT = { country_exists = c:WLS }\n\t\t\t\t\tc:WLS = { is_subject_or_below_of = root }\n\t\t\t\t}\t\t\t\n\t\t\t}\n\t\t}\n\t\ttrigger_if = {\n\t\t\tlimit = { \n\t\t\t\tcountry_exists = c:SBL\n\t\t\t\tthis != c:SBL\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = GBR_f_trigger_sbl\n\t\t\t\tOR = {\n\t\t\t\t\ttag = SBL\n\t\t\t\t\tNOT = { country_exists = c:SBL }\n\t\t\t\t\tc:SBL = { is_subject_or_below_of = root }\n\t\t\t\t}\t\t\t\n\t\t\t}\n\t\t}",
       "potential_raw": "any_primary_or_accepted_or_tolerated_culture = { has_culture_group = culture_group:british_group }",
@@ -256,6 +271,9 @@
         "scottish_lowlands_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "OR = {\n\t\t\tculture = culture:english\n\t\t\tculture.language = language:english_language\n\t\t}",
@@ -300,6 +318,9 @@
         "wales_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "OR = {\n\t\t\tculture = culture:welsh\n\t\t\tculture.language = language:brythonic_language\n\t\t}",
@@ -346,6 +367,9 @@
         "hebrides_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = { has_culture_group = culture_group:scottish_group }",
@@ -381,6 +405,9 @@
         "northumbria_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture ?= { language = language:english_language }",
@@ -415,6 +442,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "OR = {\n\t\t\tAND = {\n\t\t\t\t\n\t\t\t\tis_member_of_international_organization_of_type = { type = high_kingship }\n\t\t\t\tany_international_organizations_member_of = {\n\t\t\t\t\tcount = all\n\t\t\t\t\tfilter = {\n\t\t\t\t\t\tinternational_organization_type = international_organization_type:high_kingship\n\t\t\t\t\t\thas_variable = high_kingship_region\n\t\t\t\t\t\tvar:high_kingship_region = region:ireland_region\n\t\t\t\t\t}\n\t\t\t\t\tleader_country ?= root\n\t\t\t\t}\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = neither_highkingship_nor_lordship_exist_tt\n\t\t\t\tNOT = {\n\t\t\t\t\tany_international_organization = {\n\t\t\t\t\t\tOR = {\n\t\t\t\t\t\t\tinternational_organization_type = international_organization_type:lordship_of_ireland\n\t\t\t\t\t\t\tinternational_organization_type = international_organization_type:high_kingship\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\t\n\t\t\t\ttext = IRE_f_sole_high_kingship_tt\n\t\t\t\tis_member_of_international_organization_of_type = { type = high_kingship }\n\t\t\t\tany_international_organizations_member_of = {\n\t\t\t\t\tcount = all\n\t\t\t\t\tfilter = {\n\t\t\t\t\t\tinternational_organization_type = international_organization_type:high_kingship\n\t\t\t\t\t\thas_variable = high_kingship_region\n\t\t\t\t\t\tvar:high_kingship_region = region:ireland_region\n\t\t\t\t\t}\n\t\t\t\t\ttotal_members = 1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tcustom_tooltip = {\n\t\t\ttext = IRE_f_lordship_tt\n\t\t\tnot = { is_member_of_international_organization = international_organization:lordship_of_ireland }\n\t\t}",
       "potential_raw": "OR = {\n\t\t\tculture = { has_culture_group = culture_group:hibernian_group }\n\t\t\ttag = PLE\n\t\t}",
@@ -520,6 +550,12 @@
       "regions": [],
       "areas": [],
       "locations": [],
+      "provinces": [
+        "meath_province",
+        "dublin_province"
+      ],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = { has_culture_group = culture_group:hibernian_group }",
@@ -554,6 +590,9 @@
         "munster_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = { has_culture_group = culture_group:hibernian_group }",
@@ -592,6 +631,9 @@
         "wallonia_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = { has_culture_group = culture_group:netherlandish_group }",
@@ -629,6 +671,9 @@
         "western_switzerland_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "custom_tooltip = {\n\t\t\ttext = SWI_f_tt\n\t\t\tNOT = { exists = international_organization:swiss_confederation }\n\t\t}",
       "potential_raw": "culture = { has_culture_group = culture_group:swiss_group }",
@@ -668,6 +713,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "custom_tooltip = {\n\t\t\ttext = SPA_f_not_christian\n\n\t\t\tregion:iberia_region = {\n\t\t\t\tNOT = {\n\t\t\t\t\tany_location_in_region = {\n\t\t\t\t\t\towner ?= {\n\t\t\t\t\t\t\treligion.group != religion_group:christian\n\t\t\t\t\t\t\tNOT = { any_overlord_or_above = { this = root } }\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\t\t\n\t\t}",
       "potential_raw": "culture = { has_culture_group = culture_group:iberian_group }\n\t\treligion.group = religion_group:christian",
@@ -712,6 +760,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "custom_tooltip = {\n\t\t\ttext = ADU_f_not_muslim\n\n\t\t\tregion:iberia_region = {\n\t\t\t\tNOT = {\n\t\t\t\t\tany_location_in_region = {\n\t\t\t\t\t\towner = {\n\t\t\t\t\t\t\treligion.group != religion_group:muslim\n\t\t\t\t\t\t\tNOT = { any_overlord_or_above = { this = root } }\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\t\t\n\t\t}",
       "potential_raw": "OR = {\n\t\t\tculture = { has_culture_group = culture_group:maghrebi_group }\n\t\t\tculture = { has_culture_group = culture_group:iberian_group }\n\t\t}\n\t\treligion.group = religion_group:muslim",
@@ -766,6 +817,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = { has_culture_group = culture_group:arabian_group }",
@@ -801,6 +855,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "NOT = { tag = MAM }",
@@ -843,6 +900,9 @@
         "tripolitania_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "tunis",
         "tripoli"
@@ -891,6 +951,22 @@
         "morea_area"
       ],
       "locations": [],
+      "provinces": [
+        "north_epirus_province",
+        "constantinople_province",
+        "edirne_province",
+        "evros_province",
+        "dardanelles_province",
+        "central_macedonia_province",
+        "lower_macedonia_province",
+        "upper_macedonia_province",
+        "chalkidiki_province",
+        "naxos_province",
+        "euboea_province",
+        "lemnos_province"
+      ],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "constantinople"
       ],
@@ -1021,6 +1097,22 @@
         "morea_area"
       ],
       "locations": [],
+      "provinces": [
+        "north_epirus_province",
+        "constantinople_province",
+        "edirne_province",
+        "evros_province",
+        "dardanelles_province",
+        "central_macedonia_province",
+        "lower_macedonia_province",
+        "upper_macedonia_province",
+        "chalkidiki_province",
+        "naxos_province",
+        "euboea_province",
+        "lemnos_province"
+      ],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "constantinople"
       ],
@@ -1138,6 +1230,16 @@
       "regions": [],
       "areas": [],
       "locations": [],
+      "provinces": [
+        "neopatras_province",
+        "thessaly_province",
+        "upper_macedonia_province",
+        "central_macedonia_province",
+        "chalkidiki_province",
+        "lower_macedonia_province"
+      ],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "thessaloniki"
       ],
@@ -1273,6 +1375,16 @@
       "regions": [],
       "areas": [],
       "locations": [],
+      "provinces": [
+        "neopatras_province",
+        "thessaly_province",
+        "upper_macedonia_province",
+        "central_macedonia_province",
+        "chalkidiki_province",
+        "lower_macedonia_province"
+      ],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "thessaloniki"
       ],
@@ -1404,6 +1516,9 @@
         "sardinia_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = { has_culture_group = culture_group:italian_group }",
@@ -1439,6 +1554,9 @@
         "west_mossi_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = culture:mossi",
@@ -1478,6 +1596,9 @@
         "massawa",
         "zula"
       ],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = culture:beja_culture",
@@ -1513,6 +1634,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "axum",
         "lalibela",
@@ -1597,6 +1721,9 @@
         "ried",
         "scharding"
       ],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "munich"
       ],
@@ -1655,6 +1782,12 @@
         "linz",
         "braunau"
       ],
+      "provinces": [
+        "traungau_province",
+        "muhlviertel_province"
+      ],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "vienna"
       ],
@@ -1708,6 +1841,9 @@
         "moravia_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "prague"
       ],
@@ -1761,6 +1897,11 @@
         "upper_saxony_area"
       ],
       "locations": [],
+      "provinces": [
+        "flaming_province"
+      ],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "international_organization:hre = {\n\t\t\tcountry_has_special_status = {\n\t\t\t\ttype = special_status:elector\n\t\t\t\tcountry = root\n\t\t\t}\n\t\t}",
       "potential_raw": "OR = {\n\t\t\tculture = culture:saxon\n\t\t\tculture = culture:lower_saxon\n\t\t}",
@@ -1825,6 +1966,9 @@
         "usingen",
         "wiesbaden"
       ],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": null,
       "potential_raw": "OR = {\n\t\t\tculture = culture:rhine_franconian\n\t\t\tculture = culture:moselle_franconian\n\t\t}",
@@ -1869,6 +2013,9 @@
         "mecklenburg_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": null,
       "potential_raw": "culture = culture:western_pomeranian",
@@ -1903,6 +2050,9 @@
         "pomerania_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": null,
       "potential_raw": "OR = {\n\t\t\tculture = culture:eastern_pomeranian\n\t\t\tculture = culture:western_pomeranian\n\t\t}",
@@ -1948,6 +2098,9 @@
         "prussia_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "NOT = {\n\t\t\thas_reform = government_reform:military_order_reform \n\t\t\thas_estate_privilege = estate_privilege:clergy_powerful_dioceses\n\t\t}\n\t\thas_estate_privilege = estate_privilege:nobles_land_rights\n\n\t\t\"estate_power(estate_type:clergy_estate)\" < 0.20\n\t\t\"estate_power(estate_type:nobles_estate)\" > 0.20\n\t\tat_war = no",
       "potential_raw": "culture = { has_culture_group = culture_group:german_group }",
@@ -2005,6 +2158,9 @@
         "baltic_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "culture = { has_culture_group = culture_group:german_group }",
       "potential_raw": "any_primary_or_accepted_or_tolerated_culture = { has_culture_group = culture_group:german_group }",
@@ -2055,6 +2211,9 @@
         "west_novgorod_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "culture = { has_culture_group = culture_group:baltic_group }",
       "potential_raw": "any_primary_or_accepted_or_tolerated_culture = { has_culture_group = culture_group:baltic_group }",
@@ -2102,6 +2261,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": null,
       "potential_raw": "culture = { has_culture_group = culture_group:german_group }",
@@ -2137,6 +2299,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "custom_tooltip = {\n\t\t\ttext = HRE_f_tt\n\t\t\talways = no\n\t\t}",
       "potential_raw": "exists = international_organization:hre\n\t\tis_member_of_international_organization = international_organization:hre",
@@ -2180,6 +2345,9 @@
         "moldavia_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": null,
       "potential_raw": "culture = culture:moldovan",
@@ -2215,6 +2383,9 @@
         "mazovia_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "warsaw"
       ],
@@ -2257,6 +2428,9 @@
         "silesia_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "OR = {\n\t\t\tculture = culture:silesian\n\t\t\tculture = culture:german_silesian\n\t\t}",
@@ -2305,6 +2479,9 @@
         "mazovia_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "krakow",
         "warsaw"
@@ -2362,6 +2539,9 @@
         "red_ruthenia_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "krakow",
         "vilnius",
@@ -2436,6 +2616,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "kyiv"
       ],
@@ -2527,6 +2710,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "rome",
         "constantinople"
@@ -2649,6 +2835,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "rome",
         "constantinople"
@@ -2732,6 +2921,9 @@
         "algiers_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "tunis"
       ],
@@ -2771,6 +2963,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "any_owned_location = { \n\t\t\tOR = {\n\t\t\t\tregion = region:scandinavian_region \n\t\t\t\tregion = region:north_atlantic_islands_region \n\t\t\t}\n\t\t}\n\t\tany_owned_location = { \n\t\t\tOR = {\n\t\t\t\tregion = region:great_britain_region \n\t\t\t\tregion = region:ireland_region \n\t\t\t}\n\t\t}",
       "potential_raw": "OR = {\n\t\t\tculture = { has_culture_group = culture_group:british_group }\n\t\t\tculture = { has_culture_group = culture_group:scandinavian_group }\n\t\t}",
@@ -2863,6 +3058,11 @@
         "brittany_area"
       ],
       "locations": [],
+      "provinces": [
+        "cornwall_province"
+      ],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "culture = { has_culture_group = culture_group:celtic_group }\n\t\thas_reform = government_reform:celtic_traditions_reform\n\t\tOR = {\n\t\t\tcourt_language = language:brythonic_language\n\t\t\tcourt_language = language:gaelic_language\n\t\t}",
       "potential_raw": "any_primary_or_accepted_or_tolerated_culture = { has_culture_group = culture_group:celtic_group }",
@@ -2925,6 +3125,9 @@
       "regions": [],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "always = no",
       "potential_raw": "always = no",
@@ -2962,6 +3165,11 @@
       "regions": [],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [
+        "europe"
+      ],
       "must_own": [],
       "allow_raw": "is_hegemon = yes",
       "potential_raw": "is_hegemon = yes",
@@ -3002,6 +3210,9 @@
         "ulster_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "OR = {\n\t\t\tculture = { has_culture_group = culture_group:celtic_group }\n\t\t\tculture = { has_culture_group = culture_group:hibernian_group }\n\t\t}",
@@ -3046,6 +3257,9 @@
         "connaught_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "OR = {\n\t\t\tculture = { has_culture_group = culture_group:celtic_group }\n\t\t\tculture = { has_culture_group = culture_group:hibernian_group }\n\t\t}",
@@ -3090,6 +3304,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "milano",
         "florence",
@@ -3142,6 +3359,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "paris"
       ],
@@ -3188,6 +3408,12 @@
         "alsace_area"
       ],
       "locations": [],
+      "provinces": [
+        "palatinate_province",
+        "rhine_valley_province"
+      ],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "OR = {\n\t\t\tculture = culture:rhine_alemannic\n\t\t\tculture = culture:burgundian\n\t\t\tculture = culture:franc_comtois\n\t\t\tculture = culture:lorrain\n\t\t\tculture = culture:walloon\n\t\t\tOR = {\n\t\t\t\ttag = LOR\n\t\t\t\ttag = BUR\n\t\t\t}\n\t\t}",
@@ -3264,6 +3490,9 @@
         "central_switzerland_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "OR = {\n\t\t\tculture = culture:arpitan\n\t\t\tculture = culture:vivaro_alpine\n\t\t\tculture = culture:franc_comtois\n\t\t\tculture = culture:provencal\n\t\t\tOR = {\n\t\t\t\ttag = DAU\n\t\t\t\ttag = SAV\n\t\t\t}\t\t\t\n\t\t}",
@@ -3335,6 +3564,9 @@
         "sicily_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "naples",
         "palermo"
@@ -3430,6 +3662,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "moscow",
         "novgorod"
@@ -3480,6 +3715,9 @@
         "aegean_archipelago_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "athens"
       ],
@@ -3543,6 +3781,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "constantinople"
       ],
@@ -3589,6 +3830,9 @@
         "scottish_lowlands_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture.language = language:brythonic_language",
@@ -3624,6 +3868,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture ?= {\n\t\t\tis_culture_native_american = no\n\t\t\thas_culture_group = culture_group:british_group\n\t\t}",
@@ -3659,6 +3906,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture ?= {\n\t\t\tis_culture_native_american = no\n\t\t\tOR = {\n\t\t\t\thas_culture_group = culture_group:british_group\n\t\t\t\thas_culture_group = culture_group:french_group\n\t\t\t}\n\t\t}",
@@ -3704,6 +3954,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "OR = {\t\t\t\n\t\t\tculture ?= { has_culture_group = culture_group:iberian_group }\n\t\t\tAND = {\n\t\t\t\tculture = { is_culture_native_american = yes }\n\t\t\t\treligion.group = religion_group:christian\n\t\t\t}\n\t\t}",
       "potential_raw": "OR = {\n\t\t\tany_primary_or_accepted_or_tolerated_culture ?= { has_culture_group = culture_group:iberian_group }\n\t\t\treligion.group = religion_group:christian\n\t\t}",
@@ -3776,6 +4029,9 @@
         "bengal_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "culture = culture:bengali",
       "potential_raw": null,
@@ -3811,6 +4067,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "delhi"
       ],
@@ -3873,6 +4132,9 @@
         "nepal_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "culture = { has_culture_group = culture_group:nepali_group }",
       "potential_raw": "",
@@ -3908,6 +4170,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "delhi",
         "agra",
@@ -3976,6 +4241,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "OR = {\n\t\t\tculture.language = language:marathi_language\n\t\t\tculture.language = language:kannada_language\n\t\t\tculture.language = language:telugu_language\n\t\t}\n\t\treligion = religion:sunni",
       "potential_raw": "any_primary_or_accepted_or_tolerated_culture = {\n\t\t\tOR = {\n\t\t\t\tlanguage = language:marathi_language\n\t\t\t\tlanguage = language:kannada_language\n\t\t\t\tlanguage = language:telugu_language\n\t\t\t}\n\t\t}",
@@ -4054,6 +4322,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "culture.language = language:marathi_language\n\t\tNOT = { religion = religion:sunni }",
       "potential_raw": "any_primary_or_accepted_or_tolerated_culture = {\n\t\t\tlanguage = language:marathi_language\n\t\t}",
@@ -4108,6 +4379,11 @@
       "regions": [],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [
+        "south_asia"
+      ],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "",
@@ -4138,6 +4414,9 @@
         "punjab_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = culture:punjabi",
@@ -4173,6 +4452,9 @@
         "rajputana_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture.language = language:rajasthani_language",
@@ -4209,6 +4491,9 @@
         "saurashtra_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "religion.group = religion_group:muslim",
       "potential_raw": "culture.language = language:gujarati_language",
@@ -4249,6 +4534,9 @@
         "shan_highland_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = { has_culture_group = culture_group:shan_group }",
@@ -4284,6 +4572,9 @@
         "malay_peninsula_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = culture:malay_culture\n\t\treligion.group = religion_group:muslim",
@@ -4324,6 +4615,9 @@
         "northern_tai_highland_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = culture:thai_culture",
@@ -4357,6 +4651,14 @@
       "regions": [],
       "areas": [],
       "locations": [],
+      "provinces": [
+        "banten_province",
+        "ogan_province",
+        "tulangbawang_province",
+        "lampung_province"
+      ],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "banten"
       ],
@@ -4399,6 +4701,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = { has_culture_group = culture_group:iranian_group }",
@@ -4433,6 +4738,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": null,
       "potential_raw": "culture = { has_culture_group = culture_group:tibetan_group }",
@@ -4469,6 +4777,9 @@
         "south_hausa_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "sokoto"
       ],
@@ -4526,6 +4837,9 @@
         "south_hausa_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = culture:hausa",
@@ -4562,6 +4876,9 @@
         "kongo_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "religion = religion:bantu_religion",
@@ -4597,6 +4914,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "has_advance = maori_he_whakaputanga_advance",
       "potential_raw": "culture = culture:maori_culture",
@@ -4637,6 +4957,9 @@
         "air_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = culture:tuareg",
@@ -4671,6 +4994,11 @@
       "locations": [
         "saint_jean_pied_de_port"
       ],
+      "provinces": [
+        "navarre_province"
+      ],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = culture:basque",
@@ -4703,6 +5031,11 @@
       "regions": [],
       "areas": [],
       "locations": [],
+      "provinces": [
+        "filastin_province"
+      ],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "jerusalem"
       ],
@@ -4763,6 +5096,9 @@
         "puna_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "religion.group = religion_group:folk_peruvian_group",
       "potential_raw": "culture.language = language:quechuan_language",
@@ -4802,6 +5138,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": null,
       "potential_raw": "culture = culture:uzbek_culture",
@@ -4836,6 +5175,9 @@
         "serbia_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": null,
       "potential_raw": "culture = culture:serbian",
@@ -4875,6 +5217,9 @@
         "ussuri_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": null,
       "potential_raw": "culture ?= { has_culture_group = culture_group:jurchen_group }",
@@ -4907,6 +5252,9 @@
       "regions": [],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": null,
       "potential_raw": "always = no",
@@ -4941,6 +5289,9 @@
         "holstein_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": null,
       "potential_raw": "culture = culture:holsatian",
@@ -4976,6 +5327,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "custom_tooltip = {\n\t\t\ttext = concluded_roto_as_not_ottos_tt\n\t\t\thas_variable = rise_of_the_ottomans_winner_variable\n\t\t}",
       "potential_raw": "culture = { has_culture_group = culture_group:turkic_group }\n\t\treligion.group = religion_group:muslim",
@@ -5028,6 +5382,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "sarai_al_jadid",
         "kazan",
@@ -5167,6 +5524,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "in_civil_war = no",
       "potential_raw": "culture = {\n\t\t\thas_culture_group = culture_group:mongolian_group\n\t\t}",
@@ -5216,6 +5576,9 @@
         "cappadocia_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "exists = international_organization:ilkhanate\n\t\tis_leader_of_international_organization = international_organization:ilkhanate\n\t\tinternational_organization:ilkhanate = {\n\t\t\tnum_countries_with_special_status = {\n\t\t\t\ttype = special_status:ilkhan_claimant\n\t\t\t\tvalue = 0\n\t\t\t}\n\t\t}",
       "potential_raw": "exists = international_organization:ilkhanate\n\t\tis_member_of_international_organization = international_organization:ilkhanate\n\t\tNOT = { tag = IRA }",
@@ -5287,6 +5650,9 @@
         "georgia_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "tbilisi"
       ],
@@ -5328,6 +5694,12 @@
         "armenia_area"
       ],
       "locations": [],
+      "provinces": [
+        "kars_province",
+        "malazgirt_province"
+      ],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = culture:armenian_culture",
@@ -5360,6 +5732,9 @@
       "regions": [],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "always = no",
@@ -5392,6 +5767,13 @@
       "regions": [],
       "areas": [],
       "locations": [],
+      "provinces": [
+        "albania_province",
+        "north_epirus_province",
+        "illyria_province"
+      ],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = culture:albanian",
@@ -5424,6 +5806,9 @@
       "regions": [],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "always = no",
@@ -5456,6 +5841,9 @@
       "regions": [],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "always = no",
@@ -5488,6 +5876,9 @@
       "regions": [],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "always = no",
@@ -5527,6 +5918,9 @@
         "tezulutlan_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "OR = {\n\t\t\tculture.language = language:maya_language\n\t\t\treligion = religion:mayan\n\t\t}",
@@ -5572,6 +5966,11 @@
       "locations": [
         "bandar_e_anzali"
       ],
+      "provinces": [
+        "gilan_province"
+      ],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = culture:gilak_culture",
@@ -5609,6 +6008,9 @@
         "nakijin",
         "oozato"
       ],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = culture:ryukyu_culture",
@@ -5646,6 +6048,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "NOT = { is_situation_active = situation:red_turban_rebellions }",
       "potential_raw": "culture = {\n\t\t\thas_culture_group = culture_group:chinese_group\n\t\t}\n\t\tNOT = { exists = international_organization:middle_kingdom }",
@@ -5699,6 +6104,15 @@
       "regions": [],
       "areas": [],
       "locations": [],
+      "provinces": [
+        "onondowaga_province",
+        "gayogohono_province",
+        "onondagega_province",
+        "onyotaaka_province",
+        "kanienkehaka_province"
+      ],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "culture = { has_culture_group = culture_group:haudenosaunee_group }",
       "potential_raw": "culture = { has_culture_group = culture_group:haudenosaunee_group }",
@@ -5745,6 +6159,9 @@
         "aaku",
         "teypana"
       ],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "OR = {\n\t\t\tculture = culture:keres_culture\n\t\t\tculture = culture:zuni_culture\n\t\t\tculture = culture:hopi_culture\n\t\t\tculture = culture:hualapai_culture\n\t\t\tculture = culture:tanoan_culture\n\t\t\tculture = culture:hohokam_culture\n\t\t}",
       "potential_raw": "OR = {\n\t\t\tculture = culture:keres_culture\n\t\t\tculture = culture:zuni_culture\n\t\t\tculture = culture:hopi_culture\n\t\t\tculture = culture:hualapai_culture\n\t\t\tculture = culture:tanoan_culture\n\t\t\tculture = culture:hohokam_culture\n\t\t}",
@@ -5839,6 +6256,9 @@
         "moldavia_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "bucharest"
       ],
@@ -5880,6 +6300,9 @@
         "swabia_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = culture:swabian",
@@ -5915,6 +6338,9 @@
         "westphalia_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "NOT = {\n\t\t\tgovernment_type = government_type:theocracy\n\t\t}\n\t\tOR = {\n\t\t\tNOT = {\n\t\t\t\tcountry_exists = c:KOL\n\t\t\t}\n\t\t\tcurrent_age_or_later = { age = age_6_revolutions }\n\t\t}",
       "potential_raw": "culture = culture:westphalian",
@@ -5983,6 +6409,9 @@
         "wallonia_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "OR = {\n\t\t\tculture = culture:walloon\n\t\t\tculture = culture:low_franconian\n\t\t}\n\t\tcurrent_age_or_later = { age = age_6_revolutions }",
@@ -6032,6 +6461,9 @@
         "franconia_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = culture:east_franconian",
@@ -6067,6 +6499,9 @@
         "lower_saxony_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "hanover"
       ],
@@ -6109,6 +6544,9 @@
         "tuscany_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "florence"
       ],
@@ -6151,6 +6589,9 @@
         "bulgaria_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = culture:bulgarian",
@@ -6185,6 +6626,9 @@
         "croatia_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "dubrovnik"
       ],
@@ -6239,6 +6683,9 @@
         "transdanubia_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "pest",
         "buda"
@@ -6285,6 +6732,22 @@
         "kordestan_area"
       ],
       "locations": [],
+      "provinces": [
+        "garmian_province",
+        "mosul_province",
+        "diyarbekir_province",
+        "hasankeyf_province",
+        "amadiya_province",
+        "bitlis_province",
+        "nusaybin_province",
+        "ar_ruha_province",
+        "mardin_province",
+        "safhat_jibal_province",
+        "harput_province",
+        "malatya_province"
+      ],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = culture:kurdish_culture",
@@ -6320,6 +6783,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = culture:somali_culture",
@@ -6356,6 +6822,9 @@
         "slavonia_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "zagreb"
       ],
@@ -6397,6 +6866,9 @@
         "transylvania_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "OR = {\n\t\t\tculture = culture:hungarian\n\t\t\tculture = culture:transylvanian\n\t\t\tculture = culture:german_transylvanian\n\t\t\tculture = culture:szekely_culture\n\t\t}",
@@ -6450,6 +6922,9 @@
         "ghana_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "niani"
       ],
@@ -6492,6 +6967,9 @@
         "butana_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = culture:nubian",
@@ -6527,6 +7005,9 @@
         "finland_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = culture:finnish",
@@ -6562,6 +7043,9 @@
         "iceland_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = culture:icelandic",
@@ -6597,6 +7081,9 @@
         "zhetysu_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture.language = language:kipchak_language",
@@ -6632,6 +7119,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = { has_culture_group = culture_group:malagasy_group }",
@@ -6668,6 +7158,9 @@
         "sus_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = culture:moroccan",
@@ -6703,6 +7196,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "trowulan",
         "palembang"
@@ -6764,6 +7260,9 @@
         "slovakia_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = culture:slovak",
@@ -6800,6 +7299,9 @@
         "south_borneo_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "",
@@ -6830,6 +7332,9 @@
         "matrega_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "",
@@ -6859,6 +7364,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "tenochtitlan"
       ],
@@ -6911,6 +7419,16 @@
         "crimea_area"
       ],
       "locations": [],
+      "provinces": [
+        "taman_province",
+        "samegrelo_province",
+        "abkhazia_province",
+        "amasya_province",
+        "tokat_province",
+        "erzurum_province"
+      ],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "trebizond"
       ],
@@ -6970,6 +7488,9 @@
       "regions": [],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "always = no",
@@ -7002,6 +7523,9 @@
       "regions": [],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "always = no",
@@ -7034,6 +7558,9 @@
       "regions": [],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "always = no",
@@ -7067,6 +7594,9 @@
       "regions": [],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "always = no",
@@ -7099,6 +7629,9 @@
       "regions": [],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "always = no",
@@ -7131,6 +7664,9 @@
       "regions": [],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "always = no",
@@ -7163,6 +7699,9 @@
       "regions": [],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "always = no",
@@ -7201,6 +7740,9 @@
         "murcia_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "marrakesh",
         "fez"
@@ -7264,6 +7806,9 @@
         "limousin_province"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "london",
         "rouen",
@@ -7330,6 +7875,9 @@
         "gold_coast_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "kumasi"
       ],
@@ -7387,6 +7935,9 @@
         "chuanxi_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "hangzhou"
       ],
@@ -7466,6 +8017,9 @@
         "sindh_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "kandahar",
         "kabul"
@@ -7517,6 +8071,9 @@
         "lower_niger_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "benin"
       ],
@@ -7563,6 +8120,9 @@
         "north_hausa_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "ngazargamu",
         "njimi"
@@ -7616,6 +8176,9 @@
         "east_african_island_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "kilwa_kisiwani"
       ],
@@ -7669,6 +8232,9 @@
         "moshiko_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "lake_upemba"
       ],
@@ -7711,6 +8277,9 @@
         "northern_tai_highland_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "muang_sua",
         "vientiane"
@@ -7758,6 +8327,9 @@
         "boiaca_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "funza",
         "chunsua"
@@ -7804,6 +8376,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "great_zimbabwe"
       ],
@@ -7860,6 +8435,9 @@
         "northern_tai_highland_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "taihe_dali"
       ],
@@ -7912,6 +8490,9 @@
         "benin_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "oyo_ile"
       ],
@@ -7958,6 +8539,9 @@
         "ghana_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "gao",
         "timbuktu"
@@ -8004,6 +8588,9 @@
         "crimea_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "theodoro"
       ],
@@ -8052,6 +8639,9 @@
       ],
       "areas": [],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "jingzhao",
         "kashgar"
@@ -8113,6 +8703,9 @@
         "punjab_area"
       ],
       "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
       "must_own": [
         "thatta",
         "peshawar"
