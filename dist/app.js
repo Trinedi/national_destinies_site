@@ -43,10 +43,24 @@ map.fitBounds(visibleBounds);
 
 // Layer that holds pins for the currently-selected formable.
 const pinLayer = L.layerGroup().addTo(map);
+let areaLayer = null;  // Leaflet GeoJSON layer with all 805 area polygons
 
 // pixel coords (x, y) -> Leaflet latlng (we use -y for lat).
 function px(x, y) {
   return L.latLng(-y, x);
+}
+
+// Convert GeoJSON's [x, y] (pixel space) into Leaflet's flipped CRS.Simple.
+// Leaflet's GeoJSON layer interprets coords as [lng, lat]; we want lat = -y.
+function flipGeoJson(gj) {
+  function flipCoords(c) {
+    if (typeof c[0] === "number") return [c[0], -c[1]];
+    return c.map(flipCoords);
+  }
+  for (const feat of gj.features) {
+    feat.geometry.coordinates = flipCoords(feat.geometry.coordinates);
+  }
+  return gj;
 }
 
 // ---- data load ----------------------------------------------------------
@@ -60,33 +74,114 @@ const $detailBody = document.getElementById("detail-body");
 const $detailClose = document.getElementById("detail-close");
 
 let formables = [];
+let formablesByKey = {};
 let geography = null;
 let locIndex = null;
 let loc = {};
+let areasGeoJson = null;
+let areaToFormables = {};   // area_name -> [formable rec, ...] primary first
+let formableTerritory = {}; // block_key -> Set<area_name>
 let selected = null;
 
 async function loadAll() {
-  const [f, g, l, lo] = await Promise.all([
+  const [f, g, l, lo, ag] = await Promise.all([
     fetch("data/formables.json").then((r) => r.json()),
     fetch("data/geography.json").then((r) => r.json()),
     fetch("data/locations_index.json").then((r) => r.json()),
     fetch("data/loc.json").then((r) => r.json()),
+    fetch("data/areas.geojson").then((r) => r.json()),
   ]);
   formables = f.formables;
   geography = g;
   locIndex = l.locations;
   loc = lo.strings;
+  areasGeoJson = ag;
 
   formables.forEach((rec) => {
     rec._displayName = displayName(rec);
     rec._description = description(rec);
     rec._adjective = lookupLoc(rec.adjective);
+    rec._color = colorForTag(rec.tag || rec.block_key);
     rec._haystack = (
       (rec._displayName || "") + " " + (rec.tag || "") + " " + rec.block_key
     ).toLowerCase();
+    formablesByKey[rec.block_key] = rec;
   });
   formables.sort((a, b) => a._displayName.localeCompare(b._displayName));
+
+  buildTerritoryIndex();
   renderList();
+  renderAreaLayer();
+}
+
+// ---- formable -> territory areas ---------------------------------------
+
+function expandToAreas(rec) {
+  const out = new Set();
+  for (const r of rec.regions || []) {
+    const region = geography.regions[r];
+    if (region) region.areas.forEach((a) => out.add(a));
+  }
+  for (const a of rec.areas || []) out.add(a);
+  // Direct location entries: include their parent area too so they get tinted.
+  for (const l of [...(rec.locations || []), ...(rec.must_own || [])]) {
+    const info = geography.locations[l];
+    if (info && info.area) out.add(info.area);
+  }
+  return out;
+}
+
+function buildTerritoryIndex() {
+  // formable -> areas
+  for (const rec of formables) {
+    formableTerritory[rec.block_key] = expandToAreas(rec);
+  }
+  // area -> formables (sorted by primacy)
+  const tmp = {};
+  for (const rec of formables) {
+    for (const area of formableTerritory[rec.block_key]) {
+      (tmp[area] = tmp[area] || []).push(rec);
+    }
+  }
+  for (const area in tmp) {
+    tmp[area].sort(primacyCompare);
+  }
+  areaToFormables = tmp;
+}
+
+const SOURCE_RANK = {
+  mod_new: 0,
+  "vanilla+mod_replace": 1,
+  "vanilla+mod_inject": 2,
+  vanilla: 3,
+};
+
+function primacyCompare(a, b) {
+  const sa = SOURCE_RANK[a.source] ?? 4;
+  const sb = SOURCE_RANK[b.source] ?? 4;
+  if (sa !== sb) return sa - sb;
+  // Smaller territory = more specific
+  const ta = formableTerritory[a.block_key].size;
+  const tb = formableTerritory[b.block_key].size;
+  if (ta !== tb) return ta - tb;
+  return (a.tag || a.block_key).localeCompare(b.tag || b.block_key);
+}
+
+// ---- color hashing ------------------------------------------------------
+
+function colorForTag(s) {
+  if (!s) return "#888";
+  // FNV-ish hash
+  let h = 0x811c9dc5;
+  for (let i = 0; i < s.length; i++) {
+    h ^= s.charCodeAt(i);
+    h = (h * 0x01000193) >>> 0;
+  }
+  const hue = h % 360;
+  // Skewed sat/lightness to avoid neon while staying distinguishable.
+  const sat = 55 + (h % 25);
+  const lit = 50 + ((h >> 8) % 12);
+  return `hsl(${hue}, ${sat}%, ${lit}%)`;
 }
 
 // EU5 loc values can redirect with $KEY$ and embed scripted helpers like
@@ -218,16 +313,78 @@ function makeRow(rec) {
 
 function selectFormable(rec) {
   selected = rec;
-  // update list selection highlight
   $list.querySelectorAll(".formable-row").forEach((r) => {
     r.classList.toggle("selected", r.dataset.key === rec.block_key);
   });
   showPins(rec);
   showDetail(rec);
+  restyleAreaLayer();
   const tb = territoryBounds(rec);
   if (tb) {
     map.fitBounds(tb.pad(0.15), { maxZoom: 5, animate: true });
   }
+}
+
+// ---- area polygon rendering --------------------------------------------
+
+function renderAreaLayer() {
+  flipGeoJson(areasGeoJson);
+  areaLayer = L.geoJSON(areasGeoJson, {
+    style: areaStyle,
+    interactive: true,
+    onEachFeature: (feature, layer) => {
+      layer.on("click", (e) => {
+        const claimants = areaToFormables[feature.properties.name] || [];
+        if (claimants.length > 0) {
+          selectFormable(claimants[0]);
+        }
+      });
+    },
+  }).addTo(map);
+}
+
+function areaStyle(feature) {
+  const areaName = feature.properties.name;
+  const claimants = areaToFormables[areaName];
+  const primary = claimants && claimants[0];
+  const primaryColor = primary ? primary._color : "#666";
+
+  if (!selected) {
+    return {
+      stroke: false,
+      fill: true,
+      fillColor: primaryColor,
+      fillOpacity: 0.32,
+    };
+  }
+  const isInSelected = formableTerritory[selected.block_key].has(areaName);
+  if (isInSelected) {
+    return {
+      stroke: true,
+      color: selected._color,
+      weight: 1.5,
+      opacity: 0.9,
+      fill: true,
+      fillColor: selected._color,
+      fillOpacity: 0.55,
+    };
+  }
+  return {
+    stroke: false,
+    fill: true,
+    fillColor: primaryColor,
+    fillOpacity: 0.06,
+  };
+}
+
+function restyleAreaLayer() {
+  if (!areaLayer) return;
+  areaLayer.setStyle(areaStyle);
+}
+
+function clearSelectionAndRestyle() {
+  clearSelection();
+  restyleAreaLayer();
 }
 
 function showPins(rec) {
@@ -341,7 +498,7 @@ function clearSelection() {
   $list.querySelectorAll(".formable-row.selected").forEach((r) => r.classList.remove("selected"));
 }
 
-$detailClose.addEventListener("click", clearSelection);
+$detailClose.addEventListener("click", clearSelectionAndRestyle);
 $search.addEventListener("input", renderList);
 $sourceFilter.addEventListener("change", renderList);
 
