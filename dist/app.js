@@ -68,11 +68,12 @@ window.addEventListener("resize", () => {
   if (map.getZoom() < z) map.setZoom(z);
 });
 
-// Layer that holds pins for the currently-selected formable.
-const pinLayer = L.layerGroup().addTo(map);
-// Three GeoJSON copies so wrap-around shows polygons in adjacent worlds
-// (CRS.Simple polygons do not auto-wrap the way tile pyramids do).
-const areaLayers = { center: null, west: null, east: null };
+// Vector overlays do not auto-wrap with CRS.Simple, so we manage one set
+// of copies per visible world index. As the user pans east or west we add
+// copies for newly-visible worlds and drop ones that have left the
+// viewport (with a 1-world buffer so it stays seamless during drag).
+const areaLayers = new Map();   // worldIndex -> L.GeoJSON
+const pinLayers = new Map();    // worldIndex -> L.LayerGroup
 
 // pixel coords (x, y) -> Leaflet latlng (we use -y for lat).
 function px(x, y) {
@@ -435,33 +436,90 @@ function cycleSelectionForArea(areaName) {
 // ---- area polygon rendering --------------------------------------------
 
 function renderAreaLayer() {
-  // Build three coordinate-shifted copies of the GeoJSON: canonical at 0,
-  // wrap copies at -NATIVE_W and +NATIVE_W so panning across the
-  // antimeridian shows polygons in any direction.
-  const shifts = [
-    ["center", 0],
-    ["west", -NATIVE_W],
-    ["east", NATIVE_W],
-  ];
-  for (const [key, dx] of shifts) {
-    const shifted = flipGeoJson(areasGeoJson, dx);
-    areaLayers[key] = L.geoJSON(shifted, {
-      style: areaStyle,
-      interactive: true,
-      onEachFeature: (feature, layer) => {
-        const areaName = feature.properties.name;
-        layer.on("click", (e) => {
-          L.DomEvent.stopPropagation(e);
-          cycleSelectionForArea(areaName);
-        });
-        layer.on("mouseover", (e) => {
-          const primary = visiblePrimaryFor(areaName);
-          if (primary) showHoverCard(primary, e, areaName);
-        });
-        layer.on("mousemove", (e) => positionHoverCard(e));
-        layer.on("mouseout", hideHoverCard);
-      },
-    }).addTo(map);
+  // Initial set: the worlds visible in the current viewport plus one
+  // buffer copy on each side. After this initial render, updateWraps
+  // takes over on every map move.
+  updateWraps();
+}
+
+function createAreaCopy(worldIndex) {
+  const shifted = flipGeoJson(areasGeoJson, worldIndex * NATIVE_W);
+  return L.geoJSON(shifted, {
+    style: areaStyle,
+    interactive: true,
+    onEachFeature: (feature, layer) => {
+      const areaName = feature.properties.name;
+      layer.on("click", (e) => {
+        L.DomEvent.stopPropagation(e);
+        cycleSelectionForArea(areaName);
+      });
+      layer.on("mouseover", (e) => {
+        const primary = visiblePrimaryFor(areaName);
+        if (primary) showHoverCard(primary, e, areaName);
+      });
+      layer.on("mousemove", (e) => positionHoverCard(e));
+      layer.on("mouseout", hideHoverCard);
+    },
+  }).addTo(map);
+}
+
+function createPinCopy(worldIndex) {
+  const grp = L.layerGroup().addTo(map);
+  if (!selected) return grp;
+  const dx = worldIndex * NATIVE_W;
+  for (const locName of selected.must_own) {
+    const info = locIndex[locName];
+    if (!info) continue;
+    const [cx, cy] = info.centroid;
+    const labelText = lookupLoc(locName) || prettifyName(locName);
+    L.marker(L.latLng(-cy, cx + dx), {
+      icon: L.divIcon({
+        className: "must-own-marker",
+        html: `<div class="must-own-pin"></div><div class="must-own-label">${escapeHtml(labelText)}</div>`,
+        iconSize: [14, 14],
+        iconAnchor: [7, 7],
+      }),
+      keyboard: false,
+    }).addTo(grp);
+  }
+  return grp;
+}
+
+function visibleWorldRange() {
+  const b = map.getBounds();
+  // Keep a 1-world buffer on each side so the user doesn't see polygons
+  // pop in mid-drag.
+  const lo = Math.floor(b.getWest() / NATIVE_W) - 1;
+  const hi = Math.ceil(b.getEast() / NATIVE_W) + 1;
+  return [lo, hi];
+}
+
+function updateWraps() {
+  const [lo, hi] = visibleWorldRange();
+  const needed = new Set();
+  for (let k = lo; k <= hi; k++) needed.add(k);
+
+  // Remove copies that have left the buffered range.
+  for (const k of [...areaLayers.keys()]) {
+    if (!needed.has(k)) {
+      map.removeLayer(areaLayers.get(k));
+      areaLayers.delete(k);
+    }
+  }
+  for (const k of [...pinLayers.keys()]) {
+    if (!needed.has(k)) {
+      map.removeLayer(pinLayers.get(k));
+      pinLayers.delete(k);
+    }
+  }
+  // Add copies for newly-visible worlds.
+  for (const k of needed) {
+    if (!areaLayers.has(k)) {
+      areaLayers.set(k, createAreaCopy(k));
+    }
+    if (!pinLayers.has(k)) {
+      pinLayers.set(k, createPinCopy(k));
+    }
   }
 }
 
@@ -521,8 +579,15 @@ function areaStyle(feature) {
 }
 
 function restyleAreaLayer() {
-  for (const key of Object.keys(areaLayers)) {
-    if (areaLayers[key]) areaLayers[key].setStyle(areaStyle);
+  for (const layer of areaLayers.values()) {
+    layer.setStyle(areaStyle);
+  }
+}
+
+function rebuildPinCopies() {
+  for (const [k, grp] of pinLayers) {
+    map.removeLayer(grp);
+    pinLayers.set(k, createPinCopy(k));
   }
 }
 
@@ -532,29 +597,15 @@ function clearSelectionAndRestyle() {
 }
 
 function showPins(rec) {
-  pinLayer.clearLayers();
-  for (const locName of rec.must_own) {
-    const info = locIndex[locName];
-    if (!info) {
-      console.warn("must_own location not in index:", locName);
-      continue;
-    }
-    const [cx, cy] = info.centroid;
-    const labelText = lookupLoc(locName) || prettifyName(locName);
-    // Mirror pins into the two wrap worlds so they remain visible when
-    // panning across the antimeridian.
-    for (const dx of [0, -NATIVE_W, NATIVE_W]) {
-      const marker = L.marker(L.latLng(-cy, cx + dx), {
-        icon: L.divIcon({
-          className: "must-own-marker",
-          html: `<div class="must-own-pin"></div><div class="must-own-label">${escapeHtml(labelText)}</div>`,
-          iconSize: [14, 14],
-          iconAnchor: [7, 7],
-        }),
-        keyboard: false,
-      });
-      marker.addTo(pinLayer);
-    }
+  // Pins live inside per-world layer groups managed by updateWraps.
+  // Rebuild them so all currently-live copies reflect the new selection.
+  rebuildPinCopies();
+}
+
+function clearPins() {
+  for (const [k, grp] of pinLayers) {
+    map.removeLayer(grp);
+    pinLayers.set(k, L.layerGroup().addTo(map));
   }
 }
 
@@ -702,7 +753,7 @@ function escapeHtml(s) {
 function clearSelection() {
   selected = null;
   lastClickedArea = null;
-  pinLayer.clearLayers();
+  clearPins();
   $detail.hidden = true;
   $list.querySelectorAll(".formable-row.selected").forEach((r) => r.classList.remove("selected"));
 }
@@ -753,6 +804,9 @@ map.on("click", () => {
   if (selected) clearSelectionAndRestyle();
   lastClickedArea = null;
 });
+
+// Maintain wrap copies as the viewport moves.
+map.on("moveend", updateWraps);
 
 // ---- hover card --------------------------------------------------------
 
