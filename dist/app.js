@@ -67,7 +67,6 @@ function flipGeoJson(gj) {
 
 const $list = document.getElementById("formables-list");
 const $search = document.getElementById("search");
-const $sourceFilter = document.getElementById("source-filter");
 const $detail = document.getElementById("detail");
 const $detailName = document.getElementById("detail-name");
 const $detailBody = document.getElementById("detail-body");
@@ -91,7 +90,11 @@ async function loadAll() {
     fetch("data/loc.json").then((r) => r.json()),
     fetch("data/areas.geojson").then((r) => r.json()),
   ]);
-  formables = f.formables;
+  // Hide vanilla-untouched formables: the mod does not enhance them and
+  // they would just clutter the list and tint the map without any reward.
+  formables = f.formables.filter(
+    (r) => r.mod_overrides || r.source === "mod_new"
+  );
   geography = g;
   locIndex = l.locations;
   loc = lo.strings;
@@ -244,11 +247,8 @@ function description(rec) {
 
 function renderList() {
   const term = $search.value.trim().toLowerCase();
-  const sourceFilter = $sourceFilter.value;
   const filtered = formables.filter((f) => {
     if (term && !f._haystack.includes(term)) return false;
-    if (sourceFilter === "mod" && !f.mod_overrides) return false;
-    if (sourceFilter === "vanilla" && f.source !== "vanilla") return false;
     return true;
   });
   $list.replaceChildren();
@@ -334,9 +334,12 @@ function renderAreaLayer() {
     interactive: true,
     onEachFeature: (feature, layer) => {
       layer.on("click", (e) => {
+        L.DomEvent.stopPropagation(e);
         const claimants = areaToFormables[feature.properties.name] || [];
         if (claimants.length > 0) {
           selectFormable(claimants[0]);
+        } else if (selected) {
+          clearSelectionAndRestyle();
         }
       });
     },
@@ -500,7 +503,13 @@ function clearSelection() {
 
 $detailClose.addEventListener("click", clearSelectionAndRestyle);
 $search.addEventListener("input", renderList);
-$sourceFilter.addEventListener("change", renderList);
+
+// Click anywhere on the map that is NOT a claimed area polygon: deselect.
+// (Polygon click handlers stop propagation, so this only fires for empty
+// space and unclaimed areas.)
+map.on("click", () => {
+  if (selected) clearSelectionAndRestyle();
+});
 
 loadAll().catch((err) => {
   console.error("data load failed:", err);

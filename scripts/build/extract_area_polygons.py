@@ -39,6 +39,32 @@ def expand_path(p: str) -> Path:
 
 
 HEX_LINE = re.compile(r"^\s*([a-zA-Z0-9_]+)\s*=\s*([0-9a-fA-F]+)\s*(?:#.*)?$")
+TEMPLATE_LINE = re.compile(r"^\s*([a-zA-Z0-9_]+)\s*=\s*\{(.*?)\}\s*$")
+
+# Topographies that should NOT contribute to area polygons (sea zones leak
+# into adjacent areas otherwise, since EU5 "areas" group land and the
+# coastal sea zones around them).
+NON_LAND_TOPO = {
+    "coastal_ocean", "ocean", "inland_sea", "narrows",
+    "deep_ocean", "ocean_wasteland",
+    "lakes", "high_lakes",
+}
+
+
+def parse_location_templates(path: Path) -> dict[str, str]:
+    out: dict[str, str] = {}
+    with open(path, encoding="utf-8-sig") as f:
+        for line in f:
+            stripped = line.strip()
+            if not stripped or stripped.startswith("#"):
+                continue
+            m = TEMPLATE_LINE.match(line)
+            if not m:
+                continue
+            tm = re.search(r"topography\s*=\s*([a-z_]+)", m.group(2))
+            if tm:
+                out[m.group(1)] = tm.group(1)
+    return out
 
 
 def parse_named_locations(path: Path) -> dict[str, int]:
@@ -64,20 +90,27 @@ def build_area_id_map(
     packed: np.ndarray,
     name_to_color: dict[str, int],
     geography: dict,
+    name_to_topo: dict[str, str],
 ) -> tuple[np.ndarray, list[str]]:
     """Map every pixel to an area index (0 = not-in-any-area).
 
-    Returns (area_id_map of shape HxW int32, area_names list where index 0
-    is the sentinel "" for "no area").
+    Sea, lake, and ocean locations are excluded so polygons hug the
+    coastline instead of leaking into adjacent water tiles.
     """
     # Build location -> area lookup, then color -> area_id.
     loc_to_area: dict[str, str] = {}
+    skipped_water = 0
     for prov_name, prov in geography["provinces"].items():
         area = prov.get("area")
         if not area:
             continue
         for loc in prov["locations"]:
+            topo = name_to_topo.get(loc)
+            if topo in NON_LAND_TOPO:
+                skipped_water += 1
+                continue
             loc_to_area[loc] = area
+    print(f"  skipped {skipped_water} water/lake locations", flush=True)
 
     # Stable area ordering for deterministic IDs.
     area_names_sorted = [""] + sorted(set(loc_to_area.values()))
@@ -179,8 +212,9 @@ def main() -> int:
 
     png_path = eu5 / cfg["paths"]["locations_png"]
     named_path = eu5 / cfg["paths"]["named_locations"]
+    templates_path = eu5 / "in_game/map_data/location_templates.txt"
     geo_path = web_data_dir / "geography.json"
-    for p in [png_path, named_path, geo_path]:
+    for p in [png_path, named_path, templates_path, geo_path]:
         if not p.exists():
             print(f"error: {p} not found", file=sys.stderr)
             return 1
@@ -192,6 +226,10 @@ def main() -> int:
     print("loading named_locations ...")
     name_to_color = parse_named_locations(named_path)
     print(f"  {len(name_to_color)} entries")
+
+    print("loading location_templates ...")
+    name_to_topo = parse_location_templates(templates_path)
+    print(f"  {len(name_to_topo)} entries with topography")
 
     print(f"loading {png_path} ...")
     Image.MAX_IMAGE_PIXELS = None
@@ -206,7 +244,9 @@ def main() -> int:
     del img
 
     print("building area id map ...")
-    area_id_map, area_names = build_area_id_map(packed, name_to_color, geography)
+    area_id_map, area_names = build_area_id_map(
+        packed, name_to_color, geography, name_to_topo
+    )
     del packed
 
     print(f"extracting polygons (simplify={args.simplify}px) ...")
