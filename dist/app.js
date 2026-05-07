@@ -80,7 +80,7 @@ async function loadAll() {
   formables.forEach((rec) => {
     rec._displayName = displayName(rec);
     rec._description = description(rec);
-    rec._adjective = (rec.adjective && loc[rec.adjective]) || null;
+    rec._adjective = lookupLoc(rec.adjective);
     rec._haystack = (
       (rec._displayName || "") + " " + (rec.tag || "") + " " + rec.block_key
     ).toLowerCase();
@@ -89,18 +89,46 @@ async function loadAll() {
   renderList();
 }
 
+// EU5 loc values can redirect with $KEY$ and embed scripted helpers like
+// [ShowAreaName('foo_area')]. Resolve both so display strings are clean.
+const REF_RE = /\$([A-Za-z_][A-Za-z0-9_]*)\$/g;
+const SHOW_RE = /\[Show(?:Area|Region|Subregion|Continent|Province|Country|Estate(?:Type)?)?Name(?:WithNoTooltip)?\(\s*'([^']+)'\s*\)\]/g;
+
+function resolveLoc(value, depth = 0) {
+  if (!value || depth > 5) return value || "";
+  // $REF$ placeholders
+  let out = value.replace(REF_RE, (whole, key) => {
+    const v = loc[key];
+    return v ? resolveLoc(v, depth + 1) : whole;
+  });
+  // Scripted name helpers
+  out = out.replace(SHOW_RE, (whole, key) => {
+    const v = loc[key];
+    return v ? resolveLoc(v, depth + 1) : prettifyName(key);
+  });
+  return out;
+}
+
+function lookupLoc(key) {
+  if (!key) return null;
+  const v = loc[key];
+  if (v == null) return null;
+  return resolveLoc(v);
+}
+
 function displayName(rec) {
   // Prefer the formable's loc'd full name, falling back to tag-based variants.
+  // Order: tag (most reliably localized like "Sweden"), then derived keys.
   const candidates = [
-    rec.block_key,                                    // sweden_f -> "Sweden"
-    rec.tag && rec.tag + "_f",                        // SWE_f
-    rec.name,                                          // typically the loc key
-    rec.tag,                                           // raw tag
+    rec.tag,                              // SWE -> "Sweden"
+    rec.name,                              // explicit name field
+    rec.block_key,                         // sweden_f
+    rec.tag && rec.tag + "_f",             // BOH_f redirects to $BOH$
   ].filter(Boolean);
   for (const k of candidates) {
-    if (loc[k]) return loc[k];
+    const v = lookupLoc(k);
+    if (v) return v;
   }
-  // Last resort: prettify the block key
   return rec.block_key.replace(/_f$/, "").replace(/_/g, " ");
 }
 
@@ -111,7 +139,8 @@ function description(rec) {
     rec.name && rec.name + "_f_desc",
   ].filter(Boolean);
   for (const k of candidates) {
-    if (loc[k]) return loc[k];
+    const v = lookupLoc(k);
+    if (v) return v;
   }
   return null;
 }
@@ -195,11 +224,14 @@ function selectFormable(rec) {
   });
   showPins(rec);
   showDetail(rec);
+  const tb = territoryBounds(rec);
+  if (tb) {
+    map.fitBounds(tb.pad(0.15), { maxZoom: 5, animate: true });
+  }
 }
 
 function showPins(rec) {
   pinLayer.clearLayers();
-  const pinBounds = [];
   for (const locName of rec.must_own) {
     const info = locIndex[locName];
     if (!info) {
@@ -207,10 +239,8 @@ function showPins(rec) {
       continue;
     }
     const [cx, cy] = info.centroid;
-    const ll = px(cx, cy);
-    pinBounds.push(ll);
-    const labelText = loc[locName] || prettifyName(locName);
-    const marker = L.marker(ll, {
+    const labelText = lookupLoc(locName) || prettifyName(locName);
+    const marker = L.marker(px(cx, cy), {
       icon: L.divIcon({
         className: "must-own-marker",
         html: `<div class="must-own-pin"></div><div class="must-own-label">${escapeHtml(labelText)}</div>`,
@@ -220,12 +250,6 @@ function showPins(rec) {
       keyboard: false,
     });
     marker.addTo(pinLayer);
-  }
-  if (pinBounds.length > 0) {
-    map.fitBounds(L.latLngBounds(pinBounds).pad(0.4), {
-      maxZoom: 5,
-      animate: true,
-    });
   }
 }
 
@@ -254,7 +278,7 @@ function showDetail(rec) {
     body.push('<div class="req-badges">');
     for (const locName of rec.must_own) {
       const info = locIndex[locName];
-      const label = loc[locName] || prettifyName(locName);
+      const label = lookupLoc(locName) || prettifyName(locName);
       const note = info ? "" : " (unknown location)";
       body.push(`<span class="req-badge required">${escapeHtml(label)}${note}</span>`);
     }
@@ -264,13 +288,13 @@ function showDetail(rec) {
   if (rec.regions && rec.regions.length > 0) {
     body.push("<h3>Regions in territory pool</h3>");
     body.push("<ul>");
-    for (const r of rec.regions) body.push(`<li>${escapeHtml(loc[r] || prettifyName(r))}</li>`);
+    for (const r of rec.regions) body.push(`<li>${escapeHtml(lookupLoc(r) || prettifyName(r))}</li>`);
     body.push("</ul>");
   }
   if (rec.areas && rec.areas.length > 0) {
     body.push("<h3>Areas in territory pool</h3>");
     body.push("<ul>");
-    for (const a of rec.areas) body.push(`<li>${escapeHtml(loc[a] || prettifyName(a))}</li>`);
+    for (const a of rec.areas) body.push(`<li>${escapeHtml(lookupLoc(a) || prettifyName(a))}</li>`);
     body.push("</ul>");
   }
 
