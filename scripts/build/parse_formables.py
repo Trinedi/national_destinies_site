@@ -246,6 +246,31 @@ def derive_variant_label(block_key: str, tag: str | None) -> str | None:
     return body.title()
 
 
+TERRITORY_FIELDS = (
+    "continents", "sub_continents", "regions", "areas",
+    "provinces", "locations", "must_own",
+)
+
+
+def apply_territory_overrides(records: list[dict], overrides: dict) -> None:
+    if not overrides:
+        return
+    n = 0
+    for r in records:
+        tag = r.get("tag")
+        if not tag or tag not in overrides:
+            continue
+        if any(r.get(f) for f in TERRITORY_FIELDS):
+            continue  # only fill in when the formable has no territory at all
+        patch = overrides[tag]
+        for k, v in patch.items():
+            if k in TERRITORY_FIELDS and v:
+                r[k] = list(v)
+        n += 1
+    if n:
+        print(f"  applied territory overrides to {n} formable(s)")
+
+
 def annotate_variants(records: list[dict]) -> None:
     by_tag: dict[str, list[dict]] = {}
     for r in records:
@@ -334,6 +359,7 @@ def main() -> int:
     print(f"  {len(mod)} mod entries (full + INJECT/REPLACE)")
 
     merged = merge(vanilla, mod)
+    apply_territory_overrides(merged, cfg.get("territory_overrides") or {})
     annotate_variants(merged)
     by_source: dict[str, int] = {}
     for r in merged:

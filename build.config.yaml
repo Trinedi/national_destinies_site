@@ -18,3 +18,13 @@ build:
   web_data_dir: dist/data  # frontend-consumed JSON outputs
   dist_dir: dist
   cache_dir: data/cache
+
+# Some vanilla formables are deliberately defined with empty geography
+# (potential = { always = no }, regions = {}) because they are formed by
+# scripted events only. The atlas needs *something* to tint, so we patch
+# in a sensible default territory per tag here. Only applied when the
+# formable has no continents / sub_continents / regions / areas /
+# provinces / locations / must_own of its own.
+territory_overrides:
+  JAP:
+    regions: [japan_region]

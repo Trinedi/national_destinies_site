@@ -7555,7 +7555,9 @@
       "fraction": null,
       "rule": "historical",
       "content_priority": null,
-      "regions": [],
+      "regions": [
+        "japan_region"
+      ],
       "areas": [],
       "locations": [],
       "provinces": [],
