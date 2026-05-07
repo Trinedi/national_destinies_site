@@ -34,8 +34,11 @@ L.tileLayer("tiles/{z}/{x}/{y}.png", {
   minZoom: 0,
   maxZoom: MAX_ZOOM,
   noWrap: true,
-  bounds: [[-PADDED, 0], [0, PADDED]],
+  // Constrain to visible area so Leaflet does not request padding tiles
+  // that we never generate.
+  bounds: visibleBounds,
 }).addTo(map);
+map.setMaxBounds(visibleBounds);
 map.fitBounds(visibleBounds);
 
 // Layer that holds pins for the currently-selected formable.
@@ -59,20 +62,25 @@ const $detailClose = document.getElementById("detail-close");
 let formables = [];
 let geography = null;
 let locIndex = null;
+let loc = {};
 let selected = null;
 
 async function loadAll() {
-  const [f, g, l] = await Promise.all([
+  const [f, g, l, lo] = await Promise.all([
     fetch("data/formables.json").then((r) => r.json()),
     fetch("data/geography.json").then((r) => r.json()),
     fetch("data/locations_index.json").then((r) => r.json()),
+    fetch("data/loc.json").then((r) => r.json()),
   ]);
   formables = f.formables;
   geography = g;
   locIndex = l.locations;
+  loc = lo.strings;
 
   formables.forEach((rec) => {
     rec._displayName = displayName(rec);
+    rec._description = description(rec);
+    rec._adjective = (rec.adjective && loc[rec.adjective]) || null;
     rec._haystack = (
       (rec._displayName || "") + " " + (rec.tag || "") + " " + rec.block_key
     ).toLowerCase();
@@ -82,8 +90,30 @@ async function loadAll() {
 }
 
 function displayName(rec) {
-  if (rec.tag) return rec.tag;
+  // Prefer the formable's loc'd full name, falling back to tag-based variants.
+  const candidates = [
+    rec.block_key,                                    // sweden_f -> "Sweden"
+    rec.tag && rec.tag + "_f",                        // SWE_f
+    rec.name,                                          // typically the loc key
+    rec.tag,                                           // raw tag
+  ].filter(Boolean);
+  for (const k of candidates) {
+    if (loc[k]) return loc[k];
+  }
+  // Last resort: prettify the block key
   return rec.block_key.replace(/_f$/, "").replace(/_/g, " ");
+}
+
+function description(rec) {
+  const candidates = [
+    rec.block_key + "_desc",
+    rec.tag && rec.tag + "_f_desc",
+    rec.name && rec.name + "_f_desc",
+  ].filter(Boolean);
+  for (const k of candidates) {
+    if (loc[k]) return loc[k];
+  }
+  return null;
 }
 
 // ---- list rendering -----------------------------------------------------
@@ -122,6 +152,12 @@ function makeRow(rec) {
   const left = document.createElement("div");
   left.className = "name";
   left.textContent = rec._displayName;
+  if (rec.tag && rec.tag !== rec._displayName) {
+    const tagSpan = document.createElement("span");
+    tagSpan.className = "tag";
+    tagSpan.textContent = " " + rec.tag;
+    left.appendChild(tagSpan);
+  }
   row.appendChild(left);
 
   const badges = document.createElement("div");
@@ -164,19 +200,20 @@ function selectFormable(rec) {
 function showPins(rec) {
   pinLayer.clearLayers();
   const pinBounds = [];
-  for (const loc of rec.must_own) {
-    const info = locIndex[loc];
+  for (const locName of rec.must_own) {
+    const info = locIndex[locName];
     if (!info) {
-      console.warn("must_own location not in index:", loc);
+      console.warn("must_own location not in index:", locName);
       continue;
     }
     const [cx, cy] = info.centroid;
     const ll = px(cx, cy);
     pinBounds.push(ll);
+    const labelText = loc[locName] || prettifyName(locName);
     const marker = L.marker(ll, {
       icon: L.divIcon({
         className: "must-own-marker",
-        html: `<div class="must-own-pin"></div><div class="must-own-label">${escapeHtml(loc)}</div>`,
+        html: `<div class="must-own-pin"></div><div class="must-own-label">${escapeHtml(labelText)}</div>`,
         iconSize: [14, 14],
         iconAnchor: [7, 7],
       }),
@@ -197,12 +234,17 @@ function showDetail(rec) {
   $detailName.textContent = rec._displayName;
   const body = [];
 
+  if (rec._description) {
+    body.push(`<p style="margin:0 0 12px;color:var(--fg-1);font-size:12px;line-height:1.5;">${escapeHtml(rec._description)}</p>`);
+  }
+
   // top-line stats
   body.push('<div class="stat-grid">');
   if (rec.level != null) body.push(`<dt>Level</dt><dd>${rec.level}</dd>`);
   if (rec.fraction != null) body.push(`<dt>Required</dt><dd>${Math.round(rec.fraction * 100)}% of territory</dd>`);
   if (rec.rule) body.push(`<dt>Rule</dt><dd>${escapeHtml(rec.rule)}</dd>`);
   if (rec.tag) body.push(`<dt>Tag</dt><dd><code>${escapeHtml(rec.tag)}</code></dd>`);
+  if (rec._adjective) body.push(`<dt>Adjective</dt><dd>${escapeHtml(rec._adjective)}</dd>`);
   body.push(`<dt>Source</dt><dd>${formatSource(rec)}</dd>`);
   if (rec.formation_event) body.push(`<dt>Formation event</dt><dd><code>${escapeHtml(rec.formation_event)}</code></dd>`);
   body.push("</div>");
@@ -210,10 +252,11 @@ function showDetail(rec) {
   if (rec.must_own && rec.must_own.length > 0) {
     body.push("<h3>Must Own</h3>");
     body.push('<div class="req-badges">');
-    for (const loc of rec.must_own) {
-      const info = locIndex[loc];
+    for (const locName of rec.must_own) {
+      const info = locIndex[locName];
+      const label = loc[locName] || prettifyName(locName);
       const note = info ? "" : " (unknown location)";
-      body.push(`<span class="req-badge required">${escapeHtml(loc)}${note}</span>`);
+      body.push(`<span class="req-badge required">${escapeHtml(label)}${note}</span>`);
     }
     body.push("</div>");
   }
@@ -221,13 +264,13 @@ function showDetail(rec) {
   if (rec.regions && rec.regions.length > 0) {
     body.push("<h3>Regions in territory pool</h3>");
     body.push("<ul>");
-    for (const r of rec.regions) body.push(`<li>${prettifyName(r)}</li>`);
+    for (const r of rec.regions) body.push(`<li>${escapeHtml(loc[r] || prettifyName(r))}</li>`);
     body.push("</ul>");
   }
   if (rec.areas && rec.areas.length > 0) {
     body.push("<h3>Areas in territory pool</h3>");
     body.push("<ul>");
-    for (const a of rec.areas) body.push(`<li>${prettifyName(a)}</li>`);
+    for (const a of rec.areas) body.push(`<li>${escapeHtml(loc[a] || prettifyName(a))}</li>`);
     body.push("</ul>");
   }
 
