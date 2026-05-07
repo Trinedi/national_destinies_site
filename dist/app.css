@@ -76,6 +76,74 @@ html, body { height: 100%; margin: 0; padding: 0; background: var(--bg-0); color
   outline: 1px solid var(--accent);
   border-color: var(--accent);
 }
+#level-filter {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  font-size: 12px;
+  color: var(--fg-1);
+  flex-wrap: wrap;
+}
+#level-filter .lf-label {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 10px;
+  color: var(--fg-2);
+  margin-right: 2px;
+}
+#level-filter label {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  cursor: pointer;
+  user-select: none;
+}
+#level-filter input[type="checkbox"] {
+  margin: 0;
+  accent-color: var(--accent);
+}
+/* hover card */
+#hover-card {
+  position: absolute;
+  pointer-events: none;
+  z-index: 600;
+  background: rgba(15,15,18,0.95);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 8px 10px;
+  font-size: 12px;
+  line-height: 1.45;
+  max-width: 280px;
+  box-shadow: var(--shadow);
+}
+#hover-card .hc-title {
+  font-weight: 600;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 2px;
+}
+#hover-card .hc-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex: none;
+}
+#hover-card .hc-tag {
+  color: var(--fg-2);
+  font-family: ui-monospace, monospace;
+  font-size: 10px;
+}
+#hover-card .hc-meta {
+  color: var(--fg-1);
+  font-size: 11px;
+}
+#hover-card .hc-claim {
+  margin-top: 4px;
+  font-size: 11px;
+  color: var(--fg-2);
+}
 
 #formables-list {
   flex: 1;
@@ -218,6 +286,41 @@ html, body { height: 100%; margin: 0; padding: 0; background: var(--bg-0); color
   padding: 1px 5px;
   border-radius: 3px;
   font-size: 12px;
+}
+
+.claimants-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.claimant-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-2);
+  border: 1px solid transparent;
+  color: var(--fg-0);
+  padding: 5px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: left;
+}
+.claimant-row:hover {
+  background: var(--bg-3);
+  border-color: var(--accent);
+}
+.claimant-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  flex: none;
+}
+.claimant-name { flex: 1; }
+.claimant-tag {
+  color: var(--fg-2);
+  font-family: ui-monospace, monospace;
+  font-size: 11px;
 }
 
 /* leaflet pin custom styles */

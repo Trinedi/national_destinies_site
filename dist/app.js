@@ -187,23 +187,34 @@ function colorForTag(s) {
   return `hsl(${hue}, ${sat}%, ${lit}%)`;
 }
 
-// EU5 loc values can redirect with $KEY$ and embed scripted helpers like
-// [ShowAreaName('foo_area')]. Resolve both so display strings are clean.
+// EU5 loc values redirect with $KEY$ and embed scripted helpers like
+// [ShowAreaName('foo_area')] or [ShowReligionAdjective('catholic')].
+// Resolve all of these so display strings render cleanly.
 const REF_RE = /\$([A-Za-z_][A-Za-z0-9_]*)\$/g;
-const SHOW_RE = /\[Show(?:Area|Region|Subregion|Continent|Province|Country|Estate(?:Type)?)?Name(?:WithNoTooltip)?\(\s*'([^']+)'\s*\)\]/g;
+// Generic [ShowFooName(...)] / [ShowFooNameWithNoTooltip(...)] -> loc[X]
+const SHOW_NAME_RE = /\[Show\w*Name(?:WithNoTooltip)?\(\s*'([^']+)'\s*\)\]/g;
+// Generic [ShowFooAdjective(...)] / [ShowFooAdjectiveWithNoTooltip(...)] -> loc[X_ADJ] || loc[X]
+const SHOW_ADJ_RE = /\[Show\w*Adjective(?:WithNoTooltip)?\(\s*'([^']+)'\s*\)\]/g;
+// Anything else like [GetThing] or [SomeFunc.foo] gets stripped as a fallback.
+const SHOW_FALLBACK_RE = /\[[^\]]*\]/g;
 
 function resolveLoc(value, depth = 0) {
   if (!value || depth > 5) return value || "";
-  // $REF$ placeholders
   let out = value.replace(REF_RE, (whole, key) => {
     const v = loc[key];
     return v ? resolveLoc(v, depth + 1) : whole;
   });
-  // Scripted name helpers
-  out = out.replace(SHOW_RE, (whole, key) => {
+  out = out.replace(SHOW_NAME_RE, (whole, key) => {
     const v = loc[key];
     return v ? resolveLoc(v, depth + 1) : prettifyName(key);
   });
+  out = out.replace(SHOW_ADJ_RE, (whole, key) => {
+    const v = loc[key + "_ADJ"] || loc[key];
+    return v ? resolveLoc(v, depth + 1) : prettifyName(key);
+  });
+  // Strip any remaining unhandled [...] markup so users do not see raw
+  // game-code helpers.
+  out = out.replace(SHOW_FALLBACK_RE, "");
   return out;
 }
 
@@ -247,8 +258,10 @@ function description(rec) {
 
 function renderList() {
   const term = $search.value.trim().toLowerCase();
+  const allowedLevels = currentAllowedLevels();
   const filtered = formables.filter((f) => {
     if (term && !f._haystack.includes(term)) return false;
+    if (f.level != null && !allowedLevels.has(f.level)) return false;
     return true;
   });
   $list.replaceChildren();
@@ -306,6 +319,9 @@ function makeRow(rec) {
   row.appendChild(badges);
 
   row.addEventListener("click", () => selectFormable(rec));
+  row.addEventListener("mouseenter", (ev) => showHoverCard(rec, ev, null));
+  row.addEventListener("mousemove", (ev) => positionHoverCard(ev));
+  row.addEventListener("mouseleave", hideHoverCard);
   return row;
 }
 
@@ -341,6 +357,18 @@ function renderAreaLayer() {
         } else if (selected) {
           clearSelectionAndRestyle();
         }
+      });
+      layer.on("mouseover", (e) => {
+        const claimants = areaToFormables[feature.properties.name] || [];
+        if (claimants.length > 0) {
+          showHoverCard(claimants[0], e, feature.properties.name);
+        }
+      });
+      layer.on("mousemove", (e) => {
+        positionHoverCard(e);
+      });
+      layer.on("mouseout", () => {
+        hideHoverCard();
       });
     },
   }).addTo(map);
@@ -458,16 +486,45 @@ function showDetail(rec) {
     body.push("</ul>");
   }
 
-  if (rec.potential_raw) {
-    body.push("<h3>Potential (raw)</h3>");
-    body.push(`<pre style="white-space:pre-wrap;font-size:11px;background:var(--bg-2);padding:8px;border-radius:3px;">${escapeHtml(rec.potential_raw)}</pre>`);
-  }
-  if (rec.allow_raw) {
-    body.push("<h3>Allow (raw)</h3>");
-    body.push(`<pre style="white-space:pre-wrap;font-size:11px;background:var(--bg-2);padding:8px;border-radius:3px;">${escapeHtml(rec.allow_raw)}</pre>`);
+  // Surface any other formables that share areas with this one, so users
+  // can pivot quickly between competing claims.
+  const otherClaimants = collectOtherClaimants(rec);
+  if (otherClaimants.length > 0) {
+    body.push("<h3>Also claimed in this territory</h3>");
+    body.push('<div class="claimants-list">');
+    for (const o of otherClaimants) {
+      body.push(
+        `<button class="claimant-row" data-key="${escapeHtml(o.block_key)}">` +
+        `<span class="claimant-swatch" style="background:${o._color}"></span>` +
+        `<span class="claimant-name">${escapeHtml(o._displayName)}</span>` +
+        `<span class="claimant-tag">${escapeHtml(o.tag || "")}</span>` +
+        `</button>`
+      );
+    }
+    body.push("</div>");
   }
 
   $detailBody.innerHTML = body.join("");
+
+  // Wire claimant buttons to switch selection.
+  $detailBody.querySelectorAll(".claimant-row").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const r = formablesByKey[btn.dataset.key];
+      if (r) selectFormable(r);
+    });
+  });
+}
+
+function collectOtherClaimants(rec) {
+  const otherSet = new Map();
+  for (const area of formableTerritory[rec.block_key] || []) {
+    const claimants = areaToFormables[area] || [];
+    for (const c of claimants) {
+      if (c.block_key === rec.block_key) continue;
+      if (!otherSet.has(c.block_key)) otherSet.set(c.block_key, c);
+    }
+  }
+  return [...otherSet.values()].sort(primacyCompare);
 }
 
 function formatSource(rec) {
@@ -504,12 +561,87 @@ function clearSelection() {
 $detailClose.addEventListener("click", clearSelectionAndRestyle);
 $search.addEventListener("input", renderList);
 
+function currentAllowedLevels() {
+  const set = new Set();
+  document.querySelectorAll('#level-filter input[type="checkbox"]').forEach((b) => {
+    if (b.checked) set.add(parseInt(b.dataset.lvl, 10));
+  });
+  return set;
+}
+document.querySelectorAll('#level-filter input[type="checkbox"]').forEach((b) => {
+  b.addEventListener("change", renderList);
+});
+
 // Click anywhere on the map that is NOT a claimed area polygon: deselect.
 // (Polygon click handlers stop propagation, so this only fires for empty
 // space and unclaimed areas.)
 map.on("click", () => {
   if (selected) clearSelectionAndRestyle();
 });
+
+// ---- hover card --------------------------------------------------------
+
+const $hoverCard = document.getElementById("hover-card");
+const $mapPane = document.getElementById("map-pane");
+
+function showHoverCard(rec, ev, areaName) {
+  const claimants = areaName ? (areaToFormables[areaName] || []) : [];
+  const otherCount = Math.max(0, claimants.length - 1);
+  const fields = [];
+  fields.push(
+    `<div class="hc-title">` +
+    `<span class="hc-swatch" style="background:${rec._color}"></span>` +
+    `${escapeHtml(rec._displayName)}` +
+    (rec.tag ? `<span class="hc-tag">${escapeHtml(rec.tag)}</span>` : "") +
+    `</div>`
+  );
+  const meta = [];
+  if (rec.level != null) meta.push(`Level ${rec.level}`);
+  if (rec.fraction != null) meta.push(`${Math.round(rec.fraction * 100)}% required`);
+  meta.push(formatSourceShort(rec));
+  fields.push(`<div class="hc-meta">${escapeHtml(meta.join(" · "))}</div>`);
+  if (rec.must_own && rec.must_own.length > 0) {
+    const labels = rec.must_own.map((l) => lookupLoc(l) || prettifyName(l));
+    fields.push(`<div class="hc-meta">Must own: ${escapeHtml(labels.join(", "))}</div>`);
+  }
+  if (otherCount > 0) {
+    fields.push(`<div class="hc-claim">Area also claimed by ${otherCount} other formable${otherCount > 1 ? "s" : ""}</div>`);
+  }
+  $hoverCard.innerHTML = fields.join("");
+  $hoverCard.hidden = false;
+  positionHoverCard(ev);
+}
+
+function hideHoverCard() {
+  $hoverCard.hidden = true;
+}
+
+function positionHoverCard(ev) {
+  // Use clientX/Y minus the map-pane offset since the card is absolutely
+  // positioned within #map-pane.
+  const rect = $mapPane.getBoundingClientRect();
+  const x = (ev.clientX ?? ev.originalEvent?.clientX ?? 0) - rect.left;
+  const y = (ev.clientY ?? ev.originalEvent?.clientY ?? 0) - rect.top;
+  // Offset so cursor does not cover the card; flip if hitting right edge.
+  const padding = 14;
+  const cardRect = $hoverCard.getBoundingClientRect();
+  let cx = x + padding;
+  let cy = y + padding;
+  if (cx + cardRect.width > rect.width) cx = x - padding - cardRect.width;
+  if (cy + cardRect.height > rect.height) cy = y - padding - cardRect.height;
+  $hoverCard.style.left = Math.max(0, cx) + "px";
+  $hoverCard.style.top = Math.max(0, cy) + "px";
+}
+
+function formatSourceShort(rec) {
+  switch (rec.source) {
+    case "vanilla+mod_inject": return "Vanilla + mod additions";
+    case "vanilla+mod_replace": return "Mod replaces vanilla";
+    case "mod_new": return "New (mod-added)";
+    case "vanilla": return "Vanilla";
+    default: return rec.source || "";
+  }
+}
 
 loadAll().catch((err) => {
   console.error("data load failed:", err);
