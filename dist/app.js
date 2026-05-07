@@ -349,36 +349,46 @@ function renderAreaLayer() {
     style: areaStyle,
     interactive: true,
     onEachFeature: (feature, layer) => {
+      const areaName = feature.properties.name;
       layer.on("click", (e) => {
         L.DomEvent.stopPropagation(e);
-        const claimants = areaToFormables[feature.properties.name] || [];
-        if (claimants.length > 0) {
-          selectFormable(claimants[0]);
+        const primary = visiblePrimaryFor(areaName);
+        if (primary) {
+          selectFormable(primary);
         } else if (selected) {
           clearSelectionAndRestyle();
         }
       });
       layer.on("mouseover", (e) => {
-        const claimants = areaToFormables[feature.properties.name] || [];
-        if (claimants.length > 0) {
-          showHoverCard(claimants[0], e, feature.properties.name);
-        }
+        const primary = visiblePrimaryFor(areaName);
+        if (primary) showHoverCard(primary, e, areaName);
       });
-      layer.on("mousemove", (e) => {
-        positionHoverCard(e);
-      });
-      layer.on("mouseout", () => {
-        hideHoverCard();
-      });
+      layer.on("mousemove", (e) => positionHoverCard(e));
+      layer.on("mouseout", hideHoverCard);
     },
   }).addTo(map);
 }
 
+function visiblePrimaryFor(areaName) {
+  const claimants = areaToFormables[areaName];
+  if (!claimants) return null;
+  const allowedLevels = currentAllowedLevels();
+  for (const c of claimants) {
+    if (c.level == null || allowedLevels.has(c.level)) return c;
+  }
+  return null;
+}
+
 function areaStyle(feature) {
   const areaName = feature.properties.name;
-  const claimants = areaToFormables[areaName];
-  const primary = claimants && claimants[0];
-  const primaryColor = primary ? primary._color : "#666";
+  const primary = visiblePrimaryFor(areaName);
+
+  if (!primary) {
+    // No visible claimant: hide entirely.
+    return { stroke: false, fill: false, fillOpacity: 0, opacity: 0 };
+  }
+
+  const primaryColor = primary._color;
 
   if (!selected) {
     return {
@@ -486,6 +496,15 @@ function showDetail(rec) {
     body.push("</ul>");
   }
 
+  if (rec.english_potential && rec.english_potential.length > 0) {
+    body.push("<h3>Required to enable</h3>");
+    body.push(renderRequirementList(rec.english_potential));
+  }
+  if (rec.english_allow && rec.english_allow.length > 0) {
+    body.push("<h3>Required to form</h3>");
+    body.push(renderRequirementList(rec.english_allow));
+  }
+
   // Surface any other formables that share areas with this one, so users
   // can pivot quickly between competing claims.
   const otherClaimants = collectOtherClaimants(rec);
@@ -513,6 +532,28 @@ function showDetail(rec) {
       if (r) selectFormable(r);
     });
   });
+}
+
+function renderRequirementList(clauses) {
+  const parts = ["<ul class=\"req-list\">"];
+  for (const c of clauses) {
+    parts.push(renderRequirementItem(c));
+  }
+  parts.push("</ul>");
+  return parts.join("");
+}
+
+function renderRequirementItem(c) {
+  const cls = c.kind === "or" || c.kind === "not" || c.kind === "and"
+    ? `req-${c.kind}` : "";
+  const out = [`<li class="${cls}">`, escapeHtml(c.text)];
+  if (c.children && c.children.length > 0) {
+    out.push("<ul class=\"req-list\">");
+    for (const cc of c.children) out.push(renderRequirementItem(cc));
+    out.push("</ul>");
+  }
+  out.push("</li>");
+  return out.join("");
 }
 
 function collectOtherClaimants(rec) {
@@ -569,7 +610,14 @@ function currentAllowedLevels() {
   return set;
 }
 document.querySelectorAll('#level-filter input[type="checkbox"]').forEach((b) => {
-  b.addEventListener("change", renderList);
+  b.addEventListener("change", () => {
+    renderList();
+    if (areaLayer) restyleAreaLayer();
+    // If the currently selected formable is now hidden by filters, deselect.
+    if (selected && selected.level != null && !currentAllowedLevels().has(selected.level)) {
+      clearSelectionAndRestyle();
+    }
+  });
 });
 
 // Click anywhere on the map that is NOT a claimed area polygon: deselect.

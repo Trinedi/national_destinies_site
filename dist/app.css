@@ -288,6 +288,15 @@ html, body { height: 100%; margin: 0; padding: 0; background: var(--bg-0); color
   font-size: 12px;
 }
 
+.req-list {
+  margin: 4px 0 0;
+  padding-left: 18px;
+}
+.req-list li { margin-bottom: 2px; line-height: 1.45; font-size: 12px; }
+.req-list li.req-or { color: var(--fg-1); font-weight: 500; }
+.req-list li.req-not { color: #f6a99d; font-weight: 500; }
+.req-list li.req-and { color: var(--fg-1); }
+
 .claimants-list {
   display: flex;
   flex-direction: column;

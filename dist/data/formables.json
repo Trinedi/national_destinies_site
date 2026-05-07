@@ -28,7 +28,14 @@
       "formation_event": "nd_sca.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_sca.txt"
+      "mod_source_file": "99_nd_sca.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Scandinavian Group culture group"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "sweden_f",
@@ -57,7 +64,14 @@
       "form_effect_raw": "",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Swedish culture"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "denmark_f",
@@ -84,7 +98,14 @@
       "form_effect_raw": "",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Danish culture"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "DRD_f",
@@ -113,7 +134,49 @@
       "formation_event": "nd_drd.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_drd.txt"
+      "mod_source_file": "99_nd_drd.txt",
+      "english_potential": [
+        {
+          "kind": "any_culture",
+          "text": "Any primary, accepted, or tolerated culture matches:",
+          "children": [
+            {
+              "kind": "or",
+              "text": "Any of:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Has Culture Group: Scottish Group"
+                },
+                {
+                  "kind": "atom",
+                  "text": "Has Culture Group: Hibernian Group"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Gaelic Language language"
+        },
+        {
+          "kind": "or",
+          "text": "Any culture of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Scottish Group group"
+            },
+            {
+              "kind": "atom",
+              "text": "Hibernian Group group"
+            }
+          ]
+        }
+      ]
     },
     {
       "block_key": "GBR_f",
@@ -140,7 +203,29 @@
       "formation_event": "nd_gbr.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_gbr.txt"
+      "mod_source_file": "99_nd_gbr.txt",
+      "english_potential": [
+        {
+          "kind": "any_culture",
+          "text": "Any primary, accepted, or tolerated culture matches:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Has Culture Group: British Group"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "British Group culture group"
+        },
+        {
+          "kind": "atom",
+          "text": "Situation Has Ended: Yes"
+        }
+      ]
     },
     {
       "block_key": "ENG_f",
@@ -172,7 +257,24 @@
       "form_effect_raw": "",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "English culture"
+            },
+            {
+              "kind": "atom",
+              "text": "English Language language"
+            }
+          ]
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "WLS_f",
@@ -198,7 +300,24 @@
       "form_effect_raw": "",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Welsh culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Brythonic Language language"
+            }
+          ]
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "SCO_f",
@@ -226,7 +345,14 @@
       "form_effect_raw": "",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Scottish Group culture group"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "NOL_f",
@@ -253,7 +379,9 @@
       "form_effect_raw": "",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [],
+      "english_allow": []
     },
     {
       "block_key": "IRE_f",
@@ -279,7 +407,87 @@
       "form_effect_raw": "if = {\n\t\t\tlimit = { unique_international_organization_type_exists = international_organization_type:lordship_of_ireland }\n\t\t\tdestroy_international_organization = { target = international_organization:lordship_of_ireland }\n\t\t}\n\n\t\t\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = { is_member_of_international_organization_of_type = { type = high_kingship } }\n\t\t\tevery_international_organizations_member_of = {\n\t\t\t\tlimit = {\n\t\t\t\t\tinternational_organization_type = international_organization_type:high_kingship\n\t\t\t\t\thas_variable = high_kingship_region\n\t\t\t\t\tvar:high_kingship_region = region:ireland_region\n\t\t\t\t}\n\t\t\t\tremove_country_from_international_organization = root\n\t\t\t}\n\t\t}\n\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = nd_ire.1\n\t\tadd_stability = stability_mild_bonus",
       "formation_event": "nd_ire.1",
       "source": "vanilla+mod_replace",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Hibernian Group culture group"
+            },
+            {
+              "kind": "atom",
+              "text": "Tag: Ple"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "and",
+              "text": "All of:",
+              "children": [
+                {
+                  "kind": "block",
+                  "text": "Is Member Of International Organization Of Type:",
+                  "children": [
+                    {
+                      "kind": "atom",
+                      "text": "Type: High Kingship"
+                    }
+                  ]
+                },
+                {
+                  "kind": "block",
+                  "text": "Any International Organizations Member Of:",
+                  "children": [
+                    {
+                      "kind": "atom",
+                      "text": "Count: All"
+                    },
+                    {
+                      "kind": "block",
+                      "text": "Filter:",
+                      "children": [
+                        {
+                          "kind": "atom",
+                          "text": "International Organization Type: High Kingship"
+                        },
+                        {
+                          "kind": "atom",
+                          "text": "Has variable: High Kingship Region"
+                        }
+                      ]
+                    },
+                    {
+                      "kind": "atom",
+                      "text": "Leader Country: Root"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "kind": "atom",
+              "text": "Neither Highkingship Nor Lordship Exist Tt"
+            },
+            {
+              "kind": "atom",
+              "text": "Ire F Sole High Kingship Tt"
+            }
+          ]
+        },
+        {
+          "kind": "atom",
+          "text": "Ire F Lordship Tt"
+        }
+      ]
     },
     {
       "block_key": "MTH_f",
@@ -303,7 +511,14 @@
       "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 2 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_duchy }\n\t\t}",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Hibernian Group culture group"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "MCM_f",
@@ -329,7 +544,14 @@
       "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Hibernian Group culture group"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "NED_f",
@@ -360,7 +582,14 @@
       "formation_event": "nd_ned.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_ned.txt"
+      "mod_source_file": "99_nd_ned.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Netherlandish Group culture group"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "SWI_f",
@@ -388,7 +617,19 @@
       "form_effect_raw": "set_country_rank_effect = { rank = country_rank:rank_duchy }\n\t\tunlock_government_reform_effect = { type = autonomous_swiss_cantons_reform }\n\t\tadd_replacing_gov_reform = { reform = government_reform:autonomous_swiss_cantons_reform }\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tNOT = { government_type = government_type:monarchy }\n\t\t\t\tNOT = { government_type = government_type:theocracy }\n\t\t\t\tNOT = { government_type = government_type:republic }\n\t\t\t}\n\t\t\tchange_government_type = government_type:republic\n\t\t}\n\t\ttrigger_event_non_silently = nd_swi.1\n\t\tadd_stability = stability_mild_bonus",
       "formation_event": "nd_swi.1",
       "source": "vanilla+mod_replace",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Swiss Group culture group"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Swi F Tt"
+        }
+      ]
     },
     {
       "block_key": "SPA_f",
@@ -415,7 +656,23 @@
       "formation_event": "nd_spa.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_spa.txt"
+      "mod_source_file": "99_nd_spa.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Iberian Group culture group"
+        },
+        {
+          "kind": "atom",
+          "text": "Christian group"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Spa F Not Christian"
+        }
+      ]
     },
     {
       "block_key": "ADU_f",
@@ -442,7 +699,33 @@
       "formation_event": "nd_adu.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_adu.txt"
+      "mod_source_file": "99_nd_adu.txt",
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Maghrebi Group culture group"
+            },
+            {
+              "kind": "atom",
+              "text": "Iberian Group culture group"
+            }
+          ]
+        },
+        {
+          "kind": "atom",
+          "text": "Muslim group"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Adu F Not Muslim"
+        }
+      ]
     },
     {
       "block_key": "AIA_f",
@@ -469,7 +752,14 @@
       "formation_event": "nd_aia.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_aia.txt"
+      "mod_source_file": "99_nd_aia.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Arabian Group culture group"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "EGY_f",
@@ -496,7 +786,20 @@
       "formation_event": "nd_egy.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_egy.txt"
+      "mod_source_file": "99_nd_egy.txt",
+      "english_potential": [
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Tag: Mam"
+            }
+          ]
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "KOA_f",
@@ -527,7 +830,23 @@
       "formation_event": "nd_koa.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_koa.txt"
+      "mod_source_file": "99_nd_koa.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Catholic religion"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Tunis"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Tripoli"
+        }
+      ]
     },
     {
       "block_key": "LAT_f",
@@ -556,7 +875,113 @@
       "form_effect_raw": "trigger_event_non_silently = nd_lat.1\n\t\tadd_stability = stability_mild_bonus\n\n\t\t\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\tif = {\n\t\t\tlimit = { has_reform = government_reform:partitio_reform }\n\t\t\tremove_reform = government_reform:partitio_reform\n\t\t}\n\t\tunlock_government_reform_effect = { type = lat_restored_rule_of_the_latins }\n\t\tadd_reform = government_reform:lat_restored_rule_of_the_latins\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tculture = culture:catalan\n\t\t\t\tNOT = { has_variable = de_brienne_rule_of_athens }\n\t\t\t\tNOT = { has_reform = government_reform:ach_heirs_of_the_latin_empire }\n\t\t\t}\n\t\t\thidden_effect = {\n\t\t\t\tchange_country_color = map_LAT_catalan_restoration\n\t\t\t}\n\t\t}\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\thas_reform = government_reform:ach_heirs_of_the_latin_empire\n\t\t\t\tNOT = { has_variable = de_brienne_rule_of_athens }\n\t\t\t}\n\t\t\thidden_effect = {\n\t\t\t\tchange_country_color = map_LAT_titular_restoration\n\t\t\t}\n\t\t}\n\t\telse_if = {\n\t\t\tlimit = {\n\t\t\t\tNOT = { has_reform = government_reform:ach_heirs_of_the_latin_empire }\n\t\t\t\tNOT = { culture = culture:catalan }\n\t\t\t}\n\t\t\thidden_effect = {\n\t\t\t\tchange_country_color = map_LAT\n\t\t\t}\n\t\t}",
       "formation_event": "nd_lat.1",
       "source": "vanilla+mod_replace",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Constantinople exists"
+            }
+          ]
+        },
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Has variable: Lat Reduced Requirements To Form"
+            }
+          ]
+        },
+        {
+          "kind": "atom",
+          "text": "Catholic religion"
+        },
+        {
+          "kind": "atom",
+          "text": "Frankokratia state"
+        },
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "block",
+              "text": "Current Age Or Later:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Age: Age 4 Reformation"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Constantinople exists"
+            }
+          ]
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Constantinople"
+        },
+        {
+          "kind": "atom",
+          "text": "Catholic religion"
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "French Group culture group"
+            },
+            {
+              "kind": "atom",
+              "text": "Iberian Group culture group"
+            },
+            {
+              "kind": "atom",
+              "text": "Italian Group culture group"
+            }
+          ]
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Age is Age 1 Traditions"
+            },
+            {
+              "kind": "atom",
+              "text": "Age is Age 2 Renaissance"
+            },
+            {
+              "kind": "atom",
+              "text": "Age is Age 3 Discovery"
+            },
+            {
+              "kind": "atom",
+              "text": "Age is Age 4 Reformation"
+            }
+          ]
+        }
+      ]
     },
     {
       "block_key": "LAT_REDUCED_REQUIREMENTS_f",
@@ -585,7 +1010,103 @@
       "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\tif = {\n\t\t\tlimit = { has_reform = government_reform:partitio_reform }\n\t\t\tremove_reform = government_reform:partitio_reform\n\t\t}\n\t\tunlock_government_reform_effect = { type = lat_restored_rule_of_the_latins }\n\t\tadd_reform = government_reform:lat_restored_rule_of_the_latins\n\t\tif = {\n\t\t\tlimit = { \n\t\t\t\tculture = culture:catalan\n\t\t\t\tNOT = { has_variable = de_brienne_rule_of_athens }\n\t\t\t\tNOT = { has_reform = government_reform:ach_heirs_of_the_latin_empire } \n\t\t\t}\n\t\t\thidden_effect = {\n\t\t\t\tchange_country_color = map_LAT_catalan_restoration\n\t\t\t}\n\t\t}\n\t\tif = {\n\t\t\tlimit = { \n\t\t\t\thas_reform = government_reform:ach_heirs_of_the_latin_empire\n\t\t\t\tNOT = { has_variable = de_brienne_rule_of_athens }\n\t\t\t}\n\t\t\thidden_effect = {\n\t\t\t\tchange_country_color = map_LAT_titular_restoration\n\t\t\t}            \n\t\t}\n\t\telse_if = {\n\t\t\tlimit = {\n\t\t\t\tNOT = { has_reform = government_reform:ach_heirs_of_the_latin_empire } \n\t\t\t\tNOT = { culture = culture:catalan }\n\t\t\t}\n\t\t\thidden_effect = {\n\t\t\t\tchange_country_color = map_LAT\n\t\t\t} \n\t\t}",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Constantinople exists"
+            }
+          ]
+        },
+        {
+          "kind": "atom",
+          "text": "Catholic religion"
+        },
+        {
+          "kind": "atom",
+          "text": "Has variable: Lat Reduced Requirements To Form"
+        },
+        {
+          "kind": "atom",
+          "text": "Frankokratia state"
+        },
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "block",
+              "text": "Current Age Or Later:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Age: Age 4 Reformation"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Constantinople exists"
+            }
+          ]
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Constantinople"
+        },
+        {
+          "kind": "atom",
+          "text": "Catholic religion"
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "French Group culture group"
+            },
+            {
+              "kind": "atom",
+              "text": "Iberian Group culture group"
+            },
+            {
+              "kind": "atom",
+              "text": "Italian Group culture group"
+            }
+          ]
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Age is Age 1 Traditions"
+            },
+            {
+              "kind": "atom",
+              "text": "Age is Age 2 Renaissance"
+            },
+            {
+              "kind": "atom",
+              "text": "Age is Age 3 Discovery"
+            }
+          ]
+        }
+      ]
     },
     {
       "block_key": "THE_f",
@@ -611,7 +1132,121 @@
       "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Thessalonica exists"
+            }
+          ]
+        },
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Tag: Constantinople"
+            }
+          ]
+        },
+        {
+          "kind": "atom",
+          "text": "Frankokratia state"
+        },
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Has variable: Halved Cost To Form Thesslonica"
+            }
+          ]
+        },
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Tag: Ach"
+            }
+          ]
+        },
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "block",
+              "text": "Current Age Or Later:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Age: Age 3 Discovery"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Thessalonica exists"
+            }
+          ]
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Thessaloniki"
+        },
+        {
+          "kind": "atom",
+          "text": "Catholic religion"
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "French Group culture group"
+            },
+            {
+              "kind": "atom",
+              "text": "Iberian Group culture group"
+            },
+            {
+              "kind": "atom",
+              "text": "Italian Group culture group"
+            }
+          ]
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Age is Age 1 Traditions"
+            },
+            {
+              "kind": "atom",
+              "text": "Age is Age 2 Renaissance"
+            }
+          ]
+        }
+      ]
     },
     {
       "block_key": "THE_REDUCED_REQUIREMENTS_f",
@@ -637,7 +1272,115 @@
       "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Thessalonica exists"
+            }
+          ]
+        },
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Tag: Constantinople"
+            }
+          ]
+        },
+        {
+          "kind": "atom",
+          "text": "Frankokratia state"
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Has variable: Halved Cost To Form Thesslonica"
+            },
+            {
+              "kind": "atom",
+              "text": "Tag: Ach"
+            }
+          ]
+        },
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "block",
+              "text": "Current Age Or Later:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Age: Age 3 Discovery"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Thessalonica exists"
+            }
+          ]
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Thessaloniki"
+        },
+        {
+          "kind": "atom",
+          "text": "Catholic religion"
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "French Group culture group"
+            },
+            {
+              "kind": "atom",
+              "text": "Iberian Group culture group"
+            },
+            {
+              "kind": "atom",
+              "text": "Italian Group culture group"
+            }
+          ]
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Age is Age 1 Traditions"
+            },
+            {
+              "kind": "atom",
+              "text": "Age is Age 2 Renaissance"
+            }
+          ]
+        }
+      ]
     },
     {
       "block_key": "SAR_f",
@@ -663,7 +1406,14 @@
       "form_effect_raw": "set_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\ttrigger_event_non_silently = nd_sar.1\n\t\tadd_stability = stability_mild_bonus",
       "formation_event": "nd_sar.1",
       "source": "vanilla+mod_replace",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Italian Group culture group"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "MSI_f",
@@ -691,7 +1441,14 @@
       "formation_event": "nd_msi.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_msi.txt"
+      "mod_source_file": "99_nd_msi.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Mossi culture"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "BEJ_f",
@@ -722,7 +1479,14 @@
       "formation_event": "nd_bej.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_bej.txt"
+      "mod_source_file": "99_nd_bej.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Beja Culture culture"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "ETH_f",
@@ -753,7 +1517,55 @@
       "formation_event": "nd_eth.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_eth.txt"
+      "mod_source_file": "99_nd_eth.txt",
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Agaw Culture culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Amhara culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Tigre culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Tigrinya culture"
+            }
+          ]
+        },
+        {
+          "kind": "atom",
+          "text": "Miaphysite religion"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Owns Axum"
+            },
+            {
+              "kind": "atom",
+              "text": "Owns Lalibela"
+            },
+            {
+              "kind": "atom",
+              "text": "Owns Gonder"
+            }
+          ]
+        }
+      ]
     },
     {
       "block_key": "BAV_f",
@@ -786,7 +1598,29 @@
       "formation_event": "nd_bav.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_bav.txt"
+      "mod_source_file": "99_nd_bav.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Danube Bavarian culture"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Has Estate Privilege: Bavarian Share Of Land"
+            }
+          ]
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Munich"
+        }
+      ]
     },
     {
       "block_key": "HAB_f",
@@ -821,7 +1655,29 @@
       "formation_event": "nd_hab.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_hab.txt"
+      "mod_source_file": "99_nd_hab.txt",
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Danube Bavarian culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Southern Bavarian culture"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Vienna"
+        }
+      ]
     },
     {
       "block_key": "BOH_f",
@@ -851,7 +1707,29 @@
       "formation_event": "nd_boh.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_boh.txt"
+      "mod_source_file": "99_nd_boh.txt",
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Czech culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Moravian culture"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Prague"
+        }
+      ]
     },
     {
       "block_key": "SAX_f",
@@ -879,7 +1757,39 @@
       "formation_event": "nd_sax.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_sax.txt"
+      "mod_source_file": "99_nd_sax.txt",
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Saxon culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Lower Saxon culture"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "block",
+          "text": "Country Has Special Status:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Type: Elector"
+            },
+            {
+              "kind": "atom",
+              "text": "Country: Root"
+            }
+          ]
+        }
+      ]
     },
     {
       "block_key": "NSA_f",
@@ -909,7 +1819,24 @@
       "form_effect_raw": "",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Rhine Franconian culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Moselle Franconian culture"
+            }
+          ]
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "MKL_f",
@@ -935,7 +1862,14 @@
       "form_effect_raw": "",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Western Pomeranian culture"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "POM_f",
@@ -962,7 +1896,24 @@
       "formation_event": "nd_pom.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_pom.txt"
+      "mod_source_file": "99_nd_pom.txt",
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Eastern Pomeranian culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Western Pomeranian culture"
+            }
+          ]
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "PRU_f",
@@ -988,7 +1939,37 @@
       "form_effect_raw": "trigger_event_non_silently = nd_pru.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tgovernment_type != government_type:republic\n\t\t\t\tgovernment_type != government_type:monarchy\n\t\t\t}\n\t\t\tchange_government_type = government_type:monarchy\n\t\t\tadd_legitimacy = legitimacy_radical_bonus\n\t\t}\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tNOT = { is_member_of_international_organization = international_organization:hre }\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
       "formation_event": "nd_pru.1",
       "source": "vanilla+mod_replace",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "German Group culture group"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Has Reform: Military Order Reform"
+            },
+            {
+              "kind": "atom",
+              "text": "Has Estate Privilege: Clergy Powerful Dioceses"
+            }
+          ]
+        },
+        {
+          "kind": "atom",
+          "text": "Has Estate Privilege: Nobles Land Rights"
+        },
+        {
+          "kind": "atom",
+          "text": "Not: At war"
+        }
+      ]
     },
     {
       "block_key": "LIV_f",
@@ -1015,7 +1996,25 @@
       "formation_event": "nd_liv.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_liv.txt"
+      "mod_source_file": "99_nd_liv.txt",
+      "english_potential": [
+        {
+          "kind": "any_culture",
+          "text": "Any primary, accepted, or tolerated culture matches:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Has Culture Group: German Group"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "German Group culture group"
+        }
+      ]
     },
     {
       "block_key": "LVA_f",
@@ -1046,7 +2045,25 @@
       "formation_event": "nd_lva.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_lva.txt"
+      "mod_source_file": "99_nd_lva.txt",
+      "english_potential": [
+        {
+          "kind": "any_culture",
+          "text": "Any primary, accepted, or tolerated culture matches:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Has Culture Group: Baltic Group"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Baltic Group culture group"
+        }
+      ]
     },
     {
       "block_key": "GER_f",
@@ -1073,7 +2090,14 @@
       "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\ttrigger_event_non_silently = nd_ger.1\n\t\tadd_stability = stability_severe_bonus",
       "formation_event": "nd_ger.1",
       "source": "vanilla+mod_replace",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "German Group culture group"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "HRE_f",
@@ -1100,7 +2124,23 @@
       "form_effect_raw": "",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Country exists = international_organization:hre"
+        },
+        {
+          "kind": "atom",
+          "text": "Is Member Of International Organization: Hre"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Hre F Tt"
+        }
+      ]
     },
     {
       "block_key": "MOL_f",
@@ -1127,7 +2167,14 @@
       "formation_event": "nd_mol.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_mol.txt"
+      "mod_source_file": "99_nd_mol.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Moldovan culture"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "MAZ_f",
@@ -1156,7 +2203,19 @@
       "formation_event": "nd_maz.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_maz.txt"
+      "mod_source_file": "99_nd_maz.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Mazovian culture"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Warsaw"
+        }
+      ]
     },
     {
       "block_key": "SIL_f",
@@ -1183,7 +2242,24 @@
       "formation_event": "nd_sil.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_sil.txt"
+      "mod_source_file": "99_nd_sil.txt",
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Silesian culture"
+            },
+            {
+              "kind": "atom",
+              "text": "German Silesian culture"
+            }
+          ]
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "POL_f",
@@ -1216,7 +2292,23 @@
       "formation_event": "nd_pol.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_pol.txt"
+      "mod_source_file": "99_nd_pol.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Polish Group culture group"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Krakow"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Warsaw"
+        }
+      ]
     },
     {
       "block_key": "PLC_f",
@@ -1257,7 +2349,49 @@
       "formation_event": "nd_plc.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_plc.txt"
+      "mod_source_file": "99_nd_plc.txt",
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Polish Group culture group"
+            },
+            {
+              "kind": "atom",
+              "text": "Lithuanian Group culture group"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "if",
+          "text": "If:",
+          "children": [
+            {
+              "kind": "block",
+              "text": "Limit:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Poland exists"
+                },
+                {
+                  "kind": "atom",
+                  "text": "This: Poland"
+                }
+              ]
+            },
+            {
+              "kind": "atom",
+              "text": "Plc F Trigger Pol"
+            }
+          ]
+        }
+      ]
     },
     {
       "block_key": "UKR_f",
@@ -1286,7 +2420,57 @@
       "formation_event": "nd_ukr.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_ukr.txt"
+      "mod_source_file": "99_nd_ukr.txt",
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Halychian Culture culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Polatskian Culture culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Polesian Culture culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Ruthenian culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Severian culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Volhynian Culture culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Rusyn Culture culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Cossack Culture culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Smolenskian Culture culture"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Kyiv"
+        }
+      ]
     },
     {
       "block_key": "ROM_f",
@@ -1326,7 +2510,99 @@
       "form_effect_raw": "if = { \n\t\t\tlimit = { NOT = { court_language = language:latin_language } }\n\t\t\tset_court_language = dialect:roman_dialect\n\t\t}\n\t\tif = {\n\t\t\tlimit = { NOT = { capital = location:rome } }\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\tmove_capital_event_effect = {\n\t\t\t\tfrom = root.capital\n\t\t\t\tto = location:rome\n\t\t\t}\n\t\t}\n\t\ttrigger_event_non_silently = nd_rom.1\n\t\tadd_stability = stability_extreme_bonus\n\t\tadd_government_power = government_power_extreme_bonus",
       "formation_event": "nd_rom.1",
       "source": "vanilla+mod_replace",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Was or is Byzantium"
+            },
+            {
+              "kind": "atom",
+              "text": "Rank Rank Empire"
+            },
+            {
+              "kind": "atom",
+              "text": "Owns Constantinople"
+            },
+            {
+              "kind": "and",
+              "text": "All of:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Owns Rome"
+                },
+                {
+                  "kind": "not",
+                  "text": "Must not:",
+                  "children": [
+                    {
+                      "kind": "atom",
+                      "text": "Tag: Pap"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Rome"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Constantinople"
+        },
+        {
+          "kind": "atom",
+          "text": "Rank Rank Empire"
+        },
+        {
+          "kind": "atom",
+          "text": "Hegemon"
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Was or is Byzantium"
+            },
+            {
+              "kind": "not",
+              "text": "Must not:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Byzantium exists"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Christian group"
+            },
+            {
+              "kind": "atom",
+              "text": "Hellenism Religion religion"
+            }
+          ]
+        }
+      ]
     },
     {
       "block_key": "ROM_BYZ_f",
@@ -1355,7 +2631,57 @@
       "form_effect_raw": "if = { \n\t\t\tlimit = { NOT = { capital = location:rome } }\n\t\t\tmove_capital_event_effect = {\n\t\t\t\tfrom = root.capital\n\t\t\t\tto = location:rome\n\t\t\t}\n\t\t}\n\t\tif = {\n\t\t\tlimit = { has_societal_value = societal_value_type:latinization_vs_hellenization }\n\t\t\tchange_societal_value = { type = latinization_vs_hellenization value = societal_value_huge_move_to_left }\n\t\t}",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Was or is Byzantium"
+            },
+            {
+              "kind": "atom",
+              "text": "Was or is Tre"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Rome"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Constantinople"
+        },
+        {
+          "kind": "atom",
+          "text": "Rank Rank Empire"
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Was or is Byzantium"
+            },
+            {
+              "kind": "not",
+              "text": "Must not:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Byzantium exists"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "block_key": "CTH_f",
@@ -1386,7 +2712,14 @@
       "form_effect_raw": "if = { \n\t\t\tlimit = { NOT = { capital = location:tunis } }\n\t\t\tset_capital = location:tunis\n\t\t}\n\t\tlocation:tunis = {\n\t\t\trename_location = qart_hadaszt\n\t\t}\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\tadd_stability = stability_mild_bonus\n\t\ttrigger_event_non_silently = nd_cth.1",
       "formation_event": "nd_cth.1",
       "source": "vanilla+mod_replace",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Tunis"
+        }
+      ]
     },
     {
       "block_key": "NSE_f",
@@ -1416,7 +2749,65 @@
       "formation_event": "nd_nse.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_nse.txt"
+      "mod_source_file": "99_nd_nse.txt",
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "British Group culture group"
+            },
+            {
+              "kind": "atom",
+              "text": "Scandinavian Group culture group"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "any_owned",
+          "text": "Has any owned location matching:",
+          "children": [
+            {
+              "kind": "or",
+              "text": "Any of:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Region: Scandinavia"
+                },
+                {
+                  "kind": "atom",
+                  "text": "Region: North Atlantic Islands"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "any_owned",
+          "text": "Has any owned location matching:",
+          "children": [
+            {
+              "kind": "or",
+              "text": "Any of:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Region: Britain"
+                },
+                {
+                  "kind": "atom",
+                  "text": "Region: Ireland"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "block_key": "CEL_f",
@@ -1449,7 +2840,43 @@
       "formation_event": "nd_cel.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_cel.txt"
+      "mod_source_file": "99_nd_cel.txt",
+      "english_potential": [
+        {
+          "kind": "any_culture",
+          "text": "Any primary, accepted, or tolerated culture matches:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Has Culture Group: Celtic Group"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Celtic Group culture group"
+        },
+        {
+          "kind": "atom",
+          "text": "Has Reform: Celtic Traditions Reform"
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Court Language: Brythonic Language"
+            },
+            {
+              "kind": "atom",
+              "text": "Court Language: Gaelic Language"
+            }
+          ]
+        }
+      ]
     },
     {
       "block_key": "MLC_f",
@@ -1473,7 +2900,19 @@
       "form_effect_raw": "",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Not: Always"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Not: Always"
+        }
+      ]
     },
     {
       "block_key": "EUR_f",
@@ -1498,7 +2937,19 @@
       "formation_event": "nd_eur.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_eur.txt"
+      "mod_source_file": "99_nd_eur.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Hegemon"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Hegemon"
+        }
+      ]
     },
     {
       "block_key": "ULS_f",
@@ -1524,7 +2975,24 @@
       "form_effect_raw": "",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Celtic Group culture group"
+            },
+            {
+              "kind": "atom",
+              "text": "Hibernian Group culture group"
+            }
+          ]
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "CNN_f",
@@ -1550,7 +3018,24 @@
       "form_effect_raw": "",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Celtic Group culture group"
+            },
+            {
+              "kind": "atom",
+              "text": "Hibernian Group culture group"
+            }
+          ]
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "ITA_f",
@@ -1581,7 +3066,27 @@
       "formation_event": "nd_ita.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_ita.txt"
+      "mod_source_file": "99_nd_ita.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Italian Group culture group"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Milano"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Florence"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Naples"
+        }
+      ]
     },
     {
       "block_key": "FRA_f",
@@ -1609,7 +3114,19 @@
       "form_effect_raw": "",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "French Group culture group"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Paris"
+        }
+      ]
     },
     {
       "block_key": "LOT_f",
@@ -1641,7 +3158,50 @@
       "formation_event": "nd_lot.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_lot.txt"
+      "mod_source_file": "99_nd_lot.txt",
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Rhine Alemannic culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Burgundian culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Franc Comtois culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Lorrain culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Walloon culture"
+            },
+            {
+              "kind": "or",
+              "text": "Any of:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Tag: Lor"
+                },
+                {
+                  "kind": "atom",
+                  "text": "Tag: Bur"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "BGP_f",
@@ -1673,7 +3233,46 @@
       "formation_event": "nd_bgp.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_bgp.txt"
+      "mod_source_file": "99_nd_bgp.txt",
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Arpitan culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Vivaro Alpine culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Franc Comtois culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Provencal culture"
+            },
+            {
+              "kind": "or",
+              "text": "Any of:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Tag: Dau"
+                },
+                {
+                  "kind": "atom",
+                  "text": "Tag: Sav"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "TWS_f",
@@ -1707,7 +3306,69 @@
       "formation_event": "nd_tws.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_tws.txt"
+      "mod_source_file": "99_nd_tws.txt",
+      "english_potential": [
+        {
+          "kind": "block",
+          "text": "Not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Tag: Italy"
+            }
+          ]
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Sicilian culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Neapolitan culture"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Naples"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Palermo"
+        },
+        {
+          "kind": "if",
+          "text": "If:",
+          "children": [
+            {
+              "kind": "block",
+              "text": "Limit:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Tag: Sic"
+                }
+              ]
+            },
+            {
+              "kind": "not",
+              "text": "Must not:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Has Presence In: Italy"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "block_key": "RUS_f",
@@ -1738,7 +3399,23 @@
       "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\ttrigger_event_non_silently = nd_rus.1\n\t\tadd_stability = stability_severe_bonus",
       "formation_event": "nd_rus.1",
       "source": "vanilla+mod_replace",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Russian Group culture group"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Moscow"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Novgorod"
+        }
+      ]
     },
     {
       "block_key": "GRE_f",
@@ -1771,7 +3448,39 @@
       "formation_event": "nd_gre.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_gre.txt"
+      "mod_source_file": "99_nd_gre.txt",
+      "english_potential": [
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Byzantium exists"
+            }
+          ]
+        },
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Tag: Ottomans"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Greek Group culture group"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Athens"
+        }
+      ]
     },
     {
       "block_key": "BYZ_f",
@@ -1800,7 +3509,23 @@
       "form_effect_raw": "if = {\n\t\t\tlimit = {\n\t\t\t\tNOR = {\n\t\t\t\t\tcapital = location:constantinople\n\t\t\t\t\tcapital = location:rome\n\t\t\t\t}\n\t\t\t}\n\t\t\tset_capital = location:constantinople\n\t\t}\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\ttrigger_event_non_silently = nd_byz.1\n\t\tadd_stability = stability_severe_bonus",
       "formation_event": "nd_byz.1",
       "source": "vanilla+mod_replace",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Greek Group culture group"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Orthodox religion"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Constantinople"
+        }
+      ]
     },
     {
       "block_key": "HEN_f",
@@ -1828,7 +3553,14 @@
       "formation_event": "nd_hen.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_hen.txt"
+      "mod_source_file": "99_nd_hen.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Brythonic Language language"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "USA_f",
@@ -1855,7 +3587,14 @@
       "formation_event": "nd_usa.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_usa.txt"
+      "mod_source_file": "99_nd_usa.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "British Group culture group"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "CAN_f",
@@ -1882,7 +3621,24 @@
       "formation_event": "nd_can.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_can.txt"
+      "mod_source_file": "99_nd_can.txt",
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any culture of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "British Group group"
+            },
+            {
+              "kind": "atom",
+              "text": "French Group group"
+            }
+          ]
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "MEX_f",
@@ -1909,7 +3665,51 @@
       "formation_event": "nd_mex.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_mex.txt"
+      "mod_source_file": "99_nd_mex.txt",
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "any_culture",
+              "text": "Any primary, accepted, or tolerated culture matches:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Has Culture Group: Iberian Group"
+                }
+              ]
+            },
+            {
+              "kind": "atom",
+              "text": "Christian group"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Iberian Group culture group"
+            },
+            {
+              "kind": "and",
+              "text": "All of:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Christian group"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "block_key": "BNG_f",
@@ -1936,7 +3736,14 @@
       "formation_event": "nd_bng.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_bng.txt"
+      "mod_source_file": "99_nd_bng.txt",
+      "english_potential": [],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Bengali culture"
+        }
+      ]
     },
     {
       "block_key": "DLH_f",
@@ -1964,7 +3771,40 @@
       "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = nd_dlh.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = { \n\t\t\t\tNOT = { \n\t\t\t\t\tcapital = location:delhi\n\t\t\t\t} \n\t\t\t}\n\t\t\tset_capital = location:delhi\n\t\t}",
       "formation_event": "nd_dlh.1",
       "source": "vanilla+mod_replace",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Muslim group"
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Indian Group culture group"
+            },
+            {
+              "kind": "atom",
+              "text": "Iranian Group culture group"
+            },
+            {
+              "kind": "atom",
+              "text": "Mongolian Group culture group"
+            },
+            {
+              "kind": "atom",
+              "text": "Turkic Group culture group"
+            }
+          ]
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Delhi"
+        }
+      ]
     },
     {
       "block_key": "NPL_f",
@@ -1991,7 +3831,14 @@
       "formation_event": "nd_npl.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_npl.txt"
+      "mod_source_file": "99_nd_npl.txt",
+      "english_potential": [],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Nepali Group culture group"
+        }
+      ]
     },
     {
       "block_key": "MUG_f",
@@ -2021,7 +3868,44 @@
       "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\ttrigger_event_non_silently = nd_mug.1\n\t\tadd_stability = stability_severe_bonus",
       "formation_event": "nd_mug.1",
       "source": "vanilla+mod_replace",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Muslim group"
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Iranian Group culture group"
+            },
+            {
+              "kind": "atom",
+              "text": "Turkic Group culture group"
+            },
+            {
+              "kind": "atom",
+              "text": "Afghani Language language"
+            }
+          ]
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Delhi"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Agra"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Lahore"
+        }
+      ]
     },
     {
       "block_key": "DEC_f",
@@ -2048,7 +3932,57 @@
       "formation_event": "nd_dec.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_dec.txt"
+      "mod_source_file": "99_nd_dec.txt",
+      "english_potential": [
+        {
+          "kind": "any_culture",
+          "text": "Any primary, accepted, or tolerated culture matches:",
+          "children": [
+            {
+              "kind": "or",
+              "text": "Any of:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Marathi Language language"
+                },
+                {
+                  "kind": "atom",
+                  "text": "Kannada Language language"
+                },
+                {
+                  "kind": "atom",
+                  "text": "Telugu Language language"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Marathi Language language"
+            },
+            {
+              "kind": "atom",
+              "text": "Kannada Language language"
+            },
+            {
+              "kind": "atom",
+              "text": "Telugu Language language"
+            }
+          ]
+        },
+        {
+          "kind": "atom",
+          "text": "Sunni religion"
+        }
+      ]
     },
     {
       "block_key": "MHR_f",
@@ -2075,7 +4009,35 @@
       "formation_event": "nd_mhr.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_mhr.txt"
+      "mod_source_file": "99_nd_mhr.txt",
+      "english_potential": [
+        {
+          "kind": "any_culture",
+          "text": "Any primary, accepted, or tolerated culture matches:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Marathi Language language"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Marathi Language language"
+        },
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Sunni religion"
+            }
+          ]
+        }
+      ]
     },
     {
       "block_key": "HIN_f",
@@ -2100,7 +4062,9 @@
       "formation_event": "nd_hin.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_hin.txt"
+      "mod_source_file": "99_nd_hin.txt",
+      "english_potential": [],
+      "english_allow": []
     },
     {
       "block_key": "PUN_f",
@@ -2127,7 +4091,14 @@
       "formation_event": "nd_pun.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_pun.txt"
+      "mod_source_file": "99_nd_pun.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Punjabi culture"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "RJP_f",
@@ -2154,7 +4125,14 @@
       "formation_event": "nd_rjp.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_rjp.txt"
+      "mod_source_file": "99_nd_rjp.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Rajasthani Language language"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "GUJ_f",
@@ -2182,7 +4160,19 @@
       "formation_event": "nd_guj.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_guj.txt"
+      "mod_source_file": "99_nd_guj.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Gujarati Language language"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Muslim group"
+        }
+      ]
     },
     {
       "block_key": "SHA_f",
@@ -2209,7 +4199,14 @@
       "formation_event": "nd_sha.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_sha.txt"
+      "mod_source_file": "99_nd_sha.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Shan Group culture group"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "MSA_f",
@@ -2236,7 +4233,18 @@
       "formation_event": "nd_msa.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_msa.txt"
+      "mod_source_file": "99_nd_msa.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Malay Culture culture"
+        },
+        {
+          "kind": "atom",
+          "text": "Muslim group"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "SIA_f",
@@ -2264,7 +4272,14 @@
       "formation_event": "nd_sia.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_sia.txt"
+      "mod_source_file": "99_nd_sia.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Thai Culture culture"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "BAN_f",
@@ -2291,7 +4306,19 @@
       "formation_event": "nd_ban.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_ban.txt"
+      "mod_source_file": "99_nd_ban.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Sundanese Culture culture"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Banten"
+        }
+      ]
     },
     {
       "block_key": "IRA_f",
@@ -2317,7 +4344,14 @@
       "form_effect_raw": "trigger_event_non_silently = nd_ira.1\n\t\tadd_stability = stability_severe_bonus\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}",
       "formation_event": "nd_ira.1",
       "source": "vanilla+mod_replace",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Iranian Group culture group"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "TIB_f",
@@ -2344,7 +4378,14 @@
       "formation_event": "nd_tib.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_tib.txt"
+      "mod_source_file": "99_nd_tib.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Tibetan Group culture group"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "SKO_f",
@@ -2374,7 +4415,33 @@
       "formation_event": "nd_sko.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_sko.txt"
+      "mod_source_file": "99_nd_sko.txt",
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Hausa culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Fulbe culture"
+            }
+          ]
+        },
+        {
+          "kind": "atom",
+          "text": "Sunni religion"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Sokoto"
+        }
+      ]
     },
     {
       "block_key": "HAU_f",
@@ -2402,7 +4469,14 @@
       "formation_event": "nd_hau.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_hau.txt"
+      "mod_source_file": "99_nd_hau.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Hausa culture"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "KON_f",
@@ -2430,7 +4504,14 @@
       "formation_event": "nd_kon.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_kon.txt"
+      "mod_source_file": "99_nd_kon.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Bantu Religion religion"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "NTR_f",
@@ -2457,7 +4538,19 @@
       "formation_event": "nd_ntr.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_ntr.txt"
+      "mod_source_file": "99_nd_ntr.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Maori Culture culture"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Has advance Maori He Whakaputanga Advance"
+        }
+      ]
     },
     {
       "block_key": "AIR_f",
@@ -2484,7 +4577,14 @@
       "formation_event": "nd_air.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_air.txt"
+      "mod_source_file": "99_nd_air.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Tuareg culture"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "NAV_f",
@@ -2510,7 +4610,14 @@
       "form_effect_raw": "",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Basque culture"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "KOJ_f",
@@ -2536,7 +4643,37 @@
       "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\thas_variable = form_koj_variable\n\t\t\t}\n\t\t\tadd_stability = stability_extreme_bonus\n\t\t\tadd_government_power = government_power_extreme_bonus\n\t\t\tadd_country_modifier = {\n\t\t\t\tmodifier = jerusalem_resurgent_modifier\n\t\t\t\tyears = 20\n\t\t\t\tmode = add_and_extend\n\t\t\t}\n\t\t\tremove_variable = form_koj_variable\n\t\t}\n\t\ttrigger_event_non_silently = nd_koj.1",
       "formation_event": "nd_koj.1",
       "source": "vanilla+mod_replace",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Catholic religion"
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Tag: Cyp"
+            },
+            {
+              "kind": "atom",
+              "text": "Tag: Nap"
+            },
+            {
+              "kind": "atom",
+              "text": "Has Reform: Military Order Reform"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Jerusalem"
+        }
+      ]
     },
     {
       "block_key": "INC_f",
@@ -2563,7 +4700,19 @@
       "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\tif = {\n\t\t\tlimit = { has_reform = government_reform:andean_monarchy }\n\t\t\tremove_reform = government_reform:andean_monarchy\n\t\t}\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tNOT = { has_reform = government_reform:reformed_tawantinsuyu_government }\n\t\t\t}\n\t\t\tif = {\n\t\t\t\tlimit = { NOT = { government_type = government_type:monarchy } }\n\t\t\t\tchange_government_type = government_type:monarchy\n\t\t\t\tadd_legitimacy = legitimacy_radical_bonus\n\t\t\t}\n\t\t\tadd_reform = government_reform:tawantinsuyu_monarchy\n\t\t}\n\t\ttrigger_event_non_silently = nd_inc.1\n\t\tadd_stability = stability_mild_bonus",
       "formation_event": "nd_inc.1",
       "source": "vanilla+mod_replace",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Quechuan Language language"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Folk Peruvian Group group"
+        }
+      ]
     },
     {
       "block_key": "TIM_f",
@@ -2589,7 +4738,14 @@
       "form_effect_raw": "",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Uzbek Culture culture"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "SER_f",
@@ -2615,7 +4771,14 @@
       "form_effect_raw": "",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Serbian culture"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "MCH_f",
@@ -2646,7 +4809,14 @@
       "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = flavor_mch.5\n\t\ttrigger_event_non_silently = nd_mch.1\n\t\tadd_stability = stability_mild_bonus",
       "formation_event": "flavor_mch.5",
       "source": "vanilla+mod_replace",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Jurchen Group culture group"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "YMT_f",
@@ -2670,7 +4840,14 @@
       "form_effect_raw": "",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Not: Always"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "SHL_f",
@@ -2697,7 +4874,14 @@
       "formation_event": "nd_shl.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_shl.txt"
+      "mod_source_file": "99_nd_shl.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Holsatian culture"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "RUM_f",
@@ -2723,7 +4907,23 @@
       "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\ttrigger_event_non_silently = nd_rum.1\n\t\tadd_stability = stability_severe_bonus",
       "formation_event": "nd_rum.1",
       "source": "vanilla+mod_replace",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Turkic Group culture group"
+        },
+        {
+          "kind": "atom",
+          "text": "Muslim group"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Concluded Roto As Not Ottos Tt"
+        }
+      ]
     },
     {
       "block_key": "MGE_f",
@@ -2768,7 +4968,109 @@
       "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\tif = {\n\t\t\tlimit = { has_variable = rise_of_timur_situation_country }\n\t\t\ttrigger_event_non_silently = rise_of_timur.9\n\t\t}\n\t\telse = {\n\t\t\tadd_country_modifier = {\n\t\t\t\tmodifier = restoration_of_the_mongol_empire\n\t\t\t\tyears = 50\n\t\t\t\tmode = add_and_extend\n\t\t\t}\n\t\t}\n\t\ttrigger_event_non_silently = nd_mge.1",
       "formation_event": "rise_of_timur.9",
       "source": "vanilla+mod_replace",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Tag: Timurid"
+            },
+            {
+              "kind": "and",
+              "text": "All of:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Has Ruler: Yes"
+                },
+                {
+                  "kind": "block",
+                  "text": "Ruler:",
+                  "children": [
+                    {
+                      "kind": "atom",
+                      "text": "Has Dynasty: Yes"
+                    },
+                    {
+                      "kind": "atom",
+                      "text": "Dynasty: Borjigin Dynasty"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "kind": "and",
+              "text": "All of:",
+              "children": [
+                {
+                  "kind": "or",
+                  "text": "Any culture of:",
+                  "children": [
+                    {
+                      "kind": "atom",
+                      "text": "Mongolian Group group"
+                    },
+                    {
+                      "kind": "atom",
+                      "text": "Turkic Group group"
+                    }
+                  ]
+                },
+                {
+                  "kind": "atom",
+                  "text": "Government Type: Steppe Horde"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Not: In civil war"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Sarai Al Jadid"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Kazan"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Samarkand"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Kaffa"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Dadu"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Shangyuan"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Baxian"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Guangzhou"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Karakorum"
+        }
+      ]
     },
     {
       "block_key": "MGO_f",
@@ -2795,7 +5097,19 @@
       "formation_event": "nd_mgo.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_mgo.txt"
+      "mod_source_file": "99_nd_mgo.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Mongolian Group culture group"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Not: In civil war"
+        }
+      ]
     },
     {
       "block_key": "ILK_f",
@@ -2830,7 +5144,51 @@
       "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\tdestroy_international_organization = { target = international_organization:ilkhanate }\n\t\ttrigger_event_non_silently = nd_ilk.1\n\t\tadd_stability = stability_severe_bonus",
       "formation_event": "nd_ilk.1",
       "source": "vanilla+mod_replace",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Country exists = international_organization:ilkhanate"
+        },
+        {
+          "kind": "atom",
+          "text": "Is Member Of International Organization: Ilkhanate"
+        },
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Tag: Persia"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Country exists = international_organization:ilkhanate"
+        },
+        {
+          "kind": "atom",
+          "text": "Is Leader Of International Organization: Ilkhanate"
+        },
+        {
+          "kind": "block",
+          "text": "Num Countries With Special Status:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Type: Ilkhan Claimant"
+            },
+            {
+              "kind": "atom",
+              "text": "Value: 0"
+            }
+          ]
+        }
+      ]
     },
     {
       "block_key": "GEO_f",
@@ -2858,7 +5216,19 @@
       "form_effect_raw": "",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Georgian Culture culture"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Tbilisi"
+        }
+      ]
     },
     {
       "block_key": "ARM_f",
@@ -2884,7 +5254,14 @@
       "form_effect_raw": "",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Armenian Culture culture"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "AYU_f",
@@ -2908,7 +5285,14 @@
       "form_effect_raw": "",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Not: Always"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "ALB_f",
@@ -2932,7 +5316,14 @@
       "form_effect_raw": "",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Albanian culture"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "BAH_f",
@@ -2956,7 +5347,14 @@
       "form_effect_raw": "",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Not: Always"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "GLD_f",
@@ -2980,7 +5378,14 @@
       "form_effect_raw": "",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Not: Always"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "DAH_f",
@@ -3004,7 +5409,14 @@
       "form_effect_raw": "",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Not: Always"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "MAY_f",
@@ -3036,7 +5448,24 @@
       "formation_event": "nd_may.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_may.txt"
+      "mod_source_file": "99_nd_may.txt",
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Maya Language language"
+            },
+            {
+              "kind": "atom",
+              "text": "Mayan religion"
+            }
+          ]
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "KRY_f",
@@ -3063,7 +5492,14 @@
       "formation_event": "nd_kry.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_kry.txt"
+      "mod_source_file": "99_nd_kry.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Gilak Culture culture"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "RYU_f",
@@ -3091,7 +5527,14 @@
       "form_effect_raw": "set_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\ttrigger_event_non_silently = nd_ryu.1\n\t\tadd_stability = stability_mild_bonus",
       "formation_event": "nd_ryu.1",
       "source": "vanilla+mod_replace",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Ryukyu Culture culture"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "CHI_f",
@@ -3120,7 +5563,35 @@
       "form_effect_raw": "change_government_type = government_type:monarchy\n\t\trtr_recreate_middle_kingdom = yes\n\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\ttrigger_event_non_silently = nd_chi.1\n\t\tadd_stability = stability_severe_bonus",
       "formation_event": "nd_chi.1",
       "source": "vanilla+mod_replace",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Chinese Group culture group"
+        },
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Country exists = international_organization:middle_kingdom"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Is Situation Active: Red Turban Rebellions"
+            }
+          ]
+        }
+      ]
     },
     {
       "block_key": "IRO_f",
@@ -3144,7 +5615,19 @@
       "form_effect_raw": "set_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\ttrigger_event_non_silently = nd_iro.1\n\t\tadd_stability = stability_mild_bonus",
       "formation_event": "nd_iro.1",
       "source": "vanilla+mod_replace",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Haudenosaunee Group culture group"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Haudenosaunee Group culture group"
+        }
+      ]
     },
     {
       "block_key": "PUE_f",
@@ -3178,7 +5661,71 @@
       "formation_event": "nd_pue.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_pue.txt"
+      "mod_source_file": "99_nd_pue.txt",
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Keres Culture culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Zuni Culture culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Hopi Culture culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Hualapai Culture culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Tanoan Culture culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Hohokam Culture culture"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Keres Culture culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Zuni Culture culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Hopi Culture culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Hualapai Culture culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Tanoan Culture culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Hohokam Culture culture"
+            }
+          ]
+        }
+      ]
     },
     {
       "block_key": "RMN_f",
@@ -3208,7 +5755,19 @@
       "form_effect_raw": "set_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\ttrigger_event_non_silently = nd_rmn.1\n\t\tadd_stability = stability_mild_bonus",
       "formation_event": "nd_rmn.1",
       "source": "vanilla+mod_replace",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Romanian Group culture group"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Bucharest"
+        }
+      ]
     },
     {
       "block_key": "SWA_f",
@@ -3235,7 +5794,14 @@
       "formation_event": "nd_swa.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_swa.txt"
+      "mod_source_file": "99_nd_swa.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Swabian culture"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "WES_f",
@@ -3262,7 +5828,51 @@
       "formation_event": "nd_wes.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_wes.txt"
+      "mod_source_file": "99_nd_wes.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Westphalian culture"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Government Type: Theocracy"
+            }
+          ]
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "not",
+              "text": "Must not:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Kol exists"
+                }
+              ]
+            },
+            {
+              "kind": "block",
+              "text": "Current Age Or Later:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Age: Age 6 Revolutions"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "block_key": "BEL_f",
@@ -3291,7 +5901,34 @@
       "formation_event": "nd_bel.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_bel.txt"
+      "mod_source_file": "99_nd_bel.txt",
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Walloon culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Low Franconian culture"
+            }
+          ]
+        },
+        {
+          "kind": "block",
+          "text": "Current Age Or Later:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Age: Age 6 Revolutions"
+            }
+          ]
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "FKN_f",
@@ -3318,7 +5955,14 @@
       "formation_event": "nd_fkn.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_fkn.txt"
+      "mod_source_file": "99_nd_fkn.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "East Franconian culture"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "HAN_f",
@@ -3347,7 +5991,19 @@
       "formation_event": "nd_han.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_han.txt"
+      "mod_source_file": "99_nd_han.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Lower Saxon culture"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Hanover"
+        }
+      ]
     },
     {
       "block_key": "TUS_f",
@@ -3376,7 +6032,19 @@
       "formation_event": "nd_tus.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_tus.txt"
+      "mod_source_file": "99_nd_tus.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Tuscan culture"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Florence"
+        }
+      ]
     },
     {
       "block_key": "BUL_f",
@@ -3402,7 +6070,14 @@
       "form_effect_raw": "set_country_rank_effect = { rank = country_rank:rank_kingdom }",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Bulgarian culture"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "DAL_f",
@@ -3431,7 +6106,29 @@
       "formation_event": "nd_dal.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_dal.txt"
+      "mod_source_file": "99_nd_dal.txt",
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Dalmatian culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Croatian culture"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Dubrovnik"
+        }
+      ]
     },
     {
       "block_key": "HUN_f",
@@ -3462,7 +6159,23 @@
       "form_effect_raw": "set_country_rank_effect = { rank = country_rank:rank_kingdom }",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Hungarian Group culture group"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Pest"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Buda"
+        }
+      ]
     },
     {
       "block_key": "KRS_f",
@@ -3489,7 +6202,14 @@
       "formation_event": "nd_krs.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_krs.txt"
+      "mod_source_file": "99_nd_krs.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Kurdish Culture culture"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "SOI_f",
@@ -3516,7 +6236,14 @@
       "formation_event": "nd_soi.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_soi.txt"
+      "mod_source_file": "99_nd_soi.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Somali Culture culture"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "CRO_f",
@@ -3545,7 +6272,19 @@
       "form_effect_raw": "",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Croatian culture"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Zagreb"
+        }
+      ]
     },
     {
       "block_key": "TRA_f",
@@ -3571,7 +6310,32 @@
       "form_effect_raw": "",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Hungarian culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Transylvanian culture"
+            },
+            {
+              "kind": "atom",
+              "text": "German Transylvanian culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Szekely Culture culture"
+            }
+          ]
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "MAL_f",
@@ -3600,7 +6364,19 @@
       "form_effect_raw": "set_country_rank_effect = { rank = country_rank:rank_empire }\n\t\ttrigger_event_non_silently = nd_mal.1\n\t\tadd_stability = stability_mild_bonus",
       "formation_event": "nd_mal.1",
       "source": "vanilla+mod_replace",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Mande Language language"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Niani"
+        }
+      ]
     },
     {
       "block_key": "NUB_f",
@@ -3628,7 +6404,14 @@
       "formation_event": "nd_nub.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_nub.txt"
+      "mod_source_file": "99_nd_nub.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Nubian culture"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "FIN_f",
@@ -3655,7 +6438,14 @@
       "formation_event": "nd_fin.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_fin.txt"
+      "mod_source_file": "99_nd_fin.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Finnish culture"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "ICE_f",
@@ -3681,7 +6471,14 @@
       "form_effect_raw": "",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Icelandic culture"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "KAZ_f",
@@ -3709,7 +6506,14 @@
       "formation_event": "nd_kaz.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_kaz.txt"
+      "mod_source_file": "99_nd_kaz.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Kipchak Language language"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "MIR_f",
@@ -3736,7 +6540,14 @@
       "formation_event": "nd_mir.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_mir.txt"
+      "mod_source_file": "99_nd_mir.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Malagasy Group culture group"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "MOR_f",
@@ -3764,7 +6575,14 @@
       "formation_event": "nd_mor.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_mor.txt"
+      "mod_source_file": "99_nd_mor.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Moroccan culture"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "NUS_f",
@@ -3794,7 +6612,37 @@
       "formation_event": "nd_nus.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_nus.txt"
+      "mod_source_file": "99_nd_nus.txt",
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Javanese Culture culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Sundanese Culture culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Madurese Culture culture"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Trowulan"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Palembang"
+        }
+      ]
     },
     {
       "block_key": "SLO_f",
@@ -3821,7 +6669,14 @@
       "formation_event": "nd_slo.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_slo.txt"
+      "mod_source_file": "99_nd_slo.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Slovak culture"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "BNO_f",
@@ -3849,7 +6704,9 @@
       "formation_event": "nd_bno.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_bno.txt"
+      "mod_source_file": "99_nd_bno.txt",
+      "english_potential": [],
+      "english_allow": []
     },
     {
       "block_key": "CIR_f",
@@ -3875,7 +6732,9 @@
       "form_effect_raw": "",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [],
+      "english_allow": []
     },
     {
       "block_key": "AZT_f",
@@ -3903,7 +6762,29 @@
       "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\ttrigger_event_non_silently = nd_azt.1\n\t\tadd_stability = stability_mild_bonus",
       "formation_event": "nd_azt.1",
       "source": "vanilla+mod_replace",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Nahuatl religion"
+            },
+            {
+              "kind": "atom",
+              "text": "Nahua Culture culture"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Tenochtitlan"
+        }
+      ]
     },
     {
       "block_key": "PON_f",
@@ -3932,7 +6813,39 @@
       "form_effect_raw": "set_country_rank_effect = { rank = country_rank:rank_kingdom }",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Pontic Greek Culture culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Owns Trebizond"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "and",
+          "text": "All of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Pontic Greek Culture culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Owns Trebizond"
+            }
+          ]
+        }
+      ]
     },
     {
       "block_key": "TUR_f",
@@ -3956,7 +6869,14 @@
       "form_effect_raw": "",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Not: Always"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "ASK_f",
@@ -3980,7 +6900,14 @@
       "form_effect_raw": "",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Not: Always"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "JAP_f",
@@ -4005,7 +6932,14 @@
       "formation_event": "nd_jap.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_jap.txt"
+      "mod_source_file": "99_nd_jap.txt",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Not: Always"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "PGR_f",
@@ -4029,7 +6963,14 @@
       "form_effect_raw": "",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Not: Always"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "MTM_f",
@@ -4053,7 +6994,14 @@
       "form_effect_raw": "",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Not: Always"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "YUA_f",
@@ -4077,7 +7025,14 @@
       "form_effect_raw": "",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Not: Always"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "CSH_f",
@@ -4101,7 +7056,14 @@
       "form_effect_raw": "",
       "formation_event": null,
       "source": "vanilla",
-      "mod_overrides": false
+      "mod_overrides": false,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Not: Always"
+        }
+      ],
+      "english_allow": []
     },
     {
       "block_key": "ALM_f",
@@ -4134,7 +7096,27 @@
       "form_effect_raw": "trigger_event_non_silently = nd_alm.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}",
       "formation_event": "nd_alm.1",
       "source": "mod_new",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Maghrebi Group culture group"
+        },
+        {
+          "kind": "atom",
+          "text": "Sunni religion"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Marrakesh"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Fez"
+        }
+      ]
     },
     {
       "block_key": "ANV_f",
@@ -4177,7 +7159,41 @@
       "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = nd_anv.1\n\t\tadd_stability = stability_mild_bonus",
       "formation_event": "nd_anv.1",
       "source": "mod_new",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Catholic religion"
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "English culture"
+            },
+            {
+              "kind": "atom",
+              "text": "French Group culture group"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns London"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Rouen"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Angers"
+        }
+      ]
     },
     {
       "block_key": "ATE_f",
@@ -4206,7 +7222,19 @@
       "form_effect_raw": "if = {\n\t\t\tlimit = {\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = nd_ate.1\n\t\tadd_stability = stability_mild_bonus",
       "formation_event": "nd_ate.1",
       "source": "mod_new",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Akan culture"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Kumasi"
+        }
+      ]
     },
     {
       "block_key": "CSO_f",
@@ -4250,7 +7278,49 @@
       "form_effect_raw": "trigger_event_non_silently = nd_cso.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\tset_capital = location:hangzhou",
       "formation_event": "nd_cso.1",
       "source": "mod_new",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Chinese Group culture group"
+        },
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Country exists = international_organization:middle_kingdom"
+            }
+          ]
+        },
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Tag: China"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Hangzhou"
+        },
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Is Situation Active: Red Turban Rebellions"
+            }
+          ]
+        }
+      ]
     },
     {
       "block_key": "DRR_f",
@@ -4287,7 +7357,27 @@
       "form_effect_raw": "trigger_event_non_silently = nd_drr.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tcountry_rank_level < 4\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\tset_capital = location:kandahar",
       "formation_event": "nd_drr.1",
       "source": "mod_new",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Afghan Culture culture"
+        },
+        {
+          "kind": "atom",
+          "text": "Sunni religion"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Kandahar"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Kabul"
+        }
+      ]
     },
     {
       "block_key": "EDO_f",
@@ -4316,7 +7406,19 @@
       "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = nd_edo.1\n\t\tadd_stability = stability_mild_bonus",
       "formation_event": "nd_edo.1",
       "source": "mod_new",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Edo culture"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Benin"
+        }
+      ]
     },
     {
       "block_key": "KBU_f",
@@ -4350,7 +7452,27 @@
       "form_effect_raw": "trigger_event_non_silently = nd_kbu.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
       "formation_event": "nd_kbu.1",
       "source": "mod_new",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Kanembu Culture culture"
+        },
+        {
+          "kind": "atom",
+          "text": "Sunni religion"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Ngazargamu"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Njimi"
+        }
+      ]
     },
     {
       "block_key": "KWS_f",
@@ -4381,7 +7503,29 @@
       "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = nd_kws.1\n\t\tadd_stability = stability_mild_bonus",
       "formation_event": "nd_kws.1",
       "source": "mod_new",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Swahili Culture culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Matuumbi Culture culture"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Kilwa Kisiwani"
+        }
+      ]
     },
     {
       "block_key": "LBE_f",
@@ -4411,7 +7555,19 @@
       "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = nd_lbe.1\n\t\tadd_stability = stability_mild_bonus",
       "formation_event": "nd_lbe.1",
       "source": "mod_new",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Luba Language language"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Lake Upemba"
+        }
+      ]
     },
     {
       "block_key": "LXA_f",
@@ -4441,7 +7597,23 @@
       "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\tset_capital = location:vientiane\n\t\ttrigger_event_non_silently = nd_lxa.1\n\t\tadd_stability = stability_mild_bonus",
       "formation_event": "nd_lxa.1",
       "source": "mod_new",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Lao Culture culture"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Muang Sua"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Vientiane"
+        }
+      ]
     },
     {
       "block_key": "MCA_f",
@@ -4471,7 +7643,23 @@
       "form_effect_raw": "trigger_event_non_silently = nd_mca.1\n\t\tadd_stability = stability_mild_bonus",
       "formation_event": "nd_mca.1",
       "source": "mod_new",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Muisca Culture culture"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Funza"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Chunsua"
+        }
+      ]
     },
     {
       "block_key": "MTP_f",
@@ -4499,7 +7687,29 @@
       "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = nd_mtp.1\n\t\tadd_stability = stability_mild_bonus",
       "formation_event": "nd_mtp.1",
       "source": "mod_new",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Shona Culture culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Kalanga Culture culture"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Great Zimbabwe"
+        }
+      ]
     },
     {
       "block_key": "NZO_f",
@@ -4532,7 +7742,29 @@
       "form_effect_raw": "trigger_event_non_silently = nd_nzo.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
       "formation_event": "nd_nzo.1",
       "source": "mod_new",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Bai Culture culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Yi Culture culture"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Taihe Dali"
+        }
+      ]
     },
     {
       "block_key": "OYE_f",
@@ -4561,7 +7793,19 @@
       "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = nd_oye.1\n\t\tadd_stability = stability_mild_bonus",
       "formation_event": "nd_oye.1",
       "source": "mod_new",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Yoruba culture"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Oyo Ile"
+        }
+      ]
     },
     {
       "block_key": "SOE_f",
@@ -4595,7 +7839,23 @@
       "form_effect_raw": "trigger_event_non_silently = nd_soe.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}",
       "formation_event": "nd_soe.1",
       "source": "mod_new",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Songhai culture"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Gao"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Timbuktu"
+        }
+      ]
     },
     {
       "block_key": "TDR_f",
@@ -4623,7 +7883,23 @@
       "form_effect_raw": "trigger_event_non_silently = nd_tdr.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
       "formation_event": "nd_tdr.1",
       "source": "mod_new",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Greek Group culture group"
+        },
+        {
+          "kind": "atom",
+          "text": "Orthodox religion"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Theodoro"
+        }
+      ]
     },
     {
       "block_key": "TGD_f",
@@ -4655,7 +7931,37 @@
       "form_effect_raw": "trigger_event_non_silently = nd_tgd.1\n\t\tadd_stability = stability_severe_bonus\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\tset_capital = location:jingzhao",
       "formation_event": "nd_tgd.1",
       "source": "mod_new",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Chinese Group culture group"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Jingzhao"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Kashgar"
+        },
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Is Situation Active: Red Turban Rebellions"
+            }
+          ]
+        },
+        {
+          "kind": "atom",
+          "text": "Not: In civil war"
+        }
+      ]
     },
     {
       "block_key": "YAV_f",
@@ -4685,7 +7991,27 @@
       "form_effect_raw": "trigger_event_non_silently = nd_yav.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}",
       "formation_event": "nd_yav.1",
       "source": "mod_new",
-      "mod_overrides": true
+      "mod_overrides": true,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Sindhi culture"
+        },
+        {
+          "kind": "atom",
+          "text": "Sammitiya religion"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Thatta"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Peshawar"
+        }
+      ]
     }
   ]
 }
