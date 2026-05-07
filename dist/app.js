@@ -315,9 +315,11 @@ function description(rec) {
 function renderList() {
   const term = $search.value.trim().toLowerCase();
   const allowedLevels = currentAllowedLevels();
+  const allowedSources = currentAllowedSources();
   const filtered = formables.filter((f) => {
     if (term && !f._haystack.includes(term)) return false;
     if (f.level != null && !allowedLevels.has(f.level)) return false;
+    if (!isSourceAllowed(f, allowedSources)) return false;
     return true;
   });
   $list.replaceChildren();
@@ -383,7 +385,7 @@ function makeRow(rec) {
 
 // ---- selection / detail panel ------------------------------------------
 
-function selectFormable(rec) {
+function selectFormable(rec, opts = {}) {
   selected = rec;
   $list.querySelectorAll(".formable-row").forEach((r) => {
     r.classList.toggle("selected", r.dataset.key === rec.block_key);
@@ -391,10 +393,35 @@ function selectFormable(rec) {
   showPins(rec);
   showDetail(rec);
   restyleAreaLayer();
+  if (opts.skipFit) return;
   const tb = territoryBounds(rec);
   if (tb) {
     map.fitBounds(tb.pad(0.15), { maxZoom: 5, animate: true });
   }
+}
+
+// Track the area whose claimants we are cycling through so repeated
+// clicks on the same area advance to the next visible claimant.
+let lastClickedArea = null;
+
+function cycleSelectionForArea(areaName) {
+  const claimants = visibleClaimantsFor(areaName);
+  if (claimants.length === 0) {
+    if (selected) clearSelectionAndRestyle();
+    lastClickedArea = null;
+    return;
+  }
+  if (lastClickedArea !== areaName || !selected) {
+    // First click on this area (or after deselect): pick primary, fit map.
+    lastClickedArea = areaName;
+    selectFormable(claimants[0]);
+    return;
+  }
+  // Same area clicked again: advance to next claimant. Skip fit so the
+  // user does not get bounced around the world while iterating.
+  const idx = claimants.findIndex((c) => c.block_key === selected.block_key);
+  const next = claimants[(idx + 1) % claimants.length];
+  selectFormable(next, { skipFit: true });
 }
 
 // ---- area polygon rendering --------------------------------------------
@@ -408,12 +435,7 @@ function renderAreaLayer() {
       const areaName = feature.properties.name;
       layer.on("click", (e) => {
         L.DomEvent.stopPropagation(e);
-        const primary = visiblePrimaryFor(areaName);
-        if (primary) {
-          selectFormable(primary);
-        } else if (selected) {
-          clearSelectionAndRestyle();
-        }
+        cycleSelectionForArea(areaName);
       });
       layer.on("mouseover", (e) => {
         const primary = visiblePrimaryFor(areaName);
@@ -425,14 +447,20 @@ function renderAreaLayer() {
   }).addTo(map);
 }
 
-function visiblePrimaryFor(areaName) {
+function visibleClaimantsFor(areaName) {
   const claimants = areaToFormables[areaName];
-  if (!claimants) return null;
+  if (!claimants) return [];
   const allowedLevels = currentAllowedLevels();
-  for (const c of claimants) {
-    if (c.level == null || allowedLevels.has(c.level)) return c;
-  }
-  return null;
+  const allowedSources = currentAllowedSources();
+  return claimants.filter(
+    (c) => (c.level == null || allowedLevels.has(c.level)) &&
+           isSourceAllowed(c, allowedSources)
+  );
+}
+
+function visiblePrimaryFor(areaName) {
+  const list = visibleClaimantsFor(areaName);
+  return list.length > 0 ? list[0] : null;
 }
 
 function areaStyle(feature) {
@@ -650,6 +678,7 @@ function escapeHtml(s) {
 
 function clearSelection() {
   selected = null;
+  lastClickedArea = null;
   pinLayer.clearLayers();
   $detail.hidden = true;
   $list.querySelectorAll(".formable-row.selected").forEach((r) => r.classList.remove("selected"));
@@ -665,22 +694,41 @@ function currentAllowedLevels() {
   });
   return set;
 }
-document.querySelectorAll('#level-filter input[type="checkbox"]').forEach((b) => {
-  b.addEventListener("change", () => {
-    renderList();
-    if (areaLayer) restyleAreaLayer();
-    // If the currently selected formable is now hidden by filters, deselect.
-    if (selected && selected.level != null && !currentAllowedLevels().has(selected.level)) {
-      clearSelectionAndRestyle();
-    }
+function currentAllowedSources() {
+  const set = new Set();
+  document.querySelectorAll('#source-filter input[type="checkbox"]').forEach((b) => {
+    if (b.checked) set.add(b.dataset.src);
   });
-});
+  return set;
+}
+function isSourceAllowed(rec, allowed) {
+  if (rec.source === "mod_new") return allowed.has("mod_new");
+  if (rec.mod_overrides) return allowed.has("enhanced");
+  return false;  // pure vanilla is excluded entirely (filtered earlier)
+}
+
+function onFiltersChanged() {
+  renderList();
+  if (areaLayer) restyleAreaLayer();
+  if (selected && !isFormableVisible(selected)) {
+    clearSelectionAndRestyle();
+  }
+}
+function isFormableVisible(rec) {
+  if (rec.level != null && !currentAllowedLevels().has(rec.level)) return false;
+  if (!isSourceAllowed(rec, currentAllowedSources())) return false;
+  return true;
+}
+document.querySelectorAll(
+  '#level-filter input[type="checkbox"], #source-filter input[type="checkbox"]'
+).forEach((b) => b.addEventListener("change", onFiltersChanged));
 
 // Click anywhere on the map that is NOT a claimed area polygon: deselect.
 // (Polygon click handlers stop propagation, so this only fires for empty
 // space and unclaimed areas.)
 map.on("click", () => {
   if (selected) clearSelectionAndRestyle();
+  lastClickedArea = null;
 });
 
 // ---- hover card --------------------------------------------------------
