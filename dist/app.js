@@ -55,9 +55,10 @@ L.tileLayer("tiles/{z}/{x}/{y}.png", {
 }).addTo(map);
 // Constrain vertical pan to map bounds; horizontal wraps freely.
 map.setMaxBounds([
-  [-NATIVE_H * 1.5, -Infinity],
-  [NATIVE_H * 0.5, Infinity],
+  [-NATIVE_H, -Infinity],
+  [0, Infinity],
 ]);
+map.options.maxBoundsViscosity = 1.0;
 map.fitBounds(visibleBounds);
 
 // Recompute minZoom on viewport resize so the world always fills the screen.
@@ -69,7 +70,9 @@ window.addEventListener("resize", () => {
 
 // Layer that holds pins for the currently-selected formable.
 const pinLayer = L.layerGroup().addTo(map);
-let areaLayer = null;  // Leaflet GeoJSON layer with all 805 area polygons
+// Three GeoJSON copies so wrap-around shows polygons in adjacent worlds
+// (CRS.Simple polygons do not auto-wrap the way tile pyramids do).
+const areaLayers = { center: null, west: null, east: null };
 
 // pixel coords (x, y) -> Leaflet latlng (we use -y for lat).
 function px(x, y) {
@@ -78,15 +81,20 @@ function px(x, y) {
 
 // Convert GeoJSON's [x, y] (pixel space) into Leaflet's flipped CRS.Simple.
 // Leaflet's GeoJSON layer interprets coords as [lng, lat]; we want lat = -y.
-function flipGeoJson(gj) {
+// Optional xShift adds an offset for wrap copies.
+function flipGeoJson(gj, xShift = 0) {
   function flipCoords(c) {
-    if (typeof c[0] === "number") return [c[0], -c[1]];
+    if (typeof c[0] === "number") return [c[0] + xShift, -c[1]];
     return c.map(flipCoords);
   }
-  for (const feat of gj.features) {
-    feat.geometry.coordinates = flipCoords(feat.geometry.coordinates);
-  }
-  return gj;
+  const out = {
+    type: gj.type,
+    features: gj.features.map((f) => ({
+      ...f,
+      geometry: { ...f.geometry, coordinates: flipCoords(f.geometry.coordinates) },
+    })),
+  };
+  return out;
 }
 
 // ---- data load ----------------------------------------------------------
@@ -427,24 +435,34 @@ function cycleSelectionForArea(areaName) {
 // ---- area polygon rendering --------------------------------------------
 
 function renderAreaLayer() {
-  flipGeoJson(areasGeoJson);
-  areaLayer = L.geoJSON(areasGeoJson, {
-    style: areaStyle,
-    interactive: true,
-    onEachFeature: (feature, layer) => {
-      const areaName = feature.properties.name;
-      layer.on("click", (e) => {
-        L.DomEvent.stopPropagation(e);
-        cycleSelectionForArea(areaName);
-      });
-      layer.on("mouseover", (e) => {
-        const primary = visiblePrimaryFor(areaName);
-        if (primary) showHoverCard(primary, e, areaName);
-      });
-      layer.on("mousemove", (e) => positionHoverCard(e));
-      layer.on("mouseout", hideHoverCard);
-    },
-  }).addTo(map);
+  // Build three coordinate-shifted copies of the GeoJSON: canonical at 0,
+  // wrap copies at -NATIVE_W and +NATIVE_W so panning across the
+  // antimeridian shows polygons in any direction.
+  const shifts = [
+    ["center", 0],
+    ["west", -NATIVE_W],
+    ["east", NATIVE_W],
+  ];
+  for (const [key, dx] of shifts) {
+    const shifted = flipGeoJson(areasGeoJson, dx);
+    areaLayers[key] = L.geoJSON(shifted, {
+      style: areaStyle,
+      interactive: true,
+      onEachFeature: (feature, layer) => {
+        const areaName = feature.properties.name;
+        layer.on("click", (e) => {
+          L.DomEvent.stopPropagation(e);
+          cycleSelectionForArea(areaName);
+        });
+        layer.on("mouseover", (e) => {
+          const primary = visiblePrimaryFor(areaName);
+          if (primary) showHoverCard(primary, e, areaName);
+        });
+        layer.on("mousemove", (e) => positionHoverCard(e));
+        layer.on("mouseout", hideHoverCard);
+      },
+    }).addTo(map);
+  }
 }
 
 function visibleClaimantsFor(areaName) {
@@ -503,8 +521,9 @@ function areaStyle(feature) {
 }
 
 function restyleAreaLayer() {
-  if (!areaLayer) return;
-  areaLayer.setStyle(areaStyle);
+  for (const key of Object.keys(areaLayers)) {
+    if (areaLayers[key]) areaLayers[key].setStyle(areaStyle);
+  }
 }
 
 function clearSelectionAndRestyle() {
@@ -522,16 +541,20 @@ function showPins(rec) {
     }
     const [cx, cy] = info.centroid;
     const labelText = lookupLoc(locName) || prettifyName(locName);
-    const marker = L.marker(px(cx, cy), {
-      icon: L.divIcon({
-        className: "must-own-marker",
-        html: `<div class="must-own-pin"></div><div class="must-own-label">${escapeHtml(labelText)}</div>`,
-        iconSize: [14, 14],
-        iconAnchor: [7, 7],
-      }),
-      keyboard: false,
-    });
-    marker.addTo(pinLayer);
+    // Mirror pins into the two wrap worlds so they remain visible when
+    // panning across the antimeridian.
+    for (const dx of [0, -NATIVE_W, NATIVE_W]) {
+      const marker = L.marker(L.latLng(-cy, cx + dx), {
+        icon: L.divIcon({
+          className: "must-own-marker",
+          html: `<div class="must-own-pin"></div><div class="must-own-label">${escapeHtml(labelText)}</div>`,
+          iconSize: [14, 14],
+          iconAnchor: [7, 7],
+        }),
+        keyboard: false,
+      });
+      marker.addTo(pinLayer);
+    }
   }
 }
 
