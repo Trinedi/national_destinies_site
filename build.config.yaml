@@ -1,0 +1,19 @@
+mod_root: ~/Projects/national_destinies
+eu5_game_root: ~/.local/share/Steam/steamapps/common/Europa Universalis V/game
+
+paths:
+  locations_png: in_game/map_data/locations.png
+  named_locations: in_game/map_data/named_locations/00_default.txt
+  definitions: in_game/map_data/definitions.txt
+  default_map: in_game/map_data/default.map
+
+map:
+  equator_y: 3340
+  wrap_x: true
+  zoom_levels: 6
+  tile_size: 256
+
+build:
+  data_dir: data
+  dist_dir: dist
+  cache_dir: data/cache

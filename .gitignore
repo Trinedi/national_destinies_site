@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+dist/tiles/
+dist/*.html
+dist/*.js
+dist/*.css
+data/cache/
+.DS_Store
