@@ -42,6 +42,10 @@ const map = L.map("map", {
   zoomSnap: 0.25,
   preferCanvas: true,
   worldCopyJump: false,
+  // Firm vertical clamp so the user cannot pan into the black void.
+  // Setting this on map.options after construction silently no-ops, so
+  // it must live in the constructor.
+  maxBoundsViscosity: 1.0,
 });
 L.control.zoom({ position: "bottomright" }).addTo(map);
 
@@ -59,7 +63,6 @@ map.setMaxBounds([
   [-NATIVE_H, -Infinity],
   [0, Infinity],
 ]);
-map.options.maxBoundsViscosity = 1.0;
 map.fitBounds(visibleBounds);
 
 // Recompute minZoom on viewport resize so the world always fills the screen.
@@ -789,7 +792,7 @@ function isSourceAllowed(rec, allowed) {
 
 function onFiltersChanged() {
   renderList();
-  if (areaLayer) restyleAreaLayer();
+  restyleAreaLayer();
   if (selected && !isFormableVisible(selected)) {
     clearSelectionAndRestyle();
   }
