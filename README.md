@@ -15,10 +15,16 @@ The build reads from a local clone of the mod and from the EU5 game install. Bot
 ```bash
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
-.venv/bin/python scripts/build/extract_map.py   # ~6s, parses 28k locations
-.venv/bin/python scripts/build/tile_map.py      # ~20s, 2700 tiles
-# more steps land as the pipeline grows
+
+# Daily: refresh formables / loc / requirements after mod changes (~1s)
+.venv/bin/python scripts/build/build_site.py
+
+# Less common: refresh everything including tiles & polygons (~5 min)
+.venv/bin/python scripts/build/build_site.py --full
 ```
+
+`dist/` is the deployable output. After running the build, commit and
+push; the GitHub Pages workflow uploads `dist/` automatically.
 
 ## What gets generated
 
