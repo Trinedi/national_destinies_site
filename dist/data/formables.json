@@ -7882,6 +7882,93 @@
       "english_allow": []
     },
     {
+      "block_key": "AEG_f",
+      "mode": "full",
+      "source_file": "99_nd_aeg.txt",
+      "tag": "AEG",
+      "name": "AEG",
+      "adjective": "AEG_ADJ",
+      "flag": "AEG",
+      "color": "map_AEG",
+      "level": 4,
+      "fraction": 0.7,
+      "rule": "plausible",
+      "content_priority": null,
+      "regions": [
+        "egypt_region",
+        "nubia_region"
+      ],
+      "areas": [
+        "levant_area",
+        "hedjaz_area"
+      ],
+      "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [
+        "cairo",
+        "damascus",
+        "mecca",
+        "dongola",
+        "benghazi"
+      ],
+      "allow_raw": "owns = location:cairo\n\t\towns = location:damascus\n\t\towns = location:mecca\n\t\towns = location:dongola\n\t\towns = location:benghazi\n\t\tin_civil_war = no",
+      "potential_raw": "religion = religion:sunni\n\t\tOR = {\n\t\t\tculture = { has_culture_group = culture_group:arabic_group }\n\t\t\tculture = culture:coptic_culture\n\t\t}",
+      "form_effect_raw": "if = {\n\t\t\tlimit = { NOT = { capital = location:cairo } }\n\t\t\tset_capital = location:cairo\n\t\t}\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\ttrigger_event_non_silently = nd_aeg.1\n\t\tadd_stability = stability_severe_bonus",
+      "formation_event": "nd_aeg.1",
+      "source": "mod_new",
+      "mod_overrides": true,
+      "variant_label": null,
+      "color_rgb": "#d29d20",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Sunnism religion"
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Arabic Group culture group"
+            },
+            {
+              "kind": "atom",
+              "text": "Coptic Culture"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Cairo"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Damascus"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Mecca"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Dongola"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Benghazi"
+        },
+        {
+          "kind": "atom",
+          "text": "Not: In civil war"
+        }
+      ]
+    },
+    {
       "block_key": "AHM_f",
       "mode": "full",
       "source_file": "99_nd_ahm.txt",
@@ -8783,6 +8870,115 @@
       ]
     },
     {
+      "block_key": "KHL_f",
+      "mode": "full",
+      "source_file": "99_nd_khl.txt",
+      "tag": "KHL",
+      "name": "KHL",
+      "adjective": "KHL_ADJ",
+      "flag": "KHL",
+      "color": "map_KHL",
+      "level": 5,
+      "fraction": 0.4,
+      "rule": "plausible",
+      "content_priority": null,
+      "regions": [
+        "arabia_region",
+        "crescent_region",
+        "egypt_region",
+        "anatolia_region",
+        "maghreb_region",
+        "persia_region",
+        "iberia_region",
+        "hindustan_region",
+        "western_india_region",
+        "khorasan_region"
+      ],
+      "areas": [],
+      "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [
+        "mecca",
+        "medina",
+        "cairo",
+        "baghdad",
+        "damascus",
+        "constantinople",
+        "cordoba",
+        "lahore"
+      ],
+      "allow_raw": "religion = religion:sunni\n\t\towns = location:mecca\n\t\towns = location:medina\n\t\towns = location:cairo\n\t\towns = location:baghdad\n\t\tOR = {\n\t\t\towns = location:damascus\n\t\t\towns = location:constantinople\n\t\t}\n\t\tOR = {\n\t\t\towns = location:cordoba\n\t\t\towns = location:lahore\n\t\t}\n\t\tin_civil_war = no",
+      "potential_raw": "religion = religion:sunni",
+      "form_effect_raw": "trigger_event_non_silently = nd_khl.1\n\t\tadd_stability = stability_severe_bonus\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}",
+      "formation_event": "nd_khl.1",
+      "source": "mod_new",
+      "mod_overrides": true,
+      "variant_label": null,
+      "color_rgb": "#0f6628",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Sunnism religion"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Sunnism religion"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Mecca"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Medina"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Cairo"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Baghdad"
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Owns Damascus"
+            },
+            {
+              "kind": "atom",
+              "text": "Owns Constantinople"
+            }
+          ]
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Owns Cordoba"
+            },
+            {
+              "kind": "atom",
+              "text": "Owns Lahore"
+            }
+          ]
+        },
+        {
+          "kind": "atom",
+          "text": "Not: In civil war"
+        }
+      ]
+    },
+    {
       "block_key": "KWS_f",
       "mode": "full",
       "source_file": "99_nd_kws.txt",
@@ -9638,6 +9834,96 @@
       ]
     },
     {
+      "block_key": "SVB_f",
+      "mode": "full",
+      "source_file": "99_nd_svb.txt",
+      "tag": "SVB",
+      "name": "SVB",
+      "adjective": "SVB_ADJ",
+      "flag": "SVB",
+      "color": "map_SVB",
+      "level": 4,
+      "fraction": 0.55,
+      "rule": "plausible",
+      "content_priority": null,
+      "regions": [
+        "indochina_region"
+      ],
+      "areas": [],
+      "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [
+        "angkor",
+        "ayodhya",
+        "pagan",
+        "vientiane"
+      ],
+      "allow_raw": "owns = location:angkor\n\t\towns = location:ayodhya\n\t\towns = location:pagan\n\t\towns = location:vientiane\n\t\tin_civil_war = no",
+      "potential_raw": "religion = { has_religion_group = religion_group:buddhist }\n\t\tOR = {\n\t\t\tculture = culture:thai_culture\n\t\t\tculture = culture:khmer_culture\n\t\t\tculture = culture:burmese_culture\n\t\t\tculture = culture:mon_culture\n\t\t\tculture = culture:lao_culture\n\t\t}",
+      "form_effect_raw": "trigger_event_non_silently = nd_svb.1\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tcountry_rank_level < 4\n\t\t\t\tNOT = { is_member_of_international_organization = international_organization:hre }\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\tadd_stability = stability_severe_bonus",
+      "formation_event": "nd_svb.1",
+      "source": "mod_new",
+      "mod_overrides": true,
+      "variant_label": null,
+      "color_rgb": "#da932c",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Buddhist religion group"
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Thai culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Khmer Culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Burmese Culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Mon Culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Lao Culture"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Angkor"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Ayodhya"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Pagan"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Vientiane"
+        },
+        {
+          "kind": "atom",
+          "text": "Not: In civil war"
+        }
+      ]
+    },
+    {
       "block_key": "TAB_f",
       "mode": "full",
       "source_file": "99_nd_tab.txt",
@@ -10151,7 +10437,7 @@
       "flag": "YMP",
       "color": "map_YMP",
       "level": 5,
-      "fraction": 0.4,
+      "fraction": 0.7,
       "rule": "plausible",
       "content_priority": null,
       "regions": [
