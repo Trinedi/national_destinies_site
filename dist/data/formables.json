@@ -9861,7 +9861,7 @@
         "vientiane"
       ],
       "allow_raw": "owns = location:angkor\n\t\towns = location:ayodhya\n\t\towns = location:pagan\n\t\towns = location:vientiane\n\t\tin_civil_war = no",
-      "potential_raw": "religion = { has_religion_group = religion_group:buddhist }\n\t\tOR = {\n\t\t\tculture = culture:thai_culture\n\t\t\tculture = culture:khmer_culture\n\t\t\tculture = culture:burmese_culture\n\t\t\tculture = culture:mon_culture\n\t\t\tculture = culture:lao_culture\n\t\t}",
+      "potential_raw": "religion.group = religion_group:buddhist\n\t\tOR = {\n\t\t\tculture = culture:thai_culture\n\t\t\tculture = culture:khmer_culture\n\t\t\tculture = culture:burmese_culture\n\t\t\tculture = culture:mon_culture\n\t\t\tculture = culture:lao_culture\n\t\t}",
       "form_effect_raw": "trigger_event_non_silently = nd_svb.1\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tcountry_rank_level < 4\n\t\t\t\tNOT = { is_member_of_international_organization = international_organization:hre }\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\tadd_stability = stability_severe_bonus",
       "formation_event": "nd_svb.1",
       "source": "mod_new",
@@ -9871,7 +9871,7 @@
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Buddhist religion group"
+          "text": "Buddhist group"
         },
         {
           "kind": "or",
