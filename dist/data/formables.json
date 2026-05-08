@@ -7402,8 +7402,8 @@
     },
     {
       "block_key": "PON_f",
-      "mode": "full",
-      "source_file": "00_formable_countries.txt",
+      "mode": "replace",
+      "source_file": "99_nd_pon.txt",
       "tag": "PON",
       "name": "PON",
       "adjective": "PON_ADJ",
@@ -7433,11 +7433,11 @@
         "trebizond"
       ],
       "allow_raw": "AND = {\n\t\t\tculture = culture:pontic_greek_culture\n\t\t\towns = location:trebizond\n\t\t}",
-      "potential_raw": "OR = {\t\t\t\n\t\t\tculture = culture:pontic_greek_culture\n\t\t\towns = location:trebizond\n\t\t}",
-      "form_effect_raw": "set_country_rank_effect = { rank = country_rank:rank_kingdom }",
-      "formation_event": null,
-      "source": "vanilla",
-      "mod_overrides": false,
+      "potential_raw": "OR = {\n\t\t\tculture = culture:pontic_greek_culture\n\t\t\towns = location:trebizond\n\t\t}",
+      "form_effect_raw": "set_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\ttrigger_event_non_silently = nd_pon.1",
+      "formation_event": "nd_pon.1",
+      "source": "vanilla+mod_replace",
+      "mod_overrides": true,
       "variant_label": null,
       "english_potential": [
         {
@@ -9217,7 +9217,7 @@
         "ganzhou",
         "suzhou_gansu"
       ],
-      "allow_raw": "owns = location:lhasa\n\t\towns = location:shigatse\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tOR = {\n\t\t\t\n\t\t\towns = location:khotan\n\t\t\towns = location:kashgar\n\t\t\towns = location:kucha\n\t\t\towns = location:yarkand\n\t\t\t\n\t\t\towns = location:shazhou\n\t\t\towns = location:ganzhou\n\t\t\towns = location:suzhou_gansu\n\t\t}",
+      "allow_raw": "owns = location:lhasa\n\t\towns = location:shigatse\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\towns = location:khotan\n\t\towns = location:kashgar\n\t\towns = location:kucha\n\t\towns = location:yarkand\n\t\t\n\t\towns = location:shazhou\n\t\towns = location:ganzhou\n\t\towns = location:suzhou_gansu",
       "potential_raw": "culture = { has_culture_group = culture_group:tibetan_group }\n\t\treligion = { has_religion_group = religion_group:buddhist }",
       "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\tif = {\n\t\t\tlimit = { NOT = { capital = location:lhasa } }\n\t\t\tset_capital = location:lhasa\n\t\t}\n\t\ttrigger_event_non_silently = nd_tbt.1\n\t\tadd_stability = stability_severe_bonus",
       "formation_event": "nd_tbt.1",
@@ -9244,38 +9244,32 @@
           "text": "Owns Shigatse"
         },
         {
-          "kind": "or",
-          "text": "Any of:",
-          "children": [
-            {
-              "kind": "atom",
-              "text": "Owns Khotan"
-            },
-            {
-              "kind": "atom",
-              "text": "Owns Kashgar"
-            },
-            {
-              "kind": "atom",
-              "text": "Owns Kucha"
-            },
-            {
-              "kind": "atom",
-              "text": "Owns Yarkand"
-            },
-            {
-              "kind": "atom",
-              "text": "Owns Shazhou"
-            },
-            {
-              "kind": "atom",
-              "text": "Owns Ganzhou"
-            },
-            {
-              "kind": "atom",
-              "text": "Owns Suzhou Gansu"
-            }
-          ]
+          "kind": "atom",
+          "text": "Owns Khotan"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Kashgar"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Kucha"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Yarkand"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Shazhou"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Ganzhou"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Suzhou Gansu"
         }
       ]
     },
