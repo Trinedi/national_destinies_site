@@ -425,3 +425,99 @@ html, body { height: 100%; margin: 0; padding: 0; background: var(--bg-0); color
   pointer-events: none;
   transform: translate(10px, -8px);
 }
+
+
+/* Tabs in the detail panel */
+.tabs {
+  display: flex;
+  gap: 2px;
+  border-bottom: 1px solid var(--border);
+  margin: 0 0 12px;
+}
+.tab {
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  color: var(--fg-2);
+  padding: 8px 12px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.tab:hover { color: var(--fg-0); }
+.tab.active, .tab[aria-selected="true"] {
+  color: var(--fg-0);
+  border-bottom-color: var(--accent);
+}
+
+/* Strategy guide content */
+.guide-intro {
+  margin: 0 0 12px;
+  color: var(--fg-2);
+  font-size: 12px;
+  line-height: 1.5;
+}
+.guide-empty {
+  margin: 8px 0;
+  color: var(--fg-2);
+  font-size: 12px;
+}
+.guide-footnote {
+  margin: 12px 0 0;
+  color: var(--fg-2);
+  font-size: 11px;
+  line-height: 1.45;
+  border-top: 1px solid var(--border);
+  padding-top: 8px;
+}
+.guide-hint {
+  margin: 12px 0 0;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+.guide-hint button {
+  background: transparent;
+  border: 0;
+  color: var(--accent);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+.guide-hint button:hover { text-decoration: underline; }
+
+.starter-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 4px 0 8px;
+}
+.starter-row {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 8px 10px;
+}
+.starter-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.starter-head code {
+  color: var(--fg-2);
+  font-size: 11px;
+}
+.starter-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  margin-top: 4px;
+}
+.starter-meta {
+  color: var(--fg-2);
+  font-size: 11px;
+}

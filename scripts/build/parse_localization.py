@@ -96,6 +96,17 @@ def collect_seed_keys(web_data_dir: Path) -> set[str]:
                       "provinces", "locations"):
             for name in geo.get(level, {}).keys():
                 needed.add(name)
+    # Seed names for every starter tag so the Guide tab renders human-readable
+    # country names instead of bare 3-letter codes.
+    starters_path = web_data_dir / "starters.json"
+    if starters_path.exists():
+        starters = json.loads(starters_path.read_text()).get("guides", {})
+        for guide in starters.values():
+            for c in guide.get("candidates", []):
+                tag = c.get("tag")
+                if tag:
+                    needed.add(tag)
+                    needed.add(tag + "_ADJ")
     return needed
 
 

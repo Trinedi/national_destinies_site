@@ -1,0 +1,7048 @@
+{
+  "version": 1,
+  "guides": {
+    "SCA_f": {
+      "culture_gates": [
+        "scandinavian_group"
+      ],
+      "culture_group_gates": [
+        "scandinavian_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "DAN",
+          "culture": "danish",
+          "religion": "catholic",
+          "owned_in_target": 33,
+          "score": 11
+        },
+        {
+          "tag": "ICE",
+          "culture": "icelandic",
+          "religion": "catholic",
+          "owned_in_target": 21,
+          "score": 11
+        },
+        {
+          "tag": "NOR",
+          "culture": "norwegian",
+          "religion": "catholic",
+          "owned_in_target": 118,
+          "score": 11
+        },
+        {
+          "tag": "SKE",
+          "culture": "danish",
+          "religion": "catholic",
+          "owned_in_target": 11,
+          "score": 11
+        },
+        {
+          "tag": "SWE",
+          "culture": "swedish",
+          "religion": "catholic",
+          "owned_in_target": 130,
+          "score": 11
+        }
+      ]
+    },
+    "denmark_f": {
+      "culture_gates": [
+        "danish"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "SKE",
+          "culture": "danish",
+          "religion": "catholic",
+          "owned_in_target": 11,
+          "score": 11
+        }
+      ]
+    },
+    "DRD_f": {
+      "culture_gates": [
+        "hibernian_group",
+        "scottish_group"
+      ],
+      "culture_group_gates": [
+        "hibernian_group",
+        "scottish_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "LOI",
+          "culture": "norse_gael",
+          "religion": "catholic",
+          "owned_in_target": 5,
+          "score": 11
+        },
+        {
+          "tag": "SCO",
+          "culture": "scottish",
+          "religion": "catholic",
+          "owned_in_target": 7,
+          "score": 11
+        },
+        {
+          "tag": "MOY",
+          "culture": "scottish",
+          "religion": "catholic",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "ROS",
+          "culture": "highland",
+          "religion": "catholic",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "TYR",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "CLA",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "ULS",
+          "culture": "anglo_irish",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "AMA",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        }
+      ]
+    },
+    "GBR_f": {
+      "culture_gates": [
+        "british_group"
+      ],
+      "culture_group_gates": [
+        "british_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "ENG",
+          "culture": "english",
+          "religion": "catholic",
+          "owned_in_target": 134,
+          "score": 11
+        },
+        {
+          "tag": "LAN",
+          "culture": "northumbrian",
+          "religion": "catholic",
+          "owned_in_target": 5,
+          "score": 11
+        },
+        {
+          "tag": "MAC",
+          "culture": "english",
+          "religion": "catholic",
+          "owned_in_target": 5,
+          "score": 11
+        },
+        {
+          "tag": "SBL",
+          "culture": "scottish",
+          "religion": "catholic",
+          "owned_in_target": 14,
+          "score": 11
+        },
+        {
+          "tag": "SCO",
+          "culture": "scottish",
+          "religion": "catholic",
+          "owned_in_target": 27,
+          "score": 11
+        },
+        {
+          "tag": "WLS",
+          "culture": "english",
+          "religion": "catholic",
+          "owned_in_target": 8,
+          "score": 11
+        },
+        {
+          "tag": "MOY",
+          "culture": "scottish",
+          "religion": "catholic",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "ROS",
+          "culture": "highland",
+          "religion": "catholic",
+          "owned_in_target": 4,
+          "score": 10
+        }
+      ]
+    },
+    "ENG_f": {
+      "culture_gates": [
+        "english"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "MAC",
+          "culture": "english",
+          "religion": "catholic",
+          "owned_in_target": 5,
+          "score": 11
+        },
+        {
+          "tag": "WLS",
+          "culture": "english",
+          "religion": "catholic",
+          "owned_in_target": 8,
+          "score": 11
+        },
+        {
+          "tag": "CET",
+          "culture": "english",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "GMG",
+          "culture": "english",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "AUD",
+          "culture": "english",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "POS",
+          "culture": "english",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "BRO",
+          "culture": "english",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "CMS",
+          "culture": "english",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "SCO_f": {
+      "culture_gates": [
+        "scottish_group"
+      ],
+      "culture_group_gates": [
+        "scottish_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "LOI",
+          "culture": "norse_gael",
+          "religion": "catholic",
+          "owned_in_target": 5,
+          "score": 11
+        },
+        {
+          "tag": "SBL",
+          "culture": "scottish",
+          "religion": "catholic",
+          "owned_in_target": 14,
+          "score": 11
+        },
+        {
+          "tag": "MOY",
+          "culture": "scottish",
+          "religion": "catholic",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "ROS",
+          "culture": "highland",
+          "religion": "catholic",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "MNN",
+          "culture": "norse_gael",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "NOL_f": {
+      "culture_gates": [],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "ENG",
+          "culture": "english",
+          "religion": "catholic",
+          "owned_in_target": 26,
+          "score": 7
+        },
+        {
+          "tag": "LAN",
+          "culture": "northumbrian",
+          "religion": "catholic",
+          "owned_in_target": 5,
+          "score": 7
+        },
+        {
+          "tag": "SBL",
+          "culture": "scottish",
+          "religion": "catholic",
+          "owned_in_target": 14,
+          "score": 7
+        },
+        {
+          "tag": "SCO",
+          "culture": "scottish",
+          "religion": "catholic",
+          "owned_in_target": 20,
+          "score": 7
+        },
+        {
+          "tag": "CET",
+          "culture": "english",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 5
+        },
+        {
+          "tag": "DHM",
+          "culture": "northumbrian",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 5
+        }
+      ]
+    },
+    "IRE_f": {
+      "culture_gates": [
+        "hibernian_group"
+      ],
+      "culture_group_gates": [
+        "hibernian_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "MCM",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "ORD",
+          "culture": "anglo_irish",
+          "religion": "catholic",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "TYR",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "BFN",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "CLA",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "CLR",
+          "culture": "anglo_irish",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "DMS",
+          "culture": "anglo_irish",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "KID",
+          "culture": "anglo_irish",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        }
+      ]
+    },
+    "MTH_f": {
+      "culture_gates": [
+        "hibernian_group"
+      ],
+      "culture_group_gates": [
+        "hibernian_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "AMA",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 0,
+          "score": 4
+        },
+        {
+          "tag": "AMH",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 0,
+          "score": 4
+        },
+        {
+          "tag": "ANN",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 0,
+          "score": 4
+        },
+        {
+          "tag": "BEA",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 0,
+          "score": 4
+        },
+        {
+          "tag": "BFN",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 0,
+          "score": 4
+        },
+        {
+          "tag": "CLA",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 0,
+          "score": 4
+        },
+        {
+          "tag": "CLR",
+          "culture": "anglo_irish",
+          "religion": "catholic",
+          "owned_in_target": 0,
+          "score": 4
+        },
+        {
+          "tag": "CMA",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 0,
+          "score": 4
+        }
+      ]
+    },
+    "MCM_f": {
+      "culture_gates": [
+        "hibernian_group"
+      ],
+      "culture_group_gates": [
+        "hibernian_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "ORD",
+          "culture": "anglo_irish",
+          "religion": "catholic",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "DMS",
+          "culture": "anglo_irish",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "THO",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "CWM",
+          "culture": "anglo_irish",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "BEA",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "DCI",
+          "culture": "anglo_irish",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "ELY",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "NED_f": {
+      "culture_gates": [
+        "netherlandish_group"
+      ],
+      "culture_group_gates": [
+        "netherlandish_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "BRB",
+          "culture": "low_franconian",
+          "religion": "catholic",
+          "owned_in_target": 11,
+          "score": 11
+        },
+        {
+          "tag": "FLA",
+          "culture": "low_franconian",
+          "religion": "catholic",
+          "owned_in_target": 12,
+          "score": 11
+        },
+        {
+          "tag": "FRI",
+          "culture": "frisian",
+          "religion": "catholic",
+          "owned_in_target": 11,
+          "score": 11
+        },
+        {
+          "tag": "GEL",
+          "culture": "low_franconian",
+          "religion": "catholic",
+          "owned_in_target": 7,
+          "score": 11
+        },
+        {
+          "tag": "HAI",
+          "culture": "picard",
+          "religion": "catholic",
+          "owned_in_target": 6,
+          "score": 11
+        },
+        {
+          "tag": "HOL",
+          "culture": "low_franconian",
+          "religion": "catholic",
+          "owned_in_target": 8,
+          "score": 11
+        },
+        {
+          "tag": "UTR",
+          "culture": "low_franconian",
+          "religion": "catholic",
+          "owned_in_target": 9,
+          "score": 11
+        },
+        {
+          "tag": "LIE",
+          "culture": "walloon",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        }
+      ]
+    },
+    "SWI_f": {
+      "culture_gates": [
+        "swiss_group"
+      ],
+      "culture_group_gates": [
+        "swiss_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "VUD",
+          "culture": "arpitan",
+          "religion": "catholic",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "BAS",
+          "culture": "high_alemannic",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "BCH",
+          "culture": "high_alemannic",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "SIT",
+          "culture": "arpitan",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "BRN",
+          "culture": "high_alemannic",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "GRY",
+          "culture": "high_alemannic",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "KYB",
+          "culture": "high_alemannic",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "TGG",
+          "culture": "high_alemannic",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        }
+      ]
+    },
+    "SPA_f": {
+      "culture_gates": [
+        "iberian_group"
+      ],
+      "culture_group_gates": [
+        "iberian_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "ARA",
+          "culture": "catalan",
+          "religion": "catholic",
+          "owned_in_target": 73,
+          "score": 11
+        },
+        {
+          "tag": "CAS",
+          "culture": "castilian",
+          "religion": "catholic",
+          "owned_in_target": 244,
+          "score": 11
+        },
+        {
+          "tag": "GRA",
+          "culture": "andalusi",
+          "religion": "sunni",
+          "owned_in_target": 18,
+          "score": 11
+        },
+        {
+          "tag": "MLL",
+          "culture": "catalan",
+          "religion": "catholic",
+          "owned_in_target": 8,
+          "score": 11
+        },
+        {
+          "tag": "NAV",
+          "culture": "basque",
+          "religion": "catholic",
+          "owned_in_target": 9,
+          "score": 11
+        },
+        {
+          "tag": "POR",
+          "culture": "portuguese",
+          "religion": "catholic",
+          "owned_in_target": 67,
+          "score": 11
+        },
+        {
+          "tag": "ANR",
+          "culture": "catalan",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "ADU_f": {
+      "culture_gates": [
+        "iberian_group",
+        "maghrebi_group"
+      ],
+      "culture_group_gates": [
+        "iberian_group",
+        "maghrebi_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "ARA",
+          "culture": "catalan",
+          "religion": "catholic",
+          "owned_in_target": 73,
+          "score": 11
+        },
+        {
+          "tag": "CAS",
+          "culture": "castilian",
+          "religion": "catholic",
+          "owned_in_target": 244,
+          "score": 11
+        },
+        {
+          "tag": "GRA",
+          "culture": "andalusi",
+          "religion": "sunni",
+          "owned_in_target": 18,
+          "score": 11
+        },
+        {
+          "tag": "MLL",
+          "culture": "catalan",
+          "religion": "catholic",
+          "owned_in_target": 8,
+          "score": 11
+        },
+        {
+          "tag": "NAV",
+          "culture": "basque",
+          "religion": "catholic",
+          "owned_in_target": 9,
+          "score": 11
+        },
+        {
+          "tag": "POR",
+          "culture": "portuguese",
+          "religion": "catholic",
+          "owned_in_target": 67,
+          "score": 11
+        },
+        {
+          "tag": "MOR",
+          "culture": "moroccan",
+          "religion": "sunni",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "ANR",
+          "culture": "catalan",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "AIA_f": {
+      "culture_gates": [
+        "arabian_group"
+      ],
+      "culture_group_gates": [
+        "arabian_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "AAD",
+          "culture": "najdi_culture",
+          "religion": "sunni",
+          "owned_in_target": 7,
+          "score": 11
+        },
+        {
+          "tag": "ANZ",
+          "culture": "najdi_culture",
+          "religion": "sunni",
+          "owned_in_target": 5,
+          "score": 11
+        },
+        {
+          "tag": "BNL",
+          "culture": "najdi_culture",
+          "religion": "sunni",
+          "owned_in_target": 26,
+          "score": 11
+        },
+        {
+          "tag": "DHF",
+          "culture": "dhofari_culture",
+          "religion": "sunni",
+          "owned_in_target": 7,
+          "score": 11
+        },
+        {
+          "tag": "DWS",
+          "culture": "najdi_culture",
+          "religion": "sunni",
+          "owned_in_target": 9,
+          "score": 11
+        },
+        {
+          "tag": "HRB",
+          "culture": "hijazi_culture",
+          "religion": "sunni",
+          "owned_in_target": 7,
+          "score": 11
+        },
+        {
+          "tag": "HUT",
+          "culture": "najdi_culture",
+          "religion": "sunni",
+          "owned_in_target": 5,
+          "score": 11
+        },
+        {
+          "tag": "JRW",
+          "culture": "bahrani_culture",
+          "religion": "shia",
+          "owned_in_target": 25,
+          "score": 11
+        }
+      ]
+    },
+    "EGY_f": {
+      "culture_gates": [],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "BQA",
+          "culture": "libyan_arabic_culture",
+          "religion": "sunni",
+          "owned_in_target": 12,
+          "score": 7
+        },
+        {
+          "tag": "MAM",
+          "culture": "lower_egyptian_culture",
+          "religion": "sunni",
+          "owned_in_target": 68,
+          "score": 7
+        },
+        {
+          "tag": "BKZ",
+          "culture": "bedouin_culture",
+          "religion": "shia",
+          "owned_in_target": 2,
+          "score": 4
+        }
+      ]
+    },
+    "LAT_f": {
+      "culture_gates": [
+        "french_group",
+        "iberian_group",
+        "italian_group"
+      ],
+      "culture_group_gates": [
+        "french_group",
+        "iberian_group",
+        "italian_group"
+      ],
+      "religion_gates": [
+        "catholic"
+      ],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "ACH",
+          "culture": "french",
+          "religion": "catholic",
+          "owned_in_target": 12,
+          "score": 14
+        },
+        {
+          "tag": "ATH",
+          "culture": "catalan",
+          "religion": "catholic",
+          "owned_in_target": 6,
+          "score": 14
+        },
+        {
+          "tag": "ARG",
+          "culture": "champenais",
+          "religion": "catholic",
+          "owned_in_target": 4,
+          "score": 13
+        },
+        {
+          "tag": "CEP",
+          "culture": "french",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 11
+        },
+        {
+          "tag": "NEO",
+          "culture": "catalan",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 11
+        },
+        {
+          "tag": "PAT",
+          "culture": "french",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 11
+        },
+        {
+          "tag": "SAO",
+          "culture": "catalan",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 11
+        },
+        {
+          "tag": "VEN",
+          "culture": "venetian",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 11
+        }
+      ]
+    },
+    "LAT_REDUCED_REQUIREMENTS_f": {
+      "culture_gates": [
+        "french_group",
+        "iberian_group",
+        "italian_group"
+      ],
+      "culture_group_gates": [
+        "french_group",
+        "iberian_group",
+        "italian_group"
+      ],
+      "religion_gates": [
+        "catholic"
+      ],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "ACH",
+          "culture": "french",
+          "religion": "catholic",
+          "owned_in_target": 12,
+          "score": 14
+        },
+        {
+          "tag": "ATH",
+          "culture": "catalan",
+          "religion": "catholic",
+          "owned_in_target": 6,
+          "score": 14
+        },
+        {
+          "tag": "ARG",
+          "culture": "champenais",
+          "religion": "catholic",
+          "owned_in_target": 4,
+          "score": 13
+        },
+        {
+          "tag": "CEP",
+          "culture": "french",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 11
+        },
+        {
+          "tag": "NEO",
+          "culture": "catalan",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 11
+        },
+        {
+          "tag": "PAT",
+          "culture": "french",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 11
+        },
+        {
+          "tag": "SAO",
+          "culture": "catalan",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 11
+        },
+        {
+          "tag": "VEN",
+          "culture": "venetian",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 11
+        }
+      ]
+    },
+    "SAR_f": {
+      "culture_gates": [
+        "italian_group"
+      ],
+      "culture_group_gates": [
+        "italian_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "ARB",
+          "culture": "sardinian",
+          "religion": "catholic",
+          "owned_in_target": 8,
+          "score": 11
+        },
+        {
+          "tag": "GEN",
+          "culture": "ligurian",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        }
+      ]
+    },
+    "MSI_f": {
+      "culture_gates": [
+        "mossi"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "BSM",
+          "culture": "mossi",
+          "religion": "rogo_miki_religion",
+          "owned_in_target": 6,
+          "score": 11
+        },
+        {
+          "tag": "GWI",
+          "culture": "mossi",
+          "religion": "rogo_miki_religion",
+          "owned_in_target": 6,
+          "score": 11
+        },
+        {
+          "tag": "OUA",
+          "culture": "mossi",
+          "religion": "rogo_miki_religion",
+          "owned_in_target": 16,
+          "score": 11
+        },
+        {
+          "tag": "TEN",
+          "culture": "mossi",
+          "religion": "rogo_miki_religion",
+          "owned_in_target": 5,
+          "score": 11
+        },
+        {
+          "tag": "YAT",
+          "culture": "mossi",
+          "religion": "rogo_miki_religion",
+          "owned_in_target": 5,
+          "score": 11
+        }
+      ]
+    },
+    "BEJ_f": {
+      "culture_gates": [
+        "beja_culture"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "BQL",
+          "culture": "beja_culture",
+          "religion": "sunni",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "BZN",
+          "culture": "beja_culture",
+          "religion": "sunni",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "JRN",
+          "culture": "beja_culture",
+          "religion": "sunni",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "QTA",
+          "culture": "beja_culture",
+          "religion": "sunni",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "ETH_f": {
+      "culture_gates": [
+        "agaw_culture",
+        "amhara",
+        "tigre",
+        "tigrinya"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [
+        "miaphysite"
+      ],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "MED",
+          "culture": "tigrinya",
+          "religion": "miaphysite",
+          "owned_in_target": 6,
+          "score": 14
+        },
+        {
+          "tag": "DBE",
+          "culture": "tigrinya",
+          "religion": "miaphysite",
+          "owned_in_target": 4,
+          "score": 13
+        }
+      ]
+    },
+    "BAV_f": {
+      "culture_gates": [
+        "danube_bavarian"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "LBV",
+          "culture": "danube_bavarian",
+          "religion": "catholic",
+          "owned_in_target": 17,
+          "score": 11
+        },
+        {
+          "tag": "UBV",
+          "culture": "danube_bavarian",
+          "religion": "catholic",
+          "owned_in_target": 14,
+          "score": 11
+        },
+        {
+          "tag": "FRE",
+          "culture": "danube_bavarian",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "SLZ",
+          "culture": "danube_bavarian",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "GRF",
+          "culture": "danube_bavarian",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "PSS",
+          "culture": "danube_bavarian",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "HAB_f": {
+      "culture_gates": [
+        "danube_bavarian",
+        "southern_bavarian"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "GOR",
+          "culture": "danube_bavarian",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "SLZ",
+          "culture": "danube_bavarian",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "FRE",
+          "culture": "danube_bavarian",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "GRK",
+          "culture": "southern_bavarian",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "LBV",
+          "culture": "danube_bavarian",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "ORT",
+          "culture": "southern_bavarian",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "PSS",
+          "culture": "danube_bavarian",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "BOH_f": {
+      "culture_gates": [
+        "czech",
+        "moravian"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "MVA",
+          "culture": "moravian",
+          "religion": "catholic",
+          "owned_in_target": 16,
+          "score": 11
+        }
+      ]
+    },
+    "SAX_f": {
+      "culture_gates": [
+        "lower_saxon",
+        "saxon"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "BRE",
+          "culture": "lower_saxon",
+          "religion": "catholic",
+          "owned_in_target": 5,
+          "score": 11
+        },
+        {
+          "tag": "LDB",
+          "culture": "saxon",
+          "religion": "catholic",
+          "owned_in_target": 8,
+          "score": 11
+        },
+        {
+          "tag": "LUN",
+          "culture": "lower_saxon",
+          "religion": "catholic",
+          "owned_in_target": 11,
+          "score": 11
+        },
+        {
+          "tag": "MEI",
+          "culture": "saxon",
+          "religion": "catholic",
+          "owned_in_target": 6,
+          "score": 11
+        },
+        {
+          "tag": "THU",
+          "culture": "saxon",
+          "religion": "catholic",
+          "owned_in_target": 6,
+          "score": 11
+        },
+        {
+          "tag": "BNB",
+          "culture": "saxon",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "QUB",
+          "culture": "saxon",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "SWB",
+          "culture": "saxon",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        }
+      ]
+    },
+    "NSA_f": {
+      "culture_gates": [
+        "moselle_franconian",
+        "rhine_franconian"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "NSS",
+          "culture": "moselle_franconian",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "NSH",
+          "culture": "moselle_franconian",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "NSI",
+          "culture": "rhine_franconian",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "NSW",
+          "culture": "rhine_franconian",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "MKL_f": {
+      "culture_gates": [
+        "western_pomeranian"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "GSW",
+          "culture": "western_pomeranian",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "SWR",
+          "culture": "western_pomeranian",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "WRN",
+          "culture": "western_pomeranian",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        }
+      ]
+    },
+    "POM_f": {
+      "culture_gates": [
+        "eastern_pomeranian",
+        "western_pomeranian"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "WOL",
+          "culture": "western_pomeranian",
+          "religion": "catholic",
+          "owned_in_target": 15,
+          "score": 11
+        },
+        {
+          "tag": "KMM",
+          "culture": "eastern_pomeranian",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "MKL",
+          "culture": "western_pomeranian",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "NWG",
+          "culture": "eastern_pomeranian",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "PRU_f": {
+      "culture_gates": [
+        "german_group"
+      ],
+      "culture_group_gates": [
+        "german_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "TEU",
+          "culture": "prussian",
+          "religion": "catholic",
+          "owned_in_target": 23,
+          "score": 11
+        },
+        {
+          "tag": "ERM",
+          "culture": "prussian",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "CHL",
+          "culture": "prussian",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "PMS",
+          "culture": "prussian",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "SMD",
+          "culture": "prussian",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "LIV_f": {
+      "culture_gates": [
+        "german_group"
+      ],
+      "culture_group_gates": [
+        "german_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "BID",
+          "culture": "german_baltic",
+          "religion": "catholic",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "BIO",
+          "culture": "german_baltic",
+          "religion": "catholic",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "KUR",
+          "culture": "german_baltic",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "RIG",
+          "culture": "german_baltic",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "LVA_f": {
+      "culture_gates": [
+        "baltic_group"
+      ],
+      "culture_group_gates": [
+        "baltic_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "ARR",
+          "culture": "liv",
+          "religion": "catholic",
+          "owned_in_target": 8,
+          "score": 11
+        },
+        {
+          "tag": "LIT",
+          "culture": "aukstaitian",
+          "religion": "romuva",
+          "owned_in_target": 59,
+          "score": 11
+        },
+        {
+          "tag": "LIV",
+          "culture": "german_baltic",
+          "religion": "catholic",
+          "owned_in_target": 30,
+          "score": 11
+        },
+        {
+          "tag": "BID",
+          "culture": "german_baltic",
+          "religion": "catholic",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "BIO",
+          "culture": "german_baltic",
+          "religion": "catholic",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "KUR",
+          "culture": "german_baltic",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "RIG",
+          "culture": "german_baltic",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "GER_f": {
+      "culture_gates": [
+        "german_group"
+      ],
+      "culture_group_gates": [
+        "german_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "ANS",
+          "culture": "east_franconian",
+          "religion": "catholic",
+          "owned_in_target": 6,
+          "score": 11
+        },
+        {
+          "tag": "BAM",
+          "culture": "east_franconian",
+          "religion": "catholic",
+          "owned_in_target": 7,
+          "score": 11
+        },
+        {
+          "tag": "BOH",
+          "culture": "czech",
+          "religion": "catholic",
+          "owned_in_target": 45,
+          "score": 11
+        },
+        {
+          "tag": "BRA",
+          "culture": "brandenburgish",
+          "religion": "catholic",
+          "owned_in_target": 24,
+          "score": 11
+        },
+        {
+          "tag": "BRB",
+          "culture": "low_franconian",
+          "religion": "catholic",
+          "owned_in_target": 11,
+          "score": 11
+        },
+        {
+          "tag": "BRE",
+          "culture": "lower_saxon",
+          "religion": "catholic",
+          "owned_in_target": 7,
+          "score": 11
+        },
+        {
+          "tag": "BRU",
+          "culture": "eastphalian",
+          "religion": "catholic",
+          "owned_in_target": 10,
+          "score": 11
+        },
+        {
+          "tag": "FLA",
+          "culture": "low_franconian",
+          "religion": "catholic",
+          "owned_in_target": 12,
+          "score": 11
+        }
+      ]
+    },
+    "HRE_f": {
+      "culture_gates": [],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "ANS",
+          "culture": "east_franconian",
+          "religion": "catholic",
+          "owned_in_target": 6,
+          "score": 7
+        },
+        {
+          "tag": "BAM",
+          "culture": "east_franconian",
+          "religion": "catholic",
+          "owned_in_target": 7,
+          "score": 7
+        },
+        {
+          "tag": "BOH",
+          "culture": "czech",
+          "religion": "catholic",
+          "owned_in_target": 45,
+          "score": 7
+        },
+        {
+          "tag": "BRA",
+          "culture": "brandenburgish",
+          "religion": "catholic",
+          "owned_in_target": 24,
+          "score": 7
+        },
+        {
+          "tag": "BRB",
+          "culture": "low_franconian",
+          "religion": "catholic",
+          "owned_in_target": 11,
+          "score": 7
+        },
+        {
+          "tag": "BRE",
+          "culture": "lower_saxon",
+          "religion": "catholic",
+          "owned_in_target": 7,
+          "score": 7
+        },
+        {
+          "tag": "BRU",
+          "culture": "eastphalian",
+          "religion": "catholic",
+          "owned_in_target": 10,
+          "score": 7
+        },
+        {
+          "tag": "FLA",
+          "culture": "low_franconian",
+          "religion": "catholic",
+          "owned_in_target": 12,
+          "score": 7
+        }
+      ]
+    },
+    "MOL_f": {
+      "culture_gates": [
+        "moldovan"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "BIA",
+          "culture": "moldovan",
+          "religion": "orthodox",
+          "owned_in_target": 10,
+          "score": 11
+        },
+        {
+          "tag": "BLD",
+          "culture": "moldovan",
+          "religion": "orthodox",
+          "owned_in_target": 9,
+          "score": 11
+        },
+        {
+          "tag": "IAS",
+          "culture": "moldovan",
+          "religion": "orthodox",
+          "owned_in_target": 11,
+          "score": 11
+        },
+        {
+          "tag": "SRC",
+          "culture": "moldovan",
+          "religion": "orthodox",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "HSC",
+          "culture": "moldovan",
+          "religion": "orthodox",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "HTN",
+          "culture": "moldovan",
+          "religion": "orthodox",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "SSI",
+          "culture": "moldovan",
+          "religion": "orthodox",
+          "owned_in_target": 3,
+          "score": 9
+        }
+      ]
+    },
+    "MAZ_f": {
+      "culture_gates": [
+        "mazovian"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "CZK",
+          "culture": "mazovian",
+          "religion": "catholic",
+          "owned_in_target": 8,
+          "score": 11
+        },
+        {
+          "tag": "PLK",
+          "culture": "mazovian",
+          "religion": "catholic",
+          "owned_in_target": 6,
+          "score": 11
+        },
+        {
+          "tag": "RAW",
+          "culture": "mazovian",
+          "religion": "catholic",
+          "owned_in_target": 14,
+          "score": 11
+        }
+      ]
+    },
+    "SIL_f": {
+      "culture_gates": [
+        "german_silesian",
+        "silesian"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "GLO",
+          "culture": "silesian",
+          "religion": "catholic",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "OEL",
+          "culture": "silesian",
+          "religion": "catholic",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "OPV",
+          "culture": "silesian",
+          "religion": "catholic",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "ZAG",
+          "culture": "silesian",
+          "religion": "catholic",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "BRZ",
+          "culture": "silesian",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "BYM",
+          "culture": "silesian",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "LGC",
+          "culture": "silesian",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "NYS",
+          "culture": "silesian",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        }
+      ]
+    },
+    "POL_f": {
+      "culture_gates": [
+        "polish_group"
+      ],
+      "culture_group_gates": [
+        "polish_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "CZK",
+          "culture": "mazovian",
+          "religion": "catholic",
+          "owned_in_target": 8,
+          "score": 11
+        },
+        {
+          "tag": "PLK",
+          "culture": "mazovian",
+          "religion": "catholic",
+          "owned_in_target": 6,
+          "score": 11
+        },
+        {
+          "tag": "RAW",
+          "culture": "mazovian",
+          "religion": "catholic",
+          "owned_in_target": 14,
+          "score": 11
+        },
+        {
+          "tag": "SDZ",
+          "culture": "lesser_polish",
+          "religion": "catholic",
+          "owned_in_target": 8,
+          "score": 11
+        },
+        {
+          "tag": "LCZ",
+          "culture": "lesser_polish",
+          "religion": "catholic",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "INO",
+          "culture": "greater_polish",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "OSW",
+          "culture": "silesian",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "GLO",
+          "culture": "silesian",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "PLC_f": {
+      "culture_gates": [
+        "lithuanian_group",
+        "polish_group"
+      ],
+      "culture_group_gates": [
+        "lithuanian_group",
+        "polish_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "CZK",
+          "culture": "mazovian",
+          "religion": "catholic",
+          "owned_in_target": 8,
+          "score": 11
+        },
+        {
+          "tag": "GLO",
+          "culture": "silesian",
+          "religion": "catholic",
+          "owned_in_target": 5,
+          "score": 11
+        },
+        {
+          "tag": "LIT",
+          "culture": "aukstaitian",
+          "religion": "romuva",
+          "owned_in_target": 73,
+          "score": 11
+        },
+        {
+          "tag": "PLK",
+          "culture": "mazovian",
+          "religion": "catholic",
+          "owned_in_target": 6,
+          "score": 11
+        },
+        {
+          "tag": "POL",
+          "culture": "lesser_polish",
+          "religion": "catholic",
+          "owned_in_target": 75,
+          "score": 11
+        },
+        {
+          "tag": "RAW",
+          "culture": "mazovian",
+          "religion": "catholic",
+          "owned_in_target": 14,
+          "score": 11
+        },
+        {
+          "tag": "SDZ",
+          "culture": "lesser_polish",
+          "religion": "catholic",
+          "owned_in_target": 8,
+          "score": 11
+        },
+        {
+          "tag": "LCZ",
+          "culture": "lesser_polish",
+          "religion": "catholic",
+          "owned_in_target": 4,
+          "score": 10
+        }
+      ]
+    },
+    "UKR_f": {
+      "culture_gates": [
+        "cossack_culture",
+        "halychian_culture",
+        "polatskian_culture",
+        "polesian_culture",
+        "rusyn_culture",
+        "ruthenian",
+        "severian",
+        "smolenskian_culture",
+        "volhynian_culture"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "BRY",
+          "culture": "smolenskian_culture",
+          "religion": "orthodox",
+          "owned_in_target": 9,
+          "score": 11
+        },
+        {
+          "tag": "CHR",
+          "culture": "severian",
+          "religion": "orthodox",
+          "owned_in_target": 14,
+          "score": 11
+        },
+        {
+          "tag": "HAL",
+          "culture": "halychian_culture",
+          "religion": "orthodox",
+          "owned_in_target": 41,
+          "score": 11
+        },
+        {
+          "tag": "KIE",
+          "culture": "ruthenian",
+          "religion": "orthodox",
+          "owned_in_target": 71,
+          "score": 11
+        },
+        {
+          "tag": "MSV",
+          "culture": "polatskian_culture",
+          "religion": "orthodox",
+          "owned_in_target": 12,
+          "score": 11
+        },
+        {
+          "tag": "NRK",
+          "culture": "polesian_culture",
+          "religion": "orthodox",
+          "owned_in_target": 11,
+          "score": 11
+        },
+        {
+          "tag": "NVS",
+          "culture": "severian",
+          "religion": "orthodox",
+          "owned_in_target": 5,
+          "score": 11
+        },
+        {
+          "tag": "PNK",
+          "culture": "polesian_culture",
+          "religion": "orthodox",
+          "owned_in_target": 6,
+          "score": 11
+        }
+      ]
+    },
+    "ROM_BYZ_f": {
+      "culture_gates": [],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "AQU",
+          "culture": "friulian",
+          "religion": "catholic",
+          "owned_in_target": 7,
+          "score": 7
+        },
+        {
+          "tag": "ARB",
+          "culture": "sardinian",
+          "religion": "catholic",
+          "owned_in_target": 8,
+          "score": 7
+        },
+        {
+          "tag": "FER",
+          "culture": "emilian",
+          "religion": "catholic",
+          "owned_in_target": 5,
+          "score": 7
+        },
+        {
+          "tag": "GEN",
+          "culture": "ligurian",
+          "religion": "catholic",
+          "owned_in_target": 17,
+          "score": 7
+        },
+        {
+          "tag": "MAN",
+          "culture": "emilian",
+          "religion": "catholic",
+          "owned_in_target": 7,
+          "score": 7
+        },
+        {
+          "tag": "MLO",
+          "culture": "lombard",
+          "religion": "catholic",
+          "owned_in_target": 7,
+          "score": 7
+        },
+        {
+          "tag": "NAP",
+          "culture": "neapolitan",
+          "religion": "catholic",
+          "owned_in_target": 65,
+          "score": 7
+        },
+        {
+          "tag": "PAP",
+          "culture": "median",
+          "religion": "catholic",
+          "owned_in_target": 19,
+          "score": 7
+        }
+      ]
+    },
+    "CTH_f": {
+      "culture_gates": [],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "BTL",
+          "culture": "eastern_amazigh",
+          "religion": "sunni",
+          "owned_in_target": 9,
+          "score": 7
+        },
+        {
+          "tag": "GBS",
+          "culture": "eastern_amazigh",
+          "religion": "sunni",
+          "owned_in_target": 12,
+          "score": 7
+        },
+        {
+          "tag": "GFS",
+          "culture": "tunisian",
+          "religion": "sunni",
+          "owned_in_target": 6,
+          "score": 7
+        },
+        {
+          "tag": "MOR",
+          "culture": "moroccan",
+          "religion": "sunni",
+          "owned_in_target": 5,
+          "score": 7
+        },
+        {
+          "tag": "SIC",
+          "culture": "sicilian",
+          "religion": "catholic",
+          "owned_in_target": 22,
+          "score": 7
+        },
+        {
+          "tag": "TLE",
+          "culture": "zenati",
+          "religion": "sunni",
+          "owned_in_target": 28,
+          "score": 7
+        },
+        {
+          "tag": "TUN",
+          "culture": "tunisian",
+          "religion": "sunni",
+          "owned_in_target": 63,
+          "score": 7
+        },
+        {
+          "tag": "TRP",
+          "culture": "libyan_arabic_culture",
+          "religion": "sunni",
+          "owned_in_target": 4,
+          "score": 6
+        }
+      ]
+    },
+    "NSE_f": {
+      "culture_gates": [
+        "british_group",
+        "scandinavian_group"
+      ],
+      "culture_group_gates": [
+        "british_group",
+        "scandinavian_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "DAN",
+          "culture": "danish",
+          "religion": "catholic",
+          "owned_in_target": 33,
+          "score": 11
+        },
+        {
+          "tag": "ENG",
+          "culture": "english",
+          "religion": "catholic",
+          "owned_in_target": 134,
+          "score": 11
+        },
+        {
+          "tag": "GRL",
+          "culture": "icelandic",
+          "religion": "catholic",
+          "owned_in_target": 12,
+          "score": 11
+        },
+        {
+          "tag": "ICE",
+          "culture": "icelandic",
+          "religion": "catholic",
+          "owned_in_target": 21,
+          "score": 11
+        },
+        {
+          "tag": "LAN",
+          "culture": "northumbrian",
+          "religion": "catholic",
+          "owned_in_target": 5,
+          "score": 11
+        },
+        {
+          "tag": "LOI",
+          "culture": "norse_gael",
+          "religion": "catholic",
+          "owned_in_target": 5,
+          "score": 11
+        },
+        {
+          "tag": "MAC",
+          "culture": "english",
+          "religion": "catholic",
+          "owned_in_target": 5,
+          "score": 11
+        },
+        {
+          "tag": "NOR",
+          "culture": "norwegian",
+          "religion": "catholic",
+          "owned_in_target": 119,
+          "score": 11
+        }
+      ]
+    },
+    "CEL_f": {
+      "culture_gates": [
+        "celtic_group"
+      ],
+      "culture_group_gates": [
+        "celtic_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "LOI",
+          "culture": "norse_gael",
+          "religion": "catholic",
+          "owned_in_target": 5,
+          "score": 11
+        },
+        {
+          "tag": "MCM",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "ROS",
+          "culture": "highland",
+          "religion": "catholic",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "TYR",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "BFN",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "CLA",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "THO",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "AMA",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        }
+      ]
+    },
+    "ULS_f": {
+      "culture_gates": [
+        "celtic_group",
+        "hibernian_group"
+      ],
+      "culture_group_gates": [
+        "celtic_group",
+        "hibernian_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "TYR",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "CLA",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "AMA",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "FMA",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "KEE",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "OIL",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "TRY",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "AMH",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "CNN_f": {
+      "culture_gates": [
+        "celtic_group",
+        "hibernian_group"
+      ],
+      "culture_group_gates": [
+        "celtic_group",
+        "hibernian_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "BFN",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "CLR",
+          "culture": "anglo_irish",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "MYO",
+          "culture": "anglo_irish",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "CVN",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "HYM",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "CMA",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "SLN",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "TGH",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "ITA_f": {
+      "culture_gates": [
+        "italian_group"
+      ],
+      "culture_group_gates": [
+        "italian_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "AQU",
+          "culture": "friulian",
+          "religion": "catholic",
+          "owned_in_target": 7,
+          "score": 11
+        },
+        {
+          "tag": "ARB",
+          "culture": "sardinian",
+          "religion": "catholic",
+          "owned_in_target": 8,
+          "score": 11
+        },
+        {
+          "tag": "FER",
+          "culture": "emilian",
+          "religion": "catholic",
+          "owned_in_target": 5,
+          "score": 11
+        },
+        {
+          "tag": "GEN",
+          "culture": "ligurian",
+          "religion": "catholic",
+          "owned_in_target": 17,
+          "score": 11
+        },
+        {
+          "tag": "MAN",
+          "culture": "emilian",
+          "religion": "catholic",
+          "owned_in_target": 7,
+          "score": 11
+        },
+        {
+          "tag": "MLO",
+          "culture": "lombard",
+          "religion": "catholic",
+          "owned_in_target": 7,
+          "score": 11
+        },
+        {
+          "tag": "NAP",
+          "culture": "neapolitan",
+          "religion": "catholic",
+          "owned_in_target": 65,
+          "score": 11
+        },
+        {
+          "tag": "PAP",
+          "culture": "median",
+          "religion": "catholic",
+          "owned_in_target": 19,
+          "score": 11
+        }
+      ]
+    },
+    "FRA_f": {
+      "culture_gates": [
+        "french_group"
+      ],
+      "culture_group_gates": [
+        "french_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "AMG",
+          "culture": "gascon",
+          "religion": "catholic",
+          "owned_in_target": 5,
+          "score": 11
+        },
+        {
+          "tag": "ANJ",
+          "culture": "angevin",
+          "religion": "catholic",
+          "owned_in_target": 7,
+          "score": 11
+        },
+        {
+          "tag": "AQN",
+          "culture": "gascon",
+          "religion": "catholic",
+          "owned_in_target": 20,
+          "score": 11
+        },
+        {
+          "tag": "ARS",
+          "culture": "picard",
+          "religion": "catholic",
+          "owned_in_target": 7,
+          "score": 11
+        },
+        {
+          "tag": "BAR",
+          "culture": "lorrain",
+          "religion": "catholic",
+          "owned_in_target": 8,
+          "score": 11
+        },
+        {
+          "tag": "BLS",
+          "culture": "berrichon",
+          "religion": "catholic",
+          "owned_in_target": 5,
+          "score": 11
+        },
+        {
+          "tag": "BOU",
+          "culture": "berrichon",
+          "religion": "catholic",
+          "owned_in_target": 8,
+          "score": 11
+        },
+        {
+          "tag": "BRI",
+          "culture": "gallo",
+          "religion": "catholic",
+          "owned_in_target": 27,
+          "score": 11
+        }
+      ]
+    },
+    "LOT_f": {
+      "culture_gates": [
+        "burgundian",
+        "franc_comtois",
+        "lorrain",
+        "rhine_alemannic",
+        "walloon"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "BAR",
+          "culture": "lorrain",
+          "religion": "catholic",
+          "owned_in_target": 6,
+          "score": 11
+        },
+        {
+          "tag": "LOR",
+          "culture": "lorrain",
+          "religion": "catholic",
+          "owned_in_target": 11,
+          "score": 11
+        },
+        {
+          "tag": "MTZ",
+          "culture": "lorrain",
+          "religion": "catholic",
+          "owned_in_target": 5,
+          "score": 11
+        },
+        {
+          "tag": "LIE",
+          "culture": "walloon",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "ALS",
+          "culture": "rhine_alemannic",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "FRT",
+          "culture": "rhine_alemannic",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "VDU",
+          "culture": "lorrain",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "BLL",
+          "culture": "walloon",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "BGP_f": {
+      "culture_gates": [
+        "arpitan",
+        "franc_comtois",
+        "provencal",
+        "vivaro_alpine"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "DAU",
+          "culture": "arpitan",
+          "religion": "catholic",
+          "owned_in_target": 12,
+          "score": 11
+        },
+        {
+          "tag": "FCB",
+          "culture": "franc_comtois",
+          "religion": "catholic",
+          "owned_in_target": 11,
+          "score": 11
+        },
+        {
+          "tag": "PRO",
+          "culture": "provencal",
+          "religion": "catholic",
+          "owned_in_target": 18,
+          "score": 11
+        },
+        {
+          "tag": "SAV",
+          "culture": "arpitan",
+          "religion": "catholic",
+          "owned_in_target": 10,
+          "score": 11
+        },
+        {
+          "tag": "FRZ",
+          "culture": "arpitan",
+          "religion": "catholic",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "VUD",
+          "culture": "arpitan",
+          "religion": "catholic",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "GNV",
+          "culture": "arpitan",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "SIT",
+          "culture": "arpitan",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        }
+      ]
+    },
+    "TWS_f": {
+      "culture_gates": [
+        "neapolitan",
+        "sicilian"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "NAP",
+          "culture": "neapolitan",
+          "religion": "catholic",
+          "owned_in_target": 65,
+          "score": 11
+        },
+        {
+          "tag": "SIC",
+          "culture": "sicilian",
+          "religion": "catholic",
+          "owned_in_target": 22,
+          "score": 11
+        }
+      ]
+    },
+    "RUS_f": {
+      "culture_gates": [
+        "russian_group"
+      ],
+      "culture_group_gates": [
+        "russian_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "BLO",
+          "culture": "novgorodian",
+          "religion": "orthodox",
+          "owned_in_target": 23,
+          "score": 11
+        },
+        {
+          "tag": "GLM",
+          "culture": "muscovite",
+          "religion": "orthodox",
+          "owned_in_target": 12,
+          "score": 11
+        },
+        {
+          "tag": "GRS",
+          "culture": "muscovite",
+          "religion": "orthodox",
+          "owned_in_target": 6,
+          "score": 11
+        },
+        {
+          "tag": "KCH",
+          "culture": "smolenskian_culture",
+          "religion": "orthodox",
+          "owned_in_target": 15,
+          "score": 11
+        },
+        {
+          "tag": "KIE",
+          "culture": "ruthenian",
+          "religion": "orthodox",
+          "owned_in_target": 8,
+          "score": 11
+        },
+        {
+          "tag": "KOS",
+          "culture": "muscovite",
+          "religion": "orthodox",
+          "owned_in_target": 9,
+          "score": 11
+        },
+        {
+          "tag": "MOS",
+          "culture": "muscovite",
+          "religion": "orthodox",
+          "owned_in_target": 18,
+          "score": 11
+        },
+        {
+          "tag": "MRM",
+          "culture": "muscovite",
+          "religion": "orthodox",
+          "owned_in_target": 7,
+          "score": 11
+        }
+      ]
+    },
+    "GRE_f": {
+      "culture_gates": [
+        "greek_group"
+      ],
+      "culture_group_gates": [
+        "greek_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "BYZ",
+          "culture": "greek_culture",
+          "religion": "orthodox",
+          "owned_in_target": 52,
+          "score": 11
+        },
+        {
+          "tag": "EPI",
+          "culture": "greek_culture",
+          "religion": "orthodox",
+          "owned_in_target": 6,
+          "score": 11
+        }
+      ]
+    },
+    "BYZ_f": {
+      "culture_gates": [
+        "greek_group"
+      ],
+      "culture_group_gates": [
+        "greek_group"
+      ],
+      "religion_gates": [
+        "orthodox"
+      ],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "EPI",
+          "culture": "greek_culture",
+          "religion": "orthodox",
+          "owned_in_target": 10,
+          "score": 14
+        },
+        {
+          "tag": "TRE",
+          "culture": "pontic_greek_culture",
+          "religion": "orthodox",
+          "owned_in_target": 7,
+          "score": 14
+        }
+      ]
+    },
+    "HEN_f": {
+      "culture_gates": [],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "ENG",
+          "culture": "english",
+          "religion": "catholic",
+          "owned_in_target": 26,
+          "score": 7
+        },
+        {
+          "tag": "LAN",
+          "culture": "northumbrian",
+          "religion": "catholic",
+          "owned_in_target": 5,
+          "score": 7
+        },
+        {
+          "tag": "SBL",
+          "culture": "scottish",
+          "religion": "catholic",
+          "owned_in_target": 14,
+          "score": 7
+        },
+        {
+          "tag": "SCO",
+          "culture": "scottish",
+          "religion": "catholic",
+          "owned_in_target": 20,
+          "score": 7
+        },
+        {
+          "tag": "CET",
+          "culture": "english",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 5
+        },
+        {
+          "tag": "DHM",
+          "culture": "northumbrian",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 5
+        }
+      ]
+    },
+    "BNG_f": {
+      "culture_gates": [
+        "bengali"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "BHP",
+          "culture": "bengali",
+          "religion": "hindu",
+          "owned_in_target": 8,
+          "score": 11
+        },
+        {
+          "tag": "GAU",
+          "culture": "bengali",
+          "religion": "sunni",
+          "owned_in_target": 17,
+          "score": 11
+        },
+        {
+          "tag": "SGN",
+          "culture": "bengali",
+          "religion": "sunni",
+          "owned_in_target": 19,
+          "score": 11
+        },
+        {
+          "tag": "STN",
+          "culture": "bengali",
+          "religion": "sunni",
+          "owned_in_target": 19,
+          "score": 11
+        },
+        {
+          "tag": "TRF",
+          "culture": "bengali",
+          "religion": "sunni",
+          "owned_in_target": 8,
+          "score": 11
+        }
+      ]
+    },
+    "DLH_f": {
+      "culture_gates": [
+        "indian_group",
+        "iranian_group",
+        "mongolian_group",
+        "turkic_group"
+      ],
+      "culture_group_gates": [
+        "indian_group",
+        "iranian_group",
+        "mongolian_group",
+        "turkic_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "DTI",
+          "culture": "kumaoni",
+          "religion": "hindu",
+          "owned_in_target": 6,
+          "score": 11
+        },
+        {
+          "tag": "GLI",
+          "culture": "kashmiri_culture",
+          "religion": "shia",
+          "owned_in_target": 8,
+          "score": 11
+        },
+        {
+          "tag": "GWL",
+          "culture": "garhwali",
+          "religion": "hindu",
+          "owned_in_target": 7,
+          "score": 11
+        },
+        {
+          "tag": "KHS",
+          "culture": "khas_culture",
+          "religion": "hindu",
+          "owned_in_target": 18,
+          "score": 11
+        },
+        {
+          "tag": "KMN",
+          "culture": "kumaoni",
+          "religion": "hindu",
+          "owned_in_target": 8,
+          "score": 11
+        },
+        {
+          "tag": "KSH",
+          "culture": "kashmiri_culture",
+          "religion": "hindu",
+          "owned_in_target": 9,
+          "score": 11
+        },
+        {
+          "tag": "KTU",
+          "culture": "newar_culture",
+          "religion": "tibetan_buddhism",
+          "owned_in_target": 6,
+          "score": 11
+        },
+        {
+          "tag": "SWT",
+          "culture": "kashmiri_culture",
+          "religion": "sunni",
+          "owned_in_target": 15,
+          "score": 11
+        }
+      ]
+    },
+    "NPL_f": {
+      "culture_gates": [
+        "nepali_group"
+      ],
+      "culture_group_gates": [
+        "nepali_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "KHS",
+          "culture": "khas_culture",
+          "religion": "hindu",
+          "owned_in_target": 18,
+          "score": 11
+        },
+        {
+          "tag": "KTU",
+          "culture": "newar_culture",
+          "religion": "tibetan_buddhism",
+          "owned_in_target": 6,
+          "score": 11
+        },
+        {
+          "tag": "LWA",
+          "culture": "limbu_culture",
+          "religion": "hindu",
+          "owned_in_target": 13,
+          "score": 11
+        },
+        {
+          "tag": "CDD",
+          "culture": "newar_culture",
+          "religion": "hindu",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "DEC_f": {
+      "culture_gates": [],
+      "culture_group_gates": [],
+      "religion_gates": [
+        "sunni"
+      ],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "DLH",
+          "culture": "dehlavi",
+          "religion": "sunni",
+          "owned_in_target": 62,
+          "score": 10
+        },
+        {
+          "tag": "MAB",
+          "culture": "haryanvi_culture",
+          "religion": "sunni",
+          "owned_in_target": 13,
+          "score": 10
+        },
+        {
+          "tag": "DGL",
+          "culture": "dhivehi_culture",
+          "religion": "sunni",
+          "owned_in_target": 4,
+          "score": 9
+        },
+        {
+          "tag": "HNV",
+          "culture": "konkani",
+          "religion": "sunni",
+          "owned_in_target": 1,
+          "score": 6
+        }
+      ]
+    },
+    "MHR_f": {
+      "culture_gates": [],
+      "culture_group_gates": [],
+      "religion_gates": [
+        "sunni"
+      ],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "DLH",
+          "culture": "dehlavi",
+          "religion": "sunni",
+          "owned_in_target": 62,
+          "score": 10
+        },
+        {
+          "tag": "MAB",
+          "culture": "haryanvi_culture",
+          "religion": "sunni",
+          "owned_in_target": 13,
+          "score": 10
+        },
+        {
+          "tag": "DGL",
+          "culture": "dhivehi_culture",
+          "religion": "sunni",
+          "owned_in_target": 4,
+          "score": 9
+        },
+        {
+          "tag": "HNV",
+          "culture": "konkani",
+          "religion": "sunni",
+          "owned_in_target": 1,
+          "score": 6
+        }
+      ]
+    },
+    "PUN_f": {
+      "culture_gates": [
+        "punjabi"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "DOG",
+          "culture": "punjabi",
+          "religion": "hindu",
+          "owned_in_target": 3,
+          "score": 9
+        }
+      ]
+    },
+    "RJP_f": {
+      "culture_gates": [],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "DLH",
+          "culture": "dehlavi",
+          "religion": "sunni",
+          "owned_in_target": 21,
+          "score": 7
+        },
+        {
+          "tag": "GDA",
+          "culture": "bagri",
+          "religion": "hindu",
+          "owned_in_target": 5,
+          "score": 7
+        },
+        {
+          "tag": "JLR",
+          "culture": "marwari",
+          "religion": "hindu",
+          "owned_in_target": 6,
+          "score": 7
+        },
+        {
+          "tag": "MEW",
+          "culture": "mewari",
+          "religion": "hindu",
+          "owned_in_target": 6,
+          "score": 7
+        },
+        {
+          "tag": "DHU",
+          "culture": "dhundhari",
+          "religion": "hindu",
+          "owned_in_target": 4,
+          "score": 6
+        },
+        {
+          "tag": "JSL",
+          "culture": "marwari",
+          "religion": "hindu",
+          "owned_in_target": 4,
+          "score": 6
+        },
+        {
+          "tag": "GWA",
+          "culture": "bundeli",
+          "religion": "hindu",
+          "owned_in_target": 3,
+          "score": 5
+        },
+        {
+          "tag": "HAD",
+          "culture": "harauti",
+          "religion": "hindu",
+          "owned_in_target": 3,
+          "score": 5
+        }
+      ]
+    },
+    "GUJ_f": {
+      "culture_gates": [],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "DLH",
+          "culture": "dehlavi",
+          "religion": "sunni",
+          "owned_in_target": 12,
+          "score": 7
+        },
+        {
+          "tag": "JNG",
+          "culture": "gujarati",
+          "religion": "hindu",
+          "owned_in_target": 6,
+          "score": 7
+        },
+        {
+          "tag": "KUT",
+          "culture": "gujarati",
+          "religion": "hindu",
+          "owned_in_target": 7,
+          "score": 7
+        },
+        {
+          "tag": "CMN",
+          "culture": "gujarati",
+          "religion": "hindu",
+          "owned_in_target": 3,
+          "score": 5
+        },
+        {
+          "tag": "GHL",
+          "culture": "gujarati",
+          "religion": "hindu",
+          "owned_in_target": 2,
+          "score": 4
+        },
+        {
+          "tag": "JLW",
+          "culture": "gujarati",
+          "religion": "hindu",
+          "owned_in_target": 2,
+          "score": 4
+        },
+        {
+          "tag": "PLT",
+          "culture": "gujarati",
+          "religion": "hindu",
+          "owned_in_target": 2,
+          "score": 4
+        },
+        {
+          "tag": "BHD",
+          "culture": "gujarati",
+          "religion": "hindu",
+          "owned_in_target": 1,
+          "score": 3
+        }
+      ]
+    },
+    "SHA_f": {
+      "culture_gates": [
+        "shan_group"
+      ],
+      "culture_group_gates": [
+        "shan_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "HSE",
+          "culture": "tai_nua_culture",
+          "religion": "satsana_phi",
+          "owned_in_target": 10,
+          "score": 11
+        },
+        {
+          "tag": "MNI",
+          "culture": "tai_long_culture",
+          "religion": "satsana_phi",
+          "owned_in_target": 5,
+          "score": 11
+        },
+        {
+          "tag": "HSI",
+          "culture": "tai_long_culture",
+          "religion": "satsana_phi",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "MGT",
+          "culture": "tai_nua_culture",
+          "religion": "satsana_phi",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "BHM",
+          "culture": "tai_nua_culture",
+          "religion": "satsana_phi",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "CHH",
+          "culture": "tai_lu_culture",
+          "religion": "satsana_phi",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "KTG",
+          "culture": "tai_lu_culture",
+          "religion": "satsana_phi",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "MHK",
+          "culture": "tai_nua_culture",
+          "religion": "satsana_phi",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "MSA_f": {
+      "culture_gates": [
+        "malay_culture"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "LGK",
+          "culture": "malay_culture",
+          "religion": "hindu",
+          "owned_in_target": 9,
+          "score": 11
+        },
+        {
+          "tag": "PAH",
+          "culture": "malay_culture",
+          "religion": "mahayana",
+          "owned_in_target": 11,
+          "score": 11
+        },
+        {
+          "tag": "KED",
+          "culture": "malay_culture",
+          "religion": "sunni",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "MNJ",
+          "culture": "malay_culture",
+          "religion": "hindu",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "BES",
+          "culture": "malay_culture",
+          "religion": "hindu",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "SNG",
+          "culture": "malay_culture",
+          "religion": "hindu",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "SIA_f": {
+      "culture_gates": [
+        "thai_culture"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "LAV",
+          "culture": "thai_culture",
+          "religion": "theravada",
+          "owned_in_target": 9,
+          "score": 11
+        },
+        {
+          "tag": "SPN",
+          "culture": "thai_culture",
+          "religion": "theravada",
+          "owned_in_target": 5,
+          "score": 11
+        },
+        {
+          "tag": "SUK",
+          "culture": "thai_culture",
+          "religion": "theravada",
+          "owned_in_target": 20,
+          "score": 11
+        },
+        {
+          "tag": "PTC",
+          "culture": "thai_culture",
+          "religion": "theravada",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "ADH",
+          "culture": "thai_culture",
+          "religion": "theravada",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "BAN_f": {
+      "culture_gates": [
+        "sundanese_culture"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "SUN",
+          "culture": "sundanese_culture",
+          "religion": "hindu",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "IRA_f": {
+      "culture_gates": [
+        "iranian_group"
+      ],
+      "culture_group_gates": [
+        "iranian_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "BDS",
+          "culture": "mazanderani_culture",
+          "religion": "shia",
+          "owned_in_target": 7,
+          "score": 11
+        },
+        {
+          "tag": "BLA",
+          "culture": "baloch_culture",
+          "religion": "sunni",
+          "owned_in_target": 9,
+          "score": 11
+        },
+        {
+          "tag": "BMP",
+          "culture": "baloch_culture",
+          "religion": "sunni",
+          "owned_in_target": 10,
+          "score": 11
+        },
+        {
+          "tag": "HBN",
+          "culture": "kurdish_culture",
+          "religion": "sunni",
+          "owned_in_target": 5,
+          "score": 11
+        },
+        {
+          "tag": "HDN",
+          "culture": "farsi_culture",
+          "religion": "sunni",
+          "owned_in_target": 11,
+          "score": 11
+        },
+        {
+          "tag": "HZP",
+          "culture": "lur_culture",
+          "religion": "sunni",
+          "owned_in_target": 22,
+          "score": 11
+        },
+        {
+          "tag": "INJ",
+          "culture": "farsi_culture",
+          "religion": "sunni",
+          "owned_in_target": 51,
+          "score": 11
+        },
+        {
+          "tag": "KEL",
+          "culture": "kurdish_culture",
+          "religion": "sunni",
+          "owned_in_target": 6,
+          "score": 11
+        }
+      ]
+    },
+    "TIB_f": {
+      "culture_gates": [
+        "tibetan_group"
+      ],
+      "culture_group_gates": [
+        "tibetan_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "AMD",
+          "culture": "amdowa_culture",
+          "religion": "tibetan_buddhism",
+          "owned_in_target": 12,
+          "score": 11
+        },
+        {
+          "tag": "BTG",
+          "culture": "khampa_culture",
+          "religion": "bon",
+          "owned_in_target": 9,
+          "score": 11
+        },
+        {
+          "tag": "DRG",
+          "culture": "khampa_culture",
+          "religion": "tibetan_buddhism",
+          "owned_in_target": 7,
+          "score": 11
+        },
+        {
+          "tag": "GNJ",
+          "culture": "khampa_culture",
+          "religion": "tibetan_buddhism",
+          "owned_in_target": 10,
+          "score": 11
+        },
+        {
+          "tag": "GOL",
+          "culture": "amdowa_culture",
+          "religion": "tibetan_buddhism",
+          "owned_in_target": 12,
+          "score": 11
+        },
+        {
+          "tag": "GUG",
+          "culture": "utsang_culture",
+          "religion": "tibetan_buddhism",
+          "owned_in_target": 7,
+          "score": 11
+        },
+        {
+          "tag": "HOR",
+          "culture": "khampa_culture",
+          "religion": "tibetan_buddhism",
+          "owned_in_target": 5,
+          "score": 11
+        },
+        {
+          "tag": "LGT",
+          "culture": "khampa_culture",
+          "religion": "tibetan_buddhism",
+          "owned_in_target": 8,
+          "score": 11
+        }
+      ]
+    },
+    "SKO_f": {
+      "culture_gates": [
+        "fulbe",
+        "hausa"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [
+        "sunni"
+      ],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "RAN",
+          "culture": "hausa",
+          "religion": "sunni",
+          "owned_in_target": 5,
+          "score": 14
+        },
+        {
+          "tag": "ZAM",
+          "culture": "hausa",
+          "religion": "sunni",
+          "owned_in_target": 17,
+          "score": 14
+        },
+        {
+          "tag": "ZZZ",
+          "culture": "hausa",
+          "religion": "sunni",
+          "owned_in_target": 6,
+          "score": 14
+        },
+        {
+          "tag": "GOB",
+          "culture": "hausa",
+          "religion": "sunni",
+          "owned_in_target": 4,
+          "score": 13
+        },
+        {
+          "tag": "KAN",
+          "culture": "hausa",
+          "religion": "sunni",
+          "owned_in_target": 4,
+          "score": 13
+        },
+        {
+          "tag": "KTS",
+          "culture": "hausa",
+          "religion": "sunni",
+          "owned_in_target": 4,
+          "score": 13
+        },
+        {
+          "tag": "DAA",
+          "culture": "hausa",
+          "religion": "sunni",
+          "owned_in_target": 1,
+          "score": 10
+        }
+      ]
+    },
+    "HAU_f": {
+      "culture_gates": [
+        "hausa"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "RAN",
+          "culture": "hausa",
+          "religion": "sunni",
+          "owned_in_target": 5,
+          "score": 11
+        },
+        {
+          "tag": "ZAM",
+          "culture": "hausa",
+          "religion": "sunni",
+          "owned_in_target": 17,
+          "score": 11
+        },
+        {
+          "tag": "ZZZ",
+          "culture": "hausa",
+          "religion": "sunni",
+          "owned_in_target": 6,
+          "score": 11
+        },
+        {
+          "tag": "GOB",
+          "culture": "hausa",
+          "religion": "sunni",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "KAN",
+          "culture": "hausa",
+          "religion": "sunni",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "KTS",
+          "culture": "hausa",
+          "religion": "sunni",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "DAA",
+          "culture": "hausa",
+          "religion": "sunni",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "KON_f": {
+      "culture_gates": [],
+      "culture_group_gates": [],
+      "religion_gates": [
+        "bantu_religion"
+      ],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "MOM",
+          "culture": "solongo",
+          "religion": "bantu_religion",
+          "owned_in_target": 7,
+          "score": 10
+        },
+        {
+          "tag": "MPE",
+          "culture": "mboma",
+          "religion": "bantu_religion",
+          "owned_in_target": 6,
+          "score": 10
+        },
+        {
+          "tag": "VUN",
+          "culture": "cabinda",
+          "religion": "bantu_religion",
+          "owned_in_target": 3,
+          "score": 8
+        },
+        {
+          "tag": "NSU",
+          "culture": "nsudi",
+          "religion": "bantu_religion",
+          "owned_in_target": 2,
+          "score": 7
+        },
+        {
+          "tag": "MBT",
+          "culture": "kakongo",
+          "religion": "bantu_religion",
+          "owned_in_target": 1,
+          "score": 6
+        },
+        {
+          "tag": "VNA",
+          "culture": "mboma",
+          "religion": "bantu_religion",
+          "owned_in_target": 1,
+          "score": 6
+        }
+      ]
+    },
+    "INC_f": {
+      "culture_gates": [],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "HNK",
+          "culture": "chanka_culture",
+          "religion": "chanka_religion",
+          "owned_in_target": 5,
+          "score": 7
+        },
+        {
+          "tag": "AYA",
+          "culture": "wari_culture",
+          "religion": "inti",
+          "owned_in_target": 4,
+          "score": 6
+        },
+        {
+          "tag": "KKE",
+          "culture": "killke_culture",
+          "religion": "inti",
+          "owned_in_target": 3,
+          "score": 5
+        },
+        {
+          "tag": "URC",
+          "culture": "chanka_culture",
+          "religion": "chanka_religion",
+          "owned_in_target": 3,
+          "score": 5
+        },
+        {
+          "tag": "CSU",
+          "culture": "inka_culture",
+          "religion": "inti",
+          "owned_in_target": 2,
+          "score": 4
+        },
+        {
+          "tag": "MYM",
+          "culture": "wari_culture",
+          "religion": "inti",
+          "owned_in_target": 2,
+          "score": 4
+        },
+        {
+          "tag": "PCR",
+          "culture": "wari_culture",
+          "religion": "inti",
+          "owned_in_target": 2,
+          "score": 4
+        },
+        {
+          "tag": "CNC",
+          "culture": "wari_culture",
+          "religion": "inti",
+          "owned_in_target": 1,
+          "score": 3
+        }
+      ]
+    },
+    "MCH_f": {
+      "culture_gates": [],
+      "culture_group_gates": [
+        "jurchen_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "FUY",
+          "culture": "haixi_culture",
+          "religion": "tungusic_shamanism",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "HUR",
+          "culture": "hurga_culture",
+          "religion": "tungusic_shamanism",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "LAL",
+          "culture": "jurchen_culture",
+          "religion": "tungusic_shamanism",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "MRE",
+          "culture": "hurga_culture",
+          "religion": "tungusic_shamanism",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "HLN",
+          "culture": "jurchen_culture",
+          "religion": "tungusic_shamanism",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "HUI",
+          "culture": "jurchen_culture",
+          "religion": "tungusic_shamanism",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "IMN",
+          "culture": "hurga_culture",
+          "religion": "tungusic_shamanism",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "NRO",
+          "culture": "hurga_culture",
+          "religion": "tungusic_shamanism",
+          "owned_in_target": 2,
+          "score": 8
+        }
+      ]
+    },
+    "SHL_f": {
+      "culture_gates": [
+        "holsatian"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "HTR",
+          "culture": "holsatian",
+          "religion": "catholic",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "HPL",
+          "culture": "holsatian",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "DIT",
+          "culture": "holsatian",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "HSP",
+          "culture": "holsatian",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "LBB",
+          "culture": "holsatian",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "LUB",
+          "culture": "holsatian",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "RUM_f": {
+      "culture_gates": [
+        "turkic_group"
+      ],
+      "culture_group_gates": [
+        "turkic_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "AHI",
+          "culture": "turkish_culture",
+          "religion": "shia",
+          "owned_in_target": 6,
+          "score": 11
+        },
+        {
+          "tag": "AYD",
+          "culture": "turkish_culture",
+          "religion": "sunni",
+          "owned_in_target": 9,
+          "score": 11
+        },
+        {
+          "tag": "CND",
+          "culture": "turkish_culture",
+          "religion": "sunni",
+          "owned_in_target": 19,
+          "score": 11
+        },
+        {
+          "tag": "DUL",
+          "culture": "turkish_culture",
+          "religion": "shia",
+          "owned_in_target": 11,
+          "score": 11
+        },
+        {
+          "tag": "ERE",
+          "culture": "turkish_culture",
+          "religion": "sunni",
+          "owned_in_target": 36,
+          "score": 11
+        },
+        {
+          "tag": "GRM",
+          "culture": "turkish_culture",
+          "religion": "sunni",
+          "owned_in_target": 17,
+          "score": 11
+        },
+        {
+          "tag": "HMD",
+          "culture": "turkish_culture",
+          "religion": "sunni",
+          "owned_in_target": 8,
+          "score": 11
+        },
+        {
+          "tag": "KAR",
+          "culture": "turkish_culture",
+          "religion": "sunni",
+          "owned_in_target": 33,
+          "score": 11
+        }
+      ]
+    },
+    "MGE_f": {
+      "culture_gates": [
+        "mongolian_group",
+        "turkic_group"
+      ],
+      "culture_group_gates": [
+        "mongolian_group",
+        "turkic_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "APD",
+          "culture": "mongolian_culture",
+          "religion": "sunni",
+          "owned_in_target": 6,
+          "score": 11
+        },
+        {
+          "tag": "BAT",
+          "culture": "oirat_culture",
+          "religion": "tengri",
+          "owned_in_target": 18,
+          "score": 11
+        },
+        {
+          "tag": "BGT",
+          "culture": "mongolian_culture",
+          "religion": "tengri",
+          "owned_in_target": 17,
+          "score": 11
+        },
+        {
+          "tag": "BRL",
+          "culture": "mongolian_culture",
+          "religion": "sunni",
+          "owned_in_target": 13,
+          "score": 11
+        },
+        {
+          "tag": "CHG",
+          "culture": "mongolian_culture",
+          "religion": "tengri",
+          "owned_in_target": 127,
+          "score": 11
+        },
+        {
+          "tag": "CHI",
+          "culture": "mongolian_culture",
+          "religion": "tibetan_buddhism",
+          "owned_in_target": 1551,
+          "score": 11
+        },
+        {
+          "tag": "CRS",
+          "culture": "oirat_culture",
+          "religion": "tengri",
+          "owned_in_target": 37,
+          "score": 11
+        },
+        {
+          "tag": "DGH",
+          "culture": "mongolian_culture",
+          "religion": "tengri",
+          "owned_in_target": 20,
+          "score": 11
+        }
+      ]
+    },
+    "MGO_f": {
+      "culture_gates": [
+        "mongolian_group"
+      ],
+      "culture_group_gates": [
+        "mongolian_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "BAT",
+          "culture": "oirat_culture",
+          "religion": "tengri",
+          "owned_in_target": 17,
+          "score": 11
+        },
+        {
+          "tag": "BGT",
+          "culture": "mongolian_culture",
+          "religion": "tengri",
+          "owned_in_target": 17,
+          "score": 11
+        },
+        {
+          "tag": "CHI",
+          "culture": "mongolian_culture",
+          "religion": "tibetan_buddhism",
+          "owned_in_target": 89,
+          "score": 11
+        },
+        {
+          "tag": "CRS",
+          "culture": "oirat_culture",
+          "religion": "tengri",
+          "owned_in_target": 37,
+          "score": 11
+        },
+        {
+          "tag": "HCN",
+          "culture": "mongolian_culture",
+          "religion": "tengri",
+          "owned_in_target": 12,
+          "score": 11
+        },
+        {
+          "tag": "KHD",
+          "culture": "oirat_culture",
+          "religion": "tengri",
+          "owned_in_target": 16,
+          "score": 11
+        },
+        {
+          "tag": "OTC",
+          "culture": "mongolian_culture",
+          "religion": "tengri",
+          "owned_in_target": 5,
+          "score": 11
+        },
+        {
+          "tag": "QAS",
+          "culture": "mongolian_culture",
+          "religion": "tengri",
+          "owned_in_target": 19,
+          "score": 11
+        }
+      ]
+    },
+    "ILK_f": {
+      "culture_gates": [],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "AAI",
+          "culture": "georgian_culture",
+          "religion": "orthodox",
+          "owned_in_target": 8,
+          "score": 7
+        },
+        {
+          "tag": "ATQ",
+          "culture": "turkish_culture",
+          "religion": "sunni",
+          "owned_in_target": 12,
+          "score": 7
+        },
+        {
+          "tag": "ATZ",
+          "culture": "armenian_culture",
+          "religion": "miaphysite",
+          "owned_in_target": 8,
+          "score": 7
+        },
+        {
+          "tag": "BDS",
+          "culture": "mazanderani_culture",
+          "religion": "shia",
+          "owned_in_target": 7,
+          "score": 7
+        },
+        {
+          "tag": "BLA",
+          "culture": "baloch_culture",
+          "religion": "sunni",
+          "owned_in_target": 9,
+          "score": 7
+        },
+        {
+          "tag": "BMP",
+          "culture": "baloch_culture",
+          "religion": "sunni",
+          "owned_in_target": 10,
+          "score": 7
+        },
+        {
+          "tag": "CND",
+          "culture": "turkish_culture",
+          "religion": "sunni",
+          "owned_in_target": 13,
+          "score": 7
+        },
+        {
+          "tag": "DGE",
+          "culture": "turkoman_culture",
+          "religion": "sunni",
+          "owned_in_target": 10,
+          "score": 7
+        }
+      ]
+    },
+    "GEO_f": {
+      "culture_gates": [
+        "georgian_culture"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "SME",
+          "culture": "georgian_culture",
+          "religion": "orthodox",
+          "owned_in_target": 9,
+          "score": 11
+        },
+        {
+          "tag": "AAI",
+          "culture": "georgian_culture",
+          "religion": "orthodox",
+          "owned_in_target": 3,
+          "score": 9
+        }
+      ]
+    },
+    "ARM_f": {
+      "culture_gates": [
+        "armenian_culture"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "SYU",
+          "culture": "armenian_culture",
+          "religion": "miaphysite",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "ATZ",
+          "culture": "armenian_culture",
+          "religion": "miaphysite",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "KCN",
+          "culture": "armenian_culture",
+          "religion": "miaphysite",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "VDZ",
+          "culture": "armenian_culture",
+          "religion": "miaphysite",
+          "owned_in_target": 2,
+          "score": 8
+        }
+      ]
+    },
+    "ALB_f": {
+      "culture_gates": [
+        "albanian"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "ANT",
+          "culture": "albanian",
+          "religion": "catholic",
+          "owned_in_target": 0,
+          "score": 4
+        },
+        {
+          "tag": "MTR",
+          "culture": "albanian",
+          "religion": "catholic",
+          "owned_in_target": 0,
+          "score": 4
+        },
+        {
+          "tag": "MZK",
+          "culture": "albanian",
+          "religion": "catholic",
+          "owned_in_target": 0,
+          "score": 4
+        },
+        {
+          "tag": "THP",
+          "culture": "albanian",
+          "religion": "catholic",
+          "owned_in_target": 0,
+          "score": 4
+        }
+      ]
+    },
+    "MAY_f": {
+      "culture_gates": [],
+      "culture_group_gates": [],
+      "religion_gates": [
+        "mayan"
+      ],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "CKP",
+          "culture": "putun_culture",
+          "religion": "mayan",
+          "owned_in_target": 5,
+          "score": 10
+        },
+        {
+          "tag": "COC",
+          "culture": "yucatec_culture",
+          "religion": "mayan",
+          "owned_in_target": 12,
+          "score": 10
+        },
+        {
+          "tag": "HEL",
+          "culture": "yucatec_culture",
+          "religion": "mayan",
+          "owned_in_target": 6,
+          "score": 10
+        },
+        {
+          "tag": "ITZ",
+          "culture": "itza_culture",
+          "religion": "mayan",
+          "owned_in_target": 7,
+          "score": 10
+        },
+        {
+          "tag": "XOL",
+          "culture": "chol_culture",
+          "religion": "mayan",
+          "owned_in_target": 6,
+          "score": 10
+        },
+        {
+          "tag": "KIC",
+          "culture": "kiche_culture",
+          "religion": "mayan",
+          "owned_in_target": 4,
+          "score": 9
+        },
+        {
+          "tag": "KOW",
+          "culture": "kowoj_culture",
+          "religion": "mayan",
+          "owned_in_target": 4,
+          "score": 9
+        },
+        {
+          "tag": "MMM",
+          "culture": "mam_culture",
+          "religion": "mayan",
+          "owned_in_target": 3,
+          "score": 8
+        }
+      ]
+    },
+    "KRY_f": {
+      "culture_gates": [
+        "gilak_culture"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "TLM",
+          "culture": "gilak_culture",
+          "religion": "shia",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "RYU_f": {
+      "culture_gates": [
+        "ryukyu_culture"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "CHZ",
+          "culture": "ryukyu_culture",
+          "religion": "utaki_religion",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "HKZ",
+          "culture": "ryukyu_culture",
+          "religion": "utaki_religion",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "NZN",
+          "culture": "ryukyu_culture",
+          "religion": "utaki_religion",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "CHI_f": {
+      "culture_gates": [
+        "chinese_group"
+      ],
+      "culture_group_gates": [
+        "chinese_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "MNZ",
+          "culture": "qin_culture",
+          "religion": "tibetan_buddhism",
+          "owned_in_target": 6,
+          "score": 11
+        }
+      ]
+    },
+    "IRO_f": {
+      "culture_gates": [
+        "haudenosaunee_group"
+      ],
+      "culture_group_gates": [
+        "haudenosaunee_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "AKY",
+          "culture": "atrakwaye_culture",
+          "religion": "iroquoian_totemism",
+          "owned_in_target": 0,
+          "score": 4
+        },
+        {
+          "tag": "CTN",
+          "culture": "carantouan_culture",
+          "religion": "iroquoian_totemism",
+          "owned_in_target": 0,
+          "score": 4
+        },
+        {
+          "tag": "GYO",
+          "culture": "gayogohono_culture",
+          "religion": "iroquoian_totemism",
+          "owned_in_target": 0,
+          "score": 4
+        },
+        {
+          "tag": "KKA",
+          "culture": "kanienkehaka_culture",
+          "religion": "iroquoian_totemism",
+          "owned_in_target": 0,
+          "score": 4
+        },
+        {
+          "tag": "ONJ",
+          "culture": "onojutta_culture",
+          "religion": "iroquoian_totemism",
+          "owned_in_target": 0,
+          "score": 4
+        },
+        {
+          "tag": "ONN",
+          "culture": "onondowaga_culture",
+          "religion": "iroquoian_totemism",
+          "owned_in_target": 0,
+          "score": 4
+        },
+        {
+          "tag": "ONO",
+          "culture": "onondagega_culture",
+          "religion": "iroquoian_totemism",
+          "owned_in_target": 0,
+          "score": 4
+        },
+        {
+          "tag": "ONY",
+          "culture": "onyotaaka_culture",
+          "religion": "iroquoian_totemism",
+          "owned_in_target": 0,
+          "score": 4
+        }
+      ]
+    },
+    "PUE_f": {
+      "culture_gates": [
+        "hohokam_culture",
+        "hopi_culture",
+        "hualapai_culture",
+        "keres_culture",
+        "tanoan_culture",
+        "zuni_culture"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "ACO",
+          "culture": "keres_culture",
+          "religion": "kachina_religion",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "ISL",
+          "culture": "keres_culture",
+          "religion": "kachina_religion",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "KER",
+          "culture": "keres_culture",
+          "religion": "kachina_religion",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "OHK",
+          "culture": "tanoan_culture",
+          "religion": "kachina_religion",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "TAO",
+          "culture": "tanoan_culture",
+          "religion": "kachina_religion",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "TEY",
+          "culture": "tanoan_culture",
+          "religion": "kachina_religion",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "TNN",
+          "culture": "tanoan_culture",
+          "religion": "kachina_religion",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "TST",
+          "culture": "tanoan_culture",
+          "religion": "kachina_religion",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "RMN_f": {
+      "culture_gates": [
+        "romanian_group"
+      ],
+      "culture_group_gates": [
+        "romanian_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "BIA",
+          "culture": "moldovan",
+          "religion": "orthodox",
+          "owned_in_target": 10,
+          "score": 11
+        },
+        {
+          "tag": "BLD",
+          "culture": "moldovan",
+          "religion": "orthodox",
+          "owned_in_target": 9,
+          "score": 11
+        },
+        {
+          "tag": "IAS",
+          "culture": "moldovan",
+          "religion": "orthodox",
+          "owned_in_target": 11,
+          "score": 11
+        },
+        {
+          "tag": "WAL",
+          "culture": "wallachian",
+          "religion": "orthodox",
+          "owned_in_target": 44,
+          "score": 11
+        },
+        {
+          "tag": "SRC",
+          "culture": "moldovan",
+          "religion": "orthodox",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "HSC",
+          "culture": "moldovan",
+          "religion": "orthodox",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "HTN",
+          "culture": "moldovan",
+          "religion": "orthodox",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "SSI",
+          "culture": "moldovan",
+          "religion": "orthodox",
+          "owned_in_target": 3,
+          "score": 9
+        }
+      ]
+    },
+    "SWA_f": {
+      "culture_gates": [
+        "swabian"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "WUR",
+          "culture": "swabian",
+          "religion": "catholic",
+          "owned_in_target": 6,
+          "score": 11
+        },
+        {
+          "tag": "AUG",
+          "culture": "swabian",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "HHB",
+          "culture": "swabian",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "KIR",
+          "culture": "swabian",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "OET",
+          "culture": "swabian",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "AGC",
+          "culture": "swabian",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "BIB",
+          "culture": "swabian",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "ELL",
+          "culture": "swabian",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "WES_f": {
+      "culture_gates": [
+        "westphalian"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "MUN",
+          "culture": "westphalian",
+          "religion": "catholic",
+          "owned_in_target": 9,
+          "score": 11
+        },
+        {
+          "tag": "TCK",
+          "culture": "westphalian",
+          "religion": "catholic",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "GMK",
+          "culture": "westphalian",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "OSN",
+          "culture": "westphalian",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "BNT",
+          "culture": "westphalian",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "DTM",
+          "culture": "westphalian",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "BEL_f": {
+      "culture_gates": [
+        "low_franconian",
+        "walloon"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "BRB",
+          "culture": "low_franconian",
+          "religion": "catholic",
+          "owned_in_target": 11,
+          "score": 11
+        },
+        {
+          "tag": "FLA",
+          "culture": "low_franconian",
+          "religion": "catholic",
+          "owned_in_target": 12,
+          "score": 11
+        },
+        {
+          "tag": "LIE",
+          "culture": "walloon",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "LOO",
+          "culture": "low_franconian",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "GEL",
+          "culture": "low_franconian",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "BLL",
+          "culture": "walloon",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "CJK",
+          "culture": "low_franconian",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "HRN",
+          "culture": "low_franconian",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "FKN_f": {
+      "culture_gates": [
+        "east_franconian"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "ANS",
+          "culture": "east_franconian",
+          "religion": "catholic",
+          "owned_in_target": 6,
+          "score": 11
+        },
+        {
+          "tag": "BAM",
+          "culture": "east_franconian",
+          "religion": "catholic",
+          "owned_in_target": 5,
+          "score": 11
+        },
+        {
+          "tag": "WBG",
+          "culture": "east_franconian",
+          "religion": "catholic",
+          "owned_in_target": 6,
+          "score": 11
+        },
+        {
+          "tag": "UFF",
+          "culture": "east_franconian",
+          "religion": "catholic",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "HNB",
+          "culture": "east_franconian",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "NUR",
+          "culture": "east_franconian",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "ROT",
+          "culture": "east_franconian",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "SWH",
+          "culture": "east_franconian",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "HAN_f": {
+      "culture_gates": [
+        "lower_saxon"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "BRE",
+          "culture": "lower_saxon",
+          "religion": "catholic",
+          "owned_in_target": 5,
+          "score": 11
+        },
+        {
+          "tag": "LUN",
+          "culture": "lower_saxon",
+          "religion": "catholic",
+          "owned_in_target": 11,
+          "score": 11
+        },
+        {
+          "tag": "VRD",
+          "culture": "lower_saxon",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "HAM",
+          "culture": "lower_saxon",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "RTB",
+          "culture": "lower_saxon",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "TUS_f": {
+      "culture_gates": [
+        "tuscan"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "FLO",
+          "culture": "tuscan",
+          "religion": "catholic",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "PIS",
+          "culture": "tuscan",
+          "religion": "catholic",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "SIE",
+          "culture": "tuscan",
+          "religion": "catholic",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "LUC",
+          "culture": "tuscan",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "COT",
+          "culture": "tuscan",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "PRA",
+          "culture": "tuscan",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "PST",
+          "culture": "tuscan",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "VLT",
+          "culture": "tuscan",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "DAL_f": {
+      "culture_gates": [
+        "croatian",
+        "dalmatian"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "CRO",
+          "culture": "croatian",
+          "religion": "catholic",
+          "owned_in_target": 9,
+          "score": 11
+        },
+        {
+          "tag": "RAG",
+          "culture": "dalmatian",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "score": 8
+        }
+      ]
+    },
+    "KRS_f": {
+      "culture_gates": [
+        "kurdish_culture"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "KEL",
+          "culture": "kurdish_culture",
+          "religion": "sunni",
+          "owned_in_target": 6,
+          "score": 11
+        },
+        {
+          "tag": "ARD",
+          "culture": "kurdish_culture",
+          "religion": "sunni",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "KLR",
+          "culture": "kurdish_culture",
+          "religion": "sunni",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "RKL",
+          "culture": "kurdish_culture",
+          "religion": "sunni",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "KRI",
+          "culture": "kurdish_culture",
+          "religion": "sunni",
+          "owned_in_target": 2,
+          "score": 8
+        },
+        {
+          "tag": "HDR",
+          "culture": "kurdish_culture",
+          "religion": "sunni",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "HNY",
+          "culture": "kurdish_culture",
+          "religion": "sunni",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "SOI_f": {
+      "culture_gates": [
+        "somali_culture"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "AJU",
+          "culture": "somali_culture",
+          "religion": "sunni",
+          "owned_in_target": 27,
+          "score": 11
+        },
+        {
+          "tag": "IFA",
+          "culture": "somali_culture",
+          "religion": "sunni",
+          "owned_in_target": 34,
+          "score": 11
+        },
+        {
+          "tag": "WAR",
+          "culture": "somali_culture",
+          "religion": "sunni",
+          "owned_in_target": 6,
+          "score": 11
+        },
+        {
+          "tag": "TDE",
+          "culture": "somali_culture",
+          "religion": "sunni",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "MDI",
+          "culture": "somali_culture",
+          "religion": "sunni",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "TRA_f": {
+      "culture_gates": [
+        "german_transylvanian",
+        "hungarian",
+        "szekely_culture",
+        "transylvanian"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "HUN",
+          "culture": "hungarian",
+          "religion": "catholic",
+          "owned_in_target": 33,
+          "score": 11
+        }
+      ]
+    },
+    "MAL_f": {
+      "culture_gates": [],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "BMR",
+          "culture": "bambara",
+          "religion": "sunni",
+          "owned_in_target": 7,
+          "score": 7
+        },
+        {
+          "tag": "DFN",
+          "culture": "soninke",
+          "religion": "sunni",
+          "owned_in_target": 15,
+          "score": 7
+        },
+        {
+          "tag": "GHA",
+          "culture": "soninke",
+          "religion": "sunni",
+          "owned_in_target": 10,
+          "score": 7
+        },
+        {
+          "tag": "BBK",
+          "culture": "soninke",
+          "religion": "sunni",
+          "owned_in_target": 4,
+          "score": 6
+        },
+        {
+          "tag": "SGH",
+          "culture": "godala_culture",
+          "religion": "sunni",
+          "owned_in_target": 2,
+          "score": 4
+        },
+        {
+          "tag": "TKR",
+          "culture": "soninke",
+          "religion": "sunni",
+          "owned_in_target": 2,
+          "score": 4
+        }
+      ]
+    },
+    "NUB_f": {
+      "culture_gates": [
+        "nubian"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "ALO",
+          "culture": "nubian",
+          "religion": "miaphysite",
+          "owned_in_target": 17,
+          "score": 11
+        },
+        {
+          "tag": "MAK",
+          "culture": "nubian",
+          "religion": "sunni",
+          "owned_in_target": 15,
+          "score": 11
+        },
+        {
+          "tag": "ABW",
+          "culture": "nubian",
+          "religion": "miaphysite",
+          "owned_in_target": 3,
+          "score": 9
+        }
+      ]
+    },
+    "KAZ_f": {
+      "culture_gates": [],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "CHG",
+          "culture": "mongolian_culture",
+          "religion": "tengri",
+          "owned_in_target": 63,
+          "score": 7
+        },
+        {
+          "tag": "GLH",
+          "culture": "mongolian_culture",
+          "religion": "sunni",
+          "owned_in_target": 91,
+          "score": 7
+        },
+        {
+          "tag": "OGE",
+          "culture": "mongolian_culture",
+          "religion": "tengri",
+          "owned_in_target": 1,
+          "score": 3
+        }
+      ]
+    },
+    "MIR_f": {
+      "culture_gates": [
+        "malagasy_group"
+      ],
+      "culture_group_gates": [
+        "malagasy_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "ABV",
+          "culture": "tandroy_culture",
+          "religion": "sunni",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "MBD",
+          "culture": "antaisaka_culture",
+          "religion": "sunni",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "ZFI",
+          "culture": "zafiraminia_culture",
+          "religion": "sunni",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "NUS_f": {
+      "culture_gates": [
+        "javanese_culture",
+        "madurese_culture",
+        "sundanese_culture"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "MAJ",
+          "culture": "javanese_culture",
+          "religion": "hindu",
+          "owned_in_target": 32,
+          "score": 11
+        },
+        {
+          "tag": "SUN",
+          "culture": "sundanese_culture",
+          "religion": "hindu",
+          "owned_in_target": 17,
+          "score": 11
+        }
+      ]
+    },
+    "BNO_f": {
+      "culture_gates": [],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "BEI",
+          "culture": "malay_culture",
+          "religion": "hindu",
+          "owned_in_target": 7,
+          "score": 7
+        },
+        {
+          "tag": "KRP",
+          "culture": "banjar_culture",
+          "religion": "hindu",
+          "owned_in_target": 8,
+          "score": 7
+        },
+        {
+          "tag": "MNU",
+          "culture": "melanau_culture",
+          "religion": "ipok_religion",
+          "owned_in_target": 8,
+          "score": 7
+        },
+        {
+          "tag": "MRP",
+          "culture": "kutai_culture",
+          "religion": "hindu",
+          "owned_in_target": 14,
+          "score": 7
+        },
+        {
+          "tag": "NSR",
+          "culture": "maanyan_culture",
+          "religion": "kaharingan_religion",
+          "owned_in_target": 13,
+          "score": 7
+        },
+        {
+          "tag": "SBG",
+          "culture": "iban_culture",
+          "religion": "hindu",
+          "owned_in_target": 5,
+          "score": 7
+        },
+        {
+          "tag": "SMB",
+          "culture": "bidayuh_culture",
+          "religion": "hindu",
+          "owned_in_target": 5,
+          "score": 7
+        },
+        {
+          "tag": "TDG",
+          "culture": "tidung_culture",
+          "religion": "kaharingan_religion",
+          "owned_in_target": 22,
+          "score": 7
+        }
+      ]
+    },
+    "CIR_f": {
+      "culture_gates": [],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "GLH",
+          "culture": "mongolian_culture",
+          "religion": "sunni",
+          "owned_in_target": 10,
+          "score": 7
+        },
+        {
+          "tag": "HYT",
+          "culture": "circassian_culture",
+          "religion": "orthodox",
+          "owned_in_target": 3,
+          "score": 5
+        },
+        {
+          "tag": "TEM",
+          "culture": "circassian_culture",
+          "religion": "orthodox",
+          "owned_in_target": 3,
+          "score": 5
+        },
+        {
+          "tag": "CPA",
+          "culture": "circassian_culture",
+          "religion": "orthodox",
+          "owned_in_target": 2,
+          "score": 4
+        },
+        {
+          "tag": "GEO",
+          "culture": "georgian_culture",
+          "religion": "orthodox",
+          "owned_in_target": 2,
+          "score": 4
+        },
+        {
+          "tag": "KDA",
+          "culture": "circassian_culture",
+          "religion": "orthodox",
+          "owned_in_target": 2,
+          "score": 4
+        },
+        {
+          "tag": "HTY",
+          "culture": "circassian_culture",
+          "religion": "orthodox",
+          "owned_in_target": 1,
+          "score": 3
+        },
+        {
+          "tag": "KIP",
+          "culture": "circassian_culture",
+          "religion": "orthodox",
+          "owned_in_target": 1,
+          "score": 3
+        }
+      ]
+    },
+    "AZT_f": {
+      "culture_gates": [
+        "nahua_culture"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [
+        "nahuatl"
+      ],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "TTZ",
+          "culture": "nahua_culture",
+          "religion": "nahuatl",
+          "owned_in_target": 4,
+          "score": 13
+        },
+        {
+          "tag": "CTZ",
+          "culture": "nahua_culture",
+          "religion": "nahuatl",
+          "owned_in_target": 3,
+          "score": 12
+        },
+        {
+          "tag": "TEP",
+          "culture": "nahua_culture",
+          "religion": "nahuatl",
+          "owned_in_target": 3,
+          "score": 12
+        },
+        {
+          "tag": "XAL",
+          "culture": "nahua_culture",
+          "religion": "nahuatl",
+          "owned_in_target": 3,
+          "score": 12
+        },
+        {
+          "tag": "XAP",
+          "culture": "nahua_culture",
+          "religion": "nahuatl",
+          "owned_in_target": 3,
+          "score": 12
+        },
+        {
+          "tag": "CCL",
+          "culture": "nahua_culture",
+          "religion": "nahuatl",
+          "owned_in_target": 2,
+          "score": 11
+        },
+        {
+          "tag": "CTX",
+          "culture": "nahua_culture",
+          "religion": "nahuatl",
+          "owned_in_target": 2,
+          "score": 11
+        },
+        {
+          "tag": "CUO",
+          "culture": "nahua_culture",
+          "religion": "nahuatl",
+          "owned_in_target": 2,
+          "score": 11
+        }
+      ]
+    },
+    "PON_f": {
+      "culture_gates": [
+        "pontic_greek_culture"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "TRE",
+          "culture": "pontic_greek_culture",
+          "religion": "orthodox",
+          "owned_in_target": 7,
+          "score": 11
+        },
+        {
+          "tag": "FEO",
+          "culture": "pontic_greek_culture",
+          "religion": "orthodox",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "JAP_f": {
+      "culture_gates": [],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "CHZ",
+          "culture": "ryukyu_culture",
+          "religion": "utaki_religion",
+          "owned_in_target": 1,
+          "score": 3
+        },
+        {
+          "tag": "HKZ",
+          "culture": "ryukyu_culture",
+          "religion": "utaki_religion",
+          "owned_in_target": 1,
+          "score": 3
+        },
+        {
+          "tag": "NZN",
+          "culture": "ryukyu_culture",
+          "religion": "utaki_religion",
+          "owned_in_target": 1,
+          "score": 3
+        }
+      ]
+    },
+    "AEG_f": {
+      "culture_gates": [
+        "arabic_group",
+        "coptic_culture"
+      ],
+      "culture_group_gates": [
+        "arabic_group"
+      ],
+      "religion_gates": [
+        "sunni"
+      ],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "AMR",
+          "culture": "bedouin_culture",
+          "religion": "sunni",
+          "owned_in_target": 7,
+          "score": 14
+        },
+        {
+          "tag": "BQA",
+          "culture": "libyan_arabic_culture",
+          "religion": "sunni",
+          "owned_in_target": 12,
+          "score": 14
+        },
+        {
+          "tag": "FDL",
+          "culture": "bedouin_culture",
+          "religion": "sunni",
+          "owned_in_target": 13,
+          "score": 14
+        },
+        {
+          "tag": "HRB",
+          "culture": "hijazi_culture",
+          "religion": "sunni",
+          "owned_in_target": 7,
+          "score": 14
+        },
+        {
+          "tag": "MAM",
+          "culture": "lower_egyptian_culture",
+          "religion": "sunni",
+          "owned_in_target": 142,
+          "score": 14
+        },
+        {
+          "tag": "SBY",
+          "culture": "najdi_culture",
+          "religion": "sunni",
+          "owned_in_target": 6,
+          "score": 14
+        },
+        {
+          "tag": "UTB",
+          "culture": "hijazi_culture",
+          "religion": "sunni",
+          "owned_in_target": 4,
+          "score": 13
+        },
+        {
+          "tag": "AAL",
+          "culture": "bedouin_culture",
+          "religion": "sunni",
+          "owned_in_target": 3,
+          "score": 12
+        }
+      ]
+    },
+    "AHM_f": {
+      "culture_gates": [
+        "bodo_culture",
+        "chutia_culture",
+        "deori_culture",
+        "dimasa_culture",
+        "kamarupi",
+        "koch_culture",
+        "tai_nua_culture",
+        "tiwa_culture"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "AHO",
+          "culture": "tai_nua_culture",
+          "religion": "satsana_phi",
+          "owned_in_target": 8,
+          "score": 11
+        },
+        {
+          "tag": "KMA",
+          "culture": "kamarupi",
+          "religion": "hindu",
+          "owned_in_target": 11,
+          "score": 11
+        },
+        {
+          "tag": "DIM",
+          "culture": "dimasa_culture",
+          "religion": "dimasa_religion",
+          "owned_in_target": 3,
+          "score": 9
+        },
+        {
+          "tag": "CUT",
+          "culture": "chutia_culture",
+          "religion": "chutia_religion",
+          "owned_in_target": 2,
+          "score": 8
+        }
+      ]
+    },
+    "ALM_f": {
+      "culture_gates": [
+        "maghrebi_group"
+      ],
+      "culture_group_gates": [
+        "maghrebi_group"
+      ],
+      "religion_gates": [
+        "sunni"
+      ],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "BTL",
+          "culture": "eastern_amazigh",
+          "religion": "sunni",
+          "owned_in_target": 9,
+          "score": 14
+        },
+        {
+          "tag": "GBS",
+          "culture": "eastern_amazigh",
+          "religion": "sunni",
+          "owned_in_target": 12,
+          "score": 14
+        },
+        {
+          "tag": "GFS",
+          "culture": "tunisian",
+          "religion": "sunni",
+          "owned_in_target": 7,
+          "score": 14
+        },
+        {
+          "tag": "GRA",
+          "culture": "andalusi",
+          "religion": "sunni",
+          "owned_in_target": 18,
+          "score": 14
+        },
+        {
+          "tag": "MOR",
+          "culture": "moroccan",
+          "religion": "sunni",
+          "owned_in_target": 90,
+          "score": 14
+        },
+        {
+          "tag": "TAT",
+          "culture": "zenati",
+          "religion": "sunni",
+          "owned_in_target": 9,
+          "score": 14
+        },
+        {
+          "tag": "TFL",
+          "culture": "sanhaja",
+          "religion": "sunni",
+          "owned_in_target": 21,
+          "score": 14
+        },
+        {
+          "tag": "TLE",
+          "culture": "zenati",
+          "religion": "sunni",
+          "owned_in_target": 46,
+          "score": 14
+        }
+      ]
+    },
+    "ANV_f": {
+      "culture_gates": [
+        "english",
+        "french_group"
+      ],
+      "culture_group_gates": [
+        "french_group"
+      ],
+      "religion_gates": [
+        "catholic"
+      ],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "ANJ",
+          "culture": "angevin",
+          "religion": "catholic",
+          "owned_in_target": 7,
+          "score": 14
+        },
+        {
+          "tag": "AQN",
+          "culture": "gascon",
+          "religion": "catholic",
+          "owned_in_target": 20,
+          "score": 14
+        },
+        {
+          "tag": "BRI",
+          "culture": "gallo",
+          "religion": "catholic",
+          "owned_in_target": 27,
+          "score": 14
+        },
+        {
+          "tag": "ENG",
+          "culture": "english",
+          "religion": "catholic",
+          "owned_in_target": 135,
+          "score": 14
+        },
+        {
+          "tag": "FRA",
+          "culture": "french",
+          "religion": "catholic",
+          "owned_in_target": 48,
+          "score": 14
+        },
+        {
+          "tag": "MAC",
+          "culture": "english",
+          "religion": "catholic",
+          "owned_in_target": 5,
+          "score": 14
+        },
+        {
+          "tag": "MIE",
+          "culture": "angevin",
+          "religion": "catholic",
+          "owned_in_target": 9,
+          "score": 14
+        },
+        {
+          "tag": "NRM",
+          "culture": "norman",
+          "religion": "catholic",
+          "owned_in_target": 21,
+          "score": 14
+        }
+      ]
+    },
+    "ARC_f": {
+      "culture_gates": [
+        "armenian_culture"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [
+        "miaphysite"
+      ],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "CIL",
+          "culture": "armenian_culture",
+          "religion": "miaphysite",
+          "owned_in_target": 12,
+          "score": 14
+        }
+      ]
+    },
+    "ATE_f": {
+      "culture_gates": [
+        "akan"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "BON",
+          "culture": "akan",
+          "religion": "akan_religion",
+          "owned_in_target": 10,
+          "score": 11
+        }
+      ]
+    },
+    "CDA_f": {
+      "culture_gates": [
+        "aragonese",
+        "catalan"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [
+        "catholic"
+      ],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "ARA",
+          "culture": "catalan",
+          "religion": "catholic",
+          "owned_in_target": 72,
+          "score": 14
+        },
+        {
+          "tag": "MLL",
+          "culture": "catalan",
+          "religion": "catholic",
+          "owned_in_target": 8,
+          "score": 14
+        },
+        {
+          "tag": "ANR",
+          "culture": "catalan",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 10
+        },
+        {
+          "tag": "SAO",
+          "culture": "catalan",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 10
+        }
+      ]
+    },
+    "CSO_f": {
+      "culture_gates": [
+        "chinese_group"
+      ],
+      "culture_group_gates": [
+        "chinese_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "MNZ",
+          "culture": "qin_culture",
+          "religion": "tibetan_buddhism",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "EDO_f": {
+      "culture_gates": [
+        "edo"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "BEN",
+          "culture": "edo",
+          "religion": "isese_religion",
+          "owned_in_target": 10,
+          "score": 11
+        }
+      ]
+    },
+    "GBU_f": {
+      "culture_gates": [
+        "burgundian",
+        "franc_comtois",
+        "french",
+        "frisian",
+        "lorrain",
+        "low_franconian",
+        "picard",
+        "walloon"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [
+        "catholic"
+      ],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "ARS",
+          "culture": "picard",
+          "religion": "catholic",
+          "owned_in_target": 7,
+          "score": 14
+        },
+        {
+          "tag": "BAR",
+          "culture": "lorrain",
+          "religion": "catholic",
+          "owned_in_target": 7,
+          "score": 14
+        },
+        {
+          "tag": "BRB",
+          "culture": "low_franconian",
+          "religion": "catholic",
+          "owned_in_target": 11,
+          "score": 14
+        },
+        {
+          "tag": "BUR",
+          "culture": "burgundian",
+          "religion": "catholic",
+          "owned_in_target": 14,
+          "score": 14
+        },
+        {
+          "tag": "FCB",
+          "culture": "franc_comtois",
+          "religion": "catholic",
+          "owned_in_target": 11,
+          "score": 14
+        },
+        {
+          "tag": "FLA",
+          "culture": "low_franconian",
+          "religion": "catholic",
+          "owned_in_target": 12,
+          "score": 14
+        },
+        {
+          "tag": "FRA",
+          "culture": "french",
+          "religion": "catholic",
+          "owned_in_target": 37,
+          "score": 14
+        },
+        {
+          "tag": "GEL",
+          "culture": "low_franconian",
+          "religion": "catholic",
+          "owned_in_target": 7,
+          "score": 14
+        }
+      ]
+    },
+    "HOS_f": {
+      "culture_gates": [],
+      "culture_group_gates": [],
+      "religion_gates": [
+        "catholic"
+      ],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "KNI",
+          "culture": "french",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 6
+        },
+        {
+          "tag": "SAO",
+          "culture": "catalan",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "score": 6
+        }
+      ]
+    },
+    "KBU_f": {
+      "culture_gates": [
+        "kanembu_culture"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [
+        "sunni"
+      ],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "KBO",
+          "culture": "kanembu_culture",
+          "religion": "sunni",
+          "owned_in_target": 32,
+          "score": 14
+        }
+      ]
+    },
+    "KHL_f": {
+      "culture_gates": [],
+      "culture_group_gates": [],
+      "religion_gates": [
+        "sunni"
+      ],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "AAD",
+          "culture": "najdi_culture",
+          "religion": "sunni",
+          "owned_in_target": 7,
+          "score": 10
+        },
+        {
+          "tag": "AAL",
+          "culture": "bedouin_culture",
+          "religion": "sunni",
+          "owned_in_target": 8,
+          "score": 10
+        },
+        {
+          "tag": "AMR",
+          "culture": "bedouin_culture",
+          "religion": "sunni",
+          "owned_in_target": 11,
+          "score": 10
+        },
+        {
+          "tag": "ANZ",
+          "culture": "najdi_culture",
+          "religion": "sunni",
+          "owned_in_target": 5,
+          "score": 10
+        },
+        {
+          "tag": "APD",
+          "culture": "mongolian_culture",
+          "religion": "sunni",
+          "owned_in_target": 6,
+          "score": 10
+        },
+        {
+          "tag": "ATQ",
+          "culture": "turkish_culture",
+          "religion": "sunni",
+          "owned_in_target": 12,
+          "score": 10
+        },
+        {
+          "tag": "AYD",
+          "culture": "turkish_culture",
+          "religion": "sunni",
+          "owned_in_target": 9,
+          "score": 10
+        },
+        {
+          "tag": "BLA",
+          "culture": "baloch_culture",
+          "religion": "sunni",
+          "owned_in_target": 9,
+          "score": 10
+        }
+      ]
+    },
+    "KWS_f": {
+      "culture_gates": [
+        "matuumbi_culture",
+        "swahili_culture"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "ZAN",
+          "culture": "matuumbi_culture",
+          "religion": "sunni",
+          "owned_in_target": 12,
+          "score": 11
+        },
+        {
+          "tag": "BMB",
+          "culture": "swahili_culture",
+          "religion": "sunni",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "GED",
+          "culture": "swahili_culture",
+          "religion": "sunni",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "LAM",
+          "culture": "swahili_culture",
+          "religion": "sunni",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "MBA",
+          "culture": "swahili_culture",
+          "religion": "sunni",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "PEM",
+          "culture": "swahili_culture",
+          "religion": "sunni",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "UGW",
+          "culture": "swahili_culture",
+          "religion": "sunni",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "ZZB",
+          "culture": "swahili_culture",
+          "religion": "sunni",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "LXA_f": {
+      "culture_gates": [
+        "lao_culture"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "MUA",
+          "culture": "lao_culture",
+          "religion": "mahayana",
+          "owned_in_target": 15,
+          "score": 11
+        },
+        {
+          "tag": "VTN",
+          "culture": "lao_culture",
+          "religion": "mahayana",
+          "owned_in_target": 32,
+          "score": 11
+        }
+      ]
+    },
+    "MCA_f": {
+      "culture_gates": [
+        "muisca_culture"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "ZIP",
+          "culture": "muisca_culture",
+          "religion": "muisca_religion",
+          "owned_in_target": 5,
+          "score": 11
+        },
+        {
+          "tag": "ZAQ",
+          "culture": "muisca_culture",
+          "religion": "muisca_religion",
+          "owned_in_target": 4,
+          "score": 10
+        }
+      ]
+    },
+    "MRL_f": {
+      "culture_gates": [
+        "bicolano_culture",
+        "butuanon_culture",
+        "cebuano_culture",
+        "hiligaynon_culture",
+        "ilocano_culture",
+        "iranun_culture",
+        "kapampangan_culture",
+        "maguindanao_culture",
+        "pangasinan_culture",
+        "tagakaulo_culture",
+        "tagalog_culture",
+        "tausug_culture",
+        "waray_culture"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "BTU",
+          "culture": "butuanon_culture",
+          "religion": "hindu",
+          "owned_in_target": 6,
+          "score": 11
+        },
+        {
+          "tag": "IBL",
+          "culture": "bicolano_culture",
+          "religion": "anitism_religion",
+          "owned_in_target": 6,
+          "score": 11
+        },
+        {
+          "tag": "KIM",
+          "culture": "tagakaulo_culture",
+          "religion": "anitism_religion",
+          "owned_in_target": 5,
+          "score": 11
+        },
+        {
+          "tag": "MDY",
+          "culture": "hiligaynon_culture",
+          "religion": "anitism_religion",
+          "owned_in_target": 8,
+          "score": 11
+        },
+        {
+          "tag": "MGD",
+          "culture": "maguindanao_culture",
+          "religion": "anitism_religion",
+          "owned_in_target": 5,
+          "score": 11
+        },
+        {
+          "tag": "MYI",
+          "culture": "tagalog_culture",
+          "religion": "mahayana",
+          "owned_in_target": 6,
+          "score": 11
+        },
+        {
+          "tag": "PGS",
+          "culture": "pangasinan_culture",
+          "religion": "mahayana",
+          "owned_in_target": 5,
+          "score": 11
+        },
+        {
+          "tag": "TDO",
+          "culture": "tagalog_culture",
+          "religion": "hindu",
+          "owned_in_target": 5,
+          "score": 11
+        }
+      ]
+    },
+    "MTP_f": {
+      "culture_gates": [
+        "kalanga_culture",
+        "shona_culture"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "ZMW",
+          "culture": "shona_culture",
+          "religion": "bantu_religion",
+          "owned_in_target": 22,
+          "score": 11
+        }
+      ]
+    },
+    "NIN_f": {
+      "culture_gates": [],
+      "culture_group_gates": [],
+      "religion_gates": [
+        "miaphysite",
+        "nestorianism"
+      ],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "CIL",
+          "culture": "armenian_culture",
+          "religion": "miaphysite",
+          "owned_in_target": 12,
+          "score": 10
+        }
+      ]
+    },
+    "NZO_f": {
+      "culture_gates": [
+        "bai_culture",
+        "yi_culture"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "BZU",
+          "culture": "yi_culture",
+          "religion": "bimoism",
+          "owned_in_target": 7,
+          "score": 11
+        },
+        {
+          "tag": "CDL",
+          "culture": "bai_culture",
+          "religion": "mahayana",
+          "owned_in_target": 12,
+          "score": 11
+        },
+        {
+          "tag": "LLS",
+          "culture": "yi_culture",
+          "religion": "bimoism",
+          "owned_in_target": 7,
+          "score": 11
+        },
+        {
+          "tag": "SXI",
+          "culture": "yi_culture",
+          "religion": "bimoism",
+          "owned_in_target": 9,
+          "score": 11
+        },
+        {
+          "tag": "DCN",
+          "culture": "yi_culture",
+          "religion": "bimoism",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "NGZ",
+          "culture": "yi_culture",
+          "religion": "bimoism",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "WNG",
+          "culture": "yi_culture",
+          "religion": "bimoism",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "MHU",
+          "culture": "yi_culture",
+          "religion": "bimoism",
+          "owned_in_target": 3,
+          "score": 9
+        }
+      ]
+    },
+    "OYE_f": {
+      "culture_gates": [
+        "yoruba"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "OYO",
+          "culture": "yoruba",
+          "religion": "isese_religion",
+          "owned_in_target": 10,
+          "score": 11
+        },
+        {
+          "tag": "IJB",
+          "culture": "yoruba",
+          "religion": "isese_religion",
+          "owned_in_target": 4,
+          "score": 10
+        },
+        {
+          "tag": "ADO",
+          "culture": "yoruba",
+          "religion": "isese_religion",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "AKR",
+          "culture": "yoruba",
+          "religion": "isese_religion",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "AWO",
+          "culture": "yoruba",
+          "religion": "isese_religion",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "IFE",
+          "culture": "yoruba",
+          "religion": "isese_religion",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "IJE",
+          "culture": "yoruba",
+          "religion": "isese_religion",
+          "owned_in_target": 1,
+          "score": 7
+        },
+        {
+          "tag": "IJS",
+          "culture": "yoruba",
+          "religion": "isese_religion",
+          "owned_in_target": 1,
+          "score": 7
+        }
+      ]
+    },
+    "PNT_f": {
+      "culture_gates": [
+        "cebuano_culture",
+        "hiligaynon_culture",
+        "waray_culture"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "MDY",
+          "culture": "hiligaynon_culture",
+          "religion": "anitism_religion",
+          "owned_in_target": 8,
+          "score": 11
+        },
+        {
+          "tag": "CEB",
+          "culture": "cebuano_culture",
+          "religion": "hindu",
+          "owned_in_target": 3,
+          "score": 9
+        }
+      ]
+    },
+    "SOE_f": {
+      "culture_gates": [
+        "songhai"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "SON",
+          "culture": "songhai",
+          "religion": "sunni",
+          "owned_in_target": 12,
+          "score": 11
+        },
+        {
+          "tag": "TFK",
+          "culture": "songhai",
+          "religion": "sunni",
+          "owned_in_target": 5,
+          "score": 11
+        }
+      ]
+    },
+    "SVB_f": {
+      "culture_gates": [
+        "burmese_culture",
+        "khmer_culture",
+        "lao_culture",
+        "mon_culture",
+        "thai_culture"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "KHM",
+          "culture": "khmer_culture",
+          "religion": "theravada",
+          "owned_in_target": 82,
+          "score": 11
+        },
+        {
+          "tag": "LAV",
+          "culture": "thai_culture",
+          "religion": "theravada",
+          "owned_in_target": 9,
+          "score": 11
+        },
+        {
+          "tag": "MUA",
+          "culture": "lao_culture",
+          "religion": "mahayana",
+          "owned_in_target": 15,
+          "score": 11
+        },
+        {
+          "tag": "PEG",
+          "culture": "mon_culture",
+          "religion": "theravada",
+          "owned_in_target": 28,
+          "score": 11
+        },
+        {
+          "tag": "PIN",
+          "culture": "burmese_culture",
+          "religion": "theravada",
+          "owned_in_target": 26,
+          "score": 11
+        },
+        {
+          "tag": "SAG",
+          "culture": "burmese_culture",
+          "religion": "theravada",
+          "owned_in_target": 8,
+          "score": 11
+        },
+        {
+          "tag": "SPN",
+          "culture": "thai_culture",
+          "religion": "theravada",
+          "owned_in_target": 5,
+          "score": 11
+        },
+        {
+          "tag": "SUK",
+          "culture": "thai_culture",
+          "religion": "theravada",
+          "owned_in_target": 20,
+          "score": 11
+        }
+      ]
+    },
+    "TBT_f": {
+      "culture_gates": [
+        "tibetan_group"
+      ],
+      "culture_group_gates": [
+        "tibetan_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "AMD",
+          "culture": "amdowa_culture",
+          "religion": "tibetan_buddhism",
+          "owned_in_target": 12,
+          "score": 11
+        },
+        {
+          "tag": "BTG",
+          "culture": "khampa_culture",
+          "religion": "bon",
+          "owned_in_target": 9,
+          "score": 11
+        },
+        {
+          "tag": "DRG",
+          "culture": "khampa_culture",
+          "religion": "tibetan_buddhism",
+          "owned_in_target": 7,
+          "score": 11
+        },
+        {
+          "tag": "GNJ",
+          "culture": "khampa_culture",
+          "religion": "tibetan_buddhism",
+          "owned_in_target": 10,
+          "score": 11
+        },
+        {
+          "tag": "GOL",
+          "culture": "amdowa_culture",
+          "religion": "tibetan_buddhism",
+          "owned_in_target": 12,
+          "score": 11
+        },
+        {
+          "tag": "GUG",
+          "culture": "utsang_culture",
+          "religion": "tibetan_buddhism",
+          "owned_in_target": 7,
+          "score": 11
+        },
+        {
+          "tag": "HOR",
+          "culture": "khampa_culture",
+          "religion": "tibetan_buddhism",
+          "owned_in_target": 5,
+          "score": 11
+        },
+        {
+          "tag": "LGT",
+          "culture": "khampa_culture",
+          "religion": "tibetan_buddhism",
+          "owned_in_target": 8,
+          "score": 11
+        }
+      ]
+    },
+    "TDR_f": {
+      "culture_gates": [
+        "greek_group"
+      ],
+      "culture_group_gates": [
+        "greek_group"
+      ],
+      "religion_gates": [
+        "orthodox"
+      ],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "FEO",
+          "culture": "pontic_greek_culture",
+          "religion": "orthodox",
+          "owned_in_target": 1,
+          "score": 10
+        }
+      ]
+    },
+    "TGD_f": {
+      "culture_gates": [
+        "chinese_group"
+      ],
+      "culture_group_gates": [
+        "chinese_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "MNZ",
+          "culture": "qin_culture",
+          "religion": "tibetan_buddhism",
+          "owned_in_target": 6,
+          "score": 11
+        }
+      ]
+    },
+    "TKT_f": {
+      "culture_gates": [
+        "british_group",
+        "french_group",
+        "iberian_group"
+      ],
+      "culture_group_gates": [
+        "british_group",
+        "french_group",
+        "iberian_group"
+      ],
+      "religion_gates": [
+        "catholic"
+      ],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "ARA",
+          "culture": "catalan",
+          "religion": "catholic",
+          "owned_in_target": 47,
+          "score": 14
+        },
+        {
+          "tag": "POR",
+          "culture": "portuguese",
+          "religion": "catholic",
+          "owned_in_target": 33,
+          "score": 14
+        }
+      ]
+    },
+    "VJN_f": {
+      "culture_gates": [],
+      "culture_group_gates": [],
+      "religion_gates": [
+        "hindu"
+      ],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "ALU",
+          "culture": "tuluva",
+          "religion": "hindu",
+          "owned_in_target": 5,
+          "score": 10
+        },
+        {
+          "tag": "HSL",
+          "culture": "kannadiga",
+          "religion": "hindu",
+          "owned_in_target": 47,
+          "score": 10
+        },
+        {
+          "tag": "KPL",
+          "culture": "telugu",
+          "religion": "hindu",
+          "owned_in_target": 10,
+          "score": 10
+        },
+        {
+          "tag": "MSN",
+          "culture": "telugu",
+          "religion": "hindu",
+          "owned_in_target": 19,
+          "score": 10
+        },
+        {
+          "tag": "RCH",
+          "culture": "telugu",
+          "religion": "hindu",
+          "owned_in_target": 15,
+          "score": 10
+        },
+        {
+          "tag": "RDY",
+          "culture": "telugu",
+          "religion": "hindu",
+          "owned_in_target": 18,
+          "score": 10
+        },
+        {
+          "tag": "SMV",
+          "culture": "tamil",
+          "religion": "hindu",
+          "owned_in_target": 7,
+          "score": 10
+        },
+        {
+          "tag": "VIJ",
+          "culture": "kannadiga",
+          "religion": "hindu",
+          "owned_in_target": 36,
+          "score": 10
+        }
+      ]
+    },
+    "YMP_f": {
+      "culture_gates": [],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [
+        {
+          "tag": "CHI",
+          "culture": "mongolian_culture",
+          "religion": "tibetan_buddhism",
+          "owned_in_target": 206,
+          "score": 7
+        },
+        {
+          "tag": "HIY",
+          "culture": "jurchen_culture",
+          "religion": "tungusic_shamanism",
+          "owned_in_target": 7,
+          "score": 7
+        },
+        {
+          "tag": "JAP",
+          "culture": "saigoku_culture",
+          "religion": "shinto",
+          "owned_in_target": 339,
+          "score": 7
+        },
+        {
+          "tag": "KOR",
+          "culture": "korean_culture",
+          "religion": "mahayana",
+          "owned_in_target": 133,
+          "score": 7
+        },
+        {
+          "tag": "SSG",
+          "culture": "korean_culture",
+          "religion": "mahayana",
+          "owned_in_target": 6,
+          "score": 7
+        },
+        {
+          "tag": "SYG",
+          "culture": "korean_culture",
+          "religion": "mahayana",
+          "owned_in_target": 27,
+          "score": 7
+        },
+        {
+          "tag": "HLN",
+          "culture": "jurchen_culture",
+          "religion": "tungusic_shamanism",
+          "owned_in_target": 3,
+          "score": 5
+        },
+        {
+          "tag": "TMN",
+          "culture": "tamna_culture",
+          "religion": "mahayana",
+          "owned_in_target": 2,
+          "score": 4
+        }
+      ]
+    }
+  }
+}

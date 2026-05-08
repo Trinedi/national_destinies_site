@@ -121,14 +121,18 @@ let areaToFormables = {};   // area_name -> [formable rec, ...] primary first
 let formableTerritory = {}; // block_key -> Set<area_name>
 let selected = null;
 
+let starters = {};
+
 async function loadAll() {
-  const [f, g, l, lo, ag] = await Promise.all([
+  const [f, g, l, lo, ag, st] = await Promise.all([
     fetch("data/formables.json").then((r) => r.json()),
     fetch("data/geography.json").then((r) => r.json()),
     fetch("data/locations_index.json").then((r) => r.json()),
     fetch("data/loc.json").then((r) => r.json()),
     fetch("data/areas.geojson").then((r) => r.json()),
+    fetch("data/starters.json").then((r) => r.json()).catch(() => ({ guides: {} })),
   ]);
+  starters = st.guides || {};
   // Hide vanilla-untouched formables: the mod does not enhance them and
   // they would just clutter the list and tint the map without any reward.
   formables = f.formables.filter(
@@ -634,16 +638,13 @@ function clearPins() {
   }
 }
 
-function showDetail(rec) {
-  $detail.hidden = false;
-  $detailName.textContent = rec._displayName;
+function renderRequirementsTab(rec) {
   const body = [];
 
   if (rec._description) {
     body.push(`<p style="margin:0 0 12px;color:var(--fg-1);font-size:12px;line-height:1.5;">${escapeHtml(rec._description)}</p>`);
   }
 
-  // top-line stats
   body.push('<div class="stat-grid">');
   if (rec.level != null) body.push(`<dt>Level</dt><dd>${rec.level}</dd>`);
   if (rec.fraction != null) body.push(`<dt>Required</dt><dd>${Math.round(rec.fraction * 100)}% of territory</dd>`);
@@ -706,15 +707,151 @@ function showDetail(rec) {
     body.push("</div>");
   }
 
-  $detailBody.innerHTML = body.join("");
+  // Hint that a strategy guide is available; clicking it switches tabs.
+  if (starters[rec.block_key]) {
+    body.push(
+      '<div class="guide-hint"><button type="button" data-switch-tab="guide">' +
+      'Strategy guide available &rarr;</button></div>'
+    );
+  }
 
-  // Wire claimant buttons to switch selection.
-  $detailBody.querySelectorAll(".claimant-row").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const r = formablesByKey[btn.dataset.key];
-      if (r) selectFormable(r);
+  return body.join("");
+}
+
+function titleCase(s) {
+  return s.replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+function prettifyCulture(s) {
+  if (!s) return "";
+  const cleaned = s.replace(/_culture$/, "").replace(/_group$/, "").replace(/_/g, " ");
+  return titleCase(cleaned);
+}
+
+function prettifyReligion(s) {
+  if (!s) return "";
+  return titleCase(s.replace(/_/g, " "));
+}
+
+function renderGuideTab(rec) {
+  const guide = starters[rec.block_key];
+  const body = [];
+
+  body.push(
+    '<p class="guide-intro">Tags ranked by how well they match the formation gates ' +
+    '(culture / religion if required) and how much of the required territory ' +
+    'they already control at game start.</p>'
+  );
+
+  if (!guide || !guide.candidates || guide.candidates.length === 0) {
+    body.push(
+      '<p class="guide-empty">No automatic recommendation. This formable either has ' +
+      'no culture / religion / territory gates we can match against, or requires ' +
+      'an event chain rather than playing as a specific tag.</p>'
+    );
+    return body.join("");
+  }
+
+  // Show the matched gates so the player understands the constraint.
+  // Dedupe across culture / culture_group and religion / religion_group
+  // because the parser captures the same scoped value into both buckets.
+  const gateBits = [];
+  const seenC = new Set();
+  const cul = [...(guide.culture_gates || []), ...(guide.culture_group_gates || [])]
+    .map(prettifyCulture)
+    .filter((c) => c && !seenC.has(c.toLowerCase()) && seenC.add(c.toLowerCase()));
+  const seenR = new Set();
+  const rel = [...(guide.religion_gates || []), ...(guide.religion_group_gates || [])]
+    .map(prettifyReligion)
+    .filter((r) => r && !seenR.has(r.toLowerCase()) && seenR.add(r.toLowerCase()));
+  if (cul.length) gateBits.push(`<dt>Culture gate</dt><dd>${cul.map((c) => escapeHtml(c)).join(", ")}</dd>`);
+  if (rel.length) gateBits.push(`<dt>Religion gate</dt><dd>${rel.map((r) => escapeHtml(r)).join(", ")}</dd>`);
+  if (gateBits.length) {
+    body.push('<div class="stat-grid">');
+    body.push(gateBits.join(""));
+    body.push("</div>");
+  }
+
+  body.push("<h3>Recommended starting tags</h3>");
+  body.push('<div class="starter-list">');
+  for (const c of guide.candidates) {
+    const resolved = lookupLoc(c.tag);
+    const hasName = resolved && resolved !== c.tag;
+    const head = hasName
+      ? `<strong>${escapeHtml(resolved)}</strong> <code>${escapeHtml(c.tag)}</code>`
+      : `<strong>${escapeHtml(c.tag)}</strong>`;
+    const culture = c.culture ? `<span class="starter-meta">${escapeHtml(prettifyCulture(c.culture))}</span>` : "";
+    const religion = c.religion ? `<span class="starter-meta">${escapeHtml(prettifyReligion(c.religion))}</span>` : "";
+    const geo = c.owned_in_target > 0
+      ? `<span class="starter-meta">${c.owned_in_target} starting location${c.owned_in_target === 1 ? "" : "s"} in target</span>`
+      : "";
+    body.push(
+      `<div class="starter-row">` +
+      `<div class="starter-head">${head}</div>` +
+      `<div class="starter-meta-row">${culture}${religion}${geo}</div>` +
+      `</div>`
+    );
+  }
+  body.push("</div>");
+
+  body.push(
+    '<p class="guide-footnote">Heuristic: tags whose culture / religion satisfy the ' +
+    'gate, ranked by overlap between their starting territory and the formable’s ' +
+    'required regions / areas / locations. The list is auto-derived; nuance like ' +
+    'event chains or vassal-release paths is not yet captured.</p>'
+  );
+
+  return body.join("");
+}
+
+function showDetail(rec) {
+  $detail.hidden = false;
+  $detailName.textContent = rec._displayName;
+
+  const tabs = [
+    { id: "requirements", label: "Requirements", render: renderRequirementsTab },
+    { id: "guide", label: "Guide", render: renderGuideTab },
+  ];
+  const initial = "requirements";
+
+  const headerHtml =
+    '<div class="tabs" role="tablist">' +
+    tabs.map((t) =>
+      `<button type="button" role="tab" class="tab" data-tab="${t.id}"` +
+      `${t.id === initial ? ' aria-selected="true"' : ''}>${escapeHtml(t.label)}</button>`
+    ).join("") +
+    '</div>' +
+    '<div class="tab-panels"></div>';
+  $detailBody.innerHTML = headerHtml;
+
+  const $panels = $detailBody.querySelector(".tab-panels");
+  const $tabs = $detailBody.querySelectorAll(".tab");
+
+  function activate(tabId) {
+    const t = tabs.find((x) => x.id === tabId) || tabs[0];
+    $tabs.forEach((b) => {
+      const sel = b.dataset.tab === t.id;
+      b.toggleAttribute("aria-selected", sel);
+      b.classList.toggle("active", sel);
     });
-  });
+    $panels.innerHTML = t.render(rec);
+    bindPanel($panels);
+  }
+
+  function bindPanel(scope) {
+    scope.querySelectorAll(".claimant-row").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const r = formablesByKey[btn.dataset.key];
+        if (r) selectFormable(r);
+      });
+    });
+    scope.querySelectorAll("[data-switch-tab]").forEach((btn) => {
+      btn.addEventListener("click", () => activate(btn.dataset.switchTab));
+    });
+  }
+
+  $tabs.forEach((b) => b.addEventListener("click", () => activate(b.dataset.tab)));
+  activate(initial);
 }
 
 function renderRequirementList(clauses) {

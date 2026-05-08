@@ -51,7 +51,10 @@ def main() -> int:
         step("area polygons",       ["extract_area_polygons.py"])
 
     # Mod-derived steps (always run).
+    # Note: starters runs before localisation so the loc filter can seed
+    # country-name keys for every recommended tag.
     step("formables",               ["parse_formables.py"])
+    step("recommended starters",    ["extract_starters.py"])
     step("localisation (filtered)", ["parse_localization.py"])
     step("english requirements",    ["render_requirements.py"])
 

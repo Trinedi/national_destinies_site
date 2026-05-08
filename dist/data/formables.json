@@ -892,7 +892,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Tag: Mam"
+              "text": "Tag: Egypt"
             }
           ]
         }
@@ -1313,7 +1313,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Tag: Ach"
+              "text": "Tag: Achaea"
             }
           ]
         },
@@ -1453,7 +1453,7 @@
             },
             {
               "kind": "atom",
-              "text": "Tag: Ach"
+              "text": "Tag: Achaea"
             }
           ]
         },
@@ -2801,7 +2801,7 @@
                   "children": [
                     {
                       "kind": "atom",
-                      "text": "Tag: Pap"
+                      "text": "Tag: Rome"
                     }
                   ]
                 }
@@ -2907,7 +2907,7 @@
             },
             {
               "kind": "atom",
-              "text": "Was or is Tre"
+              "text": "Was or is Trebizond"
             }
           ]
         }
@@ -3511,7 +3511,7 @@
               "children": [
                 {
                   "kind": "atom",
-                  "text": "Tag: Lor"
+                  "text": "Tag: Lorraine"
                 },
                 {
                   "kind": "atom",
@@ -3587,11 +3587,11 @@
               "children": [
                 {
                   "kind": "atom",
-                  "text": "Tag: Dau"
+                  "text": "Tag: Viennois"
                 },
                 {
                   "kind": "atom",
-                  "text": "Tag: Sav"
+                  "text": "Tag: Savoy"
                 }
               ]
             }
@@ -3683,7 +3683,7 @@
               "children": [
                 {
                   "kind": "atom",
-                  "text": "Tag: Sic"
+                  "text": "Tag: Sicily"
                 }
               ]
             },
@@ -5170,7 +5170,7 @@
             },
             {
               "kind": "atom",
-              "text": "Tag: Nap"
+              "text": "Tag: Naples"
             },
             {
               "kind": "atom",
@@ -8299,6 +8299,71 @@
       ]
     },
     {
+      "block_key": "BNH_f",
+      "mode": "full",
+      "source_file": "99_nd_bnh.txt",
+      "tag": "BNH",
+      "name": "BNH",
+      "adjective": "BNH_ADJ",
+      "flag": "BNH",
+      "color": "map_BNH",
+      "level": 2,
+      "fraction": 0.4,
+      "rule": "plausible",
+      "content_priority": null,
+      "regions": [],
+      "areas": [
+        "jazira_area"
+      ],
+      "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [
+        "mosul",
+        "nusaybin",
+        "urfa"
+      ],
+      "allow_raw": "owns = location:mosul\n\t\towns = location:nusaybin\n\t\towns = location:urfa",
+      "potential_raw": "OR = {\n\t\t\treligion = religion:miaphysite\n\t\t\treligion = religion:nestorianism\n\t\t}",
+      "form_effect_raw": "set_capital = location:mosul\n\t\tchange_culture = culture:syriac_culture\n\t\tevery_owned_location = {\n\t\t\tevery_pop = {\n\t\t\t\tlimit = {\n\t\t\t\t\tOR = {\n\t\t\t\t\t\tculture = culture:armenian_culture\n\t\t\t\t\t\tculture = culture:iraqi_culture\n\t\t\t\t\t\tculture = culture:kurdish_culture\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tchange_pop_culture = culture:syriac_culture\n\t\t\t}\n\t\t}\n\t\ttrigger_event_non_silently = nd_bnh.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 2 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_duchy }\n\t\t}",
+      "formation_event": "nd_bnh.1",
+      "source": "mod_new",
+      "mod_overrides": true,
+      "variant_label": null,
+      "color_rgb": "#8b492a",
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Miaphysite religion"
+            },
+            {
+              "kind": "atom",
+              "text": "Nestorianism religion"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Mosul"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Nusaybin"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Urfa"
+        }
+      ]
+    },
+    {
       "block_key": "CDA_f",
       "mode": "full",
       "source_file": "99_nd_cda.txt",
@@ -8687,7 +8752,7 @@
             },
             {
               "kind": "atom",
-              "text": "Tag: Lor"
+              "text": "Tag: Lorraine"
             }
           ]
         }
@@ -8768,7 +8833,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Tag: Kni"
+              "text": "Tag: Knights Hospitaller"
             },
             {
               "kind": "atom",
@@ -8780,15 +8845,15 @@
             },
             {
               "kind": "atom",
-              "text": "Tag: Nap"
+              "text": "Tag: Naples"
             },
             {
               "kind": "atom",
-              "text": "Tag: Sic"
+              "text": "Tag: Sicily"
             },
             {
               "kind": "atom",
-              "text": "Tag: Arg"
+              "text": "Tag: Argos"
             }
           ]
         }
@@ -9513,6 +9578,118 @@
         {
           "kind": "atom",
           "text": "Owns Great Zimbabwe"
+        }
+      ]
+    },
+    {
+      "block_key": "NIN_f",
+      "mode": "full",
+      "source_file": "99_nd_nin.txt",
+      "tag": "NIN",
+      "name": "NIN",
+      "adjective": "NIN_ADJ",
+      "flag": "NIN",
+      "color": "map_NIN",
+      "level": 4,
+      "fraction": 0.6,
+      "rule": "plausible",
+      "content_priority": null,
+      "regions": [
+        "crescent_region",
+        "egypt_region"
+      ],
+      "areas": [
+        "khuzestan_area",
+        "cilicia_area"
+      ],
+      "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [
+        "mosul",
+        "baghdad",
+        "damascus",
+        "cairo",
+        "shush",
+        "tarsus"
+      ],
+      "allow_raw": "owns = location:mosul\n\t\towns = location:baghdad\n\t\towns = location:damascus\n\t\towns = location:cairo\n\t\tOR = {\n\t\t\towns = location:shush\n\t\t\towns = location:tarsus\n\t\t}\n\t\tin_civil_war = no",
+      "potential_raw": "OR = {\n\t\t\treligion = religion:miaphysite\n\t\t\treligion = religion:nestorianism\n\t\t}\n\t\tOR = {\n\t\t\thas_or_had_tag = BNH\n\t\t\tcountry_rank = country_rank:rank_kingdom\n\t\t\tcountry_rank = country_rank:rank_empire\n\t\t}",
+      "form_effect_raw": "set_capital = location:mosul\n\t\tif = {\n\t\t\tlimit = { NOT = { culture = culture:syriac_culture } }\n\t\t\tchange_culture = culture:syriac_culture\n\t\t}\n\t\tevery_owned_location = {\n\t\t\tevery_pop = {\n\t\t\t\tlimit = {\n\t\t\t\t\tOR = {\n\t\t\t\t\t\tculture = culture:armenian_culture\n\t\t\t\t\t\tculture = culture:iraqi_culture\n\t\t\t\t\t\tculture = culture:kurdish_culture\n\t\t\t\t\t\tculture = culture:levantine_culture\n\t\t\t\t\t\tculture = culture:turkish_culture\n\t\t\t\t\t\tculture = culture:farsi_culture\n\t\t\t\t\t\tculture = culture:coptic_culture\n\t\t\t\t\t\tculture = culture:lower_egyptian_culture\n\t\t\t\t\t\tculture = culture:upper_egyptian_culture\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tchange_pop_culture = culture:syriac_culture\n\t\t\t}\n\t\t}\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\tadd_stability = stability_severe_bonus\n\t\ttrigger_event_non_silently = nd_nin.1",
+      "formation_event": "nd_nin.1",
+      "source": "mod_new",
+      "mod_overrides": true,
+      "variant_label": null,
+      "color_rgb": "#791f3d",
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Miaphysite religion"
+            },
+            {
+              "kind": "atom",
+              "text": "Nestorianism religion"
+            }
+          ]
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Was or is Beth Nahrain"
+            },
+            {
+              "kind": "atom",
+              "text": "Rank Rank Kingdom"
+            },
+            {
+              "kind": "atom",
+              "text": "Rank Rank Empire"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Mosul"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Baghdad"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Damascus"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Cairo"
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Owns Shush"
+            },
+            {
+              "kind": "atom",
+              "text": "Owns Tarsus"
+            }
+          ]
+        },
+        {
+          "kind": "atom",
+          "text": "Not: In civil war"
         }
       ]
     },
