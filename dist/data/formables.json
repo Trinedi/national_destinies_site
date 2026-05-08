@@ -7721,6 +7721,89 @@
       "english_allow": []
     },
     {
+      "block_key": "AHM_f",
+      "mode": "full",
+      "source_file": "99_nd_ahm.txt",
+      "tag": "AHM",
+      "name": "AHM",
+      "adjective": "AHM_ADJ",
+      "flag": "AHM",
+      "color": "map_AHM",
+      "level": 2,
+      "fraction": 0.75,
+      "rule": "historical",
+      "content_priority": null,
+      "regions": [],
+      "areas": [
+        "assam_area"
+      ],
+      "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [
+        "charaideo",
+        "guwahati"
+      ],
+      "allow_raw": "owns = location:charaideo\n\t\towns = location:guwahati",
+      "potential_raw": "OR = {\n\t\t\tculture = culture:tai_nua_culture\n\t\t\tculture = culture:kamarupi\n\t\t\tculture = culture:chutia_culture\n\t\t\tculture = culture:dimasa_culture\n\t\t\tculture = culture:bodo_culture\n\t\t\tculture = culture:koch_culture\n\t\t\tculture = culture:tiwa_culture\n\t\t\tculture = culture:deori_culture\n\t\t}",
+      "form_effect_raw": "trigger_event_non_silently = nd_ahm.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\tset_capital = location:charaideo",
+      "formation_event": "nd_ahm.1",
+      "source": "mod_new",
+      "mod_overrides": true,
+      "variant_label": null,
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Tai Nua Culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Kamarupi culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Chutia Culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Dimasa Culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Bodo Culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Koch Culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Tiwa Culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Deori Culture"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Charaideo"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Guwahati"
+        }
+      ]
+    },
+    {
       "block_key": "ALM_f",
       "mode": "full",
       "source_file": "99_nd_alm.txt",
@@ -7859,6 +7942,65 @@
       ]
     },
     {
+      "block_key": "ARC_f",
+      "mode": "full",
+      "source_file": "99_nd_arc.txt",
+      "tag": "ARC",
+      "name": "ARC",
+      "adjective": "ARC_ADJ",
+      "flag": "ARC",
+      "color": "map_ARC",
+      "level": 3,
+      "fraction": 0.5,
+      "rule": "plausible",
+      "content_priority": null,
+      "regions": [],
+      "areas": [
+        "cilicia_area",
+        "levant_area"
+      ],
+      "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [
+        "sis"
+      ],
+      "allow_raw": "owns = location:sis",
+      "potential_raw": "culture = culture:armenian_culture\n\t\treligion = religion:miaphysite\n\t\tNOT = { tag = ARM }",
+      "form_effect_raw": "trigger_event_non_silently = nd_arc.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = {\n\t\t\t\trank = country_rank:rank_kingdom\n\t\t\t}\n\t\t}\n\t\tset_capital = location:sis",
+      "formation_event": "nd_arc.1",
+      "source": "mod_new",
+      "mod_overrides": true,
+      "variant_label": null,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Armenian culture"
+        },
+        {
+          "kind": "atom",
+          "text": "Miaphysite religion"
+        },
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Tag: Armenia"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Sis"
+        }
+      ]
+    },
+    {
       "block_key": "ATE_f",
       "mode": "full",
       "source_file": "99_nd_ate.txt",
@@ -7900,6 +8042,103 @@
         {
           "kind": "atom",
           "text": "Owns Kumasi"
+        }
+      ]
+    },
+    {
+      "block_key": "CDA_f",
+      "mode": "full",
+      "source_file": "99_nd_cda.txt",
+      "tag": "CDA",
+      "name": "CDA",
+      "adjective": "CDA_ADJ",
+      "flag": "CDA",
+      "color": "map_CDA",
+      "level": 3,
+      "fraction": 0.65,
+      "rule": "plausible",
+      "content_priority": null,
+      "regions": [],
+      "areas": [
+        "aragon_area",
+        "catalonia_area",
+        "valencia_area",
+        "balearics_area",
+        "sardinia_area",
+        "sicily_area",
+        "campania_area",
+        "apulia_area",
+        "basilicata_area",
+        "abruzzo_area"
+      ],
+      "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [
+        "barcelona",
+        "naples",
+        "palermo"
+      ],
+      "allow_raw": "owns = location:barcelona\n\t\towns = location:naples\n\t\towns = location:palermo",
+      "potential_raw": "religion = religion:catholic\n\t\tOR = {\n\t\t\tculture = culture:catalan\n\t\t\tculture = culture:aragonese\n\t\t}\n\t\tNOT = { tag = SPA }\n\t\tNOT = { tag = TWS }",
+      "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\ttrigger_event_non_silently = nd_cda.1\n\t\tadd_stability = stability_mild_bonus",
+      "formation_event": "nd_cda.1",
+      "source": "mod_new",
+      "mod_overrides": true,
+      "variant_label": null,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Catholicism religion"
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Catalan culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Aragonese culture"
+            }
+          ]
+        },
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Tag: Spain"
+            }
+          ]
+        },
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Tag: Two Sicilies"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Barcelona"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Naples"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Palermo"
         }
       ]
     },
@@ -8096,6 +8335,219 @@
         {
           "kind": "atom",
           "text": "Owns Benin"
+        }
+      ]
+    },
+    {
+      "block_key": "GBU_f",
+      "mode": "full",
+      "source_file": "99_nd_gbu.txt",
+      "tag": "GBU",
+      "name": "GBU",
+      "adjective": "GBU_ADJ",
+      "flag": "GBU",
+      "color": "map_GBU",
+      "level": 3,
+      "fraction": 0.5,
+      "rule": "plausible",
+      "content_priority": null,
+      "regions": [],
+      "areas": [
+        "flanders_area",
+        "brabant_area",
+        "wallonia_area",
+        "holland_area",
+        "picardy_area",
+        "champagne_area",
+        "lorraine_area",
+        "alsace_area",
+        "franche_comte_area",
+        "burgundy_area"
+      ],
+      "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [
+        "bruges",
+        "dijon",
+        "nancy",
+        "besancon",
+        "metz"
+      ],
+      "allow_raw": "owns = location:bruges\n\t\towns = location:dijon\n\t\tOR = {\n\t\t\towns = location:nancy\n\t\t\towns = location:besancon\n\t\t\towns = location:metz\n\t\t}",
+      "potential_raw": "religion = religion:catholic\n\t\tOR = {\n\t\t\tculture = culture:burgundian\n\t\t\tculture = culture:franc_comtois\n\t\t\tculture = culture:lorrain\n\t\t\tculture = culture:walloon\n\t\t\tculture = culture:picard\n\t\t\tculture = culture:low_franconian\n\t\t\tculture = culture:frisian\n\t\t\tculture = culture:french\n\t\t\ttag = BUR\n\t\t\ttag = LOR\n\t\t}",
+      "form_effect_raw": "trigger_event_non_silently = nd_gbu.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tcountry_rank_level < 3\n\t\t\t\tNOT = { is_member_of_international_organization = international_organization:hre }\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\tset_capital = location:brussels",
+      "formation_event": "nd_gbu.1",
+      "source": "mod_new",
+      "mod_overrides": true,
+      "variant_label": null,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Catholicism religion"
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Burgundian culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Franc Comtois culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Lorrain culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Walloon culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Picard culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Low Franconian culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Frisian culture"
+            },
+            {
+              "kind": "atom",
+              "text": "French culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Tag: Burgundy"
+            },
+            {
+              "kind": "atom",
+              "text": "Tag: Lor"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Bruges"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Dijon"
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Owns Nancy"
+            },
+            {
+              "kind": "atom",
+              "text": "Owns Besancon"
+            },
+            {
+              "kind": "atom",
+              "text": "Owns Metz"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "block_key": "HOS_f",
+      "mode": "full",
+      "source_file": "99_nd_hos.txt",
+      "tag": "HOS",
+      "name": "HOS",
+      "adjective": "HOS_ADJ",
+      "flag": "HOS",
+      "color": "map_HOS",
+      "level": 2,
+      "fraction": 0.9,
+      "rule": "plausible",
+      "content_priority": null,
+      "regions": [],
+      "areas": [],
+      "locations": [
+        "malta"
+      ],
+      "provinces": [
+        "rodos_province",
+        "cyprus_province"
+      ],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [
+        "rodos",
+        "malta"
+      ],
+      "allow_raw": "OR = {\n\t\t\towns = location:rodos\n\t\t\towns = location:malta\n\t\t}",
+      "potential_raw": "religion = religion:catholic\n\t\tOR = {\n\t\t\ttag = KNI\n\t\t\thas_reform = government_reform:military_order_reform\n\t\t\ttag = CYP\n\t\t\ttag = NAP\n\t\t\ttag = SIC\n\t\t\ttag = ARG\n\t\t}",
+      "form_effect_raw": "trigger_event_non_silently = nd_hos.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
+      "formation_event": "nd_hos.1",
+      "source": "mod_new",
+      "mod_overrides": true,
+      "variant_label": null,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Catholicism religion"
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Tag: Kni"
+            },
+            {
+              "kind": "atom",
+              "text": "Has Reform: Military Order Reform"
+            },
+            {
+              "kind": "atom",
+              "text": "Tag: Cyp"
+            },
+            {
+              "kind": "atom",
+              "text": "Tag: Nap"
+            },
+            {
+              "kind": "atom",
+              "text": "Tag: Sic"
+            },
+            {
+              "kind": "atom",
+              "text": "Tag: Arg"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Owns Rodos"
+            },
+            {
+              "kind": "atom",
+              "text": "Owns Malta"
+            }
+          ]
         }
       ]
     },
@@ -8311,6 +8763,51 @@
       ]
     },
     {
+      "block_key": "MAP_f",
+      "mode": "full",
+      "source_file": "99_nd_map.txt",
+      "tag": "MAP",
+      "name": "MAP",
+      "adjective": "MAP_ADJ",
+      "flag": "MAP",
+      "color": "map_MAP",
+      "level": 2,
+      "fraction": 0.9,
+      "rule": "plausible",
+      "content_priority": null,
+      "regions": [],
+      "areas": [
+        "ngulumapu_area",
+        "puelmapu_area"
+      ],
+      "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [
+        "wenteche"
+      ],
+      "allow_raw": "owns = location:wenteche",
+      "potential_raw": "culture = { has_culture_group = culture_group:mapudungun_group }",
+      "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = nd_map.1\n\t\tadd_stability = stability_mild_bonus",
+      "formation_event": "nd_map.1",
+      "source": "mod_new",
+      "mod_overrides": true,
+      "variant_label": null,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Mapudungun Group culture group"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Wenteche"
+        }
+      ]
+    },
+    {
       "block_key": "MCA_f",
       "mode": "full",
       "source_file": "99_nd_mca.txt",
@@ -8411,6 +8908,63 @@
         {
           "kind": "atom",
           "text": "Owns Great Zimbabwe"
+        }
+      ]
+    },
+    {
+      "block_key": "NUM_f",
+      "mode": "full",
+      "source_file": "99_nd_num.txt",
+      "tag": "NUM",
+      "name": "NUM",
+      "adjective": "NUM_ADJ",
+      "flag": "NUM",
+      "color": "map_NUM",
+      "level": 3,
+      "fraction": 0.45,
+      "rule": "plausible",
+      "content_priority": null,
+      "regions": [],
+      "areas": [
+        "texas_area",
+        "natahende_area",
+        "high_plains_area",
+        "central_plains_area",
+        "rockies_area"
+      ],
+      "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [
+        "kwahada",
+        "penatuka"
+      ],
+      "allow_raw": "owns = location:kwahada\n\t\towns = location:penatuka\n\t\tin_civil_war = no",
+      "potential_raw": "culture = { has_culture_group = culture_group:shoshoni_group }",
+      "form_effect_raw": "trigger_event_non_silently = nd_num.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\tset_capital = location:kwahada",
+      "formation_event": "nd_num.1",
+      "source": "mod_new",
+      "mod_overrides": true,
+      "variant_label": null,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Shoshoni Group culture group"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Kwahada"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Penatuka"
+        },
+        {
+          "kind": "atom",
+          "text": "Not: In civil war"
         }
       ]
     },
@@ -8573,6 +9127,118 @@
       ]
     },
     {
+      "block_key": "TAB_f",
+      "mode": "full",
+      "source_file": "99_nd_tab.txt",
+      "tag": "TAB",
+      "name": "TAB",
+      "adjective": "TAB_ADJ",
+      "flag": "TAB",
+      "color": "map_TAB",
+      "level": 2,
+      "fraction": 0.85,
+      "rule": "plausible",
+      "content_priority": null,
+      "regions": [],
+      "areas": [
+        "bohemia_area",
+        "moravia_area"
+      ],
+      "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [
+        "husinec"
+      ],
+      "allow_raw": "owns = location:husinec",
+      "potential_raw": "OR = {\n\t\t\tculture = culture:czech\n\t\t\tculture = culture:moravian\n\t\t}\n\t\treligion = religion:hussite",
+      "form_effect_raw": "trigger_event_non_silently = nd_tab.1\n\t\tadd_stability = stability_mild_bonus",
+      "formation_event": "nd_tab.1",
+      "source": "mod_new",
+      "mod_overrides": true,
+      "variant_label": null,
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Czech culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Moravian culture"
+            }
+          ]
+        },
+        {
+          "kind": "atom",
+          "text": "Hussite religion"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Husinec"
+        }
+      ]
+    },
+    {
+      "block_key": "TBT_f",
+      "mode": "full",
+      "source_file": "99_nd_tbt.txt",
+      "tag": "TBT",
+      "name": "TBT",
+      "adjective": "TBT_ADJ",
+      "flag": "TBT",
+      "color": "map_TBT",
+      "level": 3,
+      "fraction": 0.7,
+      "rule": "plausible",
+      "content_priority": null,
+      "regions": [
+        "tibet_region"
+      ],
+      "areas": [],
+      "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [
+        "lhasa",
+        "shigatse"
+      ],
+      "allow_raw": "owns = location:lhasa\n\t\towns = location:shigatse",
+      "potential_raw": "culture = { has_culture_group = culture_group:tibetan_group }\n\t\treligion = { has_religion_group = religion_group:buddhist }",
+      "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\tif = {\n\t\t\tlimit = { NOT = { capital = location:lhasa } }\n\t\t\tset_capital = location:lhasa\n\t\t}\n\t\ttrigger_event_non_silently = nd_tbt.1\n\t\tadd_stability = stability_severe_bonus",
+      "formation_event": "nd_tbt.1",
+      "source": "mod_new",
+      "mod_overrides": true,
+      "variant_label": null,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Tibetan culture group"
+        },
+        {
+          "kind": "atom",
+          "text": "Buddhist religion group"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Lhasa"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Shigatse"
+        }
+      ]
+    },
+    {
       "block_key": "TDR_f",
       "mode": "full",
       "source_file": "99_nd_tdr.txt",
@@ -8683,6 +9349,188 @@
         {
           "kind": "atom",
           "text": "Not: In civil war"
+        }
+      ]
+    },
+    {
+      "block_key": "TKT_f",
+      "mode": "full",
+      "source_file": "99_nd_tkt.txt",
+      "tag": "TKT",
+      "name": "TKT",
+      "adjective": "TKT_ADJ",
+      "flag": "TKT",
+      "color": "map_TKT",
+      "level": 3,
+      "fraction": 0.5,
+      "rule": "plausible",
+      "content_priority": null,
+      "regions": [],
+      "areas": [
+        "south_portugal_area",
+        "valencia_area",
+        "aragon_area"
+      ],
+      "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [
+        "tomar",
+        "peniscola",
+        "monzon"
+      ],
+      "allow_raw": "owns = location:tomar\n\t\tOR = {\n\t\t\towns = location:peniscola\n\t\t\towns = location:monzon\n\t\t}",
+      "potential_raw": "religion = religion:catholic\n\t\tOR = {\n\t\t\tculture = { has_culture_group = culture_group:iberian_group }\n\t\t\tculture = { has_culture_group = culture_group:french_group }\n\t\t\tculture = { has_culture_group = culture_group:british_group }\n\t\t\thas_reform = government_reform:military_order_reform\n\t\t}",
+      "form_effect_raw": "trigger_event_non_silently = nd_tkt.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
+      "formation_event": "nd_tkt.1",
+      "source": "mod_new",
+      "mod_overrides": true,
+      "variant_label": null,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Catholicism religion"
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Iberian Group culture group"
+            },
+            {
+              "kind": "atom",
+              "text": "French Group culture group"
+            },
+            {
+              "kind": "atom",
+              "text": "British Group culture group"
+            },
+            {
+              "kind": "atom",
+              "text": "Has Reform: Military Order Reform"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Tomar"
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Owns Peniscola"
+            },
+            {
+              "kind": "atom",
+              "text": "Owns Monzon"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "block_key": "VJN_f",
+      "mode": "full",
+      "source_file": "99_nd_vjn.txt",
+      "tag": "VJN",
+      "name": "VJN",
+      "adjective": "VJN_ADJ",
+      "flag": "VJN",
+      "color": "map_VJN",
+      "level": 4,
+      "fraction": 0.5,
+      "rule": "plausible",
+      "content_priority": null,
+      "regions": [
+        "deccan_region"
+      ],
+      "areas": [],
+      "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [
+        "vijayanagar"
+      ],
+      "allow_raw": "OR = {\n\t\t\tculture.language = language:kannada_language\n\t\t\tculture.language = language:telugu_language\n\t\t\tculture.language = language:tamil_language\n\t\t\tculture.language = language:malayalam_language\n\t\t}\n\t\treligion = religion:hindu\n\t\towns = location:vijayanagar",
+      "potential_raw": "any_primary_or_accepted_or_tolerated_culture = {\n\t\t\tOR = {\n\t\t\t\tlanguage = language:kannada_language\n\t\t\t\tlanguage = language:telugu_language\n\t\t\t\tlanguage = language:tamil_language\n\t\t\t\tlanguage = language:malayalam_language\n\t\t\t}\n\t\t}\n\t\treligion = religion:hindu",
+      "form_effect_raw": "trigger_event_non_silently = nd_vjn.1\n\t\tset_capital = location:vijayanagar\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\tadd_stability = stability_severe_bonus",
+      "formation_event": "nd_vjn.1",
+      "source": "mod_new",
+      "mod_overrides": true,
+      "variant_label": null,
+      "english_potential": [
+        {
+          "kind": "any_culture",
+          "text": "Any primary, accepted, or tolerated culture matches:",
+          "children": [
+            {
+              "kind": "or",
+              "text": "Any of:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Kannada Language"
+                },
+                {
+                  "kind": "atom",
+                  "text": "Telugu Language"
+                },
+                {
+                  "kind": "atom",
+                  "text": "Tamil Language"
+                },
+                {
+                  "kind": "atom",
+                  "text": "Malayalam Language"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "atom",
+          "text": "Hindu religion"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Kannada Language"
+            },
+            {
+              "kind": "atom",
+              "text": "Telugu Language"
+            },
+            {
+              "kind": "atom",
+              "text": "Tamil Language"
+            },
+            {
+              "kind": "atom",
+              "text": "Malayalam Language"
+            }
+          ]
+        },
+        {
+          "kind": "atom",
+          "text": "Hindu religion"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Vijayanagar"
         }
       ]
     },
