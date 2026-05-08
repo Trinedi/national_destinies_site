@@ -8047,7 +8047,7 @@
       ],
       "allow_raw": "owns = location:kumasi",
       "potential_raw": "culture = culture:akan",
-      "form_effect_raw": "if = {\n\t\t\tlimit = {\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = nd_ate.1\n\t\tadd_stability = stability_mild_bonus",
+      "form_effect_raw": "if = {\n\t\t\tlimit = {\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = nd_ate.1\n\t\tadd_stability = stability_mild_bonus\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tadd_country_modifier = {\n\t\t\tmodifier = nd_ate_kotoko_council\n\t\t\tyears = -1\n\t\t}",
       "formation_event": "nd_ate.1",
       "source": "mod_new",
       "mod_overrides": true,
@@ -8513,7 +8513,7 @@
       ],
       "allow_raw": "OR = {\n\t\t\towns = location:rodos\n\t\t\towns = location:malta\n\t\t}",
       "potential_raw": "religion = religion:catholic\n\t\tOR = {\n\t\t\ttag = KNI\n\t\t\thas_reform = government_reform:military_order_reform\n\t\t\ttag = CYP\n\t\t\ttag = NAP\n\t\t\ttag = SIC\n\t\t\ttag = ARG\n\t\t}",
-      "form_effect_raw": "trigger_event_non_silently = nd_hos.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
+      "form_effect_raw": "trigger_event_non_silently = nd_hos.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tgrant_estate_privilege = estate_privilege:clergy_military_orders\n\t\tadd_country_modifier = {\n\t\t\tmodifier = nd_hos_militant_brotherhood\n\t\t\tyears = -1\n\t\t}",
       "formation_event": "nd_hos.1",
       "source": "mod_new",
       "mod_overrides": true,
@@ -8809,7 +8809,7 @@
       ],
       "allow_raw": "owns = location:wenteche",
       "potential_raw": "culture = { has_culture_group = culture_group:mapudungun_group }",
-      "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = nd_map.1\n\t\tadd_stability = stability_mild_bonus",
+      "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = nd_map.1\n\t\tadd_stability = stability_mild_bonus\n\t\t\n\t\t\n\t\t\n\t\tadd_country_modifier = {\n\t\t\tmodifier = nd_map_toki_federation\n\t\t\tyears = -1\n\t\t}",
       "formation_event": "nd_map.1",
       "source": "mod_new",
       "mod_overrides": true,
@@ -8855,7 +8855,7 @@
       ],
       "allow_raw": "owns = location:funza\n\t\towns = location:chunsua",
       "potential_raw": "culture = culture:muisca_culture",
-      "form_effect_raw": "trigger_event_non_silently = nd_mca.1\n\t\tadd_stability = stability_mild_bonus",
+      "form_effect_raw": "set_capital = location:funza\n\t\ttrigger_event_non_silently = nd_mca.1\n\t\tadd_stability = stability_mild_bonus\n\t\t\n\t\t\n\t\t\n\t\tadd_country_modifier = {\n\t\t\tmodifier = nd_mca_zipa_zaque_compact\n\t\t\tyears = -1\n\t\t}",
       "formation_event": "nd_mca.1",
       "source": "mod_new",
       "mod_overrides": true,
@@ -8874,6 +8874,234 @@
         {
           "kind": "atom",
           "text": "Owns Chunsua"
+        }
+      ]
+    },
+    {
+      "block_key": "MRL_f",
+      "mode": "full",
+      "source_file": "99_nd_mrl.txt",
+      "tag": "MRL",
+      "name": "MRL",
+      "adjective": "MRL_ADJ",
+      "flag": "MRL",
+      "color": "map_MRL",
+      "level": 3,
+      "fraction": 0.5,
+      "rule": "plausible",
+      "content_priority": null,
+      "regions": [],
+      "areas": [
+        "luzon_area",
+        "visayas_area",
+        "mindanao_area"
+      ],
+      "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [
+        "tondo",
+        "araut",
+        "butuan",
+        "maimbung"
+      ],
+      "allow_raw": "owns = location:tondo\n\t\towns = location:araut\n\t\towns = location:butuan\n\t\towns = location:maimbung\n\t\tin_civil_war = no",
+      "potential_raw": "OR = {\n\t\t\tculture = culture:tagalog_culture\n\t\t\tculture = culture:kapampangan_culture\n\t\t\tculture = culture:ilocano_culture\n\t\t\tculture = culture:bicolano_culture\n\t\t\tculture = culture:pangasinan_culture\n\t\t\tculture = culture:hiligaynon_culture\n\t\t\tculture = culture:cebuano_culture\n\t\t\tculture = culture:waray_culture\n\t\t\tculture = culture:tausug_culture\n\t\t\tculture = culture:maguindanao_culture\n\t\t\tculture = culture:iranun_culture\n\t\t\tculture = culture:tagakaulo_culture\n\t\t\tculture = culture:butuanon_culture\n\t\t}",
+      "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\tset_capital = location:tondo\n\t\ttrigger_event_non_silently = nd_mrl.1\n\t\tadd_stability = stability_mild_bonus",
+      "formation_event": "nd_mrl.1",
+      "source": "mod_new",
+      "mod_overrides": true,
+      "variant_label": null,
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Tagalog Culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Kapampangan Culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Ilocano Culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Bicolano Culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Pangasinan Culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Hiligaynon Culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Cebuano Culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Waray Culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Tausug Culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Maguindanao Culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Iranun Culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Tagakaulo Culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Butuanon Culture"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Tondo"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Araut"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Butuan"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Maimbung"
+        },
+        {
+          "kind": "atom",
+          "text": "Not: In civil war"
+        }
+      ]
+    },
+    {
+      "block_key": "MRO_f",
+      "mode": "full",
+      "source_file": "99_nd_mro.txt",
+      "tag": "MRO",
+      "name": "MRO",
+      "adjective": "MRO_ADJ",
+      "flag": "MRO",
+      "color": "map_MRO",
+      "level": 2,
+      "fraction": 0.8,
+      "rule": "plausible",
+      "content_priority": null,
+      "regions": [],
+      "areas": [
+        "mindanao_area"
+      ],
+      "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [
+        "maimbung",
+        "kuta_watu",
+        "butuan",
+        "malabang",
+        "buayan",
+        "samboangan"
+      ],
+      "allow_raw": "owns = location:maimbung\n\t\towns = location:kuta_watu\n\t\tcalc_true_if = {\n\t\t\tamount = 2\n\t\t\towns = location:butuan\n\t\t\towns = location:malabang\n\t\t\towns = location:buayan\n\t\t\towns = location:samboangan\n\t\t}\n\t\tin_civil_war = no",
+      "potential_raw": "religion = religion:sunni\n\t\tOR = {\n\t\t\tculture = culture:tausug_culture\n\t\t\tculture = culture:maguindanao_culture\n\t\t\tculture = culture:iranun_culture\n\t\t\tculture = culture:tagakaulo_culture\n\t\t\tculture = culture:butuanon_culture\n\t\t}",
+      "form_effect_raw": "trigger_event_non_silently = nd_mro.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
+      "formation_event": "nd_mro.1",
+      "source": "mod_new",
+      "mod_overrides": true,
+      "variant_label": null,
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Sunnism religion"
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Tausug Culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Maguindanao Culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Iranun Culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Tagakaulo Culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Butuanon Culture"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Maimbung"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Kuta Watu"
+        },
+        {
+          "kind": "block",
+          "text": "Calc True If:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Amount: 2"
+            },
+            {
+              "kind": "atom",
+              "text": "Owns Butuan"
+            },
+            {
+              "kind": "atom",
+              "text": "Owns Malabang"
+            },
+            {
+              "kind": "atom",
+              "text": "Owns Buayan"
+            },
+            {
+              "kind": "atom",
+              "text": "Owns Samboangan"
+            }
+          ]
+        },
+        {
+          "kind": "atom",
+          "text": "Not: In civil war"
         }
       ]
     },
@@ -8903,7 +9131,7 @@
       ],
       "allow_raw": "owns = location:great_zimbabwe",
       "potential_raw": "OR = {\n\t\t\tculture = culture:shona_culture\n\t\t\tculture = culture:kalanga_culture\n\t\t}",
-      "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = nd_mtp.1\n\t\tadd_stability = stability_mild_bonus",
+      "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\tset_capital = location:great_zimbabwe\n\t\ttrigger_event_non_silently = nd_mtp.1\n\t\tadd_stability = stability_mild_bonus",
       "formation_event": "nd_mtp.1",
       "source": "mod_new",
       "mod_overrides": true,
@@ -8962,7 +9190,7 @@
       ],
       "allow_raw": "owns = location:kwahada\n\t\towns = location:penatuka\n\t\tin_civil_war = no",
       "potential_raw": "culture = { has_culture_group = culture_group:shoshoni_group }",
-      "form_effect_raw": "trigger_event_non_silently = nd_num.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\tset_capital = location:kwahada",
+      "form_effect_raw": "trigger_event_non_silently = nd_num.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\tset_capital = location:kwahada\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tadd_country_modifier = {\n\t\t\tmodifier = nd_num_paraibo_confederation\n\t\t\tyears = -1\n\t\t}",
       "formation_event": "nd_num.1",
       "source": "mod_new",
       "mod_overrides": true,
@@ -9019,7 +9247,7 @@
       ],
       "allow_raw": "owns = location:taihe_dali",
       "potential_raw": "OR = {\n\t\t\tculture = culture:bai_culture\n\t\t\tculture = culture:yi_culture\n\t\t}",
-      "form_effect_raw": "trigger_event_non_silently = nd_nzo.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
+      "form_effect_raw": "set_capital = location:taihe_dali\n\t\ttrigger_event_non_silently = nd_nzo.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
       "formation_event": "nd_nzo.1",
       "source": "mod_new",
       "mod_overrides": true,
@@ -9093,6 +9321,103 @@
       ]
     },
     {
+      "block_key": "PNT_f",
+      "mode": "full",
+      "source_file": "99_nd_pnt.txt",
+      "tag": "PNT",
+      "name": "PNT",
+      "adjective": "PNT_ADJ",
+      "flag": "PNT",
+      "color": "map_PNT",
+      "level": 2,
+      "fraction": 0.85,
+      "rule": "plausible",
+      "content_priority": null,
+      "regions": [],
+      "areas": [
+        "visayas_area"
+      ],
+      "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [
+        "araut",
+        "singhapala",
+        "basey",
+        "bool",
+        "bago_negros",
+        "masbate"
+      ],
+      "allow_raw": "owns = location:araut\n\t\towns = location:singhapala\n\t\t\n\t\t\n\t\t\n\t\tcalc_true_if = {\n\t\t\tamount = 2\n\t\t\towns = location:basey\n\t\t\towns = location:bool\n\t\t\towns = location:bago_negros\n\t\t\towns = location:masbate\n\t\t}\n\t\tin_civil_war = no",
+      "potential_raw": "OR = {\n\t\t\tculture = culture:hiligaynon_culture\n\t\t\tculture = culture:cebuano_culture\n\t\t\tculture = culture:waray_culture\n\t\t}",
+      "form_effect_raw": "trigger_event_non_silently = nd_pnt.1\n\t\tadd_stability = stability_mild_bonus",
+      "formation_event": "nd_pnt.1",
+      "source": "mod_new",
+      "mod_overrides": true,
+      "variant_label": null,
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Hiligaynon Culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Cebuano Culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Waray Culture"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Araut"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Singhapala"
+        },
+        {
+          "kind": "block",
+          "text": "Calc True If:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Amount: 2"
+            },
+            {
+              "kind": "atom",
+              "text": "Owns Basey"
+            },
+            {
+              "kind": "atom",
+              "text": "Owns Bool"
+            },
+            {
+              "kind": "atom",
+              "text": "Owns Bago Negros"
+            },
+            {
+              "kind": "atom",
+              "text": "Owns Masbate"
+            }
+          ]
+        },
+        {
+          "kind": "atom",
+          "text": "Not: In civil war"
+        }
+      ]
+    },
+    {
       "block_key": "SOE_f",
       "mode": "full",
       "source_file": "99_nd_soe.txt",
@@ -9124,7 +9449,7 @@
       ],
       "allow_raw": "owns = location:gao\n\t\towns = location:timbuktu",
       "potential_raw": "culture = culture:songhai",
-      "form_effect_raw": "trigger_event_non_silently = nd_soe.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}",
+      "form_effect_raw": "set_capital = location:gao\n\t\ttrigger_event_non_silently = nd_soe.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}",
       "formation_event": "nd_soe.1",
       "source": "mod_new",
       "mod_overrides": true,
@@ -9173,7 +9498,7 @@
       ],
       "allow_raw": "owns = location:husinec",
       "potential_raw": "OR = {\n\t\t\tculture = culture:czech\n\t\t\tculture = culture:moravian\n\t\t}\n\t\treligion = religion:hussite",
-      "form_effect_raw": "trigger_event_non_silently = nd_tab.1\n\t\tadd_stability = stability_mild_bonus",
+      "form_effect_raw": "trigger_event_non_silently = nd_tab.1\n\t\tadd_stability = stability_mild_bonus\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tadd_country_modifier = {\n\t\t\tmodifier = nd_tab_peasant_commune\n\t\t\tyears = -1\n\t\t}",
       "formation_event": "nd_tab.1",
       "source": "mod_new",
       "mod_overrides": true,
@@ -9238,7 +9563,7 @@
         "suzhou_gansu"
       ],
       "allow_raw": "owns = location:lhasa\n\t\towns = location:shigatse\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\towns = location:khotan\n\t\towns = location:kashgar\n\t\towns = location:kucha\n\t\towns = location:yarkand\n\t\t\n\t\towns = location:shazhou\n\t\towns = location:ganzhou\n\t\towns = location:suzhou_gansu",
-      "potential_raw": "culture = { has_culture_group = culture_group:tibetan_group }\n\t\treligion = { has_religion_group = religion_group:buddhist }",
+      "potential_raw": "culture = { has_culture_group = culture_group:tibetan_group }\n\t\treligion.group = religion_group:buddhist",
       "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\tif = {\n\t\t\tlimit = { NOT = { capital = location:lhasa } }\n\t\t\tset_capital = location:lhasa\n\t\t}\n\t\ttrigger_event_non_silently = nd_tbt.1\n\t\tadd_stability = stability_severe_bonus",
       "formation_event": "nd_tbt.1",
       "source": "mod_new",
@@ -9251,7 +9576,7 @@
         },
         {
           "kind": "atom",
-          "text": "Buddhist religion group"
+          "text": "Buddhist group"
         }
       ],
       "english_allow": [
@@ -9437,7 +9762,7 @@
       ],
       "allow_raw": "owns = location:tomar\n\t\tOR = {\n\t\t\towns = location:peniscola\n\t\t\towns = location:monzon\n\t\t}",
       "potential_raw": "religion = religion:catholic\n\t\tOR = {\n\t\t\tculture = { has_culture_group = culture_group:iberian_group }\n\t\t\tculture = { has_culture_group = culture_group:french_group }\n\t\t\tculture = { has_culture_group = culture_group:british_group }\n\t\t\thas_reform = government_reform:military_order_reform\n\t\t}",
-      "form_effect_raw": "trigger_event_non_silently = nd_tkt.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
+      "form_effect_raw": "trigger_event_non_silently = nd_tkt.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tgrant_estate_privilege = estate_privilege:clergy_military_orders\n\t\tadd_country_modifier = {\n\t\t\tmodifier = nd_tkt_militant_brotherhood\n\t\t\tyears = -1\n\t\t}",
       "formation_event": "nd_tkt.1",
       "source": "mod_new",
       "mod_overrides": true,
@@ -9617,7 +9942,7 @@
       ],
       "allow_raw": "owns = location:thatta\n\t\towns = location:peshawar",
       "potential_raw": "culture = culture:sindhi\n\t\treligion = religion:sammitiya",
-      "form_effect_raw": "trigger_event_non_silently = nd_yav.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}",
+      "form_effect_raw": "set_capital = location:peshawar\n\t\ttrigger_event_non_silently = nd_yav.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}",
       "formation_event": "nd_yav.1",
       "source": "mod_new",
       "mod_overrides": true,
