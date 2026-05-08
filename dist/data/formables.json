@@ -9208,9 +9208,16 @@
       "continents": [],
       "must_own": [
         "lhasa",
-        "shigatse"
+        "shigatse",
+        "khotan",
+        "kashgar",
+        "kucha",
+        "yarkand",
+        "shazhou",
+        "ganzhou",
+        "suzhou_gansu"
       ],
-      "allow_raw": "owns = location:lhasa\n\t\towns = location:shigatse",
+      "allow_raw": "owns = location:lhasa\n\t\towns = location:shigatse\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tOR = {\n\t\t\t\n\t\t\towns = location:khotan\n\t\t\towns = location:kashgar\n\t\t\towns = location:kucha\n\t\t\towns = location:yarkand\n\t\t\t\n\t\t\towns = location:shazhou\n\t\t\towns = location:ganzhou\n\t\t\towns = location:suzhou_gansu\n\t\t}",
       "potential_raw": "culture = { has_culture_group = culture_group:tibetan_group }\n\t\treligion = { has_religion_group = religion_group:buddhist }",
       "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\tif = {\n\t\t\tlimit = { NOT = { capital = location:lhasa } }\n\t\t\tset_capital = location:lhasa\n\t\t}\n\t\ttrigger_event_non_silently = nd_tbt.1\n\t\tadd_stability = stability_severe_bonus",
       "formation_event": "nd_tbt.1",
@@ -9235,6 +9242,40 @@
         {
           "kind": "atom",
           "text": "Owns Shigatse"
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Owns Khotan"
+            },
+            {
+              "kind": "atom",
+              "text": "Owns Kashgar"
+            },
+            {
+              "kind": "atom",
+              "text": "Owns Kucha"
+            },
+            {
+              "kind": "atom",
+              "text": "Owns Yarkand"
+            },
+            {
+              "kind": "atom",
+              "text": "Owns Shazhou"
+            },
+            {
+              "kind": "atom",
+              "text": "Owns Ganzhou"
+            },
+            {
+              "kind": "atom",
+              "text": "Owns Suzhou Gansu"
+            }
+          ]
         }
       ]
     },
