@@ -6004,13 +6004,36 @@
         "miaphysite"
       ],
       "religion_group_gates": [],
-      "candidates": [
+      "candidates": [],
+      "notes_html": "<h2>Concept</h2>\n<p>Cilician Armenia is the alt-history of the Armenian Kingdom of\nCilicia surviving the 1375 Mamluk conquest and expanding westward\ninto a Mediterranean trade kingdom. The historical reference is the\nHethumid-Lusignan period (c. 1198 to 1375): an Armenian Christian\nrealm on the northeastern Mediterranean coast, plugged into Genoese\nand Venetian networks through Ayas and Mopsuestia, courting the\nMongols against the Mamluks, and arguing for two centuries about\nwhether to formally unite with Rome.</p>\n<p>ARC takes that fragile Mediterranean kingdom and gives it the\ninstitutional weight to keep going. Tier 1 heritage covers Levon&rsquo;s\ncrown, the Italian merchant concessions, the Mongol embassies, the\nCatholicate at Hromkla, Lusignan-era chivalric reform, and the\nCypriot Concord (the Lusignan house union with Cyprus).</p>\n<p>The tag is ARC because vanilla EU5 already uses ARM for the Caucasian\nArmenian heartland. ARC is specifically the Mediterranean cousin and\nthe <code>potential</code> block excludes ARM by design.</p>\n<h2>Forming it</h2>\n<p>The formable accepts Armenian-cultured miaphysite countries other\nthan ARM itself.</p>\n<ol>\n<li><strong>Be Armenian and miaphysite.</strong> Both are required by <code>potential</code>.\n   The <code>NOT = { tag = ARM }</code> clause keeps the Caucasian restoration\n   path on its own track.</li>\n<li><strong>Own Sis.</strong> The seat of the Hethumid catholicate. CIL starts\n   with it.</li>\n<li><strong>Hold 50 percent of Cilicia plus Levant areas.</strong> The fraction\n   pool combines the cilicia_area and levant_area. You need half\n   the locations across both.</li>\n<li><strong>Form ARC.</strong> It is Level 3 plausible.</li>\n</ol>\n<p>CIL is by far the cleanest entry: Sis is already yours, you are\nalready miaphysite, and the cilicia_area is half-conquered on day\none. Pushing into the Levant area is the work. KCN or SYU starts\nhave to fight their way down through the Caucasus and Anatolia\nbefore formation eligibility even opens up.</p>\n<h2>Pick your founding doctrine on formation</h2>\n<p>The formation event offers two 30-year doctrines. Each swings a\nsocietal value and gates one of the destiny paths.</p>\n<ul>\n<li><strong>Apostolic Sanctuary</strong> (keep the kingdom undivided in faith).\n  The highland clergy&rsquo;s answer: better isolation than the loss of\n  the kingdom&rsquo;s soul. The Apostolic Church stands apart from\n  Chalcedon and Rome alike. Pushes traditionalist_vs_innovative\n  hard left. Gates the Levant Vanguard destiny path (Path A,\n  Apostolic Imperium line).</li>\n<li><strong>Latin Union of Sis</strong> (open the realm to Crusader Christendom).\n  The barons&rsquo; answer: better Cyprus than ruin, better the Pope than\n  the desert. Formal union with Rome, Crusader court at Sis,\n  Italian merchants in their own chapels at Ayas. Pushes\n  outward_vs_inward hard left (toward outward). Gates the Cilician\n  Reach destiny path (Path B, Mediterranean Apex line).</li>\n</ul>\n<h2>What happens on formation</h2>\n<ul>\n<li>Mild stability bonus.</li>\n<li>Country rank rises to Kingdom if currently Duchy or below.</li>\n<li>Capital moves to Sis.</li>\n<li>Formation event fires with the two doctrine choices.</li>\n</ul>\n<h2>After forming</h2>\n<p>Tier 1 heritage covers the kingdom&rsquo;s foundational identity:\nLevon&rsquo;s crown, the Italian merchant concessions, the Mongol\nalliance, the Catholicate at Sis, Lusignan chivalric reform, and\nthe Cypriot Concord. Each comes with a DHE and a 15-year or 20-year\nmodifier choice.</p>\n<p>The destiny tree splits two ways:</p>\n<ul>\n<li><strong>Path A: Apostolic Imperium.</strong> Christian liberation push. Stage\n  1 takes Jerusalem and Edessa (Urfa). Stage 2 takes Aleppo and\n  Damascus (the great sees) with a choice between Conqueror&rsquo;s\n  Charter (military) and Reconciled Sees (administrative). Stage 3\n  capstone takes Acre and Mosul, with a choice of Armenian Jerusalem\n  or Apostolic Inheritance modifier. Capstone building is the\n  <strong>Greater Catholicate</strong>. Unlocked by the Apostolic Sanctuary\n  formation choice.</li>\n<li><strong>Path B: Mediterranean Apex.</strong> Italian-style Mediterranean trade\n  empire. Stage 1 takes Antalya and Rhodes. Stage 2 builds the\n  Aegean Condominium with a Genoese or Venetian axis. Stage 3\n  capstone takes Alexandria and Smyrna with the Levantine Bourse\n  or Armenian Lions modifier. Capstone building is the <strong>Levantine\n  Bourse</strong>. Unlocked by the Latin Union of Sis formation choice.</li>\n</ul>\n<h2>Notes</h2>\n<ul>\n<li>The capital force-set to Sis means CIL keeps its capital on\n  formation; KCN or SYU runs lose their Caucasian capital when ARC\n  is formed.</li>\n<li>The Apostolic vs Latin choice is the kingdom&rsquo;s central historical\n  tension, not a flavor toggle. Stage 2 modifiers on both paths\n  reflect the choice (e.g. Reconciled Sees vs Conqueror&rsquo;s Charter\n  on the Aleppo and Damascus stage). Pick deliberately.</li>\n<li>ARM (the Caucasian heartland) is deliberately blocked from ARC.\n  The two are parallel restoration arcs, not interchangeable.</li>\n</ul>",
+      "priority_starters": [
         {
           "tag": "CIL",
           "culture": "armenian_culture",
           "religion": "miaphysite",
           "owned_in_target": 12,
-          "score": 14
+          "note": "Cilicia, the historical Hethumid kingdom. Already Armenian, already miaphysite, already owns Sis and most of the cilicia_area. The intended path: hold off the Mamluks, push into the Levant area, form ARC with the kingdom intact."
+        },
+        {
+          "tag": "ARM",
+          "culture": "armenian_culture",
+          "religion": "miaphysite",
+          "owned_in_target": 0,
+          "note": "Armenia (Caucasian, the Bagratid heartland). Excluded by ARC's `potential` block (`NOT = { tag = ARM }`). ARM has its own restoration arc; ARC is specifically the Mediterranean alt-history. Listed only to flag that this tag cannot form ARC."
+        },
+        {
+          "tag": "KCN",
+          "culture": "armenian_culture",
+          "religion": "miaphysite",
+          "owned_in_target": 0,
+          "note": "Khachen, an Armenian miaphysite principality in the Caucasus. Eligible by culture and religion but geographically far from Sis. Realistic only as a long restoration run that eventually pushes through Cilicia."
+        },
+        {
+          "tag": "SYU",
+          "culture": "armenian_culture",
+          "religion": "miaphysite",
+          "owned_in_target": 0,
+          "note": "Syunik. Same situation as KCN: Armenian miaphysite Caucasian principality with no easy line to Sis. A late-game restoration angle rather than a direct starter."
         }
       ]
     },
@@ -6021,13 +6044,29 @@
       "culture_group_gates": [],
       "religion_gates": [],
       "religion_group_gates": [],
-      "candidates": [
+      "candidates": [],
+      "notes_html": "<h2>Concept</h2>\n<p>The Ashanti Confederacy is an Akan revival around the Golden Stool: the\nsacred relic Okomfo Anokye summoned to bind the Akan chiefdoms into one\npeople. Forming it pushes you to country rank kingdom, grants a stability\nbump, and applies a confederal council modifier reflecting the\nAsantemanhyiamu&rsquo;s check on the Asantehene.</p>\n<p>The two formation paths split the Ashanti fantasy: the <strong>Stool</strong>\n(centralised sacred authority) versus <strong>Gold</strong> (Gold Coast merchant\nempire).</p>\n<h2>Forming it</h2>\n<ol>\n<li><strong>Start as an Akan tag</strong> (BON, GYA, or MNK). Akan culture is the only\n   gate beyond owning Kumasi.</li>\n<li><strong>Hold Kumasi.</strong> This is the single allow-block requirement. BON\n   starts with it; GYA and MNK need to take it.</li>\n<li><strong>Hit 90% of Akan + Gold Coast areas.</strong> A high fraction, so plan to\n   conquer or vassalise most Akan and coastal neighbours.</li>\n<li><strong>Pick your path on formation.</strong></li>\n<li><em>The Stool commands</em>: Golden Stool authority, sacred-monarchy\n     emphasis.</li>\n<li><em>Gold speaks louder</em>: Gold Coast merchant network, trade emphasis.</li>\n</ol>\n<h2>Pick your founding doctrine on formation</h2>\n<p>The formation event offers two 20-year doctrines. Picking one also gates\nwhich destiny path you can later take.</p>\n<ul>\n<li><strong>The Stool commands</strong> (<em>Golden Stool Authority</em>, 20 years). Sacred\n  monarchy: the Sika Dwa Kofi binds the Akan as one people under the\n  Asantehene. Stat focus: legitimacy, crown estate power, land morale,\n  separatism reduction. Gates the Mandate of the Golden Stool destiny\n  path (path A, Ashanti Imperium line).</li>\n<li><strong>Gold speaks louder</strong> (<em>Gold Coast Merchants</em>, 20 years). The\n  confederacy as merchant empire: gold dust trade, European fort\n  factors, and Akan brokers as the institutional core. Stat focus:\n  trade efficiency, merchant power, gold output, merchant capacity,\n  diplomatic reputation. Gates the Wealth of the Forest destiny path\n  (path B, Gold Empire line).</li>\n</ul>\n<h2>What happens on formation</h2>\n<ul>\n<li>Country rank rises to Kingdom if currently Duchy or below.</li>\n<li>Mild stability bonus.</li>\n<li>The permanent <code>nd_ate_kotoko_council</code> modifier (Asantemanhyiamu\n  Council of Chiefs) is applied. It tilts hard toward decentralized\n  noble power: large nobles estate buff, small crown estate penalty,\n  monthly drift toward decentralization and free subjects, plus a\n  cultural tradition bump. Reflects the destoolable Asantehene held in\n  check by the Kotoko Council.</li>\n<li>Formation event fires with the two doctrine choices.</li>\n</ul>\n<h2>After forming</h2>\n<p>The destiny tree splits two ways:</p>\n<ul>\n<li><strong>Path A: Mandate of the Golden Stool.</strong> Conquest line. Stage 1\n  smashes the Dagomba and Gonja northern frontier (Yendi, Salaga).\n  Stage 2 absorbs the Yoruba-Borgu salient (Oyo Ile, Nikki). Stage 3\n  reaches the Sahel and Bight of Benin (Timbuktu, Benin, Niani) and\n  unlocks the <strong>War Council</strong> (<code>nd_ate_war_council</code>) capstone\n  building. Unlocked by the Stool commands formation choice.</li>\n<li><strong>Path B: Wealth of the Forest.</strong> Trade line. Stage 1 secures the\n  western Gold Coast (Axim, Apollonia). Stage 2 builds an ivory market\n  and embraces banking. Stage 3 reaches Djenne and global trade and\n  unlocks the <strong>Great Market</strong> (<code>nd_ate_great_market</code>) capstone\n  building. Unlocked by the Gold speaks louder formation choice.</li>\n</ul>\n<h2>Notes</h2>\n<ul>\n<li>Rank is set to kingdom on formation if you are below it.</li>\n<li>The Kotoko Council modifier is permanent flavour and reflects the\n  destoolable Asantehene; it is not a timed bonus.</li>\n<li>Subsequent advance events (Denkyira conquest, Anglo-Ashanti\n  resistance, Kwadwo&rsquo;s reforms) fire as you research the Ashanti tree.</li>\n</ul>",
+      "priority_starters": [
         {
           "tag": "BON",
           "culture": "akan",
           "religion": "akan_religion",
           "owned_in_target": 10,
-          "score": 11
+          "note": "Bono. Akan kingdom that already owns Kumasi, the formation location. The cleanest start."
+        },
+        {
+          "tag": "GYA",
+          "culture": "akan",
+          "religion": "akan_religion",
+          "owned_in_target": 0,
+          "note": "Gyaaman. Akan neighbour to the north; capital at Sampa. Take Kumasi from BON, then mop up the Akan area."
+        },
+        {
+          "tag": "MNK",
+          "culture": "akan",
+          "religion": "akan_religion",
+          "owned_in_target": 0,
+          "note": "Mankessim. Akan tribe on the coast (Cape Coast, Accra, Winneba). Coastal start, march inland for Kumasi."
         }
       ]
     },
@@ -6129,13 +6168,78 @@
       ],
       "religion_gates": [],
       "religion_group_gates": [],
-      "candidates": [
+      "candidates": [],
+      "notes_html": "<h2>Concept</h2>\n<p>S\u00f2ng is the southern alternative to vanilla CHI (Yuan) and to MNG\n(Ming). The fantasy is the Southern Song restored at Hangzhou: a\nmaritime, mercantile, Neo-Confucian empire built on paper money,\nmovable type, paddle-wheel warships, and the wen-wu civilian-over-\nmilitary settlement. The historical reference is the 1127 to 1279\nSouthern Song peak, before the Mongol conquest.</p>\n<p>The tag is CSO (not SNG) because vanilla EU5 already uses SNG\nelsewhere. In the 1337 setup it is one of the Red Turban Rebellion\nrelease tags, named for Han Lin&rsquo;er, whose faction claimed Song\ndescent. Forming it is a restoration, not a release.</p>\n<h2>Forming it</h2>\n<p>The formation is gated by the Red Turban Rebellions situation. You\ncannot form CSO while that situation is still active, so the entire\nrun is built around the post-rebellion settlement.</p>\n<ol>\n<li><strong>Pick a Chinese-group tag.</strong> CSO is open to any culture in\n   chinese_group. CHI (Yuan) is excluded by name; everyone else\n   qualifies. The cleanest starter is CSO itself, released as a\n   Red Turban faction. MNG and WUU are the strongest siblings.</li>\n<li><strong>Survive or end the Red Turban Rebellions.</strong> The formable&rsquo;s\n   <code>allow</code> block requires <code>is_situation_active = no</code> for the\n   rebellions. Either ride out the situation or finish it (one\n   faction unifying southern China or the Yuan reasserting control\n   ends it).</li>\n<li><strong>Own Hangzhou.</strong> This is the only named location requirement.\n   Hangzhou starts under CHI and is one of the most contested cities\n   of the rebellion period.</li>\n<li><strong>Hold 55 percent of southern China.</strong> The <code>areas</code> pool covers\n   Fujian, Hunan, Hubei, Jiangxi, Jiangnan, Huai, Zhejiang,\n   Guangdong, Guangxi, Liangjiang, Guizhou, Hainan, and the three\n   Sichuan basin areas. Standard Southern Song reach.</li>\n<li><strong>Form S\u00f2ng.</strong></li>\n</ol>\n<h2>Pick your founding doctrine on formation</h2>\n<p>Two 30-year doctrines:</p>\n<ul>\n<li><strong>Treasure of the Southern Seas.</strong> The maritime Song. Paddle-wheel\n  warships, Hangzhou trade junks, the Quanzhou and Guangzhou ports\n  as engines of empire. Pushes the country toward naval and\n  plutocratic societal values. Unlocks the Treasure Fleets destiny\n  path.</li>\n<li><strong>Mandate of the Brush.</strong> The Neo-Confucian Song. Examination\n  bureaucracy, civilian supremacy over generals, Zhu Xi&rsquo;s synthesis\n  as the orthodox curriculum. Pushes traditionalist and centralized.\n  Unlocks the Mandate Restored destiny path.</li>\n</ul>\n<h2>What happens on formation</h2>\n<ul>\n<li>Capital moves to Hangzhou.</li>\n<li>Country rank rises to Kingdom if below it.</li>\n<li>Mild stability bonus.</li>\n<li>Formation event fires with the two doctrine choices.</li>\n</ul>\n<h2>After forming</h2>\n<p>The destiny tree splits two ways:</p>\n<ul>\n<li><strong>Treasure Fleets.</strong> Path A. Build the maritime commercial empire.\n  Stage gates require Jinjiang and Longxi (the Fujian coast), then\n  Malacca and Palembang (Nanyang choke points), then Kozhikode,\n  Hormuz, and Temasek (Indian Ocean and the Strait of Singapore).\n  Capstone building is the Treasure Fleet Harbor. Unlocked by the\n  Treasure of the Southern Seas formation choice.</li>\n<li><strong>The Mandate Restored.</strong> Path B. Recover the lost north and\n  perfect Confucian governance. Stage gates require Banking embraced\n  and 10,000 development, then Kaifeng and Luoyang (the Northern\n  Song capitals), then Dadu (the Yuan capital, modern Beijing) at\n  20,000 development. Capstone building is the Imperial Library.\n  Unlocked by the Mandate of the Brush formation choice.</li>\n</ul>\n<h2>Notes</h2>\n<ul>\n<li>Vanilla content for CSO is light. Almost all Song-flavour systems\n  (paddle-wheel ships, fire-lance corps, jiaozi paper money, Bi\n  Sheng&rsquo;s movable type, Zhu Xi&rsquo;s academy) come from this mod&rsquo;s\n  advance tree.</li>\n<li>The advance tree carries six DHE event chains: Paper Money\n  Revolution, Battle of Caishi, Zhu Xi&rsquo;s synthesis, Gunpowder\n  Arsenal, Bi Sheng&rsquo;s Movable Type, and the destiny milestone\n  events. Most are conditional on the matching advance.</li>\n<li>Jinshi examinations are not on this tree (they belong to the\n  Tang). Pair S\u00f2ng&rsquo;s Mandate of the Brush with vanilla\n  Chinese-orthodoxy advances if you want a deep bureaucratic stack.</li>\n</ul>",
+      "priority_starters": [
         {
-          "tag": "MNZ",
-          "culture": "qin_culture",
-          "religion": "tibetan_buddhism",
-          "owned_in_target": 1,
-          "score": 7
+          "tag": "CSO",
+          "culture": "zhongyuan_culture",
+          "religion": "sanjiao",
+          "owned_in_target": 0,
+          "note": "The tag is itself a Red Turban Rebellion spawn. CSO represents Han Lin'er's faction, which claimed Song descent. When the situation fires, CSO releases somewhere along the Yangtze. Wait for the rebellions to end, hold Hangzhou, then form."
+        },
+        {
+          "tag": "MNG",
+          "culture": "jianghuai_culture",
+          "religion": "sanjiao",
+          "owned_in_target": 0,
+          "note": "Ming. The other big RTR spawn (Zhu Yuanzhang). Jianghuai-cultured, sanjiao, often the strongest faction by late rebellion. Conquer south to Hangzhou after the situation closes and form S\u00f2ng instead of Da Ming."
+        },
+        {
+          "tag": "WUU",
+          "culture": "wu_culture",
+          "religion": "sanjiao",
+          "owned_in_target": 0,
+          "note": "Wu, the Yangtze delta faction (Zhang Shide). Wu-cultured, starts close to Hangzhou and is geographically the most natural S\u00f2ng successor. Smaller than Ming but already on top of the required location."
+        },
+        {
+          "tag": "CHE",
+          "culture": "chu_culture",
+          "religion": "sanjiao",
+          "owned_in_target": 0,
+          "note": "Chen Yuliang's Chu-culture faction in the middle Yangtze. Less natural than Wu but a strong inland base if you want to push east into Hangzhou after the rebellions wind down."
+        }
+      ]
+    },
+    "DRR_f": {
+      "culture_gates": [
+        "afghan_culture"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [
+        "sunni"
+      ],
+      "religion_group_gates": [],
+      "candidates": [],
+      "notes_html": "<h2>Concept</h2>\n<p>The Durrani Empire revives Ahmad Shah Abdali&rsquo;s 1747 to 1823 Pashtun\nempire, the last great Indo-Persian polity before the British and Sikh\nascendancy. The historical reference is the Loya Jirga of Kandahar that\ncrowned Ahmad Shah Pearl of Pearls (Durr-i-Durran), and the nine\ninvasions that carried Afghan armies from Khorasan to Delhi, peaking\nat the Third Battle of Panipat in 1761.</p>\n<p>The mod&rsquo;s framing is a confederal mountain empire built on Pashtunwali,\nthe jirga, Sufi networks, and the Khyber and Bolan toll regime. It sits\nat the Persia / Central Asia / India crossroads with destiny branches\nthat either consolidate Khorasan as the heartland or push east to rule\nthe Indus and the Yamuna.</p>\n<h2>Forming it</h2>\n<p>The formation gates are unusual: your country must be <strong>afghan_culture</strong>\nand <strong>Sunni</strong>, but no tag at game start has afghan_culture as primary.\nThe Pashtun culture flip is part of the run, not something you can shop\nfor at game start.</p>\n<ol>\n<li><strong>Pick a starter.</strong> NGD (Kandahar) and QUN (Kabul) are the geographic\n   cleanest choices but start as steppe hordes with shafii_school. SWT\n   in the Pashtun belt and MIH in Sistan are Sunni monarchies with\n   afghan_culture already tolerated; both need a longer march.</li>\n<li><strong>Hold both required locations.</strong> The <code>allow</code> block requires you to\n   own <strong>Kandahar</strong> and <strong>Kabul</strong>. NGD starts with Kandahar; QUN starts\n   with Kabul. You must take the other.</li>\n<li><strong>Convert primary culture to afghan_culture.</strong> afghan_culture is\n   tolerated by NGD, QUN, SWT, MIH, KHN, and BSD. Promote it through\n   pop conversion or estate-driven flips.</li>\n<li><strong>Be Sunni.</strong> NGD, QUN, SWT, MIH all start Sunni. If you start\n   anything else, convert.</li>\n<li><strong>Hold half of the wider area pool.</strong> Beyond Kandahar and Kabul you\n   need 50 percent of Sistan, Khorasan east, Khorasan west, Baluchistan,\n   Kerman, Quhestan, Upper Indus, Punjab, and Sindh combined.</li>\n</ol>\n<h2>Pick your founding doctrine on formation</h2>\n<p>The formation event offers two 30-year doctrines:</p>\n<ul>\n<li><strong>Loya Jirga of Kandahar.</strong> The 1747 constitutional moment, the\n  tribal council that crowned Ahmad Shah. Gameplay focus: confederal\n  legitimacy, subject loyalty, internal cohesion. Pulls society toward\n  decentralization. Unlocks the Khorasan Heartland destiny path.</li>\n<li><strong>Sword of Khorasan.</strong> The Sadozai war machine: ghulam khana, zamburak\n  camel artillery, the army that won Panipat. Gameplay focus: military\n  power, mobility, conquest. Pulls society toward belligerence. Unlocks\n  the Indian Empire destiny path.</li>\n</ul>\n<h2>What happens on formation</h2>\n<ul>\n<li>Capital moves to Kandahar.</li>\n<li>Country rank rises to Empire if below it.</li>\n<li>Mild stability bonus.</li>\n<li>Formation event fires with the two doctrine choices.</li>\n</ul>\n<h2>After forming</h2>\n<p>The destiny tree splits two ways:</p>\n<ul>\n<li><strong>Khorasan Heartland.</strong> Refuse the Indian temptation; rule from the\n  mountain plateau. Required conquests reach Mashhad and Nishapur, then\n  Merv and Bukhara, then Samarkand and Isfahan. Capstone building is\n  the Qanat Network, irrigation infrastructure for Persianate Khorasan.\n  Unlocked by the Loya Jirga formation choice.</li>\n<li><strong>Sword of Khorasan / Indian Empire.</strong> Continue Ahmad Shah&rsquo;s nine\n  invasions. Required conquests reach Lahore and Multan, then Delhi,\n  Agra, and Sirhind, then Srinagar, Thatta, and Peshawar. Capstone\n  building is the Imperial Diwan, a Mughal-style imperial court at the\n  Bala Hissar of Kabul. Unlocked by the Sword of Khorasan formation\n  choice.</li>\n</ul>\n<h2>Notes</h2>\n<ul>\n<li>The advance tree leans heavily on Pashtun identity: Pashtunwali, the\n  jirga, Sufi networks, jezail rifles, zamburak camel artillery, and\n  the Panipat doctrine. Several advances trigger DHE flavor events.</li>\n<li>The formation requirement of afghan_culture as primary is the real\n  gate. Plan the culture flip well before you have the locations.</li>\n</ul>",
+      "priority_starters": [
+        {
+          "tag": "NGD",
+          "culture": "mongolian_culture",
+          "religion": "sunni",
+          "owned_in_target": 15,
+          "note": "Neguderi. The Mongol-derived horde holding Kandahar (the formation capital) plus Ghazni and Quetta. afghan_culture is tolerated but not primary, so the Pashtun culture flip is required before the formable will appear."
+        },
+        {
+          "tag": "QUN",
+          "culture": "mongolian_culture",
+          "religion": "sunni",
+          "owned_in_target": 23,
+          "note": "Qara'unas. Holds Kabul, the second required location, plus Kunduz and the Hindu Kush valleys. Same horde frame as NGD with afghan_culture tolerated. Take Kandahar from NGD, then flip primary culture."
+        },
+        {
+          "tag": "SWT",
+          "culture": "kashmiri_culture",
+          "religion": "sunni",
+          "owned_in_target": 15,
+          "note": "Sultanate of Swat. Already a Sunni Indian-Muslim monarchy in the Pashtun belt (Bajaur, Mardan, Malakand). afghan_culture tolerated, religion already correct. Long march west to take Kabul and Kandahar."
+        },
+        {
+          "tag": "MIH",
+          "culture": "farsi_culture",
+          "religion": "sunni",
+          "owned_in_target": 23,
+          "note": "Mihrabanids of Sistan. Sunni monarchy in Sistan and the Helmand basin, afghan_culture tolerated, holds Farah and the western frontier. Push east to Kandahar."
         }
       ]
     },
@@ -6146,13 +6250,15 @@
       "culture_group_gates": [],
       "religion_gates": [],
       "religion_group_gates": [],
-      "candidates": [
+      "candidates": [],
+      "notes_html": "<h2>Concept</h2>\n<p>The Kingdom of Benin is the Edo state of Benin City, famous for its\nmoated earthworks, the Oba&rsquo;s bronze plaques, and the guild quarters of\nIgun Street. Forming it is essentially a flavour upgrade for BEN: a\nformation event, advance tree, and destiny branches around the Oba&rsquo;s\ndivine authority versus the City of Guilds.</p>\n<h2>Forming it</h2>\n<ol>\n<li><strong>Start as BEN.</strong> Edo culture is the formation gate, and BEN is the\n   only tag with it.</li>\n<li><strong>Hold Benin City.</strong> BEN owns it at start, so this is automatic.</li>\n<li><strong>Hit 90% of the Benin and Lower Niger areas.</strong> A high fraction.\n   Push west into Yoruba-adjacent territory (mahin, ugbodu, uromi) and\n   east along the lower Niger; tolerated cultures (yoruba, ijaw) help\n   absorb neighbours without unrest.</li>\n<li><strong>Pick your path on formation.</strong></li>\n<li><em>The Oba is the kingdom</em>: divine authority, palace-centred\n     monarchy.</li>\n<li><em>The guilds are the kingdom</em>: Igun guild craft, brass-casting and\n     ivory-carving economy.</li>\n</ol>\n<h2>Pick your founding doctrine on formation</h2>\n<p>The formation event offers two 20-year doctrines. Picking one also gates\nwhich destiny path you can later take.</p>\n<ul>\n<li><strong>The Oba is the kingdom</strong> (<em>Oba&rsquo;s Divine Authority</em>, 20 years).\n  Sacred kingship: the Oba as the divine apex of Edo society, palace\n  societies and the Eben sword warriors as the institutional core.\n  Stat focus: crown estate power, legitimacy, infantry power,\n  separatism reduction. Gates the Oba&rsquo;s Dominion destiny path (path A,\n  Imperial Dominion line).</li>\n<li><strong>The guilds are the kingdom</strong> (<em>City of Guilds</em>, 20 years). Igun\n  Eronmwon brass-casters, Igbesanmwan ivory-carvers, and the Igun\n  Street guild quarters as the institutional core. Stat focus:\n  cultural tradition, production efficiency, trade efficiency,\n  development, build cost reduction. Gates the Guild Imperium destiny\n  path (path B, Guild Masters line).</li>\n</ul>\n<h2>What happens on formation</h2>\n<ul>\n<li>Country rank rises to Kingdom if currently Duchy or below (BEN\n  already starts at rank_kingdom, so this is normally a no-op).</li>\n<li>Mild stability bonus.</li>\n<li>Formation event fires with the two doctrine choices.</li>\n</ul>\n<h2>After forming</h2>\n<p>The destiny tree splits two ways:</p>\n<ul>\n<li><strong>Path A: The Oba&rsquo;s Dominion.</strong> Conquest line. Stage 1 takes Oyo Ile\n  and Calabar to dominate the Yoruba and Cross River frontiers. Stage\n  2 reaches Kano and Ngazargamu, projecting Edo power into Hausaland\n  and Bornu. Stage 3 takes Kumasi and Timbuktu and unlocks the <strong>War\n  Palace</strong> (<code>nd_edo_war_palace</code>) capstone building. Unlocked by the\n  Oba is the kingdom formation choice.</li>\n<li><strong>Path B: The Guild Imperium.</strong> Economic and cultural line. Stage 1\n  embraces banking and builds guild wealth. Stage 2 reaches a\n  capital-market ivory trade and grows the Igun guilds. Stage 3 takes\n  Ife (the Yoruba sacred capital) and unlocks the <strong>Guild Masters&rsquo;\n  Hall</strong> (<code>nd_edo_guild_masters_hall</code>) capstone building. Unlocked by\n  the guilds are the kingdom formation choice.</li>\n</ul>\n<h2>Notes</h2>\n<ul>\n<li>Rank is set to kingdom if you are below it; BEN already starts at\n  rank_kingdom, so the if-block is normally a no-op.</li>\n<li>The Igun Eronmwon (brass-casters) and Iyoba (queen mother) advance\n  events both fire on research, so the artistic and political flavour\n  comes through even on the more militaristic path.</li>\n</ul>",
+      "priority_starters": [
         {
           "tag": "BEN",
           "culture": "edo",
           "religion": "isese_religion",
           "owned_in_target": 10,
-          "score": 11
+          "note": "Benin. The only Edo-cultured tag and starts already owning Benin City at country rank kingdom. There is no other realistic entry."
         }
       ]
     },
@@ -6238,20 +6344,36 @@
         "catholic"
       ],
       "religion_group_gates": [],
-      "candidates": [
+      "candidates": [],
+      "notes_html": "<h2>Concept</h2>\n<p>The Sovereign Order of Saint John refounds the Knights Hospitaller as a\nproper sovereign state rather than a wandering crusader brotherhood.\nThe historical reference is the Order&rsquo;s transition through Rhodes\n(1310 to 1522) and Malta (1530 to 1798): a Catholic religious-military\ncorporation that became, in practice, an island kingdom with its own\nfleet, hospital system, and licensed corsairs.</p>\n<p>The mod treats HOS as the institutional answer to &ldquo;what if the Order\nnever lost Rhodes, never had to beg Charles V for Malta, and instead\nconsolidated as a permanent Mediterranean island state.&rdquo; The langues\n(Provence, Auvergne, France, Italy, Aragon, Castile, Germany, England)\nbecome a confederal civil service. The Sacra Infermeria of Malta\nbecomes the imperial hospital. The Tribunale degli Armamenti regulates\nthe corso.</p>\n<h2>Forming it</h2>\n<p>The formable accepts five entry tags: KNI, CYP, NAP, SIC, ARG, plus\nanyone running the <code>military_order_reform</code> government reform.</p>\n<ol>\n<li><strong>Be Catholic.</strong> The <code>potential</code> requires <code>religion:catholic</code>.</li>\n<li><strong>Hold Rhodes or Malta.</strong> The <code>allow</code> block needs at least one of\n   <code>location:rodos</code> or <code>location:malta</code>. KNI starts with Rhodes; SIC\n   and NAP can take Malta from a coastal raid; CYP and ARG must push\n   for Rhodes.</li>\n<li><strong>Hit 90 percent of the Hospitalier provinces.</strong> The required\n   territory is <code>rodos_province</code> plus <code>cyprus_province</code> plus the\n   <code>malta</code> location. With 0.9 fraction this is essentially a\n   &ldquo;hold all three&rdquo; requirement: the Dodecanese, the island of\n   Cyprus, and Malta.</li>\n<li><strong>Pick the formable.</strong> It is Level 2 plausible.</li>\n</ol>\n<p>The KNI direct path is by far the easiest. CYP is a natural narrative\nfit (Cypriot Lusignans absorbing the Rhodes Hospitallers) but requires\na war on Rhodes. SIC and NAP have to grab three separate island chains\nthat lie far from their core lands.</p>\n<h2>Pick your founding doctrine on formation</h2>\n<p>The formation event offers two 20-year doctrines. Picking one also\nswings a societal value and gates which destiny path you can later\ntake.</p>\n<ul>\n<li><strong>Crusading Order</strong> (Sword of Christendom). The galleys never rest;\n  the Order is what it has always been. Pushes belligerent_vs_conciliatory\n  hard left. Gates the Reclaim the Levant destiny path (path A, Mare\n  Nostrum line).</li>\n<li><strong>Hospitalier Realm</strong> (Hospital, harbor, council). Sovereign island\n  state; the corso, the Sacra Infermeria, and the langues are the\n  institutional core. Pushes land_vs_naval hard right (toward naval).\n  Gates the Lazaretto Network destiny path (path B, Sacra Infermeria\n  Maxima line).</li>\n</ul>\n<h2>What happens on formation</h2>\n<ul>\n<li>Mild stability bonus.</li>\n<li>Country rank rises to Kingdom if currently Duchy or below.</li>\n<li>The <code>clergy_military_orders</code> privilege is granted to the Clergy\n  estate. This unlocks <code>military_order_reform</code> in the Government UI\n  if you want to formally adopt the reform.</li>\n<li>The permanent <code>nd_hos_militant_brotherhood</code> modifier (Sovereign\n  Order of Saint John) is applied. Institutional benefits land\n  immediately without needing to swap a reform slot.</li>\n<li>Formation event fires with the two doctrine choices.</li>\n</ul>\n<h2>After forming</h2>\n<p>Tier 1 heritage covers the foundational Order identity: Hospitalier\nTradition, Knights Hospitaller infantry, Squadron of the Order\ngalleys, the langues system, the Statutes of Rhodes, the Tribunale\ndegli Armamenti, the Sacra Infermeria, Maltese Bastions, Codice del\nOrdine. Each comes with a DHE and a 15-year modifier choice.</p>\n<p>The destiny tree splits two ways:</p>\n<ul>\n<li><strong>Path A: Mare Nostrum.</strong> Conquest line. Reclaim Acre and Tripoli\n  (Levant), break the Ottoman Lake (Algiers and Tripoli), then the\n  Mare Nostrum capstone (Constantinople, Tunis, Beirut). Capstone\n  building is the <strong>Grand Magistery</strong>. Unlocked by the Crusading\n  Order formation choice.</li>\n<li><strong>Path B: Sacra Infermeria Maxima.</strong> Public-health hegemon line.\n  Build the Lazaretto Network (banking institution, capital market\n  silver), assert Continental Health Authority (Marseille, Genoa,\n  Naples), then the Sacra Maxima capstone (manufactories, capital\n  silver market). Capstone building is the <strong>Lazaretto Imperial</strong>.\n  Unlocked by the Hospitalier Realm formation choice.</li>\n</ul>\n<h2>Notes</h2>\n<ul>\n<li>KNI starts with <code>crusade_sea_reform</code> and several Crusader laws\n  already loaded. The HOS form effect grants the <code>clergy_military_orders</code>\n  privilege rather than locking you into a specific reform, so you\n  can keep KNI&rsquo;s existing Government setup or swap in\n  <code>military_order_reform</code> from the unlocked list.</li>\n<li>The 90 percent fraction means you need almost all three island\n  groups. Losing a single Cypriot location to a peace deal can break\n  formation eligibility until you take it back.</li>\n<li>HOS pairs thematically with TKT (the Templar successor as Atlantic\n  banking-state). Both are sovereign military-religious orders, but\n  HOS leans Mediterranean-galley-medical and TKT leans\n  Atlantic-banker-explorer.</li>\n</ul>",
+      "priority_starters": [
         {
           "tag": "KNI",
           "culture": "french",
           "religion": "catholic",
           "owned_in_target": 1,
-          "score": 6
+          "note": "The Knights Hospitaller themselves. Already Catholic, already a military order, already on Rhodes. The cleanest run: hold what you have, take Malta and Cyprus, and the formable's 90 percent fraction is almost in your pocket on day one."
         },
         {
-          "tag": "SAO",
-          "culture": "catalan",
+          "tag": "CYP",
+          "culture": "poitevin",
           "religion": "catholic",
-          "owned_in_target": 1,
-          "score": 6
+          "owned_in_target": 0,
+          "note": "Cyprus. Catholic Lusignan kingdom adjacent to Rhodes. Conquer Rhodes from KNI (or wait for the Ottomans to push them out and pick up the pieces) to satisfy the allow gate, then unify the eastern Mediterranean as a single Hospitalier realm."
+        },
+        {
+          "tag": "SIC",
+          "culture": "sicilian",
+          "religion": "catholic",
+          "owned_in_target": 0,
+          "note": "Sicily. Catholic, owns the Sicilian shore so Malta is a short hop. The Maltese path: take Malta, then push east into Rhodes for the second half of the Hospitalier provinces. Best fit for the Hospitalier Realm option (naval, hospital, corso)."
+        },
+        {
+          "tag": "NAP",
+          "culture": "neapolitan",
+          "religion": "catholic",
+          "owned_in_target": 0,
+          "note": "Naples. Catholic Mezzogiorno, similar geographic angle to SIC but bigger and bulkier. Realistic if you can take Malta early and project east."
         }
       ]
     },
@@ -6264,13 +6386,15 @@
         "sunni"
       ],
       "religion_group_gates": [],
-      "candidates": [
+      "candidates": [],
+      "notes_html": "<h2>Concept</h2>\n<p>Kanem-Bornu is the Sayfawa restoration: the dynasty driven from Kanem\nby the Bulala in the 14th century, refounded in Bornu, and finally\nreuniting both halves of the Lake Chad world. Forming it is a Sahelian\nimperial fantasy built around armoured cavalry, ribat frontiers, and\ntrans-Saharan caravan trade through Tripoli.</p>\n<h2>Forming it</h2>\n<ol>\n<li><strong>Start as KBO.</strong> Kanembu culture and Sunni religion are both gates,\n   and KBO is the only tag with both. The country also begins with\n   Sayfawa rulers historically attested.</li>\n<li><strong>Hold Ngazargamu and Njimi.</strong> KBO owns both at start, satisfying\n   the allow block immediately.</li>\n<li><strong>Hit 55% of a wide six-area pool.</strong> Bornu, Kanem, Logone, Wadai,\n   Air, and North Hausa. Lower fraction than most level 3 formables,\n   but the area pool is enormous; expand east into Wadai and west into\n   Hausaland or south into Logone.</li>\n<li><strong>Pick your path on formation.</strong></li>\n<li><em>By the lance and the ribat</em>: Mai&rsquo;s armoured cavalry and frontier\n     ribats, military emphasis.</li>\n<li><em>By the caravan and the market</em>: trans-Saharan trade, Tripoli\n     route economic emphasis.</li>\n</ol>\n<h2>Pick your founding doctrine on formation</h2>\n<p>The formation event offers two 30-year doctrines. Picking one also gates\nwhich destiny path you can later take.</p>\n<ul>\n<li><strong>By the lance and the ribat</strong> (<em>Sword of the Mai</em>, 30 years). The\n  Mai&rsquo;s armoured cavalry and ribat frontier system as the institutional\n  core. Stat focus: discipline, light and heavy cavalry power, land\n  morale, manpower, hostile attrition, monthly army tradition. Gates\n  the Sword of the Mai destiny path (path A, Mediterranean Reach line).</li>\n<li><strong>By the caravan and the market</strong> (<em>Crossroads of the Sahara</em>, 30\n  years). The Bilma salt road, Fezzan caravan trade, and Ngazargamu as\n  Sahel-Saharan emporium. Stat focus: trade efficiency, merchant power\n  and capacity, diplomatic reputation, heathen tolerance, monthly\n  prosperity. Gates the Crossroads of the Sahara destiny path (path B,\n  Saharan Master line).</li>\n</ul>\n<h2>What happens on formation</h2>\n<ul>\n<li>Mild stability bonus.</li>\n<li>Country rank rises to Kingdom if currently Duchy or below.</li>\n<li>Formation event fires with the two doctrine choices.</li>\n</ul>\n<h2>After forming</h2>\n<p>The destiny tree splits two ways:</p>\n<ul>\n<li><strong>Path A: Sword of the Mai.</strong> Conquest line. Stage 1 takes Kano and\n  Zazzau, breaking the Hausa city-states. Stage 2 reaches Timbuktu and\n  Gao, supplanting the western Sahel. Stage 3 takes Tripoli and Murzuk,\n  punching through the Sahara to the Mediterranean coast, and unlocks\n  the <strong>Imperial Barracks</strong> (<code>nd_kbu_imperial_barracks</code>) capstone\n  building. Unlocked by the lance and the ribat formation choice.</li>\n<li><strong>Path B: Crossroads of the Sahara.</strong> Trade line. Stage 1 embraces\n  banking and secures a salt market. Stage 2 reaches global trade with\n  ivory market access at 2000 development. Stage 3 reaches a cotton\n  market at 2500 development and unlocks the <strong>Grand Caravansary</strong>\n  (<code>nd_kbu_grand_caravansary</code>) capstone building. Unlocked by the\n  caravan and the market formation choice.</li>\n</ul>\n<h2>Notes</h2>\n<ul>\n<li>Rank is set to kingdom if you are below it.</li>\n<li>The formation modifier runs for 30 years (longer than most), so the\n  payoff scales with how soon you form.</li>\n<li>Subsequent DHE events cover Mai Idris Alooma&rsquo;s Ottoman musketeers and\n  later Sayfawa milestones.</li>\n</ul>",
+      "priority_starters": [
         {
           "tag": "KBO",
           "culture": "kanembu_culture",
           "religion": "sunni",
           "owned_in_target": 32,
-          "score": 14
+          "note": "Kanem-Bornu. The Sayfawa starter. Sunni Kanembu, already owns both Ngazargamu and Njimi, and is the only realistic path to formation."
         }
       ]
     },
@@ -6407,6 +6531,30 @@
         }
       ]
     },
+    "LBE_f": {
+      "culture_gates": [],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [],
+      "notes_html": "<h2>Concept</h2>\n<p>The Luba Empire is the central African kingdom of the Upemba\nDepression: copper-cross currency, sacred Mulopwe kingship, and the\nBambudye council whose lukasa memory boards held the institutional\nknowledge of state. Forming it gives you a divine-kingship empire built\naround the Kalala Ilunga foundation myth and the copper-iron\nmetallurgy of the lakeshore.</p>\n<p>The two paths split between <strong>Mulopwe divine authority</strong> (sacred\nkingship, autocratic) and <strong>Bambudye wisdom</strong> (council institution,\nchecked monarchy).</p>\n<h2>Forming it</h2>\n<ol>\n<li><strong>Start as a Luba-language tag</strong> (LBA or LND). The gate is\n   <code>culture.language = luba_language</code>, which both satisfy. Both also\n   start as tribal Bantu-religion polities in the Kongo region.</li>\n<li><strong>Hold lake_upemba.</strong> This is the single allow-block requirement.\n   Neither LBA nor LND owns it at start; it sits uncolonised in\n   mweru_province (east_lunda_area) and must be settled or absorbed.\n   LBA is geographically closer.</li>\n<li><strong>Hit 65% of a three-area pool.</strong> East Lunda, Kasongo, and Moshiko.\n   Compact territory; consolidating tribal neighbours covers most of it.</li>\n<li><strong>Pick your path on formation.</strong></li>\n<li><em>The Mulopwe&rsquo;s word is law</em>: divine kingship, autocratic emphasis.</li>\n<li><em>The Bambudye shall guide us</em>: council institution, checked\n     monarchy.</li>\n</ol>\n<h2>Pick your founding doctrine on formation</h2>\n<p>The formation event offers two 20-year doctrines. Picking one also gates\nwhich destiny path you can later take.</p>\n<ul>\n<li><strong>The Mulopwe&rsquo;s word is law</strong> (<em>Divine Authority of the Mulopwe</em>, 20\n  years). Sacred kingship: the Kalala Ilunga foundation myth, ritual\n  installation at the bilumbu shrines, and tributary expansion as the\n  institutional core. Stat focus: crown estate power, legitimacy,\n  separatism reduction, diplomatic annexation cost, levy size. Gates\n  the Mulopwe&rsquo;s Conquest destiny path (path A, Mulopwe Supreme line).</li>\n<li><strong>The Bambudye shall guide us</strong> (<em>Wisdom of the Bambudye</em>, 20\n  years). Council institution: the lukasa memory boards, judicial\n  Bambudye assemblies, and flexible governance as the institutional\n  core. Stat focus: cabinet efficiency, stability cost reduction,\n  cultures capacity, research speed, diplomatic reputation. Gates the\n  Bambudye&rsquo;s Wisdom destiny path (path B, Bambudye Supreme line).</li>\n</ul>\n<h2>What happens on formation</h2>\n<ul>\n<li>Country rank rises to Kingdom if currently Duchy or below.</li>\n<li>Mild stability bonus.</li>\n<li>Formation event fires with the two doctrine choices.</li>\n</ul>\n<h2>After forming</h2>\n<p>The destiny tree splits two ways:</p>\n<ul>\n<li><strong>Path A: The Mulopwe&rsquo;s Conquest.</strong> Conquest line. Stage 1 marches\n  east to Tanganyika (Ujiji, Lussuna). Stage 2 sacks Mbanza Kongo at\n  2000 total development, breaking the Atlantic Bantu rival. Stage 3\n  reaches the Indian Ocean (Kilwa Kisiwani, Sofala) and unlocks the\n  <strong>War Camp</strong> (<code>nd_lbe_war_camp</code>) capstone building. Unlocked by the\n  Mulopwe&rsquo;s word is law formation choice.</li>\n<li><strong>Path B: The Bambudye&rsquo;s Wisdom.</strong> Knowledge and trade line. Stage 1\n  embraces banking and secures capital-market copper. Stage 2 takes\n  Loango on the Atlantic. Stage 3 embraces global trade with ivory\n  market access and unlocks the <strong>Grand Lukasa Council</strong>\n  (<code>nd_lbe_grand_lukasa_council</code>) capstone building. Unlocked by the\n  Bambudye shall guide us formation choice.</li>\n</ul>\n<h2>Notes</h2>\n<ul>\n<li>Rank is set to kingdom if you are below it.</li>\n<li>The 20-year formation modifier is shorter than the level 3 Sahelian\n  formables, so the payoff window is tighter.</li>\n<li>Subsequent advance events cover the copper-cross currency economy\n  and other Luba milestones.</li>\n</ul>",
+      "priority_starters": [
+        {
+          "tag": "LBA",
+          "culture": "luba",
+          "religion": "bantu_religion",
+          "owned_in_target": 0,
+          "note": "Luba. Speaks the Luba language and starts with most of the mweru_province heartland. Closest neighbour to lake_upemba; colonise or expand into it."
+        },
+        {
+          "tag": "LND",
+          "culture": "lunda",
+          "religion": "bantu_religion",
+          "owned_in_target": 0,
+          "note": "Lunda. Luba-language tribe to the west around Mussumba and Katanga. Viable as a Lunda-led Luba revival; longer march to lake_upemba."
+        }
+      ]
+    },
     "LXA_f": {
       "culture_gates": [
         "lao_culture"
@@ -6414,20 +6562,50 @@
       "culture_group_gates": [],
       "religion_gates": [],
       "religion_group_gates": [],
-      "candidates": [
+      "candidates": [],
+      "notes_html": "<h2>Concept</h2>\n<p>Lan Xang, the Kingdom of a Million Elephants and the White Parasol,\nwas the great Lao polity founded by Fa Ngum in 1353 and broken into\nthree rump kingdoms in 1707. The mod&rsquo;s framing is a Theravada Mekong\nstate with two faces: the warrior tradition of the white elephants\n(royal regalia, Khorat raids, Setthathirath&rsquo;s resistance to the\nBurmese) and the contemplative tradition of the sangha and the Phra\nBang (the gilded Buddha that gives Luang Prabang its name).</p>\n<p>The formable is the historical reunification: hold both Muang Sua and\nVientiane, the twin capitals of the kingdom before its 1707 partition\ninto Luang Prabang, Vientiane, and Champasak.</p>\n<h2>Forming it</h2>\n<ol>\n<li><strong>Start as a Lao tag.</strong> MUA holds Muang Sua; VTN holds Vientiane.\n   These are the only two lao_culture primary tags in the region.</li>\n<li><strong>Hold both required locations.</strong> The <code>allow</code> block requires you to\n   own <strong>Muang Sua</strong> and <strong>Vientiane</strong>. Whichever you start as, conquer\n   the other.</li>\n<li><strong>Hit 75 percent of the area pool.</strong> Beyond the two named locations\n   you need three quarters of the Khorat Plateau and Northern Tai\n   Highland combined. The Khorat fraction is the larger piece and is\n   contested by Khmer, Sukhothai, and Ayutthaya neighbours.</li>\n<li><strong>Be at least Duchy rank.</strong> The form effect promotes you to Kingdom\n   if you are below it; both MUA and VTN start at Duchy rank.</li>\n</ol>\n<h2>Pick your founding doctrine on formation</h2>\n<p>The formation event offers two 20-year doctrines:</p>\n<ul>\n<li><strong>Kingdom of a Million Elephants.</strong> The royal regalia and war elephant\n  tradition. Gameplay focus: military, prestige, conquest. Unlocks the\n  Mekong Hegemon destiny path.</li>\n<li><strong>White Parasol.</strong> The Theravada civic order, the sangha as state\n  institution, the Phra Bang as palladium. Gameplay focus: religion,\n  legitimacy, internal cohesion. Unlocks the Heart of the Sangha\n  destiny path.</li>\n</ul>\n<h2>What happens on formation</h2>\n<ul>\n<li>Capital moves to Vientiane.</li>\n<li>Country rank rises to Kingdom if below it.</li>\n<li>Mild stability bonus.</li>\n<li>Formation event fires with the two doctrine choices.</li>\n</ul>\n<h2>After forming</h2>\n<p>The destiny tree splits two ways:</p>\n<ul>\n<li><strong>Mekong Hegemon.</strong> Push beyond the historical Lan Xang peak. Required\n  conquests reach Khorat, then Angkor and Stung Treng on the Mekong,\n  then the upper Mekong and the white-elephant lands. The capstone is\n  Lord of the White Elephants, a Mekong imperium with elephant tribute\n  from every river polity. Unlocked by the Million Elephants formation\n  choice.</li>\n<li><strong>Heart of the Sangha.</strong> Become the Theravada civilizational anchor.\n  Build the Mekong Silk Road, codify Lao Buddhist law, and crown the\n  kingdom as the Light of Theravada with golden stupas at every wat.\n  Capstone modifier is the Dharma Shield or the Golden Stupa. Unlocked\n  by the White Parasol formation choice.</li>\n</ul>\n<h2>Notes</h2>\n<ul>\n<li>The advance tree includes flavor DHEs for Setthathirath&rsquo;s resistance\n  to the Burmese (age 3), Sourigna Vongsa&rsquo;s golden age (age 5), and\n  the arrival of the Phra Bang (age 2).</li>\n<li>The 75 percent fraction across Khorat and Northern Tai Highland is\n  the practical bottleneck. Khorat in particular is a long contest\n  with Ayutthaya and Khmer claimants.</li>\n</ul>",
+      "priority_starters": [
         {
           "tag": "MUA",
           "culture": "lao_culture",
           "religion": "mahayana",
           "owned_in_target": 15,
-          "score": 11
+          "note": "Muang Sua (Luang Prabang). The historical seed of Lan Xang, lao_culture primary, owns Muang Sua at start. Conquer Vientiane (held by VTN) to satisfy the second formation requirement."
         },
         {
           "tag": "VTN",
           "culture": "lao_culture",
           "religion": "mahayana",
           "owned_in_target": 32,
-          "score": 11
+          "note": "Vientiane. Lao-cultured kingdom holding the southern Mekong capital. Already owns the second required location; push north to take Muang Sua from MUA."
+        }
+      ]
+    },
+    "MAP_f": {
+      "culture_gates": [
+        "mapudungun_group"
+      ],
+      "culture_group_gates": [
+        "mapudungun_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [],
+      "notes_html": "<h2>Concept</h2>\n<p>Wallmapu is the Mapuche federation as a sovereign kingdom. The\nhistorical reference is the Arauco War: from the 1550s through the\nlate 19th century the Mapuche south of the Bio-Bio successfully\nresisted Spanish, then Chilean, conquest. They turned back Pedro de\nValdivia at Tucapel (1553) under Lautaro, destroyed the Spanish &ldquo;Seven\nCities&rdquo; at Curalaba (1598), and forced the Spanish crown to negotiate\nthe Treaty of Quilin (1641), the only such recognition of an\nindigenous American polity. The federation was structured as Lof\nclans gathered into Rewes and nine-Rewe Aillarewes, governed by Lonko\npeace-chiefs and elected wartime Toki, with no hereditary king.</p>\n<p>The mod expresses this as a confederation that becomes a kingdom on\nformation. The Toki Council Federation modifier is permanent. The\nformation event then asks whether the Mapuche stay in the cordillera\nbehind the Bio-Bio, or ride east of the Andes and take the fight to\nthe Spanish settler frontier.</p>\n<h2>Forming it</h2>\n<ol>\n<li><strong>Start as a mapudungun-group tag</strong> (MPC or PHE). The potential\n   gate is <code>culture_group:mapudungun_group</code>, which covers Mapuche,\n   Picunche, Pehuenche, Williche, and Purun Awqa. Of these only MPC\n   and PHE exist as starting tags in 1337.</li>\n<li><strong>Own wenteche.</strong> The <code>allow</code> block has a single hard requirement:\n   <code>owns = location:wenteche</code>, the central Mapuche heartland in\n   Ngulumapu. MPC starts with it. PHE must take it from MPC.</li>\n<li><strong>Hold 90 percent of Ngulumapu and Puelmapu.</strong> The required-\n   locations fraction is 0.9 across Ngulumapu (the western, Chilean\n   side of the Andes) and Puelmapu (the eastern, Argentine side).\n   This is a high bar. Expect to fight your mapudungun neighbours and\n   push east of the cordillera before the formable becomes available.</li>\n<li><strong>Form Wallmapu.</strong> Country rank rises to Kingdom on formation if\n   below it.</li>\n</ol>\n<h2>Pick your founding doctrine on formation</h2>\n<p>The formation event offers two 25-year doctrines:</p>\n<ul>\n<li><strong>Wallmapu Endurance.</strong> The cordillera-defensive tradition.\n  Hostile attrition, defensiveness, and morale. The shield that turned\n  back Spain. Shifts your Offensive vs Defensive societal value\n  sharply right (defensive). Path A of the destiny tree, the Free\n  Republic of Reche, requires this choice.</li>\n<li><strong>Pillan&rsquo;s Spear.</strong> The Lautaro doctrine of mounted offensive war.\n  Light cavalry power, looted amount, and movement speed. Drives the\n  huinca off the continent. Shifts Offensive vs Defensive sharply left\n  (offensive). Path B, Continental Wallmapu, requires this choice.</li>\n</ul>\n<h2>What happens on formation</h2>\n<ul>\n<li>Country rank rises to Kingdom if below it.</li>\n<li>Formation event fires with the two doctrine choices.</li>\n<li>Permanent <strong>Toki Federation</strong> country modifier is granted (the Lof\n  /Rewe/Aillarewe federation governance).</li>\n<li>Mild stability bonus.</li>\n<li>No capital move. Whatever your formation capital was stays.</li>\n</ul>\n<h2>After forming</h2>\n<p>The destiny tree splits two ways. Both reward holding land beyond the\ncordillera.</p>\n<ul>\n<li><strong>Free Republic of Reche.</strong> The civic-diplomatic path. Codified\n  Parlamento (annual treaty-assemblies), Free Republic of Reche\n  (republican tradition, cabinet efficiency), and a capstone\n  Recognized Among Nations stage that unlocks the Parlamento\n  Permanente building and a major diplomatic boost. Unlocked by the\n  Wallmapu Endurance formation choice.</li>\n<li><strong>Continental Wallmapu.</strong> The imperial-expansion path. March of the\n  Toki Mapu (own Valparaiso and Aconcagua), Cordillera Crossed (Cuyo\n  and Kilmes), and Toki Apu of All Lands (Salta, Tandil, plus a\n  75-army and 2000 development gate). Capstone is the Toki Apu Hall.\n  Unlocked by the Pillan&rsquo;s Spear formation choice.</li>\n</ul>\n<p>The path you cannot take with a given doctrine still appears in the\ntree but its first stage requires the other path&rsquo;s variable, so\ncommit to your choice on formation.</p>\n<h2>Notes</h2>\n<ul>\n<li>The <code>rule = plausible</code> flag means MAP appears in the formables list\n  to mapudungun-group countries even before the Bio-Bio frontier is\n  pacified. Don&rsquo;t be surprised that it shows up early.</li>\n<li>The federation modifier is duration <code>-1</code> (permanent). Both doctrine\n  modifiers stack on top of it for 25 years.</li>\n<li>DHE chain mirrors history: Tucapel triumph (Age 2) and Lautaro&rsquo;s\n  doctrine for the first Mapuche cavalry corps; Curalaba uprising\n  (Age 3); Treaty of Quilin (Age 4) where you can either codify the\n  Spanish recognition (Quilin Compact) or refuse and remain unbroken.</li>\n</ul>",
+      "priority_starters": [
+        {
+          "tag": "MPC",
+          "culture": "mapuche_culture",
+          "religion": "tain_feyentun_religion",
+          "owned_in_target": 0,
+          "note": "Mapuche. The canonical Wallmapu starter. Already mapuche_culture, already in tain feyentun religion, and starts owning wenteche, the only required location. You can form MAP_f essentially as soon as you can fund the rank-up and clear the formable's plausible-mode prereqs."
+        },
+        {
+          "tag": "PHE",
+          "culture": "pikumche_culture",
+          "religion": "tain_feyentun_religion",
+          "owned_in_target": 0,
+          "note": "Picunche. Pikumche-cultured (mapudungun_group), so the culture potential is satisfied. Sits north of MPC in the central Chilean valley; you must take wenteche from MPC before forming. Pick this if you want to absorb the northern Mapuche heartland first."
         }
       ]
     },
@@ -6438,20 +6616,22 @@
       "culture_group_gates": [],
       "religion_gates": [],
       "religion_group_gates": [],
-      "candidates": [
+      "candidates": [],
+      "notes_html": "<h2>Concept</h2>\n<p>The Muisca Confederation unifies the Altiplano Cundiboyacense, the\nhigh plateau around modern Bogota and Tunja, under a single state.\nThe historical reference is the pre-Columbian Muisca polity that\nthe Spanish encountered in 1537: the Zipa ruling from Bacata\n(modern Bogota) over the southern half, the Zaque ruling from Hunza\n(modern Tunja) over the northern half, with the Iraca priest-king at\nSugamuxi presiding over religion. Tundama at Duitama led the most\nprominent resistance against Gonzalo Jimenez de Quesada&rsquo;s conquest.</p>\n<p>The Muisca are also the source of the El Dorado myth: the gilded man\nceremony at Lake Guatavita, where a new Zipa was covered in gold dust\nand rowed onto the lake to make offerings, was filtered back to\nSpanish chroniclers as a city of gold somewhere in the South American\ninterior. The mod&rsquo;s formation event makes the choice explicit:\ninherit El Dorado&rsquo;s wealth tradition, or inherit Tundama&rsquo;s defiance.</p>\n<h2>Forming it</h2>\n<ol>\n<li><strong>Start as a muisca-cultured tag</strong> (ZIP or ZAQ). The potential\n   gate is <code>culture = culture:muisca_culture</code>. Only these two tags\n   qualify in 1337.</li>\n<li><strong>Own funza and chunsua.</strong> ZIP starts with funza, ZAQ starts with\n   chunsua. Whichever you pick, you must take the other capital. The\n   two tags border each other on the Altiplano, so this is a single\n   short war.</li>\n<li><strong>Hold 65 percent of Chunsa and Boiaca.</strong> The required-locations\n   fraction is 0.65 across the Chunsa (Cundinamarca) and Boiaca\n   (Boyaca) areas. The two starting tags between them already cover\n   most of this; you only need to mop up the highland gaps.</li>\n<li><strong>Form the Confederation.</strong> This is <code>rule = historical</code>, the\n   tightest plausibility class, so the formable appears only when\n   the historical Zipa-Zaque union conditions are clearly met.</li>\n</ol>\n<h2>Pick your founding doctrine on formation</h2>\n<p>The formation event offers two 20-year doctrines:</p>\n<ul>\n<li><strong>Path of the Golden Zipa.</strong> Inherit the El Dorado tradition.\n  Trade efficiency, production efficiency, and cultural focus on the\n  goldsmith and emerald trade networks that made the Muisca the\n  envy of pre-Columbian South America. Path A, El Dorado&rsquo;s Legacy,\n  requires this choice.</li>\n<li><strong>Tundama&rsquo;s Defiance.</strong> Inherit the guecha warrior tradition.\n  Land morale, hostile attrition, discipline, and manpower. The\n  highlands as an impregnable bastion. Path B, The Highland Fortress,\n  requires this choice.</li>\n</ul>\n<h2>What happens on formation</h2>\n<ul>\n<li>Capital moves to <strong>funza</strong> (Bacata).</li>\n<li>Permanent <strong>Zipa-Zaque Compact</strong> country modifier is granted (the\n  dual kingship governance with the Iraca priest-king at Sugamuxi).</li>\n<li>Mild stability bonus.</li>\n<li>Formation event fires with the two doctrine choices.</li>\n</ul>\n<h2>After forming</h2>\n<p>The destiny tree splits two ways.</p>\n<ul>\n<li><strong>El Dorado&rsquo;s Legacy.</strong> The trade-and-gold path. Stage 1 (Emerald\n  Roads) takes caly and mompoj plus 1000 gold. Stage 2 (Markets of\n  Gold) demands quito, the Banking institution, and 2000 gold. Stage\n  3 (Golden Kingdom) requires panama, 1500 development, and 75\n  prestige. Capstone is the Guatavita Treasury. Unlocked by the\n  Path of the Golden Zipa formation choice.</li>\n<li><strong>The Highland Fortress.</strong> The guecha-defensive path. Stage 1\n  (Tairona War) takes teyuna and zenues with a 30-army gate. Stage 2\n  (Mountain Dominion) demands caracas and coro with a 50-army gate.\n  Stage 3 (Andean Hegemony) requires qusqu (Cusco), 1500 development,\n  and 75 prestige. Capstone is the Tundama Citadel. Unlocked by the\n  Tundama&rsquo;s Defiance formation choice.</li>\n</ul>\n<p>The path you cannot take with a given doctrine still appears in the\ntree but its first stage requires the other path&rsquo;s variable. Commit\non formation.</p>\n<h2>Notes</h2>\n<ul>\n<li>DHE chain follows the historical iconography: El Dorado ceremony\n  at Guatavita (Age 2), Tundama&rsquo;s Valor (Age 2 vanguard unit),\n  Sugamuxi tradition (Age 1 Temple of the Sun unlock).</li>\n<li>The advance tree includes guecha warriors and levies (the elite\n  Muisca infantry tradition), salt and emerald trade buildings, the\n  cotton manta weaving house, the Cercado palace for cacique\n  councils, and a goldsmith workshop.</li>\n<li>ZIP and ZAQ are mirror starts. The decision is mostly thematic:\n  do you want to enter the formation as the El Dorado southern Zipa,\n  or as the more militant northern Zaque tradition? The mechanics\n  converge.</li>\n</ul>",
+      "priority_starters": [
         {
           "tag": "ZIP",
           "culture": "muisca_culture",
           "religion": "muisca_religion",
           "owned_in_target": 5,
-          "score": 11
+          "note": "Zipa of Bacata. The southern Muisca polity. Already muisca_culture and muisca_religion, capital is funza (Bacata, modern Bogota). Owns funza on day one. Take chunsua from ZAQ (Zaque of Hunza) and 65 percent of the Cundinamarca and Boyaca highlands and you can form."
         },
         {
           "tag": "ZAQ",
           "culture": "muisca_culture",
           "religion": "muisca_religion",
           "owned_in_target": 4,
-          "score": 10
+          "note": "Zaque of Hunza. The northern Muisca polity. Same culture and religion, capital is chunsua (Hunza, modern Tunja). Owns chunsua on day one. Take funza from ZIP and the rest of the highland fraction. Symmetric to ZIP, just the other half of the historical confederation."
         }
       ]
     },
@@ -6533,6 +6713,59 @@
         }
       ]
     },
+    "MRO_f": {
+      "culture_gates": [
+        "butuanon_culture",
+        "iranun_culture",
+        "maguindanao_culture",
+        "tagakaulo_culture",
+        "tausug_culture"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [
+        "sunni"
+      ],
+      "religion_group_gates": [],
+      "candidates": [],
+      "notes_html": "<h2>Concept</h2>\n<p>The Moro Sultanate is a pan-Mindanao Sunni Islamic confederation that\nunifies the historical Sulu, Maguindanao, Lanao, Iranun, Tagakaulo,\nand Butuanon polities into a single sultanate. The reference points\nare Sharif ul-Hashim&rsquo;s founding sermons in Sulu, Sultan Kudarat&rsquo;s\n17th-century defiance of the Spanish, the lantaka swivel-gun and vinta\nlateen fleets that made the Moros the masters of the inner seas, and\nthe long resistance of the juramentado kris-warrior tradition.</p>\n<p>The mod transcends the vanilla Sulu / Maguindanao / Lanao / Kiliman\nsilos: the formable is the unified Moro polity, the political project\nthat the historical sultanates pursued but never fully achieved.</p>\n<h2>Forming it</h2>\n<ol>\n<li><strong>Start as a Moro-cultured tag.</strong> Eligible cultures are Tausug\n   (SUL), Maguindanao (MGD), Iranun (LNO), Tagakaulo (KIM), and\n   Butuanon (BTU). No other primary culture qualifies.</li>\n<li><strong>Be Sunni.</strong> SUL and BTU start hindu; MGD, KIM, and LNO start\n   anitist. All five candidates need a religion flip to Sunni. This\n   is the dominant gating step. The historical conversion through\n   Sharif ul-Hashim&rsquo;s mission to Sulu is the obvious narrative anchor.</li>\n<li><strong>Hold the two named locations.</strong> The <code>allow</code> block requires you\n   to own <strong>Maimbung</strong> (Sulu, held by SUL) and <strong>Kuta Watu</strong>\n   (Maguindanao, held by MGD).</li>\n<li><strong>Hold two of the four secondary anchors.</strong> You must own at least\n   two of <strong>Butuan</strong> (BTU), <strong>Malabang</strong> (LNO), <strong>Buayan</strong> (KIM), and\n   <strong>Samboangan</strong> (SML, the Sanmalan tausug-tolerated tag holding the\n   Zamboanga peninsula).</li>\n<li><strong>Hit 80 percent of Mindanao.</strong> The breadth requirement is most\n   of the Mindanao area pool.</li>\n<li><strong>Not in civil war.</strong> The form effect blocks if you have an active\n   civil war.</li>\n</ol>\n<h2>Pick your founding doctrine on formation</h2>\n<p>The formation event offers three 20-year doctrines:</p>\n<ul>\n<li><strong>Sultan and Caliph.</strong> The sultan as Caliph of the Southern Seas, an\n  Islamic monarchy modelled on Mecca and Aceh. Gameplay focus: religious\n  authority, centralization, jurisprudence. Pulls society toward\n  centralization and jurisprudence. Unlocks the Sultan and Pandita\n  destiny path (sharia codification, pan-Islamic trade, madrasah\n  civilization).</li>\n<li><strong>Datu Confederation.</strong> The federation of datus as the political\n  spine, the sultan as first among equals. Gameplay focus: noble\n  legitimacy, decentralized administration. Pulls society toward\n  decentralization and aristocracy. <strong>No destiny continuation.</strong> Pick\n  this only if you want the founding modifier without committing to\n  either destiny path.</li>\n<li><strong>Sword and Sail.</strong> The vinta and lantaka path: corsair fleets,\n  juramentado warrior corps, naval mastery. Gameplay focus: navy,\n  mobility, raid economy. Pulls society toward naval and belligerent.\n  Unlocks the Sword of the Caliph destiny path (juramentado corps,\n  lantaka armada, Caliphate of the Southern Seas).</li>\n</ul>\n<h2>What happens on formation</h2>\n<ul>\n<li>Country rank rises to Kingdom if below it.</li>\n<li>Mild stability bonus.</li>\n<li>Formation event fires with the three doctrine choices.</li>\n</ul>\n<h2>After forming</h2>\n<p>The destiny tree splits two ways:</p>\n<ul>\n<li><strong>Sultan and Pandita</strong> (Path B in the events). Codify sharia under\n  the qadi, build a pan-Islamic trade network from Aceh to Hajj\n  caravans, crown the realm as a madrasah civilization with tariqa\n  brotherhoods and a Sultan Solomon legacy. Unlocked by the Sultan and\n  Caliph formation choice.</li>\n<li><strong>Sword of the Caliph</strong> (Path A in the events). Train kris brotherhoods\n  and corsair-juramentado boarding parties, master the inner seas with\n  the lantaka armada, and proclaim the Caliphate of the Southern Seas\n  with a corsair empire holding Ternate, Api Api, and Sandakan.\n  Unlocked by the Sword and Sail formation choice.</li>\n</ul>\n<h2>Notes</h2>\n<ul>\n<li>The Datu Confederation founding choice is a deliberate dead-end. It\n  is the historically loyal option (the datus did rule as a confederation\n  in practice) but the destiny tree only continues from the two more\n  centralized founding visions.</li>\n<li>Several advances fire DHE flavor events: Sharif ul-Hashim, vinta and\n  lantaka, Sultan Kudarat, the pandita schools, and the juramentado\n  tradition.</li>\n</ul>",
+      "priority_starters": [
+        {
+          "tag": "SUL",
+          "culture": "tausug_culture",
+          "religion": "hindu",
+          "owned_in_target": 2,
+          "note": "Lupah Sug (Sulu). Tausug-cultured, owns Maimbung (the formation capital) at start. Religion is hindu at start, so a Sunni conversion is required before the formable will appear. The cleanest historical path."
+        },
+        {
+          "tag": "MGD",
+          "culture": "maguindanao_culture",
+          "religion": "anitism_religion",
+          "owned_in_target": 5,
+          "note": "Wenduling (Maguindanao). Maguindanao-cultured, owns Kuta Watu (the second required location). Anitism at start; convert to Sunni and push to take Maimbung from SUL plus two of the secondary anchors."
+        },
+        {
+          "tag": "KIM",
+          "culture": "tagakaulo_culture",
+          "religion": "anitism_religion",
+          "owned_in_target": 5,
+          "note": "Kiliman (Buayan). Tagakaulo-cultured, already owns Buayan (one secondary anchor). Anitist at start; convert to Sunni and push to take Maimbung and Kuta Watu."
+        },
+        {
+          "tag": "LNO",
+          "culture": "iranun_culture",
+          "religion": "anitism_religion",
+          "owned_in_target": 3,
+          "note": "Lanao. Iranun-cultured, owns Malabang (one secondary anchor). Anitist at start. The hardest start in raw territory but iranun_culture matches the mod's vinta corsair flavour."
+        },
+        {
+          "tag": "BTU",
+          "culture": "butuanon_culture",
+          "religion": "hindu",
+          "owned_in_target": 6,
+          "note": "Butuan. Butuanon-cultured, owns Butuan (one secondary anchor). Hindu at start. Long northern push into Maimbung and Kuta Watu, but begins with one of the four secondary anchors already held."
+        }
+      ]
+    },
     "MTP_f": {
       "culture_gates": [
         "kalanga_culture",
@@ -6541,13 +6774,43 @@
       "culture_group_gates": [],
       "religion_gates": [],
       "religion_group_gates": [],
-      "candidates": [
+      "candidates": [],
+      "notes_html": "<h2>Concept</h2>\n<p>Mutapa is the Shona empire that succeeded Great Zimbabwe: a plateau\nkingdom built on cattle, gold, and the Mwari cult, its kings ruling\nfrom stone enclosures and trading gold down the Zambezi to Swahili and\nlater Portuguese ports. Forming it sets your capital to Great Zimbabwe\nitself and pushes you to kingdom rank.</p>\n<p>The two paths split between <strong>Golden Trade</strong> (engagement with Swahili\nand Portuguese coastal commerce) and <strong>Mwari Sovereignty</strong> (inward,\nspiritual and pastoral autarky).</p>\n<h2>Forming it</h2>\n<ol>\n<li><strong>Start as a Shona or Kalanga tag</strong> (ZMW, MNY, ZEZ, NBY, or KLG).\n   ZMW is the only one that already owns Great Zimbabwe; the rest must\n   take it.</li>\n<li><strong>Hold Great Zimbabwe.</strong> This is the single allow-block requirement.</li>\n<li><strong>Hit 60% of the Zimbabwe region.</strong> A whole region rather than a few\n   areas, so expect to consume most of your Shona and Kalanga\n   neighbours and push toward the Limpopo, Save, and Zambezi.</li>\n<li><strong>Pick your path on formation.</strong></li>\n<li><em>Let the gold flow</em>: Swahili and Portuguese trade, coastal\n     commercial emphasis.</li>\n<li><em>Mwari provides</em>: inward spiritual focus, pastoral and ritual\n     authority.</li>\n</ol>\n<h2>Pick your founding doctrine on formation</h2>\n<p>The formation event offers two 30-year doctrines. Picking one also gates\nwhich destiny path you can later take.</p>\n<ul>\n<li><strong>Let the gold flow</strong> (<em>Golden Trade</em>, 30 years). Engagement with\n  Swahili gold-cloth-glass commerce and managed Portuguese contact at\n  Sofala as the institutional core. Stat focus: trade efficiency,\n  merchant power, gold output, diplomatic reputation, research speed,\n  institution growth. Gates the Emporium of the South destiny path\n  (path A, Indian Ocean line).</li>\n<li><strong>Mwari provides</strong> (<em>Mwari Sovereignty</em>, 30 years). The Matobo Hills\n  rain cult, mass-mobilization armies, pastoral wealth, and oracular\n  intelligence as the institutional core. Stat focus: land morale,\n  manpower, legitimacy, tolerance, food production, crown estate\n  power. Gates the Stones of the Ancestors destiny path (path B,\n  Plateau Imperium line).</li>\n</ul>\n<h2>What happens on formation</h2>\n<ul>\n<li>Country rank rises to Kingdom if currently Duchy or below (ZMW\n  already starts at rank_kingdom).</li>\n<li>Capital is force-set to Great Zimbabwe.</li>\n<li>Mild stability bonus.</li>\n<li>Formation event fires with the two doctrine choices.</li>\n</ul>\n<h2>After forming</h2>\n<p>The destiny tree splits two ways:</p>\n<ul>\n<li><strong>Path A: Emporium of the South.</strong> Trade line. Stage 1 takes Kilwa\n  Kisiwani, the historical gold gateway. Stage 2 takes Zanzibar Island\n  and Quelimane, locking in the Mozambique Channel. Stage 3 reaches\n  Mombasa with capital-market porcelain access and unlocks the <strong>Indian\n  Ocean Emporium</strong> (<code>nd_mtp_indian_ocean_emporium</code>) capstone building.\n  Unlocked by the Let the gold flow formation choice.</li>\n<li><strong>Path B: Stones of the Ancestors.</strong> Plateau conquest line. Stage 1\n  marches south into Mapulana and Bakgatla. Stage 2 takes Kweneng and\n  Lejweleputswa, conquering the Highveld at 2000 development. Stage 3\n  takes Damara to reach the Atlantic-side frontier and unlocks the\n  <strong>Royal Mustering Ground</strong> (<code>nd_mtp_royal_mustering_ground</code>) capstone\n  building. Unlocked by the Mwari provides formation choice.</li>\n</ul>\n<h2>Notes</h2>\n<ul>\n<li>Capital is force-set to Great Zimbabwe on formation.</li>\n<li>Rank is set to kingdom if you are below it; ZMW already starts at\n  rank_kingdom.</li>\n<li>The 30-year formation modifier rewards forming early.</li>\n<li>Later advance events cover the Rozvi breakaway under Changamire Dombo\n  and other Mutapa milestones.</li>\n</ul>",
+      "priority_starters": [
         {
           "tag": "ZMW",
           "culture": "shona_culture",
           "religion": "bantu_religion",
           "owned_in_target": 22,
-          "score": 11
+          "note": "Great Zimbabwe. Shona-cultured kingdom that already owns Great Zimbabwe and the surrounding stone-house heartland. The obvious starter."
+        },
+        {
+          "tag": "MNY",
+          "culture": "shona_culture",
+          "religion": "bantu_religion",
+          "owned_in_target": 0,
+          "note": "Manyika. Shona tribe to the east around Manica. Strong eastern position toward the Mozambique trade coast; needs to take Great Zimbabwe."
+        },
+        {
+          "tag": "ZEZ",
+          "culture": "shona_culture",
+          "religion": "bantu_religion",
+          "owned_in_target": 0,
+          "note": "Zezuru. Shona tribe in the central plateau (Tete, Tsindi). Compact start; Great Zimbabwe is a short conquest away."
+        },
+        {
+          "tag": "NBY",
+          "culture": "shona_culture",
+          "religion": "bantu_religion",
+          "owned_in_target": 0,
+          "note": "Nambya. Shona tribe to the west (Khami, Bumbuzi). Western entry point; longer march to Great Zimbabwe."
+        },
+        {
+          "tag": "KLG",
+          "culture": "kalanga_culture",
+          "religion": "bantu_religion",
+          "owned_in_target": 0,
+          "note": "Kalanga. The non-Shona option. Kalanga culture also satisfies the gate; western tribal start near Bosutswe and Domboshaba."
         }
       ]
     },
@@ -6582,6 +6845,27 @@
           "religion": "miaphysite",
           "owned_in_target": 0,
           "note": "Ethiopia. Miaphysite at Kingdom or Empire rank, technically eligible for the direct path. Geographically extreme: the conquest of Mesopotamia, Levant and Egypt is much longer than from Cilicia. Only viable in a long late-game push."
+        }
+      ]
+    },
+    "NUM_f": {
+      "culture_gates": [
+        "shoshoni_group"
+      ],
+      "culture_group_gates": [
+        "shoshoni_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "candidates": [],
+      "notes_html": "<h2>Concept</h2>\n<p>Comancheria is the Plains horse empire as a sovereign state. The\nhistorical reference is the long 18th and early 19th century, when\nthe Numunu (Comanche) bands, Penateka, Yamparika, Quahadi, Nokoni,\nand Kotsoteka, ran a tribute and raid economy across the southern\nPlains and northern Mexico from the Llano Estacado out. The mod calls\nthis Numunu Sookobitu and structures it as a paraibo (peace chief)\nplus tekwuniwapi (war chief) multi-band confederation rather than a\nunitary kingdom, with cohesion held together through kinship,\ncaptive incorporation, and the bison-and-horse economy.</p>\n<p>This is alt-history. In 1337 the Numic bands were still in the Great\nBasin and the Comanche as a distinct people did not yet exist. The\nformable&rsquo;s potential gate is <code>culture_group:shoshoni_group</code>, so any\nShoshoni-group country may attempt the climb. The advance tree\ntreats horse mastery as a Renaissance-era arrival and the empire&rsquo;s\npeak as Age 4 to Age 5, mirroring the historical timeline.</p>\n<p>The tag is NUM, after Numunu (the Comanche endonym).</p>\n<h2>Forming it</h2>\n<ol>\n<li><strong>Start as a shoshoni-group tag.</strong> The potential gate covers\n   tukudeka, bannock, kuccuntikka, penkwitikka, kusiutta, tetadeka,\n   haivodika, watatikka, wiyimpihtikka, monachi, kuhtsutuuka, and\n   tawakoni cultures. In 1337 only <strong>TWK</strong> (Tawakoni) starts with a\n   shoshoni-group primary culture. Other shoshoni-group cultures\n   exist as pops in the Great Basin but no tag holds them at game\n   start.</li>\n<li><strong>Conquer kwahada and penatuka.</strong> The <code>allow</code> block requires both:\n   kwahada is the Llano Estacado heart, penatuka is the Penateka\n   homeland. Both belong to <strong>XUM</strong> (Xumanos) at game start. From a\n   TWK opening you push southwest into XUM&rsquo;s territory.</li>\n<li><strong>Hold 45 percent of the southern Plains arc.</strong> Required fraction\n   is 0.45 across Texas, Natahende, High Plains, Central Plains, and\n   the Rockies. This is a wide spread but a low fraction, so a\n   focused southern Plains and northern Texas conquest qualifies.</li>\n<li><strong>Be at peace at home.</strong> <code>in_civil_war = no</code> is part of <code>allow</code>.</li>\n<li><strong>Form Comancheria.</strong> Country rank rises to Kingdom on formation\n   if below it. Capital sets to <strong>kwahada</strong>.</li>\n</ol>\n<h2>Pick your founding doctrine on formation</h2>\n<p>The formation event offers two 30-year doctrines:</p>\n<ul>\n<li><strong>Continental Empire.</strong> The raid-and-tribute war machine. Light\n  cavalry power, movement speed, looted amount, manpower, and a\n  large attrition penalty inflicted on hostile armies. The historical\n  Comancheria of the Great Raid era. Shifts Offensive vs Defensive\n  sharply left (offensive). Path A, Continental Tribute Empire,\n  requires this choice.</li>\n<li><strong>Sovereign Nation.</strong> The treaty state. Diplomatic reputation,\n  improve-relations impact, separatism reduction, literacy, and\n  assimilation speed. The Council of the Comanche Nation as a\n  permanent seat of negotiation. Shifts Centralization vs\n  Decentralization sharply left (centralization). Path B,\n  Pan-Indigenous Confederation, requires this choice.</li>\n</ul>\n<h2>What happens on formation</h2>\n<ul>\n<li>Capital moves to <strong>kwahada</strong> (Llano Estacado).</li>\n<li>Country rank rises to Kingdom if below it.</li>\n<li>Permanent <strong>Paraibo Confederation</strong> country modifier is granted\n  (the multi-band federation governance with paraibo peace chiefs\n  and tekwuniwapi war chiefs).</li>\n<li>Mild stability bonus.</li>\n<li>Formation event fires with the two doctrine choices.</li>\n</ul>\n<h2>After forming</h2>\n<p>The destiny tree splits two ways.</p>\n<ul>\n<li><strong>Continental Tribute Empire.</strong> Push south into Mexico. Stage 1\n  takes tamaulipeco and maratine (the Tamaulipas frontier) with a\n  30-army gate. Stage 2 demands guachichil, cuencame, and chisos in\n  Coahuila with a 50-army and 3500-development bar. Stage 3\n  (continental hegemony) requires mapimi, cuanales, alazapa, and\n  xumani plus a 75-army, 75-prestige, and 3000-gold gate. Capstone is\n  the Imperial Bison Council. Unlocked by the Continental Empire\n  formation choice.</li>\n<li><strong>Pan-Indigenous Confederation.</strong> Build a treaty federation across\n  the Plains. Stage 1 needs Legalism embraced plus 75 stability and\n  50 prestige. Stage 2 takes he_sapa (the Black Hills) and awatixa\n  with the printing press institution. Stage 3 demands bighorn_\n  mountains, marapa, and minisose, plus 5000 development, 75\n  prestige, and 75 stability. Capstone is the Treaty Hall. Unlocked\n  by the Sovereign Nation formation choice.</li>\n</ul>\n<p>The path you cannot take with a given doctrine still appears in the\ntree but its first stage requires the other path&rsquo;s variable. Commit\non formation.</p>\n<h2>Notes</h2>\n<ul>\n<li>The advance tree mirrors history closely: Age 1 is pre-horse Numic\n  tradition (numic migration, seasonal camps, skirmisher levies),\n  Age 2 is the horse arriving and the Pueblo Revolt scattering its\n  herds (horse mastery, Pueblo Lessons, paraibos confederation), Age\n  3 to 5 is the high-empire Comanchero trade, captive incorporation,\n  raid economy, Council of the Comanche Nation, and the Llano\n  Estacado refuge.</li>\n<li>DHE events trigger off the major advances: horse arrival,\n  Comanchero trade, captive incorporation, Council Hill\n  negotiations, the Mexico-campaign Great Raid era, and the Llano\n  Estacado heartland fortifications.</li>\n<li>The formable is <code>rule = plausible</code>, so it appears in the formables\n  list to any shoshoni-group country, not only after the Plains have\n  been pacified.</li>\n</ul>",
+      "priority_starters": [
+        {
+          "tag": "TWK",
+          "culture": "tawakoni_culture",
+          "religion": "mississippian_ceremonial",
+          "owned_in_target": 0,
+          "note": "Tawakoni. The only 1337 starter tag whose primary culture (tawakoni_culture) is in shoshoni_group. Starts on the southern Plains around melenudo/nokoni/waco, north of the Comanche heartland. You must conquer south to take kwahada (Llano Estacado) and penatuka (Penateka heartland), both held by XUM (Xumanos). The mod treats Numic-Plains migration as an Age 1 advance, so the formable is built around a TWK-style horseless southern Plains start that becomes a horse empire over the centuries."
         }
       ]
     },
@@ -6727,20 +7011,29 @@
       "culture_group_gates": [],
       "religion_gates": [],
       "religion_group_gates": [],
-      "candidates": [
+      "candidates": [],
+      "notes_html": "<h2>Concept</h2>\n<p>The Pintados Confederation is the pan-Visayan tattoo-warrior civilization,\nthe political project that the historical Madya-as confederation of\nPanay datus and the Rajahnate of Cebu hinted at but never unified.\nPintados (the Painted Ones) is the Spanish term for the heavily tattooed\nVisayan warriors the conquistadors first encountered, the kakarlong\nbrotherhoods who waged mangayaw raids from balangay and karakoa fleets\nacross the inner seas.</p>\n<p>The mod&rsquo;s framing is a federation of datus bound by sandugo (the\nblood-compact), a maritime confederation of three Visayan languages\n(Hiligaynon, Cebuano, Waray), and a babaylan-led anitist religious\norder. It is explicitly not a Madya-as enlargement: it is the unified\nVisayan polity that history almost reached.</p>\n<p>The tag is PNT (after Pintados). It excludes the Mindanao Moros (handled\nby MRO), the Tagalogs of Manila Bay, and the Bicolanos.</p>\n<h2>Forming it</h2>\n<ol>\n<li><strong>Start as a Visayan-cultured tag.</strong> Eligible primary cultures are\n   Hiligaynon (MDY), Cebuano (CEB), and Waray. No tag at game start\n   has Waray as primary, so practical starters are MDY and CEB.</li>\n<li><strong>Hold both required locations.</strong> The <code>allow</code> block requires you\n   to own <strong>Araut</strong> (held by MDY) and <strong>Singhapala</strong> (held by CEB).\n   Whichever you start as, conquer the other.</li>\n<li><strong>Hold two of the four secondary anchors.</strong> You must own at least\n   two of <strong>Basey</strong> (Samar), <strong>Bool</strong> (Bohol, held by BOL), <strong>Bago\n   Negros</strong> (Negros, held by MDY), and <strong>Masbate</strong>. This is a\n   deliberate breadth requirement to enforce pan-Visayan unification\n   rather than a Panay plus Cebu duopoly.</li>\n<li><strong>Hit 85 percent of the Visayas area.</strong> The fraction is high; you\n   need almost the whole Visayas pool.</li>\n<li><strong>Not in civil war.</strong></li>\n</ol>\n<p>The formable does not gate religion. CEB starts hindu and qualifies\non culture alone, but the mod&rsquo;s flavor and advance tree assume an\nanitist polity (the babaylan, the diwata, anito worship under the\nBabaylan order).</p>\n<h2>Pick your founding doctrine on formation</h2>\n<p>The formation event offers three 20-year doctrines:</p>\n<ul>\n<li><strong>Federation of the Datus.</strong> The council civilization: governance,\n  cohesion, council legitimacy, datus bound by sandugo. Pulls society\n  toward plutocracy. Unlocks the Civic Council destiny path (United\n  Council, Visayan Renaissance, Kabisay-an Apex).</li>\n<li><strong>Kakarlong Brotherhood.</strong> The mangayaw raid tradition, the tattoo\n  warrior code, balangay raid fleets. Pulls society toward belligerence.\n  Unlocks the Maritime Raid Empire destiny path (Sulu Sea Mastery,\n  Borneo Beachheads, Spice Sea Talassocracy).</li>\n<li><strong>Maritime Confederation.</strong> The balangay merchant network, inner-sea\n  free-passage trade. Pulls society toward naval. <strong>No destiny\n  continuation.</strong> Pick this only if you want the founding modifier\n  without committing to either destiny path.</li>\n</ul>\n<h2>What happens on formation</h2>\n<ul>\n<li>Mild stability bonus.</li>\n<li>Formation event fires with the three doctrine choices.</li>\n<li>No automatic capital change, culture flip, or rank promotion.</li>\n</ul>\n<h2>After forming</h2>\n<p>The destiny tree splits two ways:</p>\n<ul>\n<li><strong>Datu Council Civilization</strong> (Path A). Bind the datus by sworn law\n  or by sandugo, sponsor the Visayan Renaissance with patronage of the\n  arts and the three Visayan tongues (Hiligaynon, Cebuano, Waray) in\n  parallel, and crown the realm as the Kabisay-an Apex, a civic nation\n  or a mercantile federation. Unlocked by the Federation of the Datus\n  formation choice.</li>\n<li><strong>Maritime Raid Empire</strong> (Path B). Master the Sulu Sea via Iranun\n  corsair commissions or council admiralty integration, land mangayaw\n  raid corps in Borneo, and crown the realm as a Spice Sea\n  Talassocracy with reaver lords or inner-sea dominion. Unlocked by\n  the Kakarlong Brotherhood formation choice.</li>\n</ul>\n<h2>Notes</h2>\n<ul>\n<li>The Maritime Confederation founding choice is a deliberate dead-end.\n  Pick it only for the founding modifier itself; neither destiny path\n  continues from it.</li>\n<li>Several advances fire DHE flavor events: the Code of Kalantiaw /\n  Sumakwel maragtas codex, the Mangayaw Decision (raid south or north),\n  the Babaylan Question (codify or pluralism), the Visayan Sea Trade\n  Treaty, the Spaniards at Mactan (post-1521), and the Visayan Synthesis.</li>\n<li>The Visayan Synthesis advance lets you choose between three flourishing\n  Visayan tongues and a single shared council vernacular, a real\n  language-policy fork inside the destiny payoff.</li>\n</ul>",
+      "priority_starters": [
         {
           "tag": "MDY",
           "culture": "hiligaynon_culture",
           "religion": "anitism_religion",
           "owned_in_target": 8,
-          "score": 11
+          "note": "Madya-as. Hiligaynon-cultured, anitist, owns Araut (the formation capital) plus Bago Negros (one secondary anchor). The historically iconic Pintados seed: the Madya-as confederation of Panay datus is the closest real-world analogue to the formable."
         },
         {
           "tag": "CEB",
           "culture": "cebuano_culture",
           "religion": "hindu",
           "owned_in_target": 3,
-          "score": 9
+          "note": "Cebu (Singhapala). Cebuano-cultured, owns Singhapala (the second required location) plus Tanjay. Hindu at start; the formable does not gate religion, but the cultural fit is Visayan animist, so a religion flip is thematic but not required."
+        },
+        {
+          "tag": "BOL",
+          "culture": "boholano_culture",
+          "religion": "anitism_religion",
+          "owned_in_target": 2,
+          "note": "Bool (Dapitan). Boholano-cultured. Boholano is NOT in the potential list, so a culture flip to one of the three Visayan cultures is required. Compensates by already holding Bool, one of the four secondary anchors."
         }
       ]
     },
@@ -6751,20 +7044,22 @@
       "culture_group_gates": [],
       "religion_gates": [],
       "religion_group_gates": [],
-      "candidates": [
+      "candidates": [],
+      "notes_html": "<h2>Concept</h2>\n<p>The Songhai Empire is the great Sahelian successor to Mali: Sunni Ali\nthe river-warrior who broke Tuareg and Mossi alike, and Askia Muhammad\nthe pilgrim-emperor who turned conquest into a civilisation of Islamic\nlaw and Timbuktu scholarship. Forming it sets your capital to Gao,\npushes you to empire rank, and applies a stability bump.</p>\n<p>The two paths split this directly: <strong>Sunni Ali&rsquo;s river conqueror</strong>\nversus <strong>Askia&rsquo;s scholar emperor</strong>.</p>\n<h2>Forming it</h2>\n<ol>\n<li><strong>Start as a Songhai tag</strong> (SON or TFK). Both are Sunni Maliki\n   already, no religion flip needed.</li>\n<li><strong>Hold Gao and Timbuktu.</strong> SON owns Gao but not Timbuktu; Timbuktu\n   belongs to Mali (MAL) at start and must be taken by war or\n   diplomatic absorption.</li>\n<li><strong>Hit 55% of a six-area pool.</strong> Gao, Timbuktu, Mali, Zarma, Air, and\n   Ghana. The fraction is modest but the pool spans the whole western\n   Sahel, so you will be fighting Mali, Tuareg, and Hausa neighbours.</li>\n<li><strong>Pick your path on formation.</strong></li>\n<li><em>Riders of the Niger</em>: Sunni Ali&rsquo;s river-cavalry doctrine,\n     military emphasis.</li>\n<li><em>Throne of knowledge and justice</em>: Askia&rsquo;s pilgrimage and\n     Timbuktu&rsquo;s madrasas, administrative and religious emphasis.</li>\n</ol>\n<h2>Pick your founding doctrine on formation</h2>\n<p>The formation event offers two 30-year doctrines. Picking one also gates\nwhich destiny path you can later take.</p>\n<ul>\n<li><strong>Riders of the Niger</strong> (<em>River Conqueror</em>, 30 years). Sunni Ali&rsquo;s\n  doctrine: noble cavalry in iron breastplates and the Hi-Koy war\n  canoes ruling the Niger. Stat focus: light and heavy cavalry power,\n  army movement speed, manpower, land morale, hostile attrition,\n  reduced war exhaustion. Gates the Dominion of the Niger destiny path\n  (path A, Sahel Hegemony line).</li>\n<li><strong>Throne of knowledge and justice</strong> (<em>Scholar Emperor</em>, 30 years).\n  Askia Muhammad&rsquo;s doctrine: the Hajj caliphate, Sankore madrasas,\n  Maliki jurisprudence, and standardized weights. Stat focus: research\n  speed, institution growth, tolerance, diplomatic reputation,\n  literacy, stability cost reduction. Gates the Light of Timbuktu\n  destiny path (path B, Beacon of Africa line).</li>\n</ul>\n<h2>What happens on formation</h2>\n<ul>\n<li>Capital is force-set to Gao.</li>\n<li>Country rank rises to Empire if currently below rank 4.</li>\n<li>Mild stability bonus.</li>\n<li>Formation event fires with the two doctrine choices.</li>\n</ul>\n<h2>After forming</h2>\n<p>The destiny tree splits two ways:</p>\n<ul>\n<li><strong>Path A: Dominion of the Niger.</strong> Conquest line. Stage 1 secures\n  Taghaza salt and Ouagadougou. Stage 2 takes Kano, Katsina, and\n  Ngazargamu, conquering Hausaland and Bornu. Stage 3 reaches Kumasi,\n  Bono Manso, and Sokoto for total Sahel hegemony, and unlocks the\n  <strong>Imperial War Camp</strong> (<code>nd_soe_imperial_warcamp</code>) capstone building.\n  Unlocked by the Riders of the Niger formation choice.</li>\n<li><strong>Path B: Light of Timbuktu.</strong> Scholarly line. Stage 1 takes Begho\n  and secures gold market access. Stage 2 embraces banking at 2500\n  total development. Stage 3 embraces the printing press at 3500\n  development and unlocks the <strong>House of Wisdom</strong>\n  (<code>nd_soe_house_of_wisdom</code>) capstone building. Unlocked by the Throne\n  of knowledge and justice formation choice.</li>\n</ul>\n<h2>Notes</h2>\n<ul>\n<li>Capital is force-set to Gao on formation.</li>\n<li>Rank is set to empire if you are below rank 4.</li>\n<li>The 30-year formation modifier makes early formation very valuable.</li>\n<li>Later advance events fire on Askia&rsquo;s pilgrimage, the Battle of Tondibi\n  collapse, and Timbuktu&rsquo;s scholarly golden age.</li>\n</ul>",
+      "priority_starters": [
         {
           "tag": "SON",
           "culture": "songhai",
           "religion": "sunni",
           "owned_in_target": 12,
-          "score": 11
+          "note": "Songhai. Owns Gao at start and is the historical Sunni Ali / Askia Muhammad polity. Take Timbuktu from Mali, then push along the Niger."
         },
         {
           "tag": "TFK",
           "culture": "songhai",
           "religion": "sunni",
           "owned_in_target": 5,
-          "score": 11
+          "note": "Tafak. Songhai-cultured neighbour with cores around Bourem and Bamba. Viable underdog start; consume SON or pry Gao loose, then march on Timbuktu."
         }
       ]
     },
@@ -6835,6 +7130,35 @@
           "religion": "theravada",
           "owned_in_target": 20,
           "score": 11
+        }
+      ]
+    },
+    "TAB_f": {
+      "culture_gates": [
+        "czech",
+        "moravian"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [
+        "hussite"
+      ],
+      "religion_group_gates": [],
+      "candidates": [],
+      "notes_html": "<h2>Concept</h2>\n<p>Tabor Republic is the Hussite radical wing made permanent. The\nhistorical reference is the 1419 to 1452 Tabor Brotherhood: a\npeasant-egalitarian commune of refugees and burghers on a hill in\nsouthern Bohemia, governed by elective captains, defended by\n\u017di\u017eka&rsquo;s vozov\u00e1 hradba (war-wagon laager) and the p\u00ed\u0161\u0165ala\nhand-cannon, and refusing the Compactata of Basel that absorbed the\nmoderate Utraquist wing back into Catholic legitimacy.</p>\n<p>The alt-history premise is that Lipany (1434) is averted: the\nradical Tabor and Sirotci field armies survive instead of being\ncrushed by the Utraquist-Catholic compromise. The chalice republic\nbecomes a sovereign continental state with the Four Articles of\nPrague as constitutional law, married priesthood, vernacular\nscripture, and communal property.</p>\n<h2>Forming it</h2>\n<ol>\n<li><strong>Start as Bohemia (BOH) or Moravia (MVA).</strong> The <code>potential</code>\n   block accepts Czech or Moravian culture. BOH is by far the\n   stronger seed: it starts Catholic but holds Husinec (Hus&rsquo;s\n   birthplace), the named formation location.</li>\n<li><strong>Trigger the Hussite Wars and flip to the Hussite religion.</strong>\n   This is not part of the formable itself; the religion comes from\n   vanilla Bohemia&rsquo;s Hussite Wars mechanic (advances and generic\n   actions in <code>country_BOH.txt</code> and <code>hussite_wars_actions.txt</code>). You\n   cannot form Tabor until the country&rsquo;s religion is hussite.</li>\n<li><strong>Hold Husinec.</strong> The only named location requirement. Hus&rsquo;s\n   birthplace, the symbolic hearth of the chalice movement.</li>\n<li><strong>Hold 85 percent of Bohemia and Moravia.</strong> A high fraction\n   reflecting the formable&rsquo;s small territorial scope. Keep your\n   Czech-Moravian core consolidated; Silesia and Lusatia are not\n   required for formation but feature in the destiny tree.</li>\n<li><strong>Form Tabor.</strong> The form_effect grants the permanent\n   <code>nd_tab_peasant_commune</code> modifier (mirroring vanilla\n   peasant_republic_reform&rsquo;s country modifiers, so the player gets\n   the institutional benefits without burning a major-reform slot).</li>\n</ol>\n<h2>Pick your founding doctrine on formation</h2>\n<p>Two 20-year doctrines, both of which also flip the government type\nto republic:</p>\n<ul>\n<li><strong>Commune of Brethren.</strong> The radical wing. Communal property,\n  married priesthood, women combatants, full Sirotci radicalism.\n  Pushes plutocratic and communal societal values. Unlocks the\n  Communal Republic destiny path.</li>\n<li><strong>Calixtine Compact.</strong> The disciplined wing. Prokop the Great&rsquo;s\n  institutional vision: chalice for all, but the Czech nobles lead\n  and the war-wagon army stays under regular command. Pushes\n  traditionalist and slightly conciliatory. Unlocks the Czech\n  Reformation destiny path.</li>\n</ul>\n<h2>What happens on formation</h2>\n<ul>\n<li>Permanent Tabor Peasant Commune modifier applied (mirrors\n  peasant_republic_reform&rsquo;s country modifiers).</li>\n<li>Mild stability bonus.</li>\n<li>Government type changes to republic on either choice.</li>\n<li>Formation event fires with the two doctrine choices.</li>\n</ul>\n<h2>After forming</h2>\n<p>The destiny tree splits two ways:</p>\n<ul>\n<li><strong>Czech Reformation.</strong> Path A. Export the chalice revolution\n  across central Europe. Stage gates require Wroc\u0142aw and G\u00f6rlitz\n  (Silesia and Lusatia), then Confessionalism embraced plus\n  Wittenberg, then Augsburg, Geneva, and Leipzig with a continental\n  Reformation army. Capstone building is the Synod Hall. Unlocked\n  by Calixtine Compact.</li>\n<li><strong>Communal Republic.</strong> Path B. Deepen the brotherhood at home.\n  Stage gates require Meritocracy embraced, then a paper-trading\n  capital market under the Renaissance, then the Enlightenment and\n  3,000 gold. Capstone building is the Demokratick\u00fd Sjezd\n  (Democratic Congress). Unlocked by Commune of Brethren.</li>\n</ul>\n<h2>Notes</h2>\n<ul>\n<li>The Hussite religion does not exist at 1337 game start. It is\n  spawned by Bohemia&rsquo;s vanilla Hussite Wars chain. Plan a BOH run\n  that triggers and survives the Hussite Wars before you can form.</li>\n<li>The advance tree is unusually long (27 advances across all six\n  ages) because it traces the full Hussite story from Conrad\n  Waldhauser&rsquo;s 1360s preaching through Comenius and the Czech\n  Brethren, to a 19th-century Czech-republican civic militia. It\n  carries seven DHE event chains: war-wagon doctrine, Four\n  Articles, Lipany averted, vernacular scripture, married\n  priesthood, the Brotherhood Diet, and Czech humanism.</li>\n<li>MVA is accepted by the formable but is a much harder seed: you\n  do not start with Husinec and you must convert to a religion that\n  vanilla only spawns through BOH&rsquo;s wars chain.</li>\n</ul>",
+      "priority_starters": [
+        {
+          "tag": "BOH",
+          "culture": "czech",
+          "religion": "catholic",
+          "owned_in_target": 40,
+          "note": "Bohemia. Czech-cultured, owns Husinec at start, and is the only realistic seed for the Hussite religion. The whole formation arc plays out as the Hussite Wars: trigger the wars, flip to Hussite, win the crusades, then form Tabor as the radical-republican settlement."
+        },
+        {
+          "tag": "MVA",
+          "culture": "moravian",
+          "religion": "catholic",
+          "owned_in_target": 16,
+          "note": "Moravia. Moravian-cultured (also accepted by the formable), Catholic at start, smaller than BOH but already in the Bohemia and Moravia areas. A harder Hussite run because you do not own Husinec; you must take it from BOH or from whoever holds Bohemia by then."
         }
       ]
     },
@@ -6917,13 +7241,29 @@
         "orthodox"
       ],
       "religion_group_gates": [],
-      "candidates": [
+      "candidates": [],
+      "notes_html": "<h2>Concept</h2>\n<p>The Bosporan Kingdom is a Crimean Greco-Gothic successor state\nbuilt on top of the Principality of Theodoro, the cliff-fortress\nduchy at Mangup that survived from the late Roman frontier into the\n1470s. The historical references are layered: the ancient Bosporan\nKingdom of the Spartocids and Mithridates VI on the Cimmerian\nStrait, the Crimean Goths (the late echo of Wulfila&rsquo;s people, still\nspeaking a Germanic tongue when Ogier de Busbecq met them at the\nOttoman court in the 1560s), and the Pontic Orthodox cave\nmonasteries of Inkerman and Eski-Kermen.</p>\n<p>The mod treats TDR as the answer to &ldquo;what if Theodoro had survived\nMehmed II&rsquo;s 1475 conquest and consolidated as a Crimean kingdom of\nmixed peoples.&rdquo; The formation event lets you pick which heritage to\nforeground: Hellenic-Roman or Crimean Gothic. The two choices\nliterally rename the country.</p>\n<p>The tag is TDR (after Theodoro / Mangup) because BSP is unavailable\nin vanilla EU5 and TDR matches the principality&rsquo;s most durable\nhistorical name.</p>\n<h2>Forming it</h2>\n<p>The formable accepts Greek-group orthodox countries.</p>\n<ol>\n<li><strong>Be in the Greek culture group.</strong> This includes greek,\n   pontic_greek, griko, and gothic cultures.</li>\n<li><strong>Be Orthodox.</strong> The <code>potential</code> requires <code>religion:orthodox</code>.</li>\n<li><strong>Own Theodoro.</strong> The seat of Mangup. FEO starts with it; any\n   other starter must take it first.</li>\n<li><strong>Hold 90 percent of the crimea_area.</strong> A tight fraction: you\n   need almost all of the peninsula&rsquo;s locations.</li>\n<li><strong>Form TDR.</strong> It is Level 2 plausible.</li>\n</ol>\n<p>FEO is the intended path. TRE has the right culture and religion\nbut starts on the southern Black Sea coast and must project north\nacross the sea. BYZ runs are essentially a Byzantine restoration\nthat absorbs Crimea, viable but very long.</p>\n<h2>Pick your founding doctrine on formation</h2>\n<p>The formation event offers two 25-year doctrines. Each renames the\ncountry, swings a societal value, and gates one of the destiny\npaths.</p>\n<ul>\n<li><strong>Regnum Bospori</strong> (heirs of Mithridates and Rome). The Hellenic-\n  Roman framing: an heir of Eupator and Mithridates VI that can\n  speak with Constantinople and Venice as a peer. Country renames\n  to &ldquo;Regnum Bospori&rdquo; with adjective &ldquo;Regnal Bosporan&rdquo;. Pushes\n  traditionalist_vs_innovative right (toward innovative). Gates the\n  Pontic Reach destiny path (Path A, Heir of Mithridates line).</li>\n<li><strong>Cimmerian Bosporus</strong> (kingdom of mountain peoples). The Crimean\n  Gothic framing: a mountain kingdom of mixed peoples bound by\n  Orthodox faith and the iron of Mangup. Country renames to\n  &ldquo;Kingdom of the Cimmerian Bosporus&rdquo; with adjective &ldquo;Cimmerian&rdquo;.\n  Pushes quality_vs_quantity left (toward quality). Gates the\n  Steppe Frontier destiny path (Path B, Ecumenical Throne line).</li>\n</ul>\n<h2>What happens on formation</h2>\n<ul>\n<li>Mild stability bonus.</li>\n<li>Country rank rises to Kingdom if currently Duchy or below.</li>\n<li>The chosen doctrine renames the country (Regnum Bospori or Kingdom\n  of the Cimmerian Bosporus).</li>\n<li>Formation event fires with the two doctrine choices.</li>\n</ul>\n<h2>After forming</h2>\n<p>Tier 1 heritage covers the principality&rsquo;s foundational identity:\nthe Mangup Citadel (cliff fortress), the Komnenoid (Gabras) dynastic\nclaim, the Tauric emporion (Cherson, Caffa, Soldaia trade), the\nCrimean Gothic tongue, and the cave monasteries. Each comes with a\nDHE and a 15-year modifier choice.</p>\n<p>The destiny tree splits two ways:</p>\n<ul>\n<li><strong>Path A: Heir of Mithridates.</strong> Black Sea hegemony line. Stage 1\n  takes Sinope and Amasra (the southern Pontic ports). Stage 2 takes\n  Trebizond and Varna (Black Sea Mastery), with a Grain Convoy or\n  Pontic Customs modifier. Stage 3 capstone takes Constantinople and\n  Burgas with a Mithridatic Fleet or Pontic Basileia modifier.\n  Capstone building is the <strong>Mithridatic Admiralty</strong>. Unlocked by\n  the Regnum Bospori formation choice.</li>\n<li><strong>Path B: Ecumenical Throne.</strong> Multiethnic steppe-and-Rus&rsquo; empire\n  line. Stage 1 takes Tana and Sarai al-Jadid (the Don and Volga\n  gateways). Stage 2 reaches into Kyiv (Ruthenian Outreach), with a\n  Dnieper Road or Phanariot Chancery modifier. Stage 3 capstone\n  takes Beljamen, Dymer, and Tokat with a Komnenoid Chancery or\n  Steppe Basileia modifier. Capstone building is the <strong>Imperial\n  Chancery</strong>. Unlocked by the Cimmerian Bosporus formation choice.</li>\n</ul>\n<h2>Notes</h2>\n<ul>\n<li>The 90 percent crimea_area fraction is tight. Losing a single\n  location to a Tatar or Genoese raid can break formation\n  eligibility until you take it back.</li>\n<li>Both formation choices rename the country, so the tag in the\n  ledger and the displayed name will diverge after formation. The\n  TAG remains TDR internally.</li>\n<li>The destiny paths are deliberately divergent: Heir of Mithridates\n  is a Mediterranean naval push toward Constantinople; Ecumenical\n  Throne is a continental steppe-and-Rus&rsquo; push toward Kyiv. The\n  formation choice gates which one you can take.</li>\n</ul>",
+      "priority_starters": [
         {
           "tag": "FEO",
           "culture": "pontic_greek_culture",
           "religion": "orthodox",
           "owned_in_target": 1,
-          "score": 10
+          "note": "Theodoro itself. Owns the location:theodoro that gates the formable, already pontic-greek and orthodox, and starts as a Crimean duchy with the cliff fortress of Mangup as its core. The cleanest run by a wide margin: hold the crimea_area and form."
+        },
+        {
+          "tag": "TRE",
+          "culture": "pontic_greek_culture",
+          "religion": "orthodox",
+          "owned_in_target": 0,
+          "note": "Trebizond. Pontic-greek and orthodox, the same culture as FEO. Geographically on the southern Black Sea coast: requires a sea push north to take theodoro and the Crimean uplands. A long but historically meaningful run (the Komnenoid claim is part of the destiny lore)."
+        },
+        {
+          "tag": "BYZ",
+          "culture": "greek_culture",
+          "religion": "orthodox",
+          "owned_in_target": 0,
+          "note": "Byzantium. Greek orthodox, eligible by `potential`. Crimea is far from Constantinople and the crimea_area must be taken outright. Realistic only as an alt-history Byzantine restoration that absorbs the Crimean Greek principalities."
         }
       ]
     },
@@ -6936,13 +7276,36 @@
       ],
       "religion_gates": [],
       "religion_group_gates": [],
-      "candidates": [
+      "candidates": [],
+      "notes_html": "<h2>Concept</h2>\n<p>Great Tang revives the Tang dynasty at its mid-eighth-century peak:\nChang&rsquo;an as a cosmopolitan world-capital, the Anxi Protectorate\nruling the Tarim Basin, the Silk Road as imperial infrastructure,\nand a Jinshi examination bureaucracy holding the whole system\ntogether. The historical reference is the Kaiyuan era under Xuanzong,\nbefore the An Lushan rebellion broke Tang reach into Central Asia.</p>\n<p>The tag is TGD because vanilla EU5 already uses TNG. The capital\nbecomes Jingzhao (medieval Xi&rsquo;an), and the formable explicitly\nreaches into Xinjiang via the Kashgar gate, which is what separates\nit from forming S\u00f2ng or generic vanilla China.</p>\n<h2>Forming it</h2>\n<ol>\n<li><strong>Pick a Chinese-group tag.</strong> TGD is open to any culture in\n   chinese_group. There is no exclusion list, but in practice the\n   only viable starters are the Red Turban faction tags (MNG, CSO,\n   CSI, WUU, etc.) because they are the only Chinese-cultured\n   countries that exist at game start. CHI (Yuan) is mongolian_culture\n   and cannot form it.</li>\n<li><strong>Wait out the Red Turban Rebellions.</strong> The <code>allow</code> block\n   requires <code>is_situation_active = no</code> for the rebellions and\n   <code>in_civil_war = no</code>. You cannot form during the chaos.</li>\n<li><strong>Own Jingzhao.</strong> This is the Tang capital (modern Xi&rsquo;an), held\n   by CHI at start. The eastern half of the formation gate.</li>\n<li><strong>Own Kashgar.</strong> Held at start by DGH (the Dughlats, a Mongol\n   khanate in the Tarim Basin). This is the western half and the\n   reason TGD is harder than S\u00f2ng. You must push through the Hexi\n   corridor and across the desert to take it.</li>\n<li><strong>Hold 50 percent of north China, west China, east China, and\n   Xinjiang regions.</strong> The full Tang heartland plus the Tarim Basin.</li>\n<li><strong>Form Great Tang.</strong></li>\n</ol>\n<h2>Pick your founding doctrine on formation</h2>\n<p>Two 40-year doctrines:</p>\n<ul>\n<li><strong>Restore the Protectorates.</strong> The expansionist Tang. Anxi and\n  Beiting recreated, Sogdian merchants and Turkic generals back in\n  imperial service, the Silk Road garrisoned end to end. Pushes\n  outward and belligerent societal values. Unlocks the Western\n  Restoration destiny path.</li>\n<li><strong>Golden Age of Letters.</strong> The cultural Tang. Hanlin Academy,\n  Tang poetry canon, Jinshi examinations as the path to office, the\n  Nestorian Stele as the symbol of cosmopolitan tolerance. Pushes\n  spiritualist and traditionalist. Unlocks the Cultural Ascendancy\n  destiny path.</li>\n</ul>\n<h2>What happens on formation</h2>\n<ul>\n<li>Capital moves to Jingzhao.</li>\n<li>Country rank rises to Empire if below it.</li>\n<li>Severe stability bonus.</li>\n<li>Formation event fires with the two doctrine choices.</li>\n</ul>\n<h2>After forming</h2>\n<p>The destiny tree splits two ways:</p>\n<ul>\n<li><strong>Western Restoration.</strong> Path A. Push the Anxi frontier back to\n  its eighth-century reach. Stage gates require Samarkand and\n  Bukhara (the Sogdian heartland), then Karakorum and Balkh (the\n  steppe and Bactrian gates), then Delhi and Baghdad (Tang reach\n  beyond historical: a Pax Sinica that overshadows the Caliphate\n  and the Sultanate). Capstone building is the Protectorate\n  Command. Unlocked by Restore the Protectorates.</li>\n<li><strong>Cultural Ascendancy.</strong> Path B. Civilizational empire. Stage\n  gates require Banking embraced and 16,500 development, then a\n  silk-trading capital market with 2,000 gold and 50 prestige, then\n  the Scientific Revolution at 33,500 development. Capstone\n  building is the Imperial Library. Unlocked by Golden Age of\n  Letters.</li>\n</ul>\n<h2>Notes</h2>\n<ul>\n<li>TGD and CSO share the same chinese_group culture pool and both\n  forbid forming during the Red Turban Rebellions. A single Chinese\n  reunification run can form whichever you reach the gates for first;\n  S\u00f2ng is the Yangtze and southern coast formable, Tang is the\n  northern heartland plus Xinjiang.</li>\n<li>The Tarim Basin (Kashgar, Khotan, Turfan) is the slowest part of\n  the run. Plan the Hexi corridor conquest before you commit to TGD,\n  not after.</li>\n<li>The advance tree carries five DHE event chains: Anxi Protectorate\n  Restored, Perfecting the Imperial Examination, the Nestorian\n  Stele, Modao Infantry, and the Silk Road Renaissance. Most fire\n  conditional on the matching advance.</li>\n</ul>",
+      "priority_starters": [
         {
-          "tag": "MNZ",
+          "tag": "MNG",
+          "culture": "jianghuai_culture",
+          "religion": "sanjiao",
+          "owned_in_target": 0,
+          "note": "Ming. The Jianghuai-cultured Red Turban spawn that historically reunified China. Best base for the long western push to Kashgar. Wait for the Red Turban Rebellions to end, take Jingzhao (Xi'an), then march west across Gansu to the Tarim Basin."
+        },
+        {
+          "tag": "CSO",
+          "culture": "zhongyuan_culture",
+          "religion": "sanjiao",
+          "owned_in_target": 0,
+          "note": "S\u00f2ng (Han Lin'er's faction). Zhongyuan-cultured, well placed to seize Jingzhao after the rebellions. The Tang and S\u00f2ng formables share the same chinese_group culture pool, so a single CSO/MNG run can form whichever you reach the locations for first."
+        },
+        {
+          "tag": "CSI",
           "culture": "qin_culture",
-          "religion": "tibetan_buddhism",
-          "owned_in_target": 6,
-          "score": 11
+          "religion": "sanjiao",
+          "owned_in_target": 0,
+          "note": "Li Siqi's Qin-culture faction in Shaanxi. Sits directly on Jingzhao's doorstep. The fastest path to the western half of the requirements, but small and exposed during and after the rebellions."
+        },
+        {
+          "tag": "WUU",
+          "culture": "wu_culture",
+          "religion": "sanjiao",
+          "owned_in_target": 0,
+          "note": "Wu, the Yangtze delta faction. Strong economic base, but a longer continental march to Jingzhao and especially Kashgar. Viable if you snowball east China first."
         }
       ]
     },
@@ -6961,20 +7324,36 @@
         "catholic"
       ],
       "religion_group_gates": [],
-      "candidates": [
-        {
-          "tag": "ARA",
-          "culture": "catalan",
-          "religion": "catholic",
-          "owned_in_target": 47,
-          "score": 14
-        },
+      "candidates": [],
+      "notes_html": "<h2>Concept</h2>\n<p>The Knights of the Temple is the alt-history Templar successor that\nrefused the dissolution of 1312. The historical Order of Christ\n(Portugal, 1319) and Order of Montesa (Aragon, 1317) preserved\nfragments of Templar property and ritual; the mod merges those\nfragments back into a single sovereign brotherhood with the eight-pointed\ncross intact and the Castelo dos Templarios at Tomar as its capital.</p>\n<p>The fantasy is a state that is half military order, half medieval\nbanking house, and half Atlantic exploration corporation: the bills\nof exchange, the secret chapter, the Sagres navigation school, and\nthe cross-on-sail of Vasco da Gama, all institutionally unified\nunder the Pauperes Commilitones Christi rather than scattered across\nroyal patronage.</p>\n<p>The tag is TKT because vanilla EU5 already uses TEM and TPL elsewhere.</p>\n<h2>Forming it</h2>\n<p>The formable accepts Catholic Iberian, French, or British culture\ngroups, plus any country running <code>military_order_reform</code>.</p>\n<ol>\n<li><strong>Be Catholic.</strong> The <code>potential</code> requires <code>religion:catholic</code>.</li>\n<li><strong>Be in an eligible culture group</strong> (Iberian, French, or British)\n   or already running the military order reform.</li>\n<li><strong>Own Tomar.</strong> The convent at Tomar (Castelo dos Templarios) is\n   the institutional anchor. POR starts with it.</li>\n<li><strong>Own either Peniscola or Monzon.</strong> Both are Aragonese castles\n   with documented Templar history. Either satisfies the second\n   <code>allow</code> clause.</li>\n<li><strong>Hit 50 percent of south Portugal plus Valencia plus Aragon.</strong>\n   The fraction pool is the three areas combined; you need half of\n   the locations.</li>\n<li><strong>Form TKT.</strong> It is Level 3 plausible.</li>\n</ol>\n<p>POR direct path: form alliances, push to take Peniscola or Monzon,\nhold half the area pool. ARA direct path: push west into Portugal\nfor Tomar. CAS or a French/British starter: a longer Iberian\ncampaign that ends with the Templar Convent rather than a national\ncrown.</p>\n<h2>Pick your founding doctrine on formation</h2>\n<p>The formation event offers two 30-year doctrines. Each swings a\nsocietal value and gates one of the destiny paths.</p>\n<ul>\n<li><strong>The Old Order Restored</strong> (Bernard&rsquo;s Rule, the secret chapter,\n  the Beausant raised). The pre-1312 Templars refounded as they\n  were: bills of exchange, gnostic chapter rituals, brother-knight\n  commanderies. Pushes traditionalist_vs_innovative hard left.\n  Gates the Continental Commanderies destiny path (Path A, Shadow\n  Empire line).</li>\n<li><strong>The New Order of Christ</strong> (cross-of-Christ on the sail, Atlantic\n  mandate, papal reform). The Henry-the-Navigator framing: papal\n  sanction, Atlantic factories, the sail-cross of the Carreira da\n  India. Pushes land_vs_naval hard right (toward naval). Gates the\n  Atlantic Islands destiny path (Path B, Atlantic Imperium line).</li>\n</ul>\n<h2>What happens on formation</h2>\n<ul>\n<li>Mild stability bonus.</li>\n<li>Country rank rises to Kingdom if currently Duchy or below.</li>\n<li>The <code>clergy_military_orders</code> privilege is granted to the Clergy\n  estate, unlocking <code>military_order_reform</code> in the Government UI.</li>\n<li>The permanent <code>nd_tkt_militant_brotherhood</code> modifier (Sovereign\n  Order of the Temple) is applied immediately.</li>\n<li>Formation event fires with the two doctrine choices.</li>\n</ul>\n<h2>After forming</h2>\n<p>Tier 1 heritage covers the foundational Templar identity: the Tomar\nConvent, the bills of exchange, the Sagres navigation school, the\nsecret chapter, the Beausant gonfanon, the Atlantic factories, the\nBaphomet rumours, the Templar carrack, the Cartulary of Tomar. Each\ncomes with a DHE and a 15-year modifier choice.</p>\n<p>The destiny tree splits two ways:</p>\n<ul>\n<li><strong>Path A: Shadow Empire.</strong> Continental banking-and-court\n  penetration. Build commanderies at Avignon and Troyes, penetrate\n  the European courts as their treasurers, then the Shadow Empire\n  capstone (London, Rome, Lyon, gold and prestige reserves). Capstone\n  building is the <strong>Grand Chapter</strong>. Unlocked by the Old Order\n  Restored formation choice.</li>\n<li><strong>Path B: Atlantic Imperium.</strong> Atlantic exploration and trade\n  empire. Take the Atlantic islands (Funchal, Ponta Delgada,\n  Teguise), build African outposts (West African factor circuit),\n  then the Atlantic Imperium capstone (Sao Tome, Maxorata,\n  manufactories, capital sugar market). Capstone building is the\n  <strong>Atlantic Captain General</strong>. Unlocked by the New Order of Christ\n  formation choice.</li>\n</ul>\n<h2>Notes</h2>\n<ul>\n<li>The two formation modifiers run for 30 years (longer than HOS&rsquo;s 20),\n  reflecting that TKT is one tier higher (Level 3 vs Level 2).</li>\n<li>The destiny paths are deliberately divergent: Shadow Empire\n  rewards continental conquest and accumulated gold, Atlantic\n  Imperium rewards overseas exploration and the manufactories\n  institution. Pick the formation choice that matches your campaign,\n  not the prettier modifier sheet.</li>\n<li>TKT pairs thematically with HOS as the two sovereign military-\n  religious orders. HOS is Mediterranean-galley-medical; TKT is\n  Atlantic-banker-explorer.</li>\n</ul>",
+      "priority_starters": [
         {
           "tag": "POR",
           "culture": "portuguese",
           "religion": "catholic",
           "owned_in_target": 33,
-          "score": 14
+          "note": "Portugal owns Tomar at game start. Form a marriage of convenience or a quick war with Aragon for Peniscola, hit 50 percent of south Portugal plus Valencia plus Aragon, and the Templar Convent is yours. Strongest fit for the New Order of Christ path (Atlantic mandate, Sagres, sail-cross)."
+        },
+        {
+          "tag": "ARA",
+          "culture": "catalan",
+          "religion": "catholic",
+          "owned_in_target": 47,
+          "note": "Aragon already owns Peniscola and Monzon. The Tomar half is the work: take it from POR by war or alliance. Strong fit for either formation choice; geographically anchored on Valencia and Aragon, the eastern half of the formable."
+        },
+        {
+          "tag": "CAS",
+          "culture": "castilian",
+          "religion": "catholic",
+          "owned_in_target": 0,
+          "note": "Castile. Catholic Iberian, eligible by culture group. No starting cores in either Tomar or Peniscola/Monzon, but well placed to bully both POR and ARA into giving them up. Long-form imperial run; you become Templar Iberia rather than Castilian Iberia."
+        },
+        {
+          "tag": "KNI",
+          "culture": "french",
+          "religion": "catholic",
+          "owned_in_target": 0,
+          "note": "Already a sovereign military order under `military_order_reform`, so the second OR branch in `potential` accepts you directly. Geographically extreme (you start on Rhodes and need Tomar plus Peniscola or Monzon in Iberia). Only viable as a long alt-history pivot or via subjects."
         }
       ]
     },

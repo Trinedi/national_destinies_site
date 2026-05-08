@@ -733,17 +733,48 @@ function prettifyReligion(s) {
   return titleCase(s.replace(/_/g, " "));
 }
 
+function renderStarterRow(c, isPriority) {
+  const resolved = lookupLoc(c.tag);
+  const hasName = resolved && resolved !== c.tag;
+  const head = hasName
+    ? `<strong>${escapeHtml(resolved)}</strong> <code>${escapeHtml(c.tag)}</code>`
+    : `<strong>${escapeHtml(c.tag)}</strong>`;
+  const culture = c.culture ? `<span class="starter-meta">${escapeHtml(prettifyCulture(c.culture))}</span>` : "";
+  const religion = c.religion ? `<span class="starter-meta">${escapeHtml(prettifyReligion(c.religion))}</span>` : "";
+  const geo = c.owned_in_target > 0
+    ? `<span class="starter-meta">${c.owned_in_target} starting location${c.owned_in_target === 1 ? "" : "s"} in target</span>`
+    : "";
+  const note = c.note
+    ? `<div class="starter-note">${escapeHtml(c.note)}</div>`
+    : "";
+  const cls = isPriority ? "starter-row starter-row-priority" : "starter-row";
+  return (
+    `<div class="${cls}">` +
+    `<div class="starter-head">${head}</div>` +
+    `<div class="starter-meta-row">${culture}${religion}${geo}</div>` +
+    note +
+    `</div>`
+  );
+}
+
 function renderGuideTab(rec) {
   const guide = starters[rec.block_key];
   const body = [];
 
-  body.push(
-    '<p class="guide-intro">Tags ranked by how well they match the formation gates ' +
-    '(culture / religion if required) and how much of the required territory ' +
-    'they already control at game start.</p>'
-  );
+  if (guide && guide.notes_html) {
+    body.push(`<div class="guide-notes">${guide.notes_html}</div>`);
+  } else {
+    body.push(
+      '<p class="guide-intro">Tags ranked by how well they match the formation gates ' +
+      '(culture / religion if required) and how much of the required territory ' +
+      'they already control at game start.</p>'
+    );
+  }
 
-  if (!guide || !guide.candidates || guide.candidates.length === 0) {
+  const hasPriority = guide && Array.isArray(guide.priority_starters) && guide.priority_starters.length > 0;
+  const hasAuto = guide && Array.isArray(guide.candidates) && guide.candidates.length > 0;
+
+  if (!guide || (!hasPriority && !hasAuto)) {
     body.push(
       '<p class="guide-empty">No automatic recommendation. This formable either has ' +
       'no culture / religion / territory gates we can match against, or requires ' +
@@ -772,27 +803,19 @@ function renderGuideTab(rec) {
     body.push("</div>");
   }
 
-  body.push("<h3>Recommended starting tags</h3>");
-  body.push('<div class="starter-list">');
-  for (const c of guide.candidates) {
-    const resolved = lookupLoc(c.tag);
-    const hasName = resolved && resolved !== c.tag;
-    const head = hasName
-      ? `<strong>${escapeHtml(resolved)}</strong> <code>${escapeHtml(c.tag)}</code>`
-      : `<strong>${escapeHtml(c.tag)}</strong>`;
-    const culture = c.culture ? `<span class="starter-meta">${escapeHtml(prettifyCulture(c.culture))}</span>` : "";
-    const religion = c.religion ? `<span class="starter-meta">${escapeHtml(prettifyReligion(c.religion))}</span>` : "";
-    const geo = c.owned_in_target > 0
-      ? `<span class="starter-meta">${c.owned_in_target} starting location${c.owned_in_target === 1 ? "" : "s"} in target</span>`
-      : "";
-    body.push(
-      `<div class="starter-row">` +
-      `<div class="starter-head">${head}</div>` +
-      `<div class="starter-meta-row">${culture}${religion}${geo}</div>` +
-      `</div>`
-    );
+  if (hasPriority) {
+    body.push("<h3>Recommended starting tags</h3>");
+    body.push('<div class="starter-list">');
+    for (const c of guide.priority_starters) body.push(renderStarterRow(c, true));
+    body.push("</div>");
   }
-  body.push("</div>");
+
+  if (hasAuto) {
+    body.push(`<h3>${hasPriority ? "Other tags that qualify" : "Recommended starting tags"}</h3>`);
+    body.push('<div class="starter-list">');
+    for (const c of guide.candidates) body.push(renderStarterRow(c, false));
+    body.push("</div>");
+  }
 
   body.push(
     '<p class="guide-footnote">Heuristic: tags whose culture / religion satisfy the ' +

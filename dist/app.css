@@ -521,3 +521,53 @@ html, body { height: 100%; margin: 0; padding: 0; background: var(--bg-0); color
   color: var(--fg-2);
   font-size: 11px;
 }
+
+/* Hand-written guide notes (markdown-rendered) */
+.guide-notes {
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--fg-1);
+  margin: 0 0 12px;
+}
+.guide-notes h1, .guide-notes h2, .guide-notes h3 {
+  margin: 14px 0 6px;
+  color: var(--fg-0);
+  font-size: 13px;
+  font-weight: 600;
+}
+.guide-notes h1:first-child, .guide-notes h2:first-child, .guide-notes h3:first-child {
+  margin-top: 0;
+}
+.guide-notes p {
+  margin: 0 0 8px;
+}
+.guide-notes ul, .guide-notes ol {
+  margin: 0 0 8px;
+  padding-left: 20px;
+}
+.guide-notes li {
+  margin: 0 0 4px;
+}
+.guide-notes a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.guide-notes a:hover { text-decoration: underline; }
+.guide-notes code {
+  background: var(--bg-3);
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-size: 11px;
+}
+
+/* Priority starters get a subtle accent border */
+.starter-row-priority {
+  border-left: 3px solid var(--accent);
+}
+.starter-note {
+  margin-top: 6px;
+  font-size: 11px;
+  line-height: 1.45;
+  color: var(--fg-1);
+  font-style: italic;
+}

@@ -334,12 +334,58 @@ def score_candidate(tag: str, country: dict, target_locs: set[str],
     }
 
 
+FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n", re.DOTALL)
+
+
+def parse_guide_file(path: Path):
+    """Return (frontmatter_dict, html_body) for a guide markdown file."""
+    import markdown
+    text = path.read_text(encoding="utf-8")
+    fm: dict = {}
+    body = text
+    m = FRONTMATTER_RE.match(text)
+    if m:
+        try:
+            fm = yaml.safe_load(m.group(1)) or {}
+        except yaml.YAMLError as e:
+            print(f"warn: bad frontmatter in {path.name}: {e}", file=sys.stderr)
+            fm = {}
+        body = text[m.end():]
+    html = markdown.markdown(body, extensions=["extra", "smarty"]) if body.strip() else ""
+    return fm, html
+
+
+def load_guide_overrides(guides_dir: Path) -> dict[str, dict]:
+    """Map block_key -> {notes_html, priority_starters, hide_auto, ...}."""
+    out: dict[str, dict] = {}
+    if not guides_dir.exists():
+        return out
+    for path in sorted(guides_dir.glob("*.md")):
+        block_key = path.stem  # filename = block_key (e.g. YAV_f)
+        fm, html = parse_guide_file(path)
+        priority = []
+        for entry in fm.get("priority_starters") or []:
+            if not isinstance(entry, dict) or not entry.get("tag"):
+                continue
+            priority.append({
+                "tag": entry["tag"],
+                "note": entry.get("note") or entry.get("why") or "",
+            })
+        out[block_key] = {
+            "notes_html": html.strip(),
+            "priority_starters": priority,
+            "hide_auto": bool(fm.get("hide_auto")),
+        }
+    return out
+
+
 def main() -> int:
     repo_root = Path(__file__).resolve().parent.parent.parent
     with open(repo_root / "build.config.yaml") as f:
         cfg = yaml.safe_load(f)
     eu5 = expand_path(cfg["eu5_game_root"])
     web_data_dir = repo_root / cfg["build"]["web_data_dir"]
+    guides_dir = repo_root / "data" / "guides"
 
     setup_dir = eu5 / "in_game/setup/countries"
     start_path = eu5 / "main_menu/setup/start/10_countries.txt"
@@ -372,11 +418,16 @@ def main() -> int:
     area_to_locs = build_area_to_locations(geography)
     region_to_locs = build_region_to_locations(geography, area_to_locs)
 
+    print(f"reading hand-written guides ({guides_dir}) ...")
+    overrides = load_guide_overrides(guides_dir)
+    print(f"  {len(overrides)} guide overrides loaded")
+
     out: dict[str, dict] = {}
     skipped_no_gates = 0
     total_candidates = 0
     for rec in formables_doc["formables"]:
         block_key = rec["block_key"]
+        override = overrides.get(block_key)
         cultures, culture_grps, religions, religion_grps = extract_gates(rec.get("potential_raw"))
         # Combine allow_raw too; some formables put location-or-religion gates there.
         if rec.get("allow_raw"):
@@ -384,36 +435,66 @@ def main() -> int:
             cultures |= ac; culture_grps |= agc; religions |= ar; religion_grps |= agr
         target_locs = formable_target_locations(rec, area_to_locs, region_to_locs)
 
-        if not (cultures or culture_grps or religions or religion_grps or target_locs):
+        has_gates = bool(cultures or culture_grps or religions or religion_grps or target_locs)
+        if not has_gates and not override:
             skipped_no_gates += 1
             continue
 
         scored: list[tuple[int, dict]] = []
-        for tag, country in countries.items():
-            res = score_candidate(
-                tag, country, target_locs,
-                cultures, culture_grps, religions, religion_grps,
-                culture_groups, religion_groups,
-            )
-            if res is None:
-                continue
-            scored.append(res)
+        if has_gates:
+            for tag, country in countries.items():
+                res = score_candidate(
+                    tag, country, target_locs,
+                    cultures, culture_grps, religions, religion_grps,
+                    culture_groups, religion_groups,
+                )
+                if res is None:
+                    continue
+                scored.append(res)
 
         # Don't recommend the formable's own tag.
         scored = [s for s in scored if s[1]["tag"] != rec.get("tag")]
         scored.sort(key=lambda s: (-s[0], s[1]["tag"]))
 
-        if not scored:
+        if not scored and not override:
             continue
+
+        # Strip auto-derived candidates already covered by priority_starters
+        # so the lower list doesn't repeat the curated picks.
+        priority = override["priority_starters"] if override else []
+        priority_tags = {p["tag"] for p in priority}
+        auto = [c[1] | {"score": c[0]} for c in scored[:8] if c[1]["tag"] not in priority_tags]
+        if override and override.get("hide_auto"):
+            auto = []
 
         out[block_key] = {
             "culture_gates": sorted(cultures),
             "culture_group_gates": sorted(culture_grps),
             "religion_gates": sorted(religions),
             "religion_group_gates": sorted(religion_grps),
-            "candidates": [c[1] | {"score": c[0]} for c in scored[:8]],
+            "candidates": auto,
         }
-        total_candidates += len(out[block_key]["candidates"])
+        if override:
+            if override.get("notes_html"):
+                out[block_key]["notes_html"] = override["notes_html"]
+            if priority:
+                # Enrich curated picks with the same culture/religion/territory
+                # data we show for auto-derived entries, so the row layout matches.
+                enriched = []
+                for p in priority:
+                    country = countries.get(p["tag"], {})
+                    overlap = sum(
+                        1 for l in country.get("locations", []) if l in target_locs
+                    ) if target_locs else 0
+                    enriched.append({
+                        "tag": p["tag"],
+                        "culture": country.get("culture"),
+                        "religion": country.get("religion"),
+                        "owned_in_target": overlap,
+                        "note": p.get("note") or "",
+                    })
+                out[block_key]["priority_starters"] = enriched
+        total_candidates += len(auto) + len(priority)
 
     out_path = web_data_dir / "starters.json"
     with open(out_path, "w") as f:

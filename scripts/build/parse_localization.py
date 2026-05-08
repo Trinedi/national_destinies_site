@@ -102,11 +102,12 @@ def collect_seed_keys(web_data_dir: Path) -> set[str]:
     if starters_path.exists():
         starters = json.loads(starters_path.read_text()).get("guides", {})
         for guide in starters.values():
-            for c in guide.get("candidates", []):
-                tag = c.get("tag")
-                if tag:
-                    needed.add(tag)
-                    needed.add(tag + "_ADJ")
+            for bucket in ("candidates", "priority_starters"):
+                for c in guide.get(bucket, []) or []:
+                    tag = c.get("tag")
+                    if tag:
+                        needed.add(tag)
+                        needed.add(tag + "_ADJ")
     return needed
 
 
