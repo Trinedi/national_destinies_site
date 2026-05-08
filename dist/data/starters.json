@@ -6031,6 +6031,54 @@
         }
       ]
     },
+    "BNH_f": {
+      "culture_gates": [],
+      "culture_group_gates": [],
+      "religion_gates": [
+        "miaphysite",
+        "nestorianism"
+      ],
+      "religion_group_gates": [],
+      "candidates": [],
+      "notes_html": "<h2>Concept</h2>\n<p>Beth Nahrain (Syriac for &ldquo;between rivers&rdquo;, the medieval self-designation\nof Mesopotamia) is the Tier 1 stage of a two-step Syriac restoration\nchain. It represents the medieval Syriac Christian polity that almost\nformed: Tur Abdin maintained de facto autonomy under successive\noverlords into the 14th century, the Patriarchate of the East at\nSeleucia-Ctesiphon retained quasi-political authority over a vast\nChristian diaspora, and the County of Edessa (1098 to 1144) was a real\nCrusader-Syriac hybrid state. BNH consolidates these threads into a\nformal Syriac Christian duchy ruling upper Mesopotamia.</p>\n<p>Forming BNH is a survival and restoration story, not an imperial one.\nThe formation event commits you to one of three doctrines:\n<strong>Patriarchal Restoration</strong> (clergy-led patriarchate state),\n<strong>Tur Abdin Defenders</strong> (monastic-warrior highland kingdom), or\n<strong>Edessene Renaissance</strong> (Latin-Syriac cosmopolitan hybrid). Each\nsets a 25-year timed modifier and a destiny path variable.</p>\n<p>BNH is <strong>Tier 1 of a chain.</strong> Tier 2 is the L4 Assyrian Empire (NIN),\nwhich gates on having previously formed BNH. Forming BNH is the\nfoundation step, not the destination.</p>\n<h2>Why no auto-recommendation</h2>\n<p>The formation gate requires miaphysite or nestorianism religion. No\ncountry starts as nestorianism, so the auto-derived list of nestorian\ncandidates is empty. The miaphysite list is mostly Ethiopian or Nubian\ntags that are geographically too distant from the Mesopotamian\nheartland. The Caucasian Armenian principalities and ATZ are the\npractical paths, and they need calling out by hand.</p>\n<p>Cilicia (CIL) is the biggest miss from this list. It is miaphysite and\ngeographically adjacent to the Edessa zone, but it starts at Kingdom\nrank, which makes it ineligible for the Duchy-tier BNH formable. CIL\nplayers should target Tier 2 NIN directly instead, which has a parallel\nkingdom-rank path.</p>\n<h2>Forming it</h2>\n<ol>\n<li><strong>Pick a small Caucasian Armenian principality</strong> (Khachen, Syunik,\n   Amberd, Vayots Dzor) or <strong>ATZ</strong> for the geographically simplest\n   path. Avoid Cilicia, Greater Armenia, Ethiopia, and any other tag\n   that starts above County rank.</li>\n<li><strong>Survive the early Mongol-successor pressure.</strong> Most candidate\n   tags begin as Ilkhanid vassals or under similar overlordship.\n   Either ride out the Ilkhanate collapse or escape vassalage early.</li>\n<li><strong>Conquer the three required locations.</strong> Mosul (Nineveh), Nusaybin\n   (Tur Abdin core), and Urfa (Edessa). Mosul is the hardest, usually\n   under Iraqi or Mongol-successor control. Nusaybin sits in the same\n   neighborhood. Urfa is in the contested Edessa-Cilicia frontier zone.</li>\n<li><strong>Hold 40 percent of the wider Jazira area.</strong> The fraction\n   requirement is loose because the three named cities already gate\n   most of the relevant territory.</li>\n<li><strong>Pick your formation path.</strong> Patriarch&rsquo;s Restoration leans into\n   clergy power, conversion speed, and cultural tradition. Tur Abdin\n   Defenders is the militarist option (garrison, manpower, attrition\n   pressure on invaders). Edessene Renaissance is the diplomat-trader\n   option (diplomatic capacity, trade efficiency, prestige).</li>\n</ol>\n<h2>What happens on formation</h2>\n<ul>\n<li><strong>Capital moves to Mosul (Nineveh).</strong></li>\n<li><strong>Country culture flips to Syriac.</strong> State pops of Armenian, Iraqi,\n  and Kurdish culture also convert to Syriac.</li>\n<li><strong>Country rank set to Duchy</strong> if you were below it. This is what\n  makes the Tier 2 NIN formable reachable next, since NIN at L4 needs\n  a current rank below Empire.</li>\n<li><strong>Stability bonus.</strong></li>\n<li><strong>Formation event fires</strong> with the three doctrine choices.</li>\n</ul>\n<h2>Notes</h2>\n<ul>\n<li>The destiny tree splits two ways: <strong>Path A &ldquo;Restoration of A\u0161\u0161ur&rdquo;</strong>\n  (gates from the Tur Abdin Defenders formation choice, signposts\n  toward forming Tier 2 NIN) and <strong>Path B &ldquo;Light of the East&rdquo;</strong> (gates\n  from the Patriarchal Restoration formation choice, a complete\n  civilizational endgame as the Christian-Syriac intermediary between\n  Latin west and the Far East).</li>\n<li>The Edessene Renaissance formation choice has no destiny continuation\n  by design. Pick it only if you want the formation modifier without\n  pursuing either destiny.</li>\n<li>BNH is the first intentional formable to formable chain in the mod.\n  Forming BNH unlocks NIN as a downstream goal, but BNH itself is also\n  a complete formable with its own heritage tree, advances, custom\n  buildings (Catholicate Palace, Tur Abdin Monastery, Bar Hebraeus\n  Library, Jundishapur Medical School, others), and destiny capstones\n  (Ziggurat of A\u0161\u0161ur for Path A, Beth Hekma for Path B).</li>\n</ul>",
+      "priority_starters": [
+        {
+          "tag": "ATZ",
+          "culture": "armenian_culture",
+          "religion": "miaphysite",
+          "owned_in_target": 0,
+          "note": "Already adjacent to the Mesopotamian heartland. Geographically the most natural BNH path: Mosul, Nusaybin and Urfa are all close to start. Strongest entry point if available."
+        },
+        {
+          "tag": "KCN",
+          "culture": "armenian_culture",
+          "religion": "miaphysite",
+          "owned_in_target": 0,
+          "note": "Khachen, the Hasan-Jalalyan Armenian principality in modern Karabakh. Small enough to remain at low rank for the L2 formation gate. Long southwest push to reach the heartland."
+        },
+        {
+          "tag": "SYU",
+          "culture": "armenian_culture",
+          "religion": "miaphysite",
+          "owned_in_target": 0,
+          "note": "Syunik, an Armenian principality south of Lake Sevan. Same scale and path as Khachen. Mongol overlordship at start; the Ilkhanid collapse opens the southern frontier."
+        },
+        {
+          "tag": "AMB",
+          "culture": "armenian_culture",
+          "religion": "miaphysite",
+          "owned_in_target": 0,
+          "note": "Amberd, a small Armenian noble house. Tighter geography than Khachen or Syunik but identical doctrinal positioning."
+        },
+        {
+          "tag": "VDZ",
+          "culture": "armenian_culture",
+          "religion": "miaphysite",
+          "owned_in_target": 0,
+          "note": "Vayots Dzor, another Caucasian Armenian micropolity. Only worth picking if you want a deliberately constrained start."
+        }
+      ]
+    },
     "CDA_f": {
       "culture_gates": [
         "aragonese",
@@ -6511,13 +6559,29 @@
         "nestorianism"
       ],
       "religion_group_gates": [],
-      "candidates": [
+      "candidates": [],
+      "notes_html": "<h2>Concept</h2>\n<p>The Assyrian Empire (tag NIN, after Nineveh, since vanilla EU5 already\nuses ASR for Astarabad in Persia) is the Tier 2 endgame of the Syriac\nrestoration chain. It represents the imperial peak of the Neo-Assyrian\nempire under Esarhaddon and Ashurbanipal, channeled through medieval\nSyriac Christian institutions.</p>\n<p>The historical reference is the 671 BC Sargonid peak: direct rule over\nnorthern Mesopotamia, Babylonia, Elam, the Levant, Cyprus, and Egypt\nitself (Memphis taken 671 BC, Thebes sacked 663 BC), with tributary\nreach across Anatolia and western Iran. Roughly 1.4 million km square\nof direct control plus another 1 million km square in tributaries.</p>\n<p>NIN&rsquo;s medieval Syriac framing makes the Patriarchate of the East the\npolitical nucleus of the imperial revival. The Catholicos at Seleucia\ncrowns the Assyrian emperor at the rebuilt Akitu altar. Aramaic civil\nservice, Bar Hebraeus library scholarship, and Tur Abdin monastic\ndefense from the Tier 1 BNH stage are now the foundation institutions\nof a Sargonid-tier empire.</p>\n<h2>Why no auto-recommendation</h2>\n<p>The formation gate is unusual. It requires miaphysite or nestorianism\nreligion AND one of: had-tag BNH, Kingdom rank, or Empire rank. The\nauto-derived list of miaphysite countries that meet a Kingdom-rank\nfilter is short and dominated by Ethiopian Empire successors who are\ngeographically too distant to be a realistic path. The genuinely\nviable starters are BNH (after the Tier 1 chain step) and Cilicia,\nboth of which need calling out by hand.</p>\n<h2>Forming it</h2>\n<p>There are two paths.</p>\n<h3>Path 1: The chain (BNH first, then NIN)</h3>\n<ol>\n<li><strong>Form BNH</strong> following the BNH guide. Pick a small Caucasian Armenian\n   principality or ATZ, conquer Mosul, Nusaybin, and Urfa, and form Tier 1.</li>\n<li><strong>Choose Tur Abdin Defenders or Patriarch&rsquo;s Restoration</strong> at BNH\n   formation. Both unlock destiny paths. Tur Abdin Defenders flows into\n   &ldquo;Restoration of A\u0161\u0161ur&rdquo; Path A which signposts directly toward NIN.</li>\n<li><strong>Build out BNH&rsquo;s heritage tree.</strong> Kisir-style standing army\n   prerequisites, riverine logistics, monastic recruitment, qanat\n   infrastructure. Stack BNH&rsquo;s Path A destiny as you push imperial.</li>\n<li><strong>Conquer the imperial peak.</strong> The five required locations are\n   Mosul, Baghdad, Damascus, Cairo, and either Shush (ancient Susa,\n   the eastern frontier per Ashurbanipal) or Tarsus (the Cilician\n   frontier per Sargon II). Plus 60 percent of Crescent and Egypt\n   regions and the Khuzestan and Cilicia areas.</li>\n<li><strong>Form NIN.</strong> Country rank rises to Empire. Capital is set to\n   Mosul. Stability gets a severe bonus. The formation event fires.</li>\n</ol>\n<h3>Path 2: Cilicia direct (skip BNH)</h3>\n<ol>\n<li><strong>Start as Cilicia.</strong> Already miaphysite, already at Kingdom rank,\n   already adjacent to the Edessa frontier.</li>\n<li><strong>Skip BNH.</strong> Cilicia is too high rank for Tier 1, so go straight\n   for the L4 conquest.</li>\n<li><strong>Take all five required locations</strong> (Mosul, Baghdad, Damascus,\n   Cairo, plus Shush or Tarsus) and the 60 percent fraction.</li>\n<li><strong>Form NIN.</strong> Cilicia&rsquo;s primary culture is Armenian; on formation\n   the form effect changes country culture to Syriac and converts\n   Armenian, Iraqi, Kurdish, Levantine, Turkish, Farsi, Coptic, and\n   Egyptian state pops to Syriac. Country rank rises to Empire.</li>\n</ol>\n<p>The chain path gives you twenty-five years of BNH&rsquo;s Tier 1 institutions\nto draw on, plus a fully built-out heritage tree before you start the\nimperial conquest. The Cilicia direct path is faster and avoids the\nTier 1 detour, but you start the imperial campaign without the BNH\ninvestments.</p>\n<h2>Pick your founding doctrine on formation</h2>\n<p>The formation event offers three 40-year doctrines:</p>\n<ul>\n<li><strong>Sargonid Imperium.</strong> Military-conquest doctrine. Channel the\n  Neo-Assyrian war machine: kisir sharruti standing army,\n  qurubuti royal guard, siege engineering. Stat focus: morale,\n  discipline, siege ability, manpower, attrition reduction.</li>\n<li><strong>Pax Assyriaca.</strong> Administrative-imperial doctrine. The Sargonid\n  provincial system, Aramaic civil service, deportation and integration\n  practice as a tool of empire. Stat focus: cabinet efficiency,\n  control, assimilation speed, integration speed, infrastructure.</li>\n<li><strong>The Cross and the Lamassu.</strong> Civilizational synthesis doctrine.\n  Patriarch and emperor in one ritual, ancient Assyrian symbolism\n  reframed Christian. Stat focus: tolerance, cultural influence,\n  prestige, missionary networks.</li>\n</ul>\n<h2>Destiny</h2>\n<p>Two paths after formation:</p>\n<ul>\n<li><strong>Path A: Pax Sargonica.</strong> Push beyond the historical Neo-Assyrian\n  peak. Required conquests reach Anatolia (Konya, Kayseri, Ankara,\n  Smyrna), deeper Iran (Hamadan, Istakhr), and the Achaemenid east\n  (Samarkand, Peshawar). Capstone building is <strong>B\u012bt-M\u0101t\u0101ti</strong>, the Hall\n  of the Lands, a universal-empire throne hall. Maps from the Sargonid\n  Imperium formation choice.</li>\n<li><strong>Path B: New Mesopotamia.</strong> Civilizational hegemon. Empire-wide Beth\n  Hekma libraries, Aramaic as a global lingua franca, Christian\n  missionary networks from Iberia to China, Tigris-Euphrates riverine\n  infrastructure as the world&rsquo;s economic spine. Capstone building is\n  the <strong>Imperial Canal of Sennacherib</strong>. Maps from The Cross and the\n  Lamassu formation choice.</li>\n</ul>\n<p>The Pax Assyriaca formation choice has no destiny continuation by\ndesign. Pick it only if you want the formation modifier without\ncommitting to either destiny path. This follows the same convention\nas HIN, IRA, JAP, and USA, where one of three formation options is a\nflavor doctrine without a destiny tree.</p>\n<h2>What happens on formation</h2>\n<ul>\n<li><strong>Capital moves to Mosul (Nineveh).</strong></li>\n<li><strong>Country culture flips to Syriac</strong> for non-Syriac formers.\n  State pops of every plausible Eastern conquered culture\n  (Armenian, Iraqi, Kurdish, Levantine, Turkish, Farsi, Coptic, both\n  Egyptian variants) convert to Syriac.</li>\n<li><strong>Country rank set to Empire</strong> if below it.</li>\n<li><strong>Severe stability bonus.</strong></li>\n<li><strong>Formation event fires</strong> with the three doctrine choices.</li>\n</ul>\n<h2>Notes</h2>\n<ul>\n<li>This is the Tier 2 capstone of the first intentional formable to\n  formable chain in the mod. Most chains in the game (BYZ to ROM, JAP\n  to YMP, MAM to AEG) connect a starting tag to a single formable.\n  BNH to NIN connects two formables, with BNH itself being a Tier 1\n  that has to be earned from a smaller starting tag.</li>\n<li>Custom content includes Lamassu Gate, Imperial Chancery, Riverine\n  Naval Yard, Akitu Festival Square, Kisir Sharruti Barracks, Library\n  of Ashurbanipal, Khorsabad Palace, plus Kisir Sharruti standing\n  infantry, Qurubuti royal cavalry, Imperial Siege Corps, and Aramean\n  Auxiliary levy.</li>\n<li>NIN heritage advances deliberately do not duplicate BNH themes.\n  BNH covers patriarchate, monasticism, Bar Hebraeus scholarship,\n  qanats, and Mosul-Baghdad caravans. NIN adds the Sargonid imperial\n  layer on top: standing army, deportation administration, Khorsabad\n  monumentalism, Library of Ashurbanipal, Aramaic civil service at\n  imperial scale, Akitu coronation ritual.</li>\n</ul>",
+      "priority_starters": [
+        {
+          "tag": "BNH",
+          "culture": null,
+          "religion": null,
+          "owned_in_target": 0,
+          "note": "Form BNH (Beth Nahrain) first as the Tier 1 step. After forming, you are a Syriac duchy with the Tur Abdin militarist heritage tree already in place. Path A (Restoration of A\u0161\u0161ur) signposts directly to NIN. This is the chain's intended path."
+        },
         {
           "tag": "CIL",
           "culture": "armenian_culture",
           "religion": "miaphysite",
           "owned_in_target": 12,
-          "score": 10
+          "note": "Cilicia, the Armenian Kingdom of Lesser Armenia. Kingdom rank already, miaphysite religion, geographically adjacent to the Edessa frontier. Cannot form BNH (Kingdom rank is too high for the Duchy-tier Tier 1) so it goes directly to NIN via the parallel kingdom-rank gate. Form effect converts Cilicia to Syriac on formation."
+        },
+        {
+          "tag": "ETH",
+          "culture": "amhara",
+          "religion": "miaphysite",
+          "owned_in_target": 0,
+          "note": "Ethiopia. Miaphysite at Kingdom or Empire rank, technically eligible for the direct kingdom-rank path. Geographically extremely distant: the conquest of Mesopotamia, Levant and Egypt is a much longer campaign than from Cilicia. Only viable in a long late-game push."
         }
       ]
     },
@@ -6977,6 +7041,41 @@
           "religion": "hindu",
           "owned_in_target": 36,
           "score": 10
+        }
+      ]
+    },
+    "YAV_f": {
+      "culture_gates": [
+        "sindhi"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [
+        "sammitiya"
+      ],
+      "religion_group_gates": [],
+      "candidates": [],
+      "notes_html": "<h2>Concept</h2>\n<p>The Yavana Empire is a revival of the Indo-Greek Buddhist legacy of\nBactria and Gandhara, refracted through a Sindhi political base.\nForming it flips your primary culture from Sindhi to Yavana and\nlocks in either a martial <em>Phalanx Reborn</em> path or a contemplative\n<em>Dharma of the Yavana</em> path through the formation event.</p>\n<p>The formation gates are unusual: your country must be <strong>Sindhi\nculture</strong> and follow the <strong>Sammitiya</strong> Buddhist sect. No tag starts\nas Sammitiya, so the religion flip is part of the run, not a\nprerequisite you can shop for at game start.</p>\n<h2>Forming it</h2>\n<ol>\n<li><strong>Start as a Sindhi tag</strong> (SND, SMA, or KHZ).</li>\n<li><strong>Convert to Sammitiya.</strong> Sindhi-culture tags begin Sunni or Shia,\n   so you need a religion flip into the Buddhist family and onto the\n   Sammitiya sect specifically. Easiest path: religious revolt,\n   missionary conversion of your capital, or an estate-driven\n   conversion event chain.</li>\n<li><strong>Hold the cores.</strong> The <code>allow</code> block requires you to own\n   <strong>Thatta</strong> (Sindh) and <strong>Peshawar</strong> (Punjab). SND already starts\n   with Thatta; Peshawar belongs to a Punjabi neighbour and must be\n   taken by war or vassalisation.</li>\n<li><strong>Hit 65% of Sindh + Punjab.</strong> Beyond the two named locations,\n   you need a fraction of the wider territory pool.</li>\n<li><strong>Pick your path on formation.</strong> The formation event offers\n   <em>Phalanx Reborn</em> (military, quality-leaning society) or\n   <em>Dharma of the Yavana</em> (spiritual, humanist-leaning).</li>\n</ol>\n<h2>Notes</h2>\n<ul>\n<li>The formation event auto-converts every Sindhi pop you own to\n  Yavana culture, so don&rsquo;t grind cultural conversion before forming.</li>\n<li>Capital is force-set to Peshawar on formation.</li>\n</ul>",
+      "priority_starters": [
+        {
+          "tag": "SND",
+          "culture": "sindhi",
+          "religion": "shia",
+          "owned_in_target": 17,
+          "note": "Sindhi at start and already owns Thatta. The cleanest entry point; push north to Peshawar."
+        },
+        {
+          "tag": "SMA",
+          "culture": "sindhi",
+          "religion": "sunni",
+          "owned_in_target": 25,
+          "note": "Samma. Sindhi-cultured neighbour holding most of Sindh; unify the region, then take Thatta and march for Peshawar."
+        },
+        {
+          "tag": "KHZ",
+          "culture": "sindhi",
+          "religion": "sunni",
+          "owned_in_target": 0,
+          "note": "Khuzdar. The western Sindhi option. Longer march to both Thatta and Peshawar but a viable underdog start."
         }
       ]
     },
