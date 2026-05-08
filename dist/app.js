@@ -143,7 +143,7 @@ async function loadAll() {
     rec._displayName = displayName(rec);
     rec._description = description(rec);
     rec._adjective = lookupLoc(rec.adjective);
-    rec._color = colorForTag(rec.tag || rec.block_key);
+    rec._color = rec.color_rgb || colorForTag(rec.tag || rec.block_key);
     rec._haystack = (
       (rec._displayName || "") + " " + (rec.tag || "") + " " + rec.block_key
     ).toLowerCase();

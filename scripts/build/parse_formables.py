@@ -31,6 +31,86 @@ def expand_path(p: str) -> Path:
     return Path(os.path.expanduser(p)).resolve()
 
 
+# --- Named color resolution ------------------------------------------------
+
+NAMED_COLOR_RE = re.compile(
+    r"\b([a-zA-Z_][a-zA-Z0-9_]*)\s*=\s*(rgb|hsv360|hsv)\s*\{\s*"
+    r"([\d.]+)\s+([\d.]+)\s+([\d.]+)\s*\}"
+)
+
+
+def _hsv_to_rgb(h: float, s: float, v: float) -> tuple[int, int, int]:
+    # h: 0-360, s/v: 0-100 (game uses hsv360 with 0-100 percent)
+    import colorsys
+    r, g, b = colorsys.hsv_to_rgb((h % 360) / 360.0, s / 100.0, v / 100.0)
+    return (round(r * 255), round(g * 255), round(b * 255))
+
+
+def parse_named_colors(*color_dirs: Path) -> dict[str, tuple[int, int, int]]:
+    """Parse `colors = { name = rgb {...} }` blocks from every file in the dirs.
+
+    Later directories override earlier ones (mod overrides vanilla).
+    """
+    out: dict[str, tuple[int, int, int]] = {}
+    for d in color_dirs:
+        if not d.exists():
+            continue
+        for path in sorted(d.glob("*.txt")):
+            text = strip_comments(path.read_text(encoding="utf-8-sig"))
+            for m in NAMED_COLOR_RE.finditer(text):
+                name, kind, a, b, c = m.groups()
+                fa, fb, fc = float(a), float(b), float(c)
+                if kind == "rgb":
+                    out[name] = (int(fa), int(fb), int(fc))
+                else:  # hsv / hsv360
+                    out[name] = _hsv_to_rgb(fa, fb, fc)
+    return out
+
+
+def _tag_hash(s: str) -> int:
+    # FNV-1a 32-bit, deterministic across Python runs
+    h = 0x811C9DC5
+    for ch in s.encode("utf-8"):
+        h ^= ch
+        h = (h * 0x01000193) & 0xFFFFFFFF
+    return h
+
+
+def _rgb_to_hsl(r: int, g: int, b: int) -> tuple[float, float, float]:
+    import colorsys
+    h, l, s = colorsys.rgb_to_hls(r / 255.0, g / 255.0, b / 255.0)
+    return (h * 360.0, s * 100.0, l * 100.0)
+
+
+def _hsl_to_hex(h: float, s: float, l: float) -> str:
+    import colorsys
+    r, g, b = colorsys.hls_to_rgb((h % 360) / 360.0, max(0, min(1, l / 100.0)), max(0, min(1, s / 100.0)))
+    return "#{:02x}{:02x}{:02x}".format(round(r * 255), round(g * 255), round(b * 255))
+
+
+def resolve_color(color_name: str | None, tag: str | None,
+                  named: dict[str, tuple[int, int, int]]) -> str | None:
+    """Resolve a formable's color to a hex string with a small per-tag nudge.
+
+    The base RGB comes from the named color (matching the in-game tint).
+    A deterministic per-tag hash shifts hue by ~±4 degrees and lightness
+    by ~±4 percent so multiple formables sharing one named color stay
+    visually distinguishable while remaining clearly the same family.
+    """
+    if not color_name:
+        return None
+    rgb = named.get(color_name)
+    if rgb is None:
+        return None
+    if not tag:
+        return "#{:02x}{:02x}{:02x}".format(*rgb)
+    h, s, l = _rgb_to_hsl(*rgb)
+    th = _tag_hash(tag)
+    hue_nudge = ((th & 0xFF) / 255.0 - 0.5) * 8.0          # ±4 deg
+    light_nudge = (((th >> 8) & 0xFF) / 255.0 - 0.5) * 8.0  # ±4 percent
+    return _hsl_to_hex(h + hue_nudge, s, l + light_nudge)
+
+
 HEADER_RE = re.compile(
     r"((?:INJECT|REPLACE):)?([A-Za-z_][A-Za-z0-9_]*_f)\s*=\s*\{"
 )
@@ -361,6 +441,25 @@ def main() -> int:
     merged = merge(vanilla, mod)
     apply_territory_overrides(merged, cfg.get("territory_overrides") or {})
     annotate_variants(merged)
+
+    # Resolve in-game named colors to hex with a per-tag nudge so siblings
+    # sharing a named color (e.g. several Scandinavian tags) stay distinct.
+    named_dirs = [
+        eu5 / "main_menu/common/named_colors",
+        mod_root / "main_menu/common/named_colors",
+    ]
+    named_colors = parse_named_colors(*named_dirs)
+    print(f"resolved {len(named_colors)} named colors")
+    n_resolved = 0
+    n_unresolved = 0
+    for r in merged:
+        rgb_hex = resolve_color(r.get("color"), r.get("tag") or r.get("block_key"), named_colors)
+        if rgb_hex:
+            r["color_rgb"] = rgb_hex
+            n_resolved += 1
+        elif r.get("color"):
+            n_unresolved += 1
+    print(f"  color_rgb assigned to {n_resolved} formables; {n_unresolved} unresolved color refs")
     by_source: dict[str, int] = {}
     for r in merged:
         by_source[r["source"]] = by_source.get(r["source"], 0) + 1
