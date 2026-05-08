@@ -3772,7 +3772,7 @@
       "flag": "BYZ",
       "color": "map_BYZ",
       "level": 4,
-      "fraction": 0.5,
+      "fraction": 0.85,
       "rule": "historical",
       "content_priority": null,
       "regions": [
@@ -3785,9 +3785,13 @@
       "sub_continents": [],
       "continents": [],
       "must_own": [
-        "constantinople"
+        "constantinople",
+        "athens",
+        "smyrna",
+        "iznik",
+        "trebizond"
       ],
-      "allow_raw": "religion = religion:orthodox\n\t\towns = location:constantinople",
+      "allow_raw": "religion = religion:orthodox\n\t\towns = location:constantinople    \n\t\towns = location:athens            \n\t\towns = location:smyrna            \n\t\towns = location:iznik             \n\t\towns = location:trebizond",
       "potential_raw": "culture = { has_culture_group = culture_group:greek_group }",
       "form_effect_raw": "if = {\n\t\t\tlimit = {\n\t\t\t\tNOR = {\n\t\t\t\t\tcapital = location:constantinople\n\t\t\t\t\tcapital = location:rome\n\t\t\t\t}\n\t\t\t}\n\t\t\tset_capital = location:constantinople\n\t\t}\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\ttrigger_event_non_silently = nd_byz.1\n\t\tadd_stability = stability_severe_bonus",
       "formation_event": "nd_byz.1",
@@ -3808,6 +3812,22 @@
         {
           "kind": "atom",
           "text": "Owns Constantinople"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Athens"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Smyrna"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Iznik"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Trebizond"
         }
       ]
     },
