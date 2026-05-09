@@ -2762,8 +2762,8 @@
         "rome",
         "constantinople"
       ],
-      "allow_raw": "owns = location:rome\n\t\towns = location:constantinople\n\t\tcountry_rank = country_rank:rank_empire\n\t\tis_hegemon = yes\n\n\t\tOR = {\n\t\t\thas_or_had_tag = BYZ\n\t\t\tNOT = { country_exists = c:BYZ }\n\t\t}\n\t\tOR = {\n\t\t\treligion.group = religion_group:christian\n\t\t\treligion = religion:hellenism_religion\n\t\t}",
-      "potential_raw": "OR = {\n\t\t\thas_or_had_tag = BYZ\n\t\t\tcountry_rank = country_rank:rank_empire\n\t\t\towns = location:constantinople\n\t\t\tAND = {\n\t\t\t\towns = location:rome\n\t\t\t\tNOT = { tag = PAP }\n\t\t\t}\n\t\t}",
+      "allow_raw": "owns = location:rome\n\t\towns = location:constantinople\n\t\tcountry_rank = country_rank:rank_empire\n\t\tis_hegemon = yes\n\t\tNOT = { country_exists = c:BYZ }\n\n\t\tOR = {\n\t\t\treligion.group = religion_group:christian\n\t\t\treligion = religion:hellenism_religion\n\t\t}",
+      "potential_raw": "NOR = {\n\t\t\thas_or_had_tag = BYZ\n\t\t\thas_or_had_tag = TRE\n\t\t}\n\t\tOR = {\n\t\t\tcountry_rank = country_rank:rank_empire\n\t\t\towns = location:constantinople\n\t\t\tAND = {\n\t\t\t\towns = location:rome\n\t\t\t\tNOT = { tag = PAP }\n\t\t\t}\n\t\t}",
       "form_effect_raw": "if = { \n\t\t\tlimit = { NOT = { court_language = language:latin_language } }\n\t\t\tset_court_language = dialect:roman_dialect\n\t\t}\n\t\tif = {\n\t\t\tlimit = { NOT = { capital = location:rome } }\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\tmove_capital_event_effect = {\n\t\t\t\tfrom = root.capital\n\t\t\t\tto = location:rome\n\t\t\t}\n\t\t}\n\t\ttrigger_event_non_silently = nd_rom.1\n\t\tadd_stability = stability_extreme_bonus\n\t\tadd_government_power = government_power_extreme_bonus",
       "formation_event": "nd_rom.1",
       "source": "vanilla+mod_replace",
@@ -2772,13 +2772,23 @@
       "color_rgb": "#732e35",
       "english_potential": [
         {
-          "kind": "or",
-          "text": "Any of:",
+          "kind": "block",
+          "text": "Nor:",
           "children": [
             {
               "kind": "atom",
               "text": "Was or is Byzantium"
             },
+            {
+              "kind": "atom",
+              "text": "Was or is Trebizond"
+            }
+          ]
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
             {
               "kind": "atom",
               "text": "Rank Rank Empire"
@@ -2828,22 +2838,12 @@
           "text": "Hegemon"
         },
         {
-          "kind": "or",
-          "text": "Any of:",
+          "kind": "not",
+          "text": "Must not:",
           "children": [
             {
               "kind": "atom",
-              "text": "Was or is Byzantium"
-            },
-            {
-              "kind": "not",
-              "text": "Must not:",
-              "children": [
-                {
-                  "kind": "atom",
-                  "text": "Byzantium exists"
-                }
-              ]
+              "text": "Byzantium exists"
             }
           ]
         },
@@ -2865,8 +2865,8 @@
     },
     {
       "block_key": "ROM_BYZ_f",
-      "mode": "full",
-      "source_file": "00_formable_countries.txt",
+      "mode": "replace",
+      "source_file": "99_nd_rom_byz.txt",
       "tag": "ROM",
       "name": "ROM",
       "adjective": "ROM_ADJ",
@@ -2890,10 +2890,10 @@
       ],
       "allow_raw": "owns = location:rome\n\t\towns = location:constantinople\n\t\tcountry_rank = country_rank:rank_empire\n\n\t\tOR = {\n\t\t\thas_or_had_tag = BYZ\n\t\t\tNOT = { country_exists = c:BYZ }\n\t\t}",
       "potential_raw": "OR = {\n\t\t\thas_or_had_tag = BYZ\n\t\t\thas_or_had_tag = TRE\n\t\t}",
-      "form_effect_raw": "if = { \n\t\t\tlimit = { NOT = { capital = location:rome } }\n\t\t\tmove_capital_event_effect = {\n\t\t\t\tfrom = root.capital\n\t\t\t\tto = location:rome\n\t\t\t}\n\t\t}\n\t\tif = {\n\t\t\tlimit = { has_societal_value = societal_value_type:latinization_vs_hellenization }\n\t\t\tchange_societal_value = { type = latinization_vs_hellenization value = societal_value_huge_move_to_left }\n\t\t}",
-      "formation_event": null,
-      "source": "vanilla",
-      "mod_overrides": false,
+      "form_effect_raw": "if = {\n\t\t\tlimit = { NOT = { capital = location:rome } }\n\t\t\tmove_capital_event_effect = {\n\t\t\t\tfrom = root.capital\n\t\t\t\tto = location:rome\n\t\t\t}\n\t\t}\n\t\tif = {\n\t\t\tlimit = { has_societal_value = societal_value_type:latinization_vs_hellenization }\n\t\t\tchange_societal_value = { type = latinization_vs_hellenization value = societal_value_huge_move_to_left }\n\t\t}\n\t\ttrigger_event_non_silently = nd_rom_byz.1\n\t\tadd_stability = stability_severe_bonus",
+      "formation_event": "nd_rom_byz.1",
+      "source": "vanilla+mod_replace",
+      "mod_overrides": true,
       "variant_label": "Byz",
       "color_rgb": "#732e35",
       "english_potential": [
@@ -3833,7 +3833,7 @@
       "flag": "BYZ",
       "color": "map_BYZ",
       "level": 4,
-      "fraction": 0.85,
+      "fraction": 0.5,
       "rule": "historical",
       "content_priority": null,
       "regions": [
@@ -3846,13 +3846,9 @@
       "sub_continents": [],
       "continents": [],
       "must_own": [
-        "constantinople",
-        "athens",
-        "smyrna",
-        "iznik",
-        "trebizond"
+        "constantinople"
       ],
-      "allow_raw": "religion = religion:orthodox\n\t\towns = location:constantinople    \n\t\towns = location:athens            \n\t\towns = location:smyrna            \n\t\towns = location:iznik             \n\t\towns = location:trebizond",
+      "allow_raw": "religion = religion:orthodox\n\t\towns = location:constantinople",
       "potential_raw": "culture = { has_culture_group = culture_group:greek_group }",
       "form_effect_raw": "if = {\n\t\t\tlimit = {\n\t\t\t\tNOR = {\n\t\t\t\t\tcapital = location:constantinople\n\t\t\t\t\tcapital = location:rome\n\t\t\t\t}\n\t\t\t}\n\t\t\tset_capital = location:constantinople\n\t\t}\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\ttrigger_event_non_silently = nd_byz.1\n\t\tadd_stability = stability_severe_bonus",
       "formation_event": "nd_byz.1",
@@ -3874,22 +3870,6 @@
         {
           "kind": "atom",
           "text": "Owns Constantinople"
-        },
-        {
-          "kind": "atom",
-          "text": "Owns Athens"
-        },
-        {
-          "kind": "atom",
-          "text": "Owns Smyrna"
-        },
-        {
-          "kind": "atom",
-          "text": "Owns Iznik"
-        },
-        {
-          "kind": "atom",
-          "text": "Owns Trebizond"
         }
       ]
     },

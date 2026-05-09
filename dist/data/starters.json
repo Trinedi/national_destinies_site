@@ -2665,7 +2665,8 @@
         "christian"
       ],
       "tag_gates": [
-        "BYZ"
+        "BYZ",
+        "TRE"
       ],
       "rank_gates": [
         "rank_empire"
@@ -2682,7 +2683,15 @@
           "religion": "orthodox",
           "owned_in_target": 59,
           "owned_in_core": 1,
-          "score": 32
+          "score": 24
+        },
+        {
+          "tag": "TRE",
+          "culture": "pontic_greek_culture",
+          "religion": "orthodox",
+          "owned_in_target": 7,
+          "owned_in_core": 0,
+          "score": 20
         }
       ]
     },
@@ -3653,18 +3662,18 @@
       "suggested_tags": [],
       "candidates": [
         {
-          "tag": "TRE",
-          "culture": "pontic_greek_culture",
-          "religion": "orthodox",
-          "owned_in_target": 7,
-          "owned_in_core": 1,
-          "score": 16
-        },
-        {
           "tag": "EPI",
           "culture": "greek_culture",
           "religion": "orthodox",
           "owned_in_target": 10,
+          "owned_in_core": 0,
+          "score": 12
+        },
+        {
+          "tag": "TRE",
+          "culture": "pontic_greek_culture",
+          "religion": "orthodox",
+          "owned_in_target": 7,
           "owned_in_core": 0,
           "score": 12
         }
