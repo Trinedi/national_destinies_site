@@ -1,11 +1,11 @@
 ---
 priority_starters:
   - tag: BNH
-    note: "Form Beth Nahrain (BNH) first. After forming, you are a Syriac duchy with the full Tier 1 heritage tree in place. The BNH Restoration of Aššur destiny path signposts directly to NIN. This is the chain's intended path."
+    note: "Form Beth Nahrain (BNH) first. After forming you are a Syriac duchy with the full Tier 1 heritage tree in place. The BNH Restoration of Aššur destiny path signposts directly to NIN. This is the chain's intended path and the only one where the Syriac-Mesopotamian identity is already established before you claim the imperial Assyrian heritage."
   - tag: CIL
-    note: "Cilicia, the Armenian Kingdom of Lesser Armenia. Already miaphysite and Kingdom rank, geographically adjacent to the Edessa frontier. Skips BNH entirely via the parallel kingdom-rank gate. The form effect converts Cilicia to Syriac on formation."
+    note: "Cilicia direct, no intermediate. Mechanical: any kingdom-rank miaphysite or nestorian country qualifies for NIN's potential. Narratively a hard pivot: the form effect converts your Armenian-Cilician kingdom into a Syriac empire in one event. Faster than the BNH chain but the Mediterranean Armenian trade-kingdom heritage you build along the way is largely discarded on formation."
   - tag: ETH
-    note: "Ethiopia. Miaphysite at Kingdom or Empire rank, technically eligible for the direct path. Geographically extreme: the conquest of Mesopotamia, Levant and Egypt is much longer than from Cilicia. Only viable in a long late-game push."
+    note: "Ethiopia. Miaphysite, eligible for the direct kingdom-rank path. Geographically extreme: the conquest of Mesopotamia, Levant and Egypt is much longer than from any Armenian-zone start. Only viable in a long late-game push."
 hide_auto: true
 ---
 
@@ -30,9 +30,13 @@ for Astarabad in Persia.
 
 ## Forming it
 
-There are two paths.
+There are two coherent paths, with one possible-but-incoherent shortcut.
 
-### Path 1: Form BNH first, then NIN
+### Path 1: Through Beth Nahrain (the chain)
+
+The chain's intended sequence. Your Syriac-Mesopotamian identity is
+already in place when you claim the Assyrian heritage, so the formation
+lands as imperial restoration rather than identity rebrand.
 
 1. **Form Beth Nahrain (BNH)** following the BNH guide. Pick a small
    Caucasian Armenian principality or ATZ, conquer Mosul, Nusaybin,
@@ -43,28 +47,43 @@ There are two paths.
    NIN.
 3. **Build out BNH's heritage tree.** Standing army prerequisites,
    riverine logistics, monastic recruitment, qanat infrastructure.
-4. **Conquer the imperial peak.** The five required locations are
-   Mosul, Baghdad, Damascus, Cairo, and either Shush (ancient Susa,
-   the eastern frontier per Ashurbanipal) or Tarsus (the Cilician
-   frontier per Sargon II). Plus 60 percent of the Crescent and Egypt
-   regions and the Khuzestan and Cilicia areas.
+4. **Conquer the imperial peak.** Mosul, Baghdad, Damascus, Cairo, and
+   either Shush (ancient Susa, Ashurbanipal's eastern frontier) or
+   Tarsus (Sargon II's Cilician frontier). Plus 60 percent of the
+   Crescent and Egypt regions and the Khuzestan and Cilicia areas.
 5. **Form NIN.**
 
-### Path 2: Cilicia direct
+### Path 2: Cilicia direct (kingdom-rank gate)
 
-1. **Start as Cilicia.** Already miaphysite, already Kingdom rank,
-   already adjacent to the Edessa frontier.
-2. **Skip BNH entirely.** Cilicia at Kingdom rank is too high for the
-   Tier 1 gate. Go straight for the L4 conquest.
-3. **Take all five required locations** (Mosul, Baghdad, Damascus,
+Cilicia or any kingdom-rank miaphysite or nestorian country can form
+NIN directly without going through BNH. Mechanically clean. Narratively
+a hard pivot: the form effect converts your Armenian-Cilician (or
+Ethiopian, etc.) country into a Syriac empire and the form event
+proclaims the Sargonid imperial revival in a single moment.
+
+1. **Start as a kingdom-rank miaphysite/nestorian country.** Cilicia is
+   the obvious candidate. Ethiopia is geographically extreme but
+   eligible.
+2. **Conquer NIN's five required locations** (Mosul, Baghdad, Damascus,
    Cairo, plus Shush or Tarsus) and the 60 percent fraction.
-4. **Form NIN.** Country culture flips from Armenian to Syriac on
-   formation.
+3. **Form NIN.** Country culture flips to Syriac on formation; pops of
+   armenian, iraqi, kurdish, levantine, turkish, farsi, coptic and both
+   egyptian variants convert too.
 
-The chain path gives you twenty-five years of BNH's Tier 1 institutions
-plus a built-out heritage tree before the imperial conquest begins.
-The Cilicia direct path is faster and avoids the detour but starts the
-imperial campaign without the BNH investments.
+### What about ARC (Cilician Armenia) as an intermediate?
+
+It works mechanically because ARC sets country rank to Kingdom on
+formation, which qualifies for NIN's kingdom-rank gate. But it is
+narratively incoherent: ARC is the Mediterranean Armenian trade
+kingdom (Sis capital, Hethumid heritage, Crusader-era diplomatic
+networks) and NIN is the Mesopotamian-Syriac imperial revival. Going
+ARC then NIN doubles down on the Armenian-Mediterranean identity and
+then discards it for a Syriac-Mesopotamian one.
+
+If you want a Cilicia-start campaign with a meaningful intermediate
+formable, ARC itself is a satisfying terminal goal in its own right.
+Treat ARC and NIN as parallel endgames for an Armenian-zone player,
+not as two stages of the same chain.
 
 ## Pick your founding doctrine on formation
 

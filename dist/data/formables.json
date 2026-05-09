@@ -474,7 +474,7 @@
             },
             {
               "kind": "atom",
-              "text": "Tag: Ple"
+              "text": "Tag: Pale"
             }
           ]
         }
@@ -2801,7 +2801,7 @@
                   "children": [
                     {
                       "kind": "atom",
-                      "text": "Tag: Rome"
+                      "text": "Tag: Pap"
                     }
                   ]
                 }
@@ -9616,7 +9616,7 @@
       ],
       "allow_raw": "owns = location:mosul\n\t\towns = location:baghdad\n\t\towns = location:damascus\n\t\towns = location:cairo\n\t\tOR = {\n\t\t\towns = location:shush\n\t\t\towns = location:tarsus\n\t\t}\n\t\tin_civil_war = no",
       "potential_raw": "OR = {\n\t\t\treligion = religion:miaphysite\n\t\t\treligion = religion:nestorianism\n\t\t}\n\t\tOR = {\n\t\t\thas_or_had_tag = BNH\n\t\t\tcountry_rank = country_rank:rank_kingdom\n\t\t\tcountry_rank = country_rank:rank_empire\n\t\t}",
-      "form_effect_raw": "set_capital = location:mosul\n\t\tif = {\n\t\t\tlimit = { NOT = { culture = culture:syriac_culture } }\n\t\t\tchange_culture = culture:syriac_culture\n\t\t}\n\t\tevery_owned_location = {\n\t\t\tevery_pop = {\n\t\t\t\tlimit = {\n\t\t\t\t\tOR = {\n\t\t\t\t\t\tculture = culture:armenian_culture\n\t\t\t\t\t\tculture = culture:iraqi_culture\n\t\t\t\t\t\tculture = culture:kurdish_culture\n\t\t\t\t\t\tculture = culture:levantine_culture\n\t\t\t\t\t\tculture = culture:turkish_culture\n\t\t\t\t\t\tculture = culture:farsi_culture\n\t\t\t\t\t\tculture = culture:coptic_culture\n\t\t\t\t\t\tculture = culture:lower_egyptian_culture\n\t\t\t\t\t\tculture = culture:upper_egyptian_culture\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tchange_pop_culture = culture:syriac_culture\n\t\t\t}\n\t\t}\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\tadd_stability = stability_severe_bonus\n\t\ttrigger_event_non_silently = nd_nin.1",
+      "form_effect_raw": "set_capital = location:mosul\n\t\tchange_culture = culture:syriac_culture\n\t\tevery_owned_location = {\n\t\t\tevery_pop = {\n\t\t\t\tlimit = {\n\t\t\t\t\tOR = {\n\t\t\t\t\t\tculture = culture:armenian_culture\n\t\t\t\t\t\tculture = culture:iraqi_culture\n\t\t\t\t\t\tculture = culture:kurdish_culture\n\t\t\t\t\t\tculture = culture:levantine_culture\n\t\t\t\t\t\tculture = culture:turkish_culture\n\t\t\t\t\t\tculture = culture:farsi_culture\n\t\t\t\t\t\tculture = culture:coptic_culture\n\t\t\t\t\t\tculture = culture:lower_egyptian_culture\n\t\t\t\t\t\tculture = culture:upper_egyptian_culture\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tchange_pop_culture = culture:syriac_culture\n\t\t\t}\n\t\t}\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\tadd_stability = stability_severe_bonus\n\t\ttrigger_event_non_silently = nd_nin.1",
       "formation_event": "nd_nin.1",
       "source": "mod_new",
       "mod_overrides": true,
