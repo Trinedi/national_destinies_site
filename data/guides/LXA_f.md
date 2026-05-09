@@ -32,8 +32,9 @@ into Luang Prabang, Vientiane, and Champasak.
    you need three quarters of the Khorat Plateau and Northern Tai
    Highland combined. The Khorat fraction is the larger piece and is
    contested by Khmer, Sukhothai, and Ayutthaya neighbours.
-4. **Be at least Duchy rank.** The form effect promotes you to Kingdom
-   if you are below it; both MUA and VTN start at Duchy rank.
+4. **Form Lan Xang.** No rank prerequisite gates the formation. The
+   form effect promotes you to Kingdom if you are below it; both MUA
+   and VTN start at Duchy rank.
 
 ## Pick your founding doctrine on formation
 

@@ -821,10 +821,6 @@ def main() -> int:
         for line in bad_refs:
             print(line)
 
-    # rank name -> level (rank_county = 1, rank_duchy = 2, rank_kingdom = 3, rank_empire = 4).
-    # Tags with no rank field default to 0 (effectively unranked / tribal).
-    RANK_LEVEL = {"rank_county": 1, "rank_duchy": 2, "rank_kingdom": 3, "rank_empire": 4}
-
     out: dict[str, dict] = {}
     skipped_no_gates = 0
     total_candidates = 0
@@ -836,11 +832,13 @@ def main() -> int:
         core_locs, region_locs = formable_target_locations(rec, geography, area_to_locs, region_to_locs)
         tag_excludes = gates.get("tag_excludes") or set()
 
-        # Per game rule: a tag's rank-level must be at or below the formable's
-        # level to be eligible to form it (a kingdom cannot form a duchy-tier
-        # formable, but a duchy can). Unknown/unranked tags treated as level 0.
-        formable_level = rec.get("level")
-        max_starter_level = formable_level if isinstance(formable_level, int) else None
+        # The formable's `level` field is descriptive (it ranks formables by
+        # ambition: tier 1 = duchy-scale, tier 5 = transcendent empire) but
+        # is NOT a hard rank prerequisite. Per the EU5 wiki, "Players can
+        # form countries of higher formation tier" describes what the tier
+        # system is FOR, not a gate. No vanilla formable's `allow` actually
+        # contains a tier-vs-rank implicit check; eligibility is whatever
+        # each formable's potential/allow explicitly states.
 
         any_predicates = any(
             any(g.values()) for g in (gates.get("and_groups") or []) + (gates.get("or_groups") or [])
@@ -864,19 +862,11 @@ def main() -> int:
             for tag, country in countries.items():
                 if tag in tag_excludes:
                     continue
-                # explicit OR suggested both bypass level-rank (suggested tags
-                # come from trigger_if bodies and are the formable's canonical
-                # candidates per the script).
-                bypass_level = tag in explicit_tags or tag in suggested_tags
-                if max_starter_level is not None and not bypass_level:
-                    rank = country.get("rank")
-                    rank_level = RANK_LEVEL.get(rank, 0)
-                    if rank_level > max_starter_level:
-                        continue
+                bypass_geography = tag in explicit_tags or tag in suggested_tags
                 res = score_candidate(
                     tag, country, core_locs, region_locs, gates,
                     culture_groups, religion_groups,
-                    is_explicit=bypass_level,
+                    is_explicit=bypass_geography,
                 )
                 if res is None:
                     continue

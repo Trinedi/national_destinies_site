@@ -1,7 +1,7 @@
 ---
 priority_starters:
   - tag: MPC
-    note: "Mapuche. The canonical Wallmapu starter. Already mapuche_culture, already in tain feyentun religion, and starts owning wenteche, the only required location. You can form MAP_f essentially as soon as you can fund the rank-up and clear the formable's plausible-mode prereqs."
+    note: "Mapuche. The canonical Wallmapu starter. Already mapuche_culture, already in tain feyentun religion, and starts owning wenteche, the only required location. You can form MAP essentially as soon as you take the rest of the territory pool."
   - tag: PHE
     note: "Picunche. Pikumche-cultured (mapudungun_group), so the culture potential is satisfied. Sits north of MPC in the central Chilean valley; you must take wenteche from MPC before forming. Pick this if you want to absorb the northern Mapuche heartland first."
 hide_auto: true

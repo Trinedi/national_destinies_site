@@ -58,6 +58,29 @@
         }
       ]
     },
+    "denmark_f": {
+      "culture_gates": [
+        "danish"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "tag_gates": [],
+      "rank_gates": [],
+      "reform_gates": [],
+      "tag_excludes": [],
+      "suggested_tags": [],
+      "candidates": [
+        {
+          "tag": "SKE",
+          "culture": "danish",
+          "religion": "catholic",
+          "owned_in_target": 11,
+          "owned_in_core": 0,
+          "score": 9
+        }
+      ]
+    },
     "DRD_f": {
       "culture_gates": [],
       "culture_group_gates": [
@@ -77,6 +100,14 @@
           "culture": "norse_gael",
           "religion": "catholic",
           "owned_in_target": 5,
+          "owned_in_core": 0,
+          "score": 13
+        },
+        {
+          "tag": "SCO",
+          "culture": "scottish",
+          "religion": "catholic",
+          "owned_in_target": 7,
           "owned_in_core": 0,
           "score": 13
         },
@@ -122,14 +153,6 @@
         },
         {
           "tag": "AMA",
-          "culture": "irish",
-          "religion": "catholic",
-          "owned_in_target": 2,
-          "owned_in_core": 0,
-          "score": 10
-        },
-        {
-          "tag": "FMA",
           "culture": "irish",
           "religion": "catholic",
           "owned_in_target": 2,
@@ -327,6 +350,14 @@
           "score": 9
         },
         {
+          "tag": "SBL",
+          "culture": "scottish",
+          "religion": "catholic",
+          "owned_in_target": 14,
+          "owned_in_core": 0,
+          "score": 9
+        },
+        {
           "tag": "MOY",
           "culture": "scottish",
           "religion": "catholic",
@@ -341,6 +372,14 @@
           "owned_in_target": 4,
           "owned_in_core": 0,
           "score": 8
+        },
+        {
+          "tag": "MNN",
+          "culture": "norse_gael",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "owned_in_core": 0,
+          "score": 5
         }
       ]
     },
@@ -356,10 +395,34 @@
       "suggested_tags": [],
       "candidates": [
         {
+          "tag": "ENG",
+          "culture": "english",
+          "religion": "catholic",
+          "owned_in_target": 26,
+          "owned_in_core": 0,
+          "score": 5
+        },
+        {
           "tag": "LAN",
           "culture": "northumbrian",
           "religion": "catholic",
           "owned_in_target": 5,
+          "owned_in_core": 0,
+          "score": 5
+        },
+        {
+          "tag": "SBL",
+          "culture": "scottish",
+          "religion": "catholic",
+          "owned_in_target": 14,
+          "owned_in_core": 0,
+          "score": 5
+        },
+        {
+          "tag": "SCO",
+          "culture": "scottish",
+          "religion": "catholic",
+          "owned_in_target": 20,
           "owned_in_core": 0,
           "score": 5
         },
@@ -1204,6 +1267,22 @@
       "suggested_tags": [],
       "candidates": [
         {
+          "tag": "NEO",
+          "culture": "catalan",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "owned_in_core": 0,
+          "score": 9
+        },
+        {
+          "tag": "ATH",
+          "culture": "catalan",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "owned_in_core": 0,
+          "score": 8
+        },
+        {
           "tag": "BOD",
           "culture": "venetian",
           "religion": "catholic",
@@ -1888,6 +1967,14 @@
           "owned_in_target": 2,
           "owned_in_core": 0,
           "score": 13
+        },
+        {
+          "tag": "RIG",
+          "culture": "german_baltic",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "owned_in_core": 0,
+          "score": 12
         }
       ]
     },
@@ -2637,6 +2724,14 @@
       "suggested_tags": [],
       "candidates": [
         {
+          "tag": "TUN",
+          "culture": "tunisian",
+          "religion": "sunni",
+          "owned_in_target": 63,
+          "owned_in_core": 1,
+          "score": 9
+        },
+        {
           "tag": "BTL",
           "culture": "eastern_amazigh",
           "religion": "sunni",
@@ -2661,20 +2756,36 @@
           "score": 5
         },
         {
+          "tag": "MOR",
+          "culture": "moroccan",
+          "religion": "sunni",
+          "owned_in_target": 5,
+          "owned_in_core": 0,
+          "score": 5
+        },
+        {
+          "tag": "SIC",
+          "culture": "sicilian",
+          "religion": "catholic",
+          "owned_in_target": 22,
+          "owned_in_core": 0,
+          "score": 5
+        },
+        {
+          "tag": "TLE",
+          "culture": "zenati",
+          "religion": "sunni",
+          "owned_in_target": 28,
+          "owned_in_core": 0,
+          "score": 5
+        },
+        {
           "tag": "TRP",
           "culture": "libyan_arabic_culture",
           "religion": "sunni",
           "owned_in_target": 4,
           "owned_in_core": 0,
           "score": 4
-        },
-        {
-          "tag": "SAO",
-          "culture": "catalan",
-          "religion": "catholic",
-          "owned_in_target": 1,
-          "owned_in_core": 0,
-          "score": 1
         }
       ]
     },
@@ -3507,6 +3618,14 @@
       "suggested_tags": [],
       "candidates": [
         {
+          "tag": "BYZ",
+          "culture": "greek_culture",
+          "religion": "orthodox",
+          "owned_in_target": 52,
+          "owned_in_core": 0,
+          "score": 9
+        },
+        {
           "tag": "EPI",
           "culture": "greek_culture",
           "religion": "orthodox",
@@ -3563,10 +3682,34 @@
       "suggested_tags": [],
       "candidates": [
         {
+          "tag": "ENG",
+          "culture": "english",
+          "religion": "catholic",
+          "owned_in_target": 26,
+          "owned_in_core": 0,
+          "score": 5
+        },
+        {
           "tag": "LAN",
           "culture": "northumbrian",
           "religion": "catholic",
           "owned_in_target": 5,
+          "owned_in_core": 0,
+          "score": 5
+        },
+        {
+          "tag": "SBL",
+          "culture": "scottish",
+          "religion": "catholic",
+          "owned_in_target": 14,
+          "owned_in_core": 0,
+          "score": 5
+        },
+        {
+          "tag": "SCO",
+          "culture": "scottish",
+          "religion": "catholic",
+          "owned_in_target": 20,
           "owned_in_core": 0,
           "score": 5
         },
@@ -5387,6 +5530,14 @@
           "score": 9
         },
         {
+          "tag": "CHI",
+          "culture": "mongolian_culture",
+          "religion": "tibetan_buddhism",
+          "owned_in_target": 89,
+          "owned_in_core": 0,
+          "score": 9
+        },
+        {
           "tag": "CRS",
           "culture": "oirat_culture",
           "religion": "tengri",
@@ -5425,14 +5576,6 @@
           "owned_in_target": 19,
           "owned_in_core": 0,
           "score": 9
-        },
-        {
-          "tag": "OGE",
-          "culture": "mongolian_culture",
-          "religion": "tengri",
-          "owned_in_target": 1,
-          "owned_in_core": 0,
-          "score": 5
         }
       ]
     },
@@ -6510,6 +6653,14 @@
       "suggested_tags": [],
       "candidates": [
         {
+          "tag": "CRO",
+          "culture": "croatian",
+          "religion": "catholic",
+          "owned_in_target": 9,
+          "owned_in_core": 0,
+          "score": 9
+        },
+        {
           "tag": "RAG",
           "culture": "dalmatian",
           "religion": "catholic",
@@ -6612,6 +6763,22 @@
       "suggested_tags": [],
       "candidates": [
         {
+          "tag": "AJU",
+          "culture": "somali_culture",
+          "religion": "sunni",
+          "owned_in_target": 27,
+          "owned_in_core": 0,
+          "score": 9
+        },
+        {
+          "tag": "IFA",
+          "culture": "somali_culture",
+          "religion": "sunni",
+          "owned_in_target": 34,
+          "owned_in_core": 0,
+          "score": 9
+        },
+        {
           "tag": "WAR",
           "culture": "somali_culture",
           "religion": "sunni",
@@ -6626,6 +6793,40 @@
           "owned_in_target": 4,
           "owned_in_core": 0,
           "score": 8
+        },
+        {
+          "tag": "MDI",
+          "culture": "somali_culture",
+          "religion": "sunni",
+          "owned_in_target": 1,
+          "owned_in_core": 0,
+          "score": 5
+        }
+      ]
+    },
+    "TRA_f": {
+      "culture_gates": [
+        "german_transylvanian",
+        "hungarian",
+        "szekely_culture",
+        "transylvanian"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "tag_gates": [],
+      "rank_gates": [],
+      "reform_gates": [],
+      "tag_excludes": [],
+      "suggested_tags": [],
+      "candidates": [
+        {
+          "tag": "HUN",
+          "culture": "hungarian",
+          "religion": "catholic",
+          "owned_in_target": 33,
+          "owned_in_core": 0,
+          "score": 9
         }
       ]
     },
@@ -6703,6 +6904,22 @@
       "tag_excludes": [],
       "suggested_tags": [],
       "candidates": [
+        {
+          "tag": "ALO",
+          "culture": "nubian",
+          "religion": "miaphysite",
+          "owned_in_target": 17,
+          "owned_in_core": 0,
+          "score": 9
+        },
+        {
+          "tag": "MAK",
+          "culture": "nubian",
+          "religion": "sunni",
+          "owned_in_target": 15,
+          "owned_in_core": 0,
+          "score": 9
+        },
         {
           "tag": "ABW",
           "culture": "nubian",
@@ -7022,6 +7239,14 @@
       "suggested_tags": [],
       "candidates": [
         {
+          "tag": "GLH",
+          "culture": "mongolian_culture",
+          "religion": "sunni",
+          "owned_in_target": 10,
+          "owned_in_core": 0,
+          "score": 5
+        },
+        {
           "tag": "HYT",
           "culture": "circassian_culture",
           "religion": "orthodox",
@@ -7040,6 +7265,14 @@
         {
           "tag": "CPA",
           "culture": "circassian_culture",
+          "religion": "orthodox",
+          "owned_in_target": 2,
+          "owned_in_core": 0,
+          "score": 2
+        },
+        {
+          "tag": "GEO",
+          "culture": "georgian_culture",
           "religion": "orthodox",
           "owned_in_target": 2,
           "owned_in_core": 0,
@@ -7165,6 +7398,14 @@
       "tag_excludes": [],
       "suggested_tags": [],
       "candidates": [
+        {
+          "tag": "TRE",
+          "culture": "pontic_greek_culture",
+          "religion": "orthodox",
+          "owned_in_target": 8,
+          "owned_in_core": 1,
+          "score": 17
+        },
         {
           "tag": "FEO",
           "culture": "pontic_greek_culture",
@@ -7625,7 +7866,7 @@
       "tag_excludes": [],
       "suggested_tags": [],
       "candidates": [],
-      "notes_html": "<h2>Concept</h2>\n<p>Beth Nahrain is the Syriac name for &ldquo;between the rivers&rdquo;, the medieval\nself-designation of Mesopotamia. The formable represents the medieval\nSyriac Christian polity that almost formed: Tur Abdin maintained de\nfacto autonomy under successive overlords into the 14th century, the\nPatriarchate of the East at Seleucia-Ctesiphon retained quasi-political\nauthority over a vast Christian diaspora, and the County of Edessa\n(1098 to 1144) was a real Crusader-Syriac hybrid state. BNH consolidates\nthese threads into a formal Syriac Christian duchy ruling upper\nMesopotamia.</p>\n<p>Forming BNH is a survival and restoration story, not an imperial one.\nThe imperial counterfactual continues in the Tier 2 formable, the\nAssyrian Empire (NIN), which can only be formed after BNH.</p>\n<h2>Forming it</h2>\n<ol>\n<li><strong>Start as one of the priority tags above.</strong> All of them are\n   miaphysite Armenian principalities at low rank, which is what the\n   formation gate needs.</li>\n<li><strong>Survive the early Mongol-successor pressure.</strong> Most candidate\n   tags begin as Ilkhanid vassals or under similar overlordship.\n   Either ride out the Ilkhanate collapse or escape vassalage early.</li>\n<li><strong>Conquer the three required locations.</strong> Mosul (Nineveh),\n   Nusaybin (Tur Abdin core), and Urfa (Edessa). Mosul is the hardest,\n   usually under Iraqi or Mongol-successor control. Nusaybin sits in\n   the same neighbourhood. Urfa is in the contested Edessa-Cilicia\n   frontier zone.</li>\n<li><strong>Hold 40 percent of the wider Jazira area.</strong> The fraction\n   requirement is loose because the three named cities already gate\n   most of the relevant territory.</li>\n<li><strong>Pick your formation doctrine.</strong> Three options, each a 25-year\n   timed modifier:</li>\n<li><strong>Patriarchal Restoration.</strong> Clergy-led patriarchate state.\n     Boosts clergy power, conversion speed, and cultural tradition.</li>\n<li><strong>Tur Abdin Defenders.</strong> Monastic-warrior highland kingdom.\n     Boosts garrison, manpower, and attrition pressure on invaders.</li>\n<li><strong>Edessene Renaissance.</strong> Latin-Syriac cosmopolitan hybrid.\n     Boosts diplomatic capacity, trade efficiency, and prestige.</li>\n</ol>\n<h2>What happens on formation</h2>\n<ul>\n<li>Capital moves to Mosul (Nineveh).</li>\n<li>Country culture flips to Syriac. State pops of Armenian, Iraqi, and\n  Kurdish culture also convert to Syriac.</li>\n<li>Country rank rises to Duchy if you were below it.</li>\n<li>Stability bonus.</li>\n<li>Formation event fires with the three doctrine choices.</li>\n</ul>\n<h2>After forming</h2>\n<p>The destiny tree splits two ways:</p>\n<ul>\n<li><strong>Restoration of A\u0161\u0161ur.</strong> Unlocked by the Tur Abdin Defenders\n  formation choice. A military buildup that signposts toward forming\n  the Tier 2 Assyrian Empire (NIN). Capstone building is the Ziggurat\n  of A\u0161\u0161ur.</li>\n<li><strong>Light of the East.</strong> Unlocked by the Patriarchal Restoration\n  formation choice. A complete civilizational endgame as the Christian\n  Syriac intermediary between the Latin west and the Far East. Capstone\n  building is Beth Hekma (House of Wisdom).</li>\n</ul>\n<p>The Edessene Renaissance formation choice has no destiny continuation.\nPick it only if you want the formation modifier without committing to\neither destiny path.</p>",
+      "notes_html": "<h2>Concept</h2>\n<p>Beth Nahrain is the Syriac name for &ldquo;between the rivers&rdquo;, the medieval\nself-designation of Mesopotamia. The formable represents the medieval\nSyriac Christian polity that almost formed: Tur Abdin maintained de\nfacto autonomy under successive overlords into the 14th century, the\nPatriarchate of the East at Seleucia-Ctesiphon retained quasi-political\nauthority over a vast Christian diaspora, and the County of Edessa\n(1098 to 1144) was a real Crusader-Syriac hybrid state. BNH consolidates\nthese threads into a formal Syriac Christian duchy ruling upper\nMesopotamia.</p>\n<p>Forming BNH is a survival and restoration story, not an imperial one.\nThe imperial counterfactual continues in the Tier 2 formable, the\nAssyrian Empire (NIN), which can only be formed after BNH.</p>\n<h2>Forming it</h2>\n<ol>\n<li><strong>Start as one of the priority tags above.</strong> All of them are\n   miaphysite Armenian principalities, which is what BNH&rsquo;s potential\n   gate requires (miaphysite or nestorianism religion).</li>\n<li><strong>Survive the early Mongol-successor pressure.</strong> Most candidate\n   tags begin as Ilkhanid vassals or under similar overlordship.\n   Either ride out the Ilkhanate collapse or escape vassalage early.</li>\n<li><strong>Conquer the three required locations.</strong> Mosul (Nineveh),\n   Nusaybin (Tur Abdin core), and Urfa (Edessa). Mosul is the hardest,\n   usually under Iraqi or Mongol-successor control. Nusaybin sits in\n   the same neighbourhood. Urfa is in the contested Edessa-Cilicia\n   frontier zone.</li>\n<li><strong>Hold 40 percent of the wider Jazira area.</strong> The fraction\n   requirement is loose because the three named cities already gate\n   most of the relevant territory.</li>\n<li><strong>Pick your formation doctrine.</strong> Three options, each a 25-year\n   timed modifier:</li>\n<li><strong>Patriarchal Restoration.</strong> Clergy-led patriarchate state.\n     Boosts clergy power, conversion speed, and cultural tradition.</li>\n<li><strong>Tur Abdin Defenders.</strong> Monastic-warrior highland kingdom.\n     Boosts garrison, manpower, and attrition pressure on invaders.</li>\n<li><strong>Edessene Renaissance.</strong> Latin-Syriac cosmopolitan hybrid.\n     Boosts diplomatic capacity, trade efficiency, and prestige.</li>\n</ol>\n<h2>What happens on formation</h2>\n<ul>\n<li>Capital moves to Mosul (Nineveh).</li>\n<li>Country culture flips to Syriac. State pops of Armenian, Iraqi, and\n  Kurdish culture also convert to Syriac.</li>\n<li>Country rank rises to Duchy if you were below it.</li>\n<li>Stability bonus.</li>\n<li>Formation event fires with the three doctrine choices.</li>\n</ul>\n<h2>After forming</h2>\n<p>The destiny tree splits two ways:</p>\n<ul>\n<li><strong>Restoration of A\u0161\u0161ur.</strong> Unlocked by the Tur Abdin Defenders\n  formation choice. A military buildup that signposts toward forming\n  the Tier 2 Assyrian Empire (NIN). Capstone building is the Ziggurat\n  of A\u0161\u0161ur.</li>\n<li><strong>Light of the East.</strong> Unlocked by the Patriarchal Restoration\n  formation choice. A complete civilizational endgame as the Christian\n  Syriac intermediary between the Latin west and the Far East. Capstone\n  building is Beth Hekma (House of Wisdom).</li>\n</ul>\n<p>The Edessene Renaissance formation choice has no destiny continuation.\nPick it only if you want the formation modifier without committing to\neither destiny path.</p>",
       "priority_starters": [
         {
           "tag": "ATZ",
@@ -8120,6 +8361,14 @@
       "suggested_tags": [],
       "candidates": [
         {
+          "tag": "ZAN",
+          "culture": "matuumbi_culture",
+          "religion": "sunni",
+          "owned_in_target": 12,
+          "owned_in_core": 1,
+          "score": 13
+        },
+        {
           "tag": "BMB",
           "culture": "swahili_culture",
           "religion": "sunni",
@@ -8221,7 +8470,7 @@
       "tag_excludes": [],
       "suggested_tags": [],
       "candidates": [],
-      "notes_html": "<h2>Concept</h2>\n<p>Lan Xang, the Kingdom of a Million Elephants and the White Parasol,\nwas the great Lao polity founded by Fa Ngum in 1353 and broken into\nthree rump kingdoms in 1707. The mod&rsquo;s framing is a Theravada Mekong\nstate with two faces: the warrior tradition of the white elephants\n(royal regalia, Khorat raids, Setthathirath&rsquo;s resistance to the\nBurmese) and the contemplative tradition of the sangha and the Phra\nBang (the gilded Buddha that gives Luang Prabang its name).</p>\n<p>The formable is the historical reunification: hold both Muang Sua and\nVientiane, the twin capitals of the kingdom before its 1707 partition\ninto Luang Prabang, Vientiane, and Champasak.</p>\n<h2>Forming it</h2>\n<ol>\n<li><strong>Start as a Lao tag.</strong> MUA holds Muang Sua; VTN holds Vientiane.\n   These are the only two lao_culture primary tags in the region.</li>\n<li><strong>Hold both required locations.</strong> The <code>allow</code> block requires you to\n   own <strong>Muang Sua</strong> and <strong>Vientiane</strong>. Whichever you start as, conquer\n   the other.</li>\n<li><strong>Hit 75 percent of the area pool.</strong> Beyond the two named locations\n   you need three quarters of the Khorat Plateau and Northern Tai\n   Highland combined. The Khorat fraction is the larger piece and is\n   contested by Khmer, Sukhothai, and Ayutthaya neighbours.</li>\n<li><strong>Be at least Duchy rank.</strong> The form effect promotes you to Kingdom\n   if you are below it; both MUA and VTN start at Duchy rank.</li>\n</ol>\n<h2>Pick your founding doctrine on formation</h2>\n<p>The formation event offers two 20-year doctrines:</p>\n<ul>\n<li><strong>Kingdom of a Million Elephants.</strong> The royal regalia and war elephant\n  tradition. Gameplay focus: military, prestige, conquest. Unlocks the\n  Mekong Hegemon destiny path.</li>\n<li><strong>White Parasol.</strong> The Theravada civic order, the sangha as state\n  institution, the Phra Bang as palladium. Gameplay focus: religion,\n  legitimacy, internal cohesion. Unlocks the Heart of the Sangha\n  destiny path.</li>\n</ul>\n<h2>What happens on formation</h2>\n<ul>\n<li>Capital moves to Vientiane.</li>\n<li>Country rank rises to Kingdom if below it.</li>\n<li>Mild stability bonus.</li>\n<li>Formation event fires with the two doctrine choices.</li>\n</ul>\n<h2>After forming</h2>\n<p>The destiny tree splits two ways:</p>\n<ul>\n<li><strong>Mekong Hegemon.</strong> Push beyond the historical Lan Xang peak. Required\n  conquests reach Khorat, then Angkor and Stung Treng on the Mekong,\n  then the upper Mekong and the white-elephant lands. The capstone is\n  Lord of the White Elephants, a Mekong imperium with elephant tribute\n  from every river polity. Unlocked by the Million Elephants formation\n  choice.</li>\n<li><strong>Heart of the Sangha.</strong> Become the Theravada civilizational anchor.\n  Build the Mekong Silk Road, codify Lao Buddhist law, and crown the\n  kingdom as the Light of Theravada with golden stupas at every wat.\n  Capstone modifier is the Dharma Shield or the Golden Stupa. Unlocked\n  by the White Parasol formation choice.</li>\n</ul>\n<h2>Notes</h2>\n<ul>\n<li>The advance tree includes flavor DHEs for Setthathirath&rsquo;s resistance\n  to the Burmese (age 3), Sourigna Vongsa&rsquo;s golden age (age 5), and\n  the arrival of the Phra Bang (age 2).</li>\n<li>The 75 percent fraction across Khorat and Northern Tai Highland is\n  the practical bottleneck. Khorat in particular is a long contest\n  with Ayutthaya and Khmer claimants.</li>\n</ul>",
+      "notes_html": "<h2>Concept</h2>\n<p>Lan Xang, the Kingdom of a Million Elephants and the White Parasol,\nwas the great Lao polity founded by Fa Ngum in 1353 and broken into\nthree rump kingdoms in 1707. The mod&rsquo;s framing is a Theravada Mekong\nstate with two faces: the warrior tradition of the white elephants\n(royal regalia, Khorat raids, Setthathirath&rsquo;s resistance to the\nBurmese) and the contemplative tradition of the sangha and the Phra\nBang (the gilded Buddha that gives Luang Prabang its name).</p>\n<p>The formable is the historical reunification: hold both Muang Sua and\nVientiane, the twin capitals of the kingdom before its 1707 partition\ninto Luang Prabang, Vientiane, and Champasak.</p>\n<h2>Forming it</h2>\n<ol>\n<li><strong>Start as a Lao tag.</strong> MUA holds Muang Sua; VTN holds Vientiane.\n   These are the only two lao_culture primary tags in the region.</li>\n<li><strong>Hold both required locations.</strong> The <code>allow</code> block requires you to\n   own <strong>Muang Sua</strong> and <strong>Vientiane</strong>. Whichever you start as, conquer\n   the other.</li>\n<li><strong>Hit 75 percent of the area pool.</strong> Beyond the two named locations\n   you need three quarters of the Khorat Plateau and Northern Tai\n   Highland combined. The Khorat fraction is the larger piece and is\n   contested by Khmer, Sukhothai, and Ayutthaya neighbours.</li>\n<li><strong>Form Lan Xang.</strong> No rank prerequisite gates the formation. The\n   form effect promotes you to Kingdom if you are below it; both MUA\n   and VTN start at Duchy rank.</li>\n</ol>\n<h2>Pick your founding doctrine on formation</h2>\n<p>The formation event offers two 20-year doctrines:</p>\n<ul>\n<li><strong>Kingdom of a Million Elephants.</strong> The royal regalia and war elephant\n  tradition. Gameplay focus: military, prestige, conquest. Unlocks the\n  Mekong Hegemon destiny path.</li>\n<li><strong>White Parasol.</strong> The Theravada civic order, the sangha as state\n  institution, the Phra Bang as palladium. Gameplay focus: religion,\n  legitimacy, internal cohesion. Unlocks the Heart of the Sangha\n  destiny path.</li>\n</ul>\n<h2>What happens on formation</h2>\n<ul>\n<li>Capital moves to Vientiane.</li>\n<li>Country rank rises to Kingdom if below it.</li>\n<li>Mild stability bonus.</li>\n<li>Formation event fires with the two doctrine choices.</li>\n</ul>\n<h2>After forming</h2>\n<p>The destiny tree splits two ways:</p>\n<ul>\n<li><strong>Mekong Hegemon.</strong> Push beyond the historical Lan Xang peak. Required\n  conquests reach Khorat, then Angkor and Stung Treng on the Mekong,\n  then the upper Mekong and the white-elephant lands. The capstone is\n  Lord of the White Elephants, a Mekong imperium with elephant tribute\n  from every river polity. Unlocked by the Million Elephants formation\n  choice.</li>\n<li><strong>Heart of the Sangha.</strong> Become the Theravada civilizational anchor.\n  Build the Mekong Silk Road, codify Lao Buddhist law, and crown the\n  kingdom as the Light of Theravada with golden stupas at every wat.\n  Capstone modifier is the Dharma Shield or the Golden Stupa. Unlocked\n  by the White Parasol formation choice.</li>\n</ul>\n<h2>Notes</h2>\n<ul>\n<li>The advance tree includes flavor DHEs for Setthathirath&rsquo;s resistance\n  to the Burmese (age 3), Sourigna Vongsa&rsquo;s golden age (age 5), and\n  the arrival of the Phra Bang (age 2).</li>\n<li>The 75 percent fraction across Khorat and Northern Tai Highland is\n  the practical bottleneck. Khorat in particular is a long contest\n  with Ayutthaya and Khmer claimants.</li>\n</ul>",
       "priority_starters": [
         {
           "tag": "MUA",
@@ -8264,7 +8513,7 @@
           "religion": "tain_feyentun_religion",
           "owned_in_target": 0,
           "owned_in_core": 0,
-          "note": "Mapuche. The canonical Wallmapu starter. Already mapuche_culture, already in tain feyentun religion, and starts owning wenteche, the only required location. You can form MAP_f essentially as soon as you can fund the rank-up and clear the formable's plausible-mode prereqs."
+          "note": "Mapuche. The canonical Wallmapu starter. Already mapuche_culture, already in tain feyentun religion, and starts owning wenteche, the only required location. You can form MAP essentially as soon as you take the rest of the territory pool."
         },
         {
           "tag": "PHE",

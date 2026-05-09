@@ -32,8 +32,8 @@ Assyrian Empire (NIN), which can only be formed after BNH.
 ## Forming it
 
 1. **Start as one of the priority tags above.** All of them are
-   miaphysite Armenian principalities at low rank, which is what the
-   formation gate needs.
+   miaphysite Armenian principalities, which is what BNH's potential
+   gate requires (miaphysite or nestorianism religion).
 2. **Survive the early Mongol-successor pressure.** Most candidate
    tags begin as Ilkhanid vassals or under similar overlordship.
    Either ride out the Ilkhanate collapse or escape vassalage early.
