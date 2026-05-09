@@ -733,6 +733,11 @@ function prettifyReligion(s) {
   return titleCase(s.replace(/_/g, " "));
 }
 
+function prettifyRank(s) {
+  if (!s) return "";
+  return titleCase(s.replace(/^rank_/, "").replace(/_/g, " "));
+}
+
 function renderStarterRow(c, isPriority) {
   const resolved = lookupLoc(c.tag);
   const hasName = resolved && resolved !== c.tag;
@@ -741,9 +746,17 @@ function renderStarterRow(c, isPriority) {
     : `<strong>${escapeHtml(c.tag)}</strong>`;
   const culture = c.culture ? `<span class="starter-meta">${escapeHtml(prettifyCulture(c.culture))}</span>` : "";
   const religion = c.religion ? `<span class="starter-meta">${escapeHtml(prettifyReligion(c.religion))}</span>` : "";
-  const geo = c.owned_in_target > 0
-    ? `<span class="starter-meta">${c.owned_in_target} starting location${c.owned_in_target === 1 ? "" : "s"} in target</span>`
-    : "";
+  // Prefer the tighter "owns must-have" stat when the candidate already
+  // holds one of the formable's named-or-must-own locations; fall back to
+  // the broader region-pool overlap otherwise.
+  const core = c.owned_in_core || 0;
+  const total = c.owned_in_target || 0;
+  let geo = "";
+  if (core > 0) {
+    geo = `<span class="starter-meta">owns ${core} required location${core === 1 ? "" : "s"}</span>`;
+  } else if (total > 0) {
+    geo = `<span class="starter-meta">${total} starting location${total === 1 ? "" : "s"} in territory pool</span>`;
+  }
   const note = c.note
     ? `<div class="starter-note">${escapeHtml(c.note)}</div>`
     : "";
@@ -784,19 +797,23 @@ function renderGuideTab(rec) {
   }
 
   // Show the matched gates so the player understands the constraint.
-  // Dedupe across culture / culture_group and religion / religion_group
-  // because the parser captures the same scoped value into both buckets.
   const gateBits = [];
-  const seenC = new Set();
-  const cul = [...(guide.culture_gates || []), ...(guide.culture_group_gates || [])]
-    .map(prettifyCulture)
-    .filter((c) => c && !seenC.has(c.toLowerCase()) && seenC.add(c.toLowerCase()));
-  const seenR = new Set();
-  const rel = [...(guide.religion_gates || []), ...(guide.religion_group_gates || [])]
-    .map(prettifyReligion)
-    .filter((r) => r && !seenR.has(r.toLowerCase()) && seenR.add(r.toLowerCase()));
+  const dedupe = (xs, fn) => {
+    const seen = new Set();
+    return (xs || []).map(fn).filter((x) => x && !seen.has(x.toLowerCase()) && seen.add(x.toLowerCase()));
+  };
+  const cul = dedupe([...(guide.culture_gates || []), ...(guide.culture_group_gates || [])], prettifyCulture);
+  const rel = dedupe([...(guide.religion_gates || []), ...(guide.religion_group_gates || [])], prettifyReligion);
+  const tagGates = dedupe(guide.tag_gates, (t) => lookupLoc(t) ? `${lookupLoc(t)} (${t})` : t);
+  const rankGates = dedupe(guide.rank_gates, (r) => prettifyRank(r));
+  const reformGates = dedupe(guide.reform_gates, (r) => titleCase(r.replace(/_/g, " ")));
   if (cul.length) gateBits.push(`<dt>Culture gate</dt><dd>${cul.map((c) => escapeHtml(c)).join(", ")}</dd>`);
   if (rel.length) gateBits.push(`<dt>Religion gate</dt><dd>${rel.map((r) => escapeHtml(r)).join(", ")}</dd>`);
+  if (tagGates.length) gateBits.push(`<dt>Required tag</dt><dd>${tagGates.map((t) => escapeHtml(t)).join(", ")}</dd>`);
+  if (rankGates.length) gateBits.push(`<dt>Required rank</dt><dd>${rankGates.map((r) => escapeHtml(r)).join(", ")}</dd>`);
+  if (reformGates.length) gateBits.push(`<dt>Required reform</dt><dd>${reformGates.map((r) => escapeHtml(r)).join(", ")}</dd>`);
+  const excludeGates = dedupe(guide.tag_excludes, (t) => lookupLoc(t) ? `${lookupLoc(t)} (${t})` : t);
+  if (excludeGates.length) gateBits.push(`<dt>Excluded tags</dt><dd>${excludeGates.map((t) => escapeHtml(t)).join(", ")}</dd>`);
   if (gateBits.length) {
     body.push('<div class="stat-grid">');
     body.push(gateBits.join(""));

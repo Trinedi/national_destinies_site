@@ -10626,7 +10626,10 @@
         "beiping_area",
         "shandong_area",
         "hebei_area",
-        "jiangnan_area"
+        "jiangnan_area",
+        "guangdong_area",
+        "luzon_area",
+        "red_river_delta_area"
       ],
       "locations": [],
       "provinces": [],
@@ -10636,9 +10639,13 @@
         "kyoto",
         "namgyeong",
         "dadu",
-        "shangyuan"
+        "shangyuan",
+        "shenyang",
+        "maynila",
+        "thang_long",
+        "guangzhou"
       ],
-      "allow_raw": "owns = location:kyoto\n\t\towns = location:namgyeong\n\t\tOR = {\n\t\t\towns = location:dadu\n\t\t\towns = location:shangyuan\n\t\t}\n\t\tin_civil_war = no",
+      "allow_raw": "owns = location:kyoto\n\t\towns = location:namgyeong\n\t\towns = location:dadu\n\t\towns = location:shangyuan\n\t\towns = location:shenyang\n\t\tOR = {\n\t\t\towns = location:maynila\n\t\t\towns = location:thang_long\n\t\t\towns = location:guangzhou\n\t\t}\n\t\tin_civil_war = no",
       "potential_raw": "tag = JAP",
       "form_effect_raw": "trigger_event_non_silently = nd_ymp.1\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tcountry_rank_level < 4\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\tadd_stability = stability_severe_bonus",
       "formation_event": "nd_ymp.1",
@@ -10662,16 +10669,32 @@
           "text": "Owns Namgyeong"
         },
         {
+          "kind": "atom",
+          "text": "Owns Dadu"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Shangyuan"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Shenyang"
+        },
+        {
           "kind": "or",
           "text": "Any of:",
           "children": [
             {
               "kind": "atom",
-              "text": "Owns Dadu"
+              "text": "Owns Maynila"
             },
             {
               "kind": "atom",
-              "text": "Owns Shangyuan"
+              "text": "Owns Thang Long"
+            },
+            {
+              "kind": "atom",
+              "text": "Owns Guangzhou"
             }
           ]
         },

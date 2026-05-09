@@ -3620,12 +3620,12 @@
           "note": "Scotland. British culture group, free to pursue Atlantic colonisation without the diplomatic entanglements of the English crown. Colonising Virginia and New England as Scotland is the cleanest non-English Anglophone path."
         },
         {
-          "tag": "IRE",
-          "culture": null,
-          "religion": null,
+          "tag": "ULS",
+          "culture": "anglo_irish",
+          "religion": "catholic",
           "owned_in_target": 0,
           "owned_in_core": 0,
-          "note": "Ireland. British culture group via Anglo-Irish/Irish cultures. Atlantic-facing and unburdened by continental wars; a long underdog run."
+          "note": "Ulster. Anglo-Irish, Catholic, on the British Isles. Realistic only via the Ireland chain: unify the island as IRE first, then mount Atlantic colonisation. The longest underdog path."
         }
       ]
     },
@@ -3721,12 +3721,12 @@
           "note": "Aragon. Iberian group, Mediterranean-anchored. A long colonial program from a Mediterranean base, more painful than Castile but mechanically permitted."
         },
         {
-          "tag": "AZT",
-          "culture": null,
-          "religion": null,
-          "owned_in_target": 0,
+          "tag": "TNC",
+          "culture": "nahua_culture",
+          "religion": "nahuatl",
+          "owned_in_target": 1,
           "owned_in_core": 0,
-          "note": "Aztec Empire. The mestizo path: an Indigenous tag (Native American culture) that converts to Christianity. The `allow` block has a special clause for native cultures that adopt Christianity, mirroring the historical mestizo synthesis."
+          "note": "Tenochca (Mexica) at Tenochtitlan. The mestizo path: a Nahua-culture tag that converts to Christianity. The `allow` block accepts native cultures that adopt Christianity, mirroring the historical mestizo synthesis. TTZ (Texcoco) and TEP (Tepanec) are equally viable Nahua starters."
         }
       ]
     },
