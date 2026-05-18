@@ -2785,7 +2785,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Rank Rank Empire"
+              "text": "Rank Empire"
             },
             {
               "kind": "atom",
@@ -2825,7 +2825,7 @@
         },
         {
           "kind": "atom",
-          "text": "Rank Rank Empire"
+          "text": "Rank Empire"
         },
         {
           "kind": "atom",
@@ -2917,7 +2917,7 @@
         },
         {
           "kind": "atom",
-          "text": "Rank Rank Empire"
+          "text": "Rank Empire"
         },
         {
           "kind": "or",
@@ -9685,11 +9685,11 @@
             },
             {
               "kind": "atom",
-              "text": "Rank Rank Kingdom"
+              "text": "Rank Kingdom"
             },
             {
               "kind": "atom",
-              "text": "Rank Rank Empire"
+              "text": "Rank Empire"
             }
           ]
         }

@@ -220,7 +220,13 @@ def r_current_age(op: str, value: str, loc) -> str:
 
 
 def r_country_rank_atom(op: str, value: str, loc) -> str:
-    name = loc_or_pretty(loc, strip_ref(value))
+    # value is `country_rank:rank_empire`; the bare tier is `empire`.
+    # Without stripping `rank_`, prettify yields "Rank Empire" and the
+    # "=" label "Rank" duplicates it ("Rank Rank Empire").
+    tier = strip_ref(value)
+    if tier.startswith("rank_"):
+        tier = tier[len("rank_"):]
+    name = loc_or_pretty(loc, tier)
     cmp_text = {
         "=": "rank", ">=": "at least", ">": "above",
         "<=": "at most", "<": "below",
