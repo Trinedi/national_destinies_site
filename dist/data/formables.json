@@ -221,7 +221,7 @@
       "continents": [],
       "must_own": [],
       "allow_raw": "culture = { has_culture_group = culture_group:british_group }\n\t\tsituation:hundred_years_war = {\n\t\t\tsituation_has_ended = yes\n\t\t}\n\t\ttrigger_if = {\n\t\t\tlimit = { \n\t\t\t\tcountry_exists = c:ENG\n\t\t\t\tthis != c:ENG\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = GBR_f_trigger_eng\n\t\t\t\tOR = {\n\t\t\t\t\ttag = ENG\n\t\t\t\t\tNOT = { country_exists = c:ENG }\n\t\t\t\t\tc:ENG = { is_subject_or_below_of = root }\n\t\t\t\t}\t\t\t\n\t\t\t}\n\t\t}\n\t\ttrigger_if = {\n\t\t\tlimit = { \n\t\t\t\tcountry_exists = c:SCO\n\t\t\t\tthis != c:SCO\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = GBR_f_trigger_sco\n\t\t\t\tOR = {\n\t\t\t\t\ttag = SCO\n\t\t\t\t\tNOT = { country_exists = c:SCO }\n\t\t\t\t\tc:SCO = { is_subject_or_below_of = root }\n\t\t\t\t}\t\t\t\n\t\t\t}\n\t\t}\n\t\ttrigger_if = {\n\t\t\tlimit = { \n\t\t\t\tcountry_exists = c:WLS\n\t\t\t\tthis != c:WLS\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = GBR_f_trigger_wls\n\t\t\t\tOR = {\n\t\t\t\t\ttag = WLS\n\t\t\t\t\tNOT = { country_exists = c:WLS }\n\t\t\t\t\tc:WLS = { is_subject_or_below_of = root }\n\t\t\t\t}\t\t\t\n\t\t\t}\n\t\t}\n\t\ttrigger_if = {\n\t\t\tlimit = { \n\t\t\t\tcountry_exists = c:SBL\n\t\t\t\tthis != c:SBL\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = GBR_f_trigger_sbl\n\t\t\t\tOR = {\n\t\t\t\t\ttag = SBL\n\t\t\t\t\tNOT = { country_exists = c:SBL }\n\t\t\t\t\tc:SBL = { is_subject_or_below_of = root }\n\t\t\t\t}\t\t\t\n\t\t\t}\n\t\t}",
-      "potential_raw": "any_primary_or_accepted_or_tolerated_culture = { has_culture_group = culture_group:british_group }",
+      "potential_raw": "culture ?= { has_culture_group = culture_group:british_group }",
       "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = nd_gbr.1\n\t\tadd_stability = stability_mild_bonus",
       "formation_event": "nd_gbr.1",
       "source": "vanilla+mod_inject",
@@ -231,14 +231,8 @@
       "color_rgb": "#e64258",
       "english_potential": [
         {
-          "kind": "any_culture",
-          "text": "Any primary, accepted, or tolerated culture matches:",
-          "children": [
-            {
-              "kind": "atom",
-              "text": "Has Culture Group: British Group"
-            }
-          ]
+          "kind": "atom",
+          "text": "British Group culture group"
         }
       ],
       "english_allow": [
@@ -732,7 +726,7 @@
       "continents": [],
       "must_own": [],
       "allow_raw": "custom_tooltip = {\n\t\t\ttext = SPA_f_not_christian\n\n\t\t\tregion:iberia_region = {\n\t\t\t\tNOT = {\n\t\t\t\t\tany_location_in_region = {\n\t\t\t\t\t\towner ?= {\n\t\t\t\t\t\t\treligion.group != religion_group:christian\n\t\t\t\t\t\t\tNOT = { any_overlord_or_above = { this = root } }\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\t\t\n\t\t}",
-      "potential_raw": "culture = { has_culture_group = culture_group:iberian_group }\n\t\treligion.group = religion_group:christian",
+      "potential_raw": "culture ?= { has_culture_group = culture_group:iberian_group }\n\t\treligion.group = religion_group:christian",
       "form_effect_raw": "trigger_event_non_silently = nd_spa.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = {\n\t\t\t\trank = country_rank:rank_kingdom\n\t\t\t}\n\t\t}",
       "formation_event": "nd_spa.1",
       "source": "vanilla+mod_inject",
@@ -3870,6 +3864,70 @@
         {
           "kind": "atom",
           "text": "Owns Constantinople"
+        }
+      ]
+    },
+    {
+      "block_key": "BYZ_trebizond_f",
+      "mode": "full",
+      "source_file": "00_formable_countries.txt",
+      "tag": "BYZ",
+      "name": "BYZ",
+      "adjective": "BYZ_ADJ",
+      "flag": "BYZ",
+      "color": "map_BYZ",
+      "level": 4,
+      "fraction": 0.15,
+      "rule": "historical",
+      "content_priority": null,
+      "regions": [
+        "balkan_region",
+        "anatolia_region"
+      ],
+      "areas": [],
+      "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [
+        "constantinople"
+      ],
+      "allow_raw": "religion = religion:orthodox\n\t\towns = location:constantinople\n\t\tNOT = { country_exists = c:BYZ }",
+      "potential_raw": "has_or_had_tag = TRE\n\t\tculture = { has_culture_group = culture_group:greek_group }",
+      "form_effect_raw": "if = {\n\t\t\tlimit = {\n\t\t\t\tNOR = {\n\t\t\t\t\tcapital = location:constantinople\n\t\t\t\t\tcapital = location:rome\n\t\t\t\t}\n\t\t\t}\n\t\t\tset_capital = location:constantinople\n\t\t}\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}",
+      "formation_event": null,
+      "source": "vanilla",
+      "mod_overrides": false,
+      "variant_label": "Trebizond",
+      "color_rgb": "#793792",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Was or is Trebizond"
+        },
+        {
+          "kind": "atom",
+          "text": "Greek Group culture group"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Orthodoxy religion"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Constantinople"
+        },
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Byzantium exists"
+            }
+          ]
         }
       ]
     },

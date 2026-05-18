@@ -187,7 +187,7 @@
           "religion": "catholic",
           "owned_in_target": 134,
           "owned_in_core": 0,
-          "score": 22
+          "score": 19
         },
         {
           "tag": "SBL",
@@ -195,7 +195,7 @@
           "religion": "catholic",
           "owned_in_target": 14,
           "owned_in_core": 0,
-          "score": 22
+          "score": 19
         },
         {
           "tag": "SCO",
@@ -203,7 +203,7 @@
           "religion": "catholic",
           "owned_in_target": 27,
           "owned_in_core": 0,
-          "score": 22
+          "score": 19
         },
         {
           "tag": "WLS",
@@ -211,7 +211,7 @@
           "religion": "catholic",
           "owned_in_target": 8,
           "owned_in_core": 0,
-          "score": 22
+          "score": 19
         },
         {
           "tag": "LAN",
@@ -219,7 +219,7 @@
           "religion": "catholic",
           "owned_in_target": 5,
           "owned_in_core": 0,
-          "score": 16
+          "score": 13
         },
         {
           "tag": "MAC",
@@ -227,7 +227,7 @@
           "religion": "catholic",
           "owned_in_target": 5,
           "owned_in_core": 0,
-          "score": 16
+          "score": 13
         },
         {
           "tag": "MOY",
@@ -235,7 +235,7 @@
           "religion": "catholic",
           "owned_in_target": 4,
           "owned_in_core": 0,
-          "score": 15
+          "score": 12
         },
         {
           "tag": "ROS",
@@ -243,7 +243,7 @@
           "religion": "catholic",
           "owned_in_target": 4,
           "owned_in_core": 0,
-          "score": 15
+          "score": 12
         }
       ]
     },
@@ -804,9 +804,7 @@
       ]
     },
     "SPA_f": {
-      "culture_gates": [
-        "iberian_group"
-      ],
+      "culture_gates": [],
       "culture_group_gates": [
         "iberian_group"
       ],
@@ -3676,6 +3674,35 @@
           "owned_in_target": 7,
           "owned_in_core": 0,
           "score": 12
+        }
+      ]
+    },
+    "BYZ_trebizond_f": {
+      "culture_gates": [
+        "greek_group"
+      ],
+      "culture_group_gates": [
+        "greek_group"
+      ],
+      "religion_gates": [
+        "orthodox"
+      ],
+      "religion_group_gates": [],
+      "tag_gates": [
+        "TRE"
+      ],
+      "rank_gates": [],
+      "reform_gates": [],
+      "tag_excludes": [],
+      "suggested_tags": [],
+      "candidates": [
+        {
+          "tag": "TRE",
+          "culture": "pontic_greek_culture",
+          "religion": "orthodox",
+          "owned_in_target": 7,
+          "owned_in_core": 0,
+          "score": 20
         }
       ]
     },
