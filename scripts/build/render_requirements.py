@@ -72,6 +72,10 @@ def tokenize(text: str) -> list[tuple[str, str]]:
 #   ('atom', key, op, value)
 #   ('block', key, op, [clauses])
 
+_LHS_KINDS = ("id", "ref")  # both bare names and scoped refs (c:TAG, var:X)
+                            # can be the left-hand side of `<key> = <value>`
+
+
 def parse_block(toks: list[tuple[str, str]], i: int) -> tuple[list, int]:
     stmts: list = []
     while i < len(toks):
@@ -79,10 +83,10 @@ def parse_block(toks: list[tuple[str, str]], i: int) -> tuple[list, int]:
         if kind == "brace" and val == "}":
             return stmts, i + 1
         # Skip stray tokens we cannot interpret.
-        if kind not in ("id",) and val != "{":
+        if kind not in _LHS_KINDS and val != "{":
             i += 1
             continue
-        if kind == "id":
+        if kind in _LHS_KINDS:
             key = val
             j = i + 1
             if j >= len(toks):
@@ -98,6 +102,11 @@ def parse_block(toks: list[tuple[str, str]], i: int) -> tuple[list, int]:
                 break
             ntype, nval = toks[j]
             if ntype == "brace" and nval == "{":
+                # Critical: also recurse for `ref = { ... }` (e.g.
+                # `c:HAB = { is_subject_or_below_of = root }`). Otherwise
+                # the inner `{...}` was not nested, the matching `}`
+                # closed the wrong enclosing block, and sibling
+                # statements after the ref-block were silently dropped.
                 child, after = parse_block(toks, j + 1)
                 stmts.append(("block", key, op, child))
                 i = after

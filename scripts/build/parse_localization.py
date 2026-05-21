@@ -70,6 +70,23 @@ SHOW_RE = re.compile(
 )
 
 
+# Match `custom_tooltip = { ... text = KEY ... }` (or `tooltip = KEY`)
+# inside a raw allow / effect block. The renderer resolves these at render
+# time via the loc dict, so the keys must be in the filtered loc bundle or
+# they leak as raw "Dnm F Trigger Hab"-style prettified identifiers.
+_CUSTOM_TOOLTIP_RE = re.compile(
+    r"custom_tooltip\s*=\s*\{[^{}]*?\b(?:text|tooltip)\s*=\s*([A-Za-z_][A-Za-z0-9_]*)",
+    re.DOTALL,
+)
+
+
+def _scan_raw_for_loc_refs(raw: str) -> set[str]:
+    """Pull loc keys referenced from a Clausewitz raw-text field."""
+    if not raw:
+        return set()
+    return set(_CUSTOM_TOOLTIP_RE.findall(raw))
+
+
 def collect_seed_keys(web_data_dir: Path) -> set[str]:
     needed: set[str] = set()
     formables_path = web_data_dir / "formables.json"
@@ -89,6 +106,12 @@ def collect_seed_keys(web_data_dir: Path) -> set[str]:
                 needed.add(bk + "_desc")
                 if bk.endswith("_f"):
                     needed.add(bk[:-2])
+            # custom_tooltip references inside raw script fields (allow,
+            # form_effect, etc.) carry loc keys the renderer needs at run
+            # time. Seed them all.
+            for raw_field in ("allow_raw", "form_effect_raw",
+                              "potential_raw", "effect_raw"):
+                needed |= _scan_raw_for_loc_refs(rec.get(raw_field, ""))
     geo_path = web_data_dir / "geography.json"
     if geo_path.exists():
         geo = json.loads(geo_path.read_text())

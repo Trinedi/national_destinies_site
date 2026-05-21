@@ -241,8 +241,110 @@
           "text": "British Group culture group"
         },
         {
-          "kind": "atom",
-          "text": "Situation Has Ended: Yes"
+          "kind": "block",
+          "text": "Situation:Hundred Years War:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Situation Has Ended: Yes"
+            }
+          ]
+        },
+        {
+          "kind": "if",
+          "text": "If:",
+          "children": [
+            {
+              "kind": "block",
+              "text": "Limit:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "England exists"
+                },
+                {
+                  "kind": "atom",
+                  "text": "This: England"
+                }
+              ]
+            },
+            {
+              "kind": "atom",
+              "text": "We must either destroy [GetCountry('ENG').GetNameWithFlag] or make them our [subject|e]!"
+            }
+          ]
+        },
+        {
+          "kind": "if",
+          "text": "If:",
+          "children": [
+            {
+              "kind": "block",
+              "text": "Limit:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Scotland exists"
+                },
+                {
+                  "kind": "atom",
+                  "text": "This: Scotland"
+                }
+              ]
+            },
+            {
+              "kind": "atom",
+              "text": "We must either destroy [GetCountry('SCO').GetNameWithFlag] or make them our [subject|e]!"
+            }
+          ]
+        },
+        {
+          "kind": "if",
+          "text": "If:",
+          "children": [
+            {
+              "kind": "block",
+              "text": "Limit:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Wales exists"
+                },
+                {
+                  "kind": "atom",
+                  "text": "This: Wales"
+                }
+              ]
+            },
+            {
+              "kind": "atom",
+              "text": "We must either destroy [GetCountry('WLS').GetNameWithFlag] or make them our [subject|e]!"
+            }
+          ]
+        },
+        {
+          "kind": "if",
+          "text": "If:",
+          "children": [
+            {
+              "kind": "block",
+              "text": "Limit:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Balliol exists"
+                },
+                {
+                  "kind": "atom",
+                  "text": "This: Balliol"
+                }
+              ]
+            },
+            {
+              "kind": "atom",
+              "text": "We must either destroy [GetCountry('SBL').GetNameWithFlag] or make them our [subject|e]!"
+            }
+          ]
         }
       ]
     },
@@ -511,6 +613,10 @@
                         {
                           "kind": "atom",
                           "text": "Has variable: High Kingship Region"
+                        },
+                        {
+                          "kind": "atom",
+                          "text": "Var:High Kingship Region: Ireland"
                         }
                       ]
                     },
@@ -524,17 +630,17 @@
             },
             {
               "kind": "atom",
-              "text": "Neither Highkingship Nor Lordship Exist Tt"
+              "text": "Neither the [GetUniqueInternationalOrganization('lordship_of_ireland').GetName] or the [GetUniqueInternationalOrganization('high_kingship').GetName] can exist."
             },
             {
               "kind": "atom",
-              "text": "Ire F Sole High Kingship Tt"
+              "text": "We are the sole remaining member of the High Kingship of Ireland."
             }
           ]
         },
         {
           "kind": "atom",
-          "text": "Ire F Lordship Tt"
+          "text": "We cannot do this while being a [member|e] of the [GetUniqueInternationalOrganization('lordship_of_ireland').GetName]. Only the [international_organization_leader_short|e] can do it through the [ShowGenericActionName('lordship_of_ireland_form_kingdom')] action."
         }
       ]
     },
@@ -699,7 +805,7 @@
       "english_allow": [
         {
           "kind": "atom",
-          "text": "Swi F Tt"
+          "text": "[GetUniqueInternationalOrganization('swiss_confederation').GetName] exists\nThe [international_organization|e] can enact the [ShowLawName('sc_unification')] instead to form this country"
         }
       ]
     },
@@ -747,7 +853,7 @@
       "english_allow": [
         {
           "kind": "atom",
-          "text": "Spa F Not Christian"
+          "text": "Every [location|e] in [ShowRegionName('iberia_region')] must be [owned|e] by a [ShowReligionGroupAdjective('christian')] [country|e] or one of our [subjects|e]!"
         }
       ]
     },
@@ -805,7 +911,7 @@
       "english_allow": [
         {
           "kind": "atom",
-          "text": "Adu F Not Muslim"
+          "text": "Every [location|e] in [ShowRegionName('iberia_region')] must be [owned|e] by a [ShowReligionGroupAdjective('muslim')] [country|e] or one of our [subjects|e]!"
         }
       ]
     },
@@ -1955,15 +2061,21 @@
       "english_allow": [
         {
           "kind": "block",
-          "text": "Country Has Special Status:",
+          "text": "International Organization:Hre:",
           "children": [
             {
-              "kind": "atom",
-              "text": "Type: Elector"
-            },
-            {
-              "kind": "atom",
-              "text": "Country: Root"
+              "kind": "block",
+              "text": "Country Has Special Status:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Type: Elector"
+                },
+                {
+                  "kind": "atom",
+                  "text": "Country: Root"
+                }
+              ]
             }
           ]
         }
@@ -2356,7 +2468,7 @@
       "english_allow": [
         {
           "kind": "atom",
-          "text": "Hre F Tt"
+          "text": "The $HRE_f$ can only be formed via the [ShowPolicyName('renovatio_policy')] [policy|e] of the [GetUniqueInternationalOrganization('hre').GetName]"
         }
       ]
     },
@@ -2630,9 +2742,45 @@
             },
             {
               "kind": "atom",
-              "text": "Plc F Trigger Pol"
+              "text": "We must either destroy [GetCountry('POL').GetNameWithFlag] or make them our [subject|e]!"
             }
           ]
+        },
+        {
+          "kind": "if",
+          "text": "If:",
+          "children": [
+            {
+              "kind": "block",
+              "text": "Limit:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Lithuania exists"
+                },
+                {
+                  "kind": "atom",
+                  "text": "This: Lithuania"
+                }
+              ]
+            },
+            {
+              "kind": "atom",
+              "text": "We must either destroy [GetCountry('LIT').GetNameWithFlag] or make them our [subject|e]!"
+            }
+          ]
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Krakow"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Vilnius"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Warsaw"
         }
       ]
     },
@@ -3682,12 +3830,82 @@
               ]
             },
             {
-              "kind": "not",
-              "text": "Must not:",
+              "kind": "block",
+              "text": "C:Nap:",
+              "children": [
+                {
+                  "kind": "not",
+                  "text": "Must not:",
+                  "children": [
+                    {
+                      "kind": "atom",
+                      "text": "Has Presence In: Italy"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "else_if",
+          "text": "Trigger Else If:",
+          "children": [
+            {
+              "kind": "block",
+              "text": "Limit:",
               "children": [
                 {
                   "kind": "atom",
-                  "text": "Has Presence In: Italy"
+                  "text": "Tag: Naples"
+                }
+              ]
+            },
+            {
+              "kind": "block",
+              "text": "C:Sic:",
+              "children": [
+                {
+                  "kind": "not",
+                  "text": "Must not:",
+                  "children": [
+                    {
+                      "kind": "atom",
+                      "text": "Has Presence In: Italy"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "else_if",
+          "text": "Trigger Else:",
+          "children": [
+            {
+              "kind": "block",
+              "text": "Nor:",
+              "children": [
+                {
+                  "kind": "block",
+                  "text": "C:Nap:",
+                  "children": [
+                    {
+                      "kind": "atom",
+                      "text": "Has Presence In: Italy"
+                    }
+                  ]
+                },
+                {
+                  "kind": "block",
+                  "text": "C:Sic:",
+                  "children": [
+                    {
+                      "kind": "atom",
+                      "text": "Has Presence In: Italy"
+                    }
+                  ]
                 }
               ]
             }
@@ -5504,7 +5722,7 @@
       "english_allow": [
         {
           "kind": "atom",
-          "text": "Concluded Roto As Not Ottos Tt"
+          "text": "We have emerged victorious from the [ShowSituationNameWithNoTooltip('rise_of_the_ottomans')] [situation|e] without adopting the [GetCountry('TUR').GetAdjectiveWithNoTooltip] tag"
         }
       ]
     },
@@ -5774,15 +5992,21 @@
         },
         {
           "kind": "block",
-          "text": "Num Countries With Special Status:",
+          "text": "International Organization:Ilkhanate:",
           "children": [
             {
-              "kind": "atom",
-              "text": "Type: Ilkhan Claimant"
-            },
-            {
-              "kind": "atom",
-              "text": "Value: 0"
+              "kind": "block",
+              "text": "Num Countries With Special Status:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Type: Ilkhan Claimant"
+                },
+                {
+                  "kind": "atom",
+                  "text": "Value: 0"
+                }
+              ]
             }
           ]
         }
@@ -8628,11 +8852,10 @@
       "continents": [],
       "must_own": [
         "vienna",
-        "vienna",
         "buda",
         "prague"
       ],
-      "allow_raw": "religion = religion:catholic\n\t\tcountry_rank = country_rank:rank_kingdom\n\n\t\t\n\t\towns = location:vienna\n\n\t\t\n\t\t\n\t\t\n\t\tOR = {\n\t\t\tAND = {\n\t\t\t\tOR = { has_or_had_tag = HAB tag = HAB }\n\t\t\t\towns = location:vienna\n\t\t\t}\n\t\t\tAND = {\n\t\t\t\tOR = { has_or_had_tag = HUN tag = HUN }\n\t\t\t\towns = location:buda\n\t\t\t}\n\t\t\tAND = {\n\t\t\t\tOR = { has_or_had_tag = BOH tag = BOH }\n\t\t\t\towns = location:prague\n\t\t\t}\n\t\t}\n\n\t\t\n\t\ttrigger_if = {\n\t\t\tlimit = {\n\t\t\t\tcountry_exists = c:HAB\n\t\t\t\tthis != c:HAB\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = DNM_f_trigger_hab\n\t\t\t\tOR = {\n\t\t\t\t\ttag = HAB\n\t\t\t\t\thas_or_had_tag = HAB\n\t\t\t\t\tNOT = { country_exists = c:HAB }\n\t\t\t\t\tc:HAB = { is_subject_or_below_of = root }\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\t\n\t\ttrigger_if = {\n\t\t\tlimit = {\n\t\t\t\tcountry_exists = c:HUN\n\t\t\t\tthis != c:HUN\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = DNM_f_trigger_hun\n\t\t\t\tOR = {\n\t\t\t\t\ttag = HUN\n\t\t\t\t\thas_or_had_tag = HUN\n\t\t\t\t\tNOT = { country_exists = c:HUN }\n\t\t\t\t\tc:HUN = { is_subject_or_below_of = root }\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\t\n\t\ttrigger_if = {\n\t\t\tlimit = {\n\t\t\t\tcountry_exists = c:BOH\n\t\t\t\tthis != c:BOH\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = DNM_f_trigger_boh\n\t\t\t\tOR = {\n\t\t\t\t\ttag = BOH\n\t\t\t\t\thas_or_had_tag = BOH\n\t\t\t\t\tNOT = { country_exists = c:BOH }\n\t\t\t\t\tc:BOH = { is_subject_or_below_of = root }\n\t\t\t\t}\n\t\t\t}\n\t\t}",
+      "allow_raw": "religion = religion:catholic\n\t\tcountry_rank = country_rank:rank_kingdom\n\n\t\t\n\t\towns = location:vienna\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tOR = {\n\t\t\tOR = { has_or_had_tag = HAB tag = HAB }\n\t\t\tAND = {\n\t\t\t\tOR = { has_or_had_tag = HUN tag = HUN }\n\t\t\t\towns = location:buda\n\t\t\t}\n\t\t\tAND = {\n\t\t\t\tOR = { has_or_had_tag = BOH tag = BOH }\n\t\t\t\towns = location:prague\n\t\t\t}\n\t\t}\n\n\t\t\n\t\ttrigger_if = {\n\t\t\tlimit = {\n\t\t\t\tcountry_exists = c:HAB\n\t\t\t\tthis != c:HAB\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = DNM_f_trigger_hab\n\t\t\t\tOR = {\n\t\t\t\t\ttag = HAB\n\t\t\t\t\thas_or_had_tag = HAB\n\t\t\t\t\tNOT = { country_exists = c:HAB }\n\t\t\t\t\tc:HAB = { is_subject_or_below_of = root }\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\t\n\t\ttrigger_if = {\n\t\t\tlimit = {\n\t\t\t\tcountry_exists = c:HUN\n\t\t\t\tthis != c:HUN\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = DNM_f_trigger_hun\n\t\t\t\tOR = {\n\t\t\t\t\ttag = HUN\n\t\t\t\t\thas_or_had_tag = HUN\n\t\t\t\t\tNOT = { country_exists = c:HUN }\n\t\t\t\t\tc:HUN = { is_subject_or_below_of = root }\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\t\n\t\ttrigger_if = {\n\t\t\tlimit = {\n\t\t\t\tcountry_exists = c:BOH\n\t\t\t\tthis != c:BOH\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = DNM_f_trigger_boh\n\t\t\t\tOR = {\n\t\t\t\t\ttag = BOH\n\t\t\t\t\thas_or_had_tag = BOH\n\t\t\t\t\tNOT = { country_exists = c:BOH }\n\t\t\t\t\tc:BOH = { is_subject_or_below_of = root }\n\t\t\t\t}\n\t\t\t}\n\t\t}",
       "potential_raw": "religion = religion:catholic\n\t\tOR = {\n\t\t\truler = { dynasty = dynasty:habsburg_dynasty }\n\t\t\thas_or_had_tag = HAB\n\t\t\thas_or_had_tag = HUN\n\t\t\thas_or_had_tag = BOH\n\t\t}",
       "form_effect_raw": "hidden_effect = {\n\t\t\tif = {\n\t\t\t\tlimit = { OR = { tag = HUN has_or_had_tag = HUN } }\n\t\t\t\tset_variable = nd_dnm_origin_hun\n\t\t\t}\n\t\t\telse_if = {\n\t\t\t\tlimit = { OR = { tag = BOH has_or_had_tag = BOH } }\n\t\t\t\tset_variable = nd_dnm_origin_boh\n\t\t\t}\n\t\t\telse = {\n\t\t\t\tset_variable = nd_dnm_origin_hab\n\t\t\t}\n\t\t}\n\n\t\t\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = { is_member_of_international_organization = international_organization:hre }\n\t\t\tevery_owned_location = {\n\t\t\t\tlimit = { is_owned_by_international_organization = international_organization:hre }\n\t\t\t\tremove_from_international_organization = international_organization:hre\n\t\t\t}\n\t\t\tinternational_organization:hre = {\n\t\t\t\tremove_country_from_international_organization = root\n\t\t\t}\n\t\t}\n\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\n\t\ttrigger_event_non_silently = nd_dnm.1\n\t\tadd_stability = stability_severe_bonus",
       "formation_event": "nd_dnm.1",
@@ -8692,26 +8915,16 @@
           "text": "Any of:",
           "children": [
             {
-              "kind": "and",
-              "text": "All of:",
+              "kind": "or",
+              "text": "Any of:",
               "children": [
                 {
-                  "kind": "or",
-                  "text": "Any of:",
-                  "children": [
-                    {
-                      "kind": "atom",
-                      "text": "Was or is Austria"
-                    },
-                    {
-                      "kind": "atom",
-                      "text": "Tag: Austria"
-                    }
-                  ]
+                  "kind": "atom",
+                  "text": "Was or is Austria"
                 },
                 {
                   "kind": "atom",
-                  "text": "Owns Vienna"
+                  "text": "Tag: Austria"
                 }
               ]
             },
@@ -8785,7 +8998,55 @@
             },
             {
               "kind": "atom",
-              "text": "Dnm F Trigger Hab"
+              "text": "The Austrian crown is yours, gone, your subject, or your personal-union junior"
+            }
+          ]
+        },
+        {
+          "kind": "if",
+          "text": "If:",
+          "children": [
+            {
+              "kind": "block",
+              "text": "Limit:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Hungary exists"
+                },
+                {
+                  "kind": "atom",
+                  "text": "This: Hungary"
+                }
+              ]
+            },
+            {
+              "kind": "atom",
+              "text": "The Hungarian crown is yours, gone, your subject, or your personal-union junior"
+            }
+          ]
+        },
+        {
+          "kind": "if",
+          "text": "If:",
+          "children": [
+            {
+              "kind": "block",
+              "text": "Limit:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Bohemia exists"
+                },
+                {
+                  "kind": "atom",
+                  "text": "This: Bohemia"
+                }
+              ]
+            },
+            {
+              "kind": "atom",
+              "text": "The Bohemian crown is yours, gone, your subject, or your personal-union junior"
             }
           ]
         }
