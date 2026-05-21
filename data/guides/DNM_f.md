@@ -19,7 +19,7 @@ This is not Austria-Hungary, the dualist compromise history reached only after a
 
 The requirements are the same for all three origins; only your starting position differs. In plain terms:
 
-1. **Be Catholic and at least a Kingdom.** Both are hard requirements.
+1. **Be Catholic and at least a Kingdom.** Both are hard requirements. Kingdom rank is fully achievable inside the HRE (only *empire* rank is blocked for HRE members) — you need enough population and prestige above 50. Bohemia and Hungary usually start as kingdoms; Austria may begin as a duchy and need to rank up first, a normal early-game step.
 2. **Own Vienna.** Always required, whichever crown you start as. It is the imperial seat of the new realm.
 3. **Own your home capital.** Austria: Vienna already covers it. Hungary: own **Buda**. Bohemia: own **Prague**.
 4. **Neutralize all three crowns (Austria, Bohemia, Hungary).** For each one, ANY of these counts: you are it, it no longer exists, it is your subject, or it is your personal-union junior with you as senior. **You do not have to annex them** — vassalizing or holding a senior union is enough.
