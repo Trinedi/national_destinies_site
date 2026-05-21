@@ -2679,7 +2679,7 @@
           "tag": "BYZ",
           "culture": "greek_culture",
           "religion": "orthodox",
-          "owned_in_target": 59,
+          "owned_in_target": 61,
           "owned_in_core": 1,
           "score": 24
         },
@@ -3628,7 +3628,7 @@
           "tag": "BYZ",
           "culture": "greek_culture",
           "religion": "orthodox",
-          "owned_in_target": 52,
+          "owned_in_target": 54,
           "owned_in_core": 0,
           "score": 9
         },
@@ -8049,6 +8049,47 @@
           "owned_in_target": 0,
           "owned_in_core": 0,
           "note": "Chen Yuliang's Chu-culture faction in the middle Yangtze. Less natural than Wu but a strong inland base if you want to push east into Hangzhou after the rebellions wind down."
+        }
+      ]
+    },
+    "DNM_f": {
+      "culture_gates": [],
+      "culture_group_gates": [],
+      "religion_gates": [
+        "catholic"
+      ],
+      "religion_group_gates": [],
+      "tag_gates": [
+        "BOH",
+        "HAB",
+        "HUN"
+      ],
+      "rank_gates": [
+        "rank_kingdom"
+      ],
+      "reform_gates": [],
+      "tag_excludes": [],
+      "suggested_tags": [
+        "BOH",
+        "HAB",
+        "HUN"
+      ],
+      "candidates": [
+        {
+          "tag": "BOH",
+          "culture": "czech",
+          "religion": "catholic",
+          "owned_in_target": 40,
+          "owned_in_core": 1,
+          "score": 39
+        },
+        {
+          "tag": "HUN",
+          "culture": "hungarian",
+          "religion": "catholic",
+          "owned_in_target": 184,
+          "owned_in_core": 1,
+          "score": 39
         }
       ]
     },

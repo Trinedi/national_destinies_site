@@ -3894,7 +3894,7 @@
       ],
       "allow_raw": "religion = religion:orthodox\n\t\towns = location:constantinople\n\t\tNOT = { country_exists = c:BYZ }",
       "potential_raw": "has_or_had_tag = TRE\n\t\tculture = { has_culture_group = culture_group:greek_group }",
-      "form_effect_raw": "if = {\n\t\t\tlimit = {\n\t\t\t\tNOR = {\n\t\t\t\t\tcapital = location:constantinople\n\t\t\t\t\tcapital = location:rome\n\t\t\t\t}\n\t\t\t}\n\t\t\tset_capital = location:constantinople\n\t\t}\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}",
+      "form_effect_raw": "if = {\n\t\t\tlimit = {\n\t\t\t\tNOR = {\n\t\t\t\t\tcapital = location:constantinople\n\t\t\t\t\tcapital = location:rome\n\t\t\t\t}\n\t\t\t}\n\t\t\tset_capital = location:constantinople\n\t\t}\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\tif = {\n\t\t\tlimit = { has_dlc = \"d008_fate_of_the_phoenix\" }\n\t\t\tunlock_casus_belli_effect = { type = cb_restore_roman_borders }\n\t\t}",
       "formation_event": null,
       "source": "vanilla",
       "mod_overrides": false,
@@ -8585,6 +8585,207 @@
             {
               "kind": "atom",
               "text": "Is Situation Active: Red Turban Rebellions"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "block_key": "DNM_f",
+      "mode": "full",
+      "source_file": "99_nd_dnm.txt",
+      "tag": "DNM",
+      "name": "DNM",
+      "adjective": "DNM_ADJ",
+      "flag": "DNM",
+      "color": "map_DNM",
+      "level": 4,
+      "fraction": 0.5,
+      "rule": "plausible",
+      "content_priority": null,
+      "regions": [],
+      "areas": [
+        "austria_area",
+        "upper_austria_area",
+        "styria_area",
+        "carinthia_area",
+        "slovenia_area",
+        "tirol_area",
+        "bohemia_area",
+        "moravia_area",
+        "silesia_area",
+        "transdanubia_area",
+        "north_alfold_area",
+        "south_alfold_area",
+        "slovakia_area",
+        "transylvania_area",
+        "croatia_area",
+        "slavonia_area"
+      ],
+      "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [
+        "vienna",
+        "vienna",
+        "buda",
+        "prague"
+      ],
+      "allow_raw": "religion = religion:catholic\n\t\tcountry_rank = country_rank:rank_kingdom\n\n\t\t\n\t\towns = location:vienna\n\n\t\t\n\t\t\n\t\t\n\t\tOR = {\n\t\t\tAND = {\n\t\t\t\tOR = { has_or_had_tag = HAB tag = HAB }\n\t\t\t\towns = location:vienna\n\t\t\t}\n\t\t\tAND = {\n\t\t\t\tOR = { has_or_had_tag = HUN tag = HUN }\n\t\t\t\towns = location:buda\n\t\t\t}\n\t\t\tAND = {\n\t\t\t\tOR = { has_or_had_tag = BOH tag = BOH }\n\t\t\t\towns = location:prague\n\t\t\t}\n\t\t}\n\n\t\t\n\t\ttrigger_if = {\n\t\t\tlimit = {\n\t\t\t\tcountry_exists = c:HAB\n\t\t\t\tthis != c:HAB\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = DNM_f_trigger_hab\n\t\t\t\tOR = {\n\t\t\t\t\ttag = HAB\n\t\t\t\t\thas_or_had_tag = HAB\n\t\t\t\t\tNOT = { country_exists = c:HAB }\n\t\t\t\t\tc:HAB = { is_subject_or_below_of = root }\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\t\n\t\ttrigger_if = {\n\t\t\tlimit = {\n\t\t\t\tcountry_exists = c:HUN\n\t\t\t\tthis != c:HUN\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = DNM_f_trigger_hun\n\t\t\t\tOR = {\n\t\t\t\t\ttag = HUN\n\t\t\t\t\thas_or_had_tag = HUN\n\t\t\t\t\tNOT = { country_exists = c:HUN }\n\t\t\t\t\tc:HUN = { is_subject_or_below_of = root }\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\t\n\t\ttrigger_if = {\n\t\t\tlimit = {\n\t\t\t\tcountry_exists = c:BOH\n\t\t\t\tthis != c:BOH\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = DNM_f_trigger_boh\n\t\t\t\tOR = {\n\t\t\t\t\ttag = BOH\n\t\t\t\t\thas_or_had_tag = BOH\n\t\t\t\t\tNOT = { country_exists = c:BOH }\n\t\t\t\t\tc:BOH = { is_subject_or_below_of = root }\n\t\t\t\t}\n\t\t\t}\n\t\t}",
+      "potential_raw": "religion = religion:catholic\n\t\tOR = {\n\t\t\truler = { dynasty = dynasty:habsburg_dynasty }\n\t\t\thas_or_had_tag = HAB\n\t\t\thas_or_had_tag = HUN\n\t\t\thas_or_had_tag = BOH\n\t\t}",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tif = {\n\t\t\t\tlimit = { OR = { tag = HUN has_or_had_tag = HUN } }\n\t\t\t\tset_variable = nd_dnm_origin_hun\n\t\t\t}\n\t\t\telse_if = {\n\t\t\t\tlimit = { OR = { tag = BOH has_or_had_tag = BOH } }\n\t\t\t\tset_variable = nd_dnm_origin_boh\n\t\t\t}\n\t\t\telse = {\n\t\t\t\tset_variable = nd_dnm_origin_hab\n\t\t\t}\n\t\t}\n\n\t\t\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = { is_member_of_international_organization = international_organization:hre }\n\t\t\tevery_owned_location = {\n\t\t\t\tlimit = { is_owned_by_international_organization = international_organization:hre }\n\t\t\t\tremove_from_international_organization = international_organization:hre\n\t\t\t}\n\t\t\tinternational_organization:hre = {\n\t\t\t\tremove_country_from_international_organization = root\n\t\t\t}\n\t\t}\n\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\n\t\ttrigger_event_non_silently = nd_dnm.1\n\t\tadd_stability = stability_severe_bonus",
+      "formation_event": "nd_dnm.1",
+      "source": "mod_new",
+      "mod_overrides": true,
+      "variant_label": null,
+      "color_rgb": "#996112",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Catholicism religion"
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "block",
+              "text": "Ruler:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Dynasty: Habsburg Dynasty"
+                }
+              ]
+            },
+            {
+              "kind": "atom",
+              "text": "Was or is Austria"
+            },
+            {
+              "kind": "atom",
+              "text": "Was or is Hungary"
+            },
+            {
+              "kind": "atom",
+              "text": "Was or is Bohemia"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Catholicism religion"
+        },
+        {
+          "kind": "atom",
+          "text": "Rank Kingdom"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Vienna"
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "and",
+              "text": "All of:",
+              "children": [
+                {
+                  "kind": "or",
+                  "text": "Any of:",
+                  "children": [
+                    {
+                      "kind": "atom",
+                      "text": "Was or is Austria"
+                    },
+                    {
+                      "kind": "atom",
+                      "text": "Tag: Austria"
+                    }
+                  ]
+                },
+                {
+                  "kind": "atom",
+                  "text": "Owns Vienna"
+                }
+              ]
+            },
+            {
+              "kind": "and",
+              "text": "All of:",
+              "children": [
+                {
+                  "kind": "or",
+                  "text": "Any of:",
+                  "children": [
+                    {
+                      "kind": "atom",
+                      "text": "Was or is Hungary"
+                    },
+                    {
+                      "kind": "atom",
+                      "text": "Tag: Hungary"
+                    }
+                  ]
+                },
+                {
+                  "kind": "atom",
+                  "text": "Owns Buda"
+                }
+              ]
+            },
+            {
+              "kind": "and",
+              "text": "All of:",
+              "children": [
+                {
+                  "kind": "or",
+                  "text": "Any of:",
+                  "children": [
+                    {
+                      "kind": "atom",
+                      "text": "Was or is Bohemia"
+                    },
+                    {
+                      "kind": "atom",
+                      "text": "Tag: Bohemia"
+                    }
+                  ]
+                },
+                {
+                  "kind": "atom",
+                  "text": "Owns Prague"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "if",
+          "text": "If:",
+          "children": [
+            {
+              "kind": "block",
+              "text": "Limit:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Austria exists"
+                },
+                {
+                  "kind": "atom",
+                  "text": "This: Austria"
+                }
+              ]
+            },
+            {
+              "kind": "atom",
+              "text": "Dnm F Trigger Hab"
             }
           ]
         }
