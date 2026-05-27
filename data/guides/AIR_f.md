@@ -1,11 +1,11 @@
 ---
 priority_starters:
-  - tag: TRG
-    note: "Tuareg pop tag holding the Air locations themselves (agadez, takedda, in_gall, iferouane, assode, abalessa, djanet, ghat, the Aderbissinat-Marandet belt). The cleanest entry point: you already start with the territory the formable demands."
   - tag: TMK
-    note: "Tadmekka. Tuareg-cultured neighbour to the west on the Niger bend. Push east into the Air massif and Agadez itself, then form."
-  - tag: TMB
-    note: "Timbuktu. Larger Tuareg-cultured power, also flagged by the formation event as an intended former. Strong economic base, longer march east to Air."
+    note: "Tadmekka. The only playable Tuareg-cultured country at the 1337 bookmark. Small base on the Niger bend, but the on-design starting point. Push east into the Air massif and Agadez, then form."
+  - tag: SON
+    note: "Songhai. Songhai-cultured, but the natural conqueror of Air: starts adjacent to Tadmekka and one campaign away from the air_area. Take Air, settle Tuareg pops or convert primary culture to Tuareg, then form."
+  - tag: KAN
+    note: "Kano. Hausa-cultured neighbour to the south of Air. Comparable culture-switch path to SON, with a different geographic angle: Hausaland up into the Air massif rather than the Niger bend across."
 hide_auto: true
 ---
 
@@ -23,16 +23,49 @@ sovereignty: the Ihaggaren noble caste in tension with the cosmopolitan
 merchant city of Agadez, and the Tuareg strategic question of whether
 to dominate the Sahara by the sword or by the salt and gold caravan.
 
+## A note on the Tuareg tags
+
+At the 1337 bookmark only **TMK (Tadmekka)** is a regular playable
+country. **TRG (Tuareg)** and **TMB (Timbuktu)** are Society-of-Pops
+tags in vanilla EU5: they hold the historical Tuareg pops and the
+Air locations themselves, but you cannot select them at the country
+picker. They are conquest and settlement targets, not starts.
+
+The formation event lists TMK, TMB and TRG as flavoured recipients,
+but the formable's hard requirements are only `culture = culture:tuareg`
+and 75 percent of `air_area`. Any country that satisfies both can
+form Air, which opens up the culture-switch routes below.
+
 ## Forming it
 
-1. **Start as a Tuareg-cultured tag** (TRG, TMK, or TMB). All three are
-   tagged in the formation event as intended formers.
+1. **Get Tuareg primary culture.** Either start as TMK, or play a
+   non-Tuareg neighbour, take Air and the surrounding Tuareg pops,
+   and let your primary culture shift to Tuareg (or accept Tuareg
+   and switch). The `potential` is a culture check, not a tag check.
 2. **Hold the Air area at 75 percent.** The formable's only required
-   geography is `air_area`, which is just one area in the Sahel:
-   the Air, Ader, and Marandet provinces. TRG already starts with
-   most of it.
-3. **Form Air.** No religion or rank gate, just the territory and
-   Tuareg culture.
+   geography is `air_area`: the Air, Ader and Marandet provinces.
+   This is one cluster centred on Agadez, Iferouane, Takedda and
+   In Gall.
+3. **Form Air.** No religion or rank gate, just the Tuareg culture
+   and the territory.
+
+### The TMK path
+
+TMK starts small on the Niger bend, west of the Air massif. The
+honest assessment: it is a hard start. You have a Tuareg-cultured
+country but limited population, and the Air locations are inside
+the TRG and TMB SoPs to your east. You will need to expand into
+SoP territory (SoPs can lose locations to adjacent regular countries
+through war and settlement) before the formable becomes reachable.
+This is the on-design path if you want a pure Tuareg run.
+
+### The conqueror path
+
+Pick a Sahel or Maghreb power adjacent to Air (Songhai, Kano, the
+Mali successor states, or even a Maghrebi tag pushing south), take
+the Air area in one or two campaigns, and let the Tuareg pops you
+absorb pull your primary culture across. This is the practical
+path if you want to actually field an army that can hold Air.
 
 ## Pick your founding doctrine on formation
 
