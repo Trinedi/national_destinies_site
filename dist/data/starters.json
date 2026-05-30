@@ -3656,7 +3656,9 @@
       "tag_gates": [],
       "rank_gates": [],
       "reform_gates": [],
-      "tag_excludes": [],
+      "tag_excludes": [
+        "TRE"
+      ],
       "suggested_tags": [],
       "candidates": [
         {
@@ -3664,14 +3666,6 @@
           "culture": "greek_culture",
           "religion": "orthodox",
           "owned_in_target": 10,
-          "owned_in_core": 0,
-          "score": 12
-        },
-        {
-          "tag": "TRE",
-          "culture": "pontic_greek_culture",
-          "religion": "orthodox",
-          "owned_in_target": 7,
           "owned_in_core": 0,
           "score": 12
         }
@@ -5081,31 +5075,31 @@
       "tag_excludes": [],
       "suggested_tags": [],
       "candidates": [],
-      "notes_html": "<h2>Concept</h2>\n<p>The Sultanate of Air revives the historical Tuareg confederation\ncentred on the Air Mountains and the caravan city of Agadez. The\nhistorical reference is the Sultanate of Agadez established in the\nfifteenth century, which knit together the Kel Ayr clans into a\ntrading and raiding power straddling the trans-Saharan routes between\nthe Maghreb, Hausaland, and the Niger bend.</p>\n<p>The mod frames Air as the political expression of Tuareg desert\nsovereignty: the Ihaggaren noble caste in tension with the cosmopolitan\nmerchant city of Agadez, and the Tuareg strategic question of whether\nto dominate the Sahara by the sword or by the salt and gold caravan.</p>\n<h2>Forming it</h2>\n<ol>\n<li><strong>Start as a Tuareg-cultured tag</strong> (TRG, TMK, or TMB). All three are\n   tagged in the formation event as intended formers.</li>\n<li><strong>Hold the Air area at 75 percent.</strong> The formable&rsquo;s only required\n   geography is <code>air_area</code>, which is just one area in the Sahel:\n   the Air, Ader, and Marandet provinces. TRG already starts with\n   most of it.</li>\n<li><strong>Form Air.</strong> No religion or rank gate, just the territory and\n   Tuareg culture.</li>\n</ol>\n<h2>Pick your founding doctrine on formation</h2>\n<p>The formation event offers two 15-year doctrines:</p>\n<ul>\n<li><strong>Lords of the desert.</strong> The Ihaggaren warrior path. Tuareg dominion\n  by the sword, raiding and tribute as the basis of the confederation.\n  Unlocks Path A (Hausaland Campaign, Fall of Kano, Saharan Empire).</li>\n<li><strong>Gateway of the Sahara.</strong> Agadez as the cosmopolitan trade hub.\n  Caravan wealth, caravan protection, and control of the trans-Saharan\n  routes. Unlocks Path B (Salt Road, Fezzan Link, Master of the Routes).</li>\n</ul>\n<h2>What happens on formation</h2>\n<ul>\n<li>A 15-year formation modifier from your chosen path.</li>\n<li>Mild stability bonus.</li>\n<li>The destiny tree unlocks in the Traditions tab, branching into\n  the war or trade path you committed to.</li>\n</ul>\n<h2>After forming</h2>\n<p>The destiny tree splits two ways:</p>\n<ul>\n<li><strong>Path A (Saharan Empire).</strong> Hausaland campaign, Fall of Kano,\n  Saharan Empire capstone. Eternal Raiders or Desert Emperor as the\n  twenty-year endgame modifier. Pick this if you took Lords of the\n  Desert and want to convert Tuareg cavalry into a Sahelian military\n  empire reaching south into Hausa country.</li>\n<li><strong>Path B (Master of the Routes).</strong> Salt Road, Fezzan Link, Master\n  of the Routes capstone. Gold and Salt or Cosmopolitan Hub as the\n  endgame modifier. Pick this if you took Gateway of the Sahara and\n  want Agadez as a Mediterranean-to-Sahel trade pivot.</li>\n</ul>",
+      "notes_html": "<h2>Concept</h2>\n<p>The Sultanate of Air revives the historical Tuareg confederation\ncentred on the Air Mountains and the caravan city of Agadez. The\nhistorical reference is the Sultanate of Agadez established in the\nfifteenth century, which knit together the Kel Ayr clans into a\ntrading and raiding power straddling the trans-Saharan routes between\nthe Maghreb, Hausaland, and the Niger bend.</p>\n<p>The mod frames Air as the political expression of Tuareg desert\nsovereignty: the Ihaggaren noble caste in tension with the cosmopolitan\nmerchant city of Agadez, and the Tuareg strategic question of whether\nto dominate the Sahara by the sword or by the salt and gold caravan.</p>\n<h2>A note on the Tuareg tags</h2>\n<p>At the 1337 bookmark only <strong>TMK (Tadmekka)</strong> is a regular playable\ncountry. <strong>TRG (Tuareg)</strong> and <strong>TMB (Timbuktu)</strong> are Society-of-Pops\ntags in vanilla EU5: they hold the historical Tuareg pops and the\nAir locations themselves, but you cannot select them at the country\npicker. They are conquest and settlement targets, not starts.</p>\n<p>The formation event lists TMK, TMB and TRG as flavoured recipients,\nbut the formable&rsquo;s hard requirements are only <code>culture = culture:tuareg</code>\nand 75 percent of <code>air_area</code>. Any country that satisfies both can\nform Air, which opens up the culture-switch routes below.</p>\n<h2>Forming it</h2>\n<ol>\n<li><strong>Get Tuareg primary culture.</strong> Either start as TMK, or play a\n   non-Tuareg neighbour, take Air and the surrounding Tuareg pops,\n   and let your primary culture shift to Tuareg (or accept Tuareg\n   and switch). The <code>potential</code> is a culture check, not a tag check.</li>\n<li><strong>Hold the Air area at 75 percent.</strong> The formable&rsquo;s only required\n   geography is <code>air_area</code>: the Air, Ader and Marandet provinces.\n   This is one cluster centred on Agadez, Iferouane, Takedda and\n   In Gall.</li>\n<li><strong>Form Air.</strong> No religion or rank gate, just the Tuareg culture\n   and the territory.</li>\n</ol>\n<h3>The TMK path</h3>\n<p>TMK starts small on the Niger bend, west of the Air massif. The\nhonest assessment: it is a hard start. You have a Tuareg-cultured\ncountry but limited population, and the Air locations are inside\nthe TRG and TMB SoPs to your east. You will need to expand into\nSoP territory (SoPs can lose locations to adjacent regular countries\nthrough war and settlement) before the formable becomes reachable.\nThis is the on-design path if you want a pure Tuareg run.</p>\n<h3>The conqueror path</h3>\n<p>Pick a Sahel or Maghreb power adjacent to Air (Songhai, Kano, the\nMali successor states, or even a Maghrebi tag pushing south), take\nthe Air area in one or two campaigns, and let the Tuareg pops you\nabsorb pull your primary culture across. This is the practical\npath if you want to actually field an army that can hold Air.</p>\n<h2>Pick your founding doctrine on formation</h2>\n<p>The formation event offers two 15-year doctrines:</p>\n<ul>\n<li><strong>Lords of the desert.</strong> The Ihaggaren warrior path. Tuareg dominion\n  by the sword, raiding and tribute as the basis of the confederation.\n  Unlocks Path A (Hausaland Campaign, Fall of Kano, Saharan Empire).</li>\n<li><strong>Gateway of the Sahara.</strong> Agadez as the cosmopolitan trade hub.\n  Caravan wealth, caravan protection, and control of the trans-Saharan\n  routes. Unlocks Path B (Salt Road, Fezzan Link, Master of the Routes).</li>\n</ul>\n<h2>What happens on formation</h2>\n<ul>\n<li>A 15-year formation modifier from your chosen path.</li>\n<li>Mild stability bonus.</li>\n<li>The destiny tree unlocks in the Traditions tab, branching into\n  the war or trade path you committed to.</li>\n</ul>\n<h2>After forming</h2>\n<p>The destiny tree splits two ways:</p>\n<ul>\n<li><strong>Path A (Saharan Empire).</strong> Hausaland campaign, Fall of Kano,\n  Saharan Empire capstone. Eternal Raiders or Desert Emperor as the\n  twenty-year endgame modifier. Pick this if you took Lords of the\n  Desert and want to convert Tuareg cavalry into a Sahelian military\n  empire reaching south into Hausa country.</li>\n<li><strong>Path B (Master of the Routes).</strong> Salt Road, Fezzan Link, Master\n  of the Routes capstone. Gold and Salt or Cosmopolitan Hub as the\n  endgame modifier. Pick this if you took Gateway of the Sahara and\n  want Agadez as a Mediterranean-to-Sahel trade pivot.</li>\n</ul>",
       "priority_starters": [
-        {
-          "tag": "TRG",
-          "culture": "tuareg",
-          "religion": "sunni",
-          "owned_in_target": 0,
-          "owned_in_core": 0,
-          "note": "Tuareg pop tag holding the Air locations themselves (agadez, takedda, in_gall, iferouane, assode, abalessa, djanet, ghat, the Aderbissinat-Marandet belt). The cleanest entry point: you already start with the territory the formable demands."
-        },
         {
           "tag": "TMK",
           "culture": "tuareg",
           "religion": "sunni",
           "owned_in_target": 0,
           "owned_in_core": 0,
-          "note": "Tadmekka. Tuareg-cultured neighbour to the west on the Niger bend. Push east into the Air massif and Agadez itself, then form."
+          "note": "Tadmekka. The only playable Tuareg-cultured country at the 1337 bookmark. Small base on the Niger bend, but the on-design starting point. Push east into the Air massif and Agadez, then form."
         },
         {
-          "tag": "TMB",
-          "culture": "tuareg",
+          "tag": "SON",
+          "culture": "songhai",
           "religion": "sunni",
           "owned_in_target": 0,
           "owned_in_core": 0,
-          "note": "Timbuktu. Larger Tuareg-cultured power, also flagged by the formation event as an intended former. Strong economic base, longer march east to Air."
+          "note": "Songhai. Songhai-cultured, but the natural conqueror of Air: starts adjacent to Tadmekka and one campaign away from the air_area. Take Air, settle Tuareg pops or convert primary culture to Tuareg, then form."
+        },
+        {
+          "tag": "KAN",
+          "culture": "hausa",
+          "religion": "sunni",
+          "owned_in_target": 0,
+          "owned_in_core": 0,
+          "note": "Kano. Hausa-cultured neighbour to the south of Air. Comparable culture-switch path to SON, with a different geographic angle: Hausaland up into the Air massif rather than the Niger bend across."
         }
       ]
     },

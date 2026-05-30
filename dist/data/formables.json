@@ -4061,7 +4061,7 @@
         "constantinople"
       ],
       "allow_raw": "religion = religion:orthodox\n\t\towns = location:constantinople",
-      "potential_raw": "culture = { has_culture_group = culture_group:greek_group }",
+      "potential_raw": "culture = { has_culture_group = culture_group:greek_group }\n\t\t\n\t\t\n\t\tNOT = { has_or_had_tag = TRE }",
       "form_effect_raw": "if = {\n\t\t\tlimit = {\n\t\t\t\tNOR = {\n\t\t\t\t\tcapital = location:constantinople\n\t\t\t\t\tcapital = location:rome\n\t\t\t\t}\n\t\t\t}\n\t\t\tset_capital = location:constantinople\n\t\t}\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\ttrigger_event_non_silently = nd_byz.1\n\t\tadd_stability = stability_severe_bonus",
       "formation_event": "nd_byz.1",
       "source": "vanilla+mod_replace",
@@ -4072,6 +4072,16 @@
         {
           "kind": "atom",
           "text": "Greek Group culture group"
+        },
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Was or is Trebizond"
+            }
+          ]
         }
       ],
       "english_allow": [
@@ -4087,8 +4097,8 @@
     },
     {
       "block_key": "BYZ_trebizond_f",
-      "mode": "full",
-      "source_file": "00_formable_countries.txt",
+      "mode": "replace",
+      "source_file": "99_nd_byz.txt",
       "tag": "BYZ",
       "name": "BYZ",
       "adjective": "BYZ_ADJ",
@@ -4112,10 +4122,10 @@
       ],
       "allow_raw": "religion = religion:orthodox\n\t\towns = location:constantinople\n\t\tNOT = { country_exists = c:BYZ }",
       "potential_raw": "has_or_had_tag = TRE\n\t\tculture = { has_culture_group = culture_group:greek_group }",
-      "form_effect_raw": "if = {\n\t\t\tlimit = {\n\t\t\t\tNOR = {\n\t\t\t\t\tcapital = location:constantinople\n\t\t\t\t\tcapital = location:rome\n\t\t\t\t}\n\t\t\t}\n\t\t\tset_capital = location:constantinople\n\t\t}\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\tif = {\n\t\t\tlimit = { has_dlc = \"d008_fate_of_the_phoenix\" }\n\t\t\tunlock_casus_belli_effect = { type = cb_restore_roman_borders }\n\t\t}",
-      "formation_event": null,
-      "source": "vanilla",
-      "mod_overrides": false,
+      "form_effect_raw": "if = {\n\t\t\tlimit = {\n\t\t\t\tNOR = {\n\t\t\t\t\tcapital = location:constantinople\n\t\t\t\t\tcapital = location:rome\n\t\t\t\t}\n\t\t\t}\n\t\t\tset_capital = location:constantinople\n\t\t}\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\tif = {\n\t\t\tlimit = { has_dlc = \"d008_fate_of_the_phoenix\" }\n\t\t\tunlock_casus_belli_effect = { type = cb_restore_roman_borders }\n\t\t}\n\t\ttrigger_event_non_silently = nd_byz.1\n\t\tadd_stability = stability_severe_bonus",
+      "formation_event": "nd_byz.1",
+      "source": "vanilla+mod_replace",
+      "mod_overrides": true,
       "variant_label": "Trebizond",
       "color_rgb": "#793792",
       "english_potential": [
