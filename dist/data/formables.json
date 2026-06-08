@@ -692,7 +692,7 @@
       "adjective": "MCM_ADJ",
       "flag": "MCM",
       "color": "map_MCM",
-      "level": 2,
+      "level": 1,
       "fraction": 0.75,
       "rule": "historical",
       "content_priority": null,
@@ -2033,7 +2033,7 @@
       "sub_continents": [],
       "continents": [],
       "must_own": [],
-      "allow_raw": "international_organization:hre = {\n\t\t\tcountry_has_special_status = {\n\t\t\t\ttype = special_status:elector\n\t\t\t\tcountry = root\n\t\t\t}\n\t\t}",
+      "allow_raw": "international_organization:hre ?= {\n\t\t\tcountry_has_special_status = {\n\t\t\t\ttype = special_status:elector\n\t\t\t\tcountry = root\n\t\t\t}\n\t\t}",
       "potential_raw": "OR = {\n\t\t\tculture = culture:saxon\n\t\t\tculture = culture:lower_saxon\n\t\t}",
       "form_effect_raw": "trigger_event_non_silently = nd_sax.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tNOT = { is_member_of_international_organization = international_organization:hre }\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
       "formation_event": "nd_sax.1",
@@ -2696,7 +2696,7 @@
         "vilnius",
         "warsaw"
       ],
-      "allow_raw": "trigger_if = {\n\t\t\tlimit = { \n\t\t\t\tcountry_exists = c:POL\n\t\t\t\tthis != c:POL\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = PLC_f_trigger_pol\n\t\t\t\tOR = {\n\t\t\t\t\ttag = POL\n\t\t\t\t\tNOT = { country_exists = c:POL }\n\t\t\t\t\tc:POL = { is_subject_or_below_of = root }\n\t\t\t\t}\t\t\t\n\t\t\t}\n\t\t}\n\t\ttrigger_if = {\n\t\t\tlimit = { \n\t\t\t\tcountry_exists = c:LIT\n\t\t\t\tthis != c:LIT\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = PLC_f_trigger_lit\n\t\t\t\tOR = {\n\t\t\t\t\ttag = LIT\n\t\t\t\t\tNOT = { country_exists = c:LIT }\n\t\t\t\t\tc:LIT = { is_subject_or_below_of = root }\n\t\t\t\t}\t\t\t\n\t\t\t}\n\t\t}\n\t\towns = location:krakow\n\t\towns = location:vilnius\n\t\towns = location:warsaw",
+      "allow_raw": "trigger_if = {\n\t\t\tlimit = { \n\t\t\t\tcountry_exists = c:POL\n\t\t\t\tthis != c:POL\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = PLC_f_trigger_pol\n\t\t\t\tOR = {\n\t\t\t\t\ttag = POL\n\t\t\t\t\tNOT = { country_exists = c:POL }\n\t\t\t\t\tc:POL = { \n\t\t\t\t\t\tOR = {\n\t\t\t\t\t\t\tis_subject_or_below_of = root\n\t\t\t\t\t\t\tin_union_with = root\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\t\t\t\n\t\t\t}\n\t\t}\n\t\ttrigger_if = {\n\t\t\tlimit = { \n\t\t\t\tcountry_exists = c:LIT\n\t\t\t\tthis != c:LIT\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = PLC_f_trigger_lit\n\t\t\t\tOR = {\n\t\t\t\t\ttag = LIT\n\t\t\t\t\tNOT = { country_exists = c:LIT }\n\t\t\t\t\tc:LIT = {\n\t\t\t\t\t\tOR = {\n\t\t\t\t\t\t\tis_subject_or_below_of = root\n\t\t\t\t\t\t\tin_union_with = root\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\t\t\t\n\t\t\t}\n\t\t}\n\t\towns = location:krakow\n\t\towns = location:vilnius\n\t\towns = location:warsaw",
       "potential_raw": "OR = {\n\t\t\tculture = { has_culture_group = culture_group:polish_group }\n\t\t\tculture = { has_culture_group = culture_group:lithuanian_group }\n\t\t}",
       "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = nd_plc.1\n\t\tadd_stability = stability_mild_bonus",
       "formation_event": "nd_plc.1",
@@ -2742,7 +2742,7 @@
             },
             {
               "kind": "atom",
-              "text": "We must either destroy [GetCountry('POL').GetNameWithFlag] or make them our [subject|e]!"
+              "text": "We must either destroy [GetCountry('POL').GetNameWithFlag], make them our [subject|e], or be in a [union|e] with them"
             }
           ]
         },
@@ -2766,7 +2766,7 @@
             },
             {
               "kind": "atom",
-              "text": "We must either destroy [GetCountry('LIT').GetNameWithFlag] or make them our [subject|e]!"
+              "text": "We must either destroy [GetCountry('LIT').GetNameWithFlag], make them our [subject|e], or be in a [union|e] with them"
             }
           ]
         },
@@ -3508,7 +3508,7 @@
         "florence",
         "naples"
       ],
-      "allow_raw": "owns = location:milano\n\t\towns = location:florence\n\t\towns = location:naples",
+      "allow_raw": "OR = {\n\t\t\tAND = {\n\t\t\t\towns = location:milano\n\t\t\t\towns = location:florence\n\t\t\t\towns = location:naples\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = gag_guelphs_winner_may_form_italy_without_location_requirements_tt\n\t\t\t\thas_variable = gag_guelphs_winner_may_form_italy_without_location_requirements\n\t\t\t}\n\t\t}",
       "potential_raw": "culture = { has_culture_group = culture_group:italian_group }",
       "form_effect_raw": "if = {\n\t\t\tlimit = {\n\t\t\t\tNOT = { is_member_of_international_organization = international_organization:hre }\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = nd_ita.1\n\t\tadd_stability = stability_mild_bonus",
       "formation_event": "nd_ita.1",
@@ -3525,16 +3525,32 @@
       ],
       "english_allow": [
         {
-          "kind": "atom",
-          "text": "Owns Milano"
-        },
-        {
-          "kind": "atom",
-          "text": "Owns Florence"
-        },
-        {
-          "kind": "atom",
-          "text": "Owns Naples"
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "and",
+              "text": "All of:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Owns Milano"
+                },
+                {
+                  "kind": "atom",
+                  "text": "Owns Florence"
+                },
+                {
+                  "kind": "atom",
+                  "text": "Owns Naples"
+                }
+              ]
+            },
+            {
+              "kind": "atom",
+              "text": "We won $guelphs_and_ghibellines$ Situation as the leader of the $guelphs_io$"
+            }
+          ]
         }
       ]
     },
@@ -3771,7 +3787,7 @@
         "naples",
         "palermo"
       ],
-      "allow_raw": "owns = location:naples\n\t\towns = location:palermo\n\n\t\t\n\t\ttrigger_if = {\n\t\t\tlimit = { tag = SIC }\n\t\t\tc:NAP = { \n\t\t\t\tNOT = { has_presence_in = region:italy_region }\n\t\t\t}\n\t\t}\n\t\ttrigger_else_if = {\n\t\t\tlimit = { tag = NAP }\n\t\t\tc:SIC ?= { \n\t\t\t\tNOT = { has_presence_in = region:italy_region }\n\t\t\t}\n\t\t}\n\t\ttrigger_else = {\n\t\t\tNOR = {\n\t\t\t\tc:NAP ?= { has_presence_in = region:italy_region }\n\t\t\t\tc:SIC ?= { has_presence_in = region:italy_region }\n\t\t\t}\n\t\t}",
+      "allow_raw": "owns = location:naples\n\t\towns = location:palermo\n\n\t\t\n\t\ttrigger_if = {\n\t\t\tlimit = { tag = SIC }\n\t\t\tOR = {\n\t\t\t\tNOT = { country_exists = c:NAP }\n\t\t\t\tc:NAP = { NOT = { has_presence_in = region:italy_region } }\n\t\t\t}\n\t\t}\n\t\ttrigger_else_if = {\n\t\t\tlimit = { tag = NAP }\n\t\t\tOR = {\n\t\t\t\tNOT = { country_exists = c:SIC }\n\t\t\t\tc:SIC = { NOT = { has_presence_in = region:italy_region } }\n\t\t\t}\n\t\t}\n\t\ttrigger_else = {\n\t\t\tOR = {\n\t\t\t\tNOT = { country_exists = c:NAP }\n\t\t\t\tc:NAP = { NOT = { has_presence_in = region:italy_region } }\n\t\t\t}\n\t\t\tOR = {\n\t\t\t\tNOT = { country_exists = c:SIC }\n\t\t\t\tc:SIC = { NOT = { has_presence_in = region:italy_region } }\n\t\t\t}\n\t\t}",
       "potential_raw": "not = { tag = ITA }\n\t\tOR = {\n\t\t\tculture = culture:sicilian\n\t\t\tculture = culture:neapolitan\n\t\t}",
       "form_effect_raw": "trigger_event_non_silently = nd_tws.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
       "formation_event": "nd_tws.1",
@@ -3830,8 +3846,8 @@
               ]
             },
             {
-              "kind": "block",
-              "text": "C:Nap:",
+              "kind": "or",
+              "text": "Any of:",
               "children": [
                 {
                   "kind": "not",
@@ -3839,7 +3855,23 @@
                   "children": [
                     {
                       "kind": "atom",
-                      "text": "Has Presence In: Italy"
+                      "text": "Naples exists"
+                    }
+                  ]
+                },
+                {
+                  "kind": "block",
+                  "text": "C:Nap:",
+                  "children": [
+                    {
+                      "kind": "not",
+                      "text": "Must not:",
+                      "children": [
+                        {
+                          "kind": "atom",
+                          "text": "Has Presence In: Italy"
+                        }
+                      ]
                     }
                   ]
                 }
@@ -3862,8 +3894,8 @@
               ]
             },
             {
-              "kind": "block",
-              "text": "C:Sic:",
+              "kind": "or",
+              "text": "Any of:",
               "children": [
                 {
                   "kind": "not",
@@ -3871,7 +3903,23 @@
                   "children": [
                     {
                       "kind": "atom",
-                      "text": "Has Presence In: Italy"
+                      "text": "Sicily exists"
+                    }
+                  ]
+                },
+                {
+                  "kind": "block",
+                  "text": "C:Sic:",
+                  "children": [
+                    {
+                      "kind": "not",
+                      "text": "Must not:",
+                      "children": [
+                        {
+                          "kind": "atom",
+                          "text": "Has Presence In: Italy"
+                        }
+                      ]
                     }
                   ]
                 }
@@ -3884,16 +3932,48 @@
           "text": "Trigger Else:",
           "children": [
             {
-              "kind": "block",
-              "text": "Nor:",
+              "kind": "or",
+              "text": "Any of:",
               "children": [
+                {
+                  "kind": "not",
+                  "text": "Must not:",
+                  "children": [
+                    {
+                      "kind": "atom",
+                      "text": "Naples exists"
+                    }
+                  ]
+                },
                 {
                   "kind": "block",
                   "text": "C:Nap:",
                   "children": [
                     {
+                      "kind": "not",
+                      "text": "Must not:",
+                      "children": [
+                        {
+                          "kind": "atom",
+                          "text": "Has Presence In: Italy"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "kind": "or",
+              "text": "Any of:",
+              "children": [
+                {
+                  "kind": "not",
+                  "text": "Must not:",
+                  "children": [
+                    {
                       "kind": "atom",
-                      "text": "Has Presence In: Italy"
+                      "text": "Sicily exists"
                     }
                   ]
                 },
@@ -3902,8 +3982,14 @@
                   "text": "C:Sic:",
                   "children": [
                     {
-                      "kind": "atom",
-                      "text": "Has Presence In: Italy"
+                      "kind": "not",
+                      "text": "Must not:",
+                      "children": [
+                        {
+                          "kind": "atom",
+                          "text": "Has Presence In: Italy"
+                        }
+                      ]
                     }
                   ]
                 }
@@ -8149,6 +8235,92 @@
         {
           "kind": "atom",
           "text": "Not: Always"
+        }
+      ],
+      "english_allow": []
+    },
+    {
+      "block_key": "OCC_f",
+      "mode": "full",
+      "source_file": "00_formable_countries.txt",
+      "tag": "OCC",
+      "name": "OCC",
+      "adjective": "OCC_ADJ",
+      "flag": "OCC",
+      "color": "map_OCC",
+      "level": 3,
+      "fraction": 0.75,
+      "rule": "plausible",
+      "content_priority": null,
+      "regions": [],
+      "areas": [
+        "provence_area",
+        "languedoc_area"
+      ],
+      "locations": [
+        "briancon",
+        "gap",
+        "bordeaux",
+        "benauges",
+        "castelnau_de_medoc",
+        "la_teste_de_buch",
+        "lesparre_medoc",
+        "gueret",
+        "aubusson",
+        "bellac",
+        "bourganeuf",
+        "rochechouart",
+        "cuneo",
+        "saluzzo",
+        "pinerolo",
+        "pragelato",
+        "la_mure",
+        "romans",
+        "vielha",
+        "chabanais"
+      ],
+      "provinces": [
+        "valentinois_province",
+        "agenais_province",
+        "bazadais_province",
+        "perigord_province",
+        "quercy_province",
+        "rouergue_province",
+        "turenne_province",
+        "limousin_province",
+        "lower_auvergne_province",
+        "combraille_province",
+        "upper_auvergne_province",
+        "armagnac_province",
+        "bearn_bigorre_province",
+        "comminges_province",
+        "tursan_province"
+      ],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [],
+      "allow_raw": "",
+      "potential_raw": "OR = {\n\t\t\tculture.dialect = dialect:occitan_dialect\n\t\t\tculture.dialect = dialect:gascon_dialect\n\t\t}",
+      "form_effect_raw": "",
+      "formation_event": null,
+      "source": "vanilla",
+      "mod_overrides": false,
+      "variant_label": null,
+      "color_rgb": "#c31316",
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Dialect: Occitan Dialect"
+            },
+            {
+              "kind": "atom",
+              "text": "Dialect: Gascon Dialect"
+            }
+          ]
         }
       ],
       "english_allow": []

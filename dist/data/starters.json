@@ -779,7 +779,7 @@
         },
         {
           "tag": "GRY",
-          "culture": "high_alemannic",
+          "culture": "arpitan",
           "religion": "catholic",
           "owned_in_target": 2,
           "owned_in_core": 0,
@@ -1583,7 +1583,7 @@
         },
         {
           "tag": "GOR",
-          "culture": "danube_bavarian",
+          "culture": "southern_bavarian",
           "religion": "catholic",
           "owned_in_target": 3,
           "owned_in_core": 0,
@@ -2621,7 +2621,7 @@
         },
         {
           "tag": "MSV",
-          "culture": "polatskian_culture",
+          "culture": "smolenskian_culture",
           "religion": "orthodox",
           "owned_in_target": 12,
           "owned_in_core": 0,
@@ -2679,7 +2679,7 @@
           "tag": "BYZ",
           "culture": "greek_culture",
           "religion": "orthodox",
-          "owned_in_target": 61,
+          "owned_in_target": 73,
           "owned_in_core": 1,
           "score": 24
         },
@@ -3628,7 +3628,7 @@
           "tag": "BYZ",
           "culture": "greek_culture",
           "religion": "orthodox",
-          "owned_in_target": 54,
+          "owned_in_target": 66,
           "owned_in_core": 0,
           "score": 9
         },
@@ -4341,29 +4341,6 @@
           "owned_in_target": 11,
           "owned_in_core": 0,
           "score": 5
-        }
-      ]
-    },
-    "PUN_f": {
-      "culture_gates": [
-        "punjabi"
-      ],
-      "culture_group_gates": [],
-      "religion_gates": [],
-      "religion_group_gates": [],
-      "tag_gates": [],
-      "rank_gates": [],
-      "reform_gates": [],
-      "tag_excludes": [],
-      "suggested_tags": [],
-      "candidates": [
-        {
-          "tag": "DOG",
-          "culture": "punjabi",
-          "religion": "hindu",
-          "owned_in_target": 3,
-          "owned_in_core": 0,
-          "score": 7
         }
       ]
     },
@@ -5798,7 +5775,7 @@
         {
           "tag": "MTR",
           "culture": "albanian",
-          "religion": "catholic",
+          "religion": "orthodox",
           "owned_in_target": 1,
           "owned_in_core": 0,
           "score": 5
@@ -5806,7 +5783,7 @@
         {
           "tag": "MZK",
           "culture": "albanian",
-          "religion": "catholic",
+          "religion": "orthodox",
           "owned_in_target": 1,
           "owned_in_core": 0,
           "score": 5
@@ -6913,7 +6890,7 @@
         },
         {
           "tag": "TKR",
-          "culture": "soninke",
+          "culture": "fulbe",
           "religion": "sunni",
           "owned_in_target": 2,
           "owned_in_core": 0,
@@ -7480,6 +7457,83 @@
           "owned_in_target": 1,
           "owned_in_core": 0,
           "score": 1
+        }
+      ]
+    },
+    "OCC_f": {
+      "culture_gates": [],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "tag_gates": [],
+      "rank_gates": [],
+      "reform_gates": [],
+      "tag_excludes": [],
+      "suggested_tags": [],
+      "candidates": [
+        {
+          "tag": "AQN",
+          "culture": "gascon",
+          "religion": "catholic",
+          "owned_in_target": 11,
+          "owned_in_core": 5,
+          "score": 25
+        },
+        {
+          "tag": "DAU",
+          "culture": "arpitan",
+          "religion": "catholic",
+          "owned_in_target": 6,
+          "owned_in_core": 5,
+          "score": 21
+        },
+        {
+          "tag": "MRC",
+          "culture": "berrichon",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "owned_in_core": 3,
+          "score": 12
+        },
+        {
+          "tag": "FRA",
+          "culture": "french",
+          "religion": "catholic",
+          "owned_in_target": 67,
+          "owned_in_core": 1,
+          "score": 9
+        },
+        {
+          "tag": "PRO",
+          "culture": "provencal",
+          "religion": "catholic",
+          "owned_in_target": 19,
+          "owned_in_core": 1,
+          "score": 9
+        },
+        {
+          "tag": "AMG",
+          "culture": "gascon",
+          "religion": "catholic",
+          "owned_in_target": 5,
+          "owned_in_core": 0,
+          "score": 5
+        },
+        {
+          "tag": "VLN",
+          "culture": "vivaro_alpine",
+          "religion": "catholic",
+          "owned_in_target": 6,
+          "owned_in_core": 0,
+          "score": 5
+        },
+        {
+          "tag": "ANG",
+          "culture": "saintongeais",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "owned_in_core": 1,
+          "score": 4
         }
       ]
     },
