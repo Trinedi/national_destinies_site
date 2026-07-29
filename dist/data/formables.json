@@ -8747,7 +8747,7 @@
       ],
       "allow_raw": "owns = location:london\n\t\towns = location:rouen\n\t\towns = location:angers",
       "potential_raw": "religion = religion:catholic\n\t\tOR = {\n\t\t\tculture = culture:english\n\t\t\tculture = { has_culture_group = culture_group:french_group }\n\t\t}",
-      "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = nd_anv.1\n\t\tadd_stability = stability_mild_bonus",
+      "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\ttrigger_event_non_silently = nd_anv.1\n\t\tadd_stability = stability_mild_bonus",
       "formation_event": "nd_anv.1",
       "source": "mod_new",
       "mod_overrides": true,
