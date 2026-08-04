@@ -1,11 +1,5 @@
 ---
-priority_starters:
-  - tag: PUH
-    note: "Ngapuhi. Northland iwi. Historically the first Maori polity to engage seriously with European trade and the dominant force in the early Musket Wars; a thematic fit for an Aotearoa unifier and a strong pa-network start in the far north."
-  - tag: TNI
-    note: "Waikato Tainui. Central North Island, the Waikato basin. Large population base and strong inland defensive geography for a unification campaign across Te Ika a Maui."
-  - tag: NKH
-    note: "Ngati Kahungunu. East coast (Wairarapa-Tararua). Coastal trade access and a viable South Island bridgehead via Cook Strait."
+priority_starters: []
 hide_auto: true
 ---
 

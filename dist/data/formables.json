@@ -242,7 +242,7 @@
         },
         {
           "kind": "block",
-          "text": "Situation:Hundred Years War:",
+          "text": "Hundred Years War (situation):",
           "children": [
             {
               "kind": "atom",
@@ -270,7 +270,7 @@
             },
             {
               "kind": "atom",
-              "text": "We must either destroy [GetCountry('ENG').GetNameWithFlag] or make them our [subject|e]!"
+              "text": "We must either destroy England or make them our subject!"
             }
           ]
         },
@@ -294,7 +294,7 @@
             },
             {
               "kind": "atom",
-              "text": "We must either destroy [GetCountry('SCO').GetNameWithFlag] or make them our [subject|e]!"
+              "text": "We must either destroy Scotland or make them our subject!"
             }
           ]
         },
@@ -318,7 +318,7 @@
             },
             {
               "kind": "atom",
-              "text": "We must either destroy [GetCountry('WLS').GetNameWithFlag] or make them our [subject|e]!"
+              "text": "We must either destroy Wales or make them our subject!"
             }
           ]
         },
@@ -342,7 +342,7 @@
             },
             {
               "kind": "atom",
-              "text": "We must either destroy [GetCountry('SBL').GetNameWithFlag] or make them our [subject|e]!"
+              "text": "We must either destroy Balliol or make them our subject!"
             }
           ]
         }
@@ -630,7 +630,7 @@
             },
             {
               "kind": "atom",
-              "text": "Neither the [GetUniqueInternationalOrganization('lordship_of_ireland').GetName] nor the [GetInternationalOrganizationType('high_kingship').GetName] of [ShowRegionName('ireland_region')] can exist."
+              "text": "Neither the nor the of can exist."
             },
             {
               "kind": "atom",
@@ -640,7 +640,7 @@
         },
         {
           "kind": "atom",
-          "text": "We cannot do this while being a [member|e] of the [GetUniqueInternationalOrganization('lordship_of_ireland').GetName]. Only the [international_organization_leader_short|e] can do it through the [ShowGenericActionName('lordship_of_ireland_form_kingdom')] action."
+          "text": "We cannot do this while being a member of the . Only the international organization leader short can do it through the action."
         }
       ]
     },
@@ -689,7 +689,7 @@
       "english_allow": [
         {
           "kind": "atom",
-          "text": "We must be the [international_organization_leader_short|e] of the [GetInternationalOrganizationType('high_kingship').GetName] of [ShowRegionName('ireland_region')]"
+          "text": "We must be the international organization leader short of the of"
         }
       ]
     },
@@ -732,7 +732,7 @@
       "english_allow": [
         {
           "kind": "atom",
-          "text": "We must be the [ShowSpecialStatusName('lord_of_ireland')] of the [GetUniqueInternationalOrganization('lordship_of_ireland').GetName]"
+          "text": "We must be the of the"
         }
       ]
     },
@@ -897,7 +897,7 @@
       "english_allow": [
         {
           "kind": "atom",
-          "text": "[GetUniqueInternationalOrganization('swiss_confederation').GetName] exists\nThe [international_organization|e] can enact the [ShowLawName('sc_unification')] instead to form this country"
+          "text": "exists\nThe international organization can enact the instead to form this country"
         }
       ]
     },
@@ -945,7 +945,7 @@
       "english_allow": [
         {
           "kind": "atom",
-          "text": "Every [location|e] in [ShowRegionName('iberia_region')] must be [owned|e] by a [ShowReligionGroupAdjective('christian')] [country|e] or one of our [subjects|e]!"
+          "text": "Every location in must be owned by a country or one of our subjects!"
         }
       ]
     },
@@ -1003,7 +1003,7 @@
       "english_allow": [
         {
           "kind": "atom",
-          "text": "Every [location|e] in [ShowRegionName('iberia_region')] must be [owned|e] by a [ShowReligionGroupAdjective('muslim')] [country|e] or one of our [subjects|e]!"
+          "text": "Every location in must be owned by a country or one of our subjects!"
         }
       ]
     },
@@ -2589,7 +2589,7 @@
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Country exists = international_organization:hre"
+          "text": "The Holy Roman Empire exists"
         },
         {
           "kind": "atom",
@@ -2599,7 +2599,7 @@
       "english_allow": [
         {
           "kind": "atom",
-          "text": "The $HRE_f$ can only be formed via the [ShowPolicyName('renovatio_policy')] [policy|e] of the [GetUniqueInternationalOrganization('hre').GetName]"
+          "text": "The $HRE_f$ can only be formed via the policy of the"
         }
       ]
     },
@@ -2873,7 +2873,7 @@
             },
             {
               "kind": "atom",
-              "text": "We must either destroy [GetCountry('POL').GetNameWithFlag], make them our [subject|e], or be in a [union|e] with them"
+              "text": "We must either destroy Poland, make them our subject, or be in a union with them"
             }
           ]
         },
@@ -2897,7 +2897,7 @@
             },
             {
               "kind": "atom",
-              "text": "We must either destroy [GetCountry('LIT').GetNameWithFlag], make them our [subject|e], or be in a [union|e] with them"
+              "text": "We must either destroy Lithuania, make them our subject, or be in a union with them"
             }
           ]
         },
@@ -5531,7 +5531,7 @@
       "block_key": "AIR_f",
       "mode": "full",
       "source_file": "00_formable_countries.txt",
-      "tag": null,
+      "tag": "AIR",
       "name": "AIR",
       "adjective": "AIR_ADJ",
       "flag": "AIR",
@@ -5556,7 +5556,8 @@
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
       "mod_source_file": "99_nd_air.txt",
-      "color_rgb": "#201d9d",
+      "variant_label": null,
+      "color_rgb": "#2123b3",
       "english_potential": [
         {
           "kind": "atom",
@@ -5948,7 +5949,7 @@
       "english_allow": [
         {
           "kind": "atom",
-          "text": "We have emerged victorious from the [ShowSituationNameWithNoTooltip('rise_of_the_ottomans')] [situation|e] without adopting the [GetCountry('TUR').GetAdjectiveWithNoTooltip] tag"
+          "text": "We have emerged victorious from the Rise of the Turks situation without adopting the Ottoman tag"
         }
       ]
     },
@@ -6190,7 +6191,7 @@
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Country exists = international_organization:ilkhanate"
+          "text": "The \u012alkh\u0101n\u0101n exists"
         },
         {
           "kind": "atom",
@@ -6210,7 +6211,7 @@
       "english_allow": [
         {
           "kind": "atom",
-          "text": "Country exists = international_organization:ilkhanate"
+          "text": "The \u012alkh\u0101n\u0101n exists"
         },
         {
           "kind": "atom",
@@ -6686,7 +6687,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Country exists = international_organization:middle_kingdom"
+              "text": "The Middle Kingdom exists"
             }
           ]
         }
@@ -9123,7 +9124,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Country exists = international_organization:middle_kingdom"
+              "text": "The Middle Kingdom exists"
             }
           ]
         },
@@ -11156,14 +11157,8 @@
           "text": "Must not:",
           "children": [
             {
-              "kind": "block",
-              "text": "Situation:Hussite Wars:",
-              "children": [
-                {
-                  "kind": "atom",
-                  "text": "Situation Is Active: Yes"
-                }
-              ]
+              "kind": "atom",
+              "text": "The Hussite Wars situation is active"
             }
           ]
         },

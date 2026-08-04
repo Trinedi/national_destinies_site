@@ -2,10 +2,6 @@
 priority_starters:
   - tag: BON
     note: "Bono. Akan kingdom that already owns Kumasi, the formation location. The cleanest start."
-  - tag: GYA
-    note: "Gyaaman. Akan neighbour to the north; capital at Sampa. Take Kumasi from BON, then mop up the Akan area."
-  - tag: MNK
-    note: "Mankessim. Akan tribe on the coast (Cape Coast, Accra, Winneba). Coastal start, march inland for Kumasi."
 hide_auto: true
 ---
 
@@ -23,10 +19,12 @@ empire).
 
 ## Forming it
 
-1. **Start as an Akan tag** (BON, GYA, or MNK). Akan culture is the only
+1. **Start as Bono (BON).** It is the only Akan tag you can pick at the
+   1337 bookmark: the other Akan polities (Gyaaman, Mankessim) are not
+   on the map as selectable countries. Akan culture is the only
    gate beyond owning Kumasi.
 2. **Hold Kumasi.** This is the single allow-block requirement. BON
-   starts with it; GYA and MNK need to take it.
+   starts with it.
 3. **Hit 90% of Akan + Gold Coast areas.** A high fraction, so plan to
    conquer or vassalise most Akan and coastal neighbours.
 4. **Pick your path on formation.**

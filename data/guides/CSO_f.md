@@ -34,7 +34,10 @@ run is built around the post-rebellion settlement.
 1. **Pick a Chinese-group tag.** CSO is open to any culture in
    chinese_group. CHI (Yuan) is excluded by name; everyone else
    qualifies. The cleanest starter is CSO itself, released as a
-   Red Turban faction. MNG and WUU are the strongest siblings.
+   Red Turban faction. MNG and WUU are the strongest siblings. Note
+   that none of the faction tags exist at the 1337 bookmark: they
+   spawn during the rebellions, so you switch to one when it
+   appears on the map.
 2. **Survive or end the Red Turban Rebellions.** The formable's
    `allow` block requires `is_situation_active = no` for the
    rebellions. Either ride out the situation or finish it (one

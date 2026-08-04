@@ -6,8 +6,6 @@ priority_starters:
     note: "Khachen, the Hasan-Jalalyan Armenian principality in modern Karabakh. Long southwest push to reach the heartland."
   - tag: SYU
     note: "Syunik, an Armenian principality south of Lake Sevan. Same scale and path as Khachen. Mongol overlordship at start; the Ilkhanid collapse opens the southern frontier."
-  - tag: AMB
-    note: "Amberd, a small Armenian noble house. Tighter geography than Khachen or Syunik but identical doctrinal positioning."
   - tag: VDZ
     note: "Vayots Dzor, another Caucasian Armenian micropolity. Pick this only for a deliberately constrained start."
 hide_auto: true

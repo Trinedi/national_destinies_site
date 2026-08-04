@@ -2,10 +2,8 @@
 priority_starters:
   - tag: MOR
     note: "Marinid Morocco itself. Already moroccan culture, already owns Fez, Meknes, Marrakesh, Sale, the Atlantic coast, and most of the Morocco and Sus areas. The intended starter; this is a one-button formable for MOR once the fraction check is satisfied through routine Marinid expansion."
-  - tag: SLE
-    note: "Sale. Moroccan-cultured Atlantic port tag. The underdog start: take Fez, Meknes, Marrakesh, and the broader Morocco-Sus area pool from MOR or its successors before forming."
-  - tag: TET
-    note: "Tetouan. Moroccan-cultured northern enclave on the Strait. A Rif-coast underdog start, similar to SLE but oriented toward the Mediterranean approaches."
+  - tag: TFL
+    note: "Tafilalt. The playable Moroccan-cultured underdog: a Saharan oasis state on the southeastern flank of the Atlas. Take Fez, Meknes, and Marrakesh from MOR before forming."
 hide_auto: true
 ---
 
@@ -31,10 +29,12 @@ You must be moroccan culture and own 75 percent of two areas: Morocco
 (Fez, Meknes, Marrakesh, Rabat, Sale, the Atlantic plain) and Sus
 (the southern Atlantic coast, Agadir, Taroudant, Tiznit).
 
-1. **Pick a Moroccan-cultured tag.** MOR for the orthodox start, SLE
-   or TET for an underdog Atlantic or Mediterranean port start.
+1. **Pick a Moroccan-cultured tag.** MOR for the orthodox start, or
+   TFL (Tafilalt) for the underdog run. Sale and Tetouan are not on
+   the 1337 map as selectable countries; they exist only as
+   releasables inside Morocco.
 2. **Hold the Morocco and Sus areas.** MOR already owns most of this;
-   SLE and TET start with one location each and must conquer the
+   TFL starts on the Saharan flank and must conquer the
    rest from MOR, FEZ, MRK, and the Sus tag.
 3. **Form MOR.** No specific city is required; just the area
    fractions.

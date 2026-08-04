@@ -2,14 +2,6 @@
 priority_starters:
   - tag: ZMW
     note: "Great Zimbabwe. Shona-cultured kingdom that already owns Great Zimbabwe and the surrounding stone-house heartland. The obvious starter."
-  - tag: MNY
-    note: "Manyika. Shona tribe to the east around Manica. Strong eastern position toward the Mozambique trade coast; needs to take Great Zimbabwe."
-  - tag: ZEZ
-    note: "Zezuru. Shona tribe in the central plateau (Tete, Tsindi). Compact start; Great Zimbabwe is a short conquest away."
-  - tag: NBY
-    note: "Nambya. Shona tribe to the west (Khami, Bumbuzi). Western entry point; longer march to Great Zimbabwe."
-  - tag: KLG
-    note: "Kalanga. The non-Shona option. Kalanga culture also satisfies the gate; western tribal start near Bosutswe and Domboshaba."
 hide_auto: true
 ---
 
@@ -27,9 +19,11 @@ spiritual and pastoral autarky).
 
 ## Forming it
 
-1. **Start as a Shona or Kalanga tag** (ZMW, MNY, ZEZ, NBY, or KLG).
-   ZMW is the only one that already owns Great Zimbabwe; the rest must
-   take it.
+1. **Start as Great Zimbabwe (ZMW).** It is the only Shona-cultured
+   country you can pick in 1337, and it already owns Great Zimbabwe.
+   The other Shona and Kalanga polities (Manyika, Zezuru, Nambya,
+   Kalanga) are Societies of Pops: on the map, but not selectable.
+   They are conquest and integration targets, not starts.
 2. **Hold Great Zimbabwe.** This is the single allow-block requirement.
 3. **Hit 60% of the Zimbabwe region.** A whole region rather than a few
    areas, so expect to consume most of your Shona and Kalanga

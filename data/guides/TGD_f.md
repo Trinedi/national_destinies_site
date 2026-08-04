@@ -28,11 +28,12 @@ it from forming Sòng or generic vanilla China.
 ## Forming it
 
 1. **Pick a Chinese-group tag.** TGD is open to any culture in
-   chinese_group. There is no exclusion list, but in practice the
-   only viable starters are the Red Turban faction tags (MNG, CSO,
-   CSI, WUU, etc.) because they are the only Chinese-cultured
-   countries that exist at game start. CHI (Yuan) is mongolian_culture
-   and cannot form it.
+   chinese_group, and CHI (Yuan) is excluded by name, exactly as for
+   Sòng: the Yuan court cannot rebrand itself as the Tang. In
+   practice the viable starters are the Red Turban faction tags
+   (MNG, CSO, CSI, WUU, etc.). None of them exist at the 1337
+   bookmark; they spawn during the Red Turban Rebellions, so you
+   switch to one when it appears on the map.
 2. **Wait out the Red Turban Rebellions.** The `allow` block
    requires `is_situation_active = no` for the rebellions and
    `in_civil_war = no`. You cannot form during the chaos.

@@ -6,8 +6,6 @@ priority_starters:
     note: "Muzaffarids. Farsi Sunni, the dominant Persian state at game start. A heavier Persian base before pivoting east through the Hindu Kush, with the Iranian-group culture path satisfying the allow."
   - tag: SRB
     note: "Sarbadars. Khorasani, but Shia rather than Sunni; if you keep the Shia religion you still satisfy `religion.group = religion_group:muslim`. Same Khorasan-to-Punjab geographic logic as KRT."
-  - tag: CHB
-    note: "Chobanids in Azerbaijan. Iranian-group, further west, longer march to Delhi. A more demanding option than KRT or MZF but mechanically valid."
 hide_auto: true
 ---
 

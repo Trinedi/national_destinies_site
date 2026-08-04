@@ -19,11 +19,11 @@ This is not Austria-Hungary, the dualist compromise history reached only after a
 
 The requirements are the same for all three origins; only your starting position differs. In plain terms:
 
-1. **Be Catholic and at least a Kingdom.** Both are hard requirements. Kingdom rank is fully achievable inside the HRE (only *empire* rank is blocked for HRE members) — you need enough population and prestige above 50. Bohemia and Hungary usually start as kingdoms; Austria may begin as a duchy and need to rank up first, a normal early-game step.
+1. **Be Catholic, and hold either Kingdom rank or the Privilegium Maius.** Catholic is a hard requirement. The rank gate is an OR: Kingdom rank (achievable inside the HRE with enough population and prestige above 50; only *empire* rank is blocked for members), or the Austrian Archduchy government reform, the forged Privilegium maius, which lets duchy-rank Austria qualify without the royal crown it historically never held. Bohemia and Hungary usually start as kingdoms; Austria can either rank up or enact the Archduchy reform.
 2. **Own Vienna.** Always required, whichever crown you start as. It is the imperial seat of the new realm.
 3. **Own your home capital.** Austria: Vienna already covers it. Hungary: own **Buda**. Bohemia: own **Prague**.
-4. **Neutralize all three crowns (Austria, Bohemia, Hungary).** For each one, ANY of these counts: you are it, it no longer exists, it is your subject, or it is your personal-union junior with you as senior. **You do not have to annex them** — vassalizing or holding a senior union is enough.
-5. **Hold about half of the Danubian lands** (16 areas: the Austrian hereditary lands, the Bohemian crown, and the Hungarian crown — listed at the bottom).
+4. **Neutralize all three crowns (Austria, Bohemia, Hungary).** For each one, ANY of these counts: you are it, it no longer exists, it is your subject, or it is your personal-union junior with you as senior. **You do not have to annex them**: vassalizing or holding a senior union is enough.
+5. **Hold about half of the Danubian lands** (16 areas: the Austrian hereditary lands, the Bohemian crown, and the Hungarian crown, listed at the bottom).
 6. **Click the formable button.** There is no date gate; you can form the moment you qualify.
 
 ### The quickest route per origin
@@ -34,7 +34,7 @@ The requirements are the same for all three origins; only your starting position
 | **Hungary (HUN)** | Buda | Vienna (take it), plus Austria and Bohemia each neutralized |
 | **Bohemia (BOH)** | Prague | Vienna and Buda (take both), plus Austria and Hungary each neutralized |
 
-Austria is the thematic default. **Hungary is often the mechanically smoothest** — Buda is already yours and you expand naturally toward Vienna and Bohemia. Bohemia is the challenge run.
+Austria is the thematic default. **Hungary is often the mechanically smoothest**: Buda is already yours and you expand naturally toward Vienna and Bohemia. Bohemia is the challenge run.
 
 ## What happens the moment you form
 
@@ -43,7 +43,7 @@ The formation does several things at once:
 - **You leave the Holy Roman Empire.** Every HRE-owned location is detached and you exit the imperial organization. This is a deliberate, irreversible rupture.
 - **You become an Empire.** HRE members are blocked from empire rank, so leaving and ranking up happen together.
 - **The formation event fires** with two doctrinal choices (below). Each grants a 45-year timed modifier and opens a destiny path.
-- **The Reaction of the Reich situation activates** — the Reich and the Curia's response to your apostasy (below).
+- **The Reaction of the Reich situation activates**: the Reich and the Curia's response to your apostasy (below).
 - **A 10-year grace period** protects the new realm: neither internal disaster can fire for the first decade.
 
 ## The two formation paths
@@ -63,13 +63,13 @@ Forming DNM makes you a pariah. The new Emperor gets the **Imperial Ban** casus 
 
 **There are three ways to end the situation. Pick the one that fits your campaign:**
 
-1. **Legitimacy — settle the succession.** Survive the **War of the Succession** disaster (below), either Upheld or Broken. Once Europe has decided who rules the Danube, the Reich's verdict is moot. This is the main path and the one the game steers you toward.
-2. **Strength — humble the Emperor.** Go to war with the Emperor (or let his Imperial Ban pull you in), reach **80% war score**, and enforce the **Humble the Reich** peace term. The verdict of arms breaks the verdict of the diet.
-3. **Endurance — outlast it.** After **50 years** post-formation, if your realm has become respected (**legitimacy 60+, prestige 50+**), the estrangement simply ages out. Time alone is not enough — you must have built something.
+1. **Legitimacy: settle the succession.** Survive the **War of the Succession** disaster (below), either Upheld or Broken. Once Europe has decided who rules the Danube, the Reich's verdict is moot. This is the main path and the one the game steers you toward.
+2. **Strength: humble the Emperor.** Go to war with the Emperor (or let his Imperial Ban pull you in), reach **80% war score**, and enforce the **Humble the Reich** peace term. The verdict of arms breaks the verdict of the diet.
+3. **Endurance: outlast it.** After **50 years** post-formation, if your realm has become respected (**legitimacy 60+, prestige 50+**), the estrangement simply ages out. Time alone is not enough: you must have built something.
 
 ## The Succession Question (the lead-in chain)
 
-Over your first decade you will get three scripted events — at roughly years 2, 5 and 8 — building toward the succession crisis:
+Over your first decade you will get three scripted events (at roughly years 2, 5 and 8) building toward the succession crisis:
 
 1. **The Question of Inheritance** (flavor): the realm has not settled who inherits.
 2. **The Diets Murmur** (choice): rally the estates around the dynasty, or stay silent.
@@ -97,11 +97,11 @@ The polyglot-empire crisis: a ruling house commanding a patchwork of peoples and
 
 Three resolutions, set by your event choices:
 
-- **The Ausgleich.** Accept the Compromise — two co-equal realms under one dynasty. This is where the **Austria-Hungary** payoff lives, a permanent positive modifier. Easiest to reach on the Gesamtmonarchie path, or with high stability and legitimacy on any path.
+- **The Ausgleich.** Accept the Compromise: two co-equal realms under one dynasty. This is where the **Austria-Hungary** payoff lives, a permanent positive modifier. Easiest to reach on the Gesamtmonarchie path, or with high stability and legitimacy on any path.
 - **Centralized reassertion.** Crush the nationalist leagues once control is restored. Strong central rule, but lasting estate resentment.
-- **Fragmentation.** Cede autonomy — a constituent crown actually breaks away as a sovereign kingdom. Severe stability hit plus a 30-year penalty.
+- **Fragmentation.** Cede autonomy: a constituent crown actually breaks away as a sovereign kingdom. Severe stability hit plus a 30-year penalty.
 
-The two disasters never run at the same time — the empire is besieged in sequence, never piled on.
+The two disasters never run at the same time: the empire is besieged in sequence, never piled on.
 
 ## Strategy notes
 

@@ -30,11 +30,17 @@ scripture, and communal property.
    block accepts Czech or Moravian culture. BOH is by far the
    stronger seed: it starts Catholic but holds Husinec (Hus's
    birthplace), the named formation location.
-2. **Trigger the Hussite Wars and flip to the Hussite religion.**
-   This is not part of the formable itself; the religion comes from
-   vanilla Bohemia's Hussite Wars mechanic (advances and generic
-   actions in `country_BOH.txt` and `hussite_wars_actions.txt`). You
-   cannot form Tabor until the country's religion is hussite.
+2. **Trigger the Hussite Wars, flip to the Hussite religion, and WIN
+   the wars.** The religion comes from vanilla Bohemia's Hussite Wars
+   mechanic (advances and generic actions in `country_BOH.txt` and
+   `hussite_wars_actions.txt`). Two timing gates apply on top of the
+   religion: the Hussite Wars situation must have ENDED (you cannot
+   form Tabor mid-war), and as Bohemia specifically the wars must
+   have ended in a Hussite VICTORY (the vanilla situation stamps
+   that outcome when it closes with Bohemia alive and still
+   Hussite). A later Hussite remnant that is not Bohemia is exempt
+   from the victory check, since its wars may have ended in defeat
+   for the old crown.
 3. **Hold Husinec.** The only named location requirement. Hus's
    birthplace, the symbolic hearth of the chalice movement.
 4. **Hold 85 percent of Bohemia and Moravia.** A high fraction

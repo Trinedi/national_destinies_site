@@ -1,9 +1,5 @@
 ---
-priority_starters:
-  - tag: MPC
-    note: "Mapuche. The canonical Wallmapu starter. Already mapuche_culture, already in tain feyentun religion, and starts owning wenteche, the only required location. You can form MAP essentially as soon as you take the rest of the territory pool."
-  - tag: PHE
-    note: "Picunche. Pikumche-cultured (mapudungun_group), so the culture potential is satisfied. Sits north of MPC in the central Chilean valley; you must take wenteche from MPC before forming. Pick this if you want to absorb the northern Mapuche heartland first."
+priority_starters: []
 hide_auto: true
 ---
 
@@ -28,13 +24,17 @@ the Spanish settler frontier.
 
 ## Forming it
 
-1. **Start as a mapudungun-group tag** (MPC or PHE). The potential
-   gate is `culture_group:mapudungun_group`, which covers Mapuche,
-   Picunche, Pehuenche, Williche, and Purun Awqa. Of these only MPC
-   and PHE exist as starting tags in 1337.
+1. **Get a mapudungun-group primary culture.** The potential gate is
+   `culture_group:mapudungun_group` (Mapuche, Picunche, Pehuenche,
+   Williche, Purun Awqa). No mapudungun tag can be picked at the 1337
+   bookmark: Mapuche (MPC) and Picunche (PHE) are Societies of Pops,
+   on the map but not selectable. The practical routes: reach
+   Araucania with a playable power, absorb the Mapuche pops and shift
+   primary culture, or release a Mapuche-cultured subject from
+   conquered territory and continue the campaign as it.
 2. **Own wenteche.** The `allow` block has a single hard requirement:
    `owns = location:wenteche`, the central Mapuche heartland in
-   Ngulumapu. MPC starts with it. PHE must take it from MPC.
+   Ngulumapu, held by the Mapuche Society of Pops at start.
 3. **Hold 90 percent of Ngulumapu and Puelmapu.** The required-
    locations fraction is 0.9 across Ngulumapu (the western, Chilean
    side of the Andes) and Puelmapu (the eastern, Argentine side).

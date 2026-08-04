@@ -1,7 +1,5 @@
 ---
-priority_starters:
-  - tag: TWK
-    note: "Tawakoni. The only 1337 starter tag whose primary culture (tawakoni_culture) is in shoshoni_group. Starts on the southern Plains around melenudo/nokoni/waco, north of the Comanche heartland. You must conquer south to take kwahada (Llano Estacado) and penatuka (Penateka heartland), both held by XUM (Xumanos). The mod treats Numic-Plains migration as an Age 1 advance, so the formable is built around a TWK-style horseless southern Plains start that becomes a horse empire over the centuries."
+priority_starters: []
 hide_auto: true
 ---
 
@@ -28,17 +26,20 @@ The tag is NUM, after Numunu (the Comanche endonym).
 
 ## Forming it
 
-1. **Start as a shoshoni-group tag.** The potential gate covers
-   tukudeka, bannock, kuccuntikka, penkwitikka, kusiutta, tetadeka,
-   haivodika, watatikka, wiyimpihtikka, monachi, kuhtsutuuka, and
-   tawakoni cultures. In 1337 only **TWK** (Tawakoni) starts with a
-   shoshoni-group primary culture. Other shoshoni-group cultures
-   exist as pops in the Great Basin but no tag holds them at game
-   start.
+1. **Get a shoshoni-group primary culture.** The potential gate
+   covers tukudeka, bannock, kuccuntikka, penkwitikka, kusiutta,
+   tetadeka, haivodika, watatikka, wiyimpihtikka, monachi,
+   kuhtsutuuka, and tawakoni cultures. None of them can be picked at
+   the 1337 bookmark: the shoshoni-group polities, including Tawakoni
+   (TWK) and the Xumanos (XUM) who hold the required locations, are
+   Societies of Pops, on the map but not selectable. The practical
+   routes: reach the southern Plains with a playable power, absorb
+   the Numic pops and shift primary culture, or release a
+   shoshoni-cultured subject from conquered territory and continue
+   the campaign as it.
 2. **Conquer kwahada and penatuka.** The `allow` block requires both:
    kwahada is the Llano Estacado heart, penatuka is the Penateka
-   homeland. Both belong to **XUM** (Xumanos) at game start. From a
-   TWK opening you push southwest into XUM's territory.
+   homeland. Both sit in Xumanos territory at game start.
 3. **Hold 45 percent of the southern Plains arc.** Required fraction
    is 0.45 across Texas, Natahende, High Plains, Central Plains, and
    the Rockies. This is a wide spread but a low fraction, so a

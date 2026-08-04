@@ -4,8 +4,6 @@ priority_starters:
     note: "Golden Horde. Owns the bulk of desht_kipchak_area at start (Ulytau, Sarysu, Sarykopa, Tengiz, Turgay, Irgiz, Sozak, Sighnaq) and starts as a Kipchak-language steppe horde. The straightforward path: play the Horde, ride the historical fragmentation, and form KAZ when the Kazakh exodus separates from the Uzbek rump."
   - tag: CHG
     note: "Chagatai. Owns most of zhetysu_area (Almaty, Talas, Sozak, Kayalyk, Balasagun) and culturally Kipchak-language. Push west to control desht_kipchak alongside Zhetysu and form."
-  - tag: BSH
-    note: "Bashkir. Small Kipchak-language tribe on the southern Urals, ideal underdog start. Long campaign south and east into the steppe core, but the only Kipchak tag that does not begin as a great power."
 hide_auto: true
 ---
 
@@ -26,7 +24,9 @@ of two areas (`desht_kipchak_area` and `zhetysu_area`). No religion
 gate, no rank gate, no allow block. The challenge is owning the
 territory, not unlocking the formable.
 
-1. **Start as a Kipchak-language tag.** GLH, CHG, BSH, or smaller
+1. **Start as a Kipchak-language tag.** GLH, CHG, or smaller
+   playable neighbours; the Bashkir (BSH) are a Society of Pops in
+   1337 and cannot be picked. GLH and CHG are the real
    Tartar-group tags. Cultures in this language family include kazani,
    uzbek_culture, cuman_culture, nogai, bashkir, mishar, astrakhani,
    crimean, and kumyk_culture.

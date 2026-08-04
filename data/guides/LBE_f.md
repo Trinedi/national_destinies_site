@@ -1,9 +1,5 @@
 ---
-priority_starters:
-  - tag: LBA
-    note: "Luba. Speaks the Luba language and starts with most of the mweru_province heartland. Closest neighbour to lake_upemba; colonise or expand into it."
-  - tag: LND
-    note: "Lunda. Luba-language tribe to the west around Mussumba and Katanga. Viable as a Lunda-led Luba revival; longer march to lake_upemba."
+priority_starters: []
 hide_auto: true
 ---
 
@@ -22,9 +18,15 @@ checked monarchy).
 
 ## Forming it
 
-1. **Start as a Luba-language tag** (LBA or LND). The gate is
-   `culture.language = luba_language`, which both satisfy. Both also
-   start as tribal Bantu-religion polities in the Kongo region.
+1. **Get a Luba-language primary culture.** The gate is
+   `culture.language = luba_language`. There is no pickable
+   Luba-language country at the 1337 bookmark: Luba (LBA) and Lunda
+   (LND) are Societies of Pops, on the map but not selectable
+   (reported on the Workshop, 2026-07-13). The practical routes: take
+   the Katanga heartland with a playable power and let the absorbed
+   Luba pops shift or supply your primary culture, or release a
+   Luba-cultured subject from conquered territory and continue the
+   campaign as it.
 2. **Hold lake_upemba.** This is the single allow-block requirement.
    Neither LBA nor LND owns it at start; it sits uncolonised in
    mweru_province (east_lunda_area) and must be settled or absorbed.
