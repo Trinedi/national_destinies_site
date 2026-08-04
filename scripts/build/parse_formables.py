@@ -252,11 +252,14 @@ def parse_block(block_key: str, body: str, mode: str, source_file: str) -> dict:
     potential_body = find_balanced_block(body, "potential")
     form_effect_body = find_balanced_block(body, "form_effect")
 
+    # A formable with no explicit `tag` field forms into the tag implied by
+    # its block name (vanilla AIR_f has no tag field and forms AIR).
+    implied_tag = block_key[:-2] if block_key.endswith("_f") else None
     record: dict = {
         "block_key": block_key,
         "mode": mode,
         "source_file": source_file,
-        "tag": fields.get("tag"),
+        "tag": fields.get("tag") or implied_tag,
         "name": fields.get("name"),
         "adjective": fields.get("adjective"),
         "flag": fields.get("flag"),

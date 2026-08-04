@@ -114,6 +114,16 @@ def parse_country_start_state(start_path: Path) -> dict[str, dict]:
 
         entry: dict = {}
 
+        # Top-level `type = pop` marks a Society of Pops: on the map but not
+        # selectable at the country picker. Strip nested sub-blocks first so
+        # `government = { type = ... }` and similar cannot shadow it.
+        flat_body = re.sub(r"\{[^{}]*\}", " ", body)
+        while re.search(r"\{[^{}]*\}", flat_body):
+            flat_body = re.sub(r"\{[^{}]*\}", " ", flat_body)
+        type_m = re.search(r"^\s*type\s*=\s*([a-zA-Z0-9_]+)", flat_body, re.M)
+        if type_m:
+            entry["start_type"] = type_m.group(1)
+
         locs: list[str] = []
         for key in ("own_control_core", "own_core", "own_control",
                     "own_integrated", "own_control_integrated"):
@@ -861,6 +871,17 @@ def main() -> int:
         if has_gates:
             for tag, country in countries.items():
                 if tag in tag_excludes:
+                    continue
+                # Only recommend tags a player can actually pick at 1337:
+                # Societies of Pops (type = pop) are on the map but not
+                # selectable, and a tag owning nothing does not exist yet
+                # (releasables, situation spawns, chain formables). Both
+                # classes kept leaking into the guides as "starters"
+                # (Workshop reports: Sultanate of Air 2026-05-25, Luba
+                # 2026-07-13). Curated priority_starters are unaffected.
+                if country.get("start_type") == "pop":
+                    continue
+                if not country.get("locations"):
                     continue
                 bypass_geography = tag in explicit_tags or tag in suggested_tags
                 res = score_candidate(

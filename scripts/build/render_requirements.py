@@ -252,6 +252,40 @@ def r_has_advance(op: str, value: str, loc) -> str:
     return f"Has advance {loc_or_pretty(loc, value)}"
 
 
+def r_exists(op: str, value: str, loc) -> str:
+    if value in ("yes", "no"):
+        return "Exists" if value == "yes" else "Not: Exists"
+    base = strip_ref(value)
+    name = loc_or_pretty(loc, base, base + "_f")
+    if value.startswith("international_organization:"):
+        return f"The {name} exists"
+    return f"{name} exists"
+
+
+# Tooltip loc strings can embed scripting-function brackets that only the
+# game can evaluate ([ShowSituationNameWithNoTooltip('x')], [GetCountry('TUR')
+# .GetAdjectiveWithNoTooltip], [concept|e]). Resolve the common shapes from
+# loc and drop the rest, so the site never shows raw bracket script (the RUM
+# allow tooltip shipped that way).
+_LOC_FN_RES: list[tuple[re.Pattern, object]] = [
+    (re.compile(r"\[ShowSituationName\w*\(\s*'([^']+)'\s*\)\]"),
+     lambda m, loc: loc_or_pretty(loc, m.group(1))),
+    (re.compile(r"\[GetCountry\(\s*'([A-Z0-9]{3})'\s*\)\.GetAdjective\w*\]"),
+     lambda m, loc: loc_or_pretty(loc, m.group(1) + "_ADJ")),
+    (re.compile(r"\[GetCountry\(\s*'([A-Z0-9]{3})'\s*\)\.GetName\w*\]"),
+     lambda m, loc: loc_or_pretty(loc, m.group(1))),
+    (re.compile(r"\[([A-Za-z_]+)\|e\]"),
+     lambda m, loc: loc_or_pretty(loc, m.group(1)).lower()),
+]
+
+
+def scrub_loc_functions(text: str, loc) -> str:
+    for rx, fn in _LOC_FN_RES:
+        text = rx.sub(lambda m, fn=fn: fn(m, loc), text)
+    text = re.sub(r"\[[^\]]*\]", "", text)
+    return re.sub(r"\s{2,}", " ", text).strip()
+
+
 ATOM_HANDLERS = {
     "culture": r_culture_atom,
     "religion": r_religion_atom,
@@ -267,7 +301,7 @@ ATOM_HANDLERS = {
     "has_or_had_tag": r_has_or_had_tag,
     "has_advance": r_has_advance,
     "always": r_yes_no_flag("Always"),
-    "exists": r_yes_no_flag("Country exists"),
+    "exists": r_exists,
     "is_hegemon": r_yes_no_flag("Hegemon"),
     "in_civil_war": r_yes_no_flag("In civil war"),
     "at_war": r_yes_no_flag("At war"),
@@ -335,8 +369,20 @@ def render_block(key: str, op: str, body: list, loc) -> dict | None:
         # Look for `text = X` or `tooltip = X` and emit that loc string.
         for c in body:
             if c[0] == "atom" and c[1] in ("text", "tooltip"):
-                return {"kind": "atom", "text": loc_or_pretty(loc, c[3])}
+                return {"kind": "atom",
+                        "text": scrub_loc_functions(loc_or_pretty(loc, c[3]), loc)}
         return None
+    if key.startswith("situation:"):
+        # situation:hussite_wars ?= { situation_is_active = yes }
+        name = loc_or_pretty(loc, strip_ref(key))
+        if (len(body) == 1 and body[0][0] == "atom"
+                and body[0][1] == "situation_is_active"):
+            state = "active" if body[0][3] == "yes" else "not active"
+            return {"kind": "atom", "text": f"The {name} situation is {state}"}
+        children = render_clauses(body, loc)
+        if not children:
+            return None
+        return {"kind": "block", "text": f"{name} (situation):", "children": children}
 
     # culture = { has_culture_group = X } / culture = { ... }
     if key == "culture":
