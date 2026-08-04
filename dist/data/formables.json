@@ -4378,14 +4378,14 @@
     },
     {
       "block_key": "HEN_f",
-      "mode": "full",
-      "source_file": "00_formable_countries.txt",
+      "mode": "replace",
+      "source_file": "99_nd_hen.txt",
       "tag": "HEN",
       "name": "HEN",
       "adjective": "HEN_ADJ",
       "flag": "HEN",
       "color": "map_HEN",
-      "level": 2,
+      "level": 3,
       "fraction": 0.5,
       "rule": "fantasy",
       "content_priority": null,
@@ -4403,9 +4403,8 @@
       "potential_raw": "culture.language = language:brythonic_language",
       "form_effect_raw": "trigger_event_non_silently = nd_hen.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = {\n\t\t\t\trank = country_rank:rank_kingdom\n\t\t\t}\n\t\t}",
       "formation_event": "nd_hen.1",
-      "source": "vanilla+mod_inject",
+      "source": "vanilla+mod_replace",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_hen.txt",
       "variant_label": null,
       "color_rgb": "#444444",
       "english_potential": [
@@ -8746,7 +8745,7 @@
         "angers"
       ],
       "allow_raw": "owns = location:london\n\t\towns = location:rouen\n\t\towns = location:angers",
-      "potential_raw": "religion = religion:catholic\n\t\tOR = {\n\t\t\tculture = culture:english\n\t\t\tculture = { has_culture_group = culture_group:french_group }\n\t\t}",
+      "potential_raw": "religion = religion:catholic\n\t\tOR = {\n\t\t\tculture = culture:english\n\t\t\tculture = { has_culture_group = culture_group:french_group }\n\t\t}\n\t\t\n\t\t\n\t\t\n\t\t\n\t\thas_any_active_disaster = no",
       "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\ttrigger_event_non_silently = nd_anv.1\n\t\tadd_stability = stability_mild_bonus",
       "formation_event": "nd_anv.1",
       "source": "mod_new",
@@ -8771,6 +8770,10 @@
               "text": "French Group culture group"
             }
           ]
+        },
+        {
+          "kind": "atom",
+          "text": "Has Any Active Disaster: No"
         }
       ],
       "english_allow": [
@@ -8995,7 +8998,7 @@
         "palermo"
       ],
       "allow_raw": "owns = location:barcelona\n\t\towns = location:naples\n\t\towns = location:palermo",
-      "potential_raw": "religion = religion:catholic\n\t\tOR = {\n\t\t\tculture = culture:catalan\n\t\t\tculture = culture:aragonese\n\t\t}\n\t\tNOT = { tag = SPA }\n\t\tNOT = { tag = TWS }",
+      "potential_raw": "religion = religion:catholic\n\t\tOR = {\n\t\t\tculture = culture:catalan\n\t\t\tculture = culture:aragonese\n\t\t}\n\t\tNOT = { tag = SPA }\n\t\tNOT = { tag = TWS }\n\t\t\n\t\t\n\t\t\n\t\t\n\t\thas_any_active_disaster = no",
       "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\ttrigger_event_non_silently = nd_cda.1\n\t\tadd_stability = stability_mild_bonus",
       "formation_event": "nd_cda.1",
       "source": "mod_new",
@@ -9040,6 +9043,10 @@
               "text": "Tag: Two Sicilies"
             }
           ]
+        },
+        {
+          "kind": "atom",
+          "text": "Has Any Active Disaster: No"
         }
       ],
       "english_allow": [
@@ -9189,9 +9196,9 @@
         "buda",
         "prague"
       ],
-      "allow_raw": "religion = religion:catholic\n\t\tcountry_rank = country_rank:rank_kingdom\n\n\t\t\n\t\towns = location:vienna\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tOR = {\n\t\t\tOR = { has_or_had_tag = HAB tag = HAB }\n\t\t\tAND = {\n\t\t\t\tOR = { has_or_had_tag = HUN tag = HUN }\n\t\t\t\towns = location:buda\n\t\t\t}\n\t\t\tAND = {\n\t\t\t\tOR = { has_or_had_tag = BOH tag = BOH }\n\t\t\t\towns = location:prague\n\t\t\t}\n\t\t}\n\n\t\t\n\t\ttrigger_if = {\n\t\t\tlimit = {\n\t\t\t\tcountry_exists = c:HAB\n\t\t\t\tthis != c:HAB\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = DNM_f_trigger_hab\n\t\t\t\tOR = {\n\t\t\t\t\ttag = HAB\n\t\t\t\t\thas_or_had_tag = HAB\n\t\t\t\t\tNOT = { country_exists = c:HAB }\n\t\t\t\t\tc:HAB = {\n\t\t\t\t\t\tOR = {\n\t\t\t\t\t\t\tis_subject_or_below_of = root\n\t\t\t\t\t\t\tAND = {\n\t\t\t\t\t\t\t\tin_union_with = root\n\t\t\t\t\t\t\t\tunion ?= {\n\t\t\t\t\t\t\t\t\tcountry_is_senior_partner = { country = root }\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\t\n\t\ttrigger_if = {\n\t\t\tlimit = {\n\t\t\t\tcountry_exists = c:HUN\n\t\t\t\tthis != c:HUN\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = DNM_f_trigger_hun\n\t\t\t\tOR = {\n\t\t\t\t\ttag = HUN\n\t\t\t\t\thas_or_had_tag = HUN\n\t\t\t\t\tNOT = { country_exists = c:HUN }\n\t\t\t\t\tc:HUN = {\n\t\t\t\t\t\tOR = {\n\t\t\t\t\t\t\tis_subject_or_below_of = root\n\t\t\t\t\t\t\tAND = {\n\t\t\t\t\t\t\t\tin_union_with = root\n\t\t\t\t\t\t\t\tunion ?= {\n\t\t\t\t\t\t\t\t\tcountry_is_senior_partner = { country = root }\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\t\n\t\ttrigger_if = {\n\t\t\tlimit = {\n\t\t\t\tcountry_exists = c:BOH\n\t\t\t\tthis != c:BOH\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = DNM_f_trigger_boh\n\t\t\t\tOR = {\n\t\t\t\t\ttag = BOH\n\t\t\t\t\thas_or_had_tag = BOH\n\t\t\t\t\tNOT = { country_exists = c:BOH }\n\t\t\t\t\tc:BOH = {\n\t\t\t\t\t\tOR = {\n\t\t\t\t\t\t\tis_subject_or_below_of = root\n\t\t\t\t\t\t\tAND = {\n\t\t\t\t\t\t\t\tin_union_with = root\n\t\t\t\t\t\t\t\tunion ?= {\n\t\t\t\t\t\t\t\t\tcountry_is_senior_partner = { country = root }\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}",
+      "allow_raw": "religion = religion:catholic\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tOR = {\n\t\t\tcountry_rank = country_rank:rank_kingdom\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = DNM_f_privilegium_tt\n\t\t\t\thas_reform = government_reform:austrian_archduchy_reform\n\t\t\t}\n\t\t}\n\n\t\t\n\t\towns = location:vienna\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tOR = {\n\t\t\tOR = { has_or_had_tag = HAB tag = HAB }\n\t\t\tAND = {\n\t\t\t\tOR = { has_or_had_tag = HUN tag = HUN }\n\t\t\t\towns = location:buda\n\t\t\t}\n\t\t\tAND = {\n\t\t\t\tOR = { has_or_had_tag = BOH tag = BOH }\n\t\t\t\towns = location:prague\n\t\t\t}\n\t\t}\n\n\t\t\n\t\ttrigger_if = {\n\t\t\tlimit = {\n\t\t\t\tcountry_exists = c:HAB\n\t\t\t\tthis != c:HAB\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = DNM_f_trigger_hab\n\t\t\t\tOR = {\n\t\t\t\t\ttag = HAB\n\t\t\t\t\thas_or_had_tag = HAB\n\t\t\t\t\tNOT = { country_exists = c:HAB }\n\t\t\t\t\tc:HAB = {\n\t\t\t\t\t\tOR = {\n\t\t\t\t\t\t\tis_subject_or_below_of = root\n\t\t\t\t\t\t\tAND = {\n\t\t\t\t\t\t\t\tin_union_with = root\n\t\t\t\t\t\t\t\tunion ?= {\n\t\t\t\t\t\t\t\t\tcountry_is_senior_partner = { country = root }\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\t\n\t\ttrigger_if = {\n\t\t\tlimit = {\n\t\t\t\tcountry_exists = c:HUN\n\t\t\t\tthis != c:HUN\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = DNM_f_trigger_hun\n\t\t\t\tOR = {\n\t\t\t\t\ttag = HUN\n\t\t\t\t\thas_or_had_tag = HUN\n\t\t\t\t\tNOT = { country_exists = c:HUN }\n\t\t\t\t\tc:HUN = {\n\t\t\t\t\t\tOR = {\n\t\t\t\t\t\t\tis_subject_or_below_of = root\n\t\t\t\t\t\t\tAND = {\n\t\t\t\t\t\t\t\tin_union_with = root\n\t\t\t\t\t\t\t\tunion ?= {\n\t\t\t\t\t\t\t\t\tcountry_is_senior_partner = { country = root }\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\t\n\t\ttrigger_if = {\n\t\t\tlimit = {\n\t\t\t\tcountry_exists = c:BOH\n\t\t\t\tthis != c:BOH\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = DNM_f_trigger_boh\n\t\t\t\tOR = {\n\t\t\t\t\ttag = BOH\n\t\t\t\t\thas_or_had_tag = BOH\n\t\t\t\t\tNOT = { country_exists = c:BOH }\n\t\t\t\t\tc:BOH = {\n\t\t\t\t\t\tOR = {\n\t\t\t\t\t\t\tis_subject_or_below_of = root\n\t\t\t\t\t\t\tAND = {\n\t\t\t\t\t\t\t\tin_union_with = root\n\t\t\t\t\t\t\t\tunion ?= {\n\t\t\t\t\t\t\t\t\tcountry_is_senior_partner = { country = root }\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}",
       "potential_raw": "religion = religion:catholic\n\t\tOR = {\n\t\t\truler = { dynasty = dynasty:habsburg_dynasty }\n\t\t\thas_or_had_tag = HAB\n\t\t\thas_or_had_tag = HUN\n\t\t\thas_or_had_tag = BOH\n\t\t}",
-      "form_effect_raw": "hidden_effect = {\n\t\t\tif = {\n\t\t\t\tlimit = { OR = { tag = HUN has_or_had_tag = HUN } }\n\t\t\t\tset_variable = nd_dnm_origin_hun\n\t\t\t}\n\t\t\telse_if = {\n\t\t\t\tlimit = { OR = { tag = BOH has_or_had_tag = BOH } }\n\t\t\t\tset_variable = nd_dnm_origin_boh\n\t\t\t}\n\t\t\telse = {\n\t\t\t\tset_variable = nd_dnm_origin_hab\n\t\t\t}\n\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\tif = {\n\t\t\t\tlimit = {\n\t\t\t\t\tis_member_of_international_organization = international_organization:hre\n\t\t\t\t\tinternational_organization:hre ?= {\n\t\t\t\t\t\tcountry_has_special_status = {\n\t\t\t\t\t\t\ttype = special_status:elector\n\t\t\t\t\t\t\tcountry = root\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tset_variable = nd_dnm_origin_was_elector\n\t\t\t}\n\t\t}\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tcountry_exists = c:HUN\n\t\t\t\tc:HUN = {\n\t\t\t\t\tin_union_with = root\n\t\t\t\t\tunion ?= {\n\t\t\t\t\t\tcountry_is_senior_partner = { country = root }\n\t\t\t\t\t\tmodifier:union_integration_level >= 5\n\t\t\t\t\t}\n\t\t\t\t\thas_variable = integrated_in_union\n\t\t\t\t\tvar:integrated_in_union >= 5\n\t\t\t\t}\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = nd_dnm_weld_hun_tt\n\t\t\t\tc:HUN = {\n\t\t\t\t\tevery_core_location = { add_core = root }\n\t\t\t\t}\n\t\t\t\tannex_country = { country = c:HUN }\n\t\t\t}\n\t\t}\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tcountry_exists = c:BOH\n\t\t\t\tc:BOH = {\n\t\t\t\t\tin_union_with = root\n\t\t\t\t\tunion ?= {\n\t\t\t\t\t\tcountry_is_senior_partner = { country = root }\n\t\t\t\t\t\tmodifier:union_integration_level >= 5\n\t\t\t\t\t}\n\t\t\t\t\thas_variable = integrated_in_union\n\t\t\t\t\tvar:integrated_in_union >= 5\n\t\t\t\t}\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = nd_dnm_weld_boh_tt\n\t\t\t\tc:BOH = {\n\t\t\t\t\tevery_core_location = { add_core = root }\n\t\t\t\t}\n\t\t\t\tannex_country = { country = c:BOH }\n\t\t\t}\n\t\t}\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tcountry_exists = c:HAB\n\t\t\t\tc:HAB = {\n\t\t\t\t\tin_union_with = root\n\t\t\t\t\tunion ?= {\n\t\t\t\t\t\tcountry_is_senior_partner = { country = root }\n\t\t\t\t\t\tmodifier:union_integration_level >= 5\n\t\t\t\t\t}\n\t\t\t\t\thas_variable = integrated_in_union\n\t\t\t\t\tvar:integrated_in_union >= 5\n\t\t\t\t}\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = nd_dnm_weld_hab_tt\n\t\t\t\tc:HAB = {\n\t\t\t\t\tevery_core_location = { add_core = root }\n\t\t\t\t}\n\t\t\t\tannex_country = { country = c:HAB }\n\t\t\t}\n\t\t}\n\n\t\t\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = { is_member_of_international_organization = international_organization:hre }\n\t\t\tevery_owned_location = {\n\t\t\t\tlimit = { is_owned_by_international_organization = international_organization:hre }\n\t\t\t\tremove_from_international_organization = international_organization:hre\n\t\t\t}\n\t\t\tinternational_organization:hre = {\n\t\t\t\tremove_country_from_international_organization = root\n\t\t\t}\n\t\t}\n\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\n\t\ttrigger_event_non_silently = nd_dnm.1\n\t\tadd_stability = stability_severe_bonus",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tif = {\n\t\t\t\tlimit = { OR = { tag = HUN has_or_had_tag = HUN } }\n\t\t\t\tset_variable = nd_dnm_origin_hun\n\t\t\t}\n\t\t\telse_if = {\n\t\t\t\tlimit = { OR = { tag = BOH has_or_had_tag = BOH } }\n\t\t\t\tset_variable = nd_dnm_origin_boh\n\t\t\t}\n\t\t\telse = {\n\t\t\t\tset_variable = nd_dnm_origin_hab\n\t\t\t}\n\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\tif = {\n\t\t\t\tlimit = {\n\t\t\t\t\tis_member_of_international_organization = international_organization:hre\n\t\t\t\t\tinternational_organization:hre ?= {\n\t\t\t\t\t\tcountry_has_special_status = {\n\t\t\t\t\t\t\ttype = special_status:elector\n\t\t\t\t\t\t\tcountry = root\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tset_variable = nd_dnm_origin_was_elector\n\t\t\t}\n\t\t}\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tcountry_exists = c:HUN\n\t\t\t\tc:HUN = {\n\t\t\t\t\tin_union_with = root\n\t\t\t\t\tunion ?= {\n\t\t\t\t\t\tcountry_is_senior_partner = { country = root }\n\t\t\t\t\t\tmodifier:union_integration_level >= 5\n\t\t\t\t\t}\n\t\t\t\t\thas_variable = integrated_in_union\n\t\t\t\t\tvar:integrated_in_union >= 5\n\t\t\t\t}\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = nd_dnm_weld_hun_tt\n\t\t\t\tc:HUN = {\n\t\t\t\t\tevery_core_location = { add_core = root }\n\t\t\t\t}\n\t\t\t\tannex_country = { country = c:HUN }\n\t\t\t}\n\t\t}\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tcountry_exists = c:BOH\n\t\t\t\tc:BOH = {\n\t\t\t\t\tin_union_with = root\n\t\t\t\t\tunion ?= {\n\t\t\t\t\t\tcountry_is_senior_partner = { country = root }\n\t\t\t\t\t\tmodifier:union_integration_level >= 5\n\t\t\t\t\t}\n\t\t\t\t\thas_variable = integrated_in_union\n\t\t\t\t\tvar:integrated_in_union >= 5\n\t\t\t\t}\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = nd_dnm_weld_boh_tt\n\t\t\t\tc:BOH = {\n\t\t\t\t\tevery_core_location = { add_core = root }\n\t\t\t\t}\n\t\t\t\tannex_country = { country = c:BOH }\n\t\t\t}\n\t\t}\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tcountry_exists = c:HAB\n\t\t\t\tc:HAB = {\n\t\t\t\t\tin_union_with = root\n\t\t\t\t\tunion ?= {\n\t\t\t\t\t\tcountry_is_senior_partner = { country = root }\n\t\t\t\t\t\tmodifier:union_integration_level >= 5\n\t\t\t\t\t}\n\t\t\t\t\thas_variable = integrated_in_union\n\t\t\t\t\tvar:integrated_in_union >= 5\n\t\t\t\t}\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = nd_dnm_weld_hab_tt\n\t\t\t\tc:HAB = {\n\t\t\t\t\tevery_core_location = { add_core = root }\n\t\t\t\t}\n\t\t\t\tannex_country = { country = c:HAB }\n\t\t\t}\n\t\t}\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = { is_member_of_international_organization = international_organization:hre }\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = nd_dnm_hre_sweep_tt\n\t\t\t\tevery_owned_location = {\n\t\t\t\t\tlimit = { is_owned_by_international_organization = international_organization:hre }\n\t\t\t\t\tremove_from_international_organization = international_organization:hre\n\t\t\t\t}\n\t\t\t}\n\t\t\tinternational_organization:hre = {\n\t\t\t\tremove_country_from_international_organization = root\n\t\t\t}\n\t\t}\n\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\thidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_dnm_formed\n\t\t\tset_variable = { name = nd_dnm_grace value = yes years = 10 }\n\t\t\tset_variable = { name = nd_dnm_pariah_timer value = yes years = 50 }\n\t\t\tset_variable = { name = nd_dnm_chain_30_pending value = yes years = 2 }\n\t\t\tset_variable = { name = nd_dnm_chain_31_pending value = yes years = 5 }\n\t\t\tset_variable = { name = nd_dnm_chain_32_pending value = yes years = 8 }\n\t\t}\n\t\tactivate_situation = situation:nd_dnm_reaction_of_the_reich\n\n\t\ttrigger_event_non_silently = nd_dnm.1\n\t\tadd_stability = stability_severe_bonus",
       "formation_event": "nd_dnm.1",
       "source": "mod_new",
       "mod_overrides": true,
@@ -9237,8 +9244,18 @@
           "text": "Catholicism religion"
         },
         {
-          "kind": "atom",
-          "text": "Rank Kingdom"
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Rank Kingdom"
+            },
+            {
+              "kind": "atom",
+              "text": "The Privilegium Maius is confirmed: the Austrian Archduchy reform is enacted (the archducal dignity stands in for the royal crown Austria never held)"
+            }
+          ]
         },
         {
           "kind": "atom",
@@ -9740,7 +9757,7 @@
         "njimi"
       ],
       "allow_raw": "owns = location:ngazargamu\n\t\towns = location:njimi",
-      "potential_raw": "culture = culture:kanembu_culture\n\t\treligion = religion:sunni",
+      "potential_raw": "culture = culture:kanembu_culture\n\t\treligion = religion:sunni\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\thas_any_active_disaster = no",
       "form_effect_raw": "trigger_event_non_silently = nd_kbu.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
       "formation_event": "nd_kbu.1",
       "source": "mod_new",
@@ -9755,6 +9772,10 @@
         {
           "kind": "atom",
           "text": "Sunnism religion"
+        },
+        {
+          "kind": "atom",
+          "text": "Has Any Active Disaster: No"
         }
       ],
       "english_allow": [
@@ -10276,10 +10297,18 @@
         "kuta_watu",
         "butuan",
         "malabang",
+        "butuan",
+        "buayan",
+        "butuan",
+        "samboangan",
+        "malabang",
+        "buayan",
+        "malabang",
+        "samboangan",
         "buayan",
         "samboangan"
       ],
-      "allow_raw": "owns = location:maimbung\n\t\towns = location:kuta_watu\n\t\tcalc_true_if = {\n\t\t\tamount >= 2\n\t\t\towns = location:butuan\n\t\t\towns = location:malabang\n\t\t\towns = location:buayan\n\t\t\towns = location:samboangan\n\t\t}\n\t\tin_civil_war = no",
+      "allow_raw": "owns = location:maimbung\n\t\towns = location:kuta_watu\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tOR = {\n\t\t\tAND = {\n\t\t\t\towns = location:butuan\n\t\t\t\towns = location:malabang\n\t\t\t}\n\t\t\tAND = {\n\t\t\t\towns = location:butuan\n\t\t\t\towns = location:buayan\n\t\t\t}\n\t\t\tAND = {\n\t\t\t\towns = location:butuan\n\t\t\t\towns = location:samboangan\n\t\t\t}\n\t\t\tAND = {\n\t\t\t\towns = location:malabang\n\t\t\t\towns = location:buayan\n\t\t\t}\n\t\t\tAND = {\n\t\t\t\towns = location:malabang\n\t\t\t\towns = location:samboangan\n\t\t\t}\n\t\t\tAND = {\n\t\t\t\towns = location:buayan\n\t\t\t\towns = location:samboangan\n\t\t\t}\n\t\t}\n\t\tin_civil_war = no",
       "potential_raw": "religion = religion:sunni\n\t\tOR = {\n\t\t\tculture = culture:tausug_culture\n\t\t\tculture = culture:maguindanao_culture\n\t\t\tculture = culture:iranun_culture\n\t\t\tculture = culture:tagakaulo_culture\n\t\t\tculture = culture:butuanon_culture\n\t\t}",
       "form_effect_raw": "trigger_event_non_silently = nd_mro.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
       "formation_event": "nd_mro.1",
@@ -10329,28 +10358,92 @@
           "text": "Owns Kuta Watu"
         },
         {
-          "kind": "block",
-          "text": "Calc True If:",
+          "kind": "or",
+          "text": "Any of:",
           "children": [
             {
-              "kind": "atom",
-              "text": "Amount: 2"
+              "kind": "and",
+              "text": "All of:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Owns Butuan"
+                },
+                {
+                  "kind": "atom",
+                  "text": "Owns Malabang"
+                }
+              ]
             },
             {
-              "kind": "atom",
-              "text": "Owns Butuan"
+              "kind": "and",
+              "text": "All of:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Owns Butuan"
+                },
+                {
+                  "kind": "atom",
+                  "text": "Owns Buayan"
+                }
+              ]
             },
             {
-              "kind": "atom",
-              "text": "Owns Malabang"
+              "kind": "and",
+              "text": "All of:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Owns Butuan"
+                },
+                {
+                  "kind": "atom",
+                  "text": "Owns Samboangan"
+                }
+              ]
             },
             {
-              "kind": "atom",
-              "text": "Owns Buayan"
+              "kind": "and",
+              "text": "All of:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Owns Malabang"
+                },
+                {
+                  "kind": "atom",
+                  "text": "Owns Buayan"
+                }
+              ]
             },
             {
-              "kind": "atom",
-              "text": "Owns Samboangan"
+              "kind": "and",
+              "text": "All of:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Owns Malabang"
+                },
+                {
+                  "kind": "atom",
+                  "text": "Owns Samboangan"
+                }
+              ]
+            },
+            {
+              "kind": "and",
+              "text": "All of:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Owns Buayan"
+                },
+                {
+                  "kind": "atom",
+                  "text": "Owns Samboangan"
+                }
+              ]
             }
           ]
         },
@@ -10717,10 +10810,18 @@
         "singhapala",
         "basey",
         "bool",
+        "basey",
+        "bago_negros",
+        "basey",
+        "masbate",
+        "bool",
+        "bago_negros",
+        "bool",
+        "masbate",
         "bago_negros",
         "masbate"
       ],
-      "allow_raw": "owns = location:araut\n\t\towns = location:singhapala\n\t\t\n\t\t\n\t\t\n\t\tcalc_true_if = {\n\t\t\tamount >= 2\n\t\t\towns = location:basey\n\t\t\towns = location:bool\n\t\t\towns = location:bago_negros\n\t\t\towns = location:masbate\n\t\t}\n\t\tin_civil_war = no",
+      "allow_raw": "owns = location:araut\n\t\towns = location:singhapala\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tOR = {\n\t\t\tAND = {\n\t\t\t\towns = location:basey\n\t\t\t\towns = location:bool\n\t\t\t}\n\t\t\tAND = {\n\t\t\t\towns = location:basey\n\t\t\t\towns = location:bago_negros\n\t\t\t}\n\t\t\tAND = {\n\t\t\t\towns = location:basey\n\t\t\t\towns = location:masbate\n\t\t\t}\n\t\t\tAND = {\n\t\t\t\towns = location:bool\n\t\t\t\towns = location:bago_negros\n\t\t\t}\n\t\t\tAND = {\n\t\t\t\towns = location:bool\n\t\t\t\towns = location:masbate\n\t\t\t}\n\t\t\tAND = {\n\t\t\t\towns = location:bago_negros\n\t\t\t\towns = location:masbate\n\t\t\t}\n\t\t}\n\t\tin_civil_war = no",
       "potential_raw": "OR = {\n\t\t\tculture = culture:hiligaynon_culture\n\t\t\tculture = culture:cebuano_culture\n\t\t\tculture = culture:waray_culture\n\t\t}",
       "form_effect_raw": "trigger_event_non_silently = nd_pnt.1\n\t\tadd_stability = stability_mild_bonus",
       "formation_event": "nd_pnt.1",
@@ -10758,28 +10859,92 @@
           "text": "Owns Singhapala"
         },
         {
-          "kind": "block",
-          "text": "Calc True If:",
+          "kind": "or",
+          "text": "Any of:",
           "children": [
             {
-              "kind": "atom",
-              "text": "Amount: 2"
+              "kind": "and",
+              "text": "All of:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Owns Basey"
+                },
+                {
+                  "kind": "atom",
+                  "text": "Owns Bool"
+                }
+              ]
             },
             {
-              "kind": "atom",
-              "text": "Owns Basey"
+              "kind": "and",
+              "text": "All of:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Owns Basey"
+                },
+                {
+                  "kind": "atom",
+                  "text": "Owns Bago Negros"
+                }
+              ]
             },
             {
-              "kind": "atom",
-              "text": "Owns Bool"
+              "kind": "and",
+              "text": "All of:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Owns Basey"
+                },
+                {
+                  "kind": "atom",
+                  "text": "Owns Masbate"
+                }
+              ]
             },
             {
-              "kind": "atom",
-              "text": "Owns Bago Negros"
+              "kind": "and",
+              "text": "All of:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Owns Bool"
+                },
+                {
+                  "kind": "atom",
+                  "text": "Owns Bago Negros"
+                }
+              ]
             },
             {
-              "kind": "atom",
-              "text": "Owns Masbate"
+              "kind": "and",
+              "text": "All of:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Owns Bool"
+                },
+                {
+                  "kind": "atom",
+                  "text": "Owns Masbate"
+                }
+              ]
+            },
+            {
+              "kind": "and",
+              "text": "All of:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Owns Bago Negros"
+                },
+                {
+                  "kind": "atom",
+                  "text": "Owns Masbate"
+                }
+              ]
             }
           ]
         },
@@ -10960,7 +11125,7 @@
         "husinec"
       ],
       "allow_raw": "owns = location:husinec",
-      "potential_raw": "OR = {\n\t\t\tculture = culture:czech\n\t\t\tculture = culture:moravian\n\t\t}\n\t\treligion = religion:hussite",
+      "potential_raw": "OR = {\n\t\t\tculture = culture:czech\n\t\t\tculture = culture:moravian\n\t\t}\n\t\treligion = religion:hussite\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tNOT = {\n\t\t\tsituation:hussite_wars ?= { situation_is_active = yes }\n\t\t}\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\ttrigger_if = {\n\t\t\tlimit = { tag = BOH }\n\t\t\thas_global_variable = hussites_won_hussite_wars\n\t\t}",
       "form_effect_raw": "trigger_event_non_silently = nd_tab.1\n\t\tadd_stability = stability_mild_bonus\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tadd_country_modifier = {\n\t\t\tmodifier = nd_tab_peasant_commune\n\t\t\tyears = -1\n\t\t}",
       "formation_event": "nd_tab.1",
       "source": "mod_new",
@@ -10985,6 +11150,42 @@
         {
           "kind": "atom",
           "text": "Hussite religion"
+        },
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "block",
+              "text": "Situation:Hussite Wars:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Situation Is Active: Yes"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "if",
+          "text": "If:",
+          "children": [
+            {
+              "kind": "block",
+              "text": "Limit:",
+              "children": [
+                {
+                  "kind": "atom",
+                  "text": "Tag: Bohemia"
+                }
+              ]
+            },
+            {
+              "kind": "atom",
+              "text": "Has Global Variable: Hussites Won Hussite Wars"
+            }
+          ]
         }
       ],
       "english_allow": [
@@ -11108,7 +11309,7 @@
         "theodoro"
       ],
       "allow_raw": "owns = location:theodoro",
-      "potential_raw": "culture = { has_culture_group = culture_group:greek_group }\n\t\treligion = religion:orthodox",
+      "potential_raw": "culture = { has_culture_group = culture_group:greek_group }\n\t\treligion = religion:orthodox\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tNOT = { tag = BYZ }",
       "form_effect_raw": "trigger_event_non_silently = nd_tdr.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
       "formation_event": "nd_tdr.1",
       "source": "mod_new",
@@ -11123,6 +11324,16 @@
         {
           "kind": "atom",
           "text": "Orthodoxy religion"
+        },
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Tag: Byzantium"
+            }
+          ]
         }
       ],
       "english_allow": [
@@ -11161,7 +11372,7 @@
         "kashgar"
       ],
       "allow_raw": "owns = location:jingzhao\n\t\towns = location:kashgar\n\t\tNOT = { is_situation_active = situation:red_turban_rebellions }\n\t\tin_civil_war = no",
-      "potential_raw": "culture = {\n\t\t\thas_culture_group = culture_group:chinese_group\n\t\t}",
+      "potential_raw": "culture = {\n\t\t\thas_culture_group = culture_group:chinese_group\n\t\t}\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tNOT = { tag = CHI }",
       "form_effect_raw": "trigger_event_non_silently = nd_tgd.1\n\t\tadd_stability = stability_severe_bonus\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\tset_capital = location:jingzhao",
       "formation_event": "nd_tgd.1",
       "source": "mod_new",
@@ -11172,6 +11383,16 @@
         {
           "kind": "atom",
           "text": "Chinese Group culture group"
+        },
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Tag: China"
+            }
+          ]
         }
       ],
       "english_allow": [
