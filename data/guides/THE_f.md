@@ -61,55 +61,39 @@ option surrenders something real.
 
 ## After forming
 
-Six vanilla advances already exist for this tag: the Fair of Saint
-Demetrios, the Lombard Guard, the Macedonian fur trade, the Thessalonican
-crown, the University of Thessalonica and the Via Egnatia restoration.
-The mod's tree builds around them rather than over them.
+The centrepiece is **the Zealots hold the gates**, which offers all three
+historically attested exits: charter the commune and lose crown
+authority; storm the lower town and hang the council, as Kantakouzenos
+did in 1350, earning permanent burgher hatred; or wait, because the city
+turned on the Zealots itself in 1349, at the cost of eight years of
+looking helpless.
 
-The centrepiece is **the Zealots hold the gates**, and it offers all
-three historically attested exits: charter the commune and lose crown
-authority; storm the lower town and hang the council, which is what
-Kantakouzenos actually did in 1350, earning permanent burgher hatred; or
-wait, because the city turned on the Zealots itself in 1349, at the cost
-of eight years of looking helpless.
-
-The other events run through Athos appealing to Rome, **Gregory Palamas
-barred from his own see in 1347** by the Zealots, with the option no
-Byzantine emperor ever had of declaring the see Latin, the Venetian
-handover of 1423, the Sephardic arrival of 1492, and the Union of Florence
-proclaimed from the ambo of Saint Demetrios or quietly shelved.
-
-Buildings are bound to what is physically in those six provinces: the
-Eptapyrgion citadel whose guns face down into its own city, the
-Sidirokausia silver and lead mines, the Hall of the Myron, the Broadcloth
-Hall, the Argyrokopeion mint, and the Krokos House for Servia's saffron.
+Six vanilla advances already exist here, among them the Fair of Saint
+Demetrios and the University of Thessalonica. Later events cover Gregory
+Palamas barred from his own see in 1347 and the Sephardic arrival of
+1492. Buildings stay inside the six provinces: the Eptapyrgion citadel
+whose guns face into its own city, the Sidirokausia mines, and the
+Argyrokopeion mint.
 
 Destiny takes the two ends of the same argument:
 
-- **The barons' road.** The two Slav rocks that strangled the historical
-  kingdom, Prosek and Melnik, then the reckoning with the Epirote
-  despotate that destroyed it in 1224, then the Parliament of Ravennika
-  where Attica owed it homage in 1209. The capstone **Castellany of
-  Platamon** is the Frankish tower at the mouth of the Vale of Tempe.
+- **The barons' road.** Prosek and Melnik, then the Epirote despotate
+  that destroyed the historical kingdom in 1224, then Ravennika. Capstone
+  is the **Castellany of Platamon**.
 - **The commune's road.** Three island ports instead of a land campaign:
-  the alum of Lemnos, the fondaco at Negroponte, and the Maona of Chios.
-  The capstone **House of the Kommerkion** is the customs house on the
-  mole.
+  Lemnos, Negroponte and Chios. Capstone is the **House of the
+  Kommerkion**.
 
-Neither road reaches past Greece and the Aegean. The church option has no
-destiny road at all.
+Neither road reaches past the Aegean, and the church option has no
+destiny road.
 
 ## Notes
 
-- **Bureaucracies.** Four, of which you run two, and there is no crown
-  estate anywhere in the file. Every alignment is one body approving while
-  the other two resent it, because there was no crown party in this city.
-  The **Curia of the Lombards**, the court of fief holders who shut the
-  gates on Henry of Flanders in 1207. The **Archon of the Demos**, the
-  elected magistracy of the waterfront. The **Synaxis of Karyes**, the
-  assembly of Athonite abbots fixed by Tzimiskes' typikon of 972. And the
-  **Sekreton of Thessalonike**, the crown's own bench, seated by Empress
-  Yolanda Irene of Montferrat in 1303.
+- **Bureaucracies.** Four, of which you run two, and none is a crown
+  body: every alignment is one estate approving while the other two
+  resent it. The **Curia of the Lombards**, the **Archon of the Demos**
+  on the waterfront, the **Synaxis of Karyes** of Athonite abbots, and
+  the **Sekreton of Thessalonike**.
 - That last one seats only one master instead of two, which sharpens the
   whole premise. Its decay was written by history: in 1337, the game's
   start year, three of the four judges of that tribunal were convicted of

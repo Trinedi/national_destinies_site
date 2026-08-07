@@ -20,7 +20,7 @@ crowned Ahmad Shah Pearl of Pearls (Durr-i-Durran), and the nine
 invasions that carried Afghan armies from Khorasan to Delhi, peaking
 at the Third Battle of Panipat in 1761.
 
-The mod's framing is a confederal mountain empire built on Pashtunwali,
+It is a confederal mountain empire built on Pashtunwali,
 the jirga, Sufi networks, and the Khyber and Bolan toll regime. It sits
 at the Persia / Central Asia / India crossroads with destiny branches
 that either consolidate Khorasan as the heartland or push east to rule
@@ -37,7 +37,7 @@ for at game start.
    cleanest choices but start as steppe hordes with shafii_school. SWT
    in the Pashtun belt and MIH in Sistan are Sunni monarchies with
    afghan_culture already tolerated; both need a longer march.
-2. **Hold both required locations.** You must own **Kandahar** and **Kabul**. NGD starts with Kandahar; QUN starts
+2. **Own Kandahar and Kabul.** NGD starts with Kandahar; QUN starts
    with Kabul. You must take the other.
 3. **Convert primary culture to afghan_culture.** afghan_culture is
    tolerated by NGD, QUN, SWT, MIH, KHN, and BSD. Promote it through

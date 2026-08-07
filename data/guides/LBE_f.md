@@ -20,9 +20,8 @@ checked monarchy).
 
 1. **Get a Luba-language primary culture.** There is no pickable
    Luba-language country at the 1337 bookmark: Luba (LBA) and Lunda
-   (LND) are Societies of Pops, on the map but not selectable
-   (reported on the Workshop, 2026-07-13). The practical routes: take
-   the Katanga heartland with a playable power and let the absorbed
+   (LND) are Societies of Pops, on the map but not selectable. The
+   practical routes: take the Katanga heartland with a playable power and let the absorbed
    Luba pops shift or supply your primary culture, or release a
    Luba-cultured subject from conquered territory and continue the
    campaign as it.

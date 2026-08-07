@@ -107,7 +107,7 @@ The destiny tree splits two ways:
 
 - The two formation modifiers run for 30 years (longer than HOS's 20),
   reflecting that TKT is one tier higher (Level 3 vs Level 2).
-- The destiny paths are deliberately divergent: Shadow Empire
+- The two destiny paths pull hard apart: Shadow Empire
   rewards continental conquest and accumulated gold, Atlantic
   Imperium rewards overseas exploration and the manufactories
   institution. Pick the formation choice that matches your campaign,

@@ -34,8 +34,8 @@ it from forming Sòng or generic vanilla China.
    (MNG, CSO, CSI, WUU, etc.). None of them exist at the 1337
    bookmark; they spawn during the Red Turban Rebellions, so you
    switch to one when it appears on the map.
-2. **Wait out the Red Turban Rebellions.** You must satisfy `is_situation_active = no` for the rebellions and
-   being at peace at home. You cannot form during the chaos.
+2. **Wait out the Red Turban Rebellions.** You cannot form while they
+   are still running, and you must be at peace at home.
 3. **Own Jingzhao.** This is the Tang capital (modern Xi'an), held
    by CHI at start. The eastern half of the requirement.
 4. **Own Kashgar.** Held at start by DGH (the Dughlats, a Mongol

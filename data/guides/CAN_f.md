@@ -15,9 +15,10 @@ hide_auto: true
 
 Canada is the northern Confederation, the dominion that knit fur-trade frontier,
 Atlantic fishery, and St. Lawrence farmland into a single transcontinental polity.
-The mod's formation event treats it as a confederation moment: the Northern Dominion
-(westward settlement, frontier endurance) versus the Great Trading Nation (river
-networks, fur-trade economy, fishing fleets).
+Formation is the confederation moment, and it asks which dominion you are
+building: the Northern Dominion of westward settlement and frontier
+endurance, or the Great Trading Nation of river networks, furs and
+fishing fleets.
 
 The only requirement is culture. Either **British group** (English, Scottish,
 Welsh, Irish, etc.) or **French group** (Picard, Norman, Angevin, etc.) qualifies.

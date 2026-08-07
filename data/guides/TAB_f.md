@@ -26,7 +26,8 @@ scripture, and communal property.
 
 ## Forming it
 
-1. **Start as Bohemia (BOH) or Moravia (MVA).** It accepts Czech or Moravian culture. BOH is by far the
+1. **Start as Bohemia (BOH) or Moravia (MVA).** Czech or Moravian
+   culture qualifies. BOH is by far the
    stronger start: it starts Catholic but holds Husinec (Hus's
    birthplace), the named formation location.
 2. **Trigger the Hussite Wars, flip to the Hussite religion, and WIN

@@ -14,16 +14,14 @@ export is priests rather than goods, its border is a permanent militarised
 cordon, and its economy is portage between the Pannonian interior and the
 sea.
 
-The name here is the older one. Napoleon's Illyrian Provinces of 1809 and
-the Illyrian Movement of the 1830s fall outside this game's window and
-appear nowhere in this content. What is period-correct is Illyrian as the
-learned and ecclesiastical name the Catholic Slavs of the eastern Adriatic
-gave themselves, roughly 1450 to 1650. Vinko Pribojevic of Hvar delivered
-an oration on it in 1525. Mavro Orbini of Ragusa published *Il Regno degli
-Slavi* in 1601. Rome held the church and college of San Girolamo degli
-Illirici from 1453, and Gregory XIII founded the Illyrian College at
-Loreto in 1580 to train Catholic clergy for Slavic lands under Ottoman
-rule. A humanist and clerical identity, not an ethnic federation.
+The name here is the older one, not Napoleon's Illyrian Provinces of 1809
+or the Illyrian Movement of the 1830s, both of which fall outside this
+game. Illyrian was the learned and ecclesiastical name the Catholic Slavs
+of the eastern Adriatic gave themselves, roughly 1450 to 1650. Vinko
+Pribojevic of Hvar delivered an oration on it in 1525, Mavro Orbini of
+Ragusa published *Il Regno degli Slavi* in 1601, and Gregory XIII founded
+the Illyrian College at Loreto in 1580 to train Catholic clergy for Slavic
+lands under Ottoman rule.
 
 ## Forming it
 
@@ -65,38 +63,27 @@ being told to be one city. The axis is the wall or the mission.
 
 ## After forming
 
-The heritage tree is the densest in this batch at 33 advances, and the
-best thing in it comes first: **the Glagolitic liturgy**. Innocent IV's
-grant of 1248 to the bishop of Senj permitted Mass in Slavonic in
-Glagolitic letters, justified by the false attribution of the script to
-St Jerome. That attribution is why the Roman institution is San
-*Girolamo*. A Catholic state with its own vernacular liturgy in a
-non-Latin alphabet is unique in Latin Christendom, and the whole Illyrian
-claim hangs off it.
+The heritage tree runs to 33 advances, and the best thing in it comes
+first: **the Glagolitic liturgy**. Innocent IV's grant of 1248 to the
+bishop of Senj permitted Mass in Slavonic in Glagolitic letters, justified
+by the false attribution of the script to St Jerome. That attribution is
+why the Roman institution is San *Girolamo*. A Catholic state with its own
+vernacular liturgy in a non-Latin alphabet is unique in Latin Christendom.
 
-After that: the Vinodol Code of 1288, the Tricesima customs, the Senj
-press of 1494, Bosna Srebrena, Marulic's *Judita* of 1501, the haramije,
-the Military Frontier of 1553, the Illyrian colleges, the Croat regiments,
-the Magnates' Conspiracy, the recovery of Slavonia in 1699, and Stulli's
-lexicon.
+After that: the Vinodol Code of 1288, the Senj press of 1494, Marulic's
+*Judita* of 1501, the Military Frontier of 1553, and the recovery of
+Slavonia in 1699.
 
 Destiny follows your formation choice:
 
 - **Confinium.** The cordon stops being a line to hold and becomes a line
-  to move, following what the Croatian and Slavonian generalcies actually
-  did after 1683: across the Drava, then Belgrade, then the Banat. The
-  capstone **Frontier Council** is your own war council instead of Graz's.
-  Midway you choose between the Statuta Valachorum of 1630, a chartered
-  frontier, and a commissioned command.
+  to move, following the Croatian and Slavonian generalcies after 1683:
+  across the Drava, then Belgrade, then the Banat. Capstone is the
+  **Frontier Council**, your own war council instead of Graz's.
 - **Sacrum Illyricum continued.** Institutions, presses and endowments,
-  and two of its three stages have no location objective at all. The
-  Congregation of Propaganda, then the Union of Marca, then the Illyrian
-  Church. The capstone **Marian Shrine** must stand on a hill: Trsat above
-  the Rijeka crossing, Olovo in the Bosnian hills, or Bistrica in the
-  Zagorje.
-
-Neither path touches Kosovo, Raska, Zeta or Sumadija beyond Belgrade and
-Smederevo, so this never turns into South Slav unification.
+  and two of its three stages have no location objective at all. Capstone
+  is the **Marian Shrine**, which must stand on a hill: Trsat, Olovo or
+  Bistrica.
 
 ## Notes
 

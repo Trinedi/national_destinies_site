@@ -55,60 +55,40 @@ Each is paid for out of an estate.
 
 ## After forming
 
-The heritage tree is the largest in this batch at 41 advances. It opens
-on the Consistori del Gay Saber, the literary academy founded at Toulouse
-in 1323, and the Leys d'Amors of 1341 that codified Occitan grammar and
-poetics. From there it runs through bastide charters and pareage,
-transhumance and the dralhas, Sainte-Cecile of Albi, the Parlement of
-Toulouse of 1443, the pastel boom and Jean de Bernuy standing surety for
-Francois I, alum of Millau, article 111 of Villers-Cotterets, the Chambre
-de l'Edit at Castres, Cevennes silk, Armagnac, Riquet's canal, the
-Camisards, the cadets de Gascogne, and finally the Felibrige.
+The heritage tree runs to 41 advances, opening on the Consistori del Gay
+Saber, the literary academy founded at Toulouse in 1323, and the Leys
+d'Amors of 1341 that codified Occitan grammar and poetics. From there:
+bastide charters, the Parlement of Toulouse, the pastel boom, the Chambre
+de l'Edit at Castres, Riquet's canal, the Camisards, and the Felibrige.
 
 Behind it sits a real multi-stage economy: woad to coques to agranat
 using Millau alum, then Languedoc cloth, then londrins seconds for the
-Aleppo trade, alongside verdigris, Armagnac brandy and Rouergue steel.
-Each stage consumes what the last one made.
+Aleppo trade. Each stage consumes what the last one made.
 
 Destiny carries your formation answer outward:
 
-- **The consular road.** Credit first, through the Cahorsin lenders, then
-  the Atlantic outlet via the Bordeaux wine privilege, then a single
-  sworn instrument covering every consulate and valley including the
-  Limousin and the Auvergne. The capstone **Fiera Franca** is a chartered
-  free fair with its own peace and its own law-merchant court.
+- **The consular road.** Credit through the Cahorsin lenders, then the
+  Atlantic outlet via the Bordeaux wine privilege, then one sworn
+  instrument covering every consulate and valley. Capstone is the **Fiera
+  Franca**, a chartered free fair with its own law-merchant court.
 - **The Orthez road.** Hold the western doors at Bayonne and
-  Saint-Jean-Pied-de-Port, inherit Navarre at Pamplona and Tudela, and
-  finally settle the debt of Muret by taking the Aragonese cradle at Jaca
-  and Huesca. The capstone **Castel Sobeiran** is a prince's brick keep in
-  the Montaner manner, built on hills or mountains away from your capital.
-
-Peter II of Aragon died at Muret in 1213 fighting for the Occitan lords
-against Simon de Montfort. Aragon is this country's natural partner or
-rival, never a stranger.
+  Saint-Jean-Pied-de-Port, inherit Navarre, and settle the debt of Muret
+  by taking Jaca and Huesca. Peter II of Aragon died at Muret in 1213
+  fighting for the Occitan lords. Capstone is the **Castel Sobeiran**,
+  built on hills or mountains away from your capital.
 
 ## Notes
 
-- **There is no Cathar church left to restore.** The Albigensian Crusade
-  ended in 1229, Montsegur fell in 1244, and Guillaume Belibaste, the last
-  known perfectus in the Languedoc, was burned in 1321, sixteen years
-  before the game begins. Catharism appears here as memory, grievance and
-  confiscated property. The age 1 advance grants heretic tolerance at a
-  cost in devotion, and its event lays the crusade confiscation rolls in
-  front of you: reopen them and the crown gains while the planted northern
-  lineages lose, or seal them and buy the church's peace. The habit of
-  sheltering the hunted carries forward into the Edict of Castres and the
-  Camisards.
-- **Bureaucracies.** Four, of which you run three, which suits a country
-  defined by its assemblies. The **Estates of Languedoc**, who voted their
-  own taxation as a lump sum, apportioned it through the assiettes, and
-  borrowed in the province's own name. The **Cour des Aides** of
-  Montpellier, from 1437, the one bench that could void a claimed
-  exemption. **Lo Compes**, the community land register of 1320 that made
-  the taille fall on land rather than on persons. And the **Cour Majour of
-  Bearn**, twelve barons as jurats, whose consent was needed for any war
-  outside Bearn, and before whom the prince swore to the Fors before Bearn
-  swore to him.
+- **There is no Cathar church left to restore.** Montsegur fell in 1244,
+  and the last known perfectus in the Languedoc was burned in 1321.
+  Catharism appears here as memory, grievance and confiscated property.
+  The age 1 advance grants heretic tolerance at a cost in devotion, and
+  its event lays the crusade confiscation rolls in front of you: reopen
+  them and the crown gains while the planted northern lineages lose, or
+  seal them and buy the church's peace.
+- **Bureaucracies.** Four, of which you run three: the **Estates of
+  Languedoc**, who voted their own taxation and borrowed in the province's
+  own name; the **Cour des Aides**; **Lo Compes**, the land register that
+  made the taille fall on land rather than persons; and the **Cour Majour
+  of Bearn**.
 - **Nothing here requires Narbonne**, though the Regnum Gothorum does.
-  The two share only the Septimanian coastal corridor, and both are level
-  3, so neither can form the other.

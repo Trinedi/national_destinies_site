@@ -8,8 +8,8 @@ hide_auto: true
 Aotearoa, the United Tribes of New Zealand, takes its name and its
 formation requirement from He Whakaputanga o te Rangatiratanga o Nu Tireni,
 the 1835 Declaration of Independence signed by the northern rangatira
-that asserted Maori sovereignty as a single political entity. The mod
-treats this as the unification moment: the iwi of the islands set
+that asserted Maori sovereignty as a single political entity.
+Formation is the unification moment: the iwi of the islands set
 aside generations of inter-tribal warfare to constitute Aotearoa as
 one rangatiratanga, choosing whether to root that unity in Tu (the
 warrior tradition of haka, taiaha, and the toa) or Tangaroa (the

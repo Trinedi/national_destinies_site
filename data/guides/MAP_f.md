@@ -24,24 +24,17 @@ the Spanish settler frontier.
 
 ## Forming it
 
-1. **Get a mapudungun-group primary culture.** The requirement is
-   Mapudungun (Mapuche, Picunche, Pehuenche,
-   Williche, Purun Awqa). No mapudungun tag can be picked at the 1337
-   bookmark: Mapuche (MPC) and Picunche (PHE) are Societies of Pops,
-   on the map but not selectable. The practical routes: reach
-   Araucania with a playable power, absorb the Mapuche pops and shift
-   primary culture, or release a Mapuche-cultured subject from
-   conquered territory and continue the campaign as it.
-2. **Own wenteche.** There is a single hard requirement:
-   `owns = location:wenteche`, the central Mapuche heartland in
-   Ngulumapu, held by the Mapuche Society of Pops at start.
-3. **Hold 90 percent of Ngulumapu and Puelmapu.** The required-
-   locations fraction is 0.9 across Ngulumapu (the western, Chilean
-   side of the Andes) and Puelmapu (the eastern, Argentine side).
-   This is a high bar. Expect to fight your mapudungun neighbours and
-   push east of the cordillera before the formable becomes available.
-4. **Form Wallmapu.** Country rank rises to Kingdom on formation if
-   below it.
+1. **Get a mapudungun-group primary culture.** No mapudungun country can
+   be picked in 1337: Mapuche and Picunche are pop societies, on the map
+   but not selectable. Either reach Araucania with a playable power and
+   let the absorbed Mapuche pops shift your primary culture, or release a
+   Mapuche-cultured subject and continue as it.
+2. **Own Wenteche.** The central Mapuche heartland in Ngulumapu, held by
+   the Mapuche pop society at the start.
+3. **Hold 90 percent of Ngulumapu and Puelmapu.** The western Chilean
+   side of the Andes and the eastern Argentine side. A high bar: expect
+   to fight your mapudungun neighbours and push east of the cordillera.
+4. **Form Wallmapu.** Your rank rises to kingdom if it was lower.
 
 ## Pick your founding doctrine on formation
 

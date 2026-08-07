@@ -5,24 +5,18 @@ hide_auto: true
 
 ## Concept
 
-Comancheria is the Plains horse empire as a sovereign state. The
-historical reference is the long 18th and early 19th century, when
-the Numunu (Comanche) bands, Penateka, Yamparika, Quahadi, Nokoni,
-and Kotsoteka, ran a tribute and raid economy across the southern
-Plains and northern Mexico from the Llano Estacado out. The mod calls
-this Numunu Sookobitu and structures it as a paraibo (peace chief)
-plus tekwuniwapi (war chief) multi-band confederation rather than a
-unitary kingdom, with cohesion held together through kinship,
-captive incorporation, and the bison-and-horse economy.
+Comancheria is the Plains horse empire as a sovereign state, drawn from
+the long 18th and early 19th century, when the Numunu bands (Penateka,
+Yamparika, Quahadi, Nokoni, Kotsoteka) ran a tribute and raid economy
+across the southern Plains and northern Mexico from the Llano Estacado
+out. It is a paraibo and tekwuniwapi confederation, peace chief and war
+chief, held together by kinship, captive incorporation and the
+bison-and-horse economy rather than by a single throne.
 
-This is alt-history. In 1337 the Numic bands were still in the Great
-Basin and the Comanche as a distinct people did not yet exist. The
-formable's requirement is a Shoshoni-group culture, so any
-Shoshoni-group country may attempt the climb. The advance tree
-treats horse mastery as a Renaissance-era arrival and the empire's
-peak as Age 4 to Age 5, mirroring the historical timeline.
-
-The tag is NUM, after Numunu (the Comanche endonym).
+This is alternate history. In 1337 the Numic bands were still in the
+Great Basin and the Comanche as a distinct people did not yet exist. The
+advance tree treats horse mastery as a Renaissance arrival and the
+empire's peak as ages 4 and 5.
 
 ## Forming it
 

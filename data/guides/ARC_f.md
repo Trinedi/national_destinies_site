@@ -30,7 +30,7 @@ Cypriot Concord (the Lusignan house union with Cyprus).
 
 The tag is ARC because vanilla EU5 already uses ARM for the Caucasian
 Armenian heartland. ARC is specifically the Mediterranean cousin and
-it excludes ARM by design.
+it excludes ARM.
 
 ## Forming it
 
@@ -112,5 +112,5 @@ The destiny tree splits two ways:
   tension, not a flavor toggle. Stage 2 modifiers on both paths
   reflect the choice (e.g. Reconciled Sees vs Conqueror's Charter
   on the Aleppo and Damascus stage). Pick deliberately.
-- ARM (the Caucasian heartland) is deliberately blocked from ARC.
+- ARM, the Caucasian heartland, cannot form ARC.
   The two are parallel restoration arcs, not interchangeable.

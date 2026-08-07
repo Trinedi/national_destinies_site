@@ -61,12 +61,13 @@ The destiny tree splits two ways:
   Zazzau, breaking the Hausa city-states. Stage 2 reaches Timbuktu and
   Gao, supplanting the western Sahel. Stage 3 takes Tripoli and Murzuk,
   punching through the Sahara to the Mediterranean coast, and unlocks
-  the **Imperial Barracks** capstone
-  building. Unlocked by the lance and the ribat formation choice.
+  the **Imperial Barracks** capstone building. Requires the lance and
+  the ribat choice.
 - **Path B: Crossroads of the Sahara.** Trade line. Stage 1 embraces
   banking and secures a salt market. Stage 2 reaches global trade with
   ivory market access at 2000 development. Stage 3 reaches a cotton
-  market at 2500 development and unlocks the **Grand Caravansary** capstone building. Unlocked by the
+  market at 2500 development and unlocks the **Grand Caravansary**
+  capstone building. Unlocked by the
   caravan and the market formation choice.
 
 ## Notes

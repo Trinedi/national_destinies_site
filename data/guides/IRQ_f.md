@@ -75,31 +75,23 @@ You are choosing which one you rebuild.
 The heritage tree runs on the canals. Age 1 opens the Nahrawan
 head-works. Age 3 replaces fixed-area assessment with muqasama
 crop-share, taxing land by how the water is lifted: half rate for
-flood-fed ground, a third under a wheel, a quarter under an animal. That
-is what makes your treasury lose money when a canal silts, which is the
-only arrangement that ever made a state dredge. Age 5 brings the
-Hindiyya channel and a genuinely zero-sum water dispute: let the new
-Najaf channel run and the Hilla branch dies, or build the regulator at
-the fork and pay for it in minted coin.
+flood-fed ground, a third under a wheel, a quarter under an animal. Your
+treasury then loses money when a canal silts, which is the only
+arrangement that ever made a state dredge. Age 5 brings the Hindiyya
+channel and a zero-sum dispute: let the new Najaf channel run and the
+Hilla branch dies, or build the regulator at the fork and pay in coin.
 
 Destiny follows your formation choice:
 
-- **Dar al-Khilafa.** The caliphal road. Take the Zagros gates at
-  Kermanshah and Hamadan, then the Syrian wing at Aleppo and Damascus,
-  then Cairo and Jerusalem to seat a shadow caliph. The capstone **Dar
-  al-Barid** is the caliphal post relay, with a resident intelligencer
-  reporting on the governor next door.
-- **Madinat al-Salam.** Water as machinery, which the heritage tree never
-  touches. Maragheh's observatory instruments, then Shushtar's Sasanian
-  weirs, then the corrected astronomical tables at Samarkand. Capstones
-  are the **Dulab Works**, a yard building and repairing norias and
-  al-Jazari pumps, and the **Marsad** observatory, which is cities-only
-  and Crescent-only, because a zij is written for one latitude.
-
-The destiny root, **The Register of Waters**, is a standing roll of every
-offtake, weir and sluice, walked yearly and dated. The heritage tree digs
-on emergency three times and never leaves an office behind. The root is
-that office.
+- **Dar al-Khilafa.** The caliphal road, through the Zagros gates at
+  Kermanshah and Hamadan, then Aleppo and Damascus, then Cairo and
+  Jerusalem to seat a shadow caliph. Capstone is the **Dar al-Barid**,
+  the caliphal post relay, with a resident intelligencer reporting on the
+  governor next door.
+- **Madinat al-Salam.** Water as machinery: Maragheh's observatory
+  instruments, Shushtar's Sasanian weirs, then the corrected tables at
+  Samarkand. Capstones are the **Dulab Works**, a yard building norias
+  and al-Jazari pumps, and the **Marsad** observatory.
 
 ## Notes
 
@@ -107,16 +99,12 @@ that office.
   nawba** administer the timed water turn and call the yearly canal
   clearance. The **soyurghal** is the Mongol grant in perpetuity inherited
   from the Jalayirids, which hardened into hereditary tax-immune holdings.
-  Those two argue on purpose: the mirab raises your rural control ceiling
-  and a neglected soyurghal collapses it, an assignee standing between the
-  treasury and the ground. The others are the **jahbadhiyya**, the Jewish
-  court bankers who made monthly advances against Ahvaz revenue, and the
-  **naqib al-ashraf**, the register of the Prophet's descendants.
-- **Iraq chains upward into the Khilafah**, which continues the Dar
-  al-Khilafa road. A Shia Iraq cannot take that chain.
-- The Bayt al-Hikma, the Hajj and the caliphate itself all belong to the
-  Khilafah, so Iraq reaches for the **Mustansiriya** instead, a real
-  building still standing, and buildable in Baghdad and nowhere else.
-- The Syriac line, Beth Nahrain and the Assyrian Empire, shares the
-  Jazira and nothing else. It requires Miaphysite or Nestorian religion,
-  so the two never compete for the same player.
+  Those two pull against each other: the mirab raises your rural control
+  ceiling and a neglected soyurghal collapses it. The others are the
+  **jahbadhiyya**, the Jewish court bankers, and the **naqib al-ashraf**,
+  the register of the Prophet's descendants.
+- **Iraq leads on into the Khilafah**, continuing the Dar al-Khilafa road.
+  A Shia Iraq cannot go that way.
+- The Bayt al-Hikma, the Hajj and the caliphate belong to the Khilafah, so
+  Iraq reaches for the **Mustansiriya** instead, a real building still
+  standing, and buildable in Baghdad and nowhere else.

@@ -15,7 +15,7 @@ The Mughal Empire revives the Timurid imperial dream on Indian soil. The histori
 reference is Babur's 1526 invasion through the Khyber Pass, the foundation of the
 empire at Delhi and Agra after the Battle of Panipat, and Akbar's later synthesis
 of Hindu and Muslim governance under the doctrine of *sulh-i-kul* (peace with all).
-The mod's formation event names this directly: "We shall conquer as Babur conquered"
+The formation event names this directly: "We shall conquer as Babur conquered"
 versus "We shall enlighten as Akbar enlightened."
 
 The formable is mod-replaced (REPLACE block). The form_effect now sets country rank
@@ -74,9 +74,8 @@ on matching advance research.
 
 ## Notes
 
-- The mod uses REPLACE to layer formation event, severe stability, and rank
-  promotion onto the vanilla `level = 4`, `fraction = 0.8` shell. The territorial
-  bar is identical to vanilla.
+- The territorial requirement is identical to vanilla. Forming adds the
+  event, a large stability bonus and the rank promotion.
 - Nothing restricts who may attempt this. Anyone who eventually meets the
   religion, culture, and territory requirements can form, regardless of
   where they started.

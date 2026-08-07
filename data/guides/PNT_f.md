@@ -19,7 +19,7 @@ Visayan warriors the conquistadors first encountered, the kakarlong
 brotherhoods who waged mangayaw raids from balangay and karakoa fleets
 across the inner seas.
 
-The mod's framing is a federation of datus bound by sandugo (the
+It is a federation of datus bound by sandugo (the
 blood-compact), a maritime confederation of three Visayan languages
 (Hiligaynon, Cebuano, Waray), and a babaylan-led anitist religious
 order. It is explicitly not a Madya-as enlargement: it is the unified
@@ -46,7 +46,7 @@ by MRO), the Tagalogs of Manila Bay, and the Bicolanos.
 5. **Not in civil war.**
 
 The formable has no religion requirement. CEB starts hindu and qualifies
-on culture alone, but the mod's flavor and advance tree assume an
+on culture alone, but the flavour and advance tree assume an
 anitist polity (the babaylan, the diwata, anito worship under the
 Babaylan order).
 
@@ -91,7 +91,7 @@ The destiny tree splits two ways:
 
 ## Notes
 
-- The Maritime Confederation founding choice is a deliberate dead-end.
+- The Maritime Confederation founding choice is a dead end.
   Pick it only for the founding modifier itself; neither destiny path
   continues from it.
 - Several advances fire DHE flavor events: the Code of Kalantiaw /

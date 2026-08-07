@@ -26,26 +26,19 @@ cultural one.
 
 ## Forming it
 
-1. **Have slovak primary culture.** No tag begins with it in 1337, so
-   this is the whole campaign rather than a box to tick. Slovak sits
-   in the west_slavic group alongside czech, which matters for how
-   fast you can promote it.
+1. **Have slovak primary culture.** No country begins with it in 1337,
+   so this is the whole campaign rather than a box to tick.
 2. **Own 75 percent of the Slovakia area.** The seven historical
    counties: Hont, Maramaros, Nograd, Pozsony, Szepes, Trencsen,
    Zemplen. Hungary owns all of it at the start.
 3. **Form Slovakia.** No rank or religion requirement.
 
-Three ways to get slovak as your primary culture:
-
-- **From Bohemia.** Expand into Upper Hungary, then promote slovak
-  once the population balance tips. Czech and Slovak proximity makes
-  this the fastest route.
-- **From Hungary.** You already own the entire area, so only the
-  culture stands in your way. Survive the Mongol and Ottoman
-  centuries, then take the Slovak national awakening late in the
-  advance tree.
-- **From a successor state.** If Hungary fractures, a Slovak-cultured
-  tag can appear from the wreckage. Slovakia is its natural endpoint.
+Three ways to get there. **From Bohemia**, expand into Upper Hungary and
+promote slovak once the population tips; czech proximity makes this the
+fastest. **From Hungary**, you already own the ground, so only culture
+stands in the way: survive the Mongol and Ottoman centuries, then take
+the national awakening late in the tree. **From a successor state**, if
+Hungary fractures a Slovak-cultured country can appear from the wreckage.
 
 ## Pick your founding doctrine on formation
 
@@ -80,6 +73,6 @@ Awakening as event-driven advances.
 ## Notes
 
 - Slovakia is a plausible formable rather than a historical one. A
-  Slovak political nation in 1337 is anachronistic by design.
+  Slovak political nation in 1337 is an anachronism.
 - No starting tag has slovak as its primary culture, so culture
   promotion is unavoidable on every route.

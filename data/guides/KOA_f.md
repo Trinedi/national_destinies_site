@@ -17,8 +17,8 @@ Crusader Africa is the counterfactual revival of the North African
 crusade tradition. The historical reference points are the Eighth
 Crusade of 1270 (Louis IX's expedition that died of disease before
 Tunis), the Aragonese Crusade against Tunis later in the same century,
-and the 1390 Mahdia or Barbary Crusade. The mod imagines those
-campaigns succeeding and consolidating into a Latin Christian kingdom
+and the 1390 Mahdia or Barbary Crusade. Here those
+campaigns succeed and consolidate into a Latin Christian kingdom
 on the southern Mediterranean shore, with its capital question framed
 as either a militant bulwark of the Cross or a commercial bridge
 between Africa, Europe, and the Orient.
@@ -64,6 +64,6 @@ The formation event offers two 20-year doctrines:
   coastal areas), but the cultural-religious aftermath is the real
   challenge: a Catholic kingdom ruling Sunni Maliki Berber and Arab
   pops without obvious in-mod conversion shortcuts.
-- The KOA and KOJ pair is referenced together in the mod's tracker.
+- KOA and KOJ pair naturally.
   KOJ requires military-order or CYP/NAP heritage; KOA only requires
   Catholic. Forming both is the maximalist crusader run.

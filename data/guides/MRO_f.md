@@ -93,7 +93,7 @@ The destiny tree splits two ways:
 
 ## Notes
 
-- The Datu Confederation founding choice is a deliberate dead-end. It
+- The Datu Confederation founding choice is a dead end. It
   is the historically loyal option (the datus did rule as a confederation
   in practice) but the destiny tree only continues from the two more
   centralized founding visions.

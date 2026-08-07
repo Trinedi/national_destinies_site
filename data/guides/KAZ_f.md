@@ -12,7 +12,7 @@ hide_auto: true
 The Kazakh Khanate did not exist in 1337. Historically it was founded
 around 1465 when Janibek and Kerei led roughly two hundred thousand
 nomads away from Abu'l-Khayr's Uzbek confederation onto the open
-steppe of the Desht-i Kipchak. The mod frames the formation as that
+steppe of the Desht-i Kipchak. Formation is that
 exodus moment: a Chinggisid-rooted nomadic state whose central
 question is whether to centralise as one khanate (the legacy of Kasym
 Khan) or institutionalise the three-zhuz confederal balance.
@@ -56,7 +56,3 @@ The formation event offers two 15-year doctrines:
 
 ## Notes
 
-- The mod's destiny tree exists but the mod's events file beyond
-  the formation and Jeti Zhargy advance events was not read in full
-  for this guide; the in-game tree itself is the canonical reference
-  for path-specific stages.

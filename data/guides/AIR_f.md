@@ -23,30 +23,19 @@ the Sahara by the sword, or by the salt and gold caravan?
 
 ## Forming it
 
-1. **Get Tuareg primary culture.** Start as TMK, or take the Air pops
-   as a neighbour and let your primary culture shift across. The
-   requirement is your culture rather than your tag, which is what
-   makes the conqueror route legal.
+1. **Get Tuareg primary culture.** The requirement is your culture, not
+   your tag, so a conqueror qualifies the same way a Tuareg start does.
 2. **Hold 75 percent of the Air area.** The Air, Ader and Marandet
-   provinces, one cluster centred on Agadez, Iferouane, Takedda and
-   In Gall. It is the only territory Air asks for.
+   provinces, one cluster around Agadez, Iferouane, Takedda and In Gall.
+   It is the only territory Air asks for.
 3. **Form Air.** No religion or rank requirement.
 
-### The Tadmekka route
-
-TMK starts small on the Niger bend, west of the massif, and it is a
-hard start. You have the culture but very little population, and the
-Air locations themselves sit inside the TRG and TMB pop societies to
-your east. You will have to take that land off them by war and
-settlement before Air comes into reach. This is the pure Tuareg run.
-
-### The conqueror route
-
-Take a Sahel or Maghreb power next door: Songhai, Kano, a Mali
-successor, or a Maghrebi country pushing south. Seize the Air area in
-a campaign or two and let the Tuareg pops you absorb pull your primary
-culture across. Slower to start, but you arrive with an army that can
-actually hold the massif.
+Two roads in. **Tadmekka** is the pure Tuareg run and the hard one: you
+start on the Niger bend with the culture but little population, and the
+Air locations sit inside the TRG and TMB pop societies to your east.
+**The conqueror** takes a Sahel or Maghreb power next door, seizes the
+massif, and lets the absorbed Tuareg pops pull its primary culture
+across. Slower, but it arrives with an army.
 
 ## Pick your founding doctrine on formation
 

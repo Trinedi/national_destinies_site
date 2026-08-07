@@ -62,7 +62,8 @@ The formation event offers two 20-year doctrines:
 
 - Country tag becomes TWS.
 - 20-year founding modifier from your event choice.
-- The rival's mainland presence has already been removed by the requirements before the form effect fires.
+- The rival's mainland presence is already gone before the formation
+  effect fires.
 
 ## After forming
 

@@ -28,7 +28,7 @@ Poland, Lithuania, and the Teutonic Order.
 ## Forming it
 
 You must be mazovian culture and own Warsaw. The 90 percent fraction
-on the Mazovia area is what makes this a campaign rather than a button
+on the Mazovia area makes this a campaign rather than a button
 press: at start, the Mazovia area is split between CZK (Warsaw and
 the south), PLK (Plock and the north), and RAW (Rawa and the east).
 

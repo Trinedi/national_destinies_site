@@ -32,21 +32,43 @@ Two sections may be dropped when they do not apply:
 
 **There is no minimum.** A one-button formable deserves a short guide. The
 shortest in the corpus is 257 words and it is fine. Never add a sentence to
-reach a number; padding is a worse fault than brevity, and the 700 figure
-below is a ceiling to stay under rather than a target to reach.
+reach a number: padding is a worse fault than brevity.
 
-**Soft ceiling 700 words of body, hard cap 900.** The corpus median is 574.
-Past the hard cap it is a rewrite, not a trim.
+**Length follows how much the player must DO, not how much history exists.**
+That is the whole rule, and it is enforced per section rather than as one
+total, because a flat total let the fat hide in `After forming` (corpus
+median 116 words, while the bad guides ran 300).
 
-A genuinely multi-road formable earns **+150 words per extra road**, counted
-as numbered checklists under `Forming it`. DNM lays out two roads and so gets
-850 and 1050. The allowance is earned rather than assumed: a long prose guide
-with no checklist gets nothing, which is the point.
+`scripts/formable_complexity.py` reads the formable definition and counts the
+things a checklist has to state: named `owns = location:x` requirements,
+other conditions, and how many territory pools the fraction spans. From that
+it sets a per-section budget:
 
-Length is the single clearest predictor of a bad guide. The eight guides that
-prompted this document all sat between 1000 and 1300 words, and every one of
-them had dropped the checklist in favour of prose. They earn no allowance and
-fail on both counts.
+| Section | Budget |
+|---|---|
+| Concept | 160 |
+| Forming it | 90 + 22/location + 18/condition, min 140, max 420 |
+| Pick your founding doctrine | 40 + 55 per option |
+| What happens on formation | 80 |
+| After forming | 210, +60 per custom situation or disaster |
+| Notes | 160 |
+
+Two allowances are **earned from the mod files, never claimed in the guide**,
+so no guide can talk itself into more room:
+
+- **+130 words per extra formation road**, counted as numbered checklists
+  under `Forming it`. A long prose guide with no checklist earns nothing.
+- **+60 words per custom situation or disaster** the tag owns. DNM has to
+  walk through three interlocking crisis systems; nobody else does.
+
+A section over budget by more than 15% is an error. Under that it is a nudge,
+because a budget is an estimate and a hard edge at exactly the estimate fires
+on guides two words over and trains you to ignore it.
+
+If a guide genuinely cannot fit, check the budget inputs before rewriting the
+rule to suit the draft. That temptation has been wrong every time so far: a
+three-doctrine guide felt like it needed 960 words until the corpus showed
+that NIN does three doctrines and two roads in 803.
 
 ## Forming it must be a numbered checklist
 
@@ -70,14 +92,35 @@ the same requirement once per origin in prose.
 
 Write to a player, in the second person, about their campaign.
 
-**Never explain the mod's design.** The player does not care why a threshold
-is set where it is, what it used to be, or what would break if it were
-different. Cut every sentence that argues for a decision instead of stating
-a fact.
+**Never explain the mod's design. This is an error, not a style nit.** The
+player does not care why a threshold sits where it does, what it used to be,
+what would break if it changed, or that an absence was a decision rather than
+an accident. Cut every sentence that argues for a choice instead of stating a
+fact.
 
 - No: "The bar is deliberately low because it counts direct ownership only,
   which is why the union road works at all."
 - Yes: "Own about 45 locations yourself. Vassal land does not count."
+- No: "The tree has no naval content at all, which is a stated design choice."
+- Yes: "There are no ships anywhere in the tree."
+
+Softening the justification does not remove it. "A kingdom that has to fight
+for a mountain corridor to exist is a land power" is the same move in a nicer
+suit, and it was still there after a rewrite that was supposed to have cut it.
+
+Three habits that all count as design talk, and all are caught by the linter:
+
+- **The mod as the actor.** "The mod treats", "the mod's formation event",
+  "the tree builds around them". Say what the country is or does instead.
+- **Development history.** The Workshop, the requester, "already exists in
+  vanilla and has never had content", "the densest in this batch". None of
+  this exists for the player.
+- **Marking intent.** "deliberately", "by design", "on purpose", "not an
+  oversight", "is the point". If an absence matters, state the absence.
+
+Never write a note admitting the guide is incomplete. One guide shipped
+"the mod's events file was not read in full for this guide"; that is a
+message to the author, and it was deleted rather than reworded.
 
 **No changelog voice.** "No longer the punishing start it once was" means
 nothing to someone who never played the old version.
@@ -112,7 +155,8 @@ generated requirement block when the guide covers it better in prose.
 ## Checklist before committing
 
 - Headings match the canonical list
-- Body is under 700 words, and no shorter than the formable actually needs
+- Every section is inside its budget (`check_guides.py --budgets`)
+- No sentence explains, justifies, or marks a design decision
 - `Forming it` is numbered
 - No parentheses carrying a clause
 - No sentence explaining a design decision

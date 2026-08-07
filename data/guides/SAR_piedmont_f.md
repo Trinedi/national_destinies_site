@@ -31,33 +31,19 @@ on. Geography, law, or descent.
    two areas that do not touch.
 3. **Form Sardinia-Piedmont.**
 
-There is nothing else to satisfy, no city and no rank. Sardinia-Piedmont
-is level 2 and chains naturally into Italy at level 3, which is
-historically exact, since this is the state that actually unified Italy.
-Nothing here assumes you will.
+There is no city and no rank requirement. Sardinia-Piedmont is level 2
+and chains into Italy at level 3, which is historically exact, since this
+is the state that actually unified Italy.
 
 ### The Montferrat fork
 
-If you are playing Montferrat, vanilla fires a flavour event that decides
-your entire campaign.
-
-Montferrat has been ruled since 1306 by Theodore Palaiologos, son of the
-Byzantine Emperor Andronikos II, and the line held the marquisate until
-1533. The event asks whether you keep the Latin, Catholic, Piedmontese
-identity your ancestor adopted, or reclaim the Greek one.
-
-- **Stay Piedmontese.** This is the road that leads here. You keep an
-  Italian culture, so you can form Sardinia-Piedmont, and Italy after it.
-- **Take the Byzantine court in Italy.** Your country becomes Greek and
-  Orthodox, which permanently shuts you out of Sardinia-Piedmont and of
-  Thessalonica. What opens instead is larger: a Greek Orthodox Palaiologos
-  Montferrat already satisfies vanilla's requirements to form **Byzantium**,
-  and the Roman restoration follows from there.
-
-The fork is irreversible. The Sardinia-Piedmont formation event knows
-about it: a Montferrat former gets its own description, naming Theodore
-and Andronikos II and saying plainly that the family could have carried
-Constantinople to Italy and did not.
+Playing Montferrat, vanilla fires an event that decides your campaign.
+The marquisate has been ruled by the Palaiologos since 1306, and the
+event asks whether to keep the Latin, Piedmontese identity your ancestor
+adopted or reclaim the Greek one. Stay Piedmontese and this formable
+stays open, with Italy beyond it. Take the Byzantine court and you become
+Greek and Orthodox, permanently shut out of Sardinia-Piedmont and
+Thessalonica, but able to form **Byzantium** instead.
 
 ## Pick your founding doctrine on formation
 
@@ -89,31 +75,20 @@ It remained Sardinia's law until 1827, and the age 6 advance closes that
 bracket with the Codice Feliciano.
 
 Alongside it: the giudicati courts, the Cagliari saltpans, the alpine
-tolls of Mont Cenis, Amadeus VIII's Statuta Sabaudiae of 1430, the
-four-language chancery, Turin becoming the capital in 1563, the countermine
-galleries and Pietro Micca, the Regie Costituzioni of 1723, the Filatoio
-Rosso at Caraglio and John Lombe's theft of its drawings in 1716, and
-Fenestrelle.
-
-**The Waldensians are worth calling out.** Unlike the Cathars of
-Occitania, they survived, through the Piedmontese Easter of 1655 and
-beyond, and this tag treats them accordingly. Their levy unit raises only
-from Vivaro-Alpine speakers, so it is a minority in arms rather than a
-national army.
+tolls of Mont Cenis, Turin becoming the capital in 1563, and Fenestrelle.
+The Waldensians of the Piedmontese valleys survived, unlike the Cathars
+of Occitania, and their levy raises only from Vivaro-Alpine speakers.
 
 Destiny continues the two non-Montferrat answers:
 
 - **The passes.** Briancon and Martigny, then a quay of your own at Nice
-  and Savona, then the whole arc at Geneva and Genoa. None of those is
-  Savoyard at the start. The capstone **Ospizio del Valico** is a
-  pass-summit hospice of the Bernard of Menthon type, built on mountains
-  with a road, because a pass open in February is worth several open in
-  July.
-- **The registry.** Two of its three stages ask for institutions and
-  development rather than armies, and its targets are law schools: Pavia,
-  then Bastia and Corte for a third custom, then Bologna and Padua for one
-  bench. The capstone **Archivio di Corte** is the purpose-built royal
-  archive Victor Amadeus II raised at Turin in 1731.
+  and Savona, then Geneva and Genoa. None is Savoyard at the start.
+  Capstone is the **Ospizio del Valico**, a pass-summit hospice built on
+  mountains with a road.
+- **The registry.** Two of its three stages ask for institutions rather
+  than armies, and its targets are law schools: Pavia, then Bastia and
+  Corte, then Bologna and Padua. Capstone is the **Archivio di Corte**,
+  raised at Turin in 1731.
 
 ## Notes
 

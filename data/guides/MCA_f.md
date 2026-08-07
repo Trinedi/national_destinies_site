@@ -22,7 +22,7 @@ The Muisca are also the source of the El Dorado myth: the gilded man
 ceremony at Lake Guatavita, where a new Zipa was covered in gold dust
 and rowed onto the lake to make offerings, was filtered back to
 Spanish chroniclers as a city of gold somewhere in the South American
-interior. The mod's formation event makes the choice explicit:
+interior. Formation makes the choice explicit:
 inherit El Dorado's wealth tradition, or inherit Tundama's defiance.
 
 ## Forming it

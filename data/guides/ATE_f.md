@@ -53,13 +53,11 @@ decides which destiny path opens later.
 
 - Country rank rises to Kingdom if currently Duchy or below.
 - Mild stability bonus.
-- The permanent modifier (Asantemanhyiamu
-  Council of Chiefs) is applied. It tilts hard toward decentralized
-  noble power: large nobles estate buff, small crown estate penalty,
-  monthly drift toward decentralization and free subjects, plus a
-  cultural tradition bump. Reflects the destoolable Asantehene held in
-  check by the Kotoko Council.
-- Formation event fires with the two doctrine choices.
+- You gain the permanent **Asantemanhyiamu**, the Council of Chiefs. It
+  tilts hard toward decentralised noble power: a large nobles buff, a
+  small crown penalty, monthly drift toward decentralisation and free
+  subjects, and a cultural tradition bump. This is the destoolable
+  Asantehene held in check by the Kotoko Council.
 
 ## After forming
 
@@ -69,13 +67,13 @@ The destiny tree splits two ways:
   smashes the Dagomba and Gonja northern frontier (Yendi, Salaga).
   Stage 2 absorbs the Yoruba-Borgu salient (Oyo Ile, Nikki). Stage 3
   reaches the Sahel and Bight of Benin (Timbuktu, Benin, Niani) and
-  unlocks the **War Council** capstone
-  building. Unlocked by the Stool commands formation choice.
+  unlocks the **War Council** capstone building. Requires the Stool
+  commands choice.
 - **Path B: Wealth of the Forest.** Trade line. Stage 1 secures the
   western Gold Coast (Axim, Apollonia). Stage 2 builds an ivory market
   and embraces banking. Stage 3 reaches Djenne and global trade and
-  unlocks the **Great Market** capstone
-  building. Unlocked by the Gold speaks louder formation choice.
+  unlocks the **Great Market** capstone building. Requires the Gold
+  speaks louder choice.
 
 ## Notes
 
