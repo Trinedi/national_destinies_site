@@ -25,12 +25,12 @@ between Africa, Europe, and the Orient.
 
 ## Forming it
 
-The vanilla gate is plainly Catholic-only:
+The requirement is plainly Catholic-only:
 
 1. **Religion = Catholic.** Any Catholic country qualifies.
 2. **Own Tunis.** Held by TUN (Hafsids, Sunni Maliki) at start.
 3. **Own Tripoli.** Held by TRP (Banu Thabit, Sunni Maliki) at start.
-4. **75 percent of `tunis_area` and `tripolitania_area`.**
+4. **75 percent of the Tunis and Tripolitania areas.**
 
 In practice this requires a Catholic Mediterranean power with the
 naval reach to land an army on the African coast and the manpower to

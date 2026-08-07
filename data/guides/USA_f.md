@@ -18,7 +18,7 @@ Clark expedition, and the early industrial transformation at Springfield Armory.
 mod's formation event names this explicitly: "Birth of the Republic", power divided,
 rights enumerated, and sovereignty vested in the people.
 
-The formable is gated only by culture. The `potential` requires a non-Native-American
+The only requirement is culture. You must be a non-Native-American
 culture in the **British group** (English, Scottish, Welsh, Irish, Cornish,
 Anglo-Irish, etc.). There is no Allow block, so once the territory and culture line up,
 formation just works.
@@ -26,8 +26,8 @@ formation just works.
 ## Forming it
 
 1. **Start as a British-group tag.** ENG, SCO, IRE, or any of their splinters. There is
-   no requirement that you be at war for independence in the EU5 sense; the gate is
-   purely territorial and cultural.
+   no requirement that you be at war for independence in the EU5 sense.
+   The requirements are purely territorial and cultural.
 2. **Project across the Atlantic.** Colonise or conquer the **East Coast region**. You
    need a fraction of 0.35, roughly a third of the locations.
 3. **Hold the capital in-region.** `capital_required = yes` means your capital must sit
@@ -67,5 +67,5 @@ Doctrine, Lewis and Clark, American System) fire as you research the matching ad
 - The vanilla form_effect is empty; the mod injects the formation event via INJECT.
 - Native American cultures are explicitly excluded by `is_culture_native_american = no`.
   Any indigenous tag is locked out regardless of territory held.
-- No religion gate. A Catholic Irish coloniser is just as eligible as a Protestant
+- No religion requirement. A Catholic Irish coloniser is just as eligible as a Protestant
   Englishman.

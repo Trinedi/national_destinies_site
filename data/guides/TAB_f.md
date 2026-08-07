@@ -26,14 +26,13 @@ scripture, and communal property.
 
 ## Forming it
 
-1. **Start as Bohemia (BOH) or Moravia (MVA).** The `potential`
-   block accepts Czech or Moravian culture. BOH is by far the
-   stronger seed: it starts Catholic but holds Husinec (Hus's
+1. **Start as Bohemia (BOH) or Moravia (MVA).** It accepts Czech or Moravian culture. BOH is by far the
+   stronger start: it starts Catholic but holds Husinec (Hus's
    birthplace), the named formation location.
 2. **Trigger the Hussite Wars, flip to the Hussite religion, and WIN
    the wars.** The religion comes from vanilla Bohemia's Hussite Wars
    mechanic (advances and generic actions in `country_BOH.txt` and
-   `hussite_wars_actions.txt`). Two timing gates apply on top of the
+   `hussite_wars_actions.txt`). Two timing conditions apply on top of the
    religion: the Hussite Wars situation must have ENDED (you cannot
    form Tabor mid-war), and as Bohemia specifically the wars must
    have ended in a Hussite VICTORY (the vanilla situation stamps
@@ -47,8 +46,7 @@ scripture, and communal property.
    reflecting the formable's small territorial scope. Keep your
    Czech-Moravian core consolidated; Silesia and Lusatia are not
    required for formation but feature in the destiny tree.
-5. **Form Tabor.** The form_effect grants the permanent
-   `nd_tab_peasant_commune` modifier (mirroring vanilla
+5. **Form Tabor.** The form_effect grants the permanent modifier (mirroring vanilla
    peasant_republic_reform's country modifiers, so the player gets
    the institutional benefits without burning a major-reform slot).
 
@@ -80,13 +78,13 @@ to republic:
 The destiny tree splits two ways:
 
 - **Czech Reformation.** Path A. Export the chalice revolution
-  across central Europe. Stage gates require Wrocław and Görlitz
+  across central Europe. That stage requires Wrocław and Görlitz
   (Silesia and Lusatia), then Confessionalism embraced plus
   Wittenberg, then Augsburg, Geneva, and Leipzig with a continental
   Reformation army. Capstone building is the Synod Hall. Unlocked
   by Calixtine Compact.
 - **Communal Republic.** Path B. Deepen the brotherhood at home.
-  Stage gates require Meritocracy embraced, then a paper-trading
+  That stage requires Meritocracy embraced, then a paper-trading
   capital market under the Renaissance, then the Enlightenment and
   3,000 gold. Capstone building is the Demokratický Sjezd
   (Democratic Congress). Unlocked by Commune of Brethren.
@@ -103,6 +101,6 @@ The destiny tree splits two ways:
   carries seven DHE event chains: war-wagon doctrine, Four
   Articles, Lipany averted, vernacular scripture, married
   priesthood, the Brotherhood Diet, and Czech humanism.
-- MVA is accepted by the formable but is a much harder seed: you
+- MVA is accepted by the formable but is a much harder start: you
   do not start with Husinec and you must convert to a religion that
   vanilla only spawns through BOH's wars chain.

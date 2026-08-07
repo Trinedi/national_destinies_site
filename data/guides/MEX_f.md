@@ -7,59 +7,45 @@ priority_starters:
   - tag: ARA
     note: "Aragon. Iberian group, Mediterranean-anchored. A long colonial program from a Mediterranean base, more painful than Castile but mechanically permitted."
   - tag: TNC
-    note: "Tenochca (Mexica) at Tenochtitlan. The mestizo path: a Nahua-culture tag that converts to Christianity. The `allow` block accepts native cultures that adopt Christianity, mirroring the historical mestizo synthesis. TTZ (Texcoco) and TEP (Tepanec) are equally viable Nahua starters."
+    note: "Tenochca (Mexica) at Tenochtitlan. The mestizo road: a Nahua country that converts to Christianity qualifies exactly as an Iberian one does. TTZ (Texcoco) and TEP (Tepanec) are equally viable Nahua starters."
 hide_auto: true
 ---
 
 ## Concept
 
-Mexico is the post-independence republic born from three centuries of New Spain. The
-mod's formation event frames it as the moment of independence: the Plan de Iguala's
-Three Guarantees (Religion, Independence, Union) against the popular fervour of the
-Grito de Dolores. Hidalgo and Morelos against Iturbide.
+Mexico is the republic born out of three centuries of New Spain. Forming it is the
+moment of independence: the Plan de Iguala and its Three Guarantees of Religion,
+Independence and Union, set against the popular fervour of the Grito de Dolores.
+Hidalgo and Morelos against Iturbide.
 
-The mod's design references the mestizo identity directly: the formable accepts both
-the Iberian colonial framing (Castile, Portugal, Aragon) and the Indigenous-converted
-framing (a Native American culture that has adopted a Christian religion). This is
-the only New World formable in this cluster that explicitly designs around the
-indigenous-Catholic synthesis rather than treating natives as a hard exclusion.
+Two very different countries can arrive here. A Spanish colonial power can form
+Mexico, and so can a Nahua kingdom that has taken up Christianity. The second road
+is the mestizo one, and it is why Mexico is more than a colonial prize.
 
 ## Forming it
 
-The `potential` and `allow` are looser than USA or CAN, but more nuanced.
+Both roads need the same 50 percent of Mesoamerica: the Aztec heartland, Yucatan,
+the Guatemalan highlands, and the Caribbean coast.
 
-**Potential** opens the formable to anyone with an Iberian-group primary or accepted
-culture, OR any Christian-religion country.
+### Road one: Iberian colonial power
 
-**Allow** narrows the actual click to two cases:
-1. Your primary culture is Iberian-group, OR
-2. Your primary culture is Native American AND your country religion is in the
-   Christian group.
+1. **Start as Castile, Portugal, or Aragon.** Any Iberian culture qualifies.
+2. **Colonise through the Caribbean.** Then take the Aztec heartland outright.
+3. **Own half of Mesoamerica.**
+4. **Move your capital into Mesoamerica.** Tenochtitlan is the natural seat. You
+   cannot form Mexico while ruling from Europe.
+5. **Form Mexico.**
 
-### Path 1: Iberian colonial power
+### Road two: indigenous Christian
 
-1. **Start as CAS, POR, or ARA.** Push into the Caribbean and Mesoamerica through
-   the standard colonisation flow.
-2. **Take 50 percent of `mesoamerica_region`.** Aztec heartland, Yucatan, Guatemalan
-   highlands, the Caribbean coast.
-3. **Move your capital into Mesoamerica.** `capital_required = yes` enforces this.
-   Tenochtitlan (Mexico City) is the obvious anchor.
-4. **Form Mexico.**
-
-### Path 2: Indigenous Christian path
-
-1. **Start as a Mesoamerican tag.** Aztec is the obvious choice; smaller Mesoamerican
-   tags work the same way mechanically.
-2. **Convert your country religion to a Christian denomination.** Catholic is
-   thematic. The conversion can come from missionary pressure, an event, or a
-   peace-deal religion change.
-3. **Hold 50 percent of Mesoamerica.** Native tags often start with a real chunk
-   already.
-4. **Form Mexico.** The mestizo synthesis fires through the same formation event the
-   Spanish path uses.
-
-The fraction (0.5) is significantly higher than USA or CAN (0.35), reflecting the
-denser Mesoamerican geography and the greater historical specificity of the territory.
+1. **Start as a Mesoamerican tag.** Tenochca is the obvious pick. Texcoco and
+   Tepanec play the same way.
+2. **Convert your country religion to a Christian one.** Catholic is the thematic
+   choice. Missionary pressure, an event, or a peace deal can all do it, and none
+   of them are quick.
+3. **Own half of Mesoamerica.** You start with a real share of it already.
+4. **Form Mexico.** Your capital is in Mesoamerica by default, and the same
+   formation event fires.
 
 ## Pick your founding doctrine on formation
 
@@ -85,10 +71,7 @@ Dolores) fire on matching advance research.
 
 ## Notes
 
-- The vanilla form_effect is empty; the mod injects the formation event via INJECT.
-- The Native-Christian path is mechanically supported but socially demanding: you
-  must drag your country religion across the gap before the `allow` opens. This is
-  a multi-decade conversion project for an Aztec player.
-- Iberian-group cultures from Iberia itself qualify equally; nothing forces a
-  colonial Castilian to flip culture. The mestizo framing comes through the
-  formation event narrative, not through a forced culture change.
+- The indigenous road is fully supported but slow. Converting an Aztec country to
+  Christianity is a multi-decade project, and nothing opens until it is done.
+- A Castilian never has to change culture. The mestizo framing comes through the
+  formation event, not through a forced culture flip.

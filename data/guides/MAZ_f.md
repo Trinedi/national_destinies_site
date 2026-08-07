@@ -20,7 +20,7 @@ EU5 is the alternate-history outcome: the Piast cadet line survives,
 Warsaw becomes a capital instead of a regional court, and the Vistula
 trade is Mazovian property rather than Polish.
 
-The formable is gated to mazovian culture only, so this is not a
+The formable requires mazovian culture only, so this is not a
 greater-Polish project. It is the small-state run, with all the
 flavour of an independent Vistula duchy holding its ground between
 Poland, Lithuania, and the Teutonic Order.
@@ -65,7 +65,7 @@ The formation event offers two 15-year doctrines:
 
 ## After forming
 
-Two destiny paths, gated by your formation choice:
+Two destiny paths, decided by your formation choice:
 
 - **Path A: Shield of the Piasts.** Piast Border March -> Mazovian
   Crusade (Teutonic Spoils or Szlachta Banners modifiers) -> Shield

@@ -36,7 +36,7 @@ that the historical sultanates pursued but never fully achieved.
    anitist. All five candidates need a religion flip to Sunni. This
    is the dominant gating step. The historical conversion through
    Sharif ul-Hashim's mission to Sulu is the obvious narrative anchor.
-3. **Hold the two named locations.** The `allow` block requires you
+3. **Hold the two named locations.** You must satisfy you
    to own **Maimbung** (Sulu, held by SUL) and **Kuta Watu**
    (Maguindanao, held by MGD).
 4. **Hold two of the four secondary anchors.** You must own at least

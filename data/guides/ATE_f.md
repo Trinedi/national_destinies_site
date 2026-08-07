@@ -22,7 +22,7 @@ empire).
 1. **Start as Bono (BON).** It is the only Akan tag you can pick at the
    1337 bookmark: the other Akan polities (Gyaaman, Mankessim) are not
    on the map as selectable countries. Akan culture is the only
-   gate beyond owning Kumasi.
+   requirement beyond owning Kumasi.
 2. **Hold Kumasi.** This is the single allow-block requirement. BON
    starts with it.
 3. **Hit 90% of Akan + Gold Coast areas.** A high fraction, so plan to
@@ -34,26 +34,26 @@ empire).
 
 ## Pick your founding doctrine on formation
 
-The formation event offers two 20-year doctrines. Picking one also gates
-which destiny path you can later take.
+The formation event offers two 20-year doctrines. Your choice also
+decides which destiny path opens later.
 
 - **The Stool commands** (*Golden Stool Authority*, 20 years). Sacred
   monarchy: the Sika Dwa Kofi binds the Akan as one people under the
   Asantehene. Stat focus: legitimacy, crown estate power, land morale,
-  separatism reduction. Gates the Mandate of the Golden Stool destiny
+  separatism reduction. Opens the Mandate of the Golden Stool destiny
   path (path A, Ashanti Imperium line).
 - **Gold speaks louder** (*Gold Coast Merchants*, 20 years). The
   confederacy as merchant empire: gold dust trade, European fort
   factors, and Akan brokers as the institutional core. Stat focus:
   trade efficiency, merchant power, gold output, merchant capacity,
-  diplomatic reputation. Gates the Wealth of the Forest destiny path
+  diplomatic reputation. Opens the Wealth of the Forest destiny path
   (path B, Gold Empire line).
 
 ## What happens on formation
 
 - Country rank rises to Kingdom if currently Duchy or below.
 - Mild stability bonus.
-- The permanent `nd_ate_kotoko_council` modifier (Asantemanhyiamu
+- The permanent modifier (Asantemanhyiamu
   Council of Chiefs) is applied. It tilts hard toward decentralized
   noble power: large nobles estate buff, small crown estate penalty,
   monthly drift toward decentralization and free subjects, plus a
@@ -69,12 +69,12 @@ The destiny tree splits two ways:
   smashes the Dagomba and Gonja northern frontier (Yendi, Salaga).
   Stage 2 absorbs the Yoruba-Borgu salient (Oyo Ile, Nikki). Stage 3
   reaches the Sahel and Bight of Benin (Timbuktu, Benin, Niani) and
-  unlocks the **War Council** (`nd_ate_war_council`) capstone
+  unlocks the **War Council** capstone
   building. Unlocked by the Stool commands formation choice.
 - **Path B: Wealth of the Forest.** Trade line. Stage 1 secures the
   western Gold Coast (Axim, Apollonia). Stage 2 builds an ivory market
   and embraces banking. Stage 3 reaches Djenne and global trade and
-  unlocks the **Great Market** (`nd_ate_great_market`) capstone
+  unlocks the **Great Market** capstone
   building. Unlocked by the Gold speaks louder formation choice.
 
 ## Notes

@@ -69,7 +69,7 @@ The formation event offers two 20-year doctrines:
 
 ## After forming
 
-Two destiny paths, gated by your formation choice. Path A pushes for
+Two destiny paths, decided by your formation choice. Path A pushes for
 trans-Saharan reach (the historical Saadi conquest of Songhai in
 1591) and a western caliphate; Path B pushes for the Strait,
 Atlantic outposts, and a port-network trade empire competing with

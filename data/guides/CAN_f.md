@@ -19,7 +19,7 @@ The mod's formation event treats it as a confederation moment: the Northern Domi
 (westward settlement, frontier endurance) versus the Great Trading Nation (river
 networks, fur-trade economy, fishing fleets).
 
-The formable is gated only by culture. Either **British group** (English, Scottish,
+The only requirement is culture. Either **British group** (English, Scottish,
 Welsh, Irish, etc.) or **French group** (Picard, Norman, Angevin, etc.) qualifies.
 This is the only formable in the New World cluster that explicitly opens both
 Anglophone and Francophone paths.
@@ -30,7 +30,7 @@ Anglophone and Francophone paths.
    splinters.
 2. **Colonise the Canada region.** You need a fraction of 0.35, roughly a third of the
    locations. Hudson Bay, Newfoundland, Acadia, the St. Lawrence valley, and the Great
-   Lakes basin all sit inside `canada_region`.
+   Lakes basin all sit inside Canada region.
 3. **Move your capital into the region.** `capital_required = yes` forces your capital
    to be inside the Canada region at formation. Quebec, Montreal, or Halifax are the
    obvious anchors.
@@ -67,4 +67,4 @@ Canadian Voltigeurs, Confederation) fire as you research the matching advances.
   through the same event, but the underlying culture stays whatever you brought to
   formation. There is no automatic culture conversion to a new "Canadian" culture.
 - Norse-group, German-group, or Iberian-group tags cannot form CAN regardless of
-  how much of the region they hold. The culture gate is hard.
+  how much of the region they hold. The culture requirement is hard.

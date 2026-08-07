@@ -36,20 +36,20 @@ versus **Askia's scholar emperor**.
 
 ## Pick your founding doctrine on formation
 
-The formation event offers two 30-year doctrines. Picking one also gates
-which destiny path you can later take.
+The formation event offers two 30-year doctrines. Your choice also
+decides which destiny path opens later.
 
 - **Riders of the Niger** (*River Conqueror*, 30 years). Sunni Ali's
   doctrine: noble cavalry in iron breastplates and the Hi-Koy war
   canoes ruling the Niger. Stat focus: light and heavy cavalry power,
   army movement speed, manpower, land morale, hostile attrition,
-  reduced war exhaustion. Gates the Dominion of the Niger destiny path
+  reduced war exhaustion. Opens the Dominion of the Niger destiny path
   (path A, Sahel Hegemony line).
 - **Throne of knowledge and justice** (*Scholar Emperor*, 30 years).
   Askia Muhammad's doctrine: the Hajj caliphate, Sankore madrasas,
   Maliki jurisprudence, and standardized weights. Stat focus: research
   speed, institution growth, tolerance, diplomatic reputation,
-  literacy, stability cost reduction. Gates the Light of Timbuktu
+  literacy, stability cost reduction. Opens the Light of Timbuktu
   destiny path (path B, Beacon of Africa line).
 
 ## What happens on formation
@@ -67,13 +67,12 @@ The destiny tree splits two ways:
   Taghaza salt and Ouagadougou. Stage 2 takes Kano, Katsina, and
   Ngazargamu, conquering Hausaland and Bornu. Stage 3 reaches Kumasi,
   Bono Manso, and Sokoto for total Sahel hegemony, and unlocks the
-  **Imperial War Camp** (`nd_soe_imperial_warcamp`) capstone building.
+  **Imperial War Camp** capstone building.
   Unlocked by the Riders of the Niger formation choice.
 - **Path B: Light of Timbuktu.** Scholarly line. Stage 1 takes Begho
   and secures gold market access. Stage 2 embraces banking at 2500
   total development. Stage 3 embraces the printing press at 3500
-  development and unlocks the **House of Wisdom**
-  (`nd_soe_house_of_wisdom`) capstone building. Unlocked by the Throne
+  development and unlocks the **House of Wisdom** capstone building. Unlocked by the Throne
   of knowledge and justice formation choice.
 
 ## Notes

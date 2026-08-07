@@ -11,61 +11,42 @@ hide_auto: true
 
 ## Concept
 
-The Sultanate of Air revives the historical Tuareg confederation
-centred on the Air Mountains and the caravan city of Agadez. The
-historical reference is the Sultanate of Agadez established in the
-fifteenth century, which knit together the Kel Ayr clans into a
-trading and raiding power straddling the trans-Saharan routes between
-the Maghreb, Hausaland, and the Niger bend.
+The Sultanate of Air revives the Tuareg confederation of the Air
+Mountains and the caravan city of Agadez. The model is the historical
+Sultanate of Agadez, founded in the fifteenth century, which knit the
+Kel Ayr clans into a trading and raiding power astride the routes
+between the Maghreb, Hausaland, and the Niger bend.
 
-The mod frames Air as the political expression of Tuareg desert
-sovereignty: the Ihaggaren noble caste in tension with the cosmopolitan
-merchant city of Agadez, and the Tuareg strategic question of whether
-to dominate the Sahara by the sword or by the salt and gold caravan.
-
-## A note on the Tuareg tags
-
-At the 1337 bookmark only **TMK (Tadmekka)** is a regular playable
-country. **TRG (Tuareg)** and **TMB (Timbuktu)** are Society-of-Pops
-tags in vanilla EU5: they hold the historical Tuareg pops and the
-Air locations themselves, but you cannot select them at the country
-picker. They are conquest and settlement targets, not starts.
-
-The formation event lists TMK, TMB and TRG as flavoured recipients,
-but the formable's hard requirements are only `culture = culture:tuareg`
-and 75 percent of `air_area`. Any country that satisfies both can
-form Air, which opens up the culture-switch routes below.
+Its standing tension is the Ihaggaren noble caste against the
+cosmopolitan merchant city, and behind that one question: do you hold
+the Sahara by the sword, or by the salt and gold caravan?
 
 ## Forming it
 
-1. **Get Tuareg primary culture.** Either start as TMK, or play a
-   non-Tuareg neighbour, take Air and the surrounding Tuareg pops,
-   and let your primary culture shift to Tuareg (or accept Tuareg
-   and switch). The `potential` is a culture check, not a tag check.
-2. **Hold the Air area at 75 percent.** The formable's only required
-   geography is `air_area`: the Air, Ader and Marandet provinces.
-   This is one cluster centred on Agadez, Iferouane, Takedda and
-   In Gall.
-3. **Form Air.** No religion or rank gate, just the Tuareg culture
-   and the territory.
+1. **Get Tuareg primary culture.** Start as TMK, or take the Air pops
+   as a neighbour and let your primary culture shift across. The
+   requirement is your culture rather than your tag, which is what
+   makes the conqueror route legal.
+2. **Hold 75 percent of the Air area.** The Air, Ader and Marandet
+   provinces, one cluster centred on Agadez, Iferouane, Takedda and
+   In Gall. It is the only territory Air asks for.
+3. **Form Air.** No religion or rank requirement.
 
-### The TMK path
+### The Tadmekka route
 
-TMK starts small on the Niger bend, west of the Air massif. The
-honest assessment: it is a hard start. You have a Tuareg-cultured
-country but limited population, and the Air locations are inside
-the TRG and TMB SoPs to your east. You will need to expand into
-SoP territory (SoPs can lose locations to adjacent regular countries
-through war and settlement) before the formable becomes reachable.
-This is the on-design path if you want a pure Tuareg run.
+TMK starts small on the Niger bend, west of the massif, and it is a
+hard start. You have the culture but very little population, and the
+Air locations themselves sit inside the TRG and TMB pop societies to
+your east. You will have to take that land off them by war and
+settlement before Air comes into reach. This is the pure Tuareg run.
 
-### The conqueror path
+### The conqueror route
 
-Pick a Sahel or Maghreb power adjacent to Air (Songhai, Kano, the
-Mali successor states, or even a Maghrebi tag pushing south), take
-the Air area in one or two campaigns, and let the Tuareg pops you
-absorb pull your primary culture across. This is the practical
-path if you want to actually field an army that can hold Air.
+Take a Sahel or Maghreb power next door: Songhai, Kano, a Mali
+successor, or a Maghrebi country pushing south. Seize the Air area in
+a campaign or two and let the Tuareg pops you absorb pull your primary
+culture across. Slower to start, but you arrive with an army that can
+actually hold the massif.
 
 ## Pick your founding doctrine on formation
 
@@ -98,3 +79,13 @@ The destiny tree splits two ways:
   of the Routes capstone. Gold and Salt or Cosmopolitan Hub as the
   endgame modifier. Pick this if you took Gateway of the Sahara and
   want Agadez as a Mediterranean-to-Sahel trade pivot.
+
+## Notes
+
+- Only TMK is playable at the 1337 bookmark. TRG (Tuareg) and TMB
+  (Timbuktu) hold the historical Tuareg pops and the Air locations
+  themselves, but they are pop societies rather than selectable
+  countries. Treat them as targets, not as starts.
+- The formation event name-checks TMK, TMB and TRG, but nothing in
+  the requirements does. Any country with Tuareg culture and the
+  territory can form Air.

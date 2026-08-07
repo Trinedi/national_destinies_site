@@ -7,7 +7,7 @@ priority_starters:
   - tag: CAS
     note: "Castile. Catholic Iberian, eligible by culture group. No starting cores in either Tomar or Peniscola/Monzon, but well placed to bully both POR and ARA into giving them up. Long-form imperial run; you become Templar Iberia rather than Castilian Iberia."
   - tag: KNI
-    note: "Already a sovereign military order under `military_order_reform`, so the second OR branch in `potential` accepts you directly. Geographically extreme (you start on Rhodes and need Tomar plus Peniscola or Monzon in Iberia). Only viable as a long alt-history pivot or via subjects."
+    note: "Already a sovereign military order under the military order reform, so the second OR branch in `potential` accepts you directly. Geographically extreme (you start on Rhodes and need Tomar plus Peniscola or Monzon in Iberia). Only viable as a long alt-history pivot or via subjects."
 hide_auto: true
 ---
 
@@ -32,16 +32,15 @@ The tag is TKT because vanilla EU5 already uses TEM and TPL elsewhere.
 ## Forming it
 
 The formable accepts Catholic Iberian, French, or British culture
-groups, plus any country running `military_order_reform`.
+groups, plus any country running the military order reform.
 
-1. **Be Catholic.** The `potential` requires `religion:catholic`.
+1. **Be Catholic.**
 2. **Be in an eligible culture group** (Iberian, French, or British)
    or already running the military order reform.
 3. **Own Tomar.** The convent at Tomar (Castelo dos Templarios) is
    the institutional anchor. POR starts with it.
 4. **Own either Peniscola or Monzon.** Both are Aragonese castles
-   with documented Templar history. Either satisfies the second
-   `allow` clause.
+   with documented Templar history. Either satisfies the second requirement.
 5. **Hit 50 percent of south Portugal plus Valencia plus Aragon.**
    The fraction pool is the three areas combined; you need half of
    the locations.
@@ -56,27 +55,27 @@ crown.
 ## Pick your founding doctrine on formation
 
 The formation event offers two 30-year doctrines. Each swings a
-societal value and gates one of the destiny paths.
+societal value and opens one of the destiny paths.
 
 - **The Old Order Restored** (Bernard's Rule, the secret chapter,
   the Beausant raised). The pre-1312 Templars refounded as they
   were: bills of exchange, gnostic chapter rituals, brother-knight
   commanderies. Pushes traditionalist_vs_innovative hard left.
-  Gates the Continental Commanderies destiny path (Path A, Shadow
+  Opens the Continental Commanderies destiny path (Path A, Shadow
   Empire line).
 - **The New Order of Christ** (cross-of-Christ on the sail, Atlantic
   mandate, papal reform). The Henry-the-Navigator framing: papal
   sanction, Atlantic factories, the sail-cross of the Carreira da
-  India. Pushes land_vs_naval hard right (toward naval). Gates the
+  India. Pushes land_vs_naval hard right (toward naval). Opens the
   Atlantic Islands destiny path (Path B, Atlantic Imperium line).
 
 ## What happens on formation
 
 - Mild stability bonus.
 - Country rank rises to Kingdom if currently Duchy or below.
-- The `clergy_military_orders` privilege is granted to the Clergy
-  estate, unlocking `military_order_reform` in the Government UI.
-- The permanent `nd_tkt_militant_brotherhood` modifier (Sovereign
+- The the military orders privilege is granted to the Clergy
+  estate, unlocking the military order reform in the Government UI.
+- The permanent modifier (Sovereign
   Order of the Temple) is applied immediately.
 - Formation event fires with the two doctrine choices.
 

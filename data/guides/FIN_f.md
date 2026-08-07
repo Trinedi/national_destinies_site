@@ -23,9 +23,9 @@ the wider world).
 
 ## Forming it
 
-In 1337 Finland is not a free country. The whole `finland_area` (Abo,
+In 1337 Finland is not a free country. The whole Finland area (Abo,
 Tavastehus, Helsinge, Hollola, Korsholm, Bjorneborg, Vyborg, etc.) is
-Swedish territory. The vanilla allow block is empty, so the only gates
+Swedish territory. There is no allow block, so the only requirements
 are Finnish primary culture and 50 percent of the Finland area.
 
 Two routes are realistic:

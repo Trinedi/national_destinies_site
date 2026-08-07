@@ -11,11 +11,11 @@ hide_auto: true
 
 Lan Xang, the Kingdom of a Million Elephants and the White Parasol,
 was the great Lao polity founded by Fa Ngum in 1353 and broken into
-three rump kingdoms in 1707. The mod's framing is a Theravada Mekong
-state with two faces: the warrior tradition of the white elephants
-(royal regalia, Khorat raids, Setthathirath's resistance to the
-Burmese) and the contemplative tradition of the sangha and the Phra
-Bang (the gilded Buddha that gives Luang Prabang its name).
+three rump kingdoms in 1707. It is a Theravada Mekong state with two
+faces: the warrior tradition of the white elephants, all royal
+regalia and Khorat raids and Setthathirath's long resistance to the
+Burmese, and the contemplative tradition of the sangha and the Phra
+Bang, the gilded Buddha that gives Luang Prabang its name.
 
 The formable is the historical reunification: hold both Muang Sua and
 Vientiane, the twin capitals of the kingdom before its 1707 partition
@@ -25,16 +25,14 @@ into Luang Prabang, Vientiane, and Champasak.
 
 1. **Start as a Lao tag.** MUA holds Muang Sua; VTN holds Vientiane.
    These are the only two lao_culture primary tags in the region.
-2. **Hold both required locations.** The `allow` block requires you to
-   own **Muang Sua** and **Vientiane**. Whichever you start as, conquer
-   the other.
+2. **Own both Muang Sua and Vientiane.** Whichever you start as,
+   conquer the other.
 3. **Hit 75 percent of the area pool.** Beyond the two named locations
    you need three quarters of the Khorat Plateau and Northern Tai
    Highland combined. The Khorat fraction is the larger piece and is
    contested by Khmer, Sukhothai, and Ayutthaya neighbours.
-4. **Form Lan Xang.** No rank prerequisite gates the formation. The
-   form effect promotes you to Kingdom if you are below it; both MUA
-   and VTN start at Duchy rank.
+4. **Form Lan Xang.** There is no rank requirement. Both MUA and VTN
+   start at Duchy and are promoted to Kingdom on formation.
 
 ## Pick your founding doctrine on formation
 

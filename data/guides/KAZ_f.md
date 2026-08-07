@@ -19,9 +19,9 @@ Khan) or institutionalise the three-zhuz confederal balance.
 
 ## Forming it
 
-The vanilla gate is generous: Kipchak-language culture and 75 percent
-of two areas (`desht_kipchak_area` and `zhetysu_area`). No religion
-gate, no rank gate, no allow block. The challenge is owning the
+The requirement is generous: Kipchak-language culture and 75 percent
+of two areas, Desht-i Kipchak and Zhetysu. No religion
+requirement, no rank requirement, no allow block. The challenge is owning the
 territory, not unlocking the formable.
 
 1. **Start as a Kipchak-language tag.** GLH, CHG, or smaller

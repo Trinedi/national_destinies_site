@@ -17,7 +17,7 @@ Forming it flips your primary culture from Sindhi to Yavana and
 locks in either a martial *Phalanx Reborn* path or a contemplative
 *Dharma of the Yavana* path through the formation event.
 
-The formation gates are unusual: your country must be **Sindhi
+The requirements are unusual: your country must be **Sindhi
 culture** and follow the **Sammitiya** Buddhist sect. No tag starts
 as Sammitiya, so the religion flip is part of the run, not a
 prerequisite you can shop for at game start.
@@ -30,7 +30,7 @@ prerequisite you can shop for at game start.
    Sammitiya sect specifically. Easiest path: religious revolt,
    missionary conversion of your capital, or an estate-driven
    conversion event chain.
-3. **Hold the cores.** The `allow` block requires you to own
+3. **Hold the cores.** You must own
    **Thatta** (Sindh) and **Peshawar** (Punjab). SND already starts
    with Thatta; Peshawar belongs to a Punjabi neighbour and must be
    taken by war or vassalisation.

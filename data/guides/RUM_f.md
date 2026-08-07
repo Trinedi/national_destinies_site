@@ -18,34 +18,18 @@ a court where Persian verse and Turkish arms shared one palace. The
 premise is alternate history's favorite Anatolian question: what if
 the beylik that reunified the peninsula was not the House of Osman?
 
-## The tag quirk (read this if you play the Ottomans)
-
-The vanilla game reuses the Ottoman tag for this formable: forming
-Rum turns your country INTO the tag TUR, renamed and reflagged as
-Rum. Two visible consequences:
-
-- A game-start Ottoman player sees the Rum flavor events listed in
-  the upcoming-events panel. They never fire for the Ottomans: the
-  whole Rum tree (advances, buildings, levies, bureaucracies) only
-  unlocks for a country that actually forms Rum through the
-  formation event.
-- Forming Rum after winning the Rise of the Turks is the intended
-  route for every beylik EXCEPT the Ottomans themselves; the winner
-  event of the vanilla situation explicitly grants the right to a
-  non-Ottoman victor.
-
 ## Forming it
 
 1. **Be a Muslim, Turkic-cultured country.** Any beylik qualifies at
-   start.
-2. **Win the Rise of the Turks.** The vanilla situation that plays
-   out across early Anatolia must conclude with YOU as its victor,
-   without adopting the Ottoman identity when it closes. This is the
-   hard gate: only the situation's winner can ever form Rum.
-3. **Hold 85 percent of Anatolia.** The whole region is the
-   territory pool, so the formation is a full Anatolian unification.
-4. **Form Rum.** Country rank rises to Empire, a severe stability
-   boost applies, and the formation event fires.
+   the start.
+2. **Win the Rise of the Turks.** The Anatolian situation must close
+   with you as its victor, and you must decline the Ottoman identity
+   when it does. This is the hard part: only the winner can ever form
+   Rum.
+3. **Hold 85 percent of Anatolia.** The whole region counts, so this
+   is a full unification of the peninsula.
+4. **Form Rum.** Your rank rises to Empire and a large stability
+   bonus applies.
 
 ## Pick your founding doctrine on formation
 
@@ -61,7 +45,21 @@ Two 40-year doctrines:
 ## After forming
 
 The heritage tree runs the full six ages, from ghulam cavalry,
-caravanserai networks, and madrasa foundations through the late
-imperial rebuilding of the Seljuk institutions, and the destiny
-tree branches off the doctrine you chose at formation. The flavor
-events fire as you research the tree's advances.
+caravanserai networks, and madrasa foundations through to the late
+imperial rebuilding of the Seljuk institutions. The destiny tree
+follows the doctrine you chose at formation. Flavor events fire as
+you research the advances.
+
+## Notes
+
+- Rum reuses the vanilla Ottoman tag. Forming it turns your country
+  into TUR, renamed and reflagged as Rum. The tag in the ledger and
+  the name on screen will not match.
+- Because of that, an Ottoman player sees the Rum flavor events
+  listed in the upcoming-events panel from the start. They never
+  fire for the Ottomans. The whole Rum tree of advances, buildings,
+  levies, and bureaucracies unlocks only for a country that forms Rum
+  through the formation event.
+- Rum is the intended prize for every beylik except the Ottomans
+  themselves. The Rise of the Turks grants the right to its winner
+  when that winner is not the House of Osman.

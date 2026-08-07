@@ -28,7 +28,7 @@ the Indus and the Yamuna.
 
 ## Forming it
 
-The formation gates are unusual: your country must be **afghan_culture**
+The requirements are unusual: your country must be **afghan_culture**
 and **Sunni**, but no tag at game start has afghan_culture as primary.
 The Pashtun culture flip is part of the run, not something you can shop
 for at game start.
@@ -37,8 +37,7 @@ for at game start.
    cleanest choices but start as steppe hordes with shafii_school. SWT
    in the Pashtun belt and MIH in Sistan are Sunni monarchies with
    afghan_culture already tolerated; both need a longer march.
-2. **Hold both required locations.** The `allow` block requires you to
-   own **Kandahar** and **Kabul**. NGD starts with Kandahar; QUN starts
+2. **Hold both required locations.** You must own **Kandahar** and **Kabul**. NGD starts with Kandahar; QUN starts
    with Kabul. You must take the other.
 3. **Convert primary culture to afghan_culture.** afghan_culture is
    tolerated by NGD, QUN, SWT, MIH, KHN, and BSD. Promote it through
@@ -91,4 +90,4 @@ The destiny tree splits two ways:
   jirga, Sufi networks, jezail rifles, zamburak camel artillery, and
   the Panipat doctrine. Several advances trigger DHE flavor events.
 - The formation requirement of afghan_culture as primary is the real
-  gate. Plan the culture flip well before you have the locations.
+  obstacle. Plan the culture flip well before you have the locations.

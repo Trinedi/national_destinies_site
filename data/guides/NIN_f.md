@@ -53,7 +53,7 @@ lands as imperial restoration rather than identity rebrand.
    Crescent and Egypt regions and the Khuzestan and Cilicia areas.
 5. **Form NIN.**
 
-### Path 2: Cilicia direct (kingdom-rank gate)
+### Path 2: Cilicia direct (kingdom-rank requirement)
 
 Cilicia or any kingdom-rank miaphysite or nestorian country can form
 NIN directly without going through BNH. Mechanically clean. Narratively
@@ -73,7 +73,7 @@ proclaims the Sargonid imperial revival in a single moment.
 ### What about ARC (Cilician Armenia) as an intermediate?
 
 It works mechanically because ARC sets country rank to Kingdom on
-formation, which qualifies for NIN's kingdom-rank gate. But it is
+formation, which qualifies for NIN's kingdom-rank requirement. But it is
 narratively incoherent: ARC is the Mediterranean Armenian trade
 kingdom (Sis capital, Hethumid heritage, Crusader-era diplomatic
 networks) and NIN is the Mesopotamian-Syriac imperial revival. Going

@@ -34,11 +34,10 @@ it from forming Sòng or generic vanilla China.
    (MNG, CSO, CSI, WUU, etc.). None of them exist at the 1337
    bookmark; they spawn during the Red Turban Rebellions, so you
    switch to one when it appears on the map.
-2. **Wait out the Red Turban Rebellions.** The `allow` block
-   requires `is_situation_active = no` for the rebellions and
-   `in_civil_war = no`. You cannot form during the chaos.
+2. **Wait out the Red Turban Rebellions.** You must satisfy `is_situation_active = no` for the rebellions and
+   being at peace at home. You cannot form during the chaos.
 3. **Own Jingzhao.** This is the Tang capital (modern Xi'an), held
-   by CHI at start. The eastern half of the formation gate.
+   by CHI at start. The eastern half of the requirement.
 4. **Own Kashgar.** Held at start by DGH (the Dughlats, a Mongol
    khanate in the Tarim Basin). This is the western half and the
    reason TGD is harder than Sòng. You must push through the Hexi
@@ -74,14 +73,14 @@ Two 40-year doctrines:
 The destiny tree splits two ways:
 
 - **Western Restoration.** Path A. Push the Anxi frontier back to
-  its eighth-century reach. Stage gates require Samarkand and
+  its eighth-century reach. That stage requires Samarkand and
   Bukhara (the Sogdian heartland), then Karakorum and Balkh (the
   steppe and Bactrian gates), then Delhi and Baghdad (Tang reach
   beyond historical: a Pax Sinica that overshadows the Caliphate
   and the Sultanate). Capstone building is the Protectorate
   Command. Unlocked by Restore the Protectorates.
-- **Cultural Ascendancy.** Path B. Civilizational empire. Stage
-  gates require Banking embraced and 16,500 development, then a
+- **Cultural Ascendancy.** Path B. Civilizational empire. Its stages
+  require Banking embraced and 16,500 development, then a
   silk-trading capital market with 2,000 gold and 50 prestige, then
   the Scientific Revolution at 33,500 development. Capstone
   building is the Imperial Library. Unlocked by Golden Age of

@@ -36,20 +36,20 @@ spiritual and pastoral autarky).
 
 ## Pick your founding doctrine on formation
 
-The formation event offers two 30-year doctrines. Picking one also gates
-which destiny path you can later take.
+The formation event offers two 30-year doctrines. Your choice also
+decides which destiny path opens later.
 
 - **Let the gold flow** (*Golden Trade*, 30 years). Engagement with
   Swahili gold-cloth-glass commerce and managed Portuguese contact at
   Sofala as the institutional core. Stat focus: trade efficiency,
   merchant power, gold output, diplomatic reputation, research speed,
-  institution growth. Gates the Emporium of the South destiny path
+  institution growth. Opens the Emporium of the South destiny path
   (path A, Indian Ocean line).
 - **Mwari provides** (*Mwari Sovereignty*, 30 years). The Matobo Hills
   rain cult, mass-mobilization armies, pastoral wealth, and oracular
   intelligence as the institutional core. Stat focus: land morale,
   manpower, legitimacy, tolerance, food production, crown estate
-  power. Gates the Stones of the Ancestors destiny path (path B,
+  power. Opens the Stones of the Ancestors destiny path (path B,
   Plateau Imperium line).
 
 ## What happens on formation
@@ -68,13 +68,13 @@ The destiny tree splits two ways:
   Kisiwani, the historical gold gateway. Stage 2 takes Zanzibar Island
   and Quelimane, locking in the Mozambique Channel. Stage 3 reaches
   Mombasa with capital-market porcelain access and unlocks the **Indian
-  Ocean Emporium** (`nd_mtp_indian_ocean_emporium`) capstone building.
+  Ocean Emporium** capstone building.
   Unlocked by the Let the gold flow formation choice.
 - **Path B: Stones of the Ancestors.** Plateau conquest line. Stage 1
   marches south into Mapulana and Bakgatla. Stage 2 takes Kweneng and
   Lejweleputswa, conquering the Highveld at 2000 development. Stage 3
   takes Damara to reach the Atlantic-side frontier and unlocks the
-  **Royal Mustering Ground** (`nd_mtp_royal_mustering_ground`) capstone
+  **Royal Mustering Ground** capstone
   building. Unlocked by the Mwari provides formation choice.
 
 ## Notes

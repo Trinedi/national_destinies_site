@@ -24,15 +24,15 @@ the Spanish settler frontier.
 
 ## Forming it
 
-1. **Get a mapudungun-group primary culture.** The potential gate is
-   `culture_group:mapudungun_group` (Mapuche, Picunche, Pehuenche,
+1. **Get a mapudungun-group primary culture.** The requirement is
+   Mapudungun (Mapuche, Picunche, Pehuenche,
    Williche, Purun Awqa). No mapudungun tag can be picked at the 1337
    bookmark: Mapuche (MPC) and Picunche (PHE) are Societies of Pops,
    on the map but not selectable. The practical routes: reach
    Araucania with a playable power, absorb the Mapuche pops and shift
    primary culture, or release a Mapuche-cultured subject from
    conquered territory and continue the campaign as it.
-2. **Own wenteche.** The `allow` block has a single hard requirement:
+2. **Own wenteche.** There is a single hard requirement:
    `owns = location:wenteche`, the central Mapuche heartland in
    Ngulumapu, held by the Mapuche Society of Pops at start.
 3. **Hold 90 percent of Ngulumapu and Puelmapu.** The required-
@@ -80,7 +80,7 @@ cordillera.
 - **Continental Wallmapu.** The imperial-expansion path. March of the
   Toki Mapu (own Valparaiso and Aconcagua), Cordillera Crossed (Cuyo
   and Kilmes), and Toki Apu of All Lands (Salta, Tandil, plus a
-  75-army and 2000 development gate). Capstone is the Toki Apu Hall.
+  75-army and 2000 development requirement). Capstone is the Toki Apu Hall.
   Unlocked by the Pillan's Spear formation choice.
 
 The path you cannot take with a given doctrine still appears in the
@@ -89,7 +89,7 @@ commit to your choice on formation.
 
 ## Notes
 
-- The `rule = plausible` flag means MAP appears in the formables list
+- MAP is a plausible formable, so it appears in the formables list
   to mapudungun-group countries even before the Bio-Bio frontier is
   pacified. Don't be surprised that it shows up early.
 - The federation modifier is duration `-1` (permanent). Both doctrine

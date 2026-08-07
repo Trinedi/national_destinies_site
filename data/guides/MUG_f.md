@@ -24,7 +24,7 @@ vanilla version only set the rank and was otherwise empty.
 
 ## Forming it
 
-The `allow` requires the historical Mughal pattern: a Muslim conqueror from
+You must satisfy the historical Mughal pattern: a Muslim conqueror from
 Central Asia or Persia projecting into Hindustan.
 
 1. **Start as a Muslim country with the right culture.** The allow accepts:
@@ -36,7 +36,7 @@ Central Asia or Persia projecting into Hindustan.
 2. **Hold the three Mughal capitals.** The allow demands ownership of **Delhi**,
    **Agra**, and **Lahore**, in addition to the regional fraction. These are the
    historical Mughal heartland and they are not negotiable.
-3. **Hold 80 percent of `hindustan_region`.** This is a dramatically higher
+3. **Hold 80 percent of Hindustan region.** This is a dramatically higher
    fraction than the New World formables. You are not forming a frontier polity;
    you are conquering the subcontinent's plains.
 4. **Form Mughal.** Pick your founding doctrine.
@@ -77,8 +77,8 @@ on matching advance research.
 - The mod uses REPLACE to layer formation event, severe stability, and rank
   promotion onto the vanilla `level = 4`, `fraction = 0.8` shell. The territorial
   bar is identical to vanilla.
-- No `potential` block in the mod's REPLACE either; the gate is entirely in
-  `allow`. Anyone who eventually meets the religion, culture, and territory
-  requirements can form, regardless of their starting position.
+- Nothing restricts who may attempt this. Anyone who eventually meets the
+  religion, culture, and territory requirements can form, regardless of
+  where they started.
 - The three required locations (Delhi, Agra, Lahore) are absolute. Holding 80
   percent of Hindustan without one of these three will not open the form button.

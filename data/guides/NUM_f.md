@@ -17,7 +17,7 @@ captive incorporation, and the bison-and-horse economy.
 
 This is alt-history. In 1337 the Numic bands were still in the Great
 Basin and the Comanche as a distinct people did not yet exist. The
-formable's potential gate is `culture_group:shoshoni_group`, so any
+formable's requirement is a Shoshoni-group culture, so any
 Shoshoni-group country may attempt the climb. The advance tree
 treats horse mastery as a Renaissance-era arrival and the empire's
 peak as Age 4 to Age 5, mirroring the historical timeline.
@@ -26,7 +26,7 @@ The tag is NUM, after Numunu (the Comanche endonym).
 
 ## Forming it
 
-1. **Get a shoshoni-group primary culture.** The potential gate
+1. **Get a shoshoni-group primary culture.** The requirement
    covers tukudeka, bannock, kuccuntikka, penkwitikka, kusiutta,
    tetadeka, haivodika, watatikka, wiyimpihtikka, monachi,
    kuhtsutuuka, and tawakoni cultures. None of them can be picked at
@@ -37,14 +37,14 @@ The tag is NUM, after Numunu (the Comanche endonym).
    the Numic pops and shift primary culture, or release a
    shoshoni-cultured subject from conquered territory and continue
    the campaign as it.
-2. **Conquer kwahada and penatuka.** The `allow` block requires both:
+2. **Conquer kwahada and penatuka.** You must hold both:
    kwahada is the Llano Estacado heart, penatuka is the Penateka
    homeland. Both sit in Xumanos territory at game start.
 3. **Hold 45 percent of the southern Plains arc.** Required fraction
    is 0.45 across Texas, Natahende, High Plains, Central Plains, and
    the Rockies. This is a wide spread but a low fraction, so a
    focused southern Plains and northern Texas conquest qualifies.
-4. **Be at peace at home.** `in_civil_war = no` is part of `allow`.
+4. **Be at peace at home.** A civil war blocks formation.
 5. **Form Comancheria.** Country rank rises to Kingdom on formation
    if below it. Capital sets to **kwahada**.
 
@@ -81,10 +81,10 @@ The destiny tree splits two ways.
 
 - **Continental Tribute Empire.** Push south into Mexico. Stage 1
   takes tamaulipeco and maratine (the Tamaulipas frontier) with a
-  30-army gate. Stage 2 demands guachichil, cuencame, and chisos in
+  30-army requirement. Stage 2 demands guachichil, cuencame, and chisos in
   Coahuila with a 50-army and 3500-development bar. Stage 3
   (continental hegemony) requires mapimi, cuanales, alazapa, and
-  xumani plus a 75-army, 75-prestige, and 3000-gold gate. Capstone is
+  xumani plus a 75-army, 75-prestige, and 3000-gold requirement. Capstone is
   the Imperial Bison Council. Unlocked by the Continental Empire
   formation choice.
 - **Pan-Indigenous Confederation.** Build a treaty federation across

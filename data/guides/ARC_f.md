@@ -30,14 +30,14 @@ Cypriot Concord (the Lusignan house union with Cyprus).
 
 The tag is ARC because vanilla EU5 already uses ARM for the Caucasian
 Armenian heartland. ARC is specifically the Mediterranean cousin and
-the `potential` block excludes ARM by design.
+it excludes ARM by design.
 
 ## Forming it
 
 The formable accepts Armenian-cultured miaphysite countries other
 than ARM itself.
 
-1. **Be Armenian and miaphysite.** Both are required by `potential`.
+1. **Be Armenian and miaphysite.** Both are required.
    The `NOT = { tag = ARM }` clause keeps the Caucasian restoration
    path on its own track.
 2. **Own Sis.** The seat of the Hethumid catholicate. CIL starts
@@ -56,19 +56,19 @@ before formation eligibility even opens up.
 ## Pick your founding doctrine on formation
 
 The formation event offers two 30-year doctrines. Each swings a
-societal value and gates one of the destiny paths.
+societal value and opens one of the destiny paths.
 
 - **Apostolic Sanctuary** (keep the kingdom undivided in faith).
   The highland clergy's answer: better isolation than the loss of
   the kingdom's soul. The Apostolic Church stands apart from
   Chalcedon and Rome alike. Pushes traditionalist_vs_innovative
-  hard left. Gates the Levant Vanguard destiny path (Path A,
+  hard left. Opens the Levant Vanguard destiny path (Path A,
   Apostolic Imperium line).
 - **Latin Union of Sis** (open the realm to Crusader Christendom).
   The barons' answer: better Cyprus than ruin, better the Pope than
   the desert. Formal union with Rome, Crusader court at Sis,
   Italian merchants in their own chapels at Ayas. Pushes
-  outward_vs_inward hard left (toward outward). Gates the Cilician
+  outward_vs_inward hard left (toward outward). Opens the Cilician
   Reach destiny path (Path B, Mediterranean Apex line).
 
 ## What happens on formation

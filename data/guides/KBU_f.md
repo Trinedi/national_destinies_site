@@ -15,7 +15,7 @@ trans-Saharan caravan trade through Tripoli.
 
 ## Forming it
 
-1. **Start as KBO.** Kanembu culture and Sunni religion are both gates,
+1. **Start as KBO.** Kanembu culture and Sunni religion are both required,
    and KBO is the only tag with both. The country also begins with
    Sayfawa rulers historically attested.
 2. **Hold Ngazargamu and Njimi.** KBO owns both at start, satisfying
@@ -32,19 +32,19 @@ trans-Saharan caravan trade through Tripoli.
 
 ## Pick your founding doctrine on formation
 
-The formation event offers two 30-year doctrines. Picking one also gates
-which destiny path you can later take.
+The formation event offers two 30-year doctrines. Your choice also
+decides which destiny path opens later.
 
 - **By the lance and the ribat** (*Sword of the Mai*, 30 years). The
   Mai's armoured cavalry and ribat frontier system as the institutional
   core. Stat focus: discipline, light and heavy cavalry power, land
-  morale, manpower, hostile attrition, monthly army tradition. Gates
+  morale, manpower, hostile attrition, monthly army tradition. Opens
   the Sword of the Mai destiny path (path A, Mediterranean Reach line).
 - **By the caravan and the market** (*Crossroads of the Sahara*, 30
   years). The Bilma salt road, Fezzan caravan trade, and Ngazargamu as
   Sahel-Saharan emporium. Stat focus: trade efficiency, merchant power
   and capacity, diplomatic reputation, heathen tolerance, monthly
-  prosperity. Gates the Crossroads of the Sahara destiny path (path B,
+  prosperity. Opens the Crossroads of the Sahara destiny path (path B,
   Saharan Master line).
 
 ## What happens on formation
@@ -61,19 +61,18 @@ The destiny tree splits two ways:
   Zazzau, breaking the Hausa city-states. Stage 2 reaches Timbuktu and
   Gao, supplanting the western Sahel. Stage 3 takes Tripoli and Murzuk,
   punching through the Sahara to the Mediterranean coast, and unlocks
-  the **Imperial Barracks** (`nd_kbu_imperial_barracks`) capstone
+  the **Imperial Barracks** capstone
   building. Unlocked by the lance and the ribat formation choice.
 - **Path B: Crossroads of the Sahara.** Trade line. Stage 1 embraces
   banking and secures a salt market. Stage 2 reaches global trade with
   ivory market access at 2000 development. Stage 3 reaches a cotton
-  market at 2500 development and unlocks the **Grand Caravansary**
-  (`nd_kbu_grand_caravansary`) capstone building. Unlocked by the
+  market at 2500 development and unlocks the **Grand Caravansary** capstone building. Unlocked by the
   caravan and the market formation choice.
 
 ## Notes
 
 - Rank is set to kingdom if you are below it.
 - The formation modifier runs for 30 years (longer than most), so the
-  payoff scales with how soon you form.
+  reward scales with how soon you form.
 - Subsequent DHE events cover Mai Idris Alooma's Ottoman musketeers and
   later Sayfawa milestones.

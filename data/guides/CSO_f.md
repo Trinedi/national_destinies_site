@@ -27,7 +27,7 @@ descent. Forming it is a restoration, not a release.
 
 ## Forming it
 
-The formation is gated by the Red Turban Rebellions situation. You
+Formation requires the Red Turban Rebellions situation. You
 cannot form CSO while that situation is still active, so the entire
 run is built around the post-rebellion settlement.
 
@@ -38,15 +38,14 @@ run is built around the post-rebellion settlement.
    that none of the faction tags exist at the 1337 bookmark: they
    spawn during the rebellions, so you switch to one when it
    appears on the map.
-2. **Survive or end the Red Turban Rebellions.** The formable's
-   `allow` block requires `is_situation_active = no` for the
-   rebellions. Either ride out the situation or finish it (one
-   faction unifying southern China or the Yuan reasserting control
-   ends it).
+2. **Survive or end the Red Turban Rebellions.** You cannot form
+   while the rebellions are still running. Either ride the situation
+   out or finish it (one faction unifying southern China or the Yuan
+   reasserting control ends it).
 3. **Own Hangzhou.** This is the only named location requirement.
    Hangzhou starts under CHI and is one of the most contested cities
    of the rebellion period.
-4. **Hold 55 percent of southern China.** The `areas` pool covers
+4. **Hold 55 percent of southern China.** The territory pool covers
    Fujian, Hunan, Hubei, Jiangxi, Jiangnan, Huai, Zhejiang,
    Guangdong, Guangxi, Liangjiang, Guizhou, Hainan, and the three
    Sichuan basin areas. Standard Southern Song reach.
@@ -78,13 +77,13 @@ Two 30-year doctrines:
 The destiny tree splits two ways:
 
 - **Treasure Fleets.** Path A. Build the maritime commercial empire.
-  Stage gates require Jinjiang and Longxi (the Fujian coast), then
+  That stage requires Jinjiang and Longxi (the Fujian coast), then
   Malacca and Palembang (Nanyang choke points), then Kozhikode,
   Hormuz, and Temasek (Indian Ocean and the Strait of Singapore).
   Capstone building is the Treasure Fleet Harbor. Unlocked by the
   Treasure of the Southern Seas formation choice.
 - **The Mandate Restored.** Path B. Recover the lost north and
-  perfect Confucian governance. Stage gates require Banking embraced
+  perfect Confucian governance. That stage requires Banking embraced
   and 10,000 development, then Kaifeng and Luoyang (the Northern
   Song capitals), then Dadu (the Yuan capital, modern Beijing) at
   20,000 development. Capstone building is the Imperial Library.

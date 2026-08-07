@@ -27,9 +27,9 @@ inherit El Dorado's wealth tradition, or inherit Tundama's defiance.
 
 ## Forming it
 
-1. **Start as a muisca-cultured tag** (ZIP or ZAQ). The potential
-   gate is `culture = culture:muisca_culture`. Only these two tags
-   qualify in 1337.
+1. **Start as a muisca-cultured tag** (ZIP or ZAQ). Muisca culture
+   is the only requirement on who you are, and only these two tags
+   have it in 1337.
 2. **Own funza and chunsua.** ZIP starts with funza, ZAQ starts with
    chunsua. Whichever you pick, you must take the other capital. The
    two tags border each other on the Altiplano, so this is a single
@@ -75,8 +75,8 @@ The destiny tree splits two ways.
   prestige. Capstone is the Guatavita Treasury. Unlocked by the
   Path of the Golden Zipa formation choice.
 - **The Highland Fortress.** The guecha-defensive path. Stage 1
-  (Tairona War) takes teyuna and zenues with a 30-army gate. Stage 2
-  (Mountain Dominion) demands caracas and coro with a 50-army gate.
+  (Tairona War) takes teyuna and zenues with a 30-army requirement. Stage 2
+  (Mountain Dominion) demands caracas and coro with a 50-army requirement.
   Stage 3 (Andean Hegemony) requires qusqu (Cusco), 1500 development,
   and 75 prestige. Capstone is the Tundama Citadel. Unlocked by the
   Tundama's Defiance formation choice.

@@ -3,7 +3,7 @@ priority_starters:
   - tag: MDY
     note: "Madya-as. Hiligaynon-cultured, anitist, owns Araut (the formation capital) plus Bago Negros (one secondary anchor). The historically iconic Pintados seed: the Madya-as confederation of Panay datus is the closest real-world analogue to the formable."
   - tag: CEB
-    note: "Cebu (Singhapala). Cebuano-cultured, owns Singhapala (the second required location) plus Tanjay. Hindu at start; the formable does not gate religion, but the cultural fit is Visayan animist, so a religion flip is thematic but not required."
+    note: "Cebu (Singhapala). Cebuano-cultured, owns Singhapala (the second required location) plus Tanjay. Hindu at start; the formable has no religion requirement, but the cultural fit is Visayan animist, so a religion flip is thematic but not required."
   - tag: BOL
     note: "Bool (Dapitan). Boholano-cultured. Boholano is NOT in the potential list, so a culture flip to one of the three Visayan cultures is required. Compensates by already holding Bool, one of the four secondary anchors."
 hide_auto: true
@@ -33,7 +33,7 @@ by MRO), the Tagalogs of Manila Bay, and the Bicolanos.
 1. **Start as a Visayan-cultured tag.** Eligible primary cultures are
    Hiligaynon (MDY), Cebuano (CEB), and Waray. No tag at game start
    has Waray as primary, so practical starters are MDY and CEB.
-2. **Hold both required locations.** The `allow` block requires you
+2. **Hold both required locations.** You must satisfy you
    to own **Araut** (held by MDY) and **Singhapala** (held by CEB).
    Whichever you start as, conquer the other.
 3. **Hold two of the four secondary anchors.** You must own at least
@@ -45,7 +45,7 @@ by MRO), the Tagalogs of Manila Bay, and the Bicolanos.
    need almost the whole Visayas pool.
 5. **Not in civil war.**
 
-The formable does not gate religion. CEB starts hindu and qualifies
+The formable has no religion requirement. CEB starts hindu and qualifies
 on culture alone, but the mod's flavor and advance tree assume an
 anitist polity (the babaylan, the diwata, anito worship under the
 Babaylan order).
@@ -100,4 +100,4 @@ The destiny tree splits two ways:
   Treaty, the Spaniards at Mactan (post-1521), and the Visayan Synthesis.
 - The Visayan Synthesis advance lets you choose between three flourishing
   Visayan tongues and a single shared council vernacular, a real
-  language-policy fork inside the destiny payoff.
+  language-policy fork inside the destiny path.

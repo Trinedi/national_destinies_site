@@ -18,8 +18,7 @@ checked monarchy).
 
 ## Forming it
 
-1. **Get a Luba-language primary culture.** The gate is
-   `culture.language = luba_language`. There is no pickable
+1. **Get a Luba-language primary culture.** There is no pickable
    Luba-language country at the 1337 bookmark: Luba (LBA) and Lunda
    (LND) are Societies of Pops, on the map but not selectable
    (reported on the Workshop, 2026-07-13). The practical routes: take
@@ -40,20 +39,20 @@ checked monarchy).
 
 ## Pick your founding doctrine on formation
 
-The formation event offers two 20-year doctrines. Picking one also gates
-which destiny path you can later take.
+The formation event offers two 20-year doctrines. Your choice also
+decides which destiny path opens later.
 
 - **The Mulopwe's word is law** (*Divine Authority of the Mulopwe*, 20
   years). Sacred kingship: the Kalala Ilunga foundation myth, ritual
   installation at the bilumbu shrines, and tributary expansion as the
   institutional core. Stat focus: crown estate power, legitimacy,
-  separatism reduction, diplomatic annexation cost, levy size. Gates
+  separatism reduction, diplomatic annexation cost, levy size. Opens
   the Mulopwe's Conquest destiny path (path A, Mulopwe Supreme line).
 - **The Bambudye shall guide us** (*Wisdom of the Bambudye*, 20
   years). Council institution: the lukasa memory boards, judicial
   Bambudye assemblies, and flexible governance as the institutional
   core. Stat focus: cabinet efficiency, stability cost reduction,
-  cultures capacity, research speed, diplomatic reputation. Gates the
+  cultures capacity, research speed, diplomatic reputation. Opens the
   Bambudye's Wisdom destiny path (path B, Bambudye Supreme line).
 
 ## What happens on formation
@@ -70,19 +69,18 @@ The destiny tree splits two ways:
   east to Tanganyika (Ujiji, Lussuna). Stage 2 sacks Mbanza Kongo at
   2000 total development, breaking the Atlantic Bantu rival. Stage 3
   reaches the Indian Ocean (Kilwa Kisiwani, Sofala) and unlocks the
-  **War Camp** (`nd_lbe_war_camp`) capstone building. Unlocked by the
+  **War Camp** capstone building. Unlocked by the
   Mulopwe's word is law formation choice.
 - **Path B: The Bambudye's Wisdom.** Knowledge and trade line. Stage 1
   embraces banking and secures capital-market copper. Stage 2 takes
   Loango on the Atlantic. Stage 3 embraces global trade with ivory
-  market access and unlocks the **Grand Lukasa Council**
-  (`nd_lbe_grand_lukasa_council`) capstone building. Unlocked by the
+  market access and unlocks the **Grand Lukasa Council** capstone building. Unlocked by the
   Bambudye shall guide us formation choice.
 
 ## Notes
 
 - Rank is set to kingdom if you are below it.
 - The 20-year formation modifier is shorter than the level 3 Sahelian
-  formables, so the payoff window is tighter.
+  formables, so the window to profit is tighter.
 - Subsequent advance events cover the copper-cross currency economy
   and other Luba milestones.

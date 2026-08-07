@@ -3,7 +3,7 @@ priority_starters:
   - tag: KNI
     note: "The Knights Hospitaller themselves. Already Catholic, already a military order, already on Rhodes. The cleanest run: hold what you have, take Malta and Cyprus, and the formable's 90 percent fraction is almost in your pocket on day one."
   - tag: CYP
-    note: "Cyprus. Catholic Lusignan kingdom adjacent to Rhodes. Conquer Rhodes from KNI (or wait for the Ottomans to push them out and pick up the pieces) to satisfy the allow gate, then unify the eastern Mediterranean as a single Hospitalier realm."
+    note: "Cyprus. Catholic Lusignan kingdom adjacent to Rhodes. Conquer Rhodes from KNI, or wait for the Ottomans to push them out and pick up the pieces, then unify the eastern Mediterranean as a single Hospitalier realm."
   - tag: SIC
     note: "Sicily. Catholic, owns the Sicilian shore so Malta is a short hop. The Maltese path: take Malta, then push east into Rhodes for the second half of the Hospitalier provinces. Best fit for the Hospitalier Realm option (naval, hospital, corso)."
   - tag: NAP
@@ -20,63 +20,53 @@ The historical reference is the Order's transition through Rhodes
 corporation that became, in practice, an island kingdom with its own
 fleet, hospital system, and licensed corsairs.
 
-The mod treats HOS as the institutional answer to "what if the Order
-never lost Rhodes, never had to beg Charles V for Malta, and instead
-consolidated as a permanent Mediterranean island state." The langues
-(Provence, Auvergne, France, Italy, Aragon, Castile, Germany, England)
-become a confederal civil service. The Sacra Infermeria of Malta
-becomes the imperial hospital. The Tribunale degli Armamenti regulates
-the corso.
+This is the Order never losing Rhodes, never having to beg Charles V
+for Malta, and settling instead into a permanent island state. The
+langues (Provence, Auvergne, France, Italy, Aragon, Castile, Germany,
+England) become a confederal civil service. The Sacra Infermeria of
+Malta becomes the imperial hospital. The Tribunale degli Armamenti
+licenses the corso.
 
 ## Forming it
 
-The formable accepts five entry tags: KNI, CYP, NAP, SIC, ARG, plus
-anyone running the `military_order_reform` government reform.
+1. **Be Catholic.**
+2. **Own Rhodes or Malta.** One of the two is enough. KNI starts with
+   Rhodes. SIC and NAP can seize Malta early. CYP and ARG have to
+   fight for Rhodes.
+3. **Hold 90 percent of the Hospitalier islands.** Rhodes and the
+   Dodecanese, the island of Cyprus, and Malta. At that fraction it
+   amounts to holding all three.
+4. **Form the Order.**
 
-1. **Be Catholic.** The `potential` requires `religion:catholic`.
-2. **Hold Rhodes or Malta.** The `allow` block needs at least one of
-   `location:rodos` or `location:malta`. KNI starts with Rhodes; SIC
-   and NAP can take Malta from a coastal raid; CYP and ARG must push
-   for Rhodes.
-3. **Hit 90 percent of the Hospitalier provinces.** The required
-   territory is `rodos_province` plus `cyprus_province` plus the
-   `malta` location. With 0.9 fraction this is essentially a
-   "hold all three" requirement: the Dodecanese, the island of
-   Cyprus, and Malta.
-4. **Pick the formable.** It is Level 2 plausible.
-
-The KNI direct path is by far the easiest. CYP is a natural narrative
-fit (Cypriot Lusignans absorbing the Rhodes Hospitallers) but requires
-a war on Rhodes. SIC and NAP have to grab three separate island chains
-that lie far from their core lands.
+Five countries can start this: KNI, CYP, NAP, SIC and ARG, along with
+anyone running the military order government reform. KNI is far and
+away the easiest. CYP fits the story well, Lusignan Cyprus absorbing
+the Rhodes Hospitallers, but you have to win a war on Rhodes first.
+SIC and NAP must reach three island groups that all lie well east of
+their heartlands.
 
 ## Pick your founding doctrine on formation
 
-The formation event offers two 20-year doctrines. Picking one also
-swings a societal value and gates which destiny path you can later
-take.
+The formation event offers two 20-year doctrines. Your choice swings a
+societal value and decides which destiny path opens later.
 
-- **Crusading Order** (Sword of Christendom). The galleys never rest;
-  the Order is what it has always been. Pushes belligerent_vs_conciliatory
-  hard left. Gates the Reclaim the Levant destiny path (path A, Mare
-  Nostrum line).
-- **Hospitalier Realm** (Hospital, harbor, council). Sovereign island
-  state; the corso, the Sacra Infermeria, and the langues are the
-  institutional core. Pushes land_vs_naval hard right (toward naval).
-  Gates the Lazaretto Network destiny path (path B, Sacra Infermeria
-  Maxima line).
+- **Crusading Order.** Sword of Christendom. The galleys never rest
+  and the Order stays what it has always been. Pushes you hard toward
+  belligerent. Opens the Mare Nostrum path.
+- **Hospitalier Realm.** Hospital, harbour, council. A sovereign
+  island state built on the corso, the Sacra Infermeria and the
+  langues. Pushes you hard toward naval. Opens the Sacra Infermeria
+  Maxima path.
 
 ## What happens on formation
 
 - Mild stability bonus.
-- Country rank rises to Kingdom if currently Duchy or below.
-- The `clergy_military_orders` privilege is granted to the Clergy
-  estate. This unlocks `military_order_reform` in the Government UI
-  if you want to formally adopt the reform.
-- The permanent `nd_hos_militant_brotherhood` modifier (Sovereign
-  Order of Saint John) is applied. Institutional benefits land
-  immediately without needing to swap a reform slot.
-- Formation event fires with the two doctrine choices.
+- Country rank rises to Kingdom if you are Duchy or below.
+- Your Clergy estate gains the military orders privilege, which
+  unlocks the military order reform in the Government screen if you
+  want to adopt it formally.
+- You gain the permanent Sovereign Order of Saint John modifier, so
+  the institutional benefits arrive without spending a reform slot.
 
 ## After forming
 

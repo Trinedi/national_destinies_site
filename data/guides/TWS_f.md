@@ -62,12 +62,11 @@ The formation event offers two 20-year doctrines:
 
 - Country tag becomes TWS.
 - 20-year founding modifier from your event choice.
-- The rival's mainland presence has already been removed by the
-  `allow` trigger before the form effect fires.
+- The rival's mainland presence has already been removed by the requirements before the form effect fires.
 
 ## After forming
 
-Two destiny paths, gated by your formation choice:
+Two destiny paths, decided by your formation choice:
 
 - **Path A: Rex Italiae.** Crown of the South -> Master of the
   Peninsula (choice between Iron Crown and Roman Legacy modifiers) ->

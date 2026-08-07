@@ -31,7 +31,7 @@ Assyrian Empire (NIN), which can only be formed after BNH.
 
 1. **Start as one of the priority tags above.** All of them are
    miaphysite Armenian principalities, which is what BNH's potential
-   gate requires (miaphysite or nestorianism religion).
+   requirement is (miaphysite or nestorianism religion).
 2. **Survive the early Mongol-successor pressure.** Most candidate
    tags begin as Ilkhanid vassals or under similar overlordship.
    Either ride out the Ilkhanate collapse or escape vassalage early.
@@ -41,7 +41,7 @@ Assyrian Empire (NIN), which can only be formed after BNH.
    the same neighbourhood. Urfa is in the contested Edessa-Cilicia
    frontier zone.
 4. **Hold 40 percent of the wider Jazira area.** The fraction
-   requirement is loose because the three named cities already gate
+   requirement is loose because the three named cities already bind
    most of the relevant territory.
 5. **Pick your formation doctrine.** Three options, each a 25-year
    timed modifier:

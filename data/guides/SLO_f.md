@@ -1,7 +1,7 @@
 ---
 priority_starters:
   - tag: HUN
-    note: "Hungary. Owns the entire Slovakia area at start (Bratislava, Nitra, Kremnica, Banska Bystrica, Kosice, the lot). The blocker is the culture gate: HUN is hungarian. A long campaign of Slovak cultural promotion, or a national-awakening event chain that flips primary culture, is the only way through."
+    note: "Hungary. Owns the entire Slovakia area at start (Bratislava, Nitra, Kremnica, Banska Bystrica, Kosice, the lot). The blocker is culture: HUN is hungarian, so a long campaign of Slovak promotion or a national-awakening flip is the only way through."
   - tag: BOH
     note: "Bohemia. Slovak is a kindred culture in the west_slavic group with czech, so culture promotion is more natural than from HUN. You still need to take all of Upper Hungary from the Crown of St Stephen first, then promote slovak to primary."
 hide_auto: true
@@ -26,30 +26,30 @@ cultural one.
 
 ## Forming it
 
-You must be slovak primary culture and own 75 percent of the Slovakia
-area (the seven historical counties: Hont, Maramaros, Nograd,
-Pozsony, Szepes, Trencsen, Zemplen).
+1. **Have slovak primary culture.** No tag begins with it in 1337, so
+   this is the whole campaign rather than a box to tick. Slovak sits
+   in the west_slavic group alongside czech, which matters for how
+   fast you can promote it.
+2. **Own 75 percent of the Slovakia area.** The seven historical
+   counties: Hont, Maramaros, Nograd, Pozsony, Szepes, Trencsen,
+   Zemplen. Hungary owns all of it at the start.
+3. **Form Slovakia.** No rank or religion requirement.
 
-The hard part is the culture gate. No tag begins with slovak as
-primary culture in 1337. Slovak is a kindred culture to czech (both
-in the west_slavic group), so the realistic paths are:
+Three ways to get slovak as your primary culture:
 
-1. **Bohemia route.** Play BOH, expand into Upper Hungary, then
-   promote slovak to primary culture once the population balance
-   tips. Czech-Slovak cultural proximity makes this faster than other
-   options.
-2. **Hungarian collapse route.** Play HUN. Already owns the entire
-   Slovakia area. Survive the Mongol-Ottoman pressures of the 14th
-   to 16th century, then trigger a Slovak national-awakening culture
-   flip in the 18th-19th century era of the advance tree.
-3. **Successor-state route.** A small Slovak-cultured tag may appear
-   later as Hungary fractures or via revolt mechanics; the formable
-   is the natural endpoint for that successor.
+- **From Bohemia.** Expand into Upper Hungary, then promote slovak
+  once the population balance tips. Czech and Slovak proximity makes
+  this the fastest route.
+- **From Hungary.** You already own the entire area, so only the
+  culture stands in your way. Survive the Mongol and Ottoman
+  centuries, then take the Slovak national awakening late in the
+  advance tree.
+- **From a successor state.** If Hungary fractures, a Slovak-cultured
+  tag can appear from the wreckage. Slovakia is its natural endpoint.
 
 ## Pick your founding doctrine on formation
 
-The formation event offers two 30-year doctrines (longer than
-default; this is a Level 3 formable):
+The formation event offers two 30-year doctrines:
 
 - **Mining Crown of the Carpathians.** Banska Stiavnica silver,
   Kremnica gold, Banska Bystrica copper. Mining innovation, advance
@@ -72,14 +72,14 @@ default; this is a Level 3 formable):
 
 ## After forming
 
-Two destiny paths, gated by your formation choice. The advance tree
-also includes Thurzo-Fugger Partnership, Pressburg Coronation, Kuruc
-Uprising, and Stur's National Awakening as event-driven advances.
+Your formation choice decides which of the two destiny paths you can
+take. The advance tree also carries the Thurzo-Fugger Partnership,
+the Pressburg Coronation, the Kuruc Uprising, and Stur's National
+Awakening as event-driven advances.
 
 ## Notes
 
-- This is a `plausible` rule formable, not historical. The Slovak
-  national project in 1337 is anachronistic by design.
-- Slovak culture exists in `in_game/common/cultures/west_slavic.txt`
-  but is not the primary culture of any starting tag, so culture
-  promotion is unavoidable.
+- Slovakia is a plausible formable rather than a historical one. A
+  Slovak political nation in 1337 is anachronistic by design.
+- No starting tag has slovak as its primary culture, so culture
+  promotion is unavoidable on every route.

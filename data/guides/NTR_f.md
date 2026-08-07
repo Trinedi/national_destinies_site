@@ -6,7 +6,7 @@ hide_auto: true
 ## Concept
 
 Aotearoa, the United Tribes of New Zealand, takes its name and its
-formation gate from He Whakaputanga o te Rangatiratanga o Nu Tireni,
+formation requirement from He Whakaputanga o te Rangatiratanga o Nu Tireni,
 the 1835 Declaration of Independence signed by the northern rangatira
 that asserted Maori sovereignty as a single political entity. The mod
 treats this as the unification moment: the iwi of the islands set
@@ -17,13 +17,13 @@ oceanic mastery of the ancestral wayfinders).
 
 ## Forming it
 
-The vanilla gate is two conditions:
+The requirement is two conditions:
 
 1. **Maori primary culture.** All starting NZ iwi are Maori-cultured
    pop tags following tapu_religion: PUH (Ngapuhi), TNI (Waikato
    Tainui), ARW (Te Arawa), NPO (Ngati Porou), NKH (Ngati Kahungunu),
    NTH (Ngai Tuhoe), HWE, NGI, NGR, RGT, AWA, RUA, and others.
-2. **Hold the He Whakaputanga advance** (`maori_he_whakaputanga_advance`).
+2. **Hold the He Whakaputanga advance** (He Whakaputanga).
    This is an age 1 culture-locked advance requiring legalism, with
    a subject loyalty bonus, available to any Maori-cultured tag.
 3. **Hold 50 percent of the New Zealand region.** Most iwi start with
