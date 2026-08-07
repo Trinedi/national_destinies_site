@@ -1,7 +1,7 @@
 ---
 priority_starters:
-  - tag: BNH
-    note: "Form Beth Nahrain (BNH) first. After forming you are a Syriac duchy with the full Tier 1 heritage tree in place. The BNH Restoration of Aššur destiny path signposts directly to NIN. This is the chain's intended path and the only one where the Syriac-Mesopotamian identity is already established before you claim the imperial Assyrian heritage."
+  - tag: ATZ
+    note: "Artsakh, and the chain's intended route: form Beth Nahrain (BNH) first, then the Assyrian Empire. Artsakh starts adjacent to the Mesopotamian heartland, so Mosul, Nusaybin and Urfa are all within reach for the Tier 1 formation. After forming BNH you are a Syriac duchy with the full Tier 1 heritage tree in place, and its Restoration of Aššur destiny path signposts directly here. This is the only route where the Syriac-Mesopotamian identity is already established before you claim the imperial Assyrian heritage. Note that Beth Nahrain is a formable rather than a playable start, so pick Artsakh and form it."
   - tag: CIL
     note: "Cilicia direct, no intermediate. Mechanical: any kingdom-rank miaphysite or nestorian country qualifies for NIN's potential. Narratively a hard pivot: the form effect converts your Armenian-Cilician kingdom into a Syriac empire in one event. Faster than the BNH chain but the Mediterranean Armenian trade-kingdom heritage you build along the way is largely discarded on formation."
   - tag: ETH
