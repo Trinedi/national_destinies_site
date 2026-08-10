@@ -7598,6 +7598,29 @@
         }
       ]
     },
+    "PGR_f": {
+      "culture_gates": [
+        "minangkabau_culture"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "tag_gates": [],
+      "rank_gates": [],
+      "reform_gates": [],
+      "tag_excludes": [],
+      "suggested_tags": [],
+      "candidates": [
+        {
+          "tag": "SGT",
+          "culture": "minangkabau_culture",
+          "religion": "mahayana",
+          "owned_in_target": 8,
+          "owned_in_core": 1,
+          "score": 13
+        }
+      ]
+    },
     "OCC_f": {
       "culture_gates": [],
       "culture_group_gates": [],
@@ -8821,6 +8844,47 @@
       "suggested_tags": [],
       "candidates": [],
       "notes_html": "<h2>Concept</h2>\n<p>The Luba Empire is the central African kingdom of the Upemba\nDepression: copper-cross currency, sacred Mulopwe kingship, and the\nBambudye council whose lukasa memory boards held the institutional\nknowledge of state. Forming it gives you a divine-kingship empire built\naround the Kalala Ilunga foundation myth and the copper-iron\nmetallurgy of the lakeshore.</p>\n<p>The two paths split between <strong>Mulopwe divine authority</strong> (sacred\nkingship, autocratic) and <strong>Bambudye wisdom</strong> (council institution,\nchecked monarchy).</p>\n<h2>Forming it</h2>\n<ol>\n<li><strong>Get a Luba-language primary culture.</strong> There is no pickable\n   Luba-language country at the 1337 bookmark: Luba (LBA) and Lunda\n   (LND) are Societies of Pops, on the map but not selectable. The\n   practical routes: take the Katanga heartland with a playable power and let the absorbed\n   Luba pops shift or supply your primary culture, or release a\n   Luba-cultured subject from conquered territory and continue the\n   campaign as it.</li>\n<li><strong>Hold lake_upemba.</strong> This is the single allow-block requirement.\n   Neither LBA nor LND owns it at start; it sits uncolonised in\n   mweru_province (east_lunda_area) and must be settled or absorbed.\n   LBA is geographically closer.</li>\n<li><strong>Hit 65% of a three-area pool.</strong> East Lunda, Kasongo, and Moshiko.\n   Compact territory; consolidating tribal neighbours covers most of it.</li>\n<li><strong>Pick your path on formation.</strong></li>\n<li><em>The Mulopwe&rsquo;s word is law</em>: divine kingship, autocratic emphasis.</li>\n<li><em>The Bambudye shall guide us</em>: council institution, checked\n     monarchy.</li>\n</ol>\n<h2>Pick your founding doctrine on formation</h2>\n<p>The formation event offers two 20-year doctrines. Your choice also\ndecides which destiny path opens later.</p>\n<ul>\n<li><strong>The Mulopwe&rsquo;s word is law</strong> (<em>Divine Authority of the Mulopwe</em>, 20\n  years). Sacred kingship: the Kalala Ilunga foundation myth, ritual\n  installation at the bilumbu shrines, and tributary expansion as the\n  institutional core. Stat focus: crown estate power, legitimacy,\n  separatism reduction, diplomatic annexation cost, levy size. Opens\n  the Mulopwe&rsquo;s Conquest destiny path (path A, Mulopwe Supreme line).</li>\n<li><strong>The Bambudye shall guide us</strong> (<em>Wisdom of the Bambudye</em>, 20\n  years). Council institution: the lukasa memory boards, judicial\n  Bambudye assemblies, and flexible governance as the institutional\n  core. Stat focus: cabinet efficiency, stability cost reduction,\n  cultures capacity, research speed, diplomatic reputation. Opens the\n  Bambudye&rsquo;s Wisdom destiny path (path B, Bambudye Supreme line).</li>\n</ul>\n<h2>What happens on formation</h2>\n<ul>\n<li>Country rank rises to Kingdom if currently Duchy or below.</li>\n<li>Mild stability bonus.</li>\n<li>Formation event fires with the two doctrine choices.</li>\n</ul>\n<h2>After forming</h2>\n<p>The destiny tree splits two ways:</p>\n<ul>\n<li><strong>Path A: The Mulopwe&rsquo;s Conquest.</strong> Conquest line. Stage 1 marches\n  east to Tanganyika (Ujiji, Lussuna). Stage 2 sacks Mbanza Kongo at\n  2000 total development, breaking the Atlantic Bantu rival. Stage 3\n  reaches the Indian Ocean (Kilwa Kisiwani, Sofala) and unlocks the\n  <strong>War Camp</strong> capstone building. Unlocked by the\n  Mulopwe&rsquo;s word is law formation choice.</li>\n<li><strong>Path B: The Bambudye&rsquo;s Wisdom.</strong> Knowledge and trade line. Stage 1\n  embraces banking and secures capital-market copper. Stage 2 takes\n  Loango on the Atlantic. Stage 3 embraces global trade with ivory\n  market access and unlocks the <strong>Grand Lukasa Council</strong> capstone building. Unlocked by the\n  Bambudye shall guide us formation choice.</li>\n</ul>\n<h2>Notes</h2>\n<ul>\n<li>Rank is set to kingdom if you are below it.</li>\n<li>The 20-year formation modifier is shorter than the level 3 Sahelian\n  formables, so the window to profit is tighter.</li>\n<li>Subsequent advance events cover the copper-cross currency economy\n  and other Luba milestones.</li>\n</ul>"
+    },
+    "LMB_f": {
+      "culture_gates": [
+        "lombard"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [
+        "catholic"
+      ],
+      "religion_group_gates": [],
+      "tag_gates": [],
+      "rank_gates": [],
+      "reform_gates": [],
+      "tag_excludes": [],
+      "suggested_tags": [],
+      "candidates": [
+        {
+          "tag": "MLO",
+          "culture": "lombard",
+          "religion": "catholic",
+          "owned_in_target": 7,
+          "owned_in_core": 1,
+          "score": 16
+        },
+        {
+          "tag": "PAV",
+          "culture": "lombard",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "owned_in_core": 1,
+          "score": 13
+        },
+        {
+          "tag": "LCA",
+          "culture": "lombard",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "owned_in_core": 0,
+          "score": 9
+        }
+      ]
     },
     "LXA_f": {
       "culture_gates": [
