@@ -10328,9 +10328,9 @@
       "sub_continents": [],
       "continents": [],
       "must_own": [
-        "lake_upemba"
+        "baluba"
       ],
-      "allow_raw": "owns = location:lake_upemba",
+      "allow_raw": "owns = location:baluba",
       "potential_raw": "culture.language = language:luba_language",
       "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_lbe_formed\n\t\t}\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = nd_lbe.1\n\t\tadd_stability = stability_mild_bonus",
       "formation_event": "nd_lbe.1",
@@ -10347,7 +10347,7 @@
       "english_allow": [
         {
           "kind": "atom",
-          "text": "Owns Lake Upemba"
+          "text": "Owns Baluba"
         }
       ]
     },
