@@ -1436,7 +1436,7 @@
       "adjective": "THE_ADJ",
       "flag": "THE",
       "color": "map_THE",
-      "level": 1,
+      "level": 2,
       "fraction": 0.8,
       "rule": "plausible",
       "content_priority": null,
@@ -1776,7 +1776,7 @@
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = { has_culture_group = culture_group:italian_group }",
-      "form_effect_raw": "if = {\n\t\t\tlimit = {\n\t\t\t\tNOT = { is_member_of_international_organization = international_organization:hre }\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = nd_sar_piedmont.1\n\t\t\n\t\t\n\t\thidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_sar_piedmont_formed\n\t\t}",
+      "form_effect_raw": "if = {\n\t\t\tlimit = {\n\t\t\t\tnd_can_take_kingdom_rank = yes\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = nd_sar_piedmont.1\n\t\t\n\t\t\n\t\thidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_sar_piedmont_formed\n\t\t}",
       "formation_event": "nd_sar_piedmont.1",
       "source": "vanilla+mod_replace",
       "mod_overrides": true,
@@ -2109,7 +2109,7 @@
       ],
       "allow_raw": "owns = location:prague",
       "potential_raw": "OR = {\n\t\t\tculture = culture:czech\n\t\t\tculture = culture:moravian\n\t\t}",
-      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_boh_formed\n\t\t}\n\t\ttrigger_event_non_silently = nd_boh.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tNOT = { is_member_of_international_organization = international_organization:hre }\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_boh_formed\n\t\t}\n\t\ttrigger_event_non_silently = nd_boh.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tnd_can_take_kingdom_rank = yes\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
       "formation_event": "nd_boh.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
@@ -2166,7 +2166,7 @@
       "must_own": [],
       "allow_raw": "international_organization:hre ?= {\n\t\t\tcountry_has_special_status = {\n\t\t\t\ttype = special_status:elector\n\t\t\t\tcountry = root\n\t\t\t}\n\t\t}",
       "potential_raw": "OR = {\n\t\t\tculture = culture:saxon\n\t\t\tculture = culture:lower_saxon\n\t\t}",
-      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_sax_formed\n\t\t}\n\t\ttrigger_event_non_silently = nd_sax.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tNOT = { is_member_of_international_organization = international_organization:hre }\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_sax_formed\n\t\t}\n\t\ttrigger_event_non_silently = nd_sax.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tnd_can_take_kingdom_rank = yes\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
       "formation_event": "nd_sax.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
@@ -2326,7 +2326,7 @@
       "must_own": [],
       "allow_raw": null,
       "potential_raw": "OR = {\n\t\t\tculture = culture:eastern_pomeranian\n\t\t\tculture = culture:western_pomeranian\n\t\t}",
-      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_pom_formed\n\t\t}\n\t\ttrigger_event_non_silently = nd_pom.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tNOT = {\n\t\t\t\t\tis_member_of_international_organization = international_organization:hre\n\t\t\t\t}\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_pom_formed\n\t\t}\n\t\ttrigger_event_non_silently = nd_pom.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tnd_can_take_kingdom_rank = yes\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
       "formation_event": "nd_pom.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
@@ -2375,7 +2375,7 @@
       "must_own": [],
       "allow_raw": "NOT = {\n\t\t\thas_reform = government_reform:military_order_reform \n\t\t\thas_estate_privilege = estate_privilege:clergy_powerful_dioceses\n\t\t}\n\t\thas_estate_privilege = estate_privilege:nobles_land_rights\n\n\t\t\"estate_power(estate_type:clergy_estate)\" < 0.20\n\t\t\"estate_power(estate_type:nobles_estate)\" > 0.20\n\t\tat_war = no",
       "potential_raw": "culture = { has_culture_group = culture_group:german_group }",
-      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_pru_formed\n\t\t}\n\t\ttrigger_event_non_silently = nd_pru.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tgovernment_type != government_type:republic\n\t\t\t\tgovernment_type != government_type:monarchy\n\t\t\t}\n\t\t\tchange_government_type = government_type:monarchy\n\t\t\tadd_legitimacy = legitimacy_radical_bonus\n\t\t}\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tNOT = { is_member_of_international_organization = international_organization:hre }\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_pru_formed\n\t\t}\n\t\ttrigger_event_non_silently = nd_pru.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tgovernment_type != government_type:republic\n\t\t\t\tgovernment_type != government_type:monarchy\n\t\t\t}\n\t\t\tchange_government_type = government_type:monarchy\n\t\t\tadd_legitimacy = legitimacy_radical_bonus\n\t\t}\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tnd_can_take_kingdom_rank = yes\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
       "formation_event": "nd_pru.1",
       "source": "vanilla+mod_replace",
       "mod_overrides": true,
@@ -3642,7 +3642,7 @@
       ],
       "allow_raw": "OR = {\n\t\t\tAND = {\n\t\t\t\towns = location:milano\n\t\t\t\towns = location:florence\n\t\t\t\towns = location:naples\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = gag_guelphs_winner_may_form_italy_without_location_requirements_tt\n\t\t\t\thas_variable = gag_guelphs_winner_may_form_italy_without_location_requirements\n\t\t\t}\n\t\t}",
       "potential_raw": "culture = { has_culture_group = culture_group:italian_group }",
-      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_ita_formed\n\t\t}\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tNOT = { is_member_of_international_organization = international_organization:hre }\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = nd_ita.1\n\t\tadd_stability = stability_mild_bonus",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_ita_formed\n\t\t}\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tnd_can_take_kingdom_rank = yes\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = nd_ita.1\n\t\tadd_stability = stability_mild_bonus",
       "formation_event": "nd_ita.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
@@ -3763,7 +3763,7 @@
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "OR = {\n\t\t\tculture = culture:rhine_alemannic\n\t\t\tculture = culture:burgundian\n\t\t\tculture = culture:franc_comtois\n\t\t\tculture = culture:lorrain\n\t\t\tculture = culture:walloon\n\t\t\tOR = {\n\t\t\t\ttag = LOR\n\t\t\t\ttag = BUR\n\t\t\t}\n\t\t}",
-      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_lot_formed\n\t\t}\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tNOT = { is_member_of_international_organization = international_organization:hre }\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = nd_lot.1\n\t\tadd_stability = stability_mild_bonus",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_lot_formed\n\t\t}\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tnd_can_take_kingdom_rank = yes\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = nd_lot.1\n\t\tadd_stability = stability_mild_bonus",
       "formation_event": "nd_lot.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
@@ -3843,7 +3843,7 @@
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "OR = {\n\t\t\tculture = culture:arpitan\n\t\t\tculture = culture:vivaro_alpine\n\t\t\tculture = culture:franc_comtois\n\t\t\tculture = culture:provencal\n\t\t\tOR = {\n\t\t\t\ttag = DAU\n\t\t\t\ttag = SAV\n\t\t\t}\t\t\t\n\t\t}",
-      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_bgp_formed\n\t\t}\n\t\ttrigger_event_non_silently = nd_bgp.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tNOT = { is_member_of_international_organization = international_organization:hre }\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_bgp_formed\n\t\t}\n\t\ttrigger_event_non_silently = nd_bgp.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tnd_can_take_kingdom_rank = yes\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
       "formation_event": "nd_bgp.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
@@ -5892,7 +5892,7 @@
       "must_own": [],
       "allow_raw": null,
       "potential_raw": "culture = culture:holsatian",
-      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_shl_formed\n\t\t}\n\t\ttrigger_event_non_silently = nd_shl.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tNOT = {\n\t\t\t\t\tis_member_of_international_organization = international_organization:hre\n\t\t\t\t}\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_shl_formed\n\t\t}\n\t\ttrigger_event_non_silently = nd_shl.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tnd_can_take_kingdom_rank = yes\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
       "formation_event": "nd_shl.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
@@ -6405,40 +6405,81 @@
     },
     {
       "block_key": "BAH_f",
-      "mode": "full",
-      "source_file": "00_formable_countries.txt",
+      "mode": "replace",
+      "source_file": "99_nd_bah.txt",
       "tag": "BAH",
       "name": "BAH",
       "adjective": "BAH_ADJ",
       "flag": "BAH",
       "color": "map_bahmanis",
       "level": 2,
-      "fraction": null,
+      "fraction": 0.6,
       "rule": "historical",
       "content_priority": null,
       "regions": [],
       "areas": [],
       "locations": [],
-      "provinces": [],
+      "provinces": [
+        "kalyana_karnakassala",
+        "raichur_doab",
+        "upper_marathwada",
+        "lower_marathwada",
+        "lower_vidarbha",
+        "golconda_province",
+        "warangal_province",
+        "sirpur_province",
+        "malvana"
+      ],
       "sub_continents": [],
       "continents": [],
-      "must_own": [],
-      "allow_raw": "",
-      "potential_raw": "always = no",
-      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_bah_formed\n\t\t}",
-      "formation_event": null,
-      "source": "vanilla+mod_inject",
+      "must_own": [
+        "gulbarga",
+        "bidar"
+      ],
+      "allow_raw": "owns = location:gulbarga\n\t\towns = location:bidar",
+      "potential_raw": "religion = religion:sunni\n\n\t\t\n\t\t\n\t\tNOT = { country_exists = c:BAH }\n\n\t\t\n\t\t\n\t\t\n\t\tNOT = { has_or_had_tag = DLH }",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_bah_formed\n\t\t}\n\t\t\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = nd_bah.10\n\t\tadd_stability = stability_mild_bonus",
+      "formation_event": "nd_bah.10",
+      "source": "vanilla+mod_replace",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_bah.txt",
       "variant_label": null,
       "color_rgb": "#9c0f0d",
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Not: Always"
+          "text": "Sunnism religion"
+        },
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Bahmanis exists"
+            }
+          ]
+        },
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Was or is Delhi"
+            }
+          ]
         }
       ],
-      "english_allow": []
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Gulbarga"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Bidar"
+        }
+      ]
     },
     {
       "block_key": "GLD_f",
@@ -6930,7 +6971,7 @@
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = culture:swabian",
-      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_swa_formed\n\t\t}\n\t\ttrigger_event_non_silently = nd_swa.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tNOT = { is_member_of_international_organization = international_organization:hre }\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_swa_formed\n\t\t}\n\t\ttrigger_event_non_silently = nd_swa.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tnd_can_take_kingdom_rank = yes\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
       "formation_event": "nd_swa.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
@@ -7135,7 +7176,7 @@
       ],
       "allow_raw": "owns = location:hanover",
       "potential_raw": "culture = culture:lower_saxon",
-      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_han_formed\n\t\t}\n\t\ttrigger_event_non_silently = nd_han.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tNOT = { is_member_of_international_organization = international_organization:hre }\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_han_formed\n\t\t}\n\t\ttrigger_event_non_silently = nd_han.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tnd_can_take_kingdom_rank = yes\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
       "formation_event": "nd_han.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
@@ -7181,7 +7222,7 @@
       ],
       "allow_raw": "owns = location:florence",
       "potential_raw": "culture = culture:tuscan",
-      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_tus_formed\n\t\t}\n\t\ttrigger_event_non_silently = nd_tus.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tNOT = { is_member_of_international_organization = international_organization:hre }\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_tus_formed\n\t\t}\n\t\ttrigger_event_non_silently = nd_tus.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tnd_can_take_kingdom_rank = yes\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
       "formation_event": "nd_tus.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
@@ -9307,7 +9348,7 @@
       ],
       "allow_raw": "OR = {\n\t\t\tcountry_rank_level >= 3\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = DNM_f_privilegium_tt\n\t\t\t\thas_reform = government_reform:austrian_archduchy_reform\n\t\t\t}\n\t\t}\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tOR = {\n\t\t\towns = location:vienna\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = DNM_f_vienna_by_crown_tt\n\t\t\t\tlocation:vienna ?= {\n\t\t\t\t\towner ?= {\n\t\t\t\t\t\tOR = {\n\t\t\t\t\t\t\tis_subject_or_below_of = root\n\t\t\t\t\t\t\tAND = {\n\t\t\t\t\t\t\t\tin_union_with = root\n\t\t\t\t\t\t\t\tunion ?= {\n\t\t\t\t\t\t\t\t\tcountry_is_senior_partner = { country = root }\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tOR = {\n\t\t\tOR = { has_or_had_tag = HAB tag = HAB }\n\t\t\tAND = {\n\t\t\t\tOR = { has_or_had_tag = HUN tag = HUN }\n\t\t\t\towns = location:buda\n\t\t\t}\n\t\t\tAND = {\n\t\t\t\tOR = { has_or_had_tag = BOH tag = BOH }\n\t\t\t\towns = location:prague\n\t\t\t}\n\t\t}\n\n\t\t\n\t\ttrigger_if = {\n\t\t\tlimit = {\n\t\t\t\tcountry_exists = c:HAB\n\t\t\t\tthis != c:HAB\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = DNM_f_trigger_hab\n\t\t\t\tOR = {\n\t\t\t\t\ttag = HAB\n\t\t\t\t\thas_or_had_tag = HAB\n\t\t\t\t\tNOT = { country_exists = c:HAB }\n\t\t\t\t\tc:HAB = {\n\t\t\t\t\t\tOR = {\n\t\t\t\t\t\t\tis_subject_or_below_of = root\n\t\t\t\t\t\t\tAND = {\n\t\t\t\t\t\t\t\tin_union_with = root\n\t\t\t\t\t\t\t\tunion ?= {\n\t\t\t\t\t\t\t\t\tcountry_is_senior_partner = { country = root }\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\t\n\t\ttrigger_if = {\n\t\t\tlimit = {\n\t\t\t\tcountry_exists = c:HUN\n\t\t\t\tthis != c:HUN\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = DNM_f_trigger_hun\n\t\t\t\tOR = {\n\t\t\t\t\ttag = HUN\n\t\t\t\t\thas_or_had_tag = HUN\n\t\t\t\t\tNOT = { country_exists = c:HUN }\n\t\t\t\t\tc:HUN = {\n\t\t\t\t\t\tOR = {\n\t\t\t\t\t\t\tis_subject_or_below_of = root\n\t\t\t\t\t\t\tAND = {\n\t\t\t\t\t\t\t\tin_union_with = root\n\t\t\t\t\t\t\t\tunion ?= {\n\t\t\t\t\t\t\t\t\tcountry_is_senior_partner = { country = root }\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\t\n\t\ttrigger_if = {\n\t\t\tlimit = {\n\t\t\t\tcountry_exists = c:BOH\n\t\t\t\tthis != c:BOH\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = DNM_f_trigger_boh\n\t\t\t\tOR = {\n\t\t\t\t\ttag = BOH\n\t\t\t\t\thas_or_had_tag = BOH\n\t\t\t\t\tNOT = { country_exists = c:BOH }\n\t\t\t\t\tc:BOH = {\n\t\t\t\t\t\tOR = {\n\t\t\t\t\t\t\tis_subject_or_below_of = root\n\t\t\t\t\t\t\tAND = {\n\t\t\t\t\t\t\t\tin_union_with = root\n\t\t\t\t\t\t\t\tunion ?= {\n\t\t\t\t\t\t\t\t\tcountry_is_senior_partner = { country = root }\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}",
       "potential_raw": "OR = {\n\t\t\truler = { dynasty = dynasty:habsburg_dynasty }\n\t\t\thas_or_had_tag = HAB\n\t\t\thas_or_had_tag = HUN\n\t\t\thas_or_had_tag = BOH\n\t\t}",
-      "form_effect_raw": "hidden_effect = {\n\t\t\tif = {\n\t\t\t\tlimit = { OR = { tag = HUN has_or_had_tag = HUN } }\n\t\t\t\tset_variable = nd_dnm_origin_hun\n\t\t\t}\n\t\t\telse_if = {\n\t\t\t\tlimit = { OR = { tag = BOH has_or_had_tag = BOH } }\n\t\t\t\tset_variable = nd_dnm_origin_boh\n\t\t\t}\n\t\t\telse = {\n\t\t\t\tset_variable = nd_dnm_origin_hab\n\t\t\t}\n\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\tif = {\n\t\t\t\tlimit = {\n\t\t\t\t\tis_member_of_international_organization = international_organization:hre\n\t\t\t\t\tinternational_organization:hre ?= {\n\t\t\t\t\t\tcountry_has_special_status = {\n\t\t\t\t\t\t\ttype = special_status:elector\n\t\t\t\t\t\t\tcountry = root\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tset_variable = nd_dnm_origin_was_elector\n\t\t\t}\n\t\t}\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tcountry_exists = c:HUN\n\t\t\t\tc:HUN = {\n\t\t\t\t\tin_union_with = root\n\t\t\t\t\tunion ?= {\n\t\t\t\t\t\tcountry_is_senior_partner = { country = root }\n\t\t\t\t\t\tmodifier:union_integration_level >= 5\n\t\t\t\t\t}\n\t\t\t\t\thas_variable = integrated_in_union\n\t\t\t\t\tvar:integrated_in_union >= 5\n\t\t\t\t}\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = nd_dnm_weld_hun_tt\n\t\t\t\tc:HUN = {\n\t\t\t\t\tevery_core_location = { add_core = root }\n\t\t\t\t}\n\t\t\t\tannex_country = { country = c:HUN }\n\t\t\t}\n\t\t}\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tcountry_exists = c:BOH\n\t\t\t\tc:BOH = {\n\t\t\t\t\tin_union_with = root\n\t\t\t\t\tunion ?= {\n\t\t\t\t\t\tcountry_is_senior_partner = { country = root }\n\t\t\t\t\t\tmodifier:union_integration_level >= 5\n\t\t\t\t\t}\n\t\t\t\t\thas_variable = integrated_in_union\n\t\t\t\t\tvar:integrated_in_union >= 5\n\t\t\t\t}\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = nd_dnm_weld_boh_tt\n\t\t\t\tc:BOH = {\n\t\t\t\t\tevery_core_location = { add_core = root }\n\t\t\t\t}\n\t\t\t\tannex_country = { country = c:BOH }\n\t\t\t}\n\t\t}\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tcountry_exists = c:HAB\n\t\t\t\tc:HAB = {\n\t\t\t\t\tin_union_with = root\n\t\t\t\t\tunion ?= {\n\t\t\t\t\t\tcountry_is_senior_partner = { country = root }\n\t\t\t\t\t\tmodifier:union_integration_level >= 5\n\t\t\t\t\t}\n\t\t\t\t\thas_variable = integrated_in_union\n\t\t\t\t\tvar:integrated_in_union >= 5\n\t\t\t\t}\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = nd_dnm_weld_hab_tt\n\t\t\t\tc:HAB = {\n\t\t\t\t\tevery_core_location = { add_core = root }\n\t\t\t\t}\n\t\t\t\tannex_country = { country = c:HAB }\n\t\t\t}\n\t\t}\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tcustom_tooltip = {\n\t\t\ttext = nd_dnm_hre_sweep_tt\n\t\t\tevery_owned_location = {\n\t\t\t\tlimit = { is_owned_by_international_organization = international_organization:hre }\n\t\t\t\tremove_from_international_organization = international_organization:hre\n\t\t\t}\n\t\t}\n\t\tif = {\n\t\t\tlimit = { is_member_of_international_organization = international_organization:hre }\n\t\t\tinternational_organization:hre = {\n\t\t\t\tremove_country_from_international_organization = root\n\t\t\t}\n\t\t}\n\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\thidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_dnm_formed\n\t\t\tset_variable = { name = nd_dnm_grace value = yes years = 10 }\n\t\t\tset_variable = { name = nd_dnm_pariah_timer value = yes years = 50 }\n\t\t\tset_variable = { name = nd_dnm_chain_30_pending value = yes years = 2 }\n\t\t\tset_variable = { name = nd_dnm_chain_31_pending value = yes years = 5 }\n\t\t\tset_variable = { name = nd_dnm_chain_32_pending value = yes years = 8 }\n\t\t}\n\t\tactivate_situation = situation:nd_dnm_reaction_of_the_reich\n\n\t\ttrigger_event_non_silently = nd_dnm.1\n\t\tadd_stability = stability_severe_bonus",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tif = {\n\t\t\t\tlimit = { OR = { tag = HUN has_or_had_tag = HUN } }\n\t\t\t\tset_variable = nd_dnm_origin_hun\n\t\t\t}\n\t\t\telse_if = {\n\t\t\t\tlimit = { OR = { tag = BOH has_or_had_tag = BOH } }\n\t\t\t\tset_variable = nd_dnm_origin_boh\n\t\t\t}\n\t\t\telse = {\n\t\t\t\tset_variable = nd_dnm_origin_hab\n\t\t\t}\n\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\tif = {\n\t\t\t\tlimit = {\n\t\t\t\t\tis_member_of_international_organization = international_organization:hre\n\t\t\t\t\tinternational_organization:hre ?= {\n\t\t\t\t\t\tcountry_has_special_status = {\n\t\t\t\t\t\t\ttype = special_status:elector\n\t\t\t\t\t\t\tcountry = root\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tset_variable = nd_dnm_origin_was_elector\n\t\t\t}\n\t\t}\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tcountry_exists = c:HUN\n\t\t\t\tc:HUN = {\n\t\t\t\t\tin_union_with = root\n\t\t\t\t\tunion ?= {\n\t\t\t\t\t\tcountry_is_senior_partner = { country = root }\n\t\t\t\t\t\tmodifier:union_integration_level >= 5\n\t\t\t\t\t}\n\t\t\t\t\thas_variable = integrated_in_union\n\t\t\t\t\tvar:integrated_in_union >= 5\n\t\t\t\t}\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = nd_dnm_weld_hun_tt\n\t\t\t\tc:HUN = {\n\t\t\t\t\tevery_core_location = { add_core = root }\n\t\t\t\t}\n\t\t\t\tannex_country = { country = c:HUN }\n\t\t\t}\n\t\t}\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tcountry_exists = c:BOH\n\t\t\t\tc:BOH = {\n\t\t\t\t\tin_union_with = root\n\t\t\t\t\tunion ?= {\n\t\t\t\t\t\tcountry_is_senior_partner = { country = root }\n\t\t\t\t\t\tmodifier:union_integration_level >= 5\n\t\t\t\t\t}\n\t\t\t\t\thas_variable = integrated_in_union\n\t\t\t\t\tvar:integrated_in_union >= 5\n\t\t\t\t}\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = nd_dnm_weld_boh_tt\n\t\t\t\tc:BOH = {\n\t\t\t\t\tevery_core_location = { add_core = root }\n\t\t\t\t}\n\t\t\t\tannex_country = { country = c:BOH }\n\t\t\t}\n\t\t}\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tcountry_exists = c:HAB\n\t\t\t\tc:HAB = {\n\t\t\t\t\tin_union_with = root\n\t\t\t\t\tunion ?= {\n\t\t\t\t\t\tcountry_is_senior_partner = { country = root }\n\t\t\t\t\t\tmodifier:union_integration_level >= 5\n\t\t\t\t\t}\n\t\t\t\t\thas_variable = integrated_in_union\n\t\t\t\t\tvar:integrated_in_union >= 5\n\t\t\t\t}\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = nd_dnm_weld_hab_tt\n\t\t\t\tc:HAB = {\n\t\t\t\t\tevery_core_location = { add_core = root }\n\t\t\t\t}\n\t\t\t\tannex_country = { country = c:HAB }\n\t\t\t}\n\t\t}\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = { exists = international_organization:hre }\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = nd_dnm_hre_sweep_tt\n\t\t\t\tevery_owned_location = {\n\t\t\t\t\tlimit = { is_owned_by_international_organization = international_organization:hre }\n\t\t\t\t\tif = {\n\t\t\t\t\t\tlimit = {\n\t\t\t\t\t\t\tinternational_organization:hre = {\n\t\t\t\t\t\t\t\tinternational_organization_has_leader = yes\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t\tadd_core = international_organization:hre.leader_country\n\t\t\t\t\t}\n\t\t\t\t\tremove_from_international_organization = international_organization:hre\n\t\t\t\t}\n\t\t\t}\n\t\t\tif = {\n\t\t\t\tlimit = { is_member_of_international_organization = international_organization:hre }\n\t\t\t\tinternational_organization:hre = {\n\t\t\t\t\tremove_country_from_international_organization = root\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\thidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_dnm_formed\n\t\t\tset_variable = { name = nd_dnm_grace value = yes years = 10 }\n\t\t\tset_variable = { name = nd_dnm_pariah_timer value = yes years = 50 }\n\t\t\tset_variable = { name = nd_dnm_chain_30_pending value = yes years = 2 }\n\t\t\tset_variable = { name = nd_dnm_chain_31_pending value = yes years = 5 }\n\t\t\tset_variable = { name = nd_dnm_chain_32_pending value = yes years = 8 }\n\t\t}\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\texists = international_organization:hre\n\t\t\t\tnd_reich_reaction_is_enabled = yes\n\t\t\t}\n\t\t\tactivate_situation = situation:nd_dnm_reaction_of_the_reich\n\t\t}\n\n\t\ttrigger_event_non_silently = nd_dnm.1\n\t\tadd_stability = stability_severe_bonus",
       "formation_event": "nd_dnm.1",
       "source": "mod_new",
       "mod_overrides": true,
@@ -9661,7 +9702,7 @@
       ],
       "allow_raw": "owns = location:bruges\n\t\towns = location:dijon\n\t\tOR = {\n\t\t\towns = location:nancy\n\t\t\towns = location:besancon\n\t\t\towns = location:metz\n\t\t}",
       "potential_raw": "religion = religion:catholic\n\t\tOR = {\n\t\t\tculture = culture:burgundian\n\t\t\tculture = culture:franc_comtois\n\t\t\tculture = culture:lorrain\n\t\t\tculture = culture:walloon\n\t\t\tculture = culture:picard\n\t\t\tculture = culture:low_franconian\n\t\t\tculture = culture:frisian\n\t\t\tculture = culture:french\n\t\t\ttag = BUR\n\t\t\ttag = LOR\n\t\t}",
-      "form_effect_raw": "hidden_effect = {\n\n\t\t\tset_variable = nd_formed\n\n\t\t\tset_variable = nd_gbu_formed\n\n\t\t}\n\t\ttrigger_event_non_silently = nd_gbu.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tcountry_rank_level < 3\n\t\t\t\tNOT = { is_member_of_international_organization = international_organization:hre }\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\tset_capital = location:brussels",
+      "form_effect_raw": "hidden_effect = {\n\n\t\t\tset_variable = nd_formed\n\n\t\t\tset_variable = nd_gbu_formed\n\n\t\t}\n\t\ttrigger_event_non_silently = nd_gbu.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tcountry_rank_level < 3\n\t\t\t\tnd_can_take_kingdom_rank = yes\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\tset_capital = location:brussels",
       "formation_event": "nd_gbu.1",
       "source": "mod_new",
       "mod_overrides": true,
@@ -10378,7 +10419,7 @@
       ],
       "allow_raw": "owns = location:milano\n\t\towns = location:pavia",
       "potential_raw": "culture = culture:lombard\n\t\treligion = religion:catholic",
-      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_lmb_formed\n\t\t}\n\t\ttrigger_event_non_silently = nd_lmb.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tcountry_rank_level < 3\n\t\t\t\tNOT = { is_member_of_international_organization = international_organization:hre }\n\t\t\t}\n\t\t\tset_country_rank_effect = {\n\t\t\t\trank = country_rank:rank_kingdom\n\t\t\t}\n\t\t}",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_lmb_formed\n\t\t}\n\t\ttrigger_event_non_silently = nd_lmb.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tcountry_rank_level < 3\n\t\t\t\tnd_can_take_kingdom_rank = yes\n\t\t\t}\n\t\t\tset_country_rank_effect = {\n\t\t\t\trank = country_rank:rank_kingdom\n\t\t\t}\n\t\t}",
       "formation_event": "nd_lmb.1",
       "source": "mod_new",
       "mod_overrides": true,
