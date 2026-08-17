@@ -10402,12 +10402,17 @@
       "flag": "LMB",
       "color": "map_LMB",
       "level": 2,
-      "fraction": 0.75,
+      "fraction": 0.6,
       "rule": "plausible",
       "content_priority": null,
       "regions": [],
       "areas": [
-        "lombardy_area"
+        "lombardy_area",
+        "piemonte_area",
+        "emilia_area",
+        "veneto_area",
+        "liguria_area",
+        "tuscany_area"
       ],
       "locations": [],
       "provinces": [],
