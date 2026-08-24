@@ -648,7 +648,7 @@ function renderRequirementsTab(rec) {
   body.push('<div class="stat-grid">');
   if (rec.level != null) body.push(`<dt>Level</dt><dd>${rec.level}</dd>`);
   if (rec.fraction != null) body.push(`<dt>Required</dt><dd>${Math.round(rec.fraction * 100)}% of territory</dd>`);
-  if (rec.rule) body.push(`<dt>Rule</dt><dd>${escapeHtml(rec.rule)}</dd>`);
+  if (rec.rule) body.push(`<dt>Rule</dt><dd>${escapeHtml(describeRule(rec.rule))}</dd>`);
   if (rec.tag) body.push(`<dt>Tag</dt><dd><code>${escapeHtml(rec.tag)}</code></dd>`);
   if (rec._adjective) body.push(`<dt>Adjective</dt><dd>${escapeHtml(rec._adjective)}</dd>`);
   body.push(`<dt>Source</dt><dd>${formatSource(rec)}</dd>`);
@@ -944,6 +944,20 @@ function prettifyName(s) {
      .replace(/_/g, " ")
      .replace(/\b\w/g, (c) => c.toUpperCase())
   );
+}
+
+// The formable's rule tier decides whether it exists in a given campaign at
+// all. The lobby rule "Ahistorical formable countries" defaults to plausible,
+// so a fantasy-tier formable (the North Sea Empire, for one) is invisible in
+// a default game no matter what the player owns. Players asked on the
+// Workshop why they could not form it; this is the answer.
+function describeRule(rule) {
+  switch (rule) {
+    case 'historical': return 'Historical (available under every game rule)';
+    case 'plausible': return 'Plausible (available under the default game rule)';
+    case 'fantasy': return 'Fantasy (hidden under the default game rule: set "Ahistorical formable countries" to allow all in the lobby)';
+    default: return rule;
+  }
 }
 
 function escapeHtml(s) {

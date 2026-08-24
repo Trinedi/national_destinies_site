@@ -11,11 +11,10 @@ hide_auto: true
 
 ## Concept
 
-The Danubian Monarchy is the Habsburg dilemma made playable. An emperor
-bound to the imperial diet could never weld Austria, Bohemia and Hungary
-into one obedient crown. Forming DNM resolves it by rupture. You give up
-the imperial dignity, walk all three crowns out of the Holy Roman
-Empire, and refound them as an empire of your own.
+The Danubian Monarchy is the Habsburg dilemma made playable. Forming it
+puts the Reich question to you: remain within the Holy Roman Empire and
+rule it from the Danube as the Habsburgs did, or break with the Reich
+and refound the three crowns as an empire of your own.
 
 This is not Austria-Hungary. That dualist compromise is one possible
 ending of the Nationalities Question later on.
@@ -78,68 +77,58 @@ Each grants a 45-year modifier and opens one destiny path.
 
 ## What happens on formation
 
-- You leave the Holy Roman Empire, and it is irreversible.
-- You become an Empire in the same moment.
-- Any crown you had already fully integrated in union is absorbed.
-  The rest stay as subjects for now.
-- The Reaction of the Reich begins.
+- Crowns already fully integrated in union are absorbed. The rest stay
+  subjects and open the Compact of the Crowns, lasting good opinion of
+  you and real subject loyalty.
+- If the Empire exists, the Reich Question fires: remain or break.
 - A 10-year grace period holds off both internal disasters.
 
 ## After forming
 
+### The Reich Question
+
+**Remain** is the historical choice, and the AI's under the historical
+game rule. You stay a member under imperial law at kingdom rank where
+the Empire allows it, and the imperial crown is yours to win. Once the
+succession crisis is upheld, the crowns weld only when the Diet ratifies
+the Sanction: as Emperor you pay imperial authority, as a member you
+petition the Emperor with Lay the Sanction before the Diet, or you let
+the crowns stand. Hungary resents the Reich while it is a subject crown.
+Break with the Reich later by diplomacy at the same price; an Emperor
+lays the crown down first, and a pending Sanction becomes your own law.
+
+**Break**: every imperial location you own leaves the Empire with the
+Emperor's core on it, you become an Empire, and the Reaction of the
+Reich begins. It cannot be undone. A Hungarian former may only remain
+by entering, which the Emperor's faith and adjacency must allow.
+
 ### The Reaction of the Reich
 
-The Emperor gains the Imperial Ban casus belli against you and you carry
-the Shunned by the Reich penalty. Do not form weak. Any one of these
-ends it:
-
-- **Legitimacy.** Resolve the War of the Succession, upheld or broken.
-  This is the main road.
-- **Strength.** Beat the Emperor to 80% war score and enforce the
-  Humble the Reich peace term.
-- **Reconciliation.** Sue the Emperor with a tribute of two years'
-  income. A weak or distracted Emperor is likelier to accept. Refusal
-  costs prestige and a 10-year wait.
-- **Endurance.** Reach 50 years with legitimacy 60 and prestige 50.
+Only after a break. The Emperor gains the Imperial Ban casus belli and
+you carry the Shunned by the Reich penalty. Any one of these ends it:
+resolve the succession crisis either way; beat the Emperor to 80% war
+score and enforce Humble the Reich; sue for reconciliation with two
+years' income; or endure 50 years with legitimacy 60 and prestige 50.
 
 ### The succession crisis
 
-Three events over your first decade lead into it. Rally the diets and
-ratify the decree to start with up to +40 Crown Confidence.
-
-The crisis runs on Crown Confidence, target 80, floor -30. Spend gold,
-concessions and troops to push it up.
-
-- **Reach 80** and the Sanction holds. A permanent modifier, and every
-  crown you still hold as a subject or union junior is absorbed.
-- **Fall to -30 or cede** and it breaks. A temporary penalty, and the
-  crowns stay separate.
-
-Either ending also closes the Reaction of the Reich.
+Three events over your first decade lead into it. It runs on Crown
+Confidence, target 80, floor -30. Reach 80 and the Sanction holds, with
+a permanent modifier and every subject crown welded, inside the Reich
+once the Diet ratifies. Fall to -30 or cede and it breaks.
 
 ### The Nationalities Question
 
-Fires when stability is negative and either a third of your population
-is in an untolerated culture or home control drops under 50%.
-
-- **The Ausgleich.** Two co-equal realms under one dynasty, and where
-  Austria-Hungary lives. Easiest on Gesamtmonarchie.
-- **Reassertion.** Crush the leagues once control is restored. Strong
-  rule, lasting estate resentment.
-- **Fragmentation.** A crown breaks away. Severe stability hit and a
-  30-year penalty.
-
-The two disasters never run at once.
+Fires on negative stability with a third of your people untolerated or
+home control under 50%. The Ausgleich makes two co-equal realms and is
+where Austria-Hungary lives. Reassertion crushes the leagues. Fragmentation
+breaks a crown away. The two disasters never run at once.
 
 ## Notes
 
-- Form strong, not the moment you qualify. The HRE exit, the pariah
-  penalty and the war recovery all land together.
-- Pick how you will end the Reich's hostility early, and play toward it.
+- Staying is the safe road, breaking the ambitious one. Break strong.
+- Subject loyalty decides whether Hungary and Bohemia fight your wars.
+  Gesamtmonarchie adds 10, the Compact adds more on day one, the weld
+  ends the problem.
 - Gesamtmonarchie makes the Ausgleich easy to reach. Antemurale leaves
   the empire likelier to fracture.
-- DNM is terminal. No further formable inherits it.
-- The 16-area pool is the Austrian hereditary lands, the Bohemian crown
-  and the Hungarian crown: 444 locations, of which you need about 45
-  in your own hands.
-
