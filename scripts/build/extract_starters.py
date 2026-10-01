@@ -3,7 +3,8 @@
 
 Reads:
   - in_game/setup/countries/*.txt        (tag -> culture, religion)
-  - main_menu/setup/start/10_countries.txt (tag -> owned locations)
+  - <start setup>/10_countries.txt       (tag -> owned locations; the folder is
+    main_menu/setup/start up to 1.3 and the one the bookmark names since 1.4)
   - in_game/common/cultures/*.txt        (culture -> culture_groups)
   - in_game/common/religions/*.txt       (religion -> religion group)
   - dist/data/formables.json             (formable potential / required geography)
@@ -56,6 +57,22 @@ def find_balanced_block(body: str, key: str) -> str | None:
         if depth == 0:
             return body[start:i - 1]
     return None
+
+
+def start_setup_dir(game_root: Path) -> Path:
+    """Where the start-date setup lives. `main_menu/setup/start` up to 1.3;
+    since 1.4 the folder named by the first active bookmark in
+    `main_menu/common/bookmarks` (`setup_folder = "setup/1337"`)."""
+    bookmarks = game_root / "main_menu/common/bookmarks"
+    if bookmarks.is_dir():
+        for path in sorted(bookmarks.glob("*.txt")):
+            for line in path.read_text(encoding="utf-8-sig", errors="replace").splitlines():
+                code = line.split("#", 1)[0]
+                if "setup_folder" in code and "=" in code:
+                    folder = game_root / "main_menu" / code.split("=", 1)[1].strip().strip('"')
+                    if folder.is_dir():
+                        return folder
+    return game_root / "main_menu/setup/start"
 
 
 def parse_country_setup(setup_dir: Path) -> dict[str, dict]:
@@ -766,7 +783,7 @@ def main() -> int:
     guides_dir = repo_root / "data" / "guides"
 
     setup_dir = eu5 / "in_game/setup/countries"
-    start_path = eu5 / "main_menu/setup/start/10_countries.txt"
+    start_path = start_setup_dir(eu5) / "10_countries.txt"
     cultures_dir = eu5 / "in_game/common/cultures"
     religions_dir = eu5 / "in_game/common/religions"
 
