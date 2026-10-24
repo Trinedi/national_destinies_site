@@ -437,6 +437,9 @@ html, body { height: 100%; margin: 0; padding: 0; background: var(--bg-0); color
   box-shadow: 0 1px 3px rgba(0,0,0,0.6);
 }
 .must-own-label {
+  /* The divIcon container is 14px wide (iconSize); without this the
+     label box collapses to 14px and the text overflows it. */
+  width: max-content;
   background: rgba(20,20,24,0.92);
   color: var(--fg-0);
   padding: 2px 6px;

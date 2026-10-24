@@ -132,3 +132,6 @@ breaks a crown away. The two disasters never run at once.
   ends the problem.
 - Gesamtmonarchie makes the Ausgleich easy to reach. Antemurale leaves
   the empire likelier to fracture.
+- Lobby rules: Succession of the Danube off means the question never
+  opens, and an AI founds the Monarchy only under AI Forms Nations;
+  Reaction of the Reich off means the Emperor does not answer a break.
