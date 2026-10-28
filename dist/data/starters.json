@@ -104,14 +104,6 @@
           "score": 13
         },
         {
-          "tag": "SCO",
-          "culture": "scottish",
-          "religion": "catholic",
-          "owned_in_target": 7,
-          "owned_in_core": 0,
-          "score": 13
-        },
-        {
           "tag": "MOY",
           "culture": "scottish",
           "religion": "catholic",
@@ -153,6 +145,14 @@
         },
         {
           "tag": "AMA",
+          "culture": "irish",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "owned_in_core": 0,
+          "score": 10
+        },
+        {
+          "tag": "FMA",
           "culture": "irish",
           "religion": "catholic",
           "owned_in_target": 2,
@@ -269,14 +269,6 @@
           "score": 9
         },
         {
-          "tag": "WLS",
-          "culture": "english",
-          "religion": "catholic",
-          "owned_in_target": 8,
-          "owned_in_core": 0,
-          "score": 9
-        },
-        {
           "tag": "CET",
           "culture": "english",
           "religion": "catholic",
@@ -318,6 +310,14 @@
         },
         {
           "tag": "CMS",
+          "culture": "english",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "owned_in_core": 0,
+          "score": 5
+        },
+        {
+          "tag": "DEN",
           "culture": "english",
           "religion": "catholic",
           "owned_in_target": 1,
@@ -395,14 +395,6 @@
       "suggested_tags": [],
       "candidates": [
         {
-          "tag": "ENG",
-          "culture": "english",
-          "religion": "catholic",
-          "owned_in_target": 26,
-          "owned_in_core": 0,
-          "score": 5
-        },
-        {
           "tag": "LAN",
           "culture": "northumbrian",
           "religion": "catholic",
@@ -415,14 +407,6 @@
           "culture": "scottish",
           "religion": "catholic",
           "owned_in_target": 14,
-          "owned_in_core": 0,
-          "score": 5
-        },
-        {
-          "tag": "SCO",
-          "culture": "scottish",
-          "religion": "catholic",
-          "owned_in_target": 20,
           "owned_in_core": 0,
           "score": 5
         },
@@ -1002,28 +986,41 @@
       "suggested_tags": [],
       "candidates": [
         {
-          "tag": "ARA",
-          "culture": "catalan",
-          "religion": "catholic",
-          "owned_in_target": 25,
-          "owned_in_core": 0,
-          "score": 12
-        },
-        {
-          "tag": "MLL",
-          "culture": "catalan",
-          "religion": "catholic",
-          "owned_in_target": 3,
-          "owned_in_core": 0,
-          "score": 10
-        },
-        {
           "tag": "ANR",
           "culture": "catalan",
           "religion": "catholic",
           "owned_in_target": 1,
           "owned_in_core": 0,
           "score": 8
+        }
+      ]
+    },
+    "POR_f": {
+      "culture_gates": [
+        "portuguese"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [
+        "christian"
+      ],
+      "tag_gates": [],
+      "rank_gates": [],
+      "reform_gates": [],
+      "tag_excludes": [
+        "POR"
+      ],
+      "suggested_tags": [],
+      "candidates": [],
+      "special_notes": [
+        {
+          "kind": "info",
+          "title": "Moving the crown to Brazil",
+          "html": "<p>As Portugal you can carry the crown across the Atlantic. The decision <strong>Send the Court to Rio</strong> opens once Lisbon is your capital, Rio de Janeiro is a town, all of its province is settled and a quarter of the Pindorama area is yours or your subjects&rsquo;. It starts <strong>the Transmigration</strong>, and a move that succeeds lets you form <strong>Brazil</strong>. Only a player can take this road. See the Brazil page for the full checklist.</p>",
+          "locations": [
+            "lisbon",
+            "goana_para"
+          ]
         }
       ]
     },
@@ -1089,33 +1086,6 @@
           "owned_in_target": 1,
           "owned_in_core": 0,
           "score": 8
-        }
-      ]
-    },
-    "VAL_f": {
-      "culture_gates": [
-        "catalan"
-      ],
-      "culture_group_gates": [],
-      "religion_gates": [],
-      "religion_group_gates": [
-        "christian"
-      ],
-      "tag_gates": [],
-      "rank_gates": [],
-      "reform_gates": [],
-      "tag_excludes": [
-        "VAL"
-      ],
-      "suggested_tags": [],
-      "candidates": [
-        {
-          "tag": "ARA",
-          "culture": "catalan",
-          "religion": "catholic",
-          "owned_in_target": 17,
-          "owned_in_core": 0,
-          "score": 12
         }
       ]
     },
@@ -3896,14 +3866,6 @@
       "suggested_tags": [],
       "candidates": [
         {
-          "tag": "BYZ",
-          "culture": "greek_culture",
-          "religion": "orthodox",
-          "owned_in_target": 66,
-          "owned_in_core": 0,
-          "score": 9
-        },
-        {
           "tag": "EPI",
           "culture": "greek_culture",
           "religion": "orthodox",
@@ -3939,6 +3901,18 @@
           "owned_in_target": 10,
           "owned_in_core": 0,
           "score": 12
+        }
+      ],
+      "special_notes": [
+        {
+          "kind": "warn",
+          "title": "If you start as Byzantium",
+          "html": "<p>A country that begins the game as Byzantium cannot use the formable button; you cannot form what you already are. To unlock the formation event, its timed modifier, and the destiny tree, reconquer the three-city Komnenian core: <strong>Constantinople, Athens, and Iznik</strong> (you start owning only Constantinople) while following either <strong>Orthodoxy</strong> or the restored <strong>Hellenic</strong> faith (the old Roman religion, via Fate of the Phoenix). The formation event adapts its choices to your religion. The check runs every four years, so formation fires on the next tick once all three are held.</p>",
+          "locations": [
+            "constantinople",
+            "athens",
+            "iznik"
+          ]
         }
       ]
     },
@@ -4418,14 +4392,6 @@
       "suggested_tags": [],
       "candidates": [
         {
-          "tag": "DLH",
-          "culture": "dehlavi",
-          "religion": "sunni",
-          "owned_in_target": 62,
-          "owned_in_core": 0,
-          "score": 8
-        },
-        {
           "tag": "MAB",
           "culture": "haryanvi_culture",
           "religion": "sunni",
@@ -4487,14 +4453,6 @@
           "score": 5
         },
         {
-          "tag": "DLH",
-          "culture": "dehlavi",
-          "religion": "sunni",
-          "owned_in_target": 62,
-          "owned_in_core": 0,
-          "score": 5
-        },
-        {
           "tag": "HSL",
           "culture": "kannadiga",
           "religion": "hindu",
@@ -4523,6 +4481,14 @@
           "culture": "telugu",
           "religion": "hindu",
           "owned_in_target": 19,
+          "owned_in_core": 0,
+          "score": 5
+        },
+        {
+          "tag": "RCH",
+          "culture": "telugu",
+          "religion": "hindu",
+          "owned_in_target": 15,
           "owned_in_core": 0,
           "score": 5
         }
@@ -4617,14 +4583,6 @@
       "suggested_tags": [],
       "candidates": [
         {
-          "tag": "DLH",
-          "culture": "dehlavi",
-          "religion": "sunni",
-          "owned_in_target": 21,
-          "owned_in_core": 0,
-          "score": 5
-        },
-        {
           "tag": "GDA",
           "culture": "bagri",
           "religion": "hindu",
@@ -4679,29 +4637,14 @@
           "owned_in_target": 3,
           "owned_in_core": 0,
           "score": 3
-        }
-      ]
-    },
-    "GUJ_f": {
-      "culture_gates": [],
-      "culture_group_gates": [],
-      "religion_gates": [],
-      "religion_group_gates": [
-        "muslim"
-      ],
-      "tag_gates": [],
-      "rank_gates": [],
-      "reform_gates": [],
-      "tag_excludes": [],
-      "suggested_tags": [],
-      "candidates": [
+        },
         {
-          "tag": "DLH",
-          "culture": "dehlavi",
-          "religion": "sunni",
-          "owned_in_target": 12,
+          "tag": "JHI",
+          "culture": "bagri",
+          "religion": "hindu",
+          "owned_in_target": 3,
           "owned_in_core": 0,
-          "score": 8
+          "score": 3
         }
       ]
     },
@@ -5637,14 +5580,6 @@
       "suggested_tags": [],
       "candidates": [
         {
-          "tag": "CHI",
-          "culture": "mongolian_culture",
-          "religion": "tibetan_buddhism",
-          "owned_in_target": 1551,
-          "owned_in_core": 5,
-          "score": 29
-        },
-        {
           "tag": "GLH",
           "culture": "mongolian_culture",
           "religion": "sunni",
@@ -5699,6 +5634,14 @@
           "owned_in_target": 127,
           "owned_in_core": 0,
           "score": 11
+        },
+        {
+          "tag": "CRS",
+          "culture": "oirat_culture",
+          "religion": "tengri",
+          "owned_in_target": 37,
+          "owned_in_core": 0,
+          "score": 11
         }
       ]
     },
@@ -5730,14 +5673,6 @@
           "culture": "mongolian_culture",
           "religion": "tengri",
           "owned_in_target": 17,
-          "owned_in_core": 0,
-          "score": 9
-        },
-        {
-          "tag": "CHI",
-          "culture": "mongolian_culture",
-          "religion": "tibetan_buddhism",
-          "owned_in_target": 89,
           "owned_in_core": 0,
           "score": 9
         },
@@ -5780,6 +5715,14 @@
           "owned_in_target": 19,
           "owned_in_core": 0,
           "score": 9
+        },
+        {
+          "tag": "OGE",
+          "culture": "mongolian_culture",
+          "religion": "tengri",
+          "owned_in_target": 1,
+          "owned_in_core": 0,
+          "score": 5
         }
       ]
     },
@@ -6857,14 +6800,6 @@
       "suggested_tags": [],
       "candidates": [
         {
-          "tag": "CRO",
-          "culture": "croatian",
-          "religion": "catholic",
-          "owned_in_target": 9,
-          "owned_in_core": 0,
-          "score": 9
-        },
-        {
           "tag": "RAG",
           "culture": "dalmatian",
           "religion": "catholic",
@@ -7005,32 +6940,6 @@
           "owned_in_target": 1,
           "owned_in_core": 0,
           "score": 5
-        }
-      ]
-    },
-    "TRA_f": {
-      "culture_gates": [
-        "german_transylvanian",
-        "hungarian",
-        "szekely_culture",
-        "transylvanian"
-      ],
-      "culture_group_gates": [],
-      "religion_gates": [],
-      "religion_group_gates": [],
-      "tag_gates": [],
-      "rank_gates": [],
-      "reform_gates": [],
-      "tag_excludes": [],
-      "suggested_tags": [],
-      "candidates": [
-        {
-          "tag": "HUN",
-          "culture": "hungarian",
-          "religion": "catholic",
-          "owned_in_target": 33,
-          "owned_in_core": 0,
-          "score": 9
         }
       ]
     },
@@ -7735,6 +7644,14 @@
           "owned_in_target": 1,
           "owned_in_core": 1,
           "score": 4
+        },
+        {
+          "tag": "ARA",
+          "culture": "catalan",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "owned_in_core": 1,
+          "score": 4
         }
       ],
       "notes_html": "<h2>Concept</h2>\n<p>Occitania is a country of written instruments: charters, fors, costumas,\nnotarial acts, poetic laws, consular oaths and provincial estates. It is\nthe one polity of this period that deliberately standardised its own\nvernacular as both a literary and a legal language. Its wealth is\nessentially one dyestuff. Its politics is a permanent negotiation between\ntwo crowns. And its religion is a suppression it never forgot, which is\nwhy the next dissent found a home there.</p>\n<h2>Forming it</h2>\n<ol>\n<li><strong>Speak Occitan or Gascon.</strong> Your culture&rsquo;s dialect is the only\n   requirement on who you are.</li>\n<li><strong>Hold 75 percent of the Occitan-speaking world.</strong> Provence and\n   Languedoc, plus fifteen provinces spanning the Gascon south, the\n   Auvergne and the Limousin.</li>\n<li><strong>Form Occitania.</strong></li>\n</ol>\n<p>There is no city requirement and nothing else to satisfy, which makes\nthis an unusually clean formable to plan around. It is purely a question\nof territory.</p>\n<h2>Pick your founding doctrine on formation</h2>\n<p>Not war against trade. The question is where sovereignty comes from,\nwhich was the Midi&rsquo;s real constitutional argument.</p>\n<ul>\n<li><strong>Lo Pacte Consular.</strong> Toulouse&rsquo;s answer. Burgher satisfaction,\n  legislative efficiency, control, trade and building efficiency, bought\n  with a heavy cut to crown estate power and noble satisfaction.</li>\n<li><strong>Tenc de Degun.</strong> Febus at Orthez in 1347, held of God and of no man\n  in the world. Legitimacy, peace negotiation, garrisons, cheaper wars\n  and prestige, bought with diplomatic reach and burgher satisfaction.</li>\n</ul>\n<p>Each is paid for out of an estate.</p>\n<h2>What happens on formation</h2>\n<ul>\n<li>Rank rises to kingdom.</li>\n<li>Mild stability.</li>\n</ul>\n<h2>After forming</h2>\n<p>The heritage tree runs to 41 advances, opening on the Consistori del Gay\nSaber, the literary academy founded at Toulouse in 1323, and the Leys\nd&rsquo;Amors of 1341 that codified Occitan grammar and poetics. From there:\nbastide charters, the Parlement of Toulouse, the pastel boom, the Chambre\nde l&rsquo;Edit at Castres, Riquet&rsquo;s canal, the Camisards, and the Felibrige.</p>\n<p>Behind it sits a real multi-stage economy: woad to coques to agranat\nusing Millau alum, then Languedoc cloth, then londrins seconds for the\nAleppo trade. Each stage consumes what the last one made.</p>\n<p>Destiny carries your formation answer outward:</p>\n<ul>\n<li><strong>The consular road.</strong> Credit through the Cahorsin lenders, then the\n  Atlantic outlet via the Bordeaux wine privilege, then one sworn\n  instrument covering every consulate and valley. Capstone is the <strong>Fiera\n  Franca</strong>, a chartered free fair with its own law-merchant court.</li>\n<li><strong>The Orthez road.</strong> Hold the western doors at Bayonne and\n  Saint-Jean-Pied-de-Port, inherit Navarre, and settle the debt of Muret\n  by taking Jaca and Huesca. Peter II of Aragon died at Muret in 1213\n  fighting for the Occitan lords. Capstone is the <strong>Castel Sobeiran</strong>,\n  built on hills or mountains away from your capital.</li>\n</ul>\n<h2>Notes</h2>\n<ul>\n<li><strong>There is no Cathar church left to restore.</strong> Montsegur fell in 1244,\n  and the last known perfectus in the Languedoc was burned in 1321.\n  Catharism appears here as memory, grievance and confiscated property.\n  The age 1 advance grants heretic tolerance at a cost in devotion, and\n  its event lays the crusade confiscation rolls in front of you: reopen\n  them and the crown gains while the planted northern lineages lose, or\n  seal them and buy the church&rsquo;s peace.</li>\n<li><strong>Bureaucracies.</strong> Four, of which you run three: the <strong>Estates of\n  Languedoc</strong>, who voted their own taxation and borrowed in the province&rsquo;s\n  own name; the <strong>Cour des Aides</strong>; <strong>Lo Compes</strong>, the land register that\n  made the taille fall on land rather than persons; and the <strong>Cour Majour\n  of Bearn</strong>.</li>\n<li><strong>Nothing here requires Narbonne</strong>, though the Regnum Gothorum does.</li>\n</ul>",
@@ -8263,6 +8180,42 @@
           "owned_in_target": 0,
           "owned_in_core": 0,
           "note": "Vayots Dzor, another Caucasian Armenian micropolity. Pick this only for a deliberately constrained start."
+        }
+      ]
+    },
+    "BZL_f": {
+      "culture_gates": [],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "tag_gates": [
+        "POR"
+      ],
+      "rank_gates": [],
+      "reform_gates": [],
+      "tag_excludes": [],
+      "suggested_tags": [],
+      "candidates": [],
+      "notes_html": "<h2>Concept</h2>\n<p>In 1807 the Portuguese court fled Napoleon and ruled from Rio de Janeiro\nfor fourteen years. Here you make that move yourself: you carry the crown\nacross the Atlantic, office by office, and build a kingdom in Brazil that\ncan outgrow the one in Lisbon.</p>\n<h2>Forming it</h2>\n<ol>\n<li><strong>Play Portugal, with Lisbon as your capital.</strong></li>\n<li><strong>Settle all of Nheteroia,</strong> Rio de Janeiro&rsquo;s province, yourself or\n   through your colony, with no charter still running there.</li>\n<li><strong>Grow Rio de Janeiro into a town.</strong></li>\n<li><strong>Settle a quarter of the Pindorama area</strong> with your own or your\n   subjects&rsquo; land.</li>\n<li><strong>Take the decision Send the Court to Rio.</strong> Rio becomes your capital\n   and the Transmigration begins.</li>\n<li><strong>Move the Royal Council, the Supreme Court and the Royal Treasury to\n   Rio,</strong> with a quarter of your nobles and 15% of your clergy in the\n   Americas. After that the court cannot go back.</li>\n<li><strong>End the move with Two Crowns or Portugal Let Go,</strong> then form Brazil.</li>\n</ol>\n<h2>Pick your founding doctrine on formation</h2>\n<ul>\n<li><strong>A crown of two shores</strong> (30 years): reputation, control and prestige.\n  Opens the court path of the destiny tree.</li>\n<li><strong>The New World first</strong> (30 years): colonists, migration and growth.\n  Opens the frontier path.</li>\n</ul>\n<h2>What happens on formation</h2>\n<p>Brazil becomes a kingdom if it is not one yet and gains stability. For ten\nyears its population grows faster.</p>\n<h2>After forming</h2>\n<ul>\n<li><strong>The Crown in Rio</strong>, your destiny tree. The court path runs through\n  The Garden of Cayenne, A Court of the Arts and A Court Among the Powers.\n  The frontier path runs through Colonia do Sacramento, The Captaincy of\n  Mato Grosso and The Cisplatine Province.</li>\n<li><strong>Five royal offices of your own</strong>, among them The King&rsquo;s Couples, which\n  brings settler families to empty land.</li>\n<li><strong>Keep Brazil growing</strong> with the cabinet action Send Settlers to Brazil\n  and the decision Open the Passports. Decisions such as Curb the Nobles&rsquo;\n  Privilege take back, a tier at a time, what the estates won during the\n  move.</li>\n<li><strong>Next:</strong> the Empire of Brazil, once you own Rio de Janeiro and no\n  country ruled from Europe holds land in South America, and after it\n  the New World.</li>\n</ul>\n<h2>Notes</h2>\n<ul>\n<li><strong>Two Crowns</strong> needs 6 of the 8 royal offices in Rio, half your nobles\n  and a third of your clergy in the Americas, and control in Portugal held\n  at three quarters of its old level for 2 years. It leaves you the Regency\n  Palace in Lisbon.</li>\n<li><strong>Portugal Let Go</strong> releases Portugal as your subject. A revolt in\n  Portugal forces it.</li>\n<li><strong>A failed move</strong> sends the court back to Lisbon: 20 stability lost and\n  no new attempt for 50 years. It happens if Rio falls, or after 50 years,\n  unless you have already committed to Rio.</li>\n<li>Brazil&rsquo;s land grows no sugar, coffee or tobacco at the start. The\n  Columbian exchange brings them.</li>\n</ul>",
+      "special_notes": [
+        {
+          "kind": "info",
+          "title": "Formed through a decision",
+          "html": "<p>Brazil sits in Portugal&rsquo;s formable list from the start, but it cannot be formed until the court has moved. As Portugal, take the decision <strong>Send the Court to Rio</strong>. It starts <strong>the Transmigration</strong>, a disaster that runs the move, and Brazil opens when the move ends with <strong>Two Crowns</strong> or with <strong>Portugal Let Go</strong>. Only a player can take this road.</p>",
+          "locations": [
+            "lisbon",
+            "goana_para"
+          ]
+        }
+      ],
+      "priority_starters": [
+        {
+          "tag": "POR",
+          "culture": "portuguese",
+          "religion": "catholic",
+          "owned_in_target": 0,
+          "owned_in_core": 0,
+          "note": "Portugal. The only road: Brazil grows out of Portugal's own court, moved to Rio de Janeiro."
         }
       ]
     },
@@ -9502,6 +9455,83 @@
       "suggested_tags": [],
       "candidates": [],
       "notes_html": "<h2>Concept</h2>\n<p>Comancheria is the Plains horse empire as a sovereign state, drawn from\nthe long 18th and early 19th century, when the Numunu bands (Penateka,\nYamparika, Quahadi, Nokoni, Kotsoteka) ran a tribute and raid economy\nacross the southern Plains and northern Mexico from the Llano Estacado\nout. It is a paraibo and tekwuniwapi confederation, peace chief and war\nchief, held together by kinship, captive incorporation and the\nbison-and-horse economy rather than by a single throne.</p>\n<p>This is alternate history. In 1337 the Numic bands were still in the\nGreat Basin and the Comanche as a distinct people did not yet exist. The\nadvance tree treats horse mastery as a Renaissance arrival and the\nempire&rsquo;s peak as ages 4 and 5.</p>\n<h2>Forming it</h2>\n<ol>\n<li><strong>Get a shoshoni-group primary culture.</strong> The requirement\n   covers tukudeka, bannock, kuccuntikka, penkwitikka, kusiutta,\n   tetadeka, haivodika, watatikka, wiyimpihtikka, monachi,\n   kuhtsutuuka, and tawakoni cultures. None of them can be picked at\n   the 1337 bookmark: the shoshoni-group polities, including Tawakoni\n   (TWK) and the Xumanos (XUM) who hold the required locations, are\n   Societies of Pops, on the map but not selectable. The practical\n   routes: reach the southern Plains with a playable power, absorb\n   the Numic pops and shift primary culture, or release a\n   shoshoni-cultured subject from conquered territory and continue\n   the campaign as it.</li>\n<li><strong>Conquer kwahada and penatuka.</strong> You must hold both:\n   kwahada is the Llano Estacado heart, penatuka is the Penateka\n   homeland. Both sit in Xumanos territory at game start.</li>\n<li><strong>Hold 45 percent of the southern Plains arc.</strong> Required fraction\n   is 0.45 across Texas, Natahende, High Plains, Central Plains, and\n   the Rockies. This is a wide spread but a low fraction, so a\n   focused southern Plains and northern Texas conquest qualifies.</li>\n<li><strong>Be at peace at home.</strong> A civil war blocks formation.</li>\n<li><strong>Form Comancheria.</strong> Country rank rises to Kingdom on formation\n   if below it. Capital sets to <strong>kwahada</strong>.</li>\n</ol>\n<h2>Pick your founding doctrine on formation</h2>\n<p>The formation event offers two 30-year doctrines:</p>\n<ul>\n<li><strong>Continental Empire.</strong> The raid-and-tribute war machine. Light\n  cavalry power, movement speed, looted amount, manpower, and a\n  large attrition penalty inflicted on hostile armies. The historical\n  Comancheria of the Great Raid era. Shifts Offensive vs Defensive\n  sharply left (offensive). Path A, Continental Tribute Empire,\n  requires this choice.</li>\n<li><strong>Sovereign Nation.</strong> The treaty state. Diplomatic reputation,\n  improve-relations impact, separatism reduction, literacy, and\n  assimilation speed. The Council of the Comanche Nation as a\n  permanent seat of negotiation. Shifts Centralization vs\n  Decentralization sharply left (centralization). Path B,\n  Pan-Indigenous Confederation, requires this choice.</li>\n</ul>\n<h2>What happens on formation</h2>\n<ul>\n<li>Capital moves to <strong>kwahada</strong> (Llano Estacado).</li>\n<li>Country rank rises to Kingdom if below it.</li>\n<li>Permanent <strong>Paraibo Confederation</strong> country modifier is granted\n  (the multi-band federation governance with paraibo peace chiefs\n  and tekwuniwapi war chiefs).</li>\n<li>Mild stability bonus.</li>\n<li>Formation event fires with the two doctrine choices.</li>\n</ul>\n<h2>After forming</h2>\n<p>The destiny tree splits two ways.</p>\n<ul>\n<li><strong>Continental Tribute Empire.</strong> Push south into Mexico. Stage 1\n  takes tamaulipeco and maratine (the Tamaulipas frontier) with a\n  30-army requirement. Stage 2 demands guachichil, cuencame, and chisos in\n  Coahuila with a 50-army and 3500-development bar. Stage 3\n  (continental hegemony) requires mapimi, cuanales, alazapa, and\n  xumani plus a 75-army, 75-prestige, and 3000-gold requirement. Capstone is\n  the Imperial Bison Council. Unlocked by the Continental Empire\n  formation choice.</li>\n<li><strong>Pan-Indigenous Confederation.</strong> Build a treaty federation across\n  the Plains. Stage 1 needs Legalism embraced plus 75 stability and\n  50 prestige. Stage 2 takes he_sapa (the Black Hills) and awatixa\n  with the printing press institution. Stage 3 demands bighorn_\n  mountains, marapa, and minisose, plus 5000 development, 75\n  prestige, and 75 stability. Capstone is the Treaty Hall. Unlocked\n  by the Sovereign Nation formation choice.</li>\n</ul>\n<p>The path you cannot take with a given doctrine still appears in the\ntree but its first stage requires the other path&rsquo;s variable. Commit\non formation.</p>\n<h2>Notes</h2>\n<ul>\n<li>The advance tree mirrors history closely: Age 1 is pre-horse Numic\n  tradition (numic migration, seasonal camps, skirmisher levies),\n  Age 2 is the horse arriving and the Pueblo Revolt scattering its\n  herds (horse mastery, Pueblo Lessons, paraibos confederation), Age\n  3 to 5 is the high-empire Comanchero trade, captive incorporation,\n  raid economy, Council of the Comanche Nation, and the Llano\n  Estacado refuge.</li>\n<li>DHE events trigger off the major advances: horse arrival,\n  Comanchero trade, captive incorporation, Council Hill\n  negotiations, the Mexico-campaign Great Raid era, and the Llano\n  Estacado heartland fortifications.</li>\n<li>The formable is <code>rule = plausible</code>, so it appears in the formables\n  list to any shoshoni-group country, not only after the Plains have\n  been pacified.</li>\n</ul>"
+    },
+    "NWD_f": {
+      "culture_gates": [],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "tag_gates": [],
+      "rank_gates": [],
+      "reform_gates": [],
+      "tag_excludes": [],
+      "suggested_tags": [],
+      "candidates": [
+        {
+          "tag": "CHK",
+          "culture": "cahokia_culture",
+          "religion": "mississippian_ceremonial",
+          "owned_in_target": 23,
+          "owned_in_core": 0,
+          "score": 5
+        },
+        {
+          "tag": "CKP",
+          "culture": "putun_culture",
+          "religion": "mayan",
+          "owned_in_target": 5,
+          "owned_in_core": 0,
+          "score": 5
+        },
+        {
+          "tag": "CLM",
+          "culture": "teco_culture",
+          "religion": "nahuatl",
+          "owned_in_target": 7,
+          "owned_in_core": 0,
+          "score": 5
+        },
+        {
+          "tag": "COC",
+          "culture": "yucatec_culture",
+          "religion": "mayan",
+          "owned_in_target": 12,
+          "owned_in_core": 0,
+          "score": 5
+        },
+        {
+          "tag": "CRA",
+          "culture": "charka_culture",
+          "religion": "mororuma_religion",
+          "owned_in_target": 5,
+          "owned_in_core": 0,
+          "score": 5
+        },
+        {
+          "tag": "CYA",
+          "culture": "sacha_p_qulla_culture",
+          "religion": "inti",
+          "owned_in_target": 10,
+          "owned_in_core": 0,
+          "score": 5
+        },
+        {
+          "tag": "HEL",
+          "culture": "yucatec_culture",
+          "religion": "mayan",
+          "owned_in_target": 6,
+          "owned_in_core": 0,
+          "score": 5
+        },
+        {
+          "tag": "HNK",
+          "culture": "chanka_culture",
+          "religion": "chanka_religion",
+          "owned_in_target": 5,
+          "owned_in_core": 0,
+          "score": 5
+        }
+      ]
     },
     "NZO_f": {
       "culture_gates": [
