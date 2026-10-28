@@ -153,6 +153,21 @@ async function loadAll() {
     ).toLowerCase();
     formablesByKey[rec.block_key] = rec;
   });
+  // Two formables of different countries can share a country name (the
+  // Kingdom and the Empire of Brazil are both "Brazil"): name each by its
+  // own formable title then, which the game writes as `<key>`.
+  const byName = {};
+  for (const rec of formables) (byName[rec._displayName] = byName[rec._displayName] || []).push(rec);
+  for (const group of Object.values(byName)) {
+    if (new Set(group.map((rec) => rec.tag)).size < 2) continue;
+    for (const rec of group) {
+      const title = lookupLoc(rec.block_key);
+      if (title && title !== rec._displayName) {
+        rec._displayName = title;
+        rec._haystack += " " + title.toLowerCase();
+      }
+    }
+  }
   formables.sort((a, b) => a._displayName.localeCompare(b._displayName));
 
   buildTerritoryIndex();
@@ -202,6 +217,27 @@ function expandToAreas(rec) {
     if (info && info.area) out.add(info.area);
   }
   return out;
+}
+
+// The map bounds of a formable's territory: the boxes of every location in
+// its areas. selectFormable fits the view to it; the call was written in May
+// 2026 without the function, so selecting a formable threw there and the map
+// never moved to it.
+function territoryBounds(rec) {
+  const areas = formableTerritory[rec.block_key];
+  if (!areas || areas.size === 0) return null;
+  let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+  for (const [name, info] of Object.entries(geography.locations)) {
+    if (!areas.has(info.area)) continue;
+    const box = locIndex[name] && locIndex[name].bbox;
+    if (!box) continue;
+    x0 = Math.min(x0, box[0]);
+    y0 = Math.min(y0, box[1]);
+    x1 = Math.max(x1, box[2]);
+    y1 = Math.max(y1, box[3]);
+  }
+  if (!Number.isFinite(x0)) return null;
+  return L.latLngBounds(L.latLng(-y1, x0), L.latLng(-y0, x1));
 }
 
 function buildTerritoryIndex() {
@@ -511,7 +547,39 @@ function createPinCopy(worldIndex) {
       keyboard: false,
     }).addTo(grp);
   }
+  // A guide's special notes may name places that are not must-own, such as
+  // the city a decision moves the capital to: pin them in their own colour.
+  const mustOwn = new Set(selected.must_own);
+  const noted = new Set(specialNotesFor(selected).flatMap((n) => n.locations || []));
+  for (const locName of noted) {
+    const info = locIndex[locName];
+    if (!info || mustOwn.has(locName)) continue;
+    const [cx, cy] = info.centroid;
+    const labelText = lookupLoc(locName) || prettifyName(locName);
+    L.marker(L.latLng(-cy, cx + dx), {
+      icon: L.divIcon({
+        className: "must-own-marker",
+        html: `<div class="note-pin"></div><div class="must-own-label">${escapeHtml(labelText)}</div>`,
+        iconSize: [14, 14],
+        iconAnchor: [7, 7],
+      }),
+      keyboard: false,
+    }).addTo(grp);
+  }
   return grp;
+}
+
+function specialNotesFor(rec) {
+  const guide = rec && starters[rec.block_key];
+  return (guide && Array.isArray(guide.special_notes)) ? guide.special_notes : [];
+}
+
+function renderSpecialNotes(rec) {
+  return specialNotesFor(rec).map((n) =>
+    `<div class="special-note ${n.kind === "warn" ? "warn" : "info"}">` +
+    `<div class="special-note-title">${escapeHtml(n.title)}</div>` +
+    `<div class="special-note-body">${n.html}</div></div>`
+  ).join("");
 }
 
 function visibleWorldRange() {
@@ -862,7 +930,7 @@ function showDetail(rec) {
     ).join("") +
     '</div>' +
     '<div class="tab-panels"></div>';
-  $detailBody.innerHTML = headerHtml;
+  $detailBody.innerHTML = renderSpecialNotes(rec) + headerHtml;
 
   const $panels = $detailBody.querySelector(".tab-panels");
   const $tabs = $detailBody.querySelectorAll(".tab");

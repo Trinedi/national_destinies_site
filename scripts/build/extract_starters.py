@@ -770,8 +770,30 @@ def load_guide_overrides(guides_dir: Path) -> dict[str, dict]:
             "notes_html": html.strip(),
             "priority_starters": priority,
             "hide_auto": bool(fm.get("hide_auto")),
+            "special_notes": parse_special_notes(fm.get("special_notes")),
         }
     return out
+
+
+NOTE_KINDS = ("info", "warn")
+
+
+def parse_special_notes(entries) -> list[dict]:
+    """A guide's `special_notes`: a card above every tab, for something a
+    player must know before committing (a formable reached by a decision, a
+    start that cannot press the button). `locations` are pinned on the map."""
+    import markdown
+    notes = []
+    for entry in entries or []:
+        if not isinstance(entry, dict) or not entry.get("title"):
+            continue
+        notes.append({
+            "kind": entry.get("kind") if entry.get("kind") in NOTE_KINDS else "info",
+            "title": str(entry["title"]),
+            "html": markdown.markdown(str(entry.get("body") or ""), extensions=["extra", "smarty"]).strip(),
+            "locations": [loc for loc in entry.get("locations") or [] if isinstance(loc, str)],
+        })
+    return notes
 
 
 def main() -> int:
@@ -825,9 +847,14 @@ def main() -> int:
     bad_refs: list[str] = []
     formable_keys = {rec["block_key"] for rec in formables_doc["formables"]}
     formable_tags = {rec.get("tag") for rec in formables_doc["formables"] if rec.get("tag")}
+    known_locations = set(geography.get("locations", {}))
     for block_key, guide in overrides.items():
         if block_key not in formable_keys:
             bad_refs.append(f"  {block_key}.md: not a known formable block_key")
+        for note in guide.get("special_notes") or []:
+            for loc in note["locations"]:
+                if loc not in known_locations:
+                    bad_refs.append(f"  {block_key}.md: special note pins unknown location {loc}")
         for p in guide.get("priority_starters") or []:
             tag = p.get("tag")
             if not tag:
@@ -851,6 +878,15 @@ def main() -> int:
     out: dict[str, dict] = {}
     skipped_no_gates = 0
     total_candidates = 0
+    # The levels a country already holds: those of the formables that create
+    # its tag. As in the mod's road model (eu5tools/nations.py,
+    # `outranked_by`), the lowest decides, so a start is dropped only when
+    # every reading closes the road, and the formable judged does not count.
+    levels_of_tag: dict[str, list[tuple[str, int]]] = {}
+    for formable in formables_doc["formables"]:
+        if formable.get("tag") and formable.get("level") is not None:
+            levels_of_tag.setdefault(formable["tag"], []).append(
+                (formable["block_key"], int(formable["level"])))
     for rec in formables_doc["formables"]:
         block_key = rec["block_key"]
         override = overrides.get(block_key)
@@ -859,13 +895,14 @@ def main() -> int:
         core_locs, region_locs = formable_target_locations(rec, geography, area_to_locs, region_to_locs)
         tag_excludes = gates.get("tag_excludes") or set()
 
-        # The formable's `level` field is descriptive (it ranks formables by
-        # ambition: tier 1 = duchy-scale, tier 5 = transcendent empire) but
-        # is NOT a hard rank prerequisite. Per the EU5 wiki, "Players can
-        # form countries of higher formation tier" describes what the tier
-        # system is FOR, not a gate. No vanilla formable's `allow` actually
-        # contains a tier-vs-rank implicit check; eligibility is whatever
-        # each formable's potential/allow explicitly states.
+        # The level is a gate. "Players can only form countries of higher
+        # level" (formable_countries/readme.txt), and a country holding the
+        # tag a formable creates counts as that formable's level, from day
+        # one: Aragon (a level 2 formable since 1.4) can never form the
+        # level 2 Catalonia. Country rank plays no part. This comment said
+        # the opposite until 2026-10-29, and the guides recommended such
+        # starts.
+        target_level = int(rec.get("level") or 0)
 
         any_predicates = any(
             any(g.values()) for g in (gates.get("and_groups") or []) + (gates.get("or_groups") or [])
@@ -899,6 +936,9 @@ def main() -> int:
                 if country.get("start_type") == "pop":
                     continue
                 if not country.get("locations"):
+                    continue
+                held = [level for key, level in levels_of_tag.get(tag, []) if key != block_key]
+                if held and min(held) >= target_level:
                     continue
                 bypass_geography = tag in explicit_tags or tag in suggested_tags
                 res = score_candidate(
@@ -953,6 +993,8 @@ def main() -> int:
         if override:
             if override.get("notes_html"):
                 out[block_key]["notes_html"] = override["notes_html"]
+            if override.get("special_notes"):
+                out[block_key]["special_notes"] = override["special_notes"]
             if priority:
                 # Enrich curated picks with the same culture/religion/territory
                 # data we show for auto-derived entries, so the row layout matches.

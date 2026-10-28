@@ -25,8 +25,18 @@ Two sections may be dropped when they do not apply:
 
 - **Pick your founding doctrine** when the formation event offers no choice.
 - **Forming it** only for a formable nobody can press a button for. `BYZ_f`
-  is the sole case: it is frontmatter-only, carrying a `special_notes` warn
-  card instead of a body.
+  is that case: it is frontmatter-only, carrying a `special_notes` warn card
+  instead of a body.
+
+A second kind of frontmatter-only guide is a pointer: a `special_notes` card
+on one formable's page that leads to a road out of it, whose checklist lives
+in the other formable's guide. `POR_f` points to the move of the crown to
+Brazil (`BZL_f`). Both are listed in `BODYLESS_OK` in `scripts/check_guides.py`.
+
+A `special_notes` card shows above the tabs on every tab, and its `locations`
+are pinned on the map in their own colour. Use it for what a player must know
+before committing: a formable reached through a decision, a start that cannot
+press the button.
 
 ## Length
 

@@ -31,8 +31,10 @@ CANONICAL = [
     "Notes",
 ]
 
-# Frontmatter-only guides: a formable nobody can press a button for.
-BODYLESS_OK = {"BYZ_f"}
+# Frontmatter-only guides. BYZ_f: a start that cannot press the button.
+# POR_f: a pointer card on Portugal's page to the road out of it, the move
+# of the crown to Brazil, whose checklist lives in BZL_f.
+BODYLESS_OK = {"BYZ_f", "POR_f"}
 
 # How far over a section budget counts as an error rather than a nudge.
 TOLERANCE = 1.15
