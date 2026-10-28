@@ -61,9 +61,9 @@ years its population grows faster.
   and the decision Open the Passports. Decisions such as Curb the Nobles'
   Privilege take back, a tier at a time, what the estates won during the
   move.
-- **Next:** the Empire of Brazil, once you own Rio de Janeiro and no
-  country ruled from Europe holds land in South America, and after it
-  the New World.
+- **Next:** the Empire of Brazil, once you own 70% of Brazil's lands,
+  Rio de Janeiro among them, and no country ruled from Europe holds land
+  in South America. After it, the New World.
 
 ## Notes
 
