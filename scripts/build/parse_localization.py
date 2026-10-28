@@ -34,7 +34,9 @@ def expand_path(p: str) -> Path:
 # Examples:
 #   ALM: "Almohad Caliphate"
 #   ALM:0 "Almohad Caliphate"
-LOC_LINE = re.compile(r'^\s+([A-Za-z_][A-Za-z0-9_.]*)\s*:\s*\d*\s+"((?:[^"\\]|\\.)*)"')
+# Leading space optional: location_names/location_names_l_english.yml writes
+# its keys at column 0, so no location name reached the site until 2026-10-29.
+LOC_LINE = re.compile(r'^\s*([A-Za-z_][A-Za-z0-9_.]*)\s*:\s*\d*\s+"((?:[^"\\]|\\.)*)"')
 
 
 def parse_loc_file(path: Path) -> dict[str, str]:
@@ -59,7 +61,8 @@ def parse_dir(loc_dir: Path) -> dict[str, str]:
     out: dict[str, str] = {}
     if not loc_dir.exists():
         return out
-    for f in sorted(loc_dir.glob("*.yml")):
+    # Subfolders too: every location name lives in location_names/.
+    for f in sorted(loc_dir.rglob("*.yml")):
         out.update(parse_loc_file(f))
     return out
 
@@ -80,11 +83,15 @@ _CUSTOM_TOOLTIP_RE = re.compile(
 )
 
 
+_HAS_VARIABLE_RE = re.compile(r"\bhas_variable\s*=\s*([A-Za-z_][A-Za-z0-9_]*)")
+
+
 def _scan_raw_for_loc_refs(raw: str) -> set[str]:
-    """Pull loc keys referenced from a Clausewitz raw-text field."""
+    """Pull loc keys referenced from a Clausewitz raw-text field: custom
+    tooltips, and the `<name>_tt` text of every variable tested."""
     if not raw:
         return set()
-    return set(_CUSTOM_TOOLTIP_RE.findall(raw))
+    return set(_CUSTOM_TOOLTIP_RE.findall(raw)) | {f"{name}_tt" for name in _HAS_VARIABLE_RE.findall(raw)}
 
 
 def collect_seed_keys(web_data_dir: Path) -> set[str]:
@@ -184,6 +191,9 @@ def main() -> int:
 
     print(f"reading vanilla {vanilla_dir} ...")
     loc = parse_dir(vanilla_dir)
+    # Each DLC ships its own text (Across the Pillars, 1.4 release).
+    for dlc_dir in sorted((eu5 / "dlc").glob("*/main_menu/localization/english")):
+        loc.update(parse_dir(dlc_dir))
     print(f"  {len(loc)} keys")
 
     print(f"reading mod {mod_dir} ...")

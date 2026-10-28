@@ -41,9 +41,24 @@ def tokenize(text: str) -> list[str]:
     return TOKEN_RE.findall(text)
 
 
+def without_flags(tokens: list[str]) -> list[str]:
+    """Drop `name = value` flags: they mark a node, they are not geography.
+    1.4 writes `not_eligible_for_dynamic_country_name = yes` on 551 areas and
+    provinces, inside the province's location list too."""
+    out: list[str] = []
+    i = 0
+    while i < len(tokens):
+        if i + 2 < len(tokens) and tokens[i + 1] == "=" and tokens[i + 2] not in ("{", "}", "="):
+            i += 3
+            continue
+        out.append(tokens[i])
+        i += 1
+    return out
+
+
 class Parser:
     def __init__(self, tokens: list[str]) -> None:
-        self.toks = tokens
+        self.toks = without_flags(tokens)
         self.i = 0
 
     def peek(self, off: int = 0) -> str | None:

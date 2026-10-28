@@ -197,7 +197,16 @@ def r_country_exists(op: str, value: str, loc) -> str:
 
 
 def r_has_variable(op: str, value: str, loc) -> str:
-    return f"Has variable: {prettify(value)}"
+    # The mod gives every variable a `<name>_tt` text for its tooltip:
+    # "The Transmigration is complete: ..." reads better than its key.
+    told = loc.get(f"{value}_tt")
+    return scrub_loc_functions(told, loc) if told else f"Has variable: {prettify(value)}"
+
+
+def r_said(yes: str, no: str):
+    def render(op: str, value: str, loc) -> str:
+        return yes if value == "yes" else no
+    return render
 
 
 def r_is_frankokratia_state(op: str, value: str, loc) -> str:
@@ -294,6 +303,8 @@ ATOM_HANDLERS = {
     "owns": r_owns_atom,
     "country_exists": r_country_exists,
     "has_variable": r_has_variable,
+    "is_ai": r_said("Played by the AI", "Played by a person"),
+    "is_subject": r_said("A subject", "Not a subject"),
     "is_frankokratia_state": r_is_frankokratia_state,
     "current_age_or_later": r_current_age_or_later,
     "current_age": r_current_age,
