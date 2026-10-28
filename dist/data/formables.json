@@ -551,9 +551,9 @@
       "sub_continents": [],
       "continents": [],
       "must_own": [],
-      "allow_raw": "OR = {\n\t\t\tAND = {\n\t\t\t\t\n\t\t\t\tis_member_of_international_organization_of_type = { type = high_kingship }\n\t\t\t\tany_international_organizations_member_of = {\n\t\t\t\t\tcount = all\n\t\t\t\t\tfilter = {\n\t\t\t\t\t\tinternational_organization_type = international_organization_type:high_kingship\n\t\t\t\t\t\thas_variable = high_kingship_region\n\t\t\t\t\t\tvar:high_kingship_region = region:ireland_region\n\t\t\t\t\t}\n\t\t\t\t\tleader_country ?= root\n\t\t\t\t}\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = neither_highkingship_nor_lordship_exist_tt\n\t\t\t\tNOT = {\n\t\t\t\t\tany_international_organization = {\n\t\t\t\t\t\tOR = {\n\t\t\t\t\t\t\tinternational_organization_type = international_organization_type:lordship_of_ireland\n\t\t\t\t\t\t\tinternational_organization_type = international_organization_type:high_kingship\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\t\n\t\t\t\ttext = IRE_f_sole_high_kingship_tt\n\t\t\t\tis_member_of_international_organization_of_type = { type = high_kingship }\n\t\t\t\tany_international_organizations_member_of = {\n\t\t\t\t\tcount = all\n\t\t\t\t\tfilter = {\n\t\t\t\t\t\tinternational_organization_type = international_organization_type:high_kingship\n\t\t\t\t\t\thas_variable = high_kingship_region\n\t\t\t\t\t\tvar:high_kingship_region = region:ireland_region\n\t\t\t\t\t}\n\t\t\t\t\ttotal_members = 1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tcustom_tooltip = {\n\t\t\ttext = IRE_f_lordship_tt\n\t\t\tnot = { is_member_of_international_organization = international_organization:lordship_of_ireland }\n\t\t}",
-      "potential_raw": "OR = {\n\t\t\tculture = { has_culture_group = culture_group:hibernian_group }\n\t\t\ttag = PLE\n\t\t}",
-      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_ire_formed\n\t\t}\n\t\tif = {\n\t\t\tlimit = { unique_international_organization_type_exists = international_organization_type:lordship_of_ireland }\n\t\t\tdestroy_international_organization = { target = international_organization:lordship_of_ireland }\n\t\t}\n\n\t\t\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = { is_member_of_international_organization_of_type = { type = high_kingship } }\n\t\t\tevery_international_organizations_member_of = {\n\t\t\t\tlimit = {\n\t\t\t\t\tinternational_organization_type = international_organization_type:high_kingship\n\t\t\t\t\thas_variable = high_kingship_region\n\t\t\t\t\tvar:high_kingship_region = region:ireland_region\n\t\t\t\t}\n\t\t\t\tremove_country_from_international_organization = root\n\t\t\t}\n\t\t}\n\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = nd_ire.1\n\t\tadd_stability = stability_mild_bonus",
+      "allow_raw": "custom_tooltip = {\n\t\t\ttext = neither_highkingship_nor_lordship_exist_tt\n\t\t\tNOT = {\n\t\t\t\tany_international_organization = {\n\t\t\t\t\tOR = {\n\t\t\t\t\t\tinternational_organization_type = international_organization_type:lordship_of_ireland\n\t\t\t\t\t\tinternational_organization_type = international_organization_type:high_kingship\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}",
+      "potential_raw": "OR = {\n\t\t\tculture = { has_culture_group = culture_group:hibernian_group }\n\t\t\ttag = PLE\n\t\t}\n\t\tNOT = { is_member_of_international_organization_of_type = { type = high_kingship } }\n\t\tNOT = { is_member_of_international_organization = international_organization:lordship_of_ireland }",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_ire_formed\n\t\t}\n\t\ttrigger_event_non_silently = nd_ire.1\n\t\tadd_stability = stability_mild_bonus\n\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
       "formation_event": "nd_ire.1",
       "source": "vanilla+mod_replace",
       "mod_overrides": true,
@@ -573,81 +573,45 @@
               "text": "Tag: Pale"
             }
           ]
-        }
-      ],
-      "english_allow": [
+        },
         {
-          "kind": "or",
-          "text": "Any of:",
+          "kind": "not",
+          "text": "Must not:",
           "children": [
             {
-              "kind": "and",
-              "text": "All of:",
+              "kind": "block",
+              "text": "Is Member Of International Organization Of Type:",
               "children": [
                 {
-                  "kind": "block",
-                  "text": "Is Member Of International Organization Of Type:",
-                  "children": [
-                    {
-                      "kind": "atom",
-                      "text": "Type: High Kingship"
-                    }
-                  ]
-                },
-                {
-                  "kind": "block",
-                  "text": "Any International Organizations Member Of:",
-                  "children": [
-                    {
-                      "kind": "atom",
-                      "text": "Count: All"
-                    },
-                    {
-                      "kind": "block",
-                      "text": "Filter:",
-                      "children": [
-                        {
-                          "kind": "atom",
-                          "text": "International Organization Type: High Kingship"
-                        },
-                        {
-                          "kind": "atom",
-                          "text": "Has variable: High Kingship Region"
-                        },
-                        {
-                          "kind": "atom",
-                          "text": "Var:High Kingship Region: Ireland"
-                        }
-                      ]
-                    },
-                    {
-                      "kind": "atom",
-                      "text": "Leader Country: Root"
-                    }
-                  ]
+                  "kind": "atom",
+                  "text": "Type: High Kingship"
                 }
               ]
-            },
-            {
-              "kind": "atom",
-              "text": "Neither the nor the of can exist."
-            },
-            {
-              "kind": "atom",
-              "text": "We are the sole remaining member of the High Kingship of Ireland."
             }
           ]
         },
         {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Is Member Of International Organization: Lordship Of Ireland"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
           "kind": "atom",
-          "text": "We cannot do this while being a member of the . Only the international organization leader short can do it through the action."
+          "text": "Neither the nor the of can exist."
         }
       ]
     },
     {
       "block_key": "IRE_high_kingship_f",
-      "mode": "full",
-      "source_file": "00_formable_countries.txt",
+      "mode": "replace",
+      "source_file": "99_nd_ire.txt",
       "tag": "IRE",
       "name": "IRE",
       "adjective": "IRE_ADJ",
@@ -668,10 +632,10 @@
       "must_own": [],
       "allow_raw": "custom_tooltip = {\n\t\t\ttext = IRE_high_kingship_f_leader_tt\n\t\t\tany_international_organizations_member_of = {\n\t\t\t\tcount = all\n\t\t\t\tfilter = {\n\t\t\t\t\tinternational_organization_type = international_organization_type:high_kingship\n\t\t\t\t\thas_variable = high_kingship_region\n\t\t\t\t\tvar:high_kingship_region = region:ireland_region\n\t\t\t\t}\n\t\t\t\tleader_country ?= root\n\t\t\t}\n\t\t}",
       "potential_raw": "is_member_of_international_organization_of_type = { type = high_kingship }",
-      "form_effect_raw": "every_international_organizations_member_of = {\n\t\t\tlimit = {\n\t\t\t\tinternational_organization_type = international_organization_type:high_kingship\n\t\t\t\thas_variable = high_kingship_region\n\t\t\t\tvar:high_kingship_region = region:ireland_region\n\t\t\t}\n\t\t\tremove_country_from_international_organization = root\n\t\t}\n\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
-      "formation_event": null,
-      "source": "vanilla",
-      "mod_overrides": false,
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_ire_formed\n\t\t}\n\t\ttrigger_event_non_silently = nd_ire.1\n\t\tadd_stability = stability_mild_bonus\n\n\t\t\n\t\tevery_international_organizations_member_of = {\n\t\t\tlimit = {\n\t\t\t\tinternational_organization_type = international_organization_type:high_kingship\n\t\t\t\thas_variable = high_kingship_region\n\t\t\t\tvar:high_kingship_region = region:ireland_region\n\t\t\t}\n\t\t\tremove_country_from_international_organization = root\n\t\t}\n\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
+      "formation_event": "nd_ire.1",
+      "source": "vanilla+mod_replace",
+      "mod_overrides": true,
       "variant_label": "High Kingship",
       "color_rgb": "#2b8b24",
       "english_potential": [
@@ -695,8 +659,8 @@
     },
     {
       "block_key": "IRE_lordship_of_ireland_f",
-      "mode": "full",
-      "source_file": "00_formable_countries.txt",
+      "mode": "replace",
+      "source_file": "99_nd_ire.txt",
       "tag": "IRE",
       "name": "IRE",
       "adjective": "IRE_ADJ",
@@ -717,10 +681,10 @@
       "must_own": [],
       "allow_raw": "custom_tooltip = {\n\t\t\ttext = IRE_lordship_of_ireland_f_leader_tt\n\t\t\tinternational_organization:lordship_of_ireland = {\n\t\t\t\tleader_country ?= root\n\t\t\t}\n\t\t}",
       "potential_raw": "is_member_of_international_organization = international_organization:lordship_of_ireland",
-      "form_effect_raw": "if = {\n\t\t\tlimit = { unique_international_organization_type_exists = international_organization_type:lordship_of_ireland }\n\t\t\tdestroy_international_organization = { target = international_organization:lordship_of_ireland }\n\t\t}\n\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
-      "formation_event": null,
-      "source": "vanilla",
-      "mod_overrides": false,
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_ire_formed\n\t\t}\n\t\ttrigger_event_non_silently = nd_ire.1\n\t\tadd_stability = stability_mild_bonus\n\n\t\tif = {\n\t\t\tlimit = { unique_international_organization_type_exists = international_organization_type:lordship_of_ireland }\n\t\t\tdestroy_international_organization = { target = international_organization:lordship_of_ireland }\n\t\t}\n\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
+      "formation_event": "nd_ire.1",
+      "source": "vanilla+mod_replace",
+      "mod_overrides": true,
       "variant_label": "Lordship Of Ireland",
       "color_rgb": "#2b8b24",
       "english_potential": [
@@ -902,6 +866,499 @@
       ]
     },
     {
+      "block_key": "ADU_f",
+      "mode": "full",
+      "source_file": "00_formable_countries.txt",
+      "tag": "ADU",
+      "name": "ADU",
+      "adjective": "ADU_ADJ",
+      "flag": "ADU",
+      "color": "map_ADU",
+      "level": 3,
+      "fraction": 0.75,
+      "rule": "plausible",
+      "content_priority": null,
+      "regions": [
+        "iberia_region"
+      ],
+      "areas": [],
+      "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [],
+      "allow_raw": "custom_tooltip = {\n\t\t\ttext = ADU_f_not_muslim\n\n\t\t\tregion:iberia_region = {\n\t\t\t\tNOT = {\n\t\t\t\t\tany_location_in_region = {\n\t\t\t\t\t\towner = {\n\t\t\t\t\t\t\treligion.group != religion_group:muslim\n\t\t\t\t\t\t\tNOT = { any_overlord_or_above = { this = root } }\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\t\t\n\t\t}",
+      "potential_raw": "culture = { has_culture_group = culture_group:iberian_group }\n\t\treligion.group = religion_group:muslim\n\n\t\tNOT = { global_var:battle_for_the_strait_winner_country ?= root }",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_adu_formed\n\t\t}\n\t\ttrigger_event_non_silently = nd_adu.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tcountry_rank_level < 4\n\t\t\t}\n\t\t\tset_country_rank_effect = {\n\t\t\t\trank = country_rank:rank_empire\n\t\t\t}\n\t\t}",
+      "formation_event": "nd_adu.1",
+      "source": "vanilla+mod_inject",
+      "mod_overrides": true,
+      "mod_source_file": "99_nd_adu.txt",
+      "variant_label": null,
+      "color_rgb": "#efe092",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Iberian Group culture group"
+        },
+        {
+          "kind": "atom",
+          "text": "Islam group"
+        },
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Global Var:Battle For The Strait Winner Country: Root"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Every location in must be owned by a country or one of our subjects!"
+        }
+      ]
+    },
+    {
+      "block_key": "ARA_f",
+      "mode": "full",
+      "source_file": "00_formable_countries.txt",
+      "tag": "ARA",
+      "name": "ARA",
+      "adjective": "ARA_ADJ",
+      "flag": "ARA",
+      "color": "map_ARA",
+      "level": 2,
+      "fraction": 0.75,
+      "rule": "historical",
+      "content_priority": null,
+      "regions": [],
+      "areas": [
+        "aragon_area"
+      ],
+      "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [],
+      "allow_raw": "",
+      "potential_raw": "NOT = { tag = ARA }\n\t\tOR = {\n\t\t\tculture = culture:aragonese\n\t\t\tculture = culture:catalan\n\t\t}\n\t\treligion.group = religion_group:christian",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_ara_formed\n\t\t}\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tnd_can_take_kingdom_rank = yes\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\t\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\towns = location:zaragoza\n\t\t\t\tNOT = { capital = location:zaragoza }\n\t\t\t}\n\t\t\tset_capital = location:zaragoza\n\t\t}\n\t\ttrigger_event_non_silently = nd_ara.1\n\t\tadd_stability = stability_mild_bonus",
+      "formation_event": "nd_ara.1",
+      "source": "vanilla+mod_inject",
+      "mod_overrides": true,
+      "mod_source_file": "99_nd_ara.txt",
+      "variant_label": null,
+      "color_rgb": "#b04852",
+      "english_potential": [
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Tag: Aragon"
+            }
+          ]
+        },
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Aragonese culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Catalan culture"
+            }
+          ]
+        },
+        {
+          "kind": "atom",
+          "text": "Christianity group"
+        }
+      ],
+      "english_allow": []
+    },
+    {
+      "block_key": "CAS_f",
+      "mode": "full",
+      "source_file": "00_formable_countries.txt",
+      "tag": "CAS",
+      "name": "CAS",
+      "adjective": "CAS_ADJ",
+      "flag": "CAS",
+      "color": "map_CAS",
+      "level": 2,
+      "fraction": 0.75,
+      "rule": "historical",
+      "content_priority": null,
+      "regions": [],
+      "areas": [
+        "castile_area"
+      ],
+      "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [],
+      "allow_raw": "",
+      "potential_raw": "NOT = { tag = CAS }\n\t\tculture = culture:castilian\n\t\treligion.group = religion_group:christian",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_cas_formed\n\t\t}\n\t\t\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tnd_can_take_kingdom_rank = yes\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = nd_cas.1\n\t\tadd_stability = stability_mild_bonus",
+      "formation_event": "nd_cas.1",
+      "source": "vanilla+mod_inject",
+      "mod_overrides": true,
+      "mod_source_file": "99_nd_cas.txt",
+      "variant_label": null,
+      "color_rgb": "#e88b0e",
+      "english_potential": [
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Tag: Castile"
+            }
+          ]
+        },
+        {
+          "kind": "atom",
+          "text": "Castilian culture"
+        },
+        {
+          "kind": "atom",
+          "text": "Christianity group"
+        }
+      ],
+      "english_allow": []
+    },
+    {
+      "block_key": "CAT_f",
+      "mode": "full",
+      "source_file": "00_formable_countries.txt",
+      "tag": "CAT",
+      "name": "CAT",
+      "adjective": "CAT_ADJ",
+      "flag": "CAT",
+      "color": "map_CAT",
+      "level": 2,
+      "fraction": 0.75,
+      "rule": "historical",
+      "content_priority": null,
+      "regions": [],
+      "areas": [
+        "catalonia_area"
+      ],
+      "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [],
+      "allow_raw": "",
+      "potential_raw": "NOT = { tag = CAT }\n\t\tculture = culture:catalan\n\t\treligion.group = religion_group:christian",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_cat_formed\n\t\t}\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\towns = location:barcelona\n\t\t\t\tNOT = { capital = location:barcelona }\n\t\t\t}\n\t\t\tset_capital = location:barcelona\n\t\t}\n\t\t\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = { has_or_had_tag = ARA }\n\t\t\tadd_country_modifier = {\n\t\t\t\tmodifier = nd_cat_crown_unmade\n\t\t\t\tyears = 10\n\t\t\t\tmode = add_and_extend\n\t\t\t}\n\t\t}\n\t\ttrigger_event_non_silently = nd_cat.1\n\t\tadd_stability = stability_mild_bonus",
+      "formation_event": "nd_cat.1",
+      "source": "vanilla+mod_inject",
+      "mod_overrides": true,
+      "mod_source_file": "99_nd_cat.txt",
+      "variant_label": null,
+      "color_rgb": "#bc3302",
+      "english_potential": [
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Tag: Catalonia"
+            }
+          ]
+        },
+        {
+          "kind": "atom",
+          "text": "Catalan culture"
+        },
+        {
+          "kind": "atom",
+          "text": "Christianity group"
+        }
+      ],
+      "english_allow": []
+    },
+    {
+      "block_key": "GLC_f",
+      "mode": "full",
+      "source_file": "00_formable_countries.txt",
+      "tag": "GLC",
+      "name": "GLC",
+      "adjective": "GLC_ADJ",
+      "flag": "GLC",
+      "color": "map_GLC",
+      "level": 2,
+      "fraction": 0.75,
+      "rule": "historical",
+      "content_priority": null,
+      "regions": [],
+      "areas": [
+        "galicia_area"
+      ],
+      "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [],
+      "allow_raw": "",
+      "potential_raw": "NOT = { tag = GLC }\n\t\tculture = culture:galician\n\t\treligion.group = religion_group:christian",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_glc_formed\n\t\t}\n\t\t\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tnd_can_take_kingdom_rank = yes\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\t\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\towns = location:santiago_compostela\n\t\t\t\tNOT = { capital = location:santiago_compostela }\n\t\t\t}\n\t\t\tset_capital = location:santiago_compostela\n\t\t}\n\t\ttrigger_event_non_silently = nd_glc.1\n\t\tadd_stability = stability_mild_bonus",
+      "formation_event": "nd_glc.1",
+      "source": "vanilla+mod_inject",
+      "mod_overrides": true,
+      "mod_source_file": "99_nd_glc.txt",
+      "variant_label": null,
+      "color_rgb": "#efa175",
+      "english_potential": [
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Tag: Galicia"
+            }
+          ]
+        },
+        {
+          "kind": "atom",
+          "text": "Galician culture"
+        },
+        {
+          "kind": "atom",
+          "text": "Christianity group"
+        }
+      ],
+      "english_allow": []
+    },
+    {
+      "block_key": "LON_f",
+      "mode": "full",
+      "source_file": "00_formable_countries.txt",
+      "tag": "LON",
+      "name": "LON",
+      "adjective": "LON_ADJ",
+      "flag": "LON",
+      "color": "map_LON",
+      "level": 2,
+      "fraction": 0.75,
+      "rule": "historical",
+      "content_priority": null,
+      "regions": [],
+      "areas": [
+        "leon_area"
+      ],
+      "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [],
+      "allow_raw": "",
+      "potential_raw": "NOT = { tag = LON }\n\t\tculture = culture:leonese\n\t\treligion.group = religion_group:christian",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_lon_formed\n\t\t}\n\t\t\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tnd_can_take_kingdom_rank = yes\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\towns = location:leon\n\t\t\t\tNOT = { capital = location:leon }\n\t\t\t}\n\t\t\tset_capital = location:leon\n\t\t}\n\t\ttrigger_event_non_silently = nd_lon.1\n\t\tadd_stability = stability_mild_bonus",
+      "formation_event": "nd_lon.1",
+      "source": "vanilla+mod_inject",
+      "mod_overrides": true,
+      "mod_source_file": "99_nd_lon.txt",
+      "variant_label": null,
+      "color_rgb": "#6c0f65",
+      "english_potential": [
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Tag: Le\u00f3n"
+            }
+          ]
+        },
+        {
+          "kind": "atom",
+          "text": "Leonese culture"
+        },
+        {
+          "kind": "atom",
+          "text": "Christianity group"
+        }
+      ],
+      "english_allow": []
+    },
+    {
+      "block_key": "MLL_f",
+      "mode": "full",
+      "source_file": "00_formable_countries.txt",
+      "tag": "MLL",
+      "name": "MLL",
+      "adjective": "MLL_ADJ",
+      "flag": "MLL",
+      "color": "map_MLL",
+      "level": 2,
+      "fraction": 0.75,
+      "rule": "historical",
+      "content_priority": null,
+      "regions": [],
+      "areas": [
+        "balearics_area"
+      ],
+      "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [],
+      "allow_raw": "",
+      "potential_raw": "NOT = { tag = MLL }\n\t\tculture = culture:catalan\n\t\treligion.group = religion_group:christian",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_mll_formed\n\t\t}\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tnd_can_take_kingdom_rank = yes\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\t\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\towns = location:palma\n\t\t\t\tNOT = { capital = location:palma }\n\t\t\t}\n\t\t\tset_capital = location:palma\n\t\t}\n\t\ttrigger_event_non_silently = nd_mll.1\n\t\tadd_stability = stability_mild_bonus",
+      "formation_event": "nd_mll.1",
+      "source": "vanilla+mod_inject",
+      "mod_overrides": true,
+      "mod_source_file": "99_nd_mll.txt",
+      "variant_label": null,
+      "color_rgb": "#7d5d84",
+      "english_potential": [
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Tag: Mallorca"
+            }
+          ]
+        },
+        {
+          "kind": "atom",
+          "text": "Catalan culture"
+        },
+        {
+          "kind": "atom",
+          "text": "Christianity group"
+        }
+      ],
+      "english_allow": []
+    },
+    {
+      "block_key": "NAV_f",
+      "mode": "full",
+      "source_file": "00_formable_countries.txt",
+      "tag": "NAV",
+      "name": "NAV",
+      "adjective": "NAV_ADJ",
+      "flag": "NAV",
+      "color": "map_NAV",
+      "level": 2,
+      "fraction": 0.8,
+      "rule": "historical",
+      "content_priority": null,
+      "regions": [],
+      "areas": [],
+      "locations": [
+        "saint_jean_pied_de_port"
+      ],
+      "provinces": [
+        "navarre_province"
+      ],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [],
+      "allow_raw": "",
+      "potential_raw": "NOT = { tag = NAV }\n\t\tculture = culture:basque\n\t\treligion.group = religion_group:christian",
+      "form_effect_raw": "",
+      "formation_event": null,
+      "source": "vanilla",
+      "mod_overrides": false,
+      "variant_label": null,
+      "color_rgb": "#980200",
+      "english_potential": [
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Tag: Navarre"
+            }
+          ]
+        },
+        {
+          "kind": "atom",
+          "text": "Basque culture"
+        },
+        {
+          "kind": "atom",
+          "text": "Christianity group"
+        }
+      ],
+      "english_allow": []
+    },
+    {
+      "block_key": "POR_f",
+      "mode": "full",
+      "source_file": "00_formable_countries.txt",
+      "tag": "POR",
+      "name": "POR",
+      "adjective": "POR_ADJ",
+      "flag": "POR",
+      "color": "map_POR",
+      "level": 2,
+      "fraction": 0.75,
+      "rule": "historical",
+      "content_priority": null,
+      "regions": [],
+      "areas": [
+        "north_portugal_area"
+      ],
+      "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [],
+      "allow_raw": "",
+      "potential_raw": "NOT = { tag = POR }\n\t\tculture = culture:portuguese\n\t\treligion.group = religion_group:christian",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_por_formed\n\t\t}\n\t\t\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tnd_can_take_kingdom_rank = yes\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\t\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\towns = location:lisbon\n\t\t\t\tNOT = { capital = location:lisbon }\n\t\t\t}\n\t\t\tset_capital = location:lisbon\n\t\t}\n\t\ttrigger_event_non_silently = nd_por.1\n\t\tadd_stability = stability_mild_bonus",
+      "formation_event": "nd_por.1",
+      "source": "vanilla+mod_inject",
+      "mod_overrides": true,
+      "mod_source_file": "99_nd_por.txt",
+      "variant_label": null,
+      "color_rgb": "#28708c",
+      "english_potential": [
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Tag: Portugal"
+            }
+          ]
+        },
+        {
+          "kind": "atom",
+          "text": "Portuguese culture"
+        },
+        {
+          "kind": "atom",
+          "text": "Christianity group"
+        }
+      ],
+      "english_allow": []
+    },
+    {
       "block_key": "SPA_f",
       "mode": "full",
       "source_file": "00_formable_countries.txt",
@@ -910,7 +1367,7 @@
       "adjective": "SPA_ADJ",
       "flag": "SPA",
       "color": "map_SPA",
-      "level": 3,
+      "level": 4,
       "fraction": 0.75,
       "rule": "historical",
       "content_priority": 800,
@@ -950,62 +1407,57 @@
       ]
     },
     {
-      "block_key": "ADU_f",
+      "block_key": "VAL_f",
       "mode": "full",
       "source_file": "00_formable_countries.txt",
-      "tag": "ADU",
-      "name": "ADU",
-      "adjective": "ADU_ADJ",
-      "flag": "ADU",
-      "color": "map_ADU",
-      "level": 3,
+      "tag": "VAL",
+      "name": "VAL",
+      "adjective": "VAL_ADJ",
+      "flag": "VAL",
+      "color": "map_VAL",
+      "level": 2,
       "fraction": 0.75,
-      "rule": "plausible",
+      "rule": "historical",
       "content_priority": null,
-      "regions": [
-        "iberia_region"
+      "regions": [],
+      "areas": [
+        "valencia_area"
       ],
-      "areas": [],
       "locations": [],
       "provinces": [],
       "sub_continents": [],
       "continents": [],
       "must_own": [],
-      "allow_raw": "custom_tooltip = {\n\t\t\ttext = ADU_f_not_muslim\n\n\t\t\tregion:iberia_region = {\n\t\t\t\tNOT = {\n\t\t\t\t\tany_location_in_region = {\n\t\t\t\t\t\towner = {\n\t\t\t\t\t\t\treligion.group != religion_group:muslim\n\t\t\t\t\t\t\tNOT = { any_overlord_or_above = { this = root } }\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\t\t\n\t\t}",
-      "potential_raw": "OR = {\n\t\t\tculture = { has_culture_group = culture_group:maghrebi_group }\n\t\t\tculture = { has_culture_group = culture_group:iberian_group }\n\t\t}\n\t\treligion.group = religion_group:muslim",
-      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_adu_formed\n\t\t}\n\t\ttrigger_event_non_silently = nd_adu.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tcountry_rank_level < 4\n\t\t\t}\n\t\t\tset_country_rank_effect = {\n\t\t\t\trank = country_rank:rank_empire\n\t\t\t}\n\t\t}",
-      "formation_event": "nd_adu.1",
+      "allow_raw": "",
+      "potential_raw": "NOT = { tag = VAL }\n\t\tculture = culture:catalan\n\t\treligion.group = religion_group:christian",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_val_formed\n\t\t}\n\t\t\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tnd_can_take_kingdom_rank = yes\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\t\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\towns = location:valencia\n\t\t\t\tNOT = { capital = location:valencia }\n\t\t\t}\n\t\t\tset_capital = location:valencia\n\t\t}\n\t\ttrigger_event_non_silently = nd_val.1\n\t\tadd_stability = stability_mild_bonus",
+      "formation_event": "nd_val.1",
       "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "mod_source_file": "99_nd_adu.txt",
+      "mod_source_file": "99_nd_val.txt",
       "variant_label": null,
-      "color_rgb": "#efe092",
+      "color_rgb": "#40a0db",
       "english_potential": [
         {
-          "kind": "or",
-          "text": "Any of:",
+          "kind": "not",
+          "text": "Must not:",
           "children": [
             {
               "kind": "atom",
-              "text": "Maghrebi Group culture group"
-            },
-            {
-              "kind": "atom",
-              "text": "Iberian Group culture group"
+              "text": "Tag: Valencia"
             }
           ]
         },
         {
           "kind": "atom",
-          "text": "Islam group"
-        }
-      ],
-      "english_allow": [
+          "text": "Catalan culture"
+        },
         {
           "kind": "atom",
-          "text": "Every location in must be owned by a country or one of our subjects!"
+          "text": "Christianity group"
         }
-      ]
+      ],
+      "english_allow": []
     },
     {
       "block_key": "AIA_f",
@@ -1100,7 +1552,7 @@
       "adjective": "KOA_ADJ",
       "flag": "KOA",
       "color": "map_crusader_africa",
-      "level": 2,
+      "level": 3,
       "fraction": 0.75,
       "rule": "plausible",
       "content_priority": null,
@@ -1182,8 +1634,8 @@
         "constantinople"
       ],
       "allow_raw": "NOT = { country_exists = c:LAT }\n\t\towns = location:constantinople\n\t\treligion = religion:catholic\n\t\tOR = {\n\t\t\tculture = { has_culture_group = culture_group:french_group }\n\t\t\tculture = { has_culture_group = culture_group:iberian_group }\n\t\t\tculture = { has_culture_group = culture_group:italian_group }\n\t\t}\n\t\tOR = {\n\t\t\tcurrent_age = age_1_traditions\n\t\t\tcurrent_age = age_2_renaissance\n\t\t\tcurrent_age = age_3_discovery\n\t\t\tcurrent_age = age_4_reformation\n\t\t}",
-      "potential_raw": "NOT = { country_exists = c:LAT }\n\t\tNOT = { has_variable = lat_reduced_requirements_to_form }\n\t\treligion = religion:catholic\n\t\tis_frankokratia_state = yes\n\t\tNOT = { current_age_or_later = { age = age_4_reformation } }",
-      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_lat_formed\n\t\t}\n\t\t\n\t\ttrigger_event_non_silently = nd_lat.1\n\t\tadd_stability = stability_mild_bonus\n\n\t\t\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\tif = {\n\t\t\tlimit = { has_reform = government_reform:partitio_reform }\n\t\t\tremove_reform = government_reform:partitio_reform\n\t\t}\n\t\tunlock_government_reform_effect = { type = lat_restored_rule_of_the_latins }\n\t\tadd_reform = government_reform:lat_restored_rule_of_the_latins\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tculture = culture:catalan\n\t\t\t\tNOT = { has_variable = de_brienne_rule_of_athens }\n\t\t\t\tNOT = { has_reform = government_reform:ach_heirs_of_the_latin_empire }\n\t\t\t}\n\t\t\thidden_effect = {\n\t\t\t\tchange_country_color = map_LAT_catalan_restoration\n\t\t\t}\n\t\t}\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\thas_reform = government_reform:ach_heirs_of_the_latin_empire\n\t\t\t\tNOT = { has_variable = de_brienne_rule_of_athens }\n\t\t\t}\n\t\t\thidden_effect = {\n\t\t\t\tchange_country_color = map_LAT_titular_restoration\n\t\t\t}\n\t\t}\n\t\telse_if = {\n\t\t\tlimit = {\n\t\t\t\tNOT = { has_reform = government_reform:ach_heirs_of_the_latin_empire }\n\t\t\t\tNOT = { culture = culture:catalan }\n\t\t\t}\n\t\t\thidden_effect = {\n\t\t\t\tchange_country_color = map_LAT\n\t\t\t}\n\t\t}",
+      "potential_raw": "NOT = { country_exists = c:LAT }\n\t\tNOT = { has_variable = lat_reduced_requirements_to_form }\n\t\treligion = religion:catholic\n\t\tis_frankokratia_state = yes\n\t\tNOT = { current_age_or_later = { age = age_5_absolutism } }",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_lat_formed\n\t\t}\n\t\t\n\t\ttrigger_event_non_silently = nd_lat.1\n\t\tadd_stability = stability_mild_bonus\n\n\t\t\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\tif = {\n\t\t\tlimit = { NOT = { capital = location:constantinople } }\n\t\t\tmove_capital_event_effect = {\n\t\t\t\tfrom = root.capital\n\t\t\t\tto = location:constantinople\n\t\t\t}\n\t\t}\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tlocation:constantinople = {\n\t\t\t\t\tNOT = { is_core_of = ROOT }\n\t\t\t\t}\n\t\t\t}\n\t\t\tlocation:constantinople = { add_core = ROOT }\n\t\t}\n\t\tif = {\n\t\t\tlimit = { has_reform = government_reform:lat_papal_restoration_claimant }\n\t\t\tremove_reform = government_reform:lat_papal_restoration_claimant\n\t\t}\n\t\tif = {\n\t\t\tlimit = { has_reform = government_reform:partitio_reform }\n\t\t\tremove_reform = government_reform:partitio_reform\n\t\t}\n\t\tunlock_government_reform_effect = { type = lat_restored_rule_of_the_latins }\n\t\tadd_reform = government_reform:lat_restored_rule_of_the_latins\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tculture = culture:catalan\n\t\t\t\tNOT = { has_variable = de_brienne_rule_of_athens }\n\t\t\t\tNOT = { has_reform = government_reform:ach_heirs_of_the_latin_empire }\n\t\t\t}\n\t\t\thidden_effect = {\n\t\t\t\tchange_country_color = map_LAT_catalan_restoration\n\t\t\t}\n\t\t}\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\thas_reform = government_reform:ach_heirs_of_the_latin_empire\n\t\t\t\tNOT = { has_variable = de_brienne_rule_of_athens }\n\t\t\t}\n\t\t\thidden_effect = {\n\t\t\t\tchange_country_color = map_LAT_titular_restoration\n\t\t\t}\n\t\t}\n\t\telse_if = {\n\t\t\tlimit = {\n\t\t\t\tNOT = { has_reform = government_reform:ach_heirs_of_the_latin_empire }\n\t\t\t\tNOT = { culture = culture:catalan }\n\t\t\t}\n\t\t\thidden_effect = {\n\t\t\t\tchange_country_color = map_LAT\n\t\t\t}\n\t\t}",
       "formation_event": "nd_lat.1",
       "source": "vanilla+mod_replace",
       "mod_overrides": true,
@@ -1224,7 +1676,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Age 4 Reformation or later"
+              "text": "Age 5 Absolutism or later"
             }
           ]
         }
@@ -1292,8 +1744,8 @@
     },
     {
       "block_key": "LAT_REDUCED_REQUIREMENTS_f",
-      "mode": "full",
-      "source_file": "00_formable_countries.txt",
+      "mode": "replace",
+      "source_file": "99_nd_lat.txt",
       "tag": "LAT",
       "name": "LAT",
       "adjective": "LAT_ADJ",
@@ -1330,10 +1782,10 @@
       ],
       "allow_raw": "NOT = { country_exists = c:LAT }\n\t\towns = location:constantinople\n\t\treligion = religion:catholic\n\t\tOR = {\n\t\t\tculture = { has_culture_group = culture_group:french_group }\n\t\t\tculture = { has_culture_group = culture_group:iberian_group }\n\t\t\tculture = { has_culture_group = culture_group:italian_group }\n\t\t}\n\t\tOR = {\n\t\t\tcurrent_age = age_1_traditions\n\t\t\tcurrent_age = age_2_renaissance\n\t\t\tcurrent_age = age_3_discovery\n\t\t}",
       "potential_raw": "NOT = { country_exists = c:LAT }\n\t\treligion = religion:catholic\n\t\thas_variable = lat_reduced_requirements_to_form\n\t\tis_frankokratia_state = yes\n\t\tNOT = { current_age_or_later = { age = age_4_reformation } }",
-      "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\tif = {\n\t\t\tlimit = { has_reform = government_reform:partitio_reform }\n\t\t\tremove_reform = government_reform:partitio_reform\n\t\t}\n\t\tunlock_government_reform_effect = { type = lat_restored_rule_of_the_latins }\n\t\tadd_reform = government_reform:lat_restored_rule_of_the_latins\n\t\tif = {\n\t\t\tlimit = { \n\t\t\t\tculture = culture:catalan\n\t\t\t\tNOT = { has_variable = de_brienne_rule_of_athens }\n\t\t\t\tNOT = { has_reform = government_reform:ach_heirs_of_the_latin_empire } \n\t\t\t}\n\t\t\thidden_effect = {\n\t\t\t\tchange_country_color = map_LAT_catalan_restoration\n\t\t\t}\n\t\t}\n\t\tif = {\n\t\t\tlimit = { \n\t\t\t\thas_reform = government_reform:ach_heirs_of_the_latin_empire\n\t\t\t\tNOT = { has_variable = de_brienne_rule_of_athens }\n\t\t\t}\n\t\t\thidden_effect = {\n\t\t\t\tchange_country_color = map_LAT_titular_restoration\n\t\t\t}            \n\t\t}\n\t\telse_if = {\n\t\t\tlimit = {\n\t\t\t\tNOT = { has_reform = government_reform:ach_heirs_of_the_latin_empire } \n\t\t\t\tNOT = { culture = culture:catalan }\n\t\t\t}\n\t\t\thidden_effect = {\n\t\t\t\tchange_country_color = map_LAT\n\t\t\t} \n\t\t}",
-      "formation_event": null,
-      "source": "vanilla",
-      "mod_overrides": false,
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_lat_formed\n\t\t}\n\t\ttrigger_event_non_silently = nd_lat.1\n\t\tadd_stability = stability_mild_bonus\n\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\tif = {\n\t\t\tlimit = { NOT = { capital = location:constantinople } }\n\t\t\tmove_capital_event_effect = {\n\t\t\t\tfrom = root.capital\n\t\t\t\tto = location:constantinople\n\t\t\t}\n\t\t}\n\t\tif = {\n            limit = {\n                location:constantinople = {\n                    NOT = { is_core_of = ROOT }\n                }\n            }\n            location:constantinople = { add_core = ROOT }\n        }\n\t\tif = {\n\t\t\tlimit = { has_reform = government_reform:lat_papal_restoration_claimant }\n\t\t\tremove_reform = government_reform:lat_papal_restoration_claimant\n\t\t}\n\t\tif = {\n\t\t\tlimit = { has_reform = government_reform:partitio_reform }\n\t\t\tremove_reform = government_reform:partitio_reform\n\t\t}\n\t\tunlock_government_reform_effect = { type = lat_restored_rule_of_the_latins }\n\t\tadd_reform = government_reform:lat_restored_rule_of_the_latins\n\t\tif = {\n\t\t\tlimit = { \n\t\t\t\tculture = culture:catalan\n\t\t\t\tNOT = { has_variable = de_brienne_rule_of_athens }\n\t\t\t\tNOT = { has_reform = government_reform:ach_heirs_of_the_latin_empire } \n\t\t\t}\n\t\t\thidden_effect = {\n\t\t\t\tchange_country_color = map_LAT_catalan_restoration\n\t\t\t}\n\t\t}\n\t\tif = {\n\t\t\tlimit = { \n\t\t\t\thas_reform = government_reform:ach_heirs_of_the_latin_empire\n\t\t\t\tNOT = { has_variable = de_brienne_rule_of_athens }\n\t\t\t}\n\t\t\thidden_effect = {\n\t\t\t\tchange_country_color = map_LAT_titular_restoration\n\t\t\t}            \n\t\t}\n\t\telse_if = {\n\t\t\tlimit = {\n\t\t\t\tNOT = { has_reform = government_reform:ach_heirs_of_the_latin_empire } \n\t\t\t\tNOT = { culture = culture:catalan }\n\t\t\t}\n\t\t\thidden_effect = {\n\t\t\t\tchange_country_color = map_LAT\n\t\t\t} \n\t\t}",
+      "formation_event": "nd_lat.1",
+      "source": "vanilla+mod_replace",
+      "mod_overrides": true,
       "variant_label": "Reduced Requirements",
       "color_rgb": "#bdbdbd",
       "english_potential": [
@@ -1575,8 +2027,8 @@
     },
     {
       "block_key": "THE_REDUCED_REQUIREMENTS_f",
-      "mode": "full",
-      "source_file": "00_formable_countries.txt",
+      "mode": "replace",
+      "source_file": "99_nd_the.txt",
       "tag": "THE",
       "name": "THE",
       "adjective": "THE_ADJ",
@@ -1604,10 +2056,10 @@
       ],
       "allow_raw": "NOT = { country_exists = c:THE }\n\t\towns = location:thessaloniki\n\t\treligion = religion:catholic\n\t\tOR = {\n\t\t\tculture = { has_culture_group = culture_group:french_group }\n\t\t\tculture = { has_culture_group = culture_group:iberian_group }\n\t\t\tculture = { has_culture_group = culture_group:italian_group }\n\t\t}\n\t\tOR = {\n\t\t\tcurrent_age = age_1_traditions\n\t\t\tcurrent_age = age_2_renaissance\n\t\t}",
       "potential_raw": "NOT = { country_exists = c:THE }\n\t\tNOT = { tag = LAT }\n\t\tis_frankokratia_state = yes\n\t\tOR = {\n\t\t\thas_variable = halved_cost_to_form_thesslonica\n\t\t\ttag = ACH\n\t\t}\n\t\tNOT = { current_age_or_later = { age = age_3_discovery } }",
-      "form_effect_raw": "if = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
-      "formation_event": null,
-      "source": "vanilla",
-      "mod_overrides": false,
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_the_formed\n\t\t}\n\t\ttrigger_event_non_silently = nd_the.1\n\t\tadd_stability = stability_mild_bonus\n\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}",
+      "formation_event": "nd_the.1",
+      "source": "vanilla+mod_replace",
+      "mod_overrides": true,
       "variant_label": "Reduced Requirements",
       "color_rgb": "#00ec3b",
       "english_potential": [
@@ -1721,7 +2173,7 @@
       "name": "SAR",
       "adjective": "SAR_ADJ",
       "flag": "SAR",
-      "color": "map_sardinia",
+      "color": "map_sardinian",
       "level": 2,
       "fraction": 0.9,
       "rule": "historical",
@@ -1736,17 +2188,17 @@
       "continents": [],
       "must_own": [],
       "allow_raw": "",
-      "potential_raw": "culture = { has_culture_group = culture_group:italian_group }",
-      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_sar_formed\n\t\t}\n\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\ttrigger_event_non_silently = nd_sar.1\n\t\tadd_stability = stability_mild_bonus",
+      "potential_raw": "culture = culture:sardinian",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_sar_formed\n\t\t}\n\t\tif = {\n\t\t\t\n\t\t\t\n\t\t\tlimit = { nd_can_take_kingdom_rank = yes }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = nd_sar.1\n\t\tadd_stability = stability_mild_bonus",
       "formation_event": "nd_sar.1",
       "source": "vanilla+mod_replace",
       "mod_overrides": true,
       "variant_label": null,
-      "color_rgb": "#3e80be",
+      "color_rgb": "#7993a9",
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Italian Group culture group"
+          "text": "Sardinian culture"
         }
       ],
       "english_allow": []
@@ -1755,7 +2207,7 @@
       "block_key": "SAR_piedmont_f",
       "mode": "replace",
       "source_file": "99_nd_sar_piedmont.txt",
-      "tag": "SAR_piedmont",
+      "tag": "SRP",
       "name": "SAR_piedmont",
       "adjective": "SAR_piedmont_ADJ",
       "flag": "SAR_piedmont",
@@ -1781,7 +2233,7 @@
       "source": "vanilla+mod_replace",
       "mod_overrides": true,
       "variant_label": null,
-      "color_rgb": "#3b78b5",
+      "color_rgb": "#4292c2",
       "english_potential": [
         {
           "kind": "atom",
@@ -2312,7 +2764,7 @@
       "flag": "POM",
       "color": "map_POM",
       "level": 2,
-      "fraction": null,
+      "fraction": 0.75,
       "rule": "historical",
       "content_priority": null,
       "regions": [],
@@ -2363,7 +2815,7 @@
       "level": 2,
       "fraction": 0.75,
       "rule": "historical",
-      "content_priority": null,
+      "content_priority": 800,
       "regions": [],
       "areas": [
         "prussia_area"
@@ -2526,7 +2978,7 @@
       "flag": "GER",
       "color": "map_GER",
       "level": 4,
-      "fraction": 0.66,
+      "fraction": 0.6,
       "rule": "plausible",
       "content_priority": null,
       "regions": [
@@ -2827,7 +3279,7 @@
         "vilnius",
         "warsaw"
       ],
-      "allow_raw": "trigger_if = {\n\t\t\tlimit = { \n\t\t\t\tcountry_exists = c:POL\n\t\t\t\tthis != c:POL\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = PLC_f_trigger_pol\n\t\t\t\tOR = {\n\t\t\t\t\ttag = POL\n\t\t\t\t\tNOT = { country_exists = c:POL }\n\t\t\t\t\tc:POL = { \n\t\t\t\t\t\tOR = {\n\t\t\t\t\t\t\tis_subject_or_below_of = root\n\t\t\t\t\t\t\tin_union_with = root\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\t\t\t\n\t\t\t}\n\t\t}\n\t\ttrigger_if = {\n\t\t\tlimit = { \n\t\t\t\tcountry_exists = c:LIT\n\t\t\t\tthis != c:LIT\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = PLC_f_trigger_lit\n\t\t\t\tOR = {\n\t\t\t\t\ttag = LIT\n\t\t\t\t\tNOT = { country_exists = c:LIT }\n\t\t\t\t\tc:LIT = {\n\t\t\t\t\t\tOR = {\n\t\t\t\t\t\t\tis_subject_or_below_of = root\n\t\t\t\t\t\t\tin_union_with = root\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\t\t\t\n\t\t\t}\n\t\t}\n\t\towns = location:krakow\n\t\towns = location:vilnius\n\t\towns = location:warsaw",
+      "allow_raw": "trigger_if = {\n\t\t\tlimit = { \n\t\t\t\tcountry_exists = c:POL\n\t\t\t\tthis != c:POL\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = PLC_f_trigger_pol\n\t\t\t\tOR = {\n\t\t\t\t\ttag = POL\n\t\t\t\t\tNOT = { country_exists = c:POL }\n\t\t\t\t\tc:POL = { \n\t\t\t\t\t\tOR = {\n\t\t\t\t\t\t\tis_subject_or_below_of = root\n\t\t\t\t\t\t\tin_union_with = root\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\t\t\t\n\t\t\t}\n\t\t}\n\t\ttrigger_if = {\n\t\t\tlimit = { \n\t\t\t\tcountry_exists = c:LIT\n\t\t\t\tthis != c:LIT\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = PLC_f_trigger_lit\n\t\t\t\tOR = {\n\t\t\t\t\ttag = LIT\n\t\t\t\t\tNOT = { country_exists = c:LIT }\n\t\t\t\t\tc:LIT = {\n\t\t\t\t\t\tOR = {\n\t\t\t\t\t\t\tis_subject_or_below_of = root\n\t\t\t\t\t\t\tin_union_with = root\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\t\t\t\n\t\t\t}\n\t\t}\n\t\tOR = {\n\t\t\towns = location:krakow\n\t\t\towns = location:vilnius\n\t\t\towns = location:warsaw\n\t\t}",
       "potential_raw": "OR = {\n\t\t\tculture = { has_culture_group = culture_group:polish_group }\n\t\t\tculture = { has_culture_group = culture_group:lithuanian_group }\n\t\t}",
       "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_plc_formed\n\t\t}\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = nd_plc.1\n\t\tadd_stability = stability_mild_bonus",
       "formation_event": "nd_plc.1",
@@ -2902,16 +3354,22 @@
           ]
         },
         {
-          "kind": "atom",
-          "text": "Owns Krakow"
-        },
-        {
-          "kind": "atom",
-          "text": "Owns Vilnius"
-        },
-        {
-          "kind": "atom",
-          "text": "Owns Warsaw"
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Owns Krakow"
+            },
+            {
+              "kind": "atom",
+              "text": "Owns Vilnius"
+            },
+            {
+              "kind": "atom",
+              "text": "Owns Warsaw"
+            }
+          ]
         }
       ]
     },
@@ -3037,7 +3495,7 @@
       ],
       "allow_raw": "owns = location:rome\n\t\towns = location:constantinople\n\t\tcountry_rank = country_rank:rank_empire\n\t\tis_hegemon = yes\n\t\tNOT = { country_exists = c:BYZ }\n\n\t\tOR = {\n\t\t\treligion.group = religion_group:christian\n\t\t\treligion = religion:hellenism_religion\n\t\t}",
       "potential_raw": "NOR = {\n\t\t\thas_or_had_tag = BYZ\n\t\t\thas_or_had_tag = TRE\n\t\t}\n\t\tOR = {\n\t\t\tcountry_rank = country_rank:rank_empire\n\t\t\towns = location:constantinople\n\t\t\tAND = {\n\t\t\t\towns = location:rome\n\t\t\t\tNOT = { tag = PAP }\n\t\t\t}\n\t\t}",
-      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_rom_formed\n\t\t}\n\t\tif = { \n\t\t\tlimit = { NOT = { court_language = language:latin_language } }\n\t\t\tset_court_language = dialect:roman_dialect\n\t\t}\n\t\tif = {\n\t\t\tlimit = { NOT = { capital = location:rome } }\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\tmove_capital_event_effect = {\n\t\t\t\tfrom = root.capital\n\t\t\t\tto = location:rome\n\t\t\t}\n\t\t}\n\t\ttrigger_event_non_silently = nd_rom.1\n\t\tadd_stability = stability_extreme_bonus\n\t\tadd_government_power = government_power_extreme_bonus",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_rom_formed\n\t\t}\n\t\tif = { \n\t\t\tlimit = { NOT = { court_language = language:latin_language } }\n\t\t\tset_court_language = dialect:roman_dialect\n\t\t}\n\t\tif = {\n\t\t\tlimit = { NOT = { capital = location:rome } }\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\tmove_capital_event_effect = {\n\t\t\t\tfrom = root.capital\n\t\t\t\tto = location:rome\n\t\t\t}\n\t\t}\n\t\tif = {\n\t\t\tlimit = { has_dlc = \"d008_fate_of_the_phoenix\" }\n\t\t\tunlock_casus_belli_effect = { type = cb_restore_roman_borders }\n\t\t}\n\t\ttrigger_event_non_silently = nd_rom.1\n\t\tadd_stability = stability_extreme_bonus\n\t\tadd_government_power = government_power_extreme_bonus",
       "formation_event": "nd_rom.1",
       "source": "vanilla+mod_replace",
       "mod_overrides": true,
@@ -3163,7 +3621,7 @@
       ],
       "allow_raw": "owns = location:rome\n\t\towns = location:constantinople\n\t\tcountry_rank = country_rank:rank_empire\n\n\t\tOR = {\n\t\t\thas_or_had_tag = BYZ\n\t\t\tNOT = { country_exists = c:BYZ }\n\t\t}",
       "potential_raw": "OR = {\n\t\t\thas_or_had_tag = BYZ\n\t\t\thas_or_had_tag = TRE\n\t\t}",
-      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_rom_byz_formed\n\t\t}\n\t\tif = {\n\t\t\tlimit = { NOT = { capital = location:rome } }\n\t\t\tmove_capital_event_effect = {\n\t\t\t\tfrom = root.capital\n\t\t\t\tto = location:rome\n\t\t\t}\n\t\t}\n\t\tif = {\n\t\t\tlimit = { has_societal_value = societal_value_type:latinization_vs_hellenization }\n\t\t\tchange_societal_value = { type = latinization_vs_hellenization value = societal_value_huge_move_to_left }\n\t\t}\n\t\ttrigger_event_non_silently = nd_rom_byz.1\n\t\tadd_stability = stability_severe_bonus",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_rom_byz_formed\n\t\t}\n\t\tif = {\n\t\t\tlimit = { NOT = { capital = location:rome } }\n\t\t\tmove_capital_event_effect = {\n\t\t\t\tfrom = root.capital\n\t\t\t\tto = location:rome\n\t\t\t}\n\t\t}\n\t\tprovince_definition:marittima_province = {\n\t\t\tevery_ownable_location_in_province_definition = {\n\t\t\t\tlimit = { owner = root }\n\t\t\t\tchange_integration_level = integrated\n\t\t\t}\n\t\t}\n\t\tif = {\n\t\t\tlimit = { has_societal_value = societal_value_type:latinization_vs_hellenization }\n\t\t\tchange_societal_value = { type = latinization_vs_hellenization value = societal_value_huge_move_to_left }\n\t\t}\n\t\tif = {\n\t\t\tlimit = { has_dlc = \"d008_fate_of_the_phoenix\" }\n\t\t\tunlock_casus_belli_effect = { type = cb_restore_roman_borders }\n\t\t}\n\t\ttrigger_event_non_silently = nd_rom_byz.1\n\t\tadd_stability = stability_severe_bonus",
       "formation_event": "nd_rom_byz.1",
       "source": "vanilla+mod_replace",
       "mod_overrides": true,
@@ -3229,8 +3687,8 @@
       "adjective": "CTH_ADJ",
       "flag": "CTH",
       "color": "map_CTH",
-      "level": 2,
-      "fraction": 0.7,
+      "level": 4,
+      "fraction": 0.85,
       "rule": "fantasy",
       "content_priority": null,
       "regions": [],
@@ -3245,21 +3703,51 @@
       "sub_continents": [],
       "continents": [],
       "must_own": [
-        "tunis"
+        "tunis",
+        "palermo",
+        "tripoli",
+        "cherchell"
       ],
-      "allow_raw": "owns = location:tunis",
-      "potential_raw": null,
-      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_cth_formed\n\t\t}\n\t\tif = { \n\t\t\tlimit = { NOT = { capital = location:tunis } }\n\t\t\tset_capital = location:tunis\n\t\t}\n\t\tlocation:tunis = {\n\t\t\trename_location = qart_hadaszt\n\t\t}\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\tadd_stability = stability_mild_bonus\n\t\ttrigger_event_non_silently = nd_cth.1",
+      "allow_raw": "owns = location:tunis\n\t\towns = location:palermo\n\t\towns = location:tripoli\n\t\towns = location:cherchell",
+      "potential_raw": "OR = {\n\t\t\tculture = { has_culture_group = culture_group:amazigh_group }\n\t\t\tculture = culture:tunisian\n\t\t}",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_cth_formed\n\t\t}\n\t\tif = { \n\t\t\tlimit = { NOT = { capital = location:tunis } }\n\t\t\tset_capital = location:tunis\n\t\t}\n\t\tlocation:tunis = {\n\t\t\trename_location = qart_hadaszt\n\t\t}\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\tadd_stability = stability_severe_bonus\n\t\ttrigger_event_non_silently = nd_cth.1",
       "formation_event": "nd_cth.1",
       "source": "vanilla+mod_replace",
       "mod_overrides": true,
       "variant_label": null,
       "color_rgb": "#ffefda",
-      "english_potential": [],
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Amazigh Group culture group"
+            },
+            {
+              "kind": "atom",
+              "text": "Tunisian culture"
+            }
+          ]
+        }
+      ],
       "english_allow": [
         {
           "kind": "atom",
           "text": "Owns Tunis"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Palermo"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Tripoli"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Cherchell"
         }
       ]
     },
@@ -3623,7 +4111,7 @@
       "adjective": "ITA_ADJ",
       "flag": "ITA",
       "color": "map_ITA",
-      "level": 3,
+      "level": 4,
       "fraction": 0.75,
       "rule": "plausible",
       "content_priority": null,
@@ -3712,10 +4200,11 @@
       ],
       "allow_raw": "owns = location:paris",
       "potential_raw": "culture = { has_culture_group = culture_group:french_group }",
-      "form_effect_raw": "",
-      "formation_event": null,
-      "source": "vanilla",
-      "mod_overrides": false,
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_fra_formed\n\t\t}\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tcountry_rank_level < 3\n\t\t\t\tnd_can_take_kingdom_rank = yes\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = nd_fra.1\n\t\tadd_stability = stability_mild_bonus",
+      "formation_event": "nd_fra.1",
+      "source": "vanilla+mod_inject",
+      "mod_overrides": true,
+      "mod_source_file": "99_nd_fra.txt",
       "variant_label": null,
       "color_rgb": "#2221a5",
       "english_potential": [
@@ -3899,7 +4388,7 @@
       "adjective": "TWS_ADJ",
       "flag": "TWS",
       "color": "map_TWS",
-      "level": 2,
+      "level": 3,
       "fraction": 0.8,
       "rule": "historical",
       "content_priority": 800,
@@ -4143,24 +4632,27 @@
       "level": 4,
       "fraction": 0.5,
       "rule": "historical",
-      "content_priority": null,
+      "content_priority": 800,
       "regions": [
-        "russian_region",
-        "ural_region",
-        "steppes_region"
+        "russian_region"
       ],
-      "areas": [],
+      "areas": [
+        "severia_area",
+        "kursk_area"
+      ],
       "locations": [],
       "provinces": [],
       "sub_continents": [],
       "continents": [],
       "must_own": [
         "moscow",
-        "novgorod"
+        "novgorod",
+        "tver",
+        "vladimir"
       ],
-      "allow_raw": "owns = location:moscow\n\t\towns = location:novgorod",
+      "allow_raw": "is_subject = no\n\t\towns = location:moscow\n\t\towns = location:novgorod\n\t\towns = location:tver\n\t\towns = location:vladimir",
       "potential_raw": "culture = { has_culture_group = culture_group:russian_group }",
-      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_rus_formed\n\t\t}\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\ttrigger_event_non_silently = nd_rus.1\n\t\tadd_stability = stability_severe_bonus",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_rus_formed\n\t\t}\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = nd_rus.1\n\t\tadd_stability = stability_severe_bonus",
       "formation_event": "nd_rus.1",
       "source": "vanilla+mod_replace",
       "mod_overrides": true,
@@ -4175,11 +4667,23 @@
       "english_allow": [
         {
           "kind": "atom",
+          "text": "Is Subject: No"
+        },
+        {
+          "kind": "atom",
           "text": "Owns Moscow"
         },
         {
           "kind": "atom",
           "text": "Owns Novgorod"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Tver"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Vladimir"
         }
       ]
     },
@@ -4740,7 +5244,10 @@
       "regions": [
         "hindustan_region"
       ],
-      "areas": [],
+      "areas": [
+        "sistan_area",
+        "baluchistan_area"
+      ],
       "locations": [],
       "provinces": [],
       "sub_continents": [],
@@ -4750,38 +5257,43 @@
         "agra",
         "lahore"
       ],
-      "allow_raw": "religion.group = religion_group:muslim\n\t\tOR = {\n\t\t\tculture = { has_culture_group = culture_group:iranian_group }\n\t\t\tculture = { has_culture_group = culture_group:turkic_group }\n\t\t\tculture.language = language:afghani_language\n\t\t}\n\t\towns = location:delhi\n\t\towns = location:agra\n\t\towns = location:lahore",
-      "potential_raw": "",
+      "allow_raw": "owns = location:delhi\n\t\towns = location:agra\n\t\towns = location:lahore",
+      "potential_raw": "religion.group = religion_group:muslim\n\t\tculture ?= {\n\t\t\tOR = {\n\t\t\t\thas_culture_group = culture_group:iranian_group\n\t\t\t\thas_culture_group = culture_group:turkic_group\n\t\t\t\thas_culture_group = culture_group:mongolian_group\n\t\t\t\tlanguage ?= language:afghani_language\n\t\t\t}\n\t\t}",
       "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_mug_formed\n\t\t}\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\ttrigger_event_non_silently = nd_mug.1\n\t\tadd_stability = stability_severe_bonus",
       "formation_event": "nd_mug.1",
       "source": "vanilla+mod_replace",
       "mod_overrides": true,
       "variant_label": null,
       "color_rgb": "#266d35",
-      "english_potential": [],
-      "english_allow": [
+      "english_potential": [
         {
           "kind": "atom",
           "text": "Islam group"
         },
         {
           "kind": "or",
-          "text": "Any of:",
+          "text": "Any culture of:",
           "children": [
             {
               "kind": "atom",
-              "text": "Iranian culture group"
+              "text": "Iranian group"
             },
             {
               "kind": "atom",
-              "text": "Turkic Group culture group"
+              "text": "Turkic Group"
+            },
+            {
+              "kind": "atom",
+              "text": "Mongolian Group"
             },
             {
               "kind": "atom",
               "text": "Afghani Language"
             }
           ]
-        },
+        }
+      ],
+      "english_allow": [
         {
           "kind": "atom",
           "text": "Owns Delhi"
@@ -5563,46 +6075,6 @@
         {
           "kind": "atom",
           "text": "Tuareg culture"
-        }
-      ],
-      "english_allow": []
-    },
-    {
-      "block_key": "NAV_f",
-      "mode": "full",
-      "source_file": "00_formable_countries.txt",
-      "tag": "NAV",
-      "name": "NAV",
-      "adjective": "NAV_ADJ",
-      "flag": "NAV",
-      "color": "map_NAV",
-      "level": 2,
-      "fraction": 0.8,
-      "rule": "historical",
-      "content_priority": null,
-      "regions": [],
-      "areas": [],
-      "locations": [
-        "saint_jean_pied_de_port"
-      ],
-      "provinces": [
-        "navarre_province"
-      ],
-      "sub_continents": [],
-      "continents": [],
-      "must_own": [],
-      "allow_raw": "",
-      "potential_raw": "culture = culture:basque",
-      "form_effect_raw": "",
-      "formation_event": null,
-      "source": "vanilla",
-      "mod_overrides": false,
-      "variant_label": null,
-      "color_rgb": "#980200",
-      "english_potential": [
-        {
-          "kind": "atom",
-          "text": "Basque culture"
         }
       ],
       "english_allow": []
@@ -7044,7 +7516,7 @@
               "children": [
                 {
                   "kind": "atom",
-                  "text": "Kol exists"
+                  "text": "Cologne exists"
                 }
               ]
             },
@@ -7847,7 +8319,7 @@
       "continents": [],
       "must_own": [],
       "allow_raw": "",
-      "potential_raw": "culture = culture:moroccan",
+      "potential_raw": "OR = {\n\t\t\tculture = culture:moroccan\n\t\t\tculture = culture:zenati\n\t\t\tculture = culture:sanhaja\n\t\t\tculture = culture:masmuda\n\t\t}",
       "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_mor_formed\n\t\t}\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 3 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = nd_mor.1\n\t\tadd_stability = stability_mild_bonus",
       "formation_event": "nd_mor.1",
       "source": "vanilla+mod_inject",
@@ -7857,8 +8329,152 @@
       "color_rgb": "#c47d49",
       "english_potential": [
         {
-          "kind": "atom",
-          "text": "Moroccan culture"
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Moroccan culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Zenati culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Sanhaja culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Masmuda culture"
+            }
+          ]
+        }
+      ],
+      "english_allow": []
+    },
+    {
+      "block_key": "ALG_f",
+      "mode": "full",
+      "source_file": "00_formable_countries.txt",
+      "tag": "ALG",
+      "name": "ALG",
+      "adjective": "ALG_ADJ",
+      "flag": "ALG",
+      "color": "map_algiers",
+      "level": 2,
+      "fraction": 0.75,
+      "rule": "historical",
+      "content_priority": null,
+      "regions": [],
+      "areas": [
+        "algiers_area"
+      ],
+      "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [],
+      "allow_raw": "OR = {\n\t\t\tculture = culture:algerian\n\t\t\tcurrent_year >= 1437\n\t\t}",
+      "potential_raw": "OR = {\n\t\t\tculture = culture:algerian\n\t\t\tculture = culture:kabyle\n\t\t\tculture = culture:chaoui\n\t\t\tculture = culture:mozabite\n\t\t\tculture = culture:zenati\n\t\t}",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_alg_formed\n\t\t}\n\t\t\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tnd_can_take_kingdom_rank = yes\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = nd_alg.1\n\t\tadd_stability = stability_mild_bonus",
+      "formation_event": "nd_alg.1",
+      "source": "vanilla+mod_inject",
+      "mod_overrides": true,
+      "mod_source_file": "99_nd_alg.txt",
+      "variant_label": null,
+      "color_rgb": "#e6de6f",
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Algerian culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Kabyle culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Chaoui culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Mozabite culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Zenati culture"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Algerian culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Current Year: 1437"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "block_key": "TUN_f",
+      "mode": "full",
+      "source_file": "00_formable_countries.txt",
+      "tag": "TUN",
+      "name": "TUN",
+      "adjective": "TUN_ADJ",
+      "flag": "TUN",
+      "color": "map_tunis",
+      "level": 2,
+      "fraction": 0.75,
+      "rule": "historical",
+      "content_priority": null,
+      "regions": [],
+      "areas": [
+        "tunis_area",
+        "tripolitania_area"
+      ],
+      "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [],
+      "allow_raw": "",
+      "potential_raw": "OR = {\n\t\t\tculture = culture:tunisian\n\t\t\tculture = culture:eastern_amazigh\n\t\t}",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_tun_formed\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\tif = {\n\t\t\t\tlimit = {\n\t\t\t\t\tNOT = {\n\t\t\t\t\t\truler_or_heir_if_regent ?= {\n\t\t\t\t\t\t\tdynasty ?= dynasty:hafsid_dynasty\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tset_variable = nd_tun_newcomer\n\t\t\t}\n\t\t}\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tnd_can_take_kingdom_rank = yes\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\ttrigger_event_non_silently = nd_tun.1\n\t\tadd_stability = stability_mild_bonus",
+      "formation_event": "nd_tun.1",
+      "source": "vanilla+mod_inject",
+      "mod_overrides": true,
+      "mod_source_file": "99_nd_tun.txt",
+      "variant_label": null,
+      "color_rgb": "#928639",
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Tunisian culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Eastern Amazigh culture"
+            }
+          ]
         }
       ],
       "english_allow": []
@@ -8026,10 +8642,11 @@
       "must_own": [],
       "allow_raw": "",
       "potential_raw": "culture = culture:circassian_culture",
-      "form_effect_raw": "",
-      "formation_event": null,
-      "source": "vanilla",
-      "mod_overrides": false,
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_cir_formed\n\t\t}\n\t\ttrigger_event_non_silently = nd_cir.1\n\t\tadd_stability = stability_mild_bonus",
+      "formation_event": "nd_cir.1",
+      "source": "vanilla+mod_inject",
+      "mod_overrides": true,
+      "mod_source_file": "99_nd_cir.txt",
       "variant_label": null,
       "color_rgb": "#296310",
       "english_potential": [
@@ -8523,6 +9140,55 @@
       "english_allow": []
     },
     {
+      "block_key": "TRG_f",
+      "mode": "full",
+      "source_file": "00_formable_countries.txt",
+      "tag": "TRG",
+      "name": "TRG",
+      "adjective": "TRG_ADJ",
+      "flag": "TRG",
+      "color": "map_tuareg",
+      "level": 2,
+      "fraction": 0.75,
+      "rule": "plausible",
+      "content_priority": null,
+      "regions": [],
+      "areas": [],
+      "locations": [
+        "agadez",
+        "assode",
+        "iferouane",
+        "in_gall",
+        "marandet",
+        "abalessa",
+        "djanet",
+        "ghat",
+        "in_amenas",
+        "tadmekka",
+        "takedda"
+      ],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [],
+      "allow_raw": "",
+      "potential_raw": "culture = culture:tuareg",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_trg_formed\n\t\t}\n\t\ttrigger_event_non_silently = nd_trg.1\n\t\tadd_stability = stability_mild_bonus",
+      "formation_event": "nd_trg.1",
+      "source": "vanilla+mod_inject",
+      "mod_overrides": true,
+      "mod_source_file": "99_nd_trg.txt",
+      "variant_label": null,
+      "color_rgb": "#4178b9",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Tuareg culture"
+        }
+      ],
+      "english_allow": []
+    },
+    {
       "block_key": "AEG_f",
       "mode": "full",
       "source_file": "99_nd_aeg.txt",
@@ -8821,7 +9487,7 @@
         "angers"
       ],
       "allow_raw": "owns = location:london\n\t\towns = location:rouen\n\t\towns = location:angers",
-      "potential_raw": "religion = religion:catholic\n\t\tOR = {\n\t\t\tculture = culture:english\n\t\t\tculture = { has_culture_group = culture_group:french_group }\n\t\t}\n\t\t\n\t\t\n\t\t\n\t\t\n\t\thas_any_active_disaster = no",
+      "potential_raw": "religion = religion:catholic\n\t\tOR = {\n\t\t\tculture = culture:english\n\t\t\tculture = { has_culture_group = culture_group:french_group }\n\t\t}\n\t\t\n\t\t\n\t\t\n\t\t\n\t\thas_any_active_disaster = no\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tNOT = { tag = FRA }\n\t\tNOT = { tag = GBR }",
       "form_effect_raw": "hidden_effect = {\n\n\t\t\tset_variable = nd_formed\n\n\t\t\tset_variable = nd_anv_formed\n\n\t\t}\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\ttrigger_event_non_silently = nd_anv.1\n\t\tadd_stability = stability_mild_bonus",
       "formation_event": "nd_anv.1",
       "source": "mod_new",
@@ -8850,6 +9516,26 @@
         {
           "kind": "atom",
           "text": "Has Any Active Disaster: No"
+        },
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Tag: France"
+            }
+          ]
+        },
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Tag: Great Britain"
+            }
+          ]
         }
       ],
       "english_allow": [
@@ -8970,6 +9656,72 @@
         {
           "kind": "atom",
           "text": "Owns Kumasi"
+        }
+      ]
+    },
+    {
+      "block_key": "BMA_f",
+      "mode": "full",
+      "source_file": "99_nd_bma.txt",
+      "tag": "BMA",
+      "name": "BMA",
+      "adjective": "BMA_ADJ",
+      "flag": "BMA",
+      "color": "map_BMA",
+      "level": 3,
+      "fraction": 0.75,
+      "rule": "historical",
+      "content_priority": null,
+      "regions": [],
+      "areas": [
+        "irrawady_area",
+        "irrawady_delta_area"
+      ],
+      "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [
+        "pinya",
+        "pegu",
+        "pyay"
+      ],
+      "allow_raw": "owns = location:pinya\n\t\towns = location:pegu\n\t\towns = location:pyay",
+      "potential_raw": "OR = {\n\t\t\t\n\t\t\tculture.language = language:burmese_language\n\t\t\t\n\t\t\t\n\t\t\tculture = culture:mon_culture\n\t\t}",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_bma_formed\n\t\t}\n\t\ttrigger_event_non_silently = nd_bma.1\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tnd_can_take_kingdom_rank = yes\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\tadd_stability = stability_mild_bonus",
+      "formation_event": "nd_bma.1",
+      "source": "mod_new",
+      "mod_overrides": true,
+      "variant_label": null,
+      "color_rgb": "#b0930f",
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Burmese Language"
+            },
+            {
+              "kind": "atom",
+              "text": "Mon Culture"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Pinya"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Pegu"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Pyay"
         }
       ]
     },
@@ -9347,7 +10099,7 @@
         "prague"
       ],
       "allow_raw": "OR = {\n\t\t\tcountry_rank_level >= 3\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = DNM_f_privilegium_tt\n\t\t\t\thas_reform = government_reform:austrian_archduchy_reform\n\t\t\t}\n\t\t}\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tOR = {\n\t\t\towns = location:vienna\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = DNM_f_vienna_by_crown_tt\n\t\t\t\tlocation:vienna ?= {\n\t\t\t\t\towner ?= {\n\t\t\t\t\t\tOR = {\n\t\t\t\t\t\t\tis_subject_or_below_of = root\n\t\t\t\t\t\t\tAND = {\n\t\t\t\t\t\t\t\tin_union_with = root\n\t\t\t\t\t\t\t\tunion ?= {\n\t\t\t\t\t\t\t\t\tcountry_is_senior_partner = { country = root }\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tOR = {\n\t\t\tOR = { has_or_had_tag = HAB tag = HAB }\n\t\t\tAND = {\n\t\t\t\tOR = { has_or_had_tag = HUN tag = HUN }\n\t\t\t\towns = location:buda\n\t\t\t}\n\t\t\tAND = {\n\t\t\t\tOR = { has_or_had_tag = BOH tag = BOH }\n\t\t\t\towns = location:prague\n\t\t\t}\n\t\t}\n\n\t\t\n\t\ttrigger_if = {\n\t\t\tlimit = {\n\t\t\t\tcountry_exists = c:HAB\n\t\t\t\tthis != c:HAB\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = DNM_f_trigger_hab\n\t\t\t\tOR = {\n\t\t\t\t\ttag = HAB\n\t\t\t\t\thas_or_had_tag = HAB\n\t\t\t\t\tNOT = { country_exists = c:HAB }\n\t\t\t\t\tc:HAB = {\n\t\t\t\t\t\tOR = {\n\t\t\t\t\t\t\tis_subject_or_below_of = root\n\t\t\t\t\t\t\tAND = {\n\t\t\t\t\t\t\t\tin_union_with = root\n\t\t\t\t\t\t\t\tunion ?= {\n\t\t\t\t\t\t\t\t\tcountry_is_senior_partner = { country = root }\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\t\n\t\ttrigger_if = {\n\t\t\tlimit = {\n\t\t\t\tcountry_exists = c:HUN\n\t\t\t\tthis != c:HUN\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = DNM_f_trigger_hun\n\t\t\t\tOR = {\n\t\t\t\t\ttag = HUN\n\t\t\t\t\thas_or_had_tag = HUN\n\t\t\t\t\tNOT = { country_exists = c:HUN }\n\t\t\t\t\tc:HUN = {\n\t\t\t\t\t\tOR = {\n\t\t\t\t\t\t\tis_subject_or_below_of = root\n\t\t\t\t\t\t\tAND = {\n\t\t\t\t\t\t\t\tin_union_with = root\n\t\t\t\t\t\t\t\tunion ?= {\n\t\t\t\t\t\t\t\t\tcountry_is_senior_partner = { country = root }\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\t\n\t\ttrigger_if = {\n\t\t\tlimit = {\n\t\t\t\tcountry_exists = c:BOH\n\t\t\t\tthis != c:BOH\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = DNM_f_trigger_boh\n\t\t\t\tOR = {\n\t\t\t\t\ttag = BOH\n\t\t\t\t\thas_or_had_tag = BOH\n\t\t\t\t\tNOT = { country_exists = c:BOH }\n\t\t\t\t\tc:BOH = {\n\t\t\t\t\t\tOR = {\n\t\t\t\t\t\t\tis_subject_or_below_of = root\n\t\t\t\t\t\t\tAND = {\n\t\t\t\t\t\t\t\tin_union_with = root\n\t\t\t\t\t\t\t\tunion ?= {\n\t\t\t\t\t\t\t\t\tcountry_is_senior_partner = { country = root }\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}",
-      "potential_raw": "OR = {\n\t\t\truler = { dynasty = dynasty:habsburg_dynasty }\n\t\t\thas_or_had_tag = HAB\n\t\t\thas_or_had_tag = HUN\n\t\t\thas_or_had_tag = BOH\n\t\t}",
+      "potential_raw": "OR = {\n\t\t\truler ?= {\n\t\t\t\thas_dynasty = yes\n\t\t\t\tdynasty ?= dynasty:habsburg_dynasty\n\t\t\t}\n\t\t\thas_or_had_tag = HAB\n\t\t\thas_or_had_tag = HUN\n\t\t\thas_or_had_tag = BOH\n\t\t}",
       "form_effect_raw": "hidden_effect = {\n\t\t\tif = {\n\t\t\t\tlimit = { OR = { tag = HUN has_or_had_tag = HUN } }\n\t\t\t\tset_variable = nd_dnm_origin_hun\n\t\t\t}\n\t\t\telse_if = {\n\t\t\t\tlimit = { OR = { tag = BOH has_or_had_tag = BOH } }\n\t\t\t\tset_variable = nd_dnm_origin_boh\n\t\t\t}\n\t\t\telse = {\n\t\t\t\tset_variable = nd_dnm_origin_hab\n\t\t\t}\n\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\tif = {\n\t\t\t\tlimit = {\n\t\t\t\t\tis_member_of_international_organization = international_organization:hre\n\t\t\t\t\tinternational_organization:hre ?= {\n\t\t\t\t\t\tcountry_has_special_status = {\n\t\t\t\t\t\t\ttype = special_status:elector\n\t\t\t\t\t\t\tcountry = root\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tset_variable = nd_dnm_origin_was_elector\n\t\t\t}\n\t\t}\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tcountry_exists = c:HUN\n\t\t\t\tc:HUN = {\n\t\t\t\t\tin_union_with = root\n\t\t\t\t\tunion ?= {\n\t\t\t\t\t\tcountry_is_senior_partner = { country = root }\n\t\t\t\t\t\tmodifier:union_integration_level >= 5\n\t\t\t\t\t}\n\t\t\t\t\thas_variable = integrated_in_union\n\t\t\t\t\tvar:integrated_in_union >= 5\n\t\t\t\t}\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = nd_dnm_weld_hun_tt\n\t\t\t\tc:HUN = {\n\t\t\t\t\tevery_core_location = { add_core = root }\n\t\t\t\t}\n\t\t\t\tannex_country = { country = c:HUN }\n\t\t\t}\n\t\t}\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tcountry_exists = c:BOH\n\t\t\t\tc:BOH = {\n\t\t\t\t\tin_union_with = root\n\t\t\t\t\tunion ?= {\n\t\t\t\t\t\tcountry_is_senior_partner = { country = root }\n\t\t\t\t\t\tmodifier:union_integration_level >= 5\n\t\t\t\t\t}\n\t\t\t\t\thas_variable = integrated_in_union\n\t\t\t\t\tvar:integrated_in_union >= 5\n\t\t\t\t}\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = nd_dnm_weld_boh_tt\n\t\t\t\tc:BOH = {\n\t\t\t\t\tevery_core_location = { add_core = root }\n\t\t\t\t}\n\t\t\t\tannex_country = { country = c:BOH }\n\t\t\t}\n\t\t}\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tcountry_exists = c:HAB\n\t\t\t\tc:HAB = {\n\t\t\t\t\tin_union_with = root\n\t\t\t\t\tunion ?= {\n\t\t\t\t\t\tcountry_is_senior_partner = { country = root }\n\t\t\t\t\t\tmodifier:union_integration_level >= 5\n\t\t\t\t\t}\n\t\t\t\t\thas_variable = integrated_in_union\n\t\t\t\t\tvar:integrated_in_union >= 5\n\t\t\t\t}\n\t\t\t}\n\t\t\tcustom_tooltip = {\n\t\t\t\ttext = nd_dnm_weld_hab_tt\n\t\t\t\tc:HAB = {\n\t\t\t\t\tevery_core_location = { add_core = root }\n\t\t\t\t}\n\t\t\t\tannex_country = { country = c:HAB }\n\t\t\t}\n\t\t}\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tcustom_tooltip = {\n\t\t\ttext = nd_dnm_compact_of_the_crowns_tt\n\t\t\tif = {\n\t\t\t\tlimit = {\n\t\t\t\t\tcountry_exists = c:HUN\n\t\t\t\t\tc:HUN = { nd_dnm_crown_answers_to = { REALM = root } }\n\t\t\t\t}\n\t\t\t\tc:HUN = { add_opinion = { target = root modifier = nd_dnm_compact_of_the_crowns } }\n\t\t\t}\n\t\t\tif = {\n\t\t\t\tlimit = {\n\t\t\t\t\tcountry_exists = c:BOH\n\t\t\t\t\tc:BOH = { nd_dnm_crown_answers_to = { REALM = root } }\n\t\t\t\t}\n\t\t\t\tc:BOH = { add_opinion = { target = root modifier = nd_dnm_compact_of_the_crowns } }\n\t\t\t}\n\t\t\tif = {\n\t\t\t\tlimit = {\n\t\t\t\t\tcountry_exists = c:HAB\n\t\t\t\t\tc:HAB = { nd_dnm_crown_answers_to = { REALM = root } }\n\t\t\t\t}\n\t\t\t\tc:HAB = { add_opinion = { target = root modifier = nd_dnm_compact_of_the_crowns } }\n\t\t\t}\n\t\t}\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\thidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_dnm_formed\n\t\t\tset_variable = { name = nd_dnm_grace value = yes years = 10 }\n\t\t\tset_variable = { name = nd_dnm_chain_30_pending value = yes years = 2 }\n\t\t\tset_variable = { name = nd_dnm_chain_31_pending value = yes years = 5 }\n\t\t\tset_variable = { name = nd_dnm_chain_32_pending value = yes years = 8 }\n\t\t}\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tif = {\n\t\t\tlimit = { exists = international_organization:hre }\n\t\t\ttrigger_event_non_silently = nd_dnm.52\n\t\t}\n\t\telse = {\n\t\t\tif = {\n\t\t\t\tlimit = { country_rank_level < 4 }\n\t\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t\t}\n\t\t\ttrigger_event_non_silently = nd_dnm.1\n\t\t}\n\t\tadd_stability = stability_severe_bonus",
       "formation_event": "nd_dnm.52",
       "source": "mod_new",
@@ -9363,6 +10115,10 @@
               "kind": "block",
               "text": "Ruler:",
               "children": [
+                {
+                  "kind": "atom",
+                  "text": "Has Dynasty: Yes"
+                },
                 {
                   "kind": "atom",
                   "text": "Dynasty: Habsburg Dynasty"
@@ -9660,6 +10416,96 @@
         {
           "kind": "atom",
           "text": "Owns Benin"
+        }
+      ]
+    },
+    {
+      "block_key": "FRK_f",
+      "mode": "full",
+      "source_file": "99_nd_frk.txt",
+      "tag": "FRK",
+      "name": "FRK",
+      "adjective": "FRK_ADJ",
+      "flag": "FRK",
+      "color": "map_FRK",
+      "level": 4,
+      "fraction": 0.6,
+      "rule": "plausible",
+      "content_priority": null,
+      "regions": [],
+      "areas": [
+        "rhineland_area",
+        "hesse_area",
+        "lorraine_area",
+        "alsace_area",
+        "franche_comte_area",
+        "brabant_area",
+        "holland_area",
+        "wallonia_area",
+        "friesland_area",
+        "lombardy_area"
+      ],
+      "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [
+        "paris",
+        "aachen",
+        "frankfurt"
+      ],
+      "allow_raw": "custom_tooltip = {\n\t\t\ttext = FRK_f_hre_gone_tt\n\t\t\tNOT = { exists = international_organization:hre }\n\t\t}\n\t\towns = location:paris\n\t\towns = location:aachen\n\t\towns = location:frankfurt\n\t\tin_civil_war = no\n\t\thas_any_active_disaster = no",
+      "potential_raw": "OR = {\n\t\t\tculture = { has_culture_group = culture_group:french_group }\n\t\t\thas_or_had_tag = GBU\n\t\t\thas_or_had_tag = LOT\n\t\t}",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_frk_formed\n\t\t}\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\ttrigger_event_non_silently = nd_frk.1\n\t\tadd_stability = stability_severe_bonus",
+      "formation_event": "nd_frk.1",
+      "source": "mod_new",
+      "mod_overrides": true,
+      "variant_label": null,
+      "color_rgb": "#9f1876",
+      "english_potential": [
+        {
+          "kind": "or",
+          "text": "Any of:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "French Group culture group"
+            },
+            {
+              "kind": "atom",
+              "text": "Was or is Greater Burgundy"
+            },
+            {
+              "kind": "atom",
+              "text": "Was or is Lotharingia"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "The Holy Roman Empire has ceased to exist"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Paris"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Aachen"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Frankfurt"
+        },
+        {
+          "kind": "atom",
+          "text": "Not: In civil war"
+        },
+        {
+          "kind": "atom",
+          "text": "Has Any Active Disaster: No"
         }
       ]
     },
@@ -10600,6 +11446,59 @@
       ]
     },
     {
+      "block_key": "MKS_f",
+      "mode": "full",
+      "source_file": "99_nd_mks.txt",
+      "tag": "MKS",
+      "name": "MKS",
+      "adjective": "MKS_ADJ",
+      "flag": "MKS",
+      "color": "map_MKS",
+      "level": 2,
+      "fraction": 0.75,
+      "rule": "historical",
+      "content_priority": null,
+      "regions": [],
+      "areas": [],
+      "locations": [],
+      "provinces": [
+        "makassar_province",
+        "bone_province",
+        "palopo_province",
+        "mamudju_province"
+      ],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [
+        "gowa",
+        "bone"
+      ],
+      "allow_raw": "owns = location:gowa\n\t\t\n\t\t\n\t\t\n\t\towns = location:bone",
+      "potential_raw": "culture.language = language:buginese_language",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_mks_formed\n\t\t}\n\t\ttrigger_event_non_silently = nd_mks.1\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tnd_can_take_kingdom_rank = yes\n\t\t\t\tcountry_rank_level < 3\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_kingdom }\n\t\t}\n\t\t\n\t\tif = {\n\t\t\tlimit = { NOT = { capital = location:gowa } }\n\t\t\tset_capital = location:gowa\n\t\t}\n\t\tadd_stability = stability_mild_bonus",
+      "formation_event": "nd_mks.1",
+      "source": "mod_new",
+      "mod_overrides": true,
+      "variant_label": null,
+      "color_rgb": "#1e8394",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Buginese Language"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Gowa"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Bone"
+        }
+      ]
+    },
+    {
       "block_key": "MRL_f",
       "mode": "full",
       "source_file": "99_nd_mrl.txt",
@@ -11258,7 +12157,7 @@
             },
             {
               "kind": "atom",
-              "text": "Was or is Sovereign Order of Saint John"
+              "text": "Was or is Saint John"
             },
             {
               "kind": "atom",
@@ -11545,6 +12444,96 @@
       ]
     },
     {
+      "block_key": "RHC_f",
+      "mode": "full",
+      "source_file": "99_nd_rhc.txt",
+      "tag": "RHC",
+      "name": "RHC",
+      "adjective": "RHC_ADJ",
+      "flag": "RHC",
+      "color": "map_RHC",
+      "level": 3,
+      "fraction": 0.5,
+      "rule": "historical",
+      "content_priority": null,
+      "regions": [],
+      "areas": [
+        "rhineland_area",
+        "hesse_area",
+        "westphalia_area",
+        "upper_rhine_area",
+        "swabia_area",
+        "franconia_area",
+        "bavaria_area"
+      ],
+      "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [
+        "frankfurt",
+        "regensburg"
+      ],
+      "allow_raw": "owns = location:frankfurt\n\t\towns = location:regensburg\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tNOT = { is_emperor = yes }\n\t\tin_civil_war = no",
+      "potential_raw": "culture = { has_culture_group = culture_group:german_group }\n\t\tNOT = { has_or_had_tag = HAB }\n\t\tNOT = { has_or_had_tag = PRU }",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_rhc_formed\n\t\t}\n\t\t\n\t\t\n\t\t\n\t\t\n\t\ttrigger_event_non_silently = nd_rhc.1\n\t\tadd_stability = stability_mild_bonus",
+      "formation_event": "nd_rhc.1",
+      "source": "mod_new",
+      "mod_overrides": true,
+      "variant_label": null,
+      "color_rgb": "#101370",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "German Group culture group"
+        },
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Was or is Austria"
+            }
+          ]
+        },
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Was or is Prussia"
+            }
+          ]
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Owns Frankfurt"
+        },
+        {
+          "kind": "atom",
+          "text": "Owns Regensburg"
+        },
+        {
+          "kind": "not",
+          "text": "Must not:",
+          "children": [
+            {
+              "kind": "atom",
+              "text": "Is Emperor: Yes"
+            }
+          ]
+        },
+        {
+          "kind": "atom",
+          "text": "Not: In civil war"
+        }
+      ]
+    },
+    {
       "block_key": "SOE_f",
       "mode": "full",
       "source_file": "99_nd_soe.txt",
@@ -11627,7 +12616,7 @@
         "vientiane"
       ],
       "allow_raw": "owns = location:angkor\n\t\towns = location:ayodhya\n\t\towns = location:pagan\n\t\towns = location:vientiane\n\t\tin_civil_war = no",
-      "potential_raw": "religion.group = religion_group:buddhist\n\t\tOR = {\n\t\t\tculture = culture:thai_culture\n\t\t\tculture = culture:khmer_culture\n\t\t\tculture = culture:burmese_culture\n\t\t\tculture = culture:mon_culture\n\t\t\tculture = culture:lao_culture\n\t\t}",
+      "potential_raw": "religion.group = religion_group:buddhist\n\t\tOR = {\n\t\t\tculture = culture:thai_culture\n\t\t\tculture = culture:khmer_culture\n\t\t\tculture = culture:burmese_culture\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\tculture = culture:rakhine_culture\n\t\t\tculture = culture:danu_culture\n\t\t\tculture = culture:mon_culture\n\t\t\tculture = culture:lao_culture\n\t\t}",
       "form_effect_raw": "hidden_effect = {\n\n\t\t\tset_variable = nd_formed\n\n\t\t\tset_variable = nd_svb_formed\n\n\t\t}\n\t\ttrigger_event_non_silently = nd_svb.1\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tcountry_rank_level < 4\n\t\t\t\tNOT = { is_member_of_international_organization = international_organization:hre }\n\t\t\t}\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\tadd_stability = stability_severe_bonus",
       "formation_event": "nd_svb.1",
       "source": "mod_new",
@@ -11654,6 +12643,14 @@
             {
               "kind": "atom",
               "text": "Burmese Culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Rakhine Culture"
+            },
+            {
+              "kind": "atom",
+              "text": "Danu Culture"
             },
             {
               "kind": "atom",
@@ -11694,8 +12691,8 @@
       "mode": "full",
       "source_file": "99_nd_tab.txt",
       "tag": "TAB",
-      "name": "TAB",
-      "adjective": "TAB_ADJ",
+      "name": "TAB_tabor",
+      "adjective": "TAB_tabor_ADJ",
       "flag": "TAB",
       "color": "map_TAB",
       "level": 3,

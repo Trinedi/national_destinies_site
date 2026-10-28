@@ -957,6 +957,76 @@
         }
       ]
     },
+    "ADU_f": {
+      "culture_gates": [
+        "iberian_group"
+      ],
+      "culture_group_gates": [
+        "iberian_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [
+        "muslim"
+      ],
+      "tag_gates": [],
+      "rank_gates": [],
+      "reform_gates": [],
+      "tag_excludes": [],
+      "suggested_tags": [],
+      "candidates": [
+        {
+          "tag": "GRA",
+          "culture": "andalusi",
+          "religion": "sunni",
+          "owned_in_target": 18,
+          "owned_in_core": 0,
+          "score": 12
+        }
+      ]
+    },
+    "CAT_f": {
+      "culture_gates": [
+        "catalan"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [
+        "christian"
+      ],
+      "tag_gates": [],
+      "rank_gates": [],
+      "reform_gates": [],
+      "tag_excludes": [
+        "CAT"
+      ],
+      "suggested_tags": [],
+      "candidates": [
+        {
+          "tag": "ARA",
+          "culture": "catalan",
+          "religion": "catholic",
+          "owned_in_target": 25,
+          "owned_in_core": 0,
+          "score": 12
+        },
+        {
+          "tag": "MLL",
+          "culture": "catalan",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "owned_in_core": 0,
+          "score": 10
+        },
+        {
+          "tag": "ANR",
+          "culture": "catalan",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "owned_in_core": 0,
+          "score": 8
+        }
+      ]
+    },
     "SPA_f": {
       "culture_gates": [],
       "culture_group_gates": [
@@ -1022,40 +1092,30 @@
         }
       ]
     },
-    "ADU_f": {
+    "VAL_f": {
       "culture_gates": [
-        "iberian_group",
-        "maghrebi_group"
+        "catalan"
       ],
-      "culture_group_gates": [
-        "iberian_group",
-        "maghrebi_group"
-      ],
+      "culture_group_gates": [],
       "religion_gates": [],
       "religion_group_gates": [
-        "muslim"
+        "christian"
       ],
       "tag_gates": [],
       "rank_gates": [],
       "reform_gates": [],
-      "tag_excludes": [],
+      "tag_excludes": [
+        "VAL"
+      ],
       "suggested_tags": [],
       "candidates": [
         {
-          "tag": "GRA",
-          "culture": "andalusi",
-          "religion": "sunni",
-          "owned_in_target": 18,
+          "tag": "ARA",
+          "culture": "catalan",
+          "religion": "catholic",
+          "owned_in_target": 17,
           "owned_in_core": 0,
           "score": 12
-        },
-        {
-          "tag": "MOR",
-          "culture": "moroccan",
-          "religion": "sunni",
-          "owned_in_target": 4,
-          "owned_in_core": 0,
-          "score": 11
         }
       ]
     },
@@ -1483,11 +1543,9 @@
     },
     "SAR_f": {
       "culture_gates": [
-        "italian_group"
+        "sardinian"
       ],
-      "culture_group_gates": [
-        "italian_group"
-      ],
+      "culture_group_gates": [],
       "religion_gates": [],
       "religion_group_gates": [],
       "tag_gates": [],
@@ -1503,14 +1561,6 @@
           "owned_in_target": 8,
           "owned_in_core": 0,
           "score": 9
-        },
-        {
-          "tag": "GEN",
-          "culture": "ligurian",
-          "religion": "catholic",
-          "owned_in_target": 3,
-          "owned_in_core": 0,
-          "score": 7
         }
       ]
     },
@@ -2960,8 +3010,13 @@
       ]
     },
     "CTH_f": {
-      "culture_gates": [],
-      "culture_group_gates": [],
+      "culture_gates": [
+        "amazigh_group",
+        "tunisian"
+      ],
+      "culture_group_gates": [
+        "amazigh_group"
+      ],
       "religion_gates": [],
       "religion_group_gates": [],
       "tag_gates": [],
@@ -2971,12 +3026,20 @@
       "suggested_tags": [],
       "candidates": [
         {
+          "tag": "TLE",
+          "culture": "zenati",
+          "religion": "sunni",
+          "owned_in_target": 28,
+          "owned_in_core": 1,
+          "score": 13
+        },
+        {
           "tag": "TUN",
           "culture": "tunisian",
           "religion": "sunni",
-          "owned_in_target": 63,
+          "owned_in_target": 35,
           "owned_in_core": 1,
-          "score": 9
+          "score": 13
         },
         {
           "tag": "BTL",
@@ -2984,7 +3047,7 @@
           "religion": "sunni",
           "owned_in_target": 9,
           "owned_in_core": 0,
-          "score": 5
+          "score": 9
         },
         {
           "tag": "GBS",
@@ -2992,7 +3055,7 @@
           "religion": "sunni",
           "owned_in_target": 12,
           "owned_in_core": 0,
-          "score": 5
+          "score": 9
         },
         {
           "tag": "GFS",
@@ -3000,39 +3063,7 @@
           "religion": "sunni",
           "owned_in_target": 6,
           "owned_in_core": 0,
-          "score": 5
-        },
-        {
-          "tag": "MOR",
-          "culture": "moroccan",
-          "religion": "sunni",
-          "owned_in_target": 5,
-          "owned_in_core": 0,
-          "score": 5
-        },
-        {
-          "tag": "SIC",
-          "culture": "sicilian",
-          "religion": "catholic",
-          "owned_in_target": 22,
-          "owned_in_core": 0,
-          "score": 5
-        },
-        {
-          "tag": "TLE",
-          "culture": "zenati",
-          "religion": "sunni",
-          "owned_in_target": 28,
-          "owned_in_core": 0,
-          "score": 5
-        },
-        {
-          "tag": "TRP",
-          "culture": "libyan_arabic_culture",
-          "religion": "sunni",
-          "owned_in_target": 4,
-          "owned_in_core": 0,
-          "score": 4
+          "score": 9
         }
       ]
     },
@@ -3798,6 +3829,22 @@
           "score": 13
         },
         {
+          "tag": "VLR",
+          "culture": "muscovite",
+          "religion": "orthodox",
+          "owned_in_target": 8,
+          "owned_in_core": 1,
+          "score": 13
+        },
+        {
+          "tag": "TVE",
+          "culture": "muscovite",
+          "religion": "orthodox",
+          "owned_in_target": 3,
+          "owned_in_core": 1,
+          "score": 10
+        },
+        {
           "tag": "BLO",
           "culture": "novgorodian",
           "religion": "orthodox",
@@ -3806,42 +3853,26 @@
           "score": 9
         },
         {
-          "tag": "GLM",
-          "culture": "muscovite",
+          "tag": "BRY",
+          "culture": "smolenskian_culture",
+          "religion": "orthodox",
+          "owned_in_target": 9,
+          "owned_in_core": 0,
+          "score": 9
+        },
+        {
+          "tag": "CHR",
+          "culture": "severian",
           "religion": "orthodox",
           "owned_in_target": 12,
           "owned_in_core": 0,
           "score": 9
         },
         {
-          "tag": "GRS",
+          "tag": "GLM",
           "culture": "muscovite",
           "religion": "orthodox",
-          "owned_in_target": 6,
-          "owned_in_core": 0,
-          "score": 9
-        },
-        {
-          "tag": "KCH",
-          "culture": "smolenskian_culture",
-          "religion": "orthodox",
-          "owned_in_target": 15,
-          "owned_in_core": 0,
-          "score": 9
-        },
-        {
-          "tag": "KIE",
-          "culture": "ruthenian",
-          "religion": "orthodox",
-          "owned_in_target": 8,
-          "owned_in_core": 0,
-          "score": 9
-        },
-        {
-          "tag": "KOS",
-          "culture": "muscovite",
-          "religion": "orthodox",
-          "owned_in_target": 9,
+          "owned_in_target": 12,
           "owned_in_core": 0,
           "score": 9
         }
@@ -4329,12 +4360,10 @@
       ]
     },
     "MUG_f": {
-      "culture_gates": [
-        "iranian_group",
-        "turkic_group"
-      ],
+      "culture_gates": [],
       "culture_group_gates": [
         "iranian_group",
+        "mongolian_group",
         "turkic_group"
       ],
       "religion_gates": [],
@@ -4353,7 +4382,7 @@
           "tag": "KRT",
           "culture": "khorasani_culture",
           "religion": "sunni",
-          "owned_in_target": 0,
+          "owned_in_target": 5,
           "owned_in_core": 0,
           "note": "Kartids of Herat. Khorasani Sunni, sitting on the historical Timurid eastern frontier. The closest start to Babur's invasion route: Herat to Kabul to Punjab. Geographically the cleanest Mughal run."
         },
@@ -7212,7 +7241,10 @@
     },
     "MOR_f": {
       "culture_gates": [
-        "moroccan"
+        "masmuda",
+        "moroccan",
+        "sanhaja",
+        "zenati"
       ],
       "culture_group_gates": [],
       "religion_gates": [],
@@ -7240,6 +7272,46 @@
           "owned_in_target": 21,
           "owned_in_core": 0,
           "note": "Tafilalt. The playable Moroccan-cultured underdog: a Saharan oasis state on the southeastern flank of the Atlas. Take Fez, Meknes, and Marrakesh from MOR before forming."
+        }
+      ]
+    },
+    "TUN_f": {
+      "culture_gates": [
+        "eastern_amazigh",
+        "tunisian"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "tag_gates": [],
+      "rank_gates": [],
+      "reform_gates": [],
+      "tag_excludes": [],
+      "suggested_tags": [],
+      "candidates": [
+        {
+          "tag": "BTL",
+          "culture": "eastern_amazigh",
+          "religion": "sunni",
+          "owned_in_target": 9,
+          "owned_in_core": 0,
+          "score": 9
+        },
+        {
+          "tag": "GBS",
+          "culture": "eastern_amazigh",
+          "religion": "sunni",
+          "owned_in_target": 12,
+          "owned_in_core": 0,
+          "score": 9
+        },
+        {
+          "tag": "GFS",
+          "culture": "tunisian",
+          "religion": "sunni",
+          "owned_in_target": 6,
+          "owned_in_core": 0,
+          "score": 9
         }
       ]
     },
@@ -7701,6 +7773,29 @@
         }
       ]
     },
+    "TRG_f": {
+      "culture_gates": [
+        "tuareg"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "tag_gates": [],
+      "rank_gates": [],
+      "reform_gates": [],
+      "tag_excludes": [],
+      "suggested_tags": [],
+      "candidates": [
+        {
+          "tag": "TMK",
+          "culture": "tuareg",
+          "religion": "sunni",
+          "owned_in_target": 1,
+          "owned_in_core": 1,
+          "score": 8
+        }
+      ]
+    },
     "AEG_f": {
       "culture_gates": [
         "arabic_group",
@@ -7868,6 +7963,14 @@
           "score": 20
         },
         {
+          "tag": "BIJ",
+          "culture": "algerian",
+          "religion": "sunni",
+          "owned_in_target": 27,
+          "owned_in_core": 0,
+          "score": 12
+        },
+        {
           "tag": "BTL",
           "culture": "eastern_amazigh",
           "religion": "sunni",
@@ -7914,14 +8017,6 @@
           "owned_in_target": 21,
           "owned_in_core": 0,
           "score": 12
-        },
-        {
-          "tag": "TLE",
-          "culture": "zenati",
-          "religion": "sunni",
-          "owned_in_target": 46,
-          "owned_in_core": 0,
-          "score": 12
         }
       ]
     },
@@ -7940,7 +8035,10 @@
       "tag_gates": [],
       "rank_gates": [],
       "reform_gates": [],
-      "tag_excludes": [],
+      "tag_excludes": [
+        "FRA",
+        "GBR"
+      ],
       "suggested_tags": [],
       "candidates": [
         {
@@ -7984,14 +8082,6 @@
           "score": 12
         },
         {
-          "tag": "FRA",
-          "culture": "french",
-          "religion": "catholic",
-          "owned_in_target": 48,
-          "owned_in_core": 0,
-          "score": 12
-        },
-        {
           "tag": "MAC",
           "culture": "english",
           "religion": "catholic",
@@ -8004,6 +8094,14 @@
           "culture": "angevin",
           "religion": "catholic",
           "owned_in_target": 9,
+          "owned_in_core": 0,
+          "score": 12
+        },
+        {
+          "tag": "PLE",
+          "culture": "english",
+          "religion": "catholic",
+          "owned_in_target": 5,
           "owned_in_core": 0,
           "score": 12
         }
@@ -8084,6 +8182,37 @@
           "owned_in_target": 10,
           "owned_in_core": 1,
           "note": "Bono. Akan kingdom that already owns Kumasi, the formation location. The cleanest start."
+        }
+      ]
+    },
+    "BMA_f": {
+      "culture_gates": [
+        "mon_culture"
+      ],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "tag_gates": [],
+      "rank_gates": [],
+      "reform_gates": [],
+      "tag_excludes": [],
+      "suggested_tags": [],
+      "candidates": [
+        {
+          "tag": "PEG",
+          "culture": "mon_culture",
+          "religion": "theravada",
+          "owned_in_target": 28,
+          "owned_in_core": 1,
+          "score": 13
+        },
+        {
+          "tag": "TSM",
+          "culture": "mon_culture",
+          "religion": "theravada",
+          "owned_in_target": 7,
+          "owned_in_core": 0,
+          "score": 9
         }
       ]
     },
@@ -8283,7 +8412,7 @@
         "HUN"
       ],
       "candidates": [],
-      "notes_html": "<h2>Concept</h2>\n<p>The Danubian Monarchy is the Habsburg dilemma made playable. Forming it\nputs the Reich question to you: remain within the Holy Roman Empire and\nrule it from the Danube as the Habsburgs did, or break with the Reich\nand refound the three crowns as an empire of your own.</p>\n<p>This is not Austria-Hungary. That dualist compromise is one possible\nending of the Nationalities Question later on.</p>\n<h2>Forming it</h2>\n<p>Win the crowns through the Succession of the Danube, or take them\nyourself. Winning them is cheaper.</p>\n<h3>Road one: win the Succession of the Danube</h3>\n<p>The situation opens on its own once the dynastic web tightens between\nthe three courts, and at the latest after 1437.</p>\n<ol>\n<li>Marry into the other two crowns.</li>\n<li>Declare for the <strong>union</strong> and keep your standing at 60 or above.</li>\n<li>Deepen your pacts with <strong>Propose the Erbverbruederung</strong>, and convene\n   a diet while your cause is ahead.</li>\n<li>Push the union cause to <strong>100</strong>. This calls the Congress of the\n   Danube, which acclaims its strongest backer.</li>\n<li>If every free crown declared for the union, the Congress becomes an\n   election and the other crowns join you without a war.</li>\n</ol>\n<p>Once you hold every surviving crown, the Monarchy is proclaimed and you\nare asked whether to found it now.</p>\n<h3>Road two: qualify and press the button</h3>\n<ol>\n<li><strong>Kingdom rank or better</strong>, or the Austrian Archduchy reform.</li>\n<li><strong>Control Vienna.</strong> You do not have to own it. It counts if the crown\n   that owns it is your vassal or your union junior.</li>\n<li><strong>Own your own capital.</strong> Hungary needs Buda. Bohemia needs Prague.\n   Austria is already covered by Vienna.</li>\n<li><strong>Settle all three crowns.</strong> Austria, Bohemia and Hungary must each\n   be you, gone, your subject, or your union junior. You never have to\n   annex them.</li>\n<li><strong>Own about 45 locations</strong> of the Danubian pool yourself. Vassal land\n   does not count toward this.</li>\n</ol>\n<p>No religion is required, and you can form it at any date.</p>\n<h3>What each origin still needs</h3>\n<table>\n<thead>\n<tr>\n<th>Origin</th>\n<th>Holds already</th>\n<th>Still to arrange</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><strong>Austria</strong></td>\n<td>Vienna, and its own capital rule</td>\n<td>Bohemia and Hungary settled</td>\n</tr>\n<tr>\n<td><strong>Hungary</strong></td>\n<td>Buda</td>\n<td>Vienna, then Austria and Bohemia settled</td>\n</tr>\n<tr>\n<td><strong>Bohemia</strong></td>\n<td>Prague</td>\n<td>Vienna, then Austria and Hungary settled</td>\n</tr>\n</tbody>\n</table>\n<h2>Pick your founding doctrine on formation</h2>\n<p>Each grants a 45-year modifier and opens one destiny path.</p>\n<table>\n<thead>\n<tr>\n<th></th>\n<th>Antemurale Christianitatis</th>\n<th>Gesamtmonarchie</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Identity</td>\n<td>Bulwark of Christendom against the Ottoman frontier</td>\n<td>The centralized state, three crowns in one chancery</td>\n</tr>\n<tr>\n<td>Strong on</td>\n<td>Manpower, levies, garrisons, land morale, hostile attrition, tolerance</td>\n<td>Control, cabinet and legislative efficiency, tax, assimilation, lower separatism</td>\n</tr>\n<tr>\n<td>Cost</td>\n<td>A small administrative penalty</td>\n<td>A small diplomatic penalty</td>\n</tr>\n<tr>\n<td>Destiny</td>\n<td>Conquest down the Sava, Drava and Danube, capstone Antemurale Bastion</td>\n<td>Treasury and institution thresholds, capstone Staatskanzlei</td>\n</tr>\n</tbody>\n</table>\n<h2>What happens on formation</h2>\n<ul>\n<li>Crowns already fully integrated in union are absorbed. The rest stay\n  subjects and open the Compact of the Crowns, lasting good opinion of\n  you and real subject loyalty.</li>\n<li>If the Empire exists, the Reich Question fires: remain or break.</li>\n<li>A 10-year grace period holds off both internal disasters.</li>\n</ul>\n<h2>After forming</h2>\n<h3>The Reich Question</h3>\n<p><strong>Remain</strong> is the historical choice, and the AI&rsquo;s under the historical\ngame rule. You stay a member under imperial law at kingdom rank where\nthe Empire allows it, and the imperial crown is yours to win. Once the\nsuccession crisis is upheld, the crowns weld only when the Diet ratifies\nthe Sanction: as Emperor you pay imperial authority, as a member you\npetition the Emperor with Lay the Sanction before the Diet, or you let\nthe crowns stand. Hungary resents the Reich while it is a subject crown.\nBreak with the Reich later by diplomacy at the same price; an Emperor\nlays the crown down first, and a pending Sanction becomes your own law.</p>\n<p><strong>Break</strong>: every imperial location you own leaves the Empire with the\nEmperor&rsquo;s core on it, you become an Empire, and the Reaction of the\nReich begins. It cannot be undone. A Hungarian former may only remain\nby entering, which the Emperor&rsquo;s faith and adjacency must allow.</p>\n<h3>The Reaction of the Reich</h3>\n<p>Only after a break. The Emperor gains the Imperial Ban casus belli and\nyou carry the Shunned by the Reich penalty. Any one of these ends it:\nresolve the succession crisis either way; beat the Emperor to 80% war\nscore and enforce Humble the Reich; sue for reconciliation with two\nyears&rsquo; income; or endure 50 years with legitimacy 60 and prestige 50.</p>\n<h3>The succession crisis</h3>\n<p>Three events over your first decade lead into it. It runs on Crown\nConfidence, target 80, floor -30. Reach 80 and the Sanction holds, with\na permanent modifier and every subject crown welded, inside the Reich\nonce the Diet ratifies. Fall to -30 or cede and it breaks.</p>\n<h3>The Nationalities Question</h3>\n<p>Fires on negative stability with a third of your people untolerated or\nhome control under 50%. The Ausgleich makes two co-equal realms and is\nwhere Austria-Hungary lives. Reassertion crushes the leagues. Fragmentation\nbreaks a crown away. The two disasters never run at once.</p>\n<h2>Notes</h2>\n<ul>\n<li>Staying is the safe road, breaking the ambitious one. Break strong.</li>\n<li>Subject loyalty decides whether Hungary and Bohemia fight your wars.\n  Gesamtmonarchie adds 10, the Compact adds more on day one, the weld\n  ends the problem.</li>\n<li>Gesamtmonarchie makes the Ausgleich easy to reach. Antemurale leaves\n  the empire likelier to fracture.</li>\n</ul>",
+      "notes_html": "<h2>Concept</h2>\n<p>The Danubian Monarchy is the Habsburg dilemma made playable. Forming it\nputs the Reich question to you: remain within the Holy Roman Empire and\nrule it from the Danube as the Habsburgs did, or break with the Reich\nand refound the three crowns as an empire of your own.</p>\n<p>This is not Austria-Hungary. That dualist compromise is one possible\nending of the Nationalities Question later on.</p>\n<h2>Forming it</h2>\n<p>Win the crowns through the Succession of the Danube, or take them\nyourself. Winning them is cheaper.</p>\n<h3>Road one: win the Succession of the Danube</h3>\n<p>The situation opens on its own once the dynastic web tightens between\nthe three courts, and at the latest after 1437.</p>\n<ol>\n<li>Marry into the other two crowns.</li>\n<li>Declare for the <strong>union</strong> and keep your standing at 60 or above.</li>\n<li>Deepen your pacts with <strong>Propose the Erbverbruederung</strong>, and convene\n   a diet while your cause is ahead.</li>\n<li>Push the union cause to <strong>100</strong>. This calls the Congress of the\n   Danube, which acclaims its strongest backer.</li>\n<li>If every free crown declared for the union, the Congress becomes an\n   election and the other crowns join you without a war.</li>\n</ol>\n<p>Once you hold every surviving crown, the Monarchy is proclaimed and you\nare asked whether to found it now.</p>\n<h3>Road two: qualify and press the button</h3>\n<ol>\n<li><strong>Kingdom rank or better</strong>, or the Austrian Archduchy reform.</li>\n<li><strong>Control Vienna.</strong> You do not have to own it. It counts if the crown\n   that owns it is your vassal or your union junior.</li>\n<li><strong>Own your own capital.</strong> Hungary needs Buda. Bohemia needs Prague.\n   Austria is already covered by Vienna.</li>\n<li><strong>Settle all three crowns.</strong> Austria, Bohemia and Hungary must each\n   be you, gone, your subject, or your union junior. You never have to\n   annex them.</li>\n<li><strong>Own about 45 locations</strong> of the Danubian pool yourself. Vassal land\n   does not count toward this.</li>\n</ol>\n<p>No religion is required, and you can form it at any date.</p>\n<h3>What each origin still needs</h3>\n<table>\n<thead>\n<tr>\n<th>Origin</th>\n<th>Holds already</th>\n<th>Still to arrange</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><strong>Austria</strong></td>\n<td>Vienna, and its own capital rule</td>\n<td>Bohemia and Hungary settled</td>\n</tr>\n<tr>\n<td><strong>Hungary</strong></td>\n<td>Buda</td>\n<td>Vienna, then Austria and Bohemia settled</td>\n</tr>\n<tr>\n<td><strong>Bohemia</strong></td>\n<td>Prague</td>\n<td>Vienna, then Austria and Hungary settled</td>\n</tr>\n</tbody>\n</table>\n<h2>Pick your founding doctrine on formation</h2>\n<p>Each grants a 45-year modifier and opens one destiny path.</p>\n<table>\n<thead>\n<tr>\n<th></th>\n<th>Antemurale Christianitatis</th>\n<th>Gesamtmonarchie</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Identity</td>\n<td>Bulwark of Christendom against the Ottoman frontier</td>\n<td>The centralized state, three crowns in one chancery</td>\n</tr>\n<tr>\n<td>Strong on</td>\n<td>Manpower, levies, garrisons, land morale, hostile attrition, tolerance</td>\n<td>Control, cabinet and legislative efficiency, tax, assimilation, lower separatism</td>\n</tr>\n<tr>\n<td>Cost</td>\n<td>A small administrative penalty</td>\n<td>A small diplomatic penalty</td>\n</tr>\n<tr>\n<td>Destiny</td>\n<td>Conquest down the Sava, Drava and Danube, capstone Antemurale Bastion</td>\n<td>Treasury and institution thresholds, capstone Staatskanzlei</td>\n</tr>\n</tbody>\n</table>\n<h2>What happens on formation</h2>\n<ul>\n<li>Crowns already fully integrated in union are absorbed. The rest stay\n  subjects and open the Compact of the Crowns, lasting good opinion of\n  you and real subject loyalty.</li>\n<li>If the Empire exists, the Reich Question fires: remain or break.</li>\n<li>A 10-year grace period holds off both internal disasters.</li>\n</ul>\n<h2>After forming</h2>\n<h3>The Reich Question</h3>\n<p><strong>Remain</strong> is the historical choice, and the AI&rsquo;s under the historical\ngame rule. You stay a member under imperial law at kingdom rank where\nthe Empire allows it, and the imperial crown is yours to win. Once the\nsuccession crisis is upheld, the crowns weld only when the Diet ratifies\nthe Sanction: as Emperor you pay imperial authority, as a member you\npetition the Emperor with Lay the Sanction before the Diet, or you let\nthe crowns stand. Hungary resents the Reich while it is a subject crown.\nBreak with the Reich later by diplomacy at the same price; an Emperor\nlays the crown down first, and a pending Sanction becomes your own law.</p>\n<p><strong>Break</strong>: every imperial location you own leaves the Empire with the\nEmperor&rsquo;s core on it, you become an Empire, and the Reaction of the\nReich begins. It cannot be undone. A Hungarian former may only remain\nby entering, which the Emperor&rsquo;s faith and adjacency must allow.</p>\n<h3>The Reaction of the Reich</h3>\n<p>Only after a break. The Emperor gains the Imperial Ban casus belli and\nyou carry the Shunned by the Reich penalty. Any one of these ends it:\nresolve the succession crisis either way; beat the Emperor to 80% war\nscore and enforce Humble the Reich; sue for reconciliation with two\nyears&rsquo; income; or endure 50 years with legitimacy 60 and prestige 50.</p>\n<h3>The succession crisis</h3>\n<p>Three events over your first decade lead into it. It runs on Crown\nConfidence, target 80, floor -30. Reach 80 and the Sanction holds, with\na permanent modifier and every subject crown welded, inside the Reich\nonce the Diet ratifies. Fall to -30 or cede and it breaks.</p>\n<h3>The Nationalities Question</h3>\n<p>Fires on negative stability with a third of your people untolerated or\nhome control under 50%. The Ausgleich makes two co-equal realms and is\nwhere Austria-Hungary lives. Reassertion crushes the leagues. Fragmentation\nbreaks a crown away. The two disasters never run at once.</p>\n<h2>Notes</h2>\n<ul>\n<li>Staying is the safe road, breaking the ambitious one. Break strong.</li>\n<li>Subject loyalty decides whether Hungary and Bohemia fight your wars.\n  Gesamtmonarchie adds 10, the Compact adds more on day one, the weld\n  ends the problem.</li>\n<li>Gesamtmonarchie makes the Ausgleich easy to reach. Antemurale leaves\n  the empire likelier to fracture.</li>\n<li>Lobby rules: Succession of the Danube off means the question never\n  opens, and an AI founds the Monarchy only under AI Forms Nations;\n  Reaction of the Reich off means the Emperor does not answer a break.</li>\n</ul>",
       "priority_starters": [
         {
           "tag": "HAB",
@@ -8384,6 +8513,90 @@
           "owned_in_target": 10,
           "owned_in_core": 1,
           "note": "Benin. The only Edo-cultured tag and starts already owning Benin City at country rank kingdom. There is no other realistic entry."
+        }
+      ]
+    },
+    "FRK_f": {
+      "culture_gates": [
+        "french_group"
+      ],
+      "culture_group_gates": [
+        "french_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "tag_gates": [
+        "GBU",
+        "LOT"
+      ],
+      "rank_gates": [],
+      "reform_gates": [],
+      "tag_excludes": [],
+      "suggested_tags": [],
+      "candidates": [
+        {
+          "tag": "BAR",
+          "culture": "lorrain",
+          "religion": "catholic",
+          "owned_in_target": 6,
+          "owned_in_core": 0,
+          "score": 9
+        },
+        {
+          "tag": "FCB",
+          "culture": "franc_comtois",
+          "religion": "catholic",
+          "owned_in_target": 11,
+          "owned_in_core": 0,
+          "score": 9
+        },
+        {
+          "tag": "HAI",
+          "culture": "picard",
+          "religion": "catholic",
+          "owned_in_target": 6,
+          "owned_in_core": 0,
+          "score": 9
+        },
+        {
+          "tag": "LOR",
+          "culture": "lorrain",
+          "religion": "catholic",
+          "owned_in_target": 11,
+          "owned_in_core": 0,
+          "score": 9
+        },
+        {
+          "tag": "MTZ",
+          "culture": "lorrain",
+          "religion": "catholic",
+          "owned_in_target": 5,
+          "owned_in_core": 0,
+          "score": 9
+        },
+        {
+          "tag": "FRA",
+          "culture": "french",
+          "religion": "catholic",
+          "owned_in_target": 1,
+          "owned_in_core": 1,
+          "score": 8
+        },
+        {
+          "tag": "LIE",
+          "culture": "walloon",
+          "religion": "catholic",
+          "owned_in_target": 3,
+          "owned_in_core": 0,
+          "score": 7
+        },
+        {
+          "tag": "VDU",
+          "culture": "lorrain",
+          "religion": "catholic",
+          "owned_in_target": 2,
+          "owned_in_core": 0,
+          "score": 6
         }
       ]
     },
@@ -8969,6 +9182,83 @@
         }
       ]
     },
+    "MKS_f": {
+      "culture_gates": [],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "tag_gates": [],
+      "rank_gates": [],
+      "reform_gates": [],
+      "tag_excludes": [],
+      "suggested_tags": [],
+      "candidates": [
+        {
+          "tag": "GOW",
+          "culture": "makassarese_culture",
+          "religion": "tolotang_religion",
+          "owned_in_target": 2,
+          "owned_in_core": 1,
+          "score": 5
+        },
+        {
+          "tag": "LUW",
+          "culture": "buginese_culture",
+          "religion": "tolotang_religion",
+          "owned_in_target": 10,
+          "owned_in_core": 0,
+          "score": 5
+        },
+        {
+          "tag": "BNE",
+          "culture": "buginese_culture",
+          "religion": "tolotang_religion",
+          "owned_in_target": 1,
+          "owned_in_core": 1,
+          "score": 4
+        },
+        {
+          "tag": "PKR",
+          "culture": "mandarese_culture",
+          "religion": "aluk_religion",
+          "owned_in_target": 2,
+          "owned_in_core": 0,
+          "score": 2
+        },
+        {
+          "tag": "RRU",
+          "culture": "buginese_culture",
+          "religion": "tolotang_religion",
+          "owned_in_target": 2,
+          "owned_in_core": 0,
+          "score": 2
+        },
+        {
+          "tag": "SIG",
+          "culture": "buginese_culture",
+          "religion": "tolotang_religion",
+          "owned_in_target": 2,
+          "owned_in_core": 0,
+          "score": 2
+        },
+        {
+          "tag": "BTE",
+          "culture": "makassarese_culture",
+          "religion": "tolotang_religion",
+          "owned_in_target": 1,
+          "owned_in_core": 0,
+          "score": 1
+        },
+        {
+          "tag": "CIN",
+          "culture": "buginese_culture",
+          "religion": "tolotang_religion",
+          "owned_in_target": 1,
+          "owned_in_core": 0,
+          "score": 1
+        }
+      ]
+    },
     "MRL_f": {
       "culture_gates": [
         "bicolano_culture",
@@ -9475,6 +9765,90 @@
         }
       ]
     },
+    "RHC_f": {
+      "culture_gates": [
+        "german_group"
+      ],
+      "culture_group_gates": [
+        "german_group"
+      ],
+      "religion_gates": [],
+      "religion_group_gates": [],
+      "tag_gates": [],
+      "rank_gates": [],
+      "reform_gates": [],
+      "tag_excludes": [
+        "HAB",
+        "PRU"
+      ],
+      "suggested_tags": [],
+      "candidates": [
+        {
+          "tag": "ANS",
+          "culture": "east_franconian",
+          "religion": "catholic",
+          "owned_in_target": 6,
+          "owned_in_core": 0,
+          "score": 9
+        },
+        {
+          "tag": "BAM",
+          "culture": "east_franconian",
+          "religion": "catholic",
+          "owned_in_target": 5,
+          "owned_in_core": 0,
+          "score": 9
+        },
+        {
+          "tag": "HES",
+          "culture": "rhine_franconian",
+          "religion": "catholic",
+          "owned_in_target": 8,
+          "owned_in_core": 0,
+          "score": 9
+        },
+        {
+          "tag": "KOL",
+          "culture": "ripuarian_franconian",
+          "religion": "catholic",
+          "owned_in_target": 8,
+          "owned_in_core": 0,
+          "score": 9
+        },
+        {
+          "tag": "LBV",
+          "culture": "danube_bavarian",
+          "religion": "catholic",
+          "owned_in_target": 14,
+          "owned_in_core": 0,
+          "score": 9
+        },
+        {
+          "tag": "MAI",
+          "culture": "rhine_franconian",
+          "religion": "catholic",
+          "owned_in_target": 6,
+          "owned_in_core": 0,
+          "score": 9
+        },
+        {
+          "tag": "MUN",
+          "culture": "westphalian",
+          "religion": "catholic",
+          "owned_in_target": 9,
+          "owned_in_core": 0,
+          "score": 9
+        },
+        {
+          "tag": "PAL",
+          "culture": "rhine_franconian",
+          "religion": "catholic",
+          "owned_in_target": 11,
+          "owned_in_core": 0,
+          "score": 9
+        }
+      ]
+    },
     "SOE_f": {
       "culture_gates": [
         "songhai"
@@ -9511,9 +9885,11 @@
     "SVB_f": {
       "culture_gates": [
         "burmese_culture",
+        "danu_culture",
         "khmer_culture",
         "lao_culture",
         "mon_culture",
+        "rakhine_culture",
         "thai_culture"
       ],
       "culture_group_gates": [],
@@ -9552,6 +9928,14 @@
           "score": 16
         },
         {
+          "tag": "ARK",
+          "culture": "rakhine_culture",
+          "religion": "theravada",
+          "owned_in_target": 17,
+          "owned_in_core": 0,
+          "score": 12
+        },
+        {
           "tag": "LAV",
           "culture": "thai_culture",
           "religion": "theravada",
@@ -9580,14 +9964,6 @@
           "culture": "burmese_culture",
           "religion": "theravada",
           "owned_in_target": 8,
-          "owned_in_core": 0,
-          "score": 12
-        },
-        {
-          "tag": "SPN",
-          "culture": "thai_culture",
-          "religion": "theravada",
-          "owned_in_target": 5,
           "owned_in_core": 0,
           "score": 12
         }
