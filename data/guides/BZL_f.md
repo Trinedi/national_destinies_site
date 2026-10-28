@@ -8,7 +8,7 @@ special_notes:
     body: >
       Brazil sits in Portugal's formable list from the start, but it cannot be
       formed until the court has moved. As Portugal, take the decision **Send
-      the Court to Rio**. It starts **the Transmigration**, a disaster that runs
+      the Court to Rio (BETA)**. It starts **the Transmigration**, a disaster that runs
       the move, and Brazil opens when the move ends with **Two Crowns** or with
       **Portugal Let Go**. Only a player can take this road.
     locations: [lisbon, goana_para]
@@ -30,7 +30,7 @@ can outgrow the one in Lisbon.
 3. **Grow Rio de Janeiro into a town.**
 4. **Settle a quarter of the Pindorama area** with your own or your
    subjects' land.
-5. **Take the decision Send the Court to Rio.** Rio becomes your capital
+5. **Take the decision Send the Court to Rio (BETA).** Rio becomes your capital
    and the Transmigration begins.
 6. **Move the Royal Council, the Supreme Court and the Royal Treasury to
    Rio,** with a quarter of your nobles and 15% of your clergy in the
