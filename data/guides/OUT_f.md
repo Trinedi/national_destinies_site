@@ -20,7 +20,8 @@ and the Sovereign Order of Saint John all feed into.
 It is not about conquest. The defining fact of the crusader states was
 that a tiny Frankish ruling caste governed an overwhelmingly non-Latin
 population: Muslim, Eastern Christian, Jewish and Samaritan. This is a
-country about governing a majority you cannot convert and must not try to.
+country about governing people of other faiths, and about deciding whether
+to leave them in it.
 
 ## Forming it
 
@@ -28,37 +29,37 @@ country about governing a majority you cannot convert and must not try to.
 2. **Be a kingdom or an empire**, or have held Jerusalem, the Latin
    Empire, Crusader Africa, the Knights of the Temple or the Sovereign
    Order of Saint John.
-3. **Keep Catholics at 50 percent or less of your own population.** You
-   may only proclaim Outremer while your own church is a minority among
-   your own subjects.
-4. **Own Jerusalem, Acre, Cairo, Baghdad, Mosul, Mecca, Medina and Adan.**
+3. **Own Jerusalem, Acre, Cairo, Baghdad, Mosul, Mecca, Medina and Adan.**
    Acre was the kingdom's capital from 1191 and its last mainland holding
    in 1291.
-5. **Hold 60 percent of the Crescent and Egypt, plus the Hijaz, South
+4. **Hold 60 percent of the Crescent and Egypt, plus the Hijaz, South
    Yemen and Cyprus.** Roughly 278 of 462 locations.
-6. **Be at peace with yourself.** A civil war blocks formation.
-7. **Form Outremer.**
+5. **Be at peace with yourself.** A civil war blocks formation.
+6. **Form Outremer.**
 
-**The minority requirement is the whole country.** It shuts off the
-convert-or-depopulate route to a clean crusader empire, counts Eastern
-Christians, Jews and Samaritans on the governed side, and excludes a
-Catholic-majority world empire. France with a Levantine province is
-France. In practice it only bites a player dragging a large Catholic
-homeland behind them.
+**Tolerate or convert: the law The Faiths of the East.** Every Catholic
+country holding land in the Latin East has it, so you choose long before
+forming. It acts on those lands only.
 
-So this is the one Catholic country in the game that cannot use the
-Catholic religion tree: no discipline bonus, no conversion speed and no
-holy war score anywhere in the tag. Since each estate's satisfaction
-follows the crown's tolerance of its faith, tolerance of heathens and
-heretics is simply your stability.
+- **Customs of the Land.** As the crusader states did: commoners there
+  cannot convert, tolerance of other faiths rises, the Latin clergy
+  resents it.
+- **Union with Rome.** The Eastern churches join Rome, as the Maronites
+  did in 1182: Eastern Christians convert faster, Muslims slower.
+- **Latin Mission.** The friars preach to all: faster conversion, less
+  tolerance of every other faith.
+
+Since each estate's satisfaction follows the crown's tolerance of its
+faith, a realm that keeps its many faiths lives on its tolerance of
+heathens and heretics.
 
 ## Pick your founding doctrine on formation
 
 The formation event is a coronation that inherits a problem. The herald
-reads out the style, then the chamberlain hands over the survey: fewer
-than two in ten hear Mass in Latin, forty frontier castles answer to
-Rome, and your army is paid for by the poll tax on subjects who are not
-Christian.
+reads out the style, then the chamberlain hands over the survey: the
+barons' court judges the Franks and almost no one else, forty frontier
+castles answer to Rome, and your army is paid for by the poll tax on
+subjects who are not Christian.
 
 - **The Compact of the Courts.** Tolerance, cultures capacity,
   separatism, control and estate satisfaction, bought with a heavy cut to
