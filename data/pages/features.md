@@ -128,8 +128,7 @@ The game rule AI Forms Nations has three settings. It is off by default.
 ## Banks
 
 The banking houses of the base game, such as the Peruzzi, the Bardi and the
-Acciaioli, get a game of their own. This part of the mod is still in
-development.
+Acciaioli, get a game of their own. This part of the mod is in beta.
 
 - **The Money Market** shows a bank its debtors, its offices and its rival
   banks in one panel, with a map of who owes it.
