@@ -105,11 +105,36 @@ Start from the [Portugal page](index.html#POR_f) or read the
 
 ## AI forms nations
 
-With the game rule AI Forms Nations set to Opportunistic, an AI country that
-meets the requirements of a major formable forms it. The nine are Spain,
-Russia, Great Britain, Scandinavia, the Mughals, the Danubian Monarchy,
-Germany, Italy and the Netherlands. The rule is off by default, and it does
-not change how the AI fights its wars.
+The game rule AI Forms Nations has three settings. It is off by default.
+
+- **Off.** The base game's AI. It forms the nations it happens to qualify
+  for and works toward none.
+- **Opportunistic.** An AI country that meets the requirements of a major
+  formable forms it. The nine are Spain, Russia, Great Britain, Scandinavia,
+  the Mughals, the Danubian Monarchy, Germany, Italy and the Netherlands.
+  How the AI fights its wars does not change.
+- **Ambitious.** Every AI country works toward one formable, the one it
+  formed in history or else the smallest it can reach. It wants that land,
+  favours wars on the countries that hold it, forms the nation once it
+  qualifies and then aims one step higher. The world is harder and changes
+  more.
+
+## Banks
+
+The banking houses of the base game, such as the Peruzzi, the Bardi and the
+Acciaioli, get a game of their own. This part of the mod is still in
+development.
+
+- **The Money Market** shows a bank its debtors, its offices and its rival
+  banks in one panel, with a map of who owes it.
+- A bank lends, takes pledges for its loans and sells war bonds.
+- Each bank has trust and greed. When trust fails, the bank faces a run.
+- A bank can also hold land. It can pay for a war and take a town in the
+  peace, seize a pledged place and take a country under its protection.
+
+The game rule National Destinies Banks has three settings. Full is all of
+the above, Money Only leaves out everything about land, and Disabled keeps
+banks as they are in the base game.
 
 ## Compatibility
 
