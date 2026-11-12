@@ -7,12 +7,16 @@ their own. This page explains each part of it.
 
 ## Formation events
 
+![The Birth of Spain event with the bonuses of one choice showing](img/formation_event_tall.jpg)
+
 Forming a country opens an event about that moment in its history. It offers
 two or three choices, and each grants a different bonus that lasts for a set
 number of years. In most countries the choice also decides which destiny path
 you follow.
 
 ## Advance trees
+
+![Spain's own advances in the first age of the advance tree, one of them hovered](img/advance_tree.jpg)
 
 Each country has advances of its own in the ages of the advance tree. They
 give permanent bonuses and come from what the nation was known for, such as
@@ -23,6 +27,8 @@ Where the base game already gives a country advances, they stay as they are
 and the mod adds the ones that were missing.
 
 ## Destiny trees
+
+![Castile's and Spain's destiny trees side by side in the advance tree](img/destiny_tree.jpg)
 
 A destiny tree is a set of missions that opens after you form a country.
 
@@ -46,6 +52,8 @@ The game rule National Destinies Destiny Trees turns them off.
 
 ## Bureaucracies
 
+![The list of institutions Spain can install](img/bureaucracy_list_tall.jpg)
+
 Each country gains 4 to 8 historical institutions when it forms, such as a
 royal mint, an examination board or a customs house. Each is a bureaucracy
 you can install, with a funding level that scales its effects and its
@@ -65,6 +73,8 @@ base game already gives them bureaucracy content of their own.
 The game rule National Destinies Bureaucracies turns all of this off.
 
 ## Units, buildings and levies
+
+![Spain's own advances as a list, two of them unlocking buildings](img/unique_advances_list_tall.jpg)
 
 Where a country's history has something of its own to field or build, the
 mod adds it. A country's advances unlock its units, buildings and levies, so
