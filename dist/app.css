@@ -75,13 +75,24 @@ html, body { height: 100%; margin: 0; padding: 0; background: var(--bg-0); color
   color: #fff;
 }
 #sidebar .features-link {
-  display: block;
-  margin-top: 8px;
+  display: inline-flex;
+  align-items: center;
+  margin: 10px 6px 0 0;
+  padding: 6px 10px;
+  background: #2b2416;
+  border: 1px solid #5c4a26;
+  border-radius: 4px;
   color: var(--accent);
   font-size: 12px;
+  font-weight: 600;
   text-decoration: none;
+  letter-spacing: 0.02em;
 }
-#sidebar .features-link:hover { text-decoration: underline; }
+#sidebar .features-link:hover {
+  background: #5c4a26;
+  border-color: var(--accent);
+  color: #fff;
+}
 #sidebar .workshop-link svg {
   flex-shrink: 0;
 }
