@@ -18,7 +18,10 @@ import yaml
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 WORKSHOP_DESCRIPTION = "workshop_description.bbcode"
-COUNTRIES_SECTION = re.compile(r"(\[h2\]Countries\[/h2\]\n).*?(?=\n\[h2\])", re.S)
+# Headings are pictures (render_workshop_headings.py), named by their file.
+COUNTRIES_SECTION = re.compile(
+    r"(\[img\][^\[\]]*/countries\.png\[/img\]\n).*?(?=\n\[img\])", re.S
+)
 # Steam refuses a longer description.
 STEAM_DESCRIPTION_LIMIT = 8000
 
