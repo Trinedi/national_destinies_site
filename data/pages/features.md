@@ -124,7 +124,7 @@ not change how the AI fights its wars.
 
 ## Translations
 
-French is about 70% translated, by LeJardinBleu. Every other language shows
+About two thirds of the mod is translated into French, by LeJardinBleu. Every other language shows
 the English text.
 
 ## Bugs
