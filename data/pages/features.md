@@ -67,6 +67,12 @@ base game already gives them bureaucracy content of their own.
 
 The game rule National Destinies Bureaucracies turns all of this off.
 
+## Units, buildings and levies
+
+Where a country's history has something of its own to field or build, the
+mod adds it. A country's advances unlock its units, buildings and levies, so
+they arrive in the age they belong to. Destiny paths unlock buildings too.
+
 ## New formables
 
 More than 50 countries in the mod do not exist in the base game, from Songhai
