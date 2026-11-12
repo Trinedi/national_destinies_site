@@ -103,31 +103,6 @@ Portugal can move its court to Rio de Janeiro and go on to become Brazil.
 Start from the [Portugal page](index.html#POR_f) or read the
 [Brazil guide](index.html#BZL_f).
 
-## Chinese Mandate Crisis
-
-This crisis can break up a weak China. It is off by default and is made for
-an AI China. It has not been tested with a player as Emperor. Turn it on with
-the game rule Mandate Crisis before you start a game.
-
-**When it can start.** Celestial authority is 30 or lower and at least two of
-these are true.
-
-- Stability is below 0.
-- Government power is below 40.
-- Legitimacy is below 40.
-- At least two estates are unhappy.
-
-**How it ends.**
-
-- The dynasty recovers with celestial authority at 60, stability at 30 and
-  government power at 50.
-- If provinces have broken away, the dynasty wins by holding 65% of China
-  with every challenger gone.
-- A challenger takes the Mandate by holding 65% of China.
-- It ends by itself after 50 years.
-
-After it ends it cannot start again for 30 years. It has 17 events.
-
 ## AI forms nations
 
 With the game rule AI Forms Nations set to Opportunistic, an AI country that
