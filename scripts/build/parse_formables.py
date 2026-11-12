@@ -254,7 +254,9 @@ def parse_block(block_key: str, body: str, mode: str, source_file: str) -> dict:
 
     # A formable with no explicit `tag` field forms into the tag implied by
     # its block name (vanilla AIR_f has no tag field and forms AIR).
-    implied_tag = block_key[:-2] if block_key.endswith("_f") else None
+    # An INJECT or REPLACE block implies nothing: the block it changes names
+    # the tag (adu_restored_f forms ADU).
+    implied_tag = block_key[:-2] if mode == "full" and block_key.endswith("_f") else None
     record: dict = {
         "block_key": block_key,
         "mode": mode,
@@ -435,11 +437,24 @@ def main() -> int:
 
     print(f"reading vanilla {vanilla_dir} ...")
     vanilla = parse_dir(vanilla_dir)
+    # A DLC's files ship to every player and define formables of their own
+    # (adu_restored_f, Across the Pillars), which the mod injects into.
+    for dlc_dir in sorted((eu5 / "dlc").glob("*/in_game/common/formable_countries")):
+        vanilla += parse_dir(dlc_dir)
     print(f"  {len(vanilla)} formables")
 
     print(f"reading mod {mod_dir} ...")
     mod = parse_dir(mod_dir)
     print(f"  {len(mod)} mod entries (full + INJECT/REPLACE)")
+
+    vanilla_keys = {r["block_key"] for r in vanilla}
+    orphans = [r["block_key"] for r in mod
+               if r["mode"] in ("inject", "replace") and r["block_key"] not in vanilla_keys]
+    if orphans:
+        # Shown as a formable it would be a row with no name, level or map.
+        print(f"mod blocks change formables the game does not define: {', '.join(orphans)}",
+              file=sys.stderr)
+        return 1
 
     merged = merge(vanilla, mod)
     apply_territory_overrides(merged, cfg.get("territory_overrides") or {})
@@ -449,6 +464,7 @@ def main() -> int:
     # sharing a named color (e.g. several Scandinavian tags) stay distinct.
     named_dirs = [
         eu5 / "main_menu/common/named_colors",
+        *sorted((eu5 / "dlc").glob("*/main_menu/common/named_colors")),
         mod_root / "main_menu/common/named_colors",
     ]
     named_colors = parse_named_colors(*named_dirs)

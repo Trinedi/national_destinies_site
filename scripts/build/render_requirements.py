@@ -271,13 +271,35 @@ def r_exists(op: str, value: str, loc) -> str:
     return f"{name} exists"
 
 
+def r_we_are(op: str, value: str, loc) -> str:
+    name = loc_or_pretty(loc, strip_ref(value))
+    return f"We are not {name}" if op == "!=" else f"We are {name}"
+
+
+def conditional_heading(limit_clauses: list[dict]) -> str | None:
+    """A trigger_if's condition as one heading ("If England exists and we
+    are not England:"), when it is a flat list of plain statements."""
+    if not limit_clauses or any(c.get("children") for c in limit_clauses):
+        return None
+    parts = [c["text"][0].lower() + c["text"][1:] if c["text"].startswith("We ") else c["text"]
+             for c in limit_clauses]
+    return "If " + " and ".join(parts) + ":"
+
+
 # Tooltip loc strings can embed scripting-function brackets that only the
 # game can evaluate ([ShowSituationNameWithNoTooltip('x')], [GetCountry('TUR')
 # .GetAdjectiveWithNoTooltip], [concept|e]). Resolve the common shapes from
 # loc and drop the rest, so the site never shows raw bracket script (the RUM
 # allow tooltip shipped that way).
 _LOC_FN_RES: list[tuple[re.Pattern, object]] = [
-    (re.compile(r"\[ShowSituationName\w*\(\s*'([^']+)'\s*\)\]"),
+    # [ShowRegionName('iberia_region')], [ShowLawName('x')], and the same
+    # for any other kind of thing the game can name.
+    (re.compile(r"\[Show\w*Name\w*\(\s*'([^']+)'\s*\)\]"),
+     lambda m, loc: loc_or_pretty(loc, m.group(1))),
+    (re.compile(r"\[Show\w*Adjective\w*\(\s*'([^']+)'\s*\)\]"),
+     lambda m, loc: loc_or_pretty(loc, m.group(1) + "_ADJ", m.group(1))),
+    # [GetUniqueInternationalOrganization('hre').GetName]
+    (re.compile(r"\[Get(?!Country\b)\w+\(\s*'([^']+)'\s*\)\.GetName\w*\]"),
      lambda m, loc: loc_or_pretty(loc, m.group(1))),
     (re.compile(r"\[GetCountry\(\s*'([A-Z0-9]{3})'\s*\)\.GetAdjective\w*\]"),
      lambda m, loc: loc_or_pretty(loc, m.group(1) + "_ADJ")),
@@ -288,9 +310,17 @@ _LOC_FN_RES: list[tuple[re.Pattern, object]] = [
 ]
 
 
+# Bracket script no rule above could name. Dropping it leaves a sentence with
+# a hole in it ("Every location in must be owned"), so the build reports each.
+UNRESOLVED_LOC_FUNCTIONS: set[str] = set()
+
+
 def scrub_loc_functions(text: str, loc) -> str:
     for rx, fn in _LOC_FN_RES:
         text = rx.sub(lambda m, fn=fn: fn(m, loc), text)
+    text = re.sub(r"\$([A-Za-z_][A-Za-z0-9_]*)\$",
+                  lambda m: loc_or_pretty(loc, m.group(1)), text)
+    UNRESOLVED_LOC_FUNCTIONS.update(re.findall(r"\[[^\]]*\]", text))
     text = re.sub(r"\[[^\]]*\]", "", text)
     return re.sub(r"\s{2,}", " ", text).strip()
 
@@ -313,6 +343,8 @@ ATOM_HANDLERS = {
     "has_advance": r_has_advance,
     "always": r_yes_no_flag("Always"),
     "exists": r_exists,
+    "this": r_we_are,
+    "tag": r_we_are,
     "is_hegemon": r_yes_no_flag("Hegemon"),
     "in_civil_war": r_yes_no_flag("In civil war"),
     "at_war": r_yes_no_flag("At war"),
@@ -372,6 +404,11 @@ def render_block(key: str, op: str, body: list, loc) -> dict | None:
     if key == "trigger_if":
         # Paradox conditional. Body has `limit = { ... }` then effects;
         # for our purposes treat as conditional clause group.
+        limit = [c for c in body if c[0] == "block" and c[1] == "limit"]
+        rest = [c for c in body if not (c[0] == "block" and c[1] == "limit")]
+        heading = conditional_heading(render_clauses(limit[0][3], loc)) if len(limit) == 1 else None
+        if heading:
+            return {"kind": "if", "text": heading, "children": render_clauses(rest, loc)}
         return {"kind": "if", "text": "If:", "children": render_clauses(body, loc)}
     if key in ("trigger_else_if", "trigger_else"):
         return {"kind": "else_if", "text": prettify(key) + ":", "children": render_clauses(body, loc)}
@@ -544,6 +581,10 @@ def main() -> int:
         json.dump(fm, f, indent=2)
     print(f"rendered requirements for {rendered}/{len(fm['formables'])} formables")
     print(f"wrote {out_path} ({out_path.stat().st_size/1e6:.2f} MB)")
+    if UNRESOLVED_LOC_FUNCTIONS:
+        print("requirement texts lost script the build cannot name: "
+              + ", ".join(sorted(UNRESOLVED_LOC_FUNCTIONS)), file=sys.stderr)
+        return 1
     return 0
 
 

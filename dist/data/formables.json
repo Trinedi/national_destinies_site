@@ -252,22 +252,8 @@
         },
         {
           "kind": "if",
-          "text": "If:",
+          "text": "If England exists and we are not England:",
           "children": [
-            {
-              "kind": "block",
-              "text": "Limit:",
-              "children": [
-                {
-                  "kind": "atom",
-                  "text": "England exists"
-                },
-                {
-                  "kind": "atom",
-                  "text": "This: England"
-                }
-              ]
-            },
             {
               "kind": "atom",
               "text": "We must either destroy England or make them our subject!"
@@ -276,22 +262,8 @@
         },
         {
           "kind": "if",
-          "text": "If:",
+          "text": "If Scotland exists and we are not Scotland:",
           "children": [
-            {
-              "kind": "block",
-              "text": "Limit:",
-              "children": [
-                {
-                  "kind": "atom",
-                  "text": "Scotland exists"
-                },
-                {
-                  "kind": "atom",
-                  "text": "This: Scotland"
-                }
-              ]
-            },
             {
               "kind": "atom",
               "text": "We must either destroy Scotland or make them our subject!"
@@ -300,22 +272,8 @@
         },
         {
           "kind": "if",
-          "text": "If:",
+          "text": "If Wales exists and we are not Wales:",
           "children": [
-            {
-              "kind": "block",
-              "text": "Limit:",
-              "children": [
-                {
-                  "kind": "atom",
-                  "text": "Wales exists"
-                },
-                {
-                  "kind": "atom",
-                  "text": "This: Wales"
-                }
-              ]
-            },
             {
               "kind": "atom",
               "text": "We must either destroy Wales or make them our subject!"
@@ -324,22 +282,8 @@
         },
         {
           "kind": "if",
-          "text": "If:",
+          "text": "If Balliol exists and we are not Balliol:",
           "children": [
-            {
-              "kind": "block",
-              "text": "Limit:",
-              "children": [
-                {
-                  "kind": "atom",
-                  "text": "Balliol exists"
-                },
-                {
-                  "kind": "atom",
-                  "text": "This: Balliol"
-                }
-              ]
-            },
             {
               "kind": "atom",
               "text": "We must either destroy Balliol or make them our subject!"
@@ -570,7 +514,7 @@
             },
             {
               "kind": "atom",
-              "text": "Tag: Pale"
+              "text": "We are Pale"
             }
           ]
         },
@@ -604,7 +548,7 @@
       "english_allow": [
         {
           "kind": "atom",
-          "text": "Neither the nor the of can exist."
+          "text": "Neither the Lordship Of Ireland nor the High Kingship of Ireland can exist."
         }
       ]
     },
@@ -653,7 +597,7 @@
       "english_allow": [
         {
           "kind": "atom",
-          "text": "We must be the international organization leader short of the of"
+          "text": "We must be the international organization leader short of the High Kingship of Ireland"
         }
       ]
     },
@@ -696,7 +640,7 @@
       "english_allow": [
         {
           "kind": "atom",
-          "text": "We must be the of the"
+          "text": "We must be the Lord of Ireland of the Lordship Of Ireland"
         }
       ]
     },
@@ -861,7 +805,7 @@
       "english_allow": [
         {
           "kind": "atom",
-          "text": "exists\nThe international organization can enact the instead to form this country"
+          "text": "Swiss Confederation exists\nThe international organization can enact the Swiss Unification instead to form this country"
         }
       ]
     },
@@ -919,7 +863,7 @@
       "english_allow": [
         {
           "kind": "atom",
-          "text": "Every location in must be owned by a country or one of our subjects!"
+          "text": "Every location in Iberia must be owned by a Muslim country or one of our subjects!"
         }
       ]
     },
@@ -961,7 +905,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Tag: Aragon"
+              "text": "We are Aragon"
             }
           ]
         },
@@ -1024,7 +968,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Tag: Castile"
+              "text": "We are Castile"
             }
           ]
         },
@@ -1077,7 +1021,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Tag: Catalonia"
+              "text": "We are Catalonia"
             }
           ]
         },
@@ -1130,7 +1074,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Tag: Galicia"
+              "text": "We are Galicia"
             }
           ]
         },
@@ -1183,7 +1127,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Tag: Le\u00f3n"
+              "text": "We are Le\u00f3n"
             }
           ]
         },
@@ -1236,7 +1180,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Tag: Mallorca"
+              "text": "We are Mallorca"
             }
           ]
         },
@@ -1290,7 +1234,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Tag: Navarre"
+              "text": "We are Navarre"
             }
           ]
         },
@@ -1343,7 +1287,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Tag: Portugal"
+              "text": "We are Portugal"
             }
           ]
         },
@@ -1402,7 +1346,7 @@
       "english_allow": [
         {
           "kind": "atom",
-          "text": "Every location in must be owned by a country or one of our subjects!"
+          "text": "Every location in Iberia must be owned by a Christian country or one of our subjects!"
         }
       ]
     },
@@ -1444,7 +1388,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Tag: Valencia"
+              "text": "We are Valencia"
             }
           ]
         },
@@ -1536,7 +1480,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Tag: Egypt"
+              "text": "We are Egypt"
             }
           ]
         }
@@ -1933,7 +1877,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Tag: Constantinople"
+              "text": "We are Constantinople"
             }
           ]
         },
@@ -1957,7 +1901,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Tag: Achaea"
+              "text": "We are Achaea"
             }
           ]
         },
@@ -2079,7 +2023,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Tag: Constantinople"
+              "text": "We are Constantinople"
             }
           ]
         },
@@ -2097,7 +2041,7 @@
             },
             {
               "kind": "atom",
-              "text": "Tag: Achaea"
+              "text": "We are Achaea"
             }
           ]
         },
@@ -3051,7 +2995,7 @@
       "english_allow": [
         {
           "kind": "atom",
-          "text": "The $HRE_f$ can only be formed via the policy of the"
+          "text": "The Holy Roman Empire can only be formed via the Renovatio Imperii policy of the Holy Roman Empire"
         }
       ]
     },
@@ -3307,22 +3251,8 @@
       "english_allow": [
         {
           "kind": "if",
-          "text": "If:",
+          "text": "If Poland exists and we are not Poland:",
           "children": [
-            {
-              "kind": "block",
-              "text": "Limit:",
-              "children": [
-                {
-                  "kind": "atom",
-                  "text": "Poland exists"
-                },
-                {
-                  "kind": "atom",
-                  "text": "This: Poland"
-                }
-              ]
-            },
             {
               "kind": "atom",
               "text": "We must either destroy Poland, make them our subject, or be in a union with them"
@@ -3331,22 +3261,8 @@
         },
         {
           "kind": "if",
-          "text": "If:",
+          "text": "If Lithuania exists and we are not Lithuania:",
           "children": [
-            {
-              "kind": "block",
-              "text": "Limit:",
-              "children": [
-                {
-                  "kind": "atom",
-                  "text": "Lithuania exists"
-                },
-                {
-                  "kind": "atom",
-                  "text": "This: Lithuania"
-                }
-              ]
-            },
             {
               "kind": "atom",
               "text": "We must either destroy Lithuania, make them our subject, or be in a union with them"
@@ -3542,7 +3458,7 @@
                   "children": [
                     {
                       "kind": "atom",
-                      "text": "Tag: Pap"
+                      "text": "We are Pap"
                     }
                   ]
                 }
@@ -4168,7 +4084,7 @@
             },
             {
               "kind": "atom",
-              "text": "We won $guelphs_and_ghibellines$ Situation as the leader of the $guelphs_io$"
+              "text": "We won Guelphs and Ghibellines Situation as the leader of the Guelphs"
             }
           ]
         }
@@ -4290,11 +4206,11 @@
               "children": [
                 {
                   "kind": "atom",
-                  "text": "Tag: Lorraine"
+                  "text": "We are Lorraine"
                 },
                 {
                   "kind": "atom",
-                  "text": "Tag: Burgundy"
+                  "text": "We are Burgundy"
                 }
               ]
             }
@@ -4366,11 +4282,11 @@
               "children": [
                 {
                   "kind": "atom",
-                  "text": "Tag: Viennois"
+                  "text": "We are Viennois"
                 },
                 {
                   "kind": "atom",
-                  "text": "Tag: Savoy"
+                  "text": "We are Savoy"
                 }
               ]
             }
@@ -4424,7 +4340,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Tag: Italy"
+              "text": "We are Italy"
             }
           ]
         },
@@ -4454,18 +4370,8 @@
         },
         {
           "kind": "if",
-          "text": "If:",
+          "text": "If we are Sicily:",
           "children": [
-            {
-              "kind": "block",
-              "text": "Limit:",
-              "children": [
-                {
-                  "kind": "atom",
-                  "text": "Tag: Sicily"
-                }
-              ]
-            },
             {
               "kind": "or",
               "text": "Any of:",
@@ -4510,7 +4416,7 @@
               "children": [
                 {
                   "kind": "atom",
-                  "text": "Tag: Naples"
+                  "text": "We are Naples"
                 }
               ]
             },
@@ -4741,7 +4647,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Tag: Ottomans"
+              "text": "We are Ottomans"
             }
           ]
         }
@@ -6122,11 +6028,11 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Tag: Cyprus"
+              "text": "We are Cyprus"
             },
             {
               "kind": "atom",
-              "text": "Tag: Naples"
+              "text": "We are Naples"
             },
             {
               "kind": "atom",
@@ -6482,7 +6388,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Tag: Timurid"
+              "text": "We are Timurid"
             },
             {
               "kind": "and",
@@ -6676,7 +6582,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Tag: Persia"
+              "text": "We are Persia"
             }
           ]
         }
@@ -9190,33 +9096,55 @@
     },
     {
       "block_key": "adu_restored_f",
-      "mode": "inject",
-      "source_file": "99_nd_adu.txt",
-      "tag": "adu_restored",
-      "name": null,
-      "adjective": null,
-      "flag": null,
-      "color": null,
-      "level": null,
-      "fraction": null,
-      "rule": null,
+      "mode": "full",
+      "source_file": "d009_formable_countries.txt",
+      "tag": "ADU",
+      "name": "ADU",
+      "adjective": "ADU_ADJ",
+      "flag": "ADU",
+      "color": "map_ADU",
+      "level": 3,
+      "fraction": 0.25,
+      "rule": "plausible",
       "content_priority": null,
-      "regions": [],
+      "regions": [
+        "iberia_region"
+      ],
       "areas": [],
       "locations": [],
       "provinces": [],
       "sub_continents": [],
       "continents": [],
       "must_own": [],
-      "allow_raw": null,
-      "potential_raw": null,
+      "allow_raw": "at_war = no",
+      "potential_raw": "has_dlc = \"d009_across_the_pillars\"\n\t\treligion.group = religion_group:muslim\n\t\tglobal_var:battle_for_the_strait_winner_country ?= root",
       "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_adu_formed\n\t\t}\n\t\ttrigger_event_non_silently = nd_adu.1\n\t\tadd_stability = stability_mild_bonus\n\t\tif = {\n\t\t\tlimit = {\n\t\t\t\tcountry_rank_level < 4\n\t\t\t}\n\t\t\tset_country_rank_effect = {\n\t\t\t\trank = country_rank:rank_empire\n\t\t\t}\n\t\t}",
       "formation_event": "nd_adu.1",
-      "source": "mod_new",
+      "source": "vanilla+mod_inject",
       "mod_overrides": true,
-      "variant_label": null,
-      "english_potential": [],
-      "english_allow": []
+      "mod_source_file": "99_nd_adu.txt",
+      "variant_label": "Restored",
+      "color_rgb": "#efe092",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Has Dlc: D009 Across The Pillars"
+        },
+        {
+          "kind": "atom",
+          "text": "Islam group"
+        },
+        {
+          "kind": "atom",
+          "text": "Global Var:Battle For The Strait Winner Country: Root"
+        }
+      ],
+      "english_allow": [
+        {
+          "kind": "atom",
+          "text": "Not: At war"
+        }
+      ]
     },
     {
       "block_key": "AEG_f",
@@ -9553,7 +9481,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Tag: France"
+              "text": "We are France"
             }
           ]
         },
@@ -9563,7 +9491,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Tag: Great Britain"
+              "text": "We are Great Britain"
             }
           ]
         }
@@ -9631,7 +9559,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Tag: Armenia"
+              "text": "We are Armenia"
             }
           ]
         }
@@ -9861,7 +9789,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Tag: Portugal"
+              "text": "We are Portugal"
             },
             {
               "kind": "atom",
@@ -9945,7 +9873,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Tag: Spain"
+              "text": "We are Spain"
             }
           ]
         },
@@ -9955,7 +9883,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Tag: Two Sicilies"
+              "text": "We are Two Sicilies"
             }
           ]
         },
@@ -10122,7 +10050,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Tag: China"
+              "text": "We are China"
             }
           ]
         }
@@ -10252,7 +10180,7 @@
             },
             {
               "kind": "atom",
-              "text": "is held by a crown that answers to us (our subject or our personal-union junior)"
+              "text": "Wien is held by a crown that answers to us (our subject or our personal-union junior)"
             }
           ]
         },
@@ -10270,7 +10198,7 @@
                 },
                 {
                   "kind": "atom",
-                  "text": "Tag: Austria"
+                  "text": "We are Austria"
                 }
               ]
             },
@@ -10288,7 +10216,7 @@
                     },
                     {
                       "kind": "atom",
-                      "text": "Tag: Hungary"
+                      "text": "We are Hungary"
                     }
                   ]
                 },
@@ -10312,7 +10240,7 @@
                     },
                     {
                       "kind": "atom",
-                      "text": "Tag: Bohemia"
+                      "text": "We are Bohemia"
                     }
                   ]
                 },
@@ -10326,22 +10254,8 @@
         },
         {
           "kind": "if",
-          "text": "If:",
+          "text": "If Austria exists and we are not Austria:",
           "children": [
-            {
-              "kind": "block",
-              "text": "Limit:",
-              "children": [
-                {
-                  "kind": "atom",
-                  "text": "Austria exists"
-                },
-                {
-                  "kind": "atom",
-                  "text": "This: Austria"
-                }
-              ]
-            },
             {
               "kind": "atom",
               "text": "The Austrian crown is ours, gone, our subject, or our personal-union junior"
@@ -10350,22 +10264,8 @@
         },
         {
           "kind": "if",
-          "text": "If:",
+          "text": "If Hungary exists and we are not Hungary:",
           "children": [
-            {
-              "kind": "block",
-              "text": "Limit:",
-              "children": [
-                {
-                  "kind": "atom",
-                  "text": "Hungary exists"
-                },
-                {
-                  "kind": "atom",
-                  "text": "This: Hungary"
-                }
-              ]
-            },
             {
               "kind": "atom",
               "text": "The Hungarian crown is ours, gone, our subject, or our personal-union junior"
@@ -10374,22 +10274,8 @@
         },
         {
           "kind": "if",
-          "text": "If:",
+          "text": "If Bohemia exists and we are not Bohemia:",
           "children": [
-            {
-              "kind": "block",
-              "text": "Limit:",
-              "children": [
-                {
-                  "kind": "atom",
-                  "text": "Bohemia exists"
-                },
-                {
-                  "kind": "atom",
-                  "text": "This: Bohemia"
-                }
-              ]
-            },
             {
               "kind": "atom",
               "text": "The Bohemian crown is ours, gone, our subject, or our personal-union junior"
@@ -10542,7 +10428,7 @@
         "frankfurt"
       ],
       "allow_raw": "custom_tooltip = {\n\t\t\ttext = FRK_f_hre_gone_tt\n\t\t\tNOT = { exists = international_organization:hre }\n\t\t}\n\t\towns = location:paris\n\t\towns = location:aachen\n\t\towns = location:frankfurt\n\t\tin_civil_war = no\n\t\thas_any_active_disaster = no",
-      "potential_raw": "OR = {\n\t\t\tculture = { has_culture_group = culture_group:french_group }\n\t\t\thas_or_had_tag = GBU\n\t\t\thas_or_had_tag = LOT\n\t\t}",
+      "potential_raw": "OR = {\n\t\t\tculture ?= { has_culture_group = culture_group:french_group }\n\t\t\thas_or_had_tag = GBU\n\t\t\thas_or_had_tag = LOT\n\t\t}",
       "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_frk_formed\n\t\t}\n\t\tif = {\n\t\t\tlimit = { country_rank_level < 4 }\n\t\t\tset_country_rank_effect = { rank = country_rank:rank_empire }\n\t\t}\n\t\ttrigger_event_non_silently = nd_frk.1\n\t\tadd_stability = stability_severe_bonus",
       "formation_event": "nd_frk.1",
       "source": "mod_new",
@@ -10684,11 +10570,11 @@
             },
             {
               "kind": "atom",
-              "text": "Tag: Burgundy"
+              "text": "We are Burgundy"
             },
             {
               "kind": "atom",
-              "text": "Tag: Lorraine"
+              "text": "We are Lorraine"
             }
           ]
         }
@@ -10785,7 +10671,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Tag: Spain"
+              "text": "We are Spain"
             }
           ]
         }
@@ -10860,7 +10746,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Tag: Knights Hospitaller"
+              "text": "We are Knights Hospitaller"
             },
             {
               "kind": "atom",
@@ -10868,19 +10754,19 @@
             },
             {
               "kind": "atom",
-              "text": "Tag: Cyprus"
+              "text": "We are Cyprus"
             },
             {
               "kind": "atom",
-              "text": "Tag: Naples"
+              "text": "We are Naples"
             },
             {
               "kind": "atom",
-              "text": "Tag: Sicily"
+              "text": "We are Sicily"
             },
             {
               "kind": "atom",
-              "text": "Tag: Argos"
+              "text": "We are Argos"
             }
           ]
         }
@@ -10944,7 +10830,7 @@
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Tag: Brazil"
+          "text": "We are Brazil"
         }
       ],
       "english_allow": [
@@ -12716,6 +12602,42 @@
       ]
     },
     {
+      "block_key": "RSG_f",
+      "mode": "full",
+      "source_file": "99_nd_rsg.txt",
+      "tag": "RSG",
+      "name": "RSG",
+      "adjective": "RSG_ADJ",
+      "flag": "RSG",
+      "color": "map_RSG",
+      "level": 3,
+      "fraction": null,
+      "rule": "plausible",
+      "content_priority": null,
+      "regions": [],
+      "areas": [],
+      "locations": [],
+      "provinces": [],
+      "sub_continents": [],
+      "continents": [],
+      "must_own": [],
+      "allow_raw": "",
+      "potential_raw": "always = no",
+      "form_effect_raw": "hidden_effect = {\n\t\t\tset_variable = nd_formed\n\t\t\tset_variable = nd_rsg_formed\n\t\t}\n\t\ttrigger_event_non_silently = nd_rsg.1\n\t\tadd_stability = stability_severe_bonus",
+      "formation_event": "nd_rsg.1",
+      "source": "mod_new",
+      "mod_overrides": true,
+      "variant_label": null,
+      "color_rgb": "#991423",
+      "english_potential": [
+        {
+          "kind": "atom",
+          "text": "Not: Always"
+        }
+      ],
+      "english_allow": []
+    },
+    {
       "block_key": "SOE_f",
       "mode": "full",
       "source_file": "99_nd_soe.txt",
@@ -12946,18 +12868,8 @@
         },
         {
           "kind": "if",
-          "text": "If:",
+          "text": "If we are Bohemia:",
           "children": [
-            {
-              "kind": "block",
-              "text": "Limit:",
-              "children": [
-                {
-                  "kind": "atom",
-                  "text": "Tag: Bohemia"
-                }
-              ]
-            },
             {
               "kind": "atom",
               "text": "Has Global Variable: Hussites Won Hussite Wars"
@@ -13108,7 +13020,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Tag: Byzantium"
+              "text": "We are Byzantium"
             }
           ]
         }
@@ -13167,7 +13079,7 @@
           "children": [
             {
               "kind": "atom",
-              "text": "Tag: China"
+              "text": "We are China"
             }
           ]
         }
@@ -13488,7 +13400,7 @@
       "english_potential": [
         {
           "kind": "atom",
-          "text": "Tag: Japan"
+          "text": "We are Japan"
         }
       ],
       "english_allow": [

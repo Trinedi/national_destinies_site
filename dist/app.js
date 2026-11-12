@@ -717,62 +717,78 @@ function clearPins() {
   }
 }
 
+// The panel answers "what do I need" first: the size of the job as chips, the
+// two requirement lists as checklists, the lands, and only then the game's
+// own description and the reference details.
+const LONG_LAND_LIST = 12;
+
+function landChips(heading, names) {
+  if (!names || names.length === 0) return "";
+  const chips = names.map((n) =>
+    `<span class="land-chip">${escapeHtml(lookupLoc(n) || prettifyName(n))}</span>`).join("");
+  const count = names.length > 1 ? ` <span class="req-count">${names.length}</span>` : "";
+  const body = `<div class="land-chips">${chips}</div>`;
+  return names.length > LONG_LAND_LIST
+    ? `<details class="req-fold"><summary>${heading}${count}</summary>${body}</details>`
+    : `<h3>${heading}${count}</h3>${body}`;
+}
+
 function renderRequirementsTab(rec) {
   const body = [];
 
-  if (rec._description) {
-    body.push(`<p style="margin:0 0 12px;color:var(--fg-1);font-size:12px;line-height:1.5;">${escapeHtml(rec._description)}</p>`);
+  const chips = [];
+  if (rec.level != null) chips.push(`<span class="fact-chip"><b>Level ${rec.level}</b></span>`);
+  if (rec.fraction != null) {
+    chips.push(`<span class="fact-chip">Own <b>${Math.round(rec.fraction * 100)}%</b> of its lands</span>`);
   }
-
-  body.push('<div class="stat-grid">');
-  if (rec.level != null) body.push(`<dt>Level</dt><dd>${rec.level}</dd>`);
-  if (rec.fraction != null) body.push(`<dt>Required</dt><dd>${Math.round(rec.fraction * 100)}% of territory</dd>`);
-  if (rec.rule) body.push(`<dt>Rule</dt><dd>${escapeHtml(describeRule(rec.rule))}</dd>`);
-  if (rec.tag) body.push(`<dt>Tag</dt><dd><code>${escapeHtml(rec.tag)}</code></dd>`);
-  if (rec._adjective) body.push(`<dt>Adjective</dt><dd>${escapeHtml(rec._adjective)}</dd>`);
-  body.push(`<dt>Source</dt><dd>${formatSource(rec)}</dd>`);
-  if (rec.formation_event) body.push(`<dt>Formation event</dt><dd>Triggered on formation</dd>`);
-  body.push("</div>");
-
-  if (rec.must_own && rec.must_own.length > 0) {
-    body.push("<h3>Must Own</h3>");
-    body.push('<div class="req-badges">');
-    for (const locName of rec.must_own) {
-      const info = locIndex[locName];
-      const label = lookupLoc(locName) || prettifyName(locName);
-      const note = info ? "" : " (unknown location)";
-      body.push(`<span class="req-badge required">${escapeHtml(label)}${note}</span>`);
-    }
-    body.push("</div>");
+  if (rec.rule) {
+    chips.push(`<span class="fact-chip" title="${escapeHtml(describeRule(rec.rule))}">${escapeHtml(titleCase(rec.rule))}</span>`);
   }
-
-  if (rec.regions && rec.regions.length > 0) {
-    body.push("<h3>Regions in territory pool</h3>");
-    body.push("<ul>");
-    for (const r of rec.regions) body.push(`<li>${escapeHtml(lookupLoc(r) || prettifyName(r))}</li>`);
-    body.push("</ul>");
-  }
-  if (rec.areas && rec.areas.length > 0) {
-    body.push("<h3>Areas in territory pool</h3>");
-    body.push("<ul>");
-    for (const a of rec.areas) body.push(`<li>${escapeHtml(lookupLoc(a) || prettifyName(a))}</li>`);
-    body.push("</ul>");
-  }
+  chips.push(`<span class="fact-chip">${rec.source === "mod_new" ? "New in the mod" : "Base game, extended"}</span>`);
+  body.push(`<div class="fact-chips">${chips.join("")}</div>`);
 
   if (rec.english_potential && rec.english_potential.length > 0) {
-    body.push("<h3>Required to enable</h3>");
+    body.push('<section class="req-box"><h3>Who can form it</h3>');
     body.push(renderRequirementList(rec.english_potential));
+    body.push("</section>");
   }
-  if (rec.english_allow && rec.english_allow.length > 0) {
-    body.push("<h3>Required to form</h3>");
-    body.push(renderRequirementList(rec.english_allow));
+
+  const mustOwn = rec.must_own || [];
+  const hasAllow = rec.english_allow && rec.english_allow.length > 0;
+  if (hasAllow || mustOwn.length > 0) {
+    body.push('<section class="req-box"><h3>What it takes</h3>');
+    if (mustOwn.length > 0) {
+      body.push('<div class="req-badges">');
+      for (const locName of mustOwn) {
+        const label = lookupLoc(locName) || prettifyName(locName);
+        const note = locIndex[locName] ? "" : " (unknown location)";
+        body.push(`<span class="req-badge required">Own ${escapeHtml(label)}${note}</span>`);
+      }
+      body.push("</div>");
+    }
+    if (hasAllow) body.push(renderRequirementList(rec.english_allow));
+    body.push("</section>");
+  }
+
+  body.push(landChips("Regions it draws its lands from", rec.regions));
+  body.push(landChips("Areas it draws its lands from", rec.areas));
+
+  if (starters[rec.block_key]) {
+    body.push(
+      '<div class="guide-hint"><button type="button" data-switch-tab="guide">' +
+      'Read the guide &rarr;</button></div>'
+    );
+  }
+
+  if (rec._description) {
+    body.push(`<blockquote class="formable-description">${escapeHtml(rec._description)}</blockquote>`);
   }
 
   // Surface any other formables that share areas with this one, so users
   // can pivot quickly between competing claims.
   const otherClaimants = collectOtherClaimants(rec);
   if (otherClaimants.length > 0) {
-    body.push("<h3>Also claimed in this territory</h3>");
+    body.push(`<details class="req-fold"><summary>Other formables on these lands <span class="req-count">${otherClaimants.length}</span></summary>`);
     body.push('<div class="claimants-list">');
     for (const o of otherClaimants) {
       body.push(
@@ -783,16 +799,15 @@ function renderRequirementsTab(rec) {
         `</button>`
       );
     }
-    body.push("</div>");
+    body.push("</div></details>");
   }
 
-  // Hint that a strategy guide is available; clicking it switches tabs.
-  if (starters[rec.block_key]) {
-    body.push(
-      '<div class="guide-hint"><button type="button" data-switch-tab="guide">' +
-      'Strategy guide available &rarr;</button></div>'
-    );
-  }
+  const details = [];
+  if (rec.tag) details.push(`Tag <code>${escapeHtml(rec.tag)}</code>`);
+  if (rec._adjective) details.push(escapeHtml(rec._adjective));
+  details.push(formatSource(rec));
+  if (rec.formation_event) details.push("Formation event");
+  body.push(`<p class="formable-details">${details.join(" &middot; ")}</p>`);
 
   return body.join("");
 }
@@ -983,8 +998,7 @@ function renderRequirementList(clauses) {
 }
 
 function renderRequirementItem(c) {
-  const cls = c.kind === "or" || c.kind === "not" || c.kind === "and"
-    ? `req-${c.kind}` : "";
+  const cls = c.children && c.children.length > 0 ? `req-group req-${c.kind}` : "";
   const out = [`<li class="${cls}">`, escapeHtml(c.text)];
   if (c.children && c.children.length > 0) {
     out.push("<ul class=\"req-list\">");

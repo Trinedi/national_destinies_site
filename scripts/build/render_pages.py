@@ -134,7 +134,12 @@ def render_page(source: Path, dist_dir: Path) -> Path:
         extensions=["toc", "tables"],
         extension_configs={"toc": {"toc_depth": "2-2"}},
     )
-    intro, sections = as_sections(md.convert(body))
+    # A picture opens at full size when clicked: on the page it is shrunk to
+    # the panel, and a game screenshot's text is small.
+    body_html = re.sub(r'<img alt="[^"]*" src="([^"]+)" />',
+                       lambda m: f'<a class="picture" href="{m.group(1)}">{m.group(0)}</a>',
+                       md.convert(body))
+    intro, sections = as_sections(body_html)
     title = html.escape(str(meta["title"]))
     out = dist_dir / f"{source.stem}.html"
     out.write_text(

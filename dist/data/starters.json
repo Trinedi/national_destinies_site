@@ -7713,6 +7713,37 @@
         }
       ]
     },
+    "adu_restored_f": {
+      "culture_gates": [],
+      "culture_group_gates": [],
+      "religion_gates": [],
+      "religion_group_gates": [
+        "muslim"
+      ],
+      "tag_gates": [],
+      "rank_gates": [],
+      "reform_gates": [],
+      "tag_excludes": [],
+      "suggested_tags": [],
+      "candidates": [
+        {
+          "tag": "GRA",
+          "culture": "andalusi",
+          "religion": "sunni",
+          "owned_in_target": 18,
+          "owned_in_core": 0,
+          "score": 8
+        },
+        {
+          "tag": "MOR",
+          "culture": "moroccan",
+          "religion": "sunni",
+          "owned_in_target": 4,
+          "owned_in_core": 0,
+          "score": 7
+        }
+      ]
+    },
     "AEG_f": {
       "culture_gates": [
         "arabic_group",
@@ -8470,9 +8501,7 @@
       ]
     },
     "FRK_f": {
-      "culture_gates": [
-        "french_group"
-      ],
+      "culture_gates": [],
       "culture_group_gates": [
         "french_group"
       ],

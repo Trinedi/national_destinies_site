@@ -48,6 +48,8 @@ Traditions, the first age. The destiny advances form a group of their own
 among the other advances. The Danubian Monarchy is the exception, with stages
 from the second age to the sixth.
 
+![The game rule National Destinies Destiny Trees](img/rule_destiny_trees.jpg)
+
 The game rule National Destinies Destiny Trees turns them off.
 
 ## Bureaucracies
@@ -59,7 +61,7 @@ royal mint, an examination board or a customs house. Each is a bureaucracy
 you can install, with a funding level that scales its effects and its
 drawbacks.
 
-The mod also adds two things that shape how you run them.
+The mod also adds three doctrines and a law.
 
 - **Three doctrines**, as government reforms. Patrimonial, Oligarchic and
   Meritocratic Doctrine exclude one another.
@@ -70,20 +72,21 @@ The mod also adds two things that shape how you run them.
 Byzantium and Trebizond get neither the doctrines nor the law, because the
 base game already gives them bureaucracy content of their own.
 
+![The game rule National Destinies Bureaucracies](img/rule_bureaucracies.jpg)
+
 The game rule National Destinies Bureaucracies turns all of this off.
 
 ## Units, buildings and levies
 
 ![Spain's own advances as a list, two of them unlocking buildings](img/unique_advances_list_tall.jpg)
 
-Where a country's history has something of its own to field or build, the
-mod adds it. A country's advances unlock its units, buildings and levies, so
-they arrive in the age they belong to. Destiny paths unlock buildings too.
+The mod adds unique units, buildings and levies where a country's history
+has them. A country's advances unlock them, and so do some destiny paths.
 
 ## New formables
 
-More than 50 countries in the mod do not exist in the base game, from Songhai
-and the Kilwa Sultanate to Great Tang and the Empire of Brazil. Each has the
+More than 50 countries in the mod do not exist in the base game, such as
+Songhai, the Kilwa Sultanate, Great Tang and the Empire of Brazil. Each has the
 same content as any other formable. In the Atlas, tick only **New** under
 Type to list them.
 
@@ -94,21 +97,29 @@ added. Modern and fantasy countries are not.
 
 ## The Danubian Monarchy
 
-Austria, Hungary or Bohemia can unite the three crowns as the Habsburg
-empire. It is the mod's largest country, with 90 events, two situations and
+![The Reaction of the Reich panel, with what the estrangement does and how it ends](img/reaction_of_the_reich_tall.jpg)
+
+Austria, Hungary or Bohemia can form the Danubian Monarchy, the Habsburg
+empire of all three crowns. It is the mod's largest country, with 90 events, two situations and
 two disasters.
 
 - **The Succession of the Danube** is a situation among the three crowns.
   Marriages, inheritance pacts and a congress decide which of them unites the
   others.
-- **The Reaction of the Reich** follows if you break with the Holy Roman
-  Empire. The Emperor gains a reason for war against you, and you are shunned
-  until the breach is closed by war, by recognition or by outlasting it.
-- **The Nationalities Question** and **the Pragmatic Sanction crisis** are
+- **The Reaction of the Reich** starts if you leave the Holy Roman Empire.
+  The Emperor gains a casus belli against you and other countries shun you.
+  It ends when you beat the Emperor in a war, when he accepts a
+  reconciliation, when the War of the Succession is over, or after 50 years
+  with 60 legitimacy and 50 prestige.
+- **The Nationalities Question** and **the War of the Succession** are
   disasters the Monarchy can suffer after it is founded.
 
 The [Danubian Monarchy guide](index.html#DNM_f) has the steps. Three game
 rules turn the succession, the reaction and the disasters off one by one.
+
+![The game rule for the Succession of the Danube](img/rule_succession_of_the_danube.jpg)
+![The game rule for the Reaction of the Reich](img/rule_reaction_of_the_reich.jpg)
+![The game rule for the Danubian disasters](img/rule_danubian_disasters.jpg)
 
 ## Brazil
 
@@ -119,6 +130,9 @@ Start from the [Portugal page](index.html#POR_f) or read the
 ## AI forms nations
 
 The game rule AI Forms Nations has three settings. It is off by default.
+
+![The game rule AI Forms Nations set to Ambitious](img/rule_ai_forms_nations.jpg)
+![The game rule AI Formation Scope](img/rule_ai_formation_scope.jpg)
 
 - **Off.** The base game's AI. It forms the nations it happens to qualify
   for and works toward none.
@@ -134,8 +148,8 @@ The game rule AI Forms Nations has three settings. It is off by default.
 
 ## Banks
 
-The banking houses of the base game, such as the Peruzzi, the Bardi and the
-Acciaioli, get a game of their own. This part of the mod is in beta.
+The banks of the base game, such as the Peruzzi, the Bardi and the
+Acciaioli, get mechanics of their own. This part of the mod is in beta.
 
 - **The Money Market** shows a bank its debtors, its offices and its rival
   banks in one panel, with a map of who owes it.
@@ -143,6 +157,8 @@ Acciaioli, get a game of their own. This part of the mod is in beta.
 - Each bank has trust and greed. When trust fails, the bank faces a run.
 - A bank can also hold land. It can pay for a war and take a town in the
   peace, seize a pledged place and take a country under its protection.
+
+![The game rule National Destinies Banks](img/rule_banks.jpg)
 
 The game rule National Destinies Banks has three settings. Full is all of
 the above, Money Only leaves out everything about land, and Disabled keeps

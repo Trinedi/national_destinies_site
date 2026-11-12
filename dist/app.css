@@ -309,7 +309,7 @@ html, body { height: 100%; margin: 0; padding: 0; background: var(--bg-0); color
   position: absolute;
   top: 12px;
   right: 12px;
-  width: 360px;
+  width: 440px;
   max-height: calc(100vh - 24px);
   background: rgba(22,22,27,0.95);
   border: 1px solid var(--border);
@@ -402,14 +402,92 @@ html, body { height: 100%; margin: 0; padding: 0; background: var(--bg-0); color
   font-size: 12px;
 }
 
-.req-list {
-  margin: 4px 0 0;
-  padding-left: 18px;
+.fact-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 12px; }
+.fact-chip {
+  padding: 4px 10px;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 12px;
+  color: var(--fg-1);
 }
-.req-list li { margin-bottom: 2px; line-height: 1.45; font-size: 12px; }
-.req-list li.req-or { color: var(--fg-1); font-weight: 500; }
-.req-list li.req-not { color: #f6a99d; font-weight: 500; }
-.req-list li.req-and { color: var(--fg-1); }
+.fact-chip b { color: var(--accent); font-weight: 600; }
+
+/* The two requirement lists are the point of the panel, so each is a box
+   whose lines read as a checklist. */
+.req-box {
+  margin: 0 0 10px;
+  padding: 10px 12px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+}
+#detail-body .req-box h3 { margin: 0 0 6px; }
+.req-box .req-badges { margin-bottom: 6px; }
+
+.req-list { list-style: none; margin: 0; padding: 0; }
+.req-list li {
+  position: relative;
+  margin-bottom: 4px;
+  padding-left: 18px;
+  line-height: 1.45;
+  font-size: 13px;
+  color: var(--fg-0);
+}
+.req-list li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 5px;
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--fg-2);
+  border-radius: 2px;
+}
+/* A group line (one of, all of, none of) heads the lines under it. */
+.req-list li.req-group {
+  padding-left: 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--fg-1);
+}
+.req-list li.req-not { color: #f6a99d; }
+.req-list li.req-group::before { content: none; }
+.req-list .req-list {
+  margin: 4px 0 6px 3px;
+  padding-left: 10px;
+  border-left: 2px solid var(--border);
+  font-weight: 400;
+}
+.req-list li.req-not > .req-list { border-left-color: #6b3a34; }
+
+.land-chips { display: flex; flex-wrap: wrap; gap: 4px; margin: 0 0 10px; }
+.land-chip { padding: 2px 8px; background: var(--bg-3); border-radius: 3px; font-size: 12px; color: var(--fg-1); }
+.req-count { color: var(--fg-2); font-weight: 400; }
+
+.req-fold { margin: 0 0 10px; }
+.req-fold summary {
+  cursor: pointer;
+  padding: 6px 0;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--fg-1);
+}
+.req-fold summary:hover { color: var(--accent); }
+
+.formable-description {
+  margin: 12px 0;
+  padding: 0 0 0 12px;
+  border-left: 2px solid var(--border);
+  font-size: 12px;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--fg-2);
+}
+.formable-details { margin: 12px 0 0; font-size: 11px; color: var(--fg-2); }
 
 .claimants-list {
   display: flex;
