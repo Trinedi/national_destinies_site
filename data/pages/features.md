@@ -114,7 +114,7 @@ two disasters.
 - **The Nationalities Question** and **the War of the Succession** are
   disasters the Monarchy can suffer after it is founded.
 
-The [Danubian Monarchy guide](index.html#DNM_f) has the steps. Three game
+The [Danubian Monarchy guide](index.html#DNM_f/guide) has the steps. Three game
 rules turn the succession, the reaction and the disasters off one by one.
 
 ![The game rule for the Succession of the Danube](img/rule_succession_of_the_danube.jpg)
@@ -123,9 +123,28 @@ rules turn the succession, the reaction and the disasters off one by one.
 
 ## Brazil
 
-Portugal can move its court to Rio de Janeiro and go on to become Brazil.
-Start from the [Portugal page](index.html#POR_f) or read the
-[Brazil guide](index.html#BZL_f).
+![The Transmigration panel, with the fleet, the royal offices and the ways the move can end](img/transmigration_panel.jpg)
+
+Portugal can move its court to Rio de Janeiro, as it did in 1807, and go on
+to become Brazil.
+
+- The decision **Send the Court to Rio** makes Rio your capital and starts
+  **the Transmigration**, a disaster with a panel of its own that runs the
+  move. You have 50 years.
+- A fleet sails every year. You choose what it carries, such as nobles and
+  the court, clergy, merchants, settlers or supplies.
+- You move the eight royal offices to Rio one at a time. Each one changes
+  what you gain in Rio and who it upsets in Lisbon.
+- A regency governs Portugal while the court is away, and you have to keep
+  control there.
+- With the Royal Council, the Supreme Court and the Royal Treasury in Rio,
+  a quarter of your nobles and 15% of your clergy in the Americas, you can
+  stay in Rio for good. After that the court cannot go back.
+- The move ends with a return to Lisbon, with two crowns, or with Portugal
+  let go. After either of the last two you can form Brazil.
+
+The decision is in beta. Start from the [Portugal page](index.html#POR_f) or
+read the [Brazil guide](index.html#BZL_f/guide).
 
 ## AI forms nations
 
