@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """Render the site's text pages.
 
-Each data/pages/<name>.md becomes dist/<name>.html. The file starts with a
+Each data/pages/<name>.md becomes dist/<name>.html: the text before the first
+heading opens the page, every heading starts a panel, and the headings are
+listed in the sidebar, which is the Atlas's own. A picture is written ![what it shows](img/name.png) and
+lives in dist/img/. The file starts with a
 YAML frontmatter block carrying `title`. Every heading gets an id made from
 its text, so other pages (the Workshop description among them) can link to
-one section: features.html#destiny-trees. A line holding [TOC] becomes the
-list of sections.
+one section: features.html#destiny-trees.
 """
 
 from __future__ import annotations
@@ -17,38 +19,95 @@ from pathlib import Path
 
 import markdown
 import yaml
+from PIL import Image
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 PAGES_DIR = REPO_ROOT / "data" / "pages"
-WORKSHOP_URL = "https://steamcommunity.com/sharedfiles/filedetails/?id=3668193813"
 # The mod's Workshop description links to sections of these pages, so a
 # renamed heading would leave a dead link on a page 11,000 subscribers see.
 WORKSHOP_DESCRIPTION = "workshop_description.bbcode"
 WORKSHOP_SECTION_LINK = re.compile(r"national_destinies_site/([\w-]+\.html)#([\w-]+)")
 
+# A text page wears the Atlas's shell: the same sidebar and header, with the
+# page's sections where the Atlas lists its formables.
 PAGE_TEMPLATE = """<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>{title}, National Destinies</title>
+<title>National Destinies, {title}</title>
+<link rel="stylesheet" href="app.css" />
 <link rel="stylesheet" href="page.css" />
 </head>
 <body>
-<header class="page-header">
-  <a class="page-brand" href="index.html">National Destinies</a>
-  <nav>
-    <a href="index.html">Formables Atlas</a>
-    <a href="{workshop_url}" target="_blank" rel="noopener noreferrer">Steam Workshop</a>
-  </nav>
-</header>
-<main class="page">
-<h1>{title}</h1>
-{body}
-</main>
+<div id="app">
+  <aside id="sidebar">
+    {sidebar_header}
+    <nav id="page-sections" aria-label="Sections">
+{section_links}
+    </nav>
+  </aside>
+  <main id="page-pane">
+    <div class="page">
+      <div class="page-intro">
+        <h2>{title}</h2>
+        {intro}
+      </div>
+{sections}
+    </div>
+  </main>
+</div>
 </body>
 </html>
 """
+
+ATLAS_SIDEBAR_HEADER = re.compile(r"<header>.*?</header>", re.S)
+ATLAS_SUBTITLE = re.compile(r'(<div class="subtitle">).*?(</div>)')
+ATLAS_PAGE_LINK = re.compile(r'<a class="features-link".*?</a>')
+
+
+def sidebar_header(dist_dir: Path, title: str) -> str:
+    """The Atlas's own sidebar header, named for this page and linking back."""
+    atlas = (dist_dir / "index.html").read_text(encoding="utf-8")
+    header = ATLAS_SIDEBAR_HEADER.search(atlas).group(0)
+    header = ATLAS_SUBTITLE.sub(lambda m: m.group(1) + title + m.group(2), header, count=1)
+    return ATLAS_PAGE_LINK.sub('<a class="features-link" href="index.html">Formables Atlas</a>', header)
+
+
+# The page's backdrop is the Atlas's own map, cut to the band from Europe to
+# India where most formables lie, as fractions of the base map's size.
+BACKGROUND_SOURCE = REPO_ROOT / "data" / "basemap.png"
+BACKGROUND_BAND = (0.40, 0.10, 0.78, 0.52)
+BACKGROUND_WIDTH_PX = 2200
+
+
+def write_background(dist_dir: Path) -> None:
+    out = dist_dir / "img" / "map_background.jpg"
+    if out.exists() and out.stat().st_mtime >= BACKGROUND_SOURCE.stat().st_mtime:
+        return
+    Image.MAX_IMAGE_PIXELS = None
+    base = Image.open(BACKGROUND_SOURCE).convert("RGB")
+    left, top, right, bottom = BACKGROUND_BAND
+    band = base.crop((int(base.width * left), int(base.height * top),
+                      int(base.width * right), int(base.height * bottom)))
+    band.thumbnail((BACKGROUND_WIDTH_PX, BACKGROUND_WIDTH_PX))
+    out.parent.mkdir(parents=True, exist_ok=True)
+    band.save(out, quality=72)
+
+
+SECTION = re.compile(r"(<h2 id=\"[^\"]+\">.*?</h2>)(.*?)(?=<h2 |\Z)", re.S)
+
+
+def as_sections(body_html: str) -> tuple[str, str]:
+    """The text before the first heading, and each heading with its text as
+    one panel in the look of the Atlas's detail panel."""
+    intro = body_html.split("<h2 ", 1)[0].strip()
+    sections = "\n".join(
+        f'<section class="card">\n<header>{heading}</header>\n'
+        f'<div class="card-body">{text.strip()}</div>\n</section>'
+        for heading, text in SECTION.findall(body_html)
+    )
+    return intro, sections
 
 
 def split_frontmatter(text: str, source: Path) -> tuple[dict, str]:
@@ -67,13 +126,19 @@ def render_page(source: Path, dist_dir: Path) -> Path:
         extensions=["toc", "tables"],
         extension_configs={"toc": {"toc_depth": "2-2"}},
     )
-    body_html = md.convert(body)
+    intro, sections = as_sections(md.convert(body))
+    title = html.escape(str(meta["title"]))
     out = dist_dir / f"{source.stem}.html"
     out.write_text(
         PAGE_TEMPLATE.format(
-            title=html.escape(str(meta["title"])),
-            workshop_url=WORKSHOP_URL,
-            body=body_html,
+            title=title,
+            sidebar_header=sidebar_header(dist_dir, title),
+            section_links="\n".join(
+                f'      <a class="formable-row" href="#{token["id"]}">{token["name"]}</a>'
+                for token in md.toc_tokens
+            ),
+            intro=intro,
+            sections=sections,
         ),
         encoding="utf-8",
     )
@@ -93,6 +158,7 @@ def broken_workshop_links(description: Path, dist_dir: Path) -> list[str]:
 def main() -> int:
     config = yaml.safe_load((REPO_ROOT / "build.config.yaml").read_text())
     dist_dir = REPO_ROOT / config["build"]["dist_dir"]
+    write_background(dist_dir)
     for source in sorted(PAGES_DIR.glob("*.md")):
         print(f"wrote {render_page(source, dist_dir).relative_to(REPO_ROOT)}")
 

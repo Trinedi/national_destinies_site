@@ -3,53 +3,68 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>How the mod works, National Destinies</title>
+<title>National Destinies, How the mod works</title>
+<link rel="stylesheet" href="app.css" />
 <link rel="stylesheet" href="page.css" />
 </head>
 <body>
-<header class="page-header">
-  <a class="page-brand" href="index.html">National Destinies</a>
-  <nav>
-    <a href="index.html">Formables Atlas</a>
-    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3668193813" target="_blank" rel="noopener noreferrer">Steam Workshop</a>
-  </nav>
-</header>
-<main class="page">
-<h1>How the mod works</h1>
-<p>National Destinies gives formable countries in Europa Universalis V content of
+<div id="app">
+  <aside id="sidebar">
+    <header>
+      <h1>National Destinies</h1>
+      <div class="subtitle">How the mod works</div>
+      <a class="features-link" href="index.html">Formables Atlas</a>
+      <a class="workshop-link" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3668193813"
+         target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+          <path fill="currentColor" d="M11.94 0C5.7 0 .58 4.66.04 10.74l6.42 2.65a3.41 3.41 0 0 1 1.93-.59l2.85-4.13v-.06a4.55 4.55 0 1 1 4.54 4.55h-.1l-4.07 2.9a3.42 3.42 0 0 1-6.81.36l-4.59-1.9C1.62 19.96 6.34 24 11.94 24a12 12 0 0 0 0-24M7.55 18.21l-1.47-.6a2.58 2.58 0 0 0 1.34 1.51 2.6 2.6 0 0 0 3.42-1.39 2.59 2.59 0 0 0-3.79-3.13l1.51.62c.93.39 1.36 1.45.97 2.38a1.81 1.81 0 0 1-2.38.97zm10.39-7.81a3.03 3.03 0 0 0-3.03-3.03 3.03 3.03 0 0 0-3.03 3.03 3.03 3.03 0 0 0 3.03 3.04 3.03 3.03 0 0 0 3.03-3.04m-5.3-.02c0-1.26 1.02-2.28 2.28-2.28 1.27 0 2.29 1.02 2.29 2.28 0 1.27-1.02 2.29-2.29 2.29s-2.28-1.02-2.28-2.29"/>
+        </svg>
+        Subscribe on Steam Workshop
+      </a>
+    </header>
+    <nav id="page-sections" aria-label="Sections">
+      <a class="formable-row" href="#formation-events">Formation events</a>
+      <a class="formable-row" href="#advance-trees">Advance trees</a>
+      <a class="formable-row" href="#destiny-trees">Destiny trees</a>
+      <a class="formable-row" href="#bureaucracies">Bureaucracies</a>
+      <a class="formable-row" href="#units-buildings-and-levies">Units, buildings and levies</a>
+      <a class="formable-row" href="#new-formables">New formables</a>
+      <a class="formable-row" href="#the-danubian-monarchy">The Danubian Monarchy</a>
+      <a class="formable-row" href="#brazil">Brazil</a>
+      <a class="formable-row" href="#ai-forms-nations">AI forms nations</a>
+      <a class="formable-row" href="#banks">Banks</a>
+      <a class="formable-row" href="#compatibility">Compatibility</a>
+      <a class="formable-row" href="#translations">Translations</a>
+      <a class="formable-row" href="#bugs">Bugs</a>
+    </nav>
+  </aside>
+  <main id="page-pane">
+    <div class="page">
+      <div class="page-intro">
+        <h2>How the mod works</h2>
+        <p>National Destinies gives formable countries in Europa Universalis V content of
 their own. This page explains each part. For one country, with what it takes
 to form it, open it in the <a href="index.html">Formables Atlas</a>.</p>
-<div class="toc">
-<ul>
-<li><a href="#formation-events">Formation events</a></li>
-<li><a href="#advance-trees">Advance trees</a></li>
-<li><a href="#destiny-trees">Destiny trees</a></li>
-<li><a href="#bureaucracies">Bureaucracies</a></li>
-<li><a href="#units-buildings-and-levies">Units, buildings and levies</a></li>
-<li><a href="#new-formables">New formables</a></li>
-<li><a href="#the-danubian-monarchy">The Danubian Monarchy</a></li>
-<li><a href="#brazil">Brazil</a></li>
-<li><a href="#ai-forms-nations">AI forms nations</a></li>
-<li><a href="#banks">Banks</a></li>
-<li><a href="#compatibility">Compatibility</a></li>
-<li><a href="#translations">Translations</a></li>
-<li><a href="#bugs">Bugs</a></li>
-</ul>
-</div>
-<h2 id="formation-events">Formation events</h2>
-<p>Forming a country opens an event about that moment in its history. It offers
+      </div>
+<section class="card">
+<header><h2 id="formation-events">Formation events</h2></header>
+<div class="card-body"><p>Forming a country opens an event about that moment in its history. It offers
 two or three choices, and each grants a different bonus that lasts for a set
 number of years. In most countries the choice also decides which destiny path
-you follow.</p>
-<h2 id="advance-trees">Advance trees</h2>
-<p>Each country has advances of its own in the ages of the advance tree. They
+you follow.</p></div>
+</section>
+<section class="card">
+<header><h2 id="advance-trees">Advance trees</h2></header>
+<div class="card-body"><p>Each country has advances of its own in the ages of the advance tree. They
 give permanent bonuses and come from what the nation was known for, such as
 its armies, its trade or its government. Some unlock a unit, a building or a
 levy.</p>
 <p>Where the base game already gives a country advances, they stay as they are
-and the mod adds the ones that were missing.</p>
-<h2 id="destiny-trees">Destiny trees</h2>
-<p>A destiny tree is a set of missions that opens after you form a country.</p>
+and the mod adds the ones that were missing.</p></div>
+</section>
+<section class="card">
+<header><h2 id="destiny-trees">Destiny trees</h2></header>
+<div class="card-body"><p>A destiny tree is a set of missions that opens after you form a country.</p>
 <ul>
 <li>The choice in the formation event opens one of two paths. Byzantium has
   three. A few countries, France among them, open their paths by what they do
@@ -66,9 +81,11 @@ and the mod adds the ones that were missing.</p>
 Traditions, the first age. The destiny advances form a group of their own
 among the other advances. The Danubian Monarchy is the exception, with stages
 from the second age to the sixth.</p>
-<p>The game rule National Destinies Destiny Trees turns them off.</p>
-<h2 id="bureaucracies">Bureaucracies</h2>
-<p>Each country gains 4 to 8 historical institutions when it forms, such as a
+<p>The game rule National Destinies Destiny Trees turns them off.</p></div>
+</section>
+<section class="card">
+<header><h2 id="bureaucracies">Bureaucracies</h2></header>
+<div class="card-body"><p>Each country gains 4 to 8 historical institutions when it forms, such as a
 royal mint, an examination board or a customs house. Each is a bureaucracy
 you can install, with a funding level that scales its effects and its
 drawbacks.</p>
@@ -82,22 +99,28 @@ drawbacks.</p>
 </ul>
 <p>Byzantium and Trebizond get neither the doctrines nor the law, because the
 base game already gives them bureaucracy content of their own.</p>
-<p>The game rule National Destinies Bureaucracies turns all of this off.</p>
-<h2 id="units-buildings-and-levies">Units, buildings and levies</h2>
-<p>Where a country's history has something of its own to field or build, the
+<p>The game rule National Destinies Bureaucracies turns all of this off.</p></div>
+</section>
+<section class="card">
+<header><h2 id="units-buildings-and-levies">Units, buildings and levies</h2></header>
+<div class="card-body"><p>Where a country's history has something of its own to field or build, the
 mod adds it. A country's advances unlock its units, buildings and levies, so
-they arrive in the age they belong to. Destiny paths unlock buildings too.</p>
-<h2 id="new-formables">New formables</h2>
-<p>More than 50 countries in the mod do not exist in the base game, from Songhai
+they arrive in the age they belong to. Destiny paths unlock buildings too.</p></div>
+</section>
+<section class="card">
+<header><h2 id="new-formables">New formables</h2></header>
+<div class="card-body"><p>More than 50 countries in the mod do not exist in the base game, from Songhai
 and the Kilwa Sultanate to Great Tang and the Empire of Brazil. Each has the
 same content as any other formable. In the Atlas, tick only <strong>New</strong> under
 Type to list them.</p>
 <p>To propose one, open a discussion on the
 <a href="https://steamcommunity.com/sharedfiles/filedetails/discussions/3668193813">Workshop page</a>.
 Countries that existed, or plausibly could have within the game's dates, are
-added. Modern and fantasy countries are not.</p>
-<h2 id="the-danubian-monarchy">The Danubian Monarchy</h2>
-<p>Austria, Hungary or Bohemia can unite the three crowns as the Habsburg
+added. Modern and fantasy countries are not.</p></div>
+</section>
+<section class="card">
+<header><h2 id="the-danubian-monarchy">The Danubian Monarchy</h2></header>
+<div class="card-body"><p>Austria, Hungary or Bohemia can unite the three crowns as the Habsburg
 empire. It is the mod's largest country, with 90 events, two situations and
 two disasters.</p>
 <ul>
@@ -111,13 +134,17 @@ two disasters.</p>
   disasters the Monarchy can suffer after it is founded.</li>
 </ul>
 <p>The <a href="index.html#DNM_f">Danubian Monarchy guide</a> has the steps. Three game
-rules turn the succession, the reaction and the disasters off one by one.</p>
-<h2 id="brazil">Brazil</h2>
-<p>Portugal can move its court to Rio de Janeiro and go on to become Brazil.
+rules turn the succession, the reaction and the disasters off one by one.</p></div>
+</section>
+<section class="card">
+<header><h2 id="brazil">Brazil</h2></header>
+<div class="card-body"><p>Portugal can move its court to Rio de Janeiro and go on to become Brazil.
 Start from the <a href="index.html#POR_f">Portugal page</a> or read the
-<a href="index.html#BZL_f">Brazil guide</a>.</p>
-<h2 id="ai-forms-nations">AI forms nations</h2>
-<p>The game rule AI Forms Nations has three settings. It is off by default.</p>
+<a href="index.html#BZL_f">Brazil guide</a>.</p></div>
+</section>
+<section class="card">
+<header><h2 id="ai-forms-nations">AI forms nations</h2></header>
+<div class="card-body"><p>The game rule AI Forms Nations has three settings. It is off by default.</p>
 <ul>
 <li><strong>Off.</strong> The base game's AI. It forms the nations it happens to qualify
   for and works toward none.</li>
@@ -130,9 +157,11 @@ Start from the <a href="index.html#POR_f">Portugal page</a> or read the
   favours wars on the countries that hold it, forms the nation once it
   qualifies and then aims one step higher. The world is harder and changes
   more.</li>
-</ul>
-<h2 id="banks">Banks</h2>
-<p>The banking houses of the base game, such as the Peruzzi, the Bardi and the
+</ul></div>
+</section>
+<section class="card">
+<header><h2 id="banks">Banks</h2></header>
+<div class="card-body"><p>The banking houses of the base game, such as the Peruzzi, the Bardi and the
 Acciaioli, get a game of their own. This part of the mod is in beta.</p>
 <ul>
 <li><strong>The Money Market</strong> shows a bank its debtors, its offices and its rival
@@ -144,9 +173,11 @@ Acciaioli, get a game of their own. This part of the mod is in beta.</p>
 </ul>
 <p>The game rule National Destinies Banks has three settings. Full is all of
 the above, Money Only leaves out everything about land, and Disabled keeps
-banks as they are in the base game.</p>
-<h2 id="compatibility">Compatibility</h2>
-<ul>
+banks as they are in the base game.</p></div>
+</section>
+<section class="card">
+<header><h2 id="compatibility">Compatibility</h2></header>
+<div class="card-body"><ul>
 <li>The mod is made for EU5 1.4. Across the Pillars is supported and not
   required.</li>
 <li>Start a new game to get everything. Added to a running save, the mod gives
@@ -155,9 +186,11 @@ banks as they are in the base game.</p>
 <li>A mod that changes the definitions of formable countries may conflict.</li>
 <li>If Steam keeps loading an old version, unsubscribe, clear the download
   cache in Steam's settings and subscribe again.</li>
-</ul>
-<h2 id="translations">Translations</h2>
-<p>About two thirds of the mod is translated into French, by LeJardinBleu.</p>
+</ul></div>
+</section>
+<section class="card">
+<header><h2 id="translations">Translations</h2></header>
+<div class="card-body"><p>About two thirds of the mod is translated into French, by LeJardinBleu.</p>
 <p>Other players publish translations as mods of their own. Subscribe to one
 alongside this mod.</p>
 <ul>
@@ -165,11 +198,16 @@ alongside this mod.</p>
 <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3794637335">Korean</a></li>
 <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3780623638">Russian</a></li>
 </ul>
-<p>Without one, every other language shows the English text.</p>
-<h2 id="bugs">Bugs</h2>
-<p>Report bugs and balance problems in the comments on the
+<p>Without one, every other language shows the English text.</p></div>
+</section>
+<section class="card">
+<header><h2 id="bugs">Bugs</h2></header>
+<div class="card-body"><p>Report bugs and balance problems in the comments on the
 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3668193813">Workshop page</a>.
-Say which country you play and what you expected to happen.</p>
-</main>
+Say which country you play and what you expected to happen.</p></div>
+</section>
+    </div>
+  </main>
+</div>
 </body>
 </html>
