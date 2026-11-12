@@ -4,9 +4,9 @@ Interactive map and database for the **National Destinies** mod for *Europa Univ
 
 The mod adds unique formation events, advance trees, units, buildings, and post-formation destiny missions to every formable country in EU5. This site lets you browse those formables visually: where they sit on the map, what they require, and what content they unlock.
 
-> Live site: *(coming soon)*
+> Live site: https://trinedi.github.io/national_destinies_site/
 
-> Mod on Steam Workshop: *(link pending)*
+> Mod on Steam Workshop: https://steamcommunity.com/sharedfiles/filedetails/?id=3668193813
 
 ## Build (maintainers only)
 
@@ -30,7 +30,8 @@ push; the GitHub Pages workflow uploads `dist/` automatically.
 
 - `data/locations_index.json`, per-location centroid, bounding box, pixel count.
 - `dist/tiles/{z}/{x}/{y}.png`, base map tile pyramid for Leaflet.
-- More to come, geography tree, formable index, requirements, destiny graphs.
+- `dist/data/*.json`, the formables, their requirements in English, their guides and the geography.
+- `dist/<name>.html`, one text page per `data/pages/<name>.md` (`features.html` explains each part of the mod). The Workshop description links to their sections, and the build fails when such a link has no section to land on.
 
 ## License
 

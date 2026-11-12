@@ -173,6 +173,15 @@ async function loadAll() {
   buildTerritoryIndex();
   renderList();
   renderAreaLayer();
+  selectFormableFromHash();
+  window.addEventListener("hashchange", selectFormableFromHash);
+}
+
+// A link such as index.html#DNM_f opens that formable, so the Workshop page
+// and the features page can point at one country.
+function selectFormableFromHash() {
+  const rec = formablesByKey[decodeURIComponent(location.hash.slice(1))];
+  if (rec && rec !== selected) selectFormable(rec);
 }
 
 // ---- formable -> territory areas ---------------------------------------
@@ -440,6 +449,7 @@ function makeRow(rec) {
 
 function selectFormable(rec, opts = {}) {
   selected = rec;
+  history.replaceState(null, "", "#" + rec.block_key);
   $list.querySelectorAll(".formable-row").forEach((r) => {
     r.classList.toggle("selected", r.dataset.key === rec.block_key);
   });
@@ -1036,6 +1046,7 @@ function escapeHtml(s) {
 
 function clearSelection() {
   selected = null;
+  history.replaceState(null, "", location.pathname + location.search);
   lastClickedArea = null;
   clearPins();
   $detail.hidden = true;

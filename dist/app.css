@@ -74,6 +74,14 @@ html, body { height: 100%; margin: 0; padding: 0; background: var(--bg-0); color
   border-color: #66c0f4;
   color: #fff;
 }
+#sidebar .features-link {
+  display: block;
+  margin-top: 8px;
+  color: var(--accent);
+  font-size: 12px;
+  text-decoration: none;
+}
+#sidebar .features-link:hover { text-decoration: underline; }
 #sidebar .workshop-link svg {
   flex-shrink: 0;
 }
