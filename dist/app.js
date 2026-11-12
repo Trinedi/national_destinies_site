@@ -177,11 +177,12 @@ async function loadAll() {
   window.addEventListener("hashchange", selectFormableFromHash);
 }
 
-// A link such as index.html#DNM_f opens that formable, so the Workshop page
-// and the features page can point at one country.
+// A link such as index.html#DNM_f opens that formable, and #DNM_f/guide its
+// guide, so the Workshop page and the features page can point at one country.
 function selectFormableFromHash() {
-  const rec = formablesByKey[decodeURIComponent(location.hash.slice(1))];
-  if (rec && rec !== selected) selectFormable(rec);
+  const [key, tab] = decodeURIComponent(location.hash.slice(1)).split("/");
+  const rec = formablesByKey[key];
+  if (rec && rec !== selected) selectFormable(rec, { tab });
 }
 
 // ---- formable -> territory areas ---------------------------------------
@@ -450,12 +451,12 @@ function makeRow(rec) {
 
 function selectFormable(rec, opts = {}) {
   selected = rec;
-  history.replaceState(null, "", "#" + rec.block_key);
+  history.replaceState(null, "", "#" + rec.block_key + (opts.tab ? "/" + opts.tab : ""));
   $list.querySelectorAll(".formable-row").forEach((r) => {
     r.classList.toggle("selected", r.dataset.key === rec.block_key);
   });
   showPins(rec);
-  showDetail(rec);
+  showDetail(rec, opts.tab);
   restyleAreaLayer();
   if (opts.skipFit) return;
   const tb = territoryBounds(rec);
@@ -869,12 +870,10 @@ function renderGuideTab(rec) {
   const body = [];
 
   if (guide && guide.notes_html) {
-    body.push(`<div class="guide-notes">${guide.notes_html}</div>`);
+    body.push(`<div class="guide-notes">${guideSections(guide.notes_html)}</div>`);
   } else {
     body.push(
-      '<p class="guide-intro">Tags ranked by how well they match the formation gates ' +
-      '(culture / religion if required) and how much of the required territory ' +
-      'they already control at game start.</p>'
+      '<p class="guide-intro">Countries that can form it, with the best start first.</p>'
     );
   }
 
@@ -883,9 +882,8 @@ function renderGuideTab(rec) {
 
   if (!guide || (!hasPriority && !hasAuto)) {
     body.push(
-      '<p class="guide-empty">No automatic recommendation. This formable either has ' +
-      'no culture / religion / territory gates we can match against, or requires ' +
-      'an event chain rather than playing as a specific tag.</p>'
+      '<p class="guide-empty">No recommended start. Any country can form it, or it ' +
+      'is formed through events.</p>'
     );
     return body.join("");
   }
@@ -901,13 +899,13 @@ function renderGuideTab(rec) {
   const tagGates = dedupe(guide.tag_gates, (t) => lookupLoc(t) ? `${lookupLoc(t)} (${t})` : t);
   const rankGates = dedupe(guide.rank_gates, (r) => prettifyRank(r));
   const reformGates = dedupe(guide.reform_gates, (r) => titleCase(r.replace(/_/g, " ")));
-  if (cul.length) gateBits.push(`<dt>Culture gate</dt><dd>${cul.map((c) => escapeHtml(c)).join(", ")}</dd>`);
-  if (rel.length) gateBits.push(`<dt>Religion gate</dt><dd>${rel.map((r) => escapeHtml(r)).join(", ")}</dd>`);
-  if (tagGates.length) gateBits.push(`<dt>Required tag</dt><dd>${tagGates.map((t) => escapeHtml(t)).join(", ")}</dd>`);
-  if (rankGates.length) gateBits.push(`<dt>Required rank</dt><dd>${rankGates.map((r) => escapeHtml(r)).join(", ")}</dd>`);
-  if (reformGates.length) gateBits.push(`<dt>Required reform</dt><dd>${reformGates.map((r) => escapeHtml(r)).join(", ")}</dd>`);
+  if (cul.length) gateBits.push(`<dt>Culture</dt><dd>${cul.map((c) => escapeHtml(c)).join(", ")}</dd>`);
+  if (rel.length) gateBits.push(`<dt>Religion</dt><dd>${rel.map((r) => escapeHtml(r)).join(", ")}</dd>`);
+  if (tagGates.length) gateBits.push(`<dt>Must be</dt><dd>${tagGates.map((t) => escapeHtml(t)).join(", ")}</dd>`);
+  if (rankGates.length) gateBits.push(`<dt>Rank</dt><dd>${rankGates.map((r) => escapeHtml(r)).join(", ")}</dd>`);
+  if (reformGates.length) gateBits.push(`<dt>Reform</dt><dd>${reformGates.map((r) => escapeHtml(r)).join(", ")}</dd>`);
   const excludeGates = dedupe(guide.tag_excludes, (t) => lookupLoc(t) ? `${lookupLoc(t)} (${t})` : t);
-  if (excludeGates.length) gateBits.push(`<dt>Excluded tags</dt><dd>${excludeGates.map((t) => escapeHtml(t)).join(", ")}</dd>`);
+  if (excludeGates.length) gateBits.push(`<dt>Cannot be</dt><dd>${excludeGates.map((t) => escapeHtml(t)).join(", ")}</dd>`);
   if (gateBits.length) {
     body.push('<div class="stat-grid">');
     body.push(gateBits.join(""));
@@ -915,30 +913,37 @@ function renderGuideTab(rec) {
   }
 
   if (hasPriority) {
-    body.push("<h3>Recommended starting tags</h3>");
+    body.push("<h3>Recommended starts</h3>");
     body.push('<div class="starter-list">');
     for (const c of guide.priority_starters) body.push(renderStarterRow(c, true));
     body.push("</div>");
   }
 
   if (hasAuto) {
-    body.push(`<h3>${hasPriority ? "Other tags that qualify" : "Recommended starting tags"}</h3>`);
+    body.push(`<h3>${hasPriority ? "Other countries that qualify" : "Recommended starts"}</h3>`);
     body.push('<div class="starter-list">');
     for (const c of guide.candidates) body.push(renderStarterRow(c, false));
     body.push("</div>");
   }
 
   body.push(
-    '<p class="guide-footnote">Heuristic: tags whose culture / religion satisfy the ' +
-    'gate, ranked by overlap between their starting territory and the formable’s ' +
-    'required regions / areas / locations. The list is auto-derived; nuance like ' +
-    'event chains or vassal-release paths is not yet captured.</p>'
+    '<p class="guide-footnote">Ranked by how much of the required land a country ' +
+    'holds at the start. Roads through events or released subjects are not counted.</p>'
   );
 
   return body.join("");
 }
 
-function showDetail(rec) {
+// A written guide is a run of headed sections. Each becomes a box of its
+// own, so the eye finds "Forming it" without reading down a column of text.
+function guideSections(notesHtml) {
+  const parts = notesHtml.split(/(?=<h2)/);
+  return parts.map((part) =>
+    part.startsWith("<h2") ? `<section class="guide-section">${part}</section>` : part
+  ).join("");
+}
+
+function showDetail(rec, openTab) {
   $detail.hidden = false;
   $detailName.textContent = rec._displayName;
 
@@ -946,7 +951,7 @@ function showDetail(rec) {
     { id: "requirements", label: "Requirements", render: renderRequirementsTab },
     { id: "guide", label: "Guide", render: renderGuideTab },
   ];
-  const initial = "requirements";
+  const initial = openTab === "guide" ? "guide" : "requirements";
 
   const headerHtml =
     '<div class="tabs" role="tablist">' +
@@ -969,6 +974,7 @@ function showDetail(rec) {
       b.classList.toggle("active", sel);
     });
     $panels.innerHTML = t.render(rec);
+    history.replaceState(null, "", "#" + rec.block_key + (t.id === "guide" ? "/guide" : ""));
     bindPanel($panels);
   }
 
