@@ -7,7 +7,7 @@ their own. This page explains each part of it.
 
 ## Formation events
 
-![The Birth of Spain event with the bonuses of one choice showing](img/formation_event_tall.jpg)
+![The Rise of the Songhai Empire event with the bonuses of one choice showing](img/formation_event_tall.jpg)
 
 Forming a country opens an event about that moment in its history. It offers
 two or three choices, and each grants a different bonus that lasts for a set
