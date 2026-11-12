@@ -3,8 +3,7 @@ title: How the mod works
 ---
 
 National Destinies gives formable countries in Europa Universalis V content of
-their own. This page explains each part. For one country, with what it takes
-to form it, open it in the [Formables Atlas](index.html).
+their own. This page explains each part of it.
 
 ## Formation events
 

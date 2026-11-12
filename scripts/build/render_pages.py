@@ -49,10 +49,18 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
   </aside>
   <main id="page-pane">
     <div class="page">
-      <div class="page-intro">
-        <h2>{title}</h2>
-        {intro}
-      </div>
+      <section class="card page-intro">
+        <header><h2>{title}</h2></header>
+        <div class="card-body">{intro}</div>
+      </section>
+      <a class="card atlas-feature" href="index.html">
+        <img src="img/atlas.jpg" alt="The Formables Atlas with the Danubian Monarchy selected" />
+        <div class="atlas-feature-text">
+          <h2>Formables Atlas</h2>
+          <p>Every formable country on the map, with what it takes to form it and a guide to its content.</p>
+          <span class="atlas-feature-button">Open the Atlas</span>
+        </div>
+      </a>
 {sections}
     </div>
   </main>
