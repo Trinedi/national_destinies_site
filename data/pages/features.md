@@ -124,8 +124,16 @@ not change how the AI fights its wars.
 
 ## Translations
 
-About two thirds of the mod is translated into French, by LeJardinBleu. Every other language shows
-the English text.
+About two thirds of the mod is translated into French, by LeJardinBleu.
+
+Other players publish translations as mods of their own. Subscribe to one
+alongside this mod.
+
+- [Chinese](https://steamcommunity.com/sharedfiles/filedetails/?id=3744757513)
+- [Korean](https://steamcommunity.com/sharedfiles/filedetails/?id=3794637335)
+- [Russian](https://steamcommunity.com/sharedfiles/filedetails/?id=3780623638)
+
+Without one, every other language shows the English text.
 
 ## Bugs
 

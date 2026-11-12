@@ -337,7 +337,8 @@ function lookupLoc(key) {
   if (!key) return null;
   const v = loc[key];
   if (v == null) return null;
-  return resolveLoc(v);
+  // A tag's own name can be blank (TAB): the caller's next key then names it.
+  return resolveLoc(v).trim() || null;
 }
 
 function displayName(rec) {

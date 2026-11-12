@@ -57,6 +57,7 @@ def main() -> int:
     step("recommended starters",    ["extract_starters.py"])
     step("localisation (filtered)", ["parse_localization.py"])
     step("english requirements",    ["render_requirements.py"])
+    step("workshop country list",   ["write_workshop_countries.py"])
     step("text pages",              ["render_pages.py"])
 
     print(f"\n=== build_site complete in {time.time()-overall:.1f}s ===")
