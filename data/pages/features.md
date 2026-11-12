@@ -1,5 +1,5 @@
 ---
-title: How the mod works
+title: Features
 ---
 
 National Destinies gives formable countries in Europa Universalis V content of
