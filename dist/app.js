@@ -3,6 +3,7 @@
 // Loads the static data layers built by scripts/build/*.py, renders a
 // filterable formables list in the sidebar, and on selection drops pins
 // for the formable's must-own locations on the map plus a detail panel.
+import { contentTabPlaceholder, fillContentTab, hasContent } from "./content.js";
 
 const NATIVE_W = 16384;
 const NATIVE_H = 8192;
@@ -951,7 +952,16 @@ function showDetail(rec, openTab) {
     { id: "requirements", label: "Requirements", render: renderRequirementsTab },
     { id: "guide", label: "Guide", render: renderGuideTab },
   ];
-  const initial = openTab === "guide" ? "guide" : "requirements";
+  if (hasContent(rec)) {
+    tabs.push({
+      id: "content",
+      label: "Content",
+      wide: true,
+      render: contentTabPlaceholder,
+      fill: (scope) => fillContentTab(scope, rec, $detailBody),
+    });
+  }
+  const initial = tabs.some((t) => t.id === openTab) ? openTab : "requirements";
 
   const headerHtml =
     '<div class="tabs" role="tablist">' +
@@ -973,9 +983,11 @@ function showDetail(rec, openTab) {
       b.toggleAttribute("aria-selected", sel);
       b.classList.toggle("active", sel);
     });
+    $detail.classList.toggle("wide", Boolean(t.wide));
     $panels.innerHTML = t.render(rec);
-    history.replaceState(null, "", "#" + rec.block_key + (t.id === "guide" ? "/guide" : ""));
+    history.replaceState(null, "", "#" + rec.block_key + (t.id === "requirements" ? "" : "/" + t.id));
     bindPanel($panels);
+    if (t.fill) t.fill($panels);
   }
 
   function bindPanel(scope) {

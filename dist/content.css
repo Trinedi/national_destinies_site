@@ -1,0 +1,218 @@
+/* The Content tab of a formable's panel. The look follows the game's own
+   advance cards: a framed round picture, a name, and modifier lines with
+   their icons and green or red values. */
+
+#detail.wide { width: max(440px, min(820px, calc(100vw - 340px - 24px))); }
+
+.ct {
+  --gold: #c9a45c;
+  --gold-dim: #6f5a34;
+  --good: #7fd66b;
+  --bad: #f0786a;
+}
+
+.ct-note { margin: 0 0 10px; color: var(--fg-2); font-size: 12px; }
+
+/* The counts double as the way to each section. */
+.ct-nav {
+  position: sticky;
+  top: -12px;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 -14px 14px;
+  padding: 10px 14px;
+  background: rgba(22,22,27,0.97);
+  border-bottom: 1px solid var(--border);
+}
+.ct-tile {
+  flex: 1 1 0;
+  min-width: 92px;
+  padding: 6px 8px;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--fg-1);
+  font: inherit;
+  font-size: 11px;
+  text-align: center;
+  cursor: pointer;
+}
+.ct-tile b { display: block; font-size: 20px; line-height: 1.1; color: var(--accent); }
+.ct-tile:hover { border-color: var(--gold-dim); color: var(--fg-0); }
+
+.ct-section { margin: 0 0 22px; }
+#detail-body .ct-h {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 0 0 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--gold-dim);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 8px;
+}
+.card {
+  display: flex;
+  gap: 10px;
+  min-width: 0;
+  padding: 10px;
+  background: linear-gradient(180deg, #23201c, #1b1a1d);
+  border: 1px solid #3a3226;
+  border-radius: 5px;
+}
+.card.flash { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.card-body { flex: 1; min-width: 0; }
+.card h4 { margin: 0 0 5px; font-size: 14px; font-weight: 600; color: #f1e3c4; }
+
+.medal {
+  flex: none;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  background: radial-gradient(circle at 50% 40%, #2f5b4a, #12261f);
+  box-shadow: 0 0 0 1px #1a1408, inset 0 0 6px rgba(0,0,0,0.6);
+  overflow: hidden;
+}
+.medal-icon { display: block; width: 100%; height: 100%; object-fit: cover; }
+.square {
+  flex: none;
+  width: 52px;
+  height: 52px;
+  border-radius: 6px;
+  border: 1px solid var(--gold-dim);
+  background: #15151a;
+  overflow: hidden;
+}
+.square-icon { display: block; width: 100%; height: 100%; object-fit: contain; }
+.ct-noicon { display: block; }
+
+#detail-body .fx-list { list-style: none; margin: 0 0 6px; padding: 0; }
+#detail-body .fx {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 6px;
+  font-size: 12.5px;
+  line-height: 1.35;
+}
+.fx:nth-child(odd) { background: rgba(255,255,255,0.035); }
+.fx-icon { flex: none; width: 20px; height: 20px; object-fit: contain; }
+.fx-name { flex: 1; min-width: 0; color: var(--fg-0); }
+.fx-value { flex: none; font-variant-numeric: tabular-nums; font-weight: 600; color: var(--accent); }
+.fx-good .fx-value { color: var(--good); }
+.fx-bad .fx-value { color: var(--bad); }
+
+.group-label {
+  margin: 6px 0 2px;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fg-2);
+}
+
+.facts { margin: 0 0 6px; font-size: 11.5px; line-height: 1.5; color: var(--fg-1); }
+.facts .dot { margin: 0 6px; color: var(--fg-2); }
+.estate-line { display: flex; flex-wrap: wrap; gap: 2px 14px; }
+.estates { display: inline-flex; align-items: center; gap: 4px; }
+.estates-like { color: var(--good); }
+.estates-dislike { color: var(--bad); }
+.estate-icon { width: 18px; height: 18px; object-fit: contain; }
+
+.ct-desc {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin: 6px 0 0;
+  font-size: 12px;
+  font-style: italic;
+  line-height: 1.45;
+  color: var(--fg-2);
+  white-space: pre-line;
+  cursor: pointer;
+}
+.ct-desc.open { display: block; color: var(--fg-1); }
+
+.unlocks { display: flex; flex-wrap: wrap; gap: 4px; margin: 0 0 4px; }
+.unlock {
+  padding: 2px 8px;
+  background: #2a2417;
+  border: 1px solid var(--gold-dim);
+  border-radius: 3px;
+  color: #f1e3c4;
+  font: inherit;
+  font-size: 12px;
+  text-align: left;
+}
+button.unlock { cursor: pointer; }
+button.unlock:hover { border-color: var(--accent); }
+.unlock-kind {
+  margin-right: 6px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.unlock-of { color: var(--fg-2); }
+
+.ct-event { margin: 6px 0 0; }
+.ct-event summary { cursor: pointer; font-size: 12px; color: var(--fg-1); }
+.ct-event summary:hover { color: var(--accent); }
+.ct-event[open] { padding-bottom: 2px; }
+
+/* A formation event, and an advance's event, is a set of choices side by side. */
+.formation {
+  padding: 12px;
+  background: linear-gradient(180deg, #23201c, #1b1a1d);
+  border: 1px solid #3a3226;
+  border-radius: 5px;
+}
+#detail-body .formation-title { margin: 0; font-size: 15px; color: #f1e3c4; }
+.choices { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 8px; margin-top: 8px; }
+.choice {
+  padding: 8px;
+  background: rgba(0,0,0,0.25);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+.choice-text { margin: 0 0 6px; font-size: 12.5px; color: var(--fg-0); }
+.timed-head { display: flex; align-items: baseline; gap: 8px; margin: 0 0 3px; }
+.timed-name { flex: 1; font-size: 12.5px; font-weight: 600; color: var(--gold); }
+.timed-duration { font-size: 11px; color: var(--fg-2); white-space: nowrap; }
+
+.age { margin: 0 0 14px; }
+.age-head { display: flex; align-items: center; gap: 8px; margin: 0 0 6px; }
+.age-icon { width: 30px; height: 30px; object-fit: contain; }
+.age-name { font-size: 13px; font-weight: 600; color: var(--fg-0); }
+
+/* The destiny tree reads top down; a stage's followers hang from its line. */
+#detail-body .stages { list-style: none; margin: 0; padding: 0; }
+#detail-body .stage.fork > .stages {
+  margin: 0 0 0 25px;
+  padding: 0 0 0 14px;
+  border-left: 2px solid var(--gold-dim);
+}
+#detail-body .stage { margin: 0 0 8px; }
+#detail-body .stage:last-child { margin-bottom: 0; }
+.needs { margin: 0 0 6px; }
+.needs .req-list li { font-size: 12.5px; margin-bottom: 2px; }
+
+.method { margin: 6px 0 0; padding: 6px 8px; background: rgba(0,0,0,0.25); border-radius: 4px; }
+.method-name { font-size: 12px; font-weight: 600; color: var(--fg-1); }
+.method-flow { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; margin-top: 3px; font-size: 12.5px; }
+.goods { display: inline-flex; align-items: center; gap: 4px; }
+.goods-icon { width: 22px; height: 22px; object-fit: contain; }
+.arrow, .plus { color: var(--gold); }

@@ -31,6 +31,8 @@ push; the GitHub Pages workflow uploads `dist/` automatically.
 - `data/locations_index.json`, per-location centroid, bounding box, pixel count.
 - `dist/tiles/{z}/{x}/{y}.png`, base map tile pyramid for Leaflet.
 - `dist/data/*.json`, the formables, their requirements in English, their guides and the geography.
+- `dist/data/content/<key>.json`, what the mod gives each country (formation choices, advances, destiny tree, units, buildings, bureaucracies), with every name in English and every number as the game prints it. `scripts/build/extract_content.py --report` lists anything it could not name, format or draw.
+- `dist/icons/`, the game's and the mod's icons that the content uses, converted from DDS on the first build that needs them.
 - `dist/<name>.html`, one text page per `data/pages/<name>.md` (`features.html` explains each part of the mod). The Workshop description links to their sections, and the build fails when such a link has no section to land on.
 
 ## License

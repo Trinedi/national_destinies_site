@@ -13,6 +13,7 @@ Output: rewrites formables.json in place with new fields:
 from __future__ import annotations
 
 import argparse
+from collections import Counter
 import json
 import os
 import re
@@ -200,7 +201,7 @@ def r_has_variable(op: str, value: str, loc) -> str:
     # The mod gives every variable a `<name>_tt` text for its tooltip:
     # "The Transmigration is complete: ..." reads better than its key.
     told = loc.get(f"{value}_tt")
-    return scrub_loc_functions(told, loc) if told else f"Has variable: {prettify(value)}"
+    return scrub_loc_functions(told, loc) if told else f"Has variable {prettify(value)}"
 
 
 def r_said(yes: str, no: str):
@@ -218,7 +219,7 @@ def r_yes_no_flag(label: str):
         if value == "yes":
             return label
         if value == "no":
-            return f"Not: {label}"
+            return f"Not {label[:1].lower()}{label[1:]}"
         return f"{label} = {value}"
     return f
 
@@ -283,7 +284,7 @@ def conditional_heading(limit_clauses: list[dict]) -> str | None:
         return None
     parts = [c["text"][0].lower() + c["text"][1:] if c["text"].startswith("We ") else c["text"]
              for c in limit_clauses]
-    return "If " + " and ".join(parts) + ":"
+    return "If " + " and ".join(parts)
 
 
 # Tooltip loc strings can embed scripting-function brackets that only the
@@ -322,8 +323,49 @@ def scrub_loc_functions(text: str, loc) -> str:
                   lambda m: loc_or_pretty(loc, m.group(1)), text)
     UNRESOLVED_LOC_FUNCTIONS.update(re.findall(r"\[[^\]]*\]", text))
     text = re.sub(r"\[[^\]]*\]", "", text)
+    # Text styling (`#bold Guanajuato#!`) and inline icons (`@trigger_yes!`).
+    text = re.sub(r"#[A-Za-z_]+(?:;[A-Za-z_]+)*\s", "", text).replace("#!", "")
+    text = re.sub(r"@[A-Za-z_0-9]+!", "", text)
     return re.sub(r"\s{2,}", " ", text).strip()
 
+
+def named(value: str, loc) -> str:
+    return loc_or_pretty(loc, strip_ref(value))
+
+
+def r_about(template: str):
+    """A sentence about the thing a trigger names, `{}` standing for its name."""
+    def render(op: str, value: str, loc) -> str:
+        return template.format(named(value, loc))
+    return render
+
+
+def key_name(key: str, loc) -> str:
+    """A trigger's name for display. A scoped one (`c:NAP`,
+    `societal_value:serfdom_vs_free_subjects`) is the thing it names."""
+    return loc_or_pretty(loc, strip_ref(key)) if ":" in key else prettify(key)
+
+
+def sentence_case(title: str) -> str:
+    return title[:1] + title[1:].lower()
+
+
+BLOCK_HEADINGS = {
+    "market": "Its market",
+    "capital": "The capital",
+    "owner": "Its owner",
+    "any_market_present_in_country": "A market the country is in",
+    "any_subject": "A subject",
+    "any_subject_or_below": "A subject or a subject's subject",
+    "any_neighbor_country": "A neighbour",
+    "any_location_in_area": "A location in the area",
+    "any_pop": "A pop there",
+}
+
+# Trigger names that fell through to the generic wording, for the build's report.
+UNWORDED_CONDITIONS: Counter = Counter()
+
+COMPARISON_WORDS = {">=": "at least", ">": "more than", "<=": "at most", "<": "less than"}
 
 ATOM_HANDLERS = {
     "culture": r_culture_atom,
@@ -351,6 +393,37 @@ ATOM_HANDLERS = {
     "hundred_years_war": r_yes_no_flag("Hundred Years' War"),
     "hre": r_yes_no_flag("In the HRE"),
     "ilkhanate": r_yes_no_flag("Ilkhanate"),
+    "owns_or_non_sovereign_subject_owns": r_about("Own {}, or a subject owns it"),
+    "raw_material": r_about("The location's raw material is {}"),
+    "is_produced_in_market": r_about("{} is produced in the market"),
+    "is_traded_in_market": r_about("{} is traded in the market"),
+    "is_produced_in_location_market": r_about("{} is produced in the location's market"),
+    "has_building": r_about("Has a {}"),
+    "area": r_about("In {}"),
+    "region": r_about("In {}"),
+    "continent": r_about("In {}"),
+    "province_definition": r_about("In {}"),
+    "topography": r_about("{} terrain"),
+    "vegetation": r_about("{} vegetation"),
+    "climate": r_about("{} climate"),
+    "dominant_culture": r_about("Most people there are {}"),
+    "dominant_religion": r_about("Most people there are {}"),
+    "has_embraced_institution": r_about("Has embraced {}"),
+    "has_policy": r_about("Has the policy {}"),
+    "has_reform": r_about("Has the reform {}"),
+    "has_estate_privilege": r_about("Has the privilege {}"),
+    "is_coastal": r_said("On the coast", "Not on the coast"),
+    "has_river": r_said("On a river", "Not on a river"),
+    "is_port": r_said("A port", "Not a port"),
+    "is_capital": r_said("The capital", "Not the capital"),
+    "counts_as_capital": r_said("The capital", "Not the capital"),
+    "is_province_capital": r_said("A province capital", "Not a province capital"),
+    "is_market_center": r_said("A market centre", "Not a market centre"),
+    "is_adjacent_to_lake": r_said("Beside a lake", "Not beside a lake"),
+    "is_border": r_said("On the border", "Not on the border"),
+    "is_overseas_for_owner": r_said("Overseas", "Not overseas"),
+    "has_road_to_capital": r_said("Joined to the capital by road", "No road to the capital"),
+    "is_great_power": r_said("A great power", "Not a great power"),
 }
 
 
@@ -381,18 +454,25 @@ def render_atom(key: str, op: str, value: str, loc) -> dict:
     if h:
         return {"kind": "atom", "text": h(op, value, loc)}
     # Fallback: show the raw shape so users can still skim it.
+    UNWORDED_CONDITIONS[key] += 1
     pretty_value = strip_ref(value)
     pretty_value = loc.get(pretty_value, prettify(pretty_value))
-    return {"kind": "atom", "text": f"{prettify(key)}: {pretty_value}"}
+    if op in COMPARISON_WORDS:
+        return {"kind": "atom",
+                "text": f"{sentence_case(key_name(key, loc))} {COMPARISON_WORDS[op]} {pretty_value}"}
+    if value in ("yes", "no"):
+        name = key_name(key, loc)
+        return {"kind": "atom", "text": name if value == "yes" else f"Not {name.lower()}"}
+    return {"kind": "atom", "text": f"{sentence_case(key_name(key, loc))} is {pretty_value}"}
 
 
 def render_block(key: str, op: str, body: list, loc) -> dict | None:
     if key == "OR":
-        return {"kind": "or", "text": "Any of:", "children": render_clauses(body, loc)}
+        return {"kind": "or", "text": "Any of", "children": render_clauses(body, loc)}
     if key == "NOT":
-        return {"kind": "not", "text": "Must not:", "children": render_clauses(body, loc)}
+        return {"kind": "not", "text": "None of", "children": render_clauses(body, loc)}
     if key == "AND":
-        return {"kind": "and", "text": "All of:", "children": render_clauses(body, loc)}
+        return {"kind": "and", "text": "All of", "children": render_clauses(body, loc)}
     if key in ("current_age_or_later", "current_age_or_earlier"):
         # current_age_or_later = { age = age_4_reformation }
         suffix = "or later" if key == "current_age_or_later" else "or earlier"
@@ -409,9 +489,9 @@ def render_block(key: str, op: str, body: list, loc) -> dict | None:
         heading = conditional_heading(render_clauses(limit[0][3], loc)) if len(limit) == 1 else None
         if heading:
             return {"kind": "if", "text": heading, "children": render_clauses(rest, loc)}
-        return {"kind": "if", "text": "If:", "children": render_clauses(body, loc)}
+        return {"kind": "if", "text": "If", "children": render_clauses(body, loc)}
     if key in ("trigger_else_if", "trigger_else"):
-        return {"kind": "else_if", "text": prettify(key) + ":", "children": render_clauses(body, loc)}
+        return {"kind": "else_if", "text": "Otherwise", "children": render_clauses(body, loc)}
     if key == "custom_tooltip":
         # Body is opaque scripted text; the loc'd tooltip carries the meaning.
         # Look for `text = X` or `tooltip = X` and emit that loc string.
@@ -430,7 +510,7 @@ def render_block(key: str, op: str, body: list, loc) -> dict | None:
         children = render_clauses(body, loc)
         if not children:
             return None
-        return {"kind": "block", "text": f"{name} (situation):", "children": children}
+        return {"kind": "block", "text": f"{name} (situation)", "children": children}
 
     # culture = { has_culture_group = X } / culture = { ... }
     if key == "culture":
@@ -442,21 +522,24 @@ def render_block(key: str, op: str, body: list, loc) -> dict | None:
     if key == "any_primary_or_accepted_or_tolerated_culture":
         return {
             "kind": "any_culture",
-            "text": "Any primary, accepted, or tolerated culture matches:",
+            "text": "A primary, accepted or tolerated culture with",
             "children": render_clauses(body, loc),
         }
     if key == "any_owned_location":
         return {
             "kind": "any_owned",
-            "text": "Has any owned location matching:",
+            "text": "Owns a location with",
             "children": render_clauses(body, loc),
         }
 
-    # Generic block fallback: render children verbatim.
     children = render_clauses(body, loc)
     if not children:
         return None
-    return {"kind": "block", "text": prettify(key) + ":", "children": children}
+    if key in BLOCK_HEADINGS:
+        return {"kind": "block", "text": BLOCK_HEADINGS[key], "children": children}
+    # Generic block fallback: render children verbatim.
+    UNWORDED_CONDITIONS[key + " = { }"] += 1
+    return {"kind": "block", "text": key_name(key, loc), "children": children}
 
 
 def render_culture_block(body: list, loc) -> dict | None:
@@ -483,12 +566,12 @@ def render_culture_block(body: list, loc) -> dict | None:
             if key == "OR":
                 ch = render_culture_options(sub, loc, "culture")
                 if ch:
-                    return {"kind": "or", "text": "Any culture of:", "children": ch}
+                    return {"kind": "or", "text": "Any culture of", "children": ch}
     if not found:
         return None
     if len(found) == 1:
         return {"kind": "atom", "text": found[0]}
-    return {"kind": "and", "text": "Culture must match:", "children": [{"kind": "atom", "text": t} for t in found]}
+    return {"kind": "and", "text": "Culture", "children": [{"kind": "atom", "text": t} for t in found]}
 
 
 def render_religion_block(body: list, loc) -> dict | None:
@@ -506,12 +589,12 @@ def render_religion_block(body: list, loc) -> dict | None:
             if key == "OR":
                 ch = render_culture_options(sub, loc, "religion")
                 if ch:
-                    return {"kind": "or", "text": "Any religion of:", "children": ch}
+                    return {"kind": "or", "text": "Any religion of", "children": ch}
     if not found:
         return None
     if len(found) == 1:
         return {"kind": "atom", "text": found[0]}
-    return {"kind": "and", "text": "Religion must match:", "children": [{"kind": "atom", "text": t} for t in found]}
+    return {"kind": "and", "text": "Religion", "children": [{"kind": "atom", "text": t} for t in found]}
 
 
 def render_language_block(body: list, loc) -> dict | None:
@@ -524,7 +607,7 @@ def render_language_block(body: list, loc) -> dict | None:
         return None
     if len(found) == 1:
         return {"kind": "atom", "text": found[0]}
-    return {"kind": "and", "text": "Language must match:", "children": [{"kind": "atom", "text": t} for t in found]}
+    return {"kind": "and", "text": "Language", "children": [{"kind": "atom", "text": t} for t in found]}
 
 
 def render_culture_options(body, loc, label_kind):
