@@ -122,7 +122,7 @@ function render(data) {
   const usual = data.rule.settings.find((s) => s.default);
   return `<header class="bk-head"><h2>Banks</h2>` +
     `<p>The banks of the base game get laws, buildings, actions and two organisations of their own. ` +
-    `The game rule ${esc(data.rule.name)} sets how much of it is in play.` +
+    `The game rule ${esc(data.rule.name)} turns them on.` +
     (usual ? ` Its default is ${esc(usual.name)}.` : "") + `</p></header>` +
     ruleSection(data.rule) +
     banksSection(data.banks) +
