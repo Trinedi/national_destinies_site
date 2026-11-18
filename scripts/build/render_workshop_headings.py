@@ -37,8 +37,10 @@ HEADING_PICTURE = re.compile(
     r"\[img\]" + re.escape(SITE_URL + OUTPUT_FOLDER) + r"/([a-z0-9-]+)\.png\[/img\]"
 )
 
-# The width of the text column of a Workshop description.
-WIDTH = 604
+# The widest Steam shows a description picture (its stylesheet caps
+# `.workshopItemDescription img` at 630 pixels). The text column is about
+# 14 pixels wider, so a picture cannot span it fully.
+WIDTH = 630
 # In the 512 pixel logo: the rows of the name band with its two gold rules,
 # and columns of it left of the lettering, where only cloth shows.
 BAND_ROWS = (212, 272)
