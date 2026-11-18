@@ -269,6 +269,11 @@ function bind(scope, scroller) {
   });
 }
 
+// The Banks page draws the same cards on a page of its own.
+export {
+  esc, effectRows, conditionList, description, section, advancesSection, buildingsSection, bind,
+};
+
 export function hasContent(rec) {
   return Boolean(rec.content && rec.content.key);
 }

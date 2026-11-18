@@ -183,6 +183,9 @@ Banks are off by default. The game rule National Destinies Banks (Beta)
 turns them on. Full is all of the above, Money Only leaves out everything
 about land, and Disabled keeps banks as they are in the base game.
 
+The [Banks page](banks.html) lists every law, building, action and
+organisation of a bank, and the countries a bank can become.
+
 ## Compatibility
 
 - The mod is made for EU5 1.4. Across the Pillars is supported and not

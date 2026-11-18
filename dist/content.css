@@ -1,6 +1,7 @@
-/* The Content tab of a formable's panel. The look follows the game's own
-   advance cards: a framed round picture, a name, and modifier lines with
-   their icons and green or red values. */
+/* The Content tab of a formable's panel, and the Banks page (.ct-page),
+   which draws the same cards. The look follows the game's own advance
+   cards: a framed round picture, a name, and modifier lines with their
+   icons and green or red values. */
 
 #detail.wide { width: max(440px, min(820px, calc(100vw - 340px - 24px))); }
 
@@ -43,7 +44,7 @@
 .ct-tile:hover { border-color: var(--gold-dim); color: var(--fg-0); }
 
 .ct-section { margin: 0 0 22px; }
-#detail-body .ct-h {
+:is(#detail-body, .ct-page) .ct-h {
   display: flex;
   align-items: baseline;
   gap: 8px;
@@ -96,8 +97,8 @@
 .square-icon { display: block; width: 100%; height: 100%; object-fit: contain; }
 .ct-noicon { display: block; }
 
-#detail-body .fx-list { list-style: none; margin: 0 0 6px; padding: 0; }
-#detail-body .fx {
+:is(#detail-body, .ct-page) .fx-list { list-style: none; margin: 0 0 6px; padding: 0; }
+:is(#detail-body, .ct-page) .fx {
   margin: 0;
   display: flex;
   align-items: center;
@@ -180,7 +181,7 @@ button.unlock:hover { border-color: var(--accent); }
   border: 1px solid #3a3226;
   border-radius: 5px;
 }
-#detail-body .formation-title { margin: 0; font-size: 15px; color: #f1e3c4; }
+:is(#detail-body, .ct-page) .formation-title { margin: 0; font-size: 15px; color: #f1e3c4; }
 .choices { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 8px; margin-top: 8px; }
 .choice {
   padding: 8px;
@@ -199,14 +200,14 @@ button.unlock:hover { border-color: var(--accent); }
 .age-name { font-size: 13px; font-weight: 600; color: var(--fg-0); }
 
 /* The destiny tree reads top down; a stage's followers hang from its line. */
-#detail-body .stages { list-style: none; margin: 0; padding: 0; }
-#detail-body .stage.fork > .stages {
+:is(#detail-body, .ct-page) .stages { list-style: none; margin: 0; padding: 0; }
+:is(#detail-body, .ct-page) .stage.fork > .stages {
   margin: 0 0 0 25px;
   padding: 0 0 0 14px;
   border-left: 2px solid var(--gold-dim);
 }
-#detail-body .stage { margin: 0 0 8px; }
-#detail-body .stage:last-child { margin-bottom: 0; }
+:is(#detail-body, .ct-page) .stage { margin: 0 0 8px; }
+:is(#detail-body, .ct-page) .stage:last-child { margin-bottom: 0; }
 .needs { margin: 0 0 6px; }
 .needs .req-list li { font-size: 12.5px; margin-bottom: 2px; }
 

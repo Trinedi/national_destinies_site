@@ -58,6 +58,7 @@ def main() -> int:
     step("localisation (filtered)", ["parse_localization.py"])
     step("english requirements",    ["render_requirements.py"])
     step("content of each country", ["extract_content.py"])
+    step("banks",                   ["extract_banks.py"])
     step("workshop country list",   ["write_workshop_countries.py"])
     step("workshop headings",       ["render_workshop_headings.py"])
     step("text pages",              ["render_pages.py"])

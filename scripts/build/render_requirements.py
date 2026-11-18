@@ -376,6 +376,8 @@ ATOM_HANDLERS = {
     "country_exists": r_country_exists,
     "has_variable": r_has_variable,
     "is_ai": r_said("Played by the AI", "Played by a person"),
+    "has_any_active_disaster": r_said("A disaster is under way", "No disaster is under way"),
+    "is_during_bankruptcy": r_said("Bankrupt", "Not bankrupt"),
     "is_subject": r_said("A subject", "Not a subject"),
     "is_frankokratia_state": r_is_frankokratia_state,
     "current_age_or_later": r_current_age_or_later,

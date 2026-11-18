@@ -10991,7 +10991,7 @@
     },
     {
      "kind": "atom",
-     "text": "Not has any active disaster"
+     "text": "No disaster is under way"
     },
     {
      "kind": "not",
@@ -11473,7 +11473,7 @@
     },
     {
      "kind": "atom",
-     "text": "Not has any active disaster"
+     "text": "No disaster is under way"
     }
    ],
    "english_allow": [
@@ -12128,7 +12128,7 @@
     },
     {
      "kind": "atom",
-     "text": "Not has any active disaster"
+     "text": "No disaster is under way"
     }
    ],
    "content": {
@@ -12367,7 +12367,7 @@
     },
     {
      "kind": "atom",
-     "text": "Not has any active disaster"
+     "text": "No disaster is under way"
     }
    ],
    "content": {
@@ -12766,7 +12766,7 @@
     },
     {
      "kind": "atom",
-     "text": "Not has any active disaster"
+     "text": "No disaster is under way"
     }
    ],
    "english_allow": [

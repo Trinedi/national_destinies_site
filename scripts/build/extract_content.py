@@ -77,7 +77,8 @@ UNIT_STATS_WHERE_LESS_IS_BETTER = {
 
 BUILDING_MODIFIER_BLOCKS = {
     "modifier": "Per level, in its location",
-    "raw_modifier": "Per level, in its location",
+    # Not multiplied by the level (in_game/common/building_types/readme.txt).
+    "raw_modifier": "In its location, whatever its level",
     "capital_modifier": "In the capital",
     "capital_country_modifier": "To the country, when built in the capital",
     "market_center_modifier": "In a market centre",
@@ -117,6 +118,7 @@ COUNTRY_FILE_DIRS = (
     "main_menu/common/static_modifiers",
 )
 
+ICONS_IN_USE_DIR = "data/cache/icons_in_use"
 ICON_SIZES = {
     "advance": 88, "modifier": 40, "building": 88, "goods": 48,
     "estate": 48, "age": 64, "unit": 64, "bureaucracy": 88,
@@ -330,9 +332,18 @@ class Game:
             return None
         return self.icon("modifier", relative)
 
-    def write_icons(self, icons_dir: Path) -> int:
+    def write_icons(self, icons_dir: Path, in_use_lists: Path, step: str) -> int:
+        """Convert the icons this step uses, and remove the icons no step
+        uses any more. Each step that draws icons keeps a list of its own in
+        `in_use_lists`, so one step does not remove another's."""
         written = 0
-        in_use = {icons_dir / f"{ref}.webp" for ref in self.icon_sources}
+        in_use_lists.mkdir(parents=True, exist_ok=True)
+        (in_use_lists / f"{step}.json").write_text(json.dumps(sorted(self.icon_sources)))
+        in_use = {
+            icons_dir / f"{ref}.webp"
+            for listed in in_use_lists.glob("*.json")
+            for ref in json.loads(listed.read_text())
+        }
         for stale in icons_dir.rglob("*.webp"):
             if stale not in in_use:
                 stale.unlink()
@@ -729,7 +740,7 @@ class ContentBuilder:
                 ),
                 "category": self.game.name(category) if category else None,
                 "workers": self.game.name(fields["pop_type"]) if "pop_type" in fields else None,
-                "max_levels": fields.get("max_levels") if NUMBER_RE.match(fields.get("max_levels", "")) else None,
+                "max_levels": self.max_levels(fields.get("max_levels")),
                 "settlements": settlements,
                 "effect_groups": effect_groups,
                 "methods": self.production_methods(block(body, "unique_production_methods") or []),
@@ -747,6 +758,11 @@ class ContentBuilder:
                 card["unlocked_by"] = self.game.name(unlocker)
             cards.append(card)
         return cards
+
+    def max_levels(self, raw: str | None) -> str | None:
+        """The level cap as a whole number; a cap worked out by script is not shown."""
+        value = self.game.number(raw) if raw else None
+        return f"{value:g}" if value is not None else None
 
     def production_methods(self, methods: list) -> list[dict]:
         out = []
@@ -882,7 +898,7 @@ def main() -> int:
             stale.unlink()
     formables_path.write_text(json.dumps(data, ensure_ascii=False, indent=1))
 
-    new_icons = game.write_icons(icons_dir)
+    new_icons = game.write_icons(icons_dir, repo_root / ICONS_IN_USE_DIR, "content")
     totals = Counter()
     for counts in written.values():
         totals.update(counts)

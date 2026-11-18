@@ -32,6 +32,7 @@ push; the GitHub Pages workflow uploads `dist/` automatically.
 - `dist/tiles/{z}/{x}/{y}.png`, base map tile pyramid for Leaflet.
 - `dist/data/*.json`, the formables, their requirements in English, their guides and the geography.
 - `dist/data/content/<key>.json`, what the mod gives each country (formation choices, advances, destiny tree, units, buildings, bureaucracies), with every name in English and every number as the game prints it. `scripts/build/extract_content.py --report` lists anything it could not name, format or draw.
+- `dist/data/banks.json`, what the mod gives banks (the game rule, laws, privileges, buildings, actions, standing, the run on the bank, the two organisations and the countries a bank can become), drawn by `dist/banks.js` as the Banks page with the Content tab's cards. `scripts/build/extract_banks.py --report` lists what it could not name or format, and the build names any bank action file that has no group on the page yet.
 - `dist/icons/`, the game's and the mod's icons that the content uses, converted from DDS on the first build that needs them.
 - `dist/<name>.html`, one text page per `data/pages/<name>.md` (`features.html` explains each part of the mod). The Workshop description links to their sections, and the build fails when such a link has no section to land on.
 

@@ -71,15 +71,59 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 
 ATLAS_SIDEBAR_HEADER = re.compile(r"<header>.*?</header>", re.S)
 ATLAS_SUBTITLE = re.compile(r'(<div class="subtitle">).*?(</div>)')
-ATLAS_PAGE_LINK = re.compile(r'<a class="features-link".*?</a>')
+ATLAS_PAGE_LINKS = re.compile(r'(?:<a class="features-link".*?</a>\s*)+')
+SITE_PAGES = [("index.html", "Formables Atlas"), ("features.html", "Features"), ("banks.html", "Banks")]
 
 
-def sidebar_header(dist_dir: Path, title: str) -> str:
-    """The Atlas's own sidebar header, named for this page and linking back."""
+def sidebar_header(dist_dir: Path, title: str, own_file: str) -> str:
+    """The Atlas's own sidebar header, named for this page and linking to the others."""
     atlas = (dist_dir / "index.html").read_text(encoding="utf-8")
     header = ATLAS_SIDEBAR_HEADER.search(atlas).group(0)
     header = ATLAS_SUBTITLE.sub(lambda m: m.group(1) + title + m.group(2), header, count=1)
-    return ATLAS_PAGE_LINK.sub('<a class="features-link" href="index.html">Formables Atlas</a>', header)
+    links = "\n      ".join(
+        f'<a class="features-link" href="{file}">{name}</a>'
+        for file, name in SITE_PAGES if file != own_file
+    )
+    return ATLAS_PAGE_LINKS.sub(links + "\n      ", header, count=1)
+
+
+# The Banks page is drawn in the browser from data/banks.json
+# (scripts/build/extract_banks.py) by dist/banks.js, with the Content tab's cards.
+BANKS_PAGE = "banks.html"
+BANKS_TEMPLATE = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>National Destinies, Banks</title>
+<link rel="stylesheet" href="app.css" />
+<link rel="stylesheet" href="page.css" />
+<link rel="stylesheet" href="content.css" />
+<link rel="stylesheet" href="banks.css" />
+</head>
+<body>
+<div id="app">
+  <aside id="sidebar">
+    {sidebar_header}
+    <nav id="page-sections" aria-label="Sections"></nav>
+  </aside>
+  <main id="page-pane">
+    <div class="page ct ct-page" id="banks"><p class="ct-note">Loading.</p></div>
+  </main>
+</div>
+<script type="module" src="banks.js"></script>
+</body>
+</html>
+"""
+
+
+def write_banks_page(dist_dir: Path) -> Path:
+    out = dist_dir / BANKS_PAGE
+    out.write_text(
+        BANKS_TEMPLATE.format(sidebar_header=sidebar_header(dist_dir, "Banks", BANKS_PAGE)),
+        encoding="utf-8",
+    )
+    return out
 
 
 # The page's backdrop is the Atlas's own map, cut to the band from Europe to
@@ -145,7 +189,7 @@ def render_page(source: Path, dist_dir: Path) -> Path:
     out.write_text(
         PAGE_TEMPLATE.format(
             title=title,
-            sidebar_header=sidebar_header(dist_dir, title),
+            sidebar_header=sidebar_header(dist_dir, title, out.name),
             section_links="\n".join(
                 f'      <a class="formable-row" href="#{token["id"]}">{token["name"]}</a>'
                 for token in md.toc_tokens
@@ -174,6 +218,7 @@ def main() -> int:
     write_background(dist_dir)
     for source in sorted(PAGES_DIR.glob("*.md")):
         print(f"wrote {render_page(source, dist_dir).relative_to(REPO_ROOT)}")
+    print(f"wrote {write_banks_page(dist_dir).relative_to(REPO_ROOT)}")
 
     description = Path(config["mod_root"]).expanduser() / WORKSHOP_DESCRIPTION
     if description.exists():

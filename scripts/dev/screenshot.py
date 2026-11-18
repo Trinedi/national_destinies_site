@@ -2,6 +2,7 @@
 """Screenshot the Atlas with headless Firefox, to look at a change before pushing.
 
     screenshot.py page '#MEX_f/content' out.png     the page as a visitor sees it
+    screenshot.py page banks.html out.png --size 1500x9000    another page, at full length
     screenshot.py tab mex out.png                   one country's whole Content tab, full length
 
 Firefox takes its screenshot at the page's load event, which comes before the
@@ -21,6 +22,7 @@ import subprocess
 import sys
 import tempfile
 import threading
+import urllib.parse
 import time
 from pathlib import Path
 
@@ -70,7 +72,12 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_response(204)
             self.end_headers()
         elif self.path.startswith("/__page.html"):
-            page = (DIST / "index.html").read_text()
+            name = urllib.parse.parse_qs(urllib.parse.urlsplit(self.path).query).get("f", ["index.html"])[0]
+            source = DIST / Path(name).name
+            if not source.is_file():
+                self.send_error(404, f"no page {source.name} in dist")
+                return
+            page = source.read_text()
             self._send_html(page.replace("</body>", '<img src="/__late.png" alt=""></body>'))
         elif self.path.startswith("/__tab.html"):
             self._send_html(self.tab_page)
@@ -111,7 +118,8 @@ def trim_and_cut(out: Path, piece: int) -> int:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("mode", choices=["page", "tab"])
-    parser.add_argument("target", help="page: the address hash, '#MEX_f/content'. tab: a content key, 'mex'")
+    parser.add_argument("target", help="page: a hash on the Atlas, '#MEX_f/content', or a page, 'banks.html'. "
+                                       "tab: a content key, 'mex'")
     parser.add_argument("out", type=Path)
     parser.add_argument("--size", default="1700x1050", help="page: window size")
     parser.add_argument("--unfold", action="store_true", help="tab: open every fold and full description")
@@ -124,7 +132,12 @@ def main() -> int:
     try:
         if args.mode == "page":
             width, height = (int(n) for n in args.size.split("x"))
-            firefox_screenshot(f"http://127.0.0.1:{port}/__page.html{args.target}", args.out, width, height)
+            file, _, anchor = args.target.partition("#")
+            if file and not (DIST / file).is_file():
+                print(f"no page '{file}' in dist", file=sys.stderr)
+                return 1
+            address = f"/__page.html?f={file or 'index.html'}" + (f"#{anchor}" if anchor else "")
+            firefox_screenshot(f"http://127.0.0.1:{port}{address}", args.out, width, height)
             print(args.out)
         else:
             if not (DIST / "data/content" / f"{args.target}.json").exists():
