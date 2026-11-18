@@ -29,7 +29,7 @@ function ruleSection(rule) {
     `<div class="choice"><div class="choice-text">${esc(s.name)}` +
     (s.default ? ' <span class="bk-chip">Default</span>' : "") + "</div>" +
     `<p class="bk-text">${esc(s.text)}</p></div>`).join("");
-  return section("rule", "Game rule", rule.settings.length,
+  return section("rule", "Game rule", "",
     `<div class="formation"><h4 class="formation-title">${esc(rule.name)}</h4>` +
     `<div class="choices">${settings}</div></div>`);
 }
@@ -57,16 +57,20 @@ function valueSection(value) {
   if (!value) return "";
   const sides = value.sides.map((s) =>
     `<div class="choice"><div class="choice-text">${esc(s.name)}</div>${effectRows(s.effects)}</div>`).join("");
-  return section("value", `${value.sides[0].name} and ${value.sides[1].name}`, value.sides.length,
+  return section("value", `${value.sides[0].name} and ${value.sides[1].name}`, "",
     `<div class="formation">${value.text ? `<p class="bk-text">${esc(value.text)}</p>` : ""}` +
     `<div class="choices">${sides}</div></div>`);
 }
 
+function part(label, items) {
+  return items && items.length > 0
+    ? `<div class="age"><div class="age-head"><span class="age-name">${label}</span>` +
+      `<span class="req-count">${items.length}</span></div>${cardGrid(items)}</div>` : "";
+}
+
 function actionsSection(groups) {
   const total = groups.reduce((n, g) => n + g.actions.length, 0);
-  const body = groups.map((g) =>
-    `<div class="age"><div class="age-head"><span class="age-name">${esc(g.title)}</span>` +
-    `<span class="req-count">${g.actions.length}</span></div>${cardGrid(g.actions)}</div>`).join("");
+  const body = groups.map((g) => part(esc(g.title), g.actions)).join("");
   return section("actions", "Actions", total, body);
 }
 
@@ -78,38 +82,37 @@ function standingSection(standing) {
   }).join("");
   const concepts = standing.concepts.map((c) =>
     `<details class="ct-event"><summary>${esc(c.name)}</summary><p class="bk-text bk-long">${esc(c.text)}</p></details>`).join("");
-  return section("standing", "Standing", standing.steps.length,
+  return section("standing", "Standing", "",
     `<div class="formation"><div class="bk-bar">${steps}</div>${concepts}</div>`);
 }
 
 function runSection(run) {
   if (!run) return "";
-  return section("run", run.name, run.actions.length,
+  return section("run", run.name, "",
     `<div class="formation bk-law"><p class="bk-text">${esc(run.text)}</p>` +
     `<div class="choices"><div class="choice">${group("Starts", conditionList(run.starts))}</div>` +
     `<div class="choice">${group("Ends", conditionList(run.ends))}</div></div></div>` +
-    cardGrid(run.actions));
+    part("Actions", run.actions));
 }
 
 function organisationSection(org, index) {
-  const part = (label, items) => (items && items.length > 0
-    ? `<div class="age"><div class="age-head"><span class="age-name">${label}</span>` +
-      `<span class="req-count">${items.length}</span></div>${cardGrid(items)}</div>` : "");
   const laws = org.laws.length > 0
     ? `<div class="age"><div class="age-head"><span class="age-name">Laws</span>` +
       `<span class="req-count">${org.laws.length}</span></div>${org.laws.map(lawBlock).join("")}</div>` : "";
-  return section(`org${index}`, org.name, org.laws.length,
+  return section(`org${index}`, org.name, "",
     `<p class="bk-text bk-lead">${esc(org.text)}</p>` +
-    part("Members", org.statuses) + part("Subjects", org.subjects) +
+    part("Subject types", org.subjects) + part("Statuses", org.statuses) +
     part("Payments", org.payments) + part("Actions", org.actions) + laws);
 }
 
 function countriesSection(countries) {
   const cards = countries.map((c) =>
     `<article class="card"><div class="card-body"><h4>${esc(c.country)}</h4>` +
-    `<div class="facts">${esc(c.bank || "")}<span class="dot">&middot;</span>${esc(c.action)}</div>` +
+    `<div class="unlocks">` +
+    (c.bank ? `<span class="unlock"><span class="unlock-kind">Bank</span>${esc(c.bank)}</span>` : "") +
+    `<span class="unlock"><span class="unlock-kind">Action</span>${esc(c.action)}</span></div>` +
     group("Requirements", lines(c.requirements)) +
-    (c.result ? `<details class="ct-event"><summary>What happens</summary><p class="bk-text bk-long">${esc(c.result)}</p></details>` : "") +
+    (c.result ? `<details class="ct-event"><summary>Effect</summary><p class="bk-text bk-long">${esc(c.result)}</p></details>` : "") +
     description(c.text) +
     (c.atlas ? `<a class="bk-atlas" href="${ATLAS}#${encodeURIComponent(c.atlas)}">Open on the Atlas</a>` : "") +
     "</div></article>").join("");

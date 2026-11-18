@@ -115,6 +115,12 @@ def shown_conditions(statements: list) -> list:
     return out
 
 
+def is_a_subject_types_status(status_body: list) -> bool:
+    """A status every subject of one type holds says nothing the subject
+    type's own card does not."""
+    return any(s[0] == "atom" and s[1] == "is_subject_type" for s in walk(block(status_body, "can_bestow_trigger") or []))
+
+
 class Banks:
     def __init__(self, game: Game, mod_root: Path, game_root: Path, formables: list[dict]) -> None:
         self.game = game
@@ -267,7 +273,10 @@ class Banks:
     def organisation(self, spec: dict) -> dict:
         out = {
             **self.named(spec["key"]),
-            "statuses": [self.named(key) for key, _ in self.blocks(spec["statuses"])],
+            "statuses": [
+                self.named(key) for key, body in self.blocks(spec["statuses"])
+                if not is_a_subject_types_status(body)
+            ],
             "laws": self.laws(spec["laws"]),
         }
         if "payments" in spec:

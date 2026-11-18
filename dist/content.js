@@ -98,7 +98,8 @@ function advanceCard(a, extra = "") {
 
 function section(id, title, count, body, note = "") {
   return `<section class="ct-section" id="ct-sec-${id}">` +
-    `<h3 class="ct-h"${note ? ` title="${esc(note)}"` : ""}>${esc(title)} <span class="req-count">${count}</span></h3>` +
+    `<h3 class="ct-h"${note ? ` title="${esc(note)}"` : ""}>${esc(title)}` +
+    (count === "" ? "" : ` <span class="req-count">${count}</span>`) + "</h3>" +
     body + "</section>";
 }
 
