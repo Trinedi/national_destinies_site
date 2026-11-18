@@ -177,11 +177,11 @@ Acciaioli, get mechanics of their own. This part of the mod is in beta.
 - A bank can also hold land. It can pay for a war and take a town in the
   peace, seize a pledged place and take a country under its protection.
 
-![The game rule National Destinies Banks](img/rule_banks.jpg)
+![The game rule National Destinies Banks (Beta)](img/rule_banks.jpg)
 
-The game rule National Destinies Banks has three settings. Full is all of
-the above, Money Only leaves out everything about land, and Disabled keeps
-banks as they are in the base game.
+Banks are off by default. The game rule National Destinies Banks (Beta)
+turns them on. Full is all of the above, Money Only leaves out everything
+about land, and Disabled keeps banks as they are in the base game.
 
 ## Compatibility
 
